@@ -32,7 +32,7 @@ and that you are able to start and use a Jupyter notebook.
 <div class="toctree">
 ```
 
-```{toctree}
+```{tableofcontents}
 :maxdepth: 2
 
 introduction/overview

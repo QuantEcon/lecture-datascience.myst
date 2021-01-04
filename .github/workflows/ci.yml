@@ -1,0 +1,43 @@
+name: Build Project [using jupyter-book]
+on: [push]
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Anaconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          auto-activate-base: true
+          miniconda-version: 'latest'
+          python-version: 3.8
+          environment-file: environment.yml
+          activate-environment: lecture-datascience
+      - name: Display Conda Environment Versions
+        shell: bash -l {0}
+        run: conda list
+      - name: Display Pip Versions
+        shell: bash -l {0}
+        run: pip list
+      - name: Build HTML
+        shell: bash -l {0}
+        run: |
+          jb build src --path-output ./
+      # - name: Build Download Notebooks (sphinx-tojupyter)
+      #   shell: bash -l {0}
+      #   run: |
+      #     jb build src --path-output ./ --builder=custom --custom-builder=jupyter
+      #     mkdir _build/html/_notebooks
+      #     cp _build/jupyter/*.ipynb _build/html/_notebooks
+      - name: Preview Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: '_build/html/'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Preview Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
