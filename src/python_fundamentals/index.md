@@ -32,7 +32,7 @@ and feel comfortable handling data.
 <div class="toctree">
 ```
 
-```{toctree}
+```{tableofcontents}
 :maxdepth: 2
 
 python_fundamentals/basics

@@ -17,7 +17,7 @@ kernelspec:
 # Datascience for Economists
 ```
 
-```{toctree}
+```{tableofcontents}
 ---
 maxdepth: 2
 titlesonly: 

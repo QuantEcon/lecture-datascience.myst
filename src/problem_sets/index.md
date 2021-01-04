@@ -17,7 +17,7 @@ Here are problem sets to check your understanding of the course material.
 <div class="toctree">
 ```
 
-```{toctree}
+```{tableofcontents}
 :maxdepth: 1
 
 problem_sets/problem_set_1

@@ -39,7 +39,7 @@ We have found that although understanding these tools will require some extra ef
 <div class="toctree">
 ```
 
-```{toctree}
+```{tableofcontents}
 :maxdepth: 2
 
 scientific/numpy_arrays

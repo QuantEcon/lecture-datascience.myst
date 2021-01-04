@@ -45,7 +45,7 @@ your programs will fall dramatically.
 <div class="toctree">
 ```
 
-```{toctree}
+```{tableofcontents}
 :maxdepth: 2
 
 pandas/intro

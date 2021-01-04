@@ -19,7 +19,7 @@ special types of analysis.
 <div class="toctree">
 ```
 
-```{toctree}
+```{tableofcontents}
 :maxdepth: 2
 
 applications/visualization_rules
