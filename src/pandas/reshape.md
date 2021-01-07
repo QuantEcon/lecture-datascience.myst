@@ -49,20 +49,17 @@ objectives for reshaping data, which in turn makes advanced features like
 Hadley Wickham gives a terminology slightly better-adapted for the experimental
 sciences, but nevertheless useful for the social sciences.
 
-[](https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf)> A dataset is a collection of values, usually either numbers (if
-> quantitative) or strings (if qualitative). Values are organized in two
-> ways. Every value belongs to a variable and an observation. A variable
-> contains all values that measure the same underlying attribute (like
-> height, temperature, duration) across units. An observation contains all
-> values measured on the same unit (like a person, or a day, or a race)
-> across attributes. -- Tidy Data (Journal of Statistical Software 2013)
+> A dataset is a collection of values, usually either numbers (if quantitative) or strings (if qualitative). Values are organized in two ways. Every value belongs to a variable and an observation. A variable contains all values that measure the same underlying attribute (like height, temperature, duration) across units. An observation contains all values measured on the same unit (like a person, or a day, or a race) across attributes. -- [Tidy Data (Journal of Statistical Software 2013)](https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf)
 
 With this framing,
 
 > A dataset is messy or tidy depending on how rows, columns and tables are
 > matched with observations, variables, and types. In tidy data:
+>
 > 1.  Each variable forms a column.
+>
 > 2.  Each observation forms a row.
+>
 > 3.  Each type of observational unit forms a table.
 
 The "column" and "row" terms map directly to pandas columns and rows, while the
