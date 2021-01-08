@@ -24,4 +24,4 @@ conda env create -f environment.yml
 jupyter-book build src
 ```
 
-This will take a while. The final book will be in `src/_build`.
+This will take a while. But it will populate your cache, so future iteration is faster. 
