@@ -24,3 +24,4 @@ conda env create -f environment.yml
 jupyter-book build src
 ```
 
+This will take a while. The final book will be in `src/_build`.
