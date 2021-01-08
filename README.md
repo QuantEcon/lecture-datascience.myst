@@ -25,3 +25,9 @@ jupyter-book build src
 ```
 
 This will take a while. But it will populate your cache, so future iteration is faster. 
+
+4. To clean up (i.e., delete the build.)
+
+```
+jupyter-book clean src
+```
