@@ -519,7 +519,7 @@ for (_name, _coef) in zip(names, lr_model.coef_):
 
 What stands out to you about these coefficients?
 
-````{exercise}
+```{exercise}
 **Exercise 1**
 
 Can you develop a model that performs better at mimicking their risk scores?
@@ -769,7 +769,7 @@ along the 45 degree line.
 For dots below the 45 degree line, the algorithm is overpredicting
 recidivism.
 
-````{exercise}
+```{exercise}
 **Exercise 2**
 
 We made our calibration plot using a held-out test sample. What
@@ -1003,7 +1003,7 @@ As with COMPAS score, our predictions are well-calibrated, but the
 false negative and false positive rates are not well balanced across
 racial groups.
 
-````{exercise}
+```{exercise}
 **Exercise 3**
 
 Try to improve balance and/or calibration by creating an
@@ -1116,7 +1116,7 @@ calibration_plot(bf_mod.best_estimator_.predict_proba(X_test)[:,1],y_test, df_te
 balance_threshold_plot(bf_mod.best_estimator_.predict_proba(X_test)[:,1],y_test, df_test);
 ```
 
-````{exercise}
+```{exercise}
 **Exercise 4**
 
 Modify the cross-validation scoring function to see how it affects
@@ -1137,12 +1137,12 @@ Improvements in balance necessarily make calibration worse.
 
 ## References
 
-```{bibliography} applications/applications.bib
+```{bibliography} applications.bib
 :labelprefix: recid
 ```
 
 ## Exercises
 
-````{exerciselist}
+```{exerciselist}
 ```
 
