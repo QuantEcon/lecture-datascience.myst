@@ -1212,11 +1212,10 @@ regularization parameters affects prediction.
 Two good text books covering the above regression methods are
 {cite}`reg-friedman2008` and {cite}`reg-efron2016`
 
-```{bibliography} applications/applications.bib
----
-keyprefix: reg-
-labelprefix: reg
----
+```{bibliography} applications.bib
+:keyprefix: reg-
+:labelprefix: reg
+:cited:
 ```
 
 ## Exercises
