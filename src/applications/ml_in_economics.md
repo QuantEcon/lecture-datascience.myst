@@ -516,10 +516,9 @@ We will explore this is more depth in {doc}`heterogeneity <heterogeneity>`.
 
 ## References
 
-```{bibliography} applications/applications.bib
----
-keyprefix: ml-
-labelprefix: ml
----
+```{bibliography} applications.bib
+:keyprefix: ml-
+:labelprefix: ml
+:cited:
 ```
 
