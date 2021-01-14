@@ -594,10 +594,9 @@ relatively low dimension) to get precise estimates.
 
 ## References
 
-```{bibliography} applications/applications.bib
----
-keyprefix: het-
-labelprefix: het
----
+```{bibliography} applications.bib
+:keyprefix: het-
+:labelprefix: het
+:cited:
 ```
 
