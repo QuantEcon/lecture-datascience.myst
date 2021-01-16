@@ -444,11 +444,13 @@ To do this problem, you may wish to do the following steps:
 - Use `np.argmin` to find the  *index* of the smallest value of the objective function.
 - Extract the value at the margin index from the probability threshold values array.
 
-*Hint*: If we cared about both precision and recall equally (we don't here),
+```{hint}
+If we cared about both precision and recall equally (we don't here),
 we might choose `(fpr - tpr)**2` as one objective function. With this
 objective function, we would find the probability threshold value
 that makes the false positive and true positive rates as equal as
 possible.
+```
 
 ```{code-block} python
 # your code here
