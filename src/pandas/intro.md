@@ -165,7 +165,7 @@ for help.
 - Use `.loc` to select the lowest/highest unemployment rate shown in the Series.
 - Run the code `unemp.dtype` below. What does it give you? Where do you think it comes from?
 
-````
+```
 
 ## DataFrame
 
@@ -315,7 +315,7 @@ For each of the following, we recommend reading the documentation for help.
 - Run the code `unemp_region.dtypes` below. What does it give you?
   How does this compare with `unemp.dtype`?
 
-````
+```
 
 ## Data Types
 
@@ -502,5 +502,5 @@ unemp_shortname.head()
 ## Exercises
 
 ````{exerciselist}
-````
+```
 
