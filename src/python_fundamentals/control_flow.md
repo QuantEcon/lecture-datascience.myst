@@ -79,7 +79,7 @@ make a single payment at the time of maturity.
 How much should you be willing to pay for a zero-coupon bond that paid
 100 in 10 years with an interest rate of 5%?
 
-```
+````
 
 ```{code-cell} python
 # your code here
@@ -234,7 +234,7 @@ Run the following two variations on the code with only a single change in the in
 
 After, modify the `x` to print `3` and then `2, 3` instead.
 
-```{code-cell} python
+```{code-block} python
 x = 1
 
 if x > 0:
@@ -243,7 +243,7 @@ if x > 0:
 print("3")
 ```
 
-```{code-cell} python
+```{code-block} python
 x = 1
 
 if x > 0:
@@ -252,7 +252,7 @@ print("2") # changed the indentation
 print("3")
 ```
 
-```
+````
 
 The next example shows us how `else` works.
 
@@ -301,7 +301,7 @@ current_time = datetime.datetime.now()
 
 more text after
 
-```
+````
 
 ````{exercise}
 **Exercise 4**
@@ -313,7 +313,7 @@ number.
 This also introduces a new package `numpy.random` for
 drawing random numbers (more in the [randomness](../scientific/randomness) lecture).
 
-```{code-cell} python
+```{code-block} python
 import numpy as np
 x = np.random.random()
 print(f"x = {x}")
@@ -321,7 +321,7 @@ print(f"x = {x}")
 ## your code here
 ```
 
-```
+````
 
 ### `elif` clauses
 
@@ -491,10 +491,8 @@ the college attendance decision.
 
 Should the student enroll in school if the discount rate is r = 0.05?
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
+
 # Discount rate
 r = 0.05
 
@@ -514,7 +512,7 @@ w_college = 50_000
 # Is npv_collegeworker - npv_collegecost > npv_hsworker
 ```
 
-```
+````
 
 When iterating, each `item` in `iterable` might actually contain more than
 one value.
@@ -560,17 +558,14 @@ a `zip` instead of an `enumerate`.
 
 *Hint*: try using `zip`
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 cities = ["Phoenix", "Austin", "San Diego", "New York"]
 states = ["Arizona", "Texas", "California", "New York"]
 
 # Your code here
 ```
 
-```
+````
 
 ### `while` Loops
 
@@ -657,7 +652,7 @@ many months would an employee need to stay for the company to find it
 profitable to pay for their employees to learn Python if their discount
 rate is r = 0.01?
 
-```{code-cell} python
+```{code-block} python
 # Define cost of teaching python
 cost = 25_000
 r = 0.01
@@ -675,7 +670,7 @@ while False: # (replace False with your condition here)
     # Increase total_npv
 ```
 
-```
+````
 
 ### `break` and `continue`
 
@@ -710,12 +705,12 @@ that is greater than 0.999 using a for loop and `break`.
 
 *Hint*: try iterating over `range(len(x))`.
 
-```{code-cell} python
+```{code-block} python
 x = np.random.rand(10_000)
 # Your code here
 ```
 
-```
+````
 
 #### `continue` to the Next Iteration
 
@@ -762,12 +757,12 @@ of `x` that are less than 0.5.
 *Hint*: Try starting your loop with `for value in x:` instead of
 iterating over the indices of `x`.
 
-```{code-cell} python
+```{code-block} python
 x = np.random.rand(10_000)
 # Your code here
 ```
 
-```
+````
 
 ## Comprehension
 
@@ -841,21 +836,18 @@ using a `zip` and a comprehension.
 
 *Hint*: try using `zip`
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 cities = ["Phoenix", "Austin", "San Diego", "New York"]
 states = ["Arizona", "Texas", "California", "New York"]
 
 # your code here
 ```
 
-```
+````
 
 Finally, we can use this approach to build complicated nested dictionaries.
 
-```{code-cell} python
+```{code-block} python
 gdp_data = [9.607, 10.48, 11.06]
 years = [2013, 2014, 2015]
 exports = [ {"manufacturing": 2.4, "agriculture": 1.5, "services": 0.5},
@@ -872,5 +864,5 @@ print(data_dict)
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

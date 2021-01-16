@@ -167,7 +167,7 @@ variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
 How could we check whether the numpy random numbers approximate these
 values?
 
-```
+````
 
 ### Discrete Distributions
 
@@ -472,11 +472,11 @@ determine the stationary distribution of our Markov chain.
 After doing your computation, think about the answer... think about why our transition
 probabilities must lead to this outcome.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 3**
@@ -502,7 +502,7 @@ You now have four tasks:
 1. Determine the average long run payment for a worker in this setting (hint, think
    about the stationary distribution).
 
-```{code-cell} python
+```{code-block} python
 # define components here
 
 # construct Markov chain
@@ -517,7 +517,7 @@ You now have four tasks:
 # Long-run average payment
 ```
 
-```
+````
 
 ### Continuous Distributions
 
@@ -605,14 +605,14 @@ Use `scipy.stats` to answer the following questions:
 - Which asset would you choose? Why? (Hint: There is not a single right answer here. Be creative
   and express your preferences)
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

@@ -201,10 +201,10 @@ Note that:
 Open this file in Jupyter by navigating to the QuantEcon Data Science folder that we downloaded
 earlier, then click on the `introduction` folder, and select the `getting_started.ipynb` file.
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

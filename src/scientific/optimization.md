@@ -404,7 +404,7 @@ Is it surprising that the demand for bananas is unaffected by the change in appl
 
 Why might this be?
 
-```
+````
 
 #### Satiation Point
 
@@ -437,7 +437,7 @@ Hint: You can no longer assume that the `A_bc` function is always binding, as we
 
 Hint: while not required, you can take this opportunity to play around with other scipy functions such as Scipy optimize <https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html>.
 
-```
+````
 
 ```{code-cell} python
 W = 10
@@ -458,5 +458,5 @@ p_C = 2
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

@@ -294,15 +294,11 @@ Some useful commands:
 In the *code* cell below (notice the `[ ]:` to the left) type a quote (`"`), your name,
 then another quote (`"`) and evaluate the cell
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
+# code here!
 ```
 
-> # code here!
-
-```
+````
 
 **Advanced Usage and Getting Help**
 
@@ -314,5 +310,5 @@ For more help with JupyterLab and Jupyter Notebook, see the user guides:
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

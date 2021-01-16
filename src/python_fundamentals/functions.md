@@ -338,11 +338,11 @@ returns_to_scale(1.0, 0.5, 2.0)
 What happens if we try different inputs in our Cobb-Douglas production
 function?
 
-```{code-cell} python
+```{code-block} python
 # Compute returns to scale with different values of `K` and `L` and `gamma`
 ```
 
-```
+````
 
 It turns out that with a little bit of algebra, we can check that this will
 always hold for our {ref}`Cobb-Douglas example <cobb_douglas_example>` above.
@@ -378,11 +378,11 @@ defined earlier.
 
 Hint: $\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
 
-```{code-cell} python
+```{code-block} python
 # Your code here.
 ```
 
-```
+````
 
 (marginal_products)=
 ### Multiple Returns
@@ -527,22 +527,16 @@ Confirm that it works by running the cell containing `returns_to_scale?` below.
 *Note*: You do not need to change the actual code in the function — just
 copy/paste and add a docstring in the correct line.
 
-```{code-cell} python
----
-tags: [raises-exception]
----
+```{code-block} python
 # re-define the `returns_to_scale` function here
 ```
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # test it here
 returns_to_scale?
 ```
 
-```
+````
 
 ### Default and Keyword Arguments
 
@@ -602,9 +596,11 @@ These can *only* be set by name.
 ```{code-block} python.
 ```
 
-> # Your code here.
-
+```{code-block} python.
+# Your code here.
 ```
+
+````
 
 In terms of variable scope, the `z` name within the function is
 different from any other `z` in the outer scope.
@@ -775,5 +771,5 @@ alphas = [0.2, 0.3, 0.5]
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

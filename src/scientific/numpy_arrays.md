@@ -207,7 +207,7 @@ Try indexing into another element of your choice from the
 Building an understanding of indexing means working through this
 type of operation several times -- without skipping steps!
 
-```
+````
 
 ````{exercise}
 **Exercise 2**
@@ -219,7 +219,7 @@ outer-most index correspond to?
 
 Write your thoughts.
 
-```
+````
 
 We can also select multiple elements at a time -- this is called slicing.
 
@@ -245,7 +245,7 @@ print(x_3d[:, 0, :2])  # the 0  in 0:2 is optional
 
 What would you do to extract the array `[[5, 6], [50, 60]]`?
 
-```
+````
 
 ### Array Functionality
 
@@ -343,7 +343,7 @@ Do you recall what multiplication by an integer did for lists?
 
 How does this differ?
 
-```
+````
 
 Operations between two arrays of the same size, in this case `(2, 2)`, simply apply the operation
 element-wise between the arrays.
@@ -434,7 +434,7 @@ You have two tasks:
 1. Define a numpy array `N` that contains all maturities between 1 and 10 (*hint* look at the `np.arange` function).
 1. Using the equation above, determine the bond prices of all maturity levels in your array.
 
-```{code-cell} python
+```{code-block} python
 i = 0.03
 M = 100
 C = 5
@@ -444,7 +444,7 @@ C = 5
 # price bonds here
 ```
 
-```
+````
 
 ### Other Useful Array Operations
 
@@ -522,5 +522,5 @@ When speed matters, directly write a `f` function to work on arrays.
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

@@ -186,27 +186,21 @@ Explain the behavior.
 HINT: When you are trying to explain use `y.append?` and `y.extend?` to
 see a description of what these methods are supposed to do.
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 y = ["a", "b", "c"]
 z = [1, 2, 3]
 # your code here
 print(y)
 ```
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 y = ["a", "b", "c"]
 z = [1, 2, 3]
 # your code here
 print(y)
 ```
 
-```
+````
 
 (inhomogenous_lists)=
 ### Lists of Different Types
@@ -295,21 +289,15 @@ list(r)
 
 Experiment with the other two versions of the `range` function.
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # try list(range(a, N)) -- you pick `a` and `N`
 ```
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # try list(range(a, N, d)) -- you pick `a`, `N`, and `d`
 ```
 
-```
+````
 
 ### What are Tuples?
 
@@ -367,35 +355,23 @@ Verify that tuples are indeed immutable by attempting the following:
 - Sorting `t`
 - Reversing `t`
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # change first element of t
 ```
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # appending to t
 ```
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # sorting t
 ```
 
-```{code-cell} python
----
-tags: [hide-output]
----
+```{code-block} python
 # reversing t
 ```
 
-```
+````
 
 Tuples (and lists) can be unpacked directly into variables.
 
@@ -534,11 +510,11 @@ and checking equality with `==`.
 HINT: You can see what the answer should look like by starting with
 `list(enumerate(foo))`.
 
-```{code-cell} python
+```{code-block} python
 foo = ("good", "luck!")
 ```
 
-```
+````
 
 An important quirk of some iterable types that are not lists (such as the above `zip`) is that
 you cannot convert the same type to a list twice.
@@ -625,11 +601,11 @@ Here are some tickers and a price.
 - GOOGL: 1047.43
 - TVIX: 8.38
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 This next example is meant to emphasize how values can be
 *anything* -- including another dictionary.
@@ -699,11 +675,11 @@ float, string, integer, list, and dict.  Choose any data you wish.
 
 To confirm, you should have a dictionary that you identified via a key.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 #### Common `dict` Functionality
 
@@ -753,12 +729,12 @@ china_data.get("death_rate", "Data Not Available")
 Use Jupyter's help facilities to learn how to use the `pop` method to
 remove the key `"irrigated_land"` (and its value) from the dict.
 
-```{code-cell} python
+```{code-block} python
 # uncomment and use the Inspector or ?
 #china_data.pop(
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 8**
@@ -767,11 +743,11 @@ Explain what happens to the value you popped.
 
 Experiment with calling `pop` twice.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ### Sets (Optional)
 
@@ -810,11 +786,11 @@ What happens?
 
 Why?
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 As with lists and tuples, we can check if something is `in` the set
 and check the set's length:
@@ -870,19 +846,19 @@ Consider the set `s` from above and the set
 Test out two of the operations described above using the original set we
 created, `s`, and the set created below `s2`.
 
-```{code-cell} python
+```{code-block} python
 s2 = {"hello", "world"}
 ```
 
-```{code-cell} python
+```{code-block} python
 # Operation 1
 ```
 
-```{code-cell} python
+```{code-block} python
 # Operation 2
 ```
 
-```
+````
 
 As with tuples and lists, a `set` function can convert other
 collections to sets.
@@ -910,5 +886,5 @@ tuple(s)
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

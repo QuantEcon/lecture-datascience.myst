@@ -93,7 +93,7 @@ z = z + 4
 print("z is", z)
 ```
 
-```
+````
 
 Keep in mind that the variable binds a name to something stored in memory.
 
@@ -169,7 +169,7 @@ What will it produce if we give it the variable `x`?
 
 Check whether you were right by running the code `len(x)`.
 
-```
+````
 
 JupyterLab also has a "Contextual Help" (previously called "Inspector") window.  To use,
 
@@ -310,12 +310,12 @@ function you found) to see information about that function and
 then call the function. (Hint: look for something to do with the word
 `local`).
 
-```{code-cell} python
+```{code-block} python
 import time
 # your code here -- notice the comment!
 ```
 
-```
+````
 
 ### Module Aliases
 
@@ -353,7 +353,7 @@ call the function you identified above.
 
 Does it work?
 
-```
+````
 
 ## Good Code Habits
 
@@ -415,11 +415,11 @@ Create the following variables:
 
 We will use them in a later exercise.
 
-```{code-cell} python
+```{code-block} python
 # your code here!
 ```
 
-```
+````
 
 ### Python as a Calculator
 
@@ -493,11 +493,11 @@ $$
 \text{PDV} = \frac{D}{(1 + r)^T}
 $$
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ### Other Math Functions
 
@@ -541,12 +541,12 @@ between the log of the two numbers ($\log(x) - \log(y)$).
 Use the numbers `x` and `y` below. (Hint: you will want to use the
 `math.log` function)
 
-```{code-cell} python
+```{code-block} python
 x = 1.05
 y = 1.02
 ```
 
-```
+````
 
 #### Floor/Modulus Division Operators
 
@@ -620,7 +620,7 @@ Can you fix it?
 *Hint*: Try creating a code cell below and testing things out until you
 find a solution.
 
-```
+````
 
 ### String Operations
 
@@ -665,7 +665,7 @@ Using the variables `x` and `y`, how could you create the sentence
 
 Hint: Think about how to represent a space as a string.
 
-```
+````
 
 ### String Methods
 
@@ -708,11 +708,11 @@ For the variable `test` below, use the `replace` method to change the
 Hint: Type `test.replace?` to get some help for how to use the method
 replace.
 
-```{code-cell} python
+```{code-block} python
 test = "abc"
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 11**
@@ -735,7 +735,7 @@ into a number.
 price = "$6.50"
 ```
 
-```
+````
 
 ### String Formatting
 
@@ -779,11 +779,11 @@ any valid expression within the `{}` braces.
 Lookup a country in [World Bank database](https://data.worldbank.org), and
 format a string showing the growth rate of GDP over the last 2 years.
 
-```
+````
 
 Alternatively, to reuse a formatted string, you can call the `format` method (noting that you do **not** put `f` in front).
 
-```{code-cell} python
+```{code-block} python
 gdp_string = "{country} had ${GDP} billion in {year}"
 
 gdp_string.format(country = "Vietnam", GDP = 223.9, year = 2017)
@@ -795,7 +795,7 @@ gdp_string.format(country = "Vietnam", GDP = 223.9, year = 2017)
 Instead of hard-coding the values above, try to use the `country`, `GDP` and
 `year` variables you previously defined.
 
-```
+````
 
 ````{exercise}
 **Exercise 14**
@@ -808,7 +808,7 @@ statements
 - "The 3rd quarter revenue was 100M"
 - "The 4th quarter revenue was 130M"
 
-```
+````
 
 For more information on what you can do with string formatting (there is *a lot*
 that can be done...), see the [official Python documentation](https://docs.python.org/3.6/library/string.html) on the subject.
@@ -963,11 +963,11 @@ x == y
 True and ((x < z) or (x < y))
 ```
 
-```{code-cell} python
+```{code-block} python
 # code here!
 ```
 
-```
+````
 
 ### `all` and `any`
 
@@ -995,34 +995,34 @@ Then evaluate the cell to check your intuitions.
 NOTE: For now, do not worry about what the `[` and `]` mean -- they
 allow us to create lists which we will learn about in an upcoming lecture.
 
-```{code-cell} python
+```{code-block} python
 all([True, True, True])
 ```
 
-```{code-cell} python
+```{code-block} python
 all([False, True, False])
 ```
 
-```{code-cell} python
+```{code-block} python
 all([False, False, False])
 ```
 
-```{code-cell} python
+```{code-block} python
 any([True, True, True])
 ```
 
-```{code-cell} python
+```{code-block} python
 any([False, True, False])
 ```
 
-```{code-cell} python
+```{code-block} python
 any([False, False, False])
 ```
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

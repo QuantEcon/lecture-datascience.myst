@@ -115,7 +115,7 @@ of 4 years and pay \$500 each year. Alice would like to retire if she
 can sell her assets for more than \$500,000. Use vector addition, scalar
 multiplication, and dot products to determine whether she can retire.
 
-```
+````
 
 ```{code-cell} python
 ---
@@ -264,11 +264,11 @@ y1 @ x4
 y2 @ x4
 ```
 
-```{code-cell} python
+```{code-block} python
 # testing area
 ```
 
-```
+````
 
 ### Other Linear Algebra Concepts
 
@@ -768,14 +768,14 @@ Compare the distribution above to the final values of a long simulation.
 
 If you multiply the distribution by 1,000,000 (the number of workers), do you get (roughly) the same number as the simulation?
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 
