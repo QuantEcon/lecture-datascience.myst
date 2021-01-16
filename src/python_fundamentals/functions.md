@@ -533,6 +533,7 @@ copy/paste and add a docstring in the correct line.
 
 ```{code-block} python
 # test it here
+
 returns_to_scale?
 ```
 
@@ -593,10 +594,7 @@ Experiment with the `sep` and `end` arguments to the `print` function.
 
 These can *only* be set by name.
 
-```{code-block} python.
-```
-
-```{code-block} python.
+```{code-block} python
 # Your code here.
 ```
 

@@ -79,11 +79,11 @@ make a single payment at the time of maturity.
 How much should you be willing to pay for a zero-coupon bond that paid
 100 in 10 years with an interest rate of 5%?
 
-````
-
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
+
+````
 
 (npv)=
 ### Net Present Value
