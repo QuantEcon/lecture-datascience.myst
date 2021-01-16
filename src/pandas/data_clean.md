@@ -84,11 +84,11 @@ The final error says, `TypeError: Could not convert #23#24... to numeric`.
 
 Convert the string below into a number.
 
-```{code-cell} python
+```{code-block} python
 c2n = "#39"
 ```
 
-```
+````
 
 ## String Methods
 
@@ -163,7 +163,7 @@ df["colors"].str.capitalize()
 Make a new column called `colors_upper` that contains the elements of
 `colors` with all uppercase letters.
 
-```
+````
 
 ## Type Conversions
 
@@ -222,7 +222,7 @@ Think about why this could be a bad idea of used without
 knowing what your data looks like. (Think about what happens when you
 apply it to the `"numbers"` column before replacing the `"#"`.)
 
-```
+````
 
 ## Missing Data
 
@@ -318,7 +318,7 @@ Hint: before you will be able to do any of these things you will need to
 make sure the `item_price` column has a numeric `dtype` (probably
 float)
 
-```
+````
 
 ## Appendix: Performance of `.str` Methods
 
@@ -355,5 +355,5 @@ We got the exact same result in a fraction of the time!
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

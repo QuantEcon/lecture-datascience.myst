@@ -362,11 +362,11 @@ level of column labels. This is ok.
 </div>
 ```
 
-```{code-cell} python
+```{code-block} python
 bball_wide
 ```
 
-```
+````
 
 ### Summary
 
@@ -426,7 +426,7 @@ above.
   (Hint: you might need to use both `stack` and another method from
   above)? Write your thoughts.
 
-```
+````
 
 ## `pivot` and `pivot_table`
 
@@ -566,7 +566,7 @@ bball.pivot_table(index="Year", columns="Player", values="Pts", aggfunc=[max, le
   `aggfunc=[np.max, np.min, len]`? Describe how Python produced
   each of the values in the resultant pivot table.
 
-```
+````
 
 ## Visualizing Reshaping
 
@@ -654,5 +654,5 @@ df_melted
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

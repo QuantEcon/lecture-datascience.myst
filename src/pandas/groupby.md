@@ -135,15 +135,15 @@ Write your thoughts.
 Hint: try `gbA.count()` or `gbA.mean()` if you can't decide what
 happened to the `NaN`.
 
-```{code-cell} python
+```{code-block} python
 df
 ```
 
-```{code-cell} python
+```{code-block} python
 gbA.sum()
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 2**
@@ -156,19 +156,19 @@ Pick three and evaluate them in the cells below.
 Does the output of each of these commands have the same features as the
 output of `gbA.sum()` from above? If not, what is different?
 
-```{code-cell} python
+```{code-block} python
 # method 1
 ```
 
-```{code-cell} python
+```{code-block} python
 # method 2
 ```
 
-```{code-cell} python
+```{code-block} python
 # method 3
 ```
 
-```
+````
 
 If we pass a list of strings to `groupby`, it will group based on
 unique combinations of values from all columns in the list.
@@ -274,32 +274,33 @@ that would appear in the result of the call to `.apply`.
 ````{exercise}
 **Exercise 3**
 
-{doc}`merge <merge>````{code-cell} python
+
+```{note} 
+This exercise has a few steps:
 ```
 
-```{code-cell} python
+1. Write a function that, given a DataFrame, computes each entry's
+deviation from the mean of its column.
+2. Apply the function to `gbA`.
+3. With your neighbor describe what the index and and columns are? Where
+are the group keys (the `A` column)?
+4. Determine the correct way to add these results back into `df` as
+new columns. (Hint: remember the {doc}`merge<merge>` lecture)
+
+```{code-block} python
+# write function here
+
+
+# apply function here
 ```
 
-> This exercise has a few steps:
-> 
-> 1. Write a function that, given a DataFrame, computes each entry's
-> deviation from the mean of its column.
-> 2. Apply the function to `gbA`.
-> 3. With your neighbor describe what the index and and columns are? Where
-> are the group keys (the `A` column)?
-> 4. Determine the correct way to add these results back into `df` as
-> new columns. (Hint: remember the  lecture)
-> 
-> # write function here
-> 
-> 
-> # apply function here# add output of function as new columns to df here...
-
-Note that if the group keys
-: remained in the index as the `.apply`'s output, the merge/join step would
-  have been complicated.
-
+```{code-block} python
+# add output of function as new columns to df here...
 ```
+
+Note that if the group keys remained in the index as the `.apply`'s output, the merge/join step would have been complicated.
+
+````
 
 ### `pd.Grouper`
 
@@ -473,11 +474,11 @@ Answer questions like:
 
 Write your thoughts.
 
-```{code-cell} python
+```{code-block} python
 # your code here if needed
 ```
 
-```
+````
 
 Let's summarize what we did:
 
@@ -560,15 +561,15 @@ def delay_type_plot(df, start, end):
 Verify that we wrote the functions properly by setting the arguments to
 appropriate values to replicate the plots from above.
 
-```{code-cell} python
+```{code-block} python
 # call mean_delay_plot here
 ```
 
-```{code-cell} python
+```{code-block} python
 # call delay_type_plot here
 ```
 
-```
+````
 
 Now let's look at that plot at a daily frequency. (Note that we need the
 figure to be a bit wider in order to see the dates.)
@@ -705,5 +706,5 @@ Good luck!
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

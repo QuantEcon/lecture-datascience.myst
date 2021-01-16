@@ -111,11 +111,11 @@ Looking at the displayed DataFrame above, can you identify the index? The column
 
 You can use the cell below to verify your visual intuition.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ## Dates in pandas
 
@@ -259,23 +259,23 @@ Do the following exercises in separate code cells below:
 - Classify each state as high or low volatility based on whether the
   variance of their unemployment is above or below 4.
 
-```{code-cell} python
+```{code-block} python
 # min unemployment rate by state
 ```
 
-```{code-cell} python
+```{code-block} python
 # median unemployment rate by state
 ```
 
-```{code-cell} python
+```{code-block} python
 # max unemployment rate across all states and Year
 ```
 
-```{code-cell} python
+```{code-block} python
 # low or high volatility
 ```
 
-```
+````
 
 ## Transforms
 
@@ -409,26 +409,26 @@ medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
    each classification in each month. Which month had the most states
    with high unemployment? What about medium and low?
 
-```{code-cell} python
+```{code-block} python
 # Part 1: Write a Python function to classify unemployment levels.
 ```
 
-```{code-cell} python
+```{code-block} python
 # Part 2: Pass your function from part 1 to applymap
 unemp_bins = unemp.applymap#replace this comment with your code!!
 ```
 
-```{code-cell} python
+```{code-block} python
 # Part 3: Count the number of times each state had each classification.
 
 ## then make a horizontal bar chart here
 ```
 
-```{code-cell} python
+```{code-block} python
 # Part 4: Apply the same transform from part 4, but to each date instead of to each state.
 ```
 
-```
+````
 
 ## Boolean Selection
 
@@ -629,10 +629,10 @@ print(msg.format(len(all_high), all_high.sum()))
   months in which the mean unemployment rate in our sample is greater
   than 7.
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 
