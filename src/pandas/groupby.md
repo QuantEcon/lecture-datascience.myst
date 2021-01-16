@@ -132,8 +132,10 @@ entries in column `C`?
 
 Write your thoughts.
 
-Hint: try `gbA.count()` or `gbA.mean()` if you can't decide what
+```{hint}
+Try `gbA.count()` or `gbA.mean()` if you can't decide what
 happened to the `NaN`.
+```
 
 ```{code-block} python
 df
@@ -285,7 +287,10 @@ deviation from the mean of its column.
 3. With your neighbor describe what the index and and columns are? Where
 are the group keys (the `A` column)?
 4. Determine the correct way to add these results back into `df` as
-new columns. (Hint: remember the {doc}`merge<merge>` lecture)
+new columns. 
+    - ```{hint}
+      Remember the {doc}`merge<merge>` lecture.
+      ```
 
 ```{code-block} python
 # write function here
@@ -683,19 +688,26 @@ There is more than one way to code this, but here are some suggested
 steps.
 
 1. Convert the `Day` column to have a `datetime` `dtype` instead
-   of object (Hint: use the `pd.to_datetime` function).
+   of object.
+    - ```{hint}
+      Use the `pd.to_datetime` function.
+      ```
 1. Add a new column that specifies the date associated with each
    customer's `"First-time"` order.
-    - Hint 1: You can do this with a combination of `groupby` and
+    - ```{hint}
+      You can do this with a combination of `groupby` and
       `join`.
-    - Hint 2: `customer_type` is always one of `Returning` and
-      `First-time`.
-    - Hint 3: Some customers don't have a
-      `customer_type == "First-time"` entry. You will need to set the
+      ```
+    - ```{hint}
+      `customer_type` is always one of `Returning` and `First-time`.
+      ```
+    - ```{hint}
+      Some customers don't have a `customer_type == "First-time"` entry. You will need to set the
       value for these users to some date that precedes the dates in the
       sample. After adding valid data back into `orders` DataFrame,
       you can identify which customers don't have a `"First-Time"`
       entry by checking for missing data in the new column.
+      ```
 1. You'll need to group by 3 things.
 1. You can apply one of the built-in aggregation functions to the GroupBy.
 1. After doing the aggregation, you'll need to use your reshaping skills to

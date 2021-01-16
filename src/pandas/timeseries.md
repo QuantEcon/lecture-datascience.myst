@@ -389,9 +389,12 @@ in the volume of trades (the `"Volume (BTC)"` column).
 
 Repeat the analysis at the bi-weekly and monthly frequencies.
 
-Hint 1: We have data at a *daily* frequency and one week is `7` days.
-
-Hint 2: Approximate a month by 30 days.
+```{hint}
+We have data at a *daily* frequency and one week is `7` days.
+```
+```{hint}
+Approximate a month by 30 days.
+```
 
 ```{code-block} python
 # your code here
