@@ -167,19 +167,19 @@ pass as `format` in order to parse the dates in the next three cells below.
 
 Test your work by passing your format string to `pd.to_datetime`.
 
-```{code-cell} python
+```{code-block} python
 christmas_str2 = "2017:12:25"
 ```
 
-```{code-cell} python
+```{code-block} python
 dbacks_win = "M:11 D:4 Y:2001 9:15 PM"
 ```
 
-```{code-cell} python
+```{code-block} python
 america_bday = "America was born on July 4, 1776"
 ```
 
-```
+````
 
 ### Multiple Dates
 
@@ -220,7 +220,7 @@ NAME's birthday is June 10, 1989 (a Saturday)
 
 (where the name and date are replaced by the appropriate values)
 
-```
+````
 
 ## Extracting Data
 
@@ -299,7 +299,7 @@ For each item in the list, extract the specified data from `btc_usd`:
 - April 25, 2015 to June 10, 2016
 - October 31, 2017
 
-```
+````
 
 ## Accessing Date Properties
 
@@ -393,11 +393,11 @@ Hint 1: We have data at a *daily* frequency and one week is `7` days.
 
 Hint 2: Approximate a month by 30 days.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ## Rolling Computations: `.rolling`
 
@@ -482,7 +482,7 @@ To make this decision, we want to know ...
 
 **Your answer here**
 
-```
+````
 
 To make the optimal decision, we need to know the maximum
 difference between the close price at the end of the window and the open
@@ -500,7 +500,7 @@ Do the following:
 
 How much money did you make? Compare with your neighbor.
 
-```{code-cell} python
+```{code-block} python
 def daily_value(df):
     # DELETE `pass` below and replace it with your code
     pass
@@ -510,7 +510,7 @@ rolling_btc = btc_usd.rolling("30d")
 # do steps 2-4 here
 ```
 
-```
+````
 
 ## Changing Frequencies: `.resample`
 
@@ -578,7 +578,7 @@ To make the optimal decision we need ...
 
 **Your answer here**
 
-```
+````
 
 To make the optimal decision we need to, for each month,
 compute the maximum value of the close price on any day minus the open
@@ -598,7 +598,7 @@ How much money did you make? Compare with your neighbor.
 
 Was this strategy more profitable than the previous one? By how much?
 
-```{code-cell} python
+```{code-block} python
 def monthly_value(df):
     # DELETE `pass` below and replace it with your code
     pass
@@ -608,7 +608,7 @@ resampled_btc = btc_usd.resample("MS")
 # Do steps 2-4 here
 ```
 
-```
+````
 
 ## Optional: API keys
 
@@ -631,5 +631,5 @@ If you plan to use Quandl more extensively, you should obtain your own personal 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 
