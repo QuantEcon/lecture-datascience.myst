@@ -499,8 +499,11 @@ You now have four tasks:
 1. Construct an instance of the quantecon MarkovChain by using the objects defined in part 1.
 1. Simulate the Markov chain 30 times for 50 time periods, and plot each chain over time (see
    helper code below).
-1. Determine the average long run payment for a worker in this setting (hint, think
-   about the stationary distribution).
+1. Determine the average long run payment for a worker in this setting
+
+```{hint}
+Think about the stationary distribution.
+```
 
 ```{code-block} python
 # define components here
@@ -602,8 +605,12 @@ Use `scipy.stats` to answer the following questions:
 - Which asset has the highest average returns?
 - Which asset has the highest median returns?
 - Which asset has the lowest coefficient of variation (standard deviation divided by mean)?
-- Which asset would you choose? Why? (Hint: There is not a single right answer here. Be creative
-  and express your preferences)
+- Which asset would you choose? Why? 
+
+```{hint}
+There is not a single right answer here. Be creative
+and express your preferences.
+```
 
 ```{code-block} python
 # your code here

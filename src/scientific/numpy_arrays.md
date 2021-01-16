@@ -431,7 +431,12 @@ In the code cell below, we have defined variables for `i`, `M` and `C`.
 
 You have two tasks:
 
-1. Define a numpy array `N` that contains all maturities between 1 and 10 (*hint* look at the `np.arange` function).
+1. Define a numpy array `N` that contains all maturities between 1 and 10 
+
+    ```{hint}
+    look at the `np.arange` function.
+    ```
+
 1. Using the equation above, determine the bond prices of all maturity levels in your array.
 
 ```{code-block} python
