@@ -376,7 +376,11 @@ Define a function named `var` that takes a list (call it `x`) and
 computes the variance. This function should use the mean function that we
 defined earlier.
 
-Hint: $\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
+```{hint}
+
+$\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
+
+```
 
 ```{code-block} python
 # Your code here.

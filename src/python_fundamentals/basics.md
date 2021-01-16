@@ -307,8 +307,12 @@ module that will display the **local** time.
 
 Use `time.FUNC_NAME?` (where `FUNC_NAME` is replaced with the
 function you found) to see information about that function and
-then call the function. (Hint: look for something to do with the word
-`local`).
+then call the function.
+
+```{hint} 
+Look for something to do with the word `local`
+
+```
 
 ```{code-block} python
 import time
@@ -487,11 +491,14 @@ Let's compute the present discounted value of a payment ($D$) made
 in $T$ years assuming an interest rate of 2.5%. Save this value to
 a new variable called `PDV` and print your output.
 
-Hint: The formula is
+```{hint}
+The formula is
 
 $$
 \text{PDV} = \frac{D}{(1 + r)^T}
 $$
+
+```
 
 ```{code-block} python
 # your code here
@@ -538,8 +545,12 @@ Verify the "trick" where the percent difference ($\frac{x - y}{x}$)
 between two numbers close to 1 can be well approximated by the difference
 between the log of the two numbers ($\log(x) - \log(y)$).
 
-Use the numbers `x` and `y` below. (Hint: you will want to use the
-`math.log` function)
+Use the numbers `x` and `y` below.
+
+```{hint}
+you will want to use the
+`math.log` function
+```
 
 ```{code-block} python
 x = 1.05
@@ -617,8 +628,10 @@ x = 'What's wrong with this string'
 
 Can you fix it?
 
-*Hint*: Try creating a code cell below and testing things out until you
+```{hint}
+Try creating a code cell below and testing things out until you
 find a solution.
+```
 
 ````
 
@@ -663,7 +676,9 @@ a - b
 Using the variables `x` and `y`, how could you create the sentence
 `Hello World`?
 
-Hint: Think about how to represent a space as a string.
+```{hint}
+Think about how to represent a space as a string.
+```
 
 ````
 
@@ -705,8 +720,10 @@ It substitutes all occurrences of a particular pattern with a different pattern.
 For the variable `test` below, use the `replace` method to change the
 `c` to a `d`.
 
-Hint: Type `test.replace?` to get some help for how to use the method
+```{hint}
+Type `test.replace?` to get some help for how to use the method
 replace.
+```
 
 ```{code-block} python
 test = "abc"
@@ -728,8 +745,10 @@ However, Python interprets the value as the string
 In this exercise, your task is to convert the variable `price` below
 into a number.
 
-*Hint*: Once the string is in a suitable format, you can call write
+```{hint}
+Once the string is in a suitable format, you can call write
 `float(clean_price)` to make it a number.
+```
 
 ```{code-block} python
 price = "$6.50"

@@ -290,7 +290,9 @@ Using the code cell below as a start, print `"Good afternoon"` if the
 
 Otherwise, do nothing.
 
-(Hint: Write some conditional based on `current_time.hour`.)
+```{hint}
+Write some conditional based on `current_time.hour`.
+```
 
 ```{code-block} python
 import datetime
@@ -556,7 +558,9 @@ Instead of the above, write a for loop that uses the lists of cities
 and states below to print the same "{city} is in {state}" using
 a `zip` instead of an `enumerate`.
 
-*Hint*: try using `zip`
+```{hint}
+Try using `zip`
+```
 
 ```{code-block} python
 cities = ["Phoenix", "Austin", "San Diego", "New York"]
@@ -703,7 +707,9 @@ print("The answer is", i)
 Try to find the index of the first value in `x`
 that is greater than 0.999 using a for loop and `break`.
 
-*Hint*: try iterating over `range(len(x))`.
+```{hint}
+try iterating over `range(len(x))`.
+```
 
 ```{code-block} python
 x = np.random.rand(10_000)
@@ -754,8 +760,10 @@ or equal to 0.5.
 Use the `continue` word to end the body of the loop early for all values
 of `x` that are less than 0.5.
 
-*Hint*: Try starting your loop with `for value in x:` instead of
+```{hint}
+Try starting your loop with `for value in x:` instead of
 iterating over the indices of `x`.
+```
 
 ```{code-block} python
 x = np.random.rand(10_000)
@@ -834,7 +842,9 @@ sin_x
 Returning to our previous example: print "{city} is in {state}" for each combination
 using a `zip` and a comprehension.
 
-*Hint*: try using `zip`
+```{hint}
+Try using `zip`
+```
 
 ```{code-block} python
 cities = ["Phoenix", "Austin", "San Diego", "New York"]
