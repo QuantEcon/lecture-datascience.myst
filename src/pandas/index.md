@@ -9,37 +9,11 @@ kernelspec:
   name: python3
 ---
 
-# pandas
+# Applications
 
-This section of the workshop covers data ingestion, cleaning,
-manipulation, analysis, and visualization in Python.
-
-We build on the skills learned in the {doc}`Python
-fundamentals <../python_fundamentals/index>` section and teach the
-[pandas](https://pandas.pydata.org) library.
-
-At the end of this section, you will be able to:
-
-- Access data stored in a variety of formats
-- Combine multiple datasets based on observations that link them
-  together
-- Perform custom operations on tables of data
-- Use the split-apply-combine method for analyzing sub-groups of data
-- Automate static analysis on changing data
-- Produce publication quality visualizations
-
-In the end, our goal with this section is to provide you the
-necessary skills to -- at a minimum -- **immediately** replicate your current
-data analysis workflow in Python with no loss of total (computer +
-human) time.
-
-This is a lower bound on the benefits you should expect to receive by
-studying this section.
-
-The expression "practice makes perfect" is especially true here.
-
-As you work with these tools, both the time to write and the time to run
-your programs will fall dramatically.
+In this part of the course, we will begin to apply the skills that you have learned. This
+includes using familiar tools in new applications and learning new tools that can be used for
+special types of analysis.
 
 ```{raw} html
 <div class="toctree">
@@ -48,15 +22,13 @@ your programs will fall dramatically.
 ```{tableofcontents}
 :maxdepth: 2
 
-pandas/intro
-pandas/basics
-pandas/the_index
-pandas/storage_formats
-pandas/data_clean
-pandas/reshape
-pandas/merge
-pandas/groupby
-pandas/timeseries
-pandas/matplotlib
+applications/visualization_rules
+applications/regression
+applications/recidivism
+applications/maps
+applications/classification
+applications/working_with_text
+applications/ml_in_economics
+applications/heterogeneity
 ```
 

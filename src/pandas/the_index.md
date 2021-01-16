@@ -168,7 +168,7 @@ What happens when you apply the `mean` method to `im_ex_tiny`?
 In particular, what happens to columns that have missing data? (HINT:
 also looking at the output of the `sum` method might help)
 
-```
+````
 
 ## Setting the Index
 
@@ -394,39 +394,39 @@ For each of the examples below do the following:
 
 Write your answers.
 
-```{code-cell} python
+```{code-block} python
 wdi.loc[["United States", "Canada"]]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc["United States"]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc[("United States", 2010), ["GDP", "Exports"]]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc[("United States", 2010)]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc[[("United States", 2010), ("Canada", 2015)]]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc[["United States", "Canada"], "GDP"]
 ```
 
-```{code-cell} python
+```{code-block} python
 wdi.loc["United States", "GDP"]
 ```
 
-```
+````
 
 ### Alignment with `MultiIndex`
 
@@ -446,7 +446,7 @@ Then see what happens when you do `wdi / my_df` or `my_df ** wdi`.
 Try changing the subset of rows in `my_df` and repeat until you
 understand what is happening.
 
-```
+````
 
 ### `pd.IndexSlice`
 
@@ -494,23 +494,23 @@ data from `df6`.
 (HINT: You will need to *swap* the order of the row slicing arguments
 within the `pd.IndexSlice`.)
 
-```{code-cell} python
+```{code-block} python
 wdi2 = df.set_index(["year", "country"])
 ```
 
-```{code-cell} python
+```{code-block} python
 # wdi.loc["United States"]
 ```
 
-```{code-cell} python
+```{code-block} python
 # wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
 ```
 
-```{code-cell} python
+```{code-block} python
 # wdi.loc[["United States", "Canada"], "GDP"]
 ```
 
-```
+````
 
 ### Multi-index Columns
 
@@ -546,7 +546,7 @@ wdiT.loc[:, (["United States", "Canada"], 2010)]
 Use `pd.IndexSlice` to extract all data from `wdiT` where the `year`
 level of the column names (the second level) is one of 2010, 2012, and 2014
 
-```
+````
 
 ## Re-setting the Index
 
@@ -571,19 +571,19 @@ learn how to do the following:
 - Completely throw away all levels of the index.
 - Remove the `country` of the index and *do not* keep it as a column.
 
-```{code-cell} python
+```{code-block} python
 # remove just year level and add as column
 ```
 
-```{code-cell} python
+```{code-block} python
 # throw away all levels of index
 ```
 
-```{code-cell} python
+```{code-block} python
 # Remove country from the index -- don't keep it as a column
 ```
 
-```
+````
 
 ## Choose the Index Carefully
 
@@ -631,5 +631,5 @@ correct index.
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

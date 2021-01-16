@@ -272,11 +272,11 @@ Use your new `merge` skills to answer the final question from above: What
 is the population density of each country? How much does it change over
 time?
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ## Arguments to `merge`
 
@@ -418,11 +418,11 @@ Will this happen for all pairs of DataFrames, or are `wdi2017_no_US` and
 Also compare `how="right"` and `how="outer"` and answer the same
 questions.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 3**
@@ -430,11 +430,11 @@ questions.
 Can you pick the correct argument for `how` such that `pd.merge(wdi2017, sq_miles,
 how="left")` is equal to `pd.merge(sq_miles, wdi2017, how=XXX)`?
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ### `df.merge(df2)`
 
@@ -641,11 +641,11 @@ the most rated books?
 
 Did you recognize any of the books?
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 Let's compute the average number of ratings for each book in our sample.
 
@@ -817,11 +817,11 @@ Be sure to describe things like:
 - What is the index?
 - Do any `NaN`s get introduced? If so, where? Why?
 
-```{code-cell} python
+```{code-block} python
 pd.concat([dfL, dfR], axis=1)
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 6**
@@ -830,17 +830,17 @@ Determine what happens when you run each of the two cells below.
 
 For each cell, answer the list of questions from the previous exercise.
 
-```{code-cell} python
+```{code-block} python
 # First code cell for above exercise
 pd.concat([dfL, dfL], axis=0)
 ```
 
-```{code-cell} python
+```{code-block} python
 # Second code cell for above exercise
 pd.concat([dfR, dfR], axis=1)
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 7**
@@ -850,10 +850,14 @@ how="right")` has more rows than either `dfL` or `dfR`.
 
 Run the cell below to see the output of that operation.
 
+```{code-block} python
+pd.merge(dfL, dfR, how="right")
 ```
+
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

@@ -159,15 +159,15 @@ What `type` of object is returned from that method?
 
 What methods does this object have?
 
-```{code-cell} python
+```{code-block} python
 # make plot here
 ```
 
-```{code-cell} python
+```{code-block} python
 # explore methods here
 ```
 
-```
+````
 
 You should have seen that the object returned by the `.plot` method is
 a matplotlib Axes.
@@ -241,7 +241,7 @@ an argument on the `plot` method to change the kind of plot).
 
 Google for how to set a title for a `Figure` object and then do so.
 
-```
+````
 
 ````{exercise}
 **Exercise 3**
@@ -262,7 +262,7 @@ Hint: You can browse the [official pandas plotting
 documentation](https://pandas.pydata.org/pandas-docs/stable/visualization.html)
 for inspiration.
 
-```
+````
 
 ## Data Cleaning
 
@@ -433,7 +433,7 @@ For your reference, record your findings in a markdown cell below.
 
 Hint: Use `to_plot.plot?` to pull up the docs.
 
-```
+````
 
 ### Subplot Spacing: `fig.tight_layout`
 
@@ -552,7 +552,7 @@ you remember them when you need them later on.
 - Remove the spines (the border on each Axes)
 - Add a white circle to (0, 100) on each Axes
 
-```
+````
 
 Let's continue and add tick labels to the right of the far right
 Axes.
@@ -768,5 +768,5 @@ properties as professional journalists do.
 ## Exercises
 
 ````{exerciselist}
-```
+````
 
