@@ -224,11 +224,10 @@ Create a draft of the alternative way to organize time and education -- that is,
 
 Why do you think they chose to organize the information as they did rather than this way?
 
-```
-
-```{code-cell} python
+```{code-block} python
 # Your code here
 ```
+````
 
 #### Fine-tune
 
@@ -824,7 +823,7 @@ ax.spines['top'].set_visible(False)
 Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.
 
-```{code-cell} python
+```{code-block} python
 ca_gdp = pd.Series(
     [5.2, 1.8, 3.0, 1.9, 3.1, 3.2, 2.8, 2.2, 1.0, -2.8, 3.2, 3.1, 1.7, 2.5, 2.9, 1.0, 1.4, 3.0],
     index=list(range(2000, 2018))
@@ -836,7 +835,7 @@ for side in ["right", "top", "left", "bottom"]:
     ax.spines[side].set_visible(False)
 ```
 
-```
+````
 
 #### Don't Use Color to Differentiate Small Objects
 
@@ -1428,5 +1427,5 @@ whether these changes improved the figures.
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

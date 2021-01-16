@@ -669,7 +669,7 @@ txt_low[:10]
 Use another classification method to predict incidents. Check whether
 your method outperforms the Naive Bayes classifier.
 
-```
+````
 
 Predicting deaths from forecast text is very difficult because deaths
 are so rare. A prediction exercise more likely to succeed would be to
@@ -816,7 +816,7 @@ well-separated.
 Apply LSA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
-```
+````
 
 ### Latent Dirichlet Analysis
 
@@ -859,7 +859,7 @@ lda_display
 Apply LDA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
-```
+````
 
 ````{exercise}
 **Exercise 4**
@@ -868,10 +868,10 @@ Use the reduced rank representation of text from LSA or LDA as a
 feature matrix to predict avalanche incidents. Compare the
 performance with the bag of words feature matrix.
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

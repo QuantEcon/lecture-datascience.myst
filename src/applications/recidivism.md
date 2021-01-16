@@ -519,12 +519,12 @@ for (_name, _coef) in zip(names, lr_model.coef_):
 
 What stands out to you about these coefficients?
 
-```{exercise}
+````{exercise}
 **Exercise 1**
 
 Can you develop a model that performs better at mimicking their risk scores?
 
-```
+````
 
 ### Binary Probability Models
 
@@ -769,18 +769,17 @@ along the 45 degree line.
 For dots below the 45 degree line, the algorithm is overpredicting
 recidivism.
 
-```{exercise}
+````{exercise}
 **Exercise 2**
 
 We made our calibration plot using a held-out test sample. What
 do you think would happen if made the calibration plot using the
 training sample? Check and see.
 
-```
-
-```{code-cell} python
+```{code-block} python
 # Create calibration plot using training data
 ```
+````
 
 The algorithm appears fairly well-calibrated.
 
@@ -1003,17 +1002,16 @@ As with COMPAS score, our predictions are well-calibrated, but the
 false negative and false positive rates are not well balanced across
 racial groups.
 
-```{exercise}
+````{exercise}
 **Exercise 3**
 
 Try to improve balance and/or calibration by creating an
 alternative prediction.
 
-```
-
-```{code-cell} python
+```{code-block} python
 # Fit your prediction model and plot calibration and balance
 ```
+````
 
 ### Regularizing to Maximize Balance
 
@@ -1116,13 +1114,13 @@ calibration_plot(bf_mod.best_estimator_.predict_proba(X_test)[:,1],y_test, df_te
 balance_threshold_plot(bf_mod.best_estimator_.predict_proba(X_test)[:,1],y_test, df_test);
 ```
 
-```{exercise}
+````{exercise}
 **Exercise 4**
 
 Modify the cross-validation scoring function to see how it affects
 calibration and balance.
 
-```
+````
 
 ### Tradeoffs are Inevitable
 
@@ -1143,6 +1141,6 @@ Improvements in balance necessarily make calibration worse.
 
 ## Exercises
 
-```{exerciselist}
-```
+````{exerciselist}
+````
 

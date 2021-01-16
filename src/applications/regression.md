@@ -222,7 +222,7 @@ When making the scatter for model predictions, we recommend passing
 `c="red"` and `alpha=0.25` so you can distinguish the data from
 predictions.
 
-```{code-cell} python
+```{code-block} python
 # Generate predictions
 
 # Plot
@@ -233,7 +233,7 @@ fig, ax = plt.subplots()
 # Make scatter of predictions
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 2**
@@ -243,13 +243,13 @@ function used by `sklearn` when it fits the model for us.
 
 Read the docstring to learn which the arguments that function takes.
 
-```{code-cell} python
+```{code-block} python
 from sklearn import metrics
 
 # your code here
 ```
 
-```
+````
 
 ### Multivariate Linear Regression
 
@@ -322,7 +322,7 @@ Compare the mean squared error for the `lr_model` and the `sqft_lr_model`.
 
 Which model has a better fit? Defend your choice.
 
-```
+````
 
 ### Nonlinear Relationships in Linear Regression
 
@@ -365,11 +365,11 @@ print(f"The mse changed from {old_mse:.4f} to {new_mse:.4f} by including our new
 Explore how you can improve the fit of the full model by adding additional
 features created from the existing ones.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 Determining which columns belong in $X$ is called *feature
 engineering* and is a large part of a machine learning practitioner's job.
@@ -640,7 +640,7 @@ Evaluate only the `LinearRegression` model on the full feature set and use
 the `model_selection.train_test_split` function with various values for
 `test_size`.
 
-```
+````
 
 ### Lasso in Econometrics
 
@@ -797,15 +797,14 @@ parameters.
 ````{exercise}
 **Exercise 6**
 
-Read the documentation for sklearn.tree.DecisionTreeRegressor and
+Read the documentation for `sklearn.tree.DecisionTreeRegressor` and
 then experiment with adjusting some regularization parameters to see how they
 affect the fitted tree.
 
-```
-
-```{code-cell} python
+```{code-block} python
 # plot trees when varying some regularization parameter(s)
 ```
+````
 
 ````{exercise}
 **Exercise 7**
@@ -813,11 +812,11 @@ affect the fitted tree.
 Fit a regression tree to the housing price data and use graphviz
 to visualize the decision graph.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 An advantage of regression trees (and random forests) is that they adapt
 automatically to feature scales and units.
@@ -895,17 +894,17 @@ Fit a random forest to the housing price data.
 
 Compare the MSE on a testing set to that of lasso.
 
-```{code-cell} python
+```{code-block} python
 # Fit random forest and compute MSE
 ```
 
 Produce a bar chart of feature importances for predicting house
 prices.
 
-```{code-cell} python
+```{code-block} python
 ```
 
-```
+````
 
 ## Neural Networks
 
@@ -993,7 +992,7 @@ def eval_mlp(X, ws, bs, f):
     return out@__ + __  # replace the __
 ```
 
-```
+````
 
 The loss or error function typically used when using an MLP for regression is
 our now familiar mean squared error loss function:
@@ -1105,11 +1104,11 @@ standard deviation.
 
 Verify that the transformed data has mean 0 and standard deviation 1.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 If we decide to scale our variables, we must remember to apply the same
 transformation at prediction time as we did when we fit the model.
@@ -1201,11 +1200,11 @@ Read the documentation for sklearn.neural_network.MLPRegressor and
 use the full housing data to experiment with how adjusting layer depth, width, and other
 regularization parameters affects prediction.
 
-```
-
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
+````
+
 
 ## References
 
@@ -1221,5 +1220,5 @@ Two good text books covering the above regression methods are
 ## Exercises
 
 ````{exerciselist}
-```
+````
 

@@ -169,7 +169,7 @@ What happens to the cutoff level of the `decile_score` when you change
 the classification threshold from 0.5 to 0.7? What about 0.3? Remember this
 idea -- we'll come back to it soon.
 
-```
+````
 
 ### Visualization: Decision Boundaries
 
@@ -267,7 +267,7 @@ clearest decision boundaries.
 
 Feed different `X` DataFrames into the `fit_and_plot_decision_boundary` function above.
 
-```
+````
 
 ## Model Evaluation
 
@@ -450,11 +450,11 @@ objective function, we would find the probability threshold value
 that makes the false positive and true positive rates as equal as
 possible.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 The ROC curve can also be used to do hyper-parameter selection for the model's
 parameters.
@@ -503,11 +503,11 @@ to `roc_auc`.
 Refer to the example in the {doc}`recidivism lecture <recidivism>` for how
 to use `model_selection.cross_val_score`.
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ## Neural Network Classifiers
 
@@ -580,11 +580,11 @@ Keep in mind other things, like the degree of overfitting and time required
 to estimate the model parameters. How do these compare to logistic
 regression?
 
-```{code-cell} python
+```{code-block} python
 # your code here
 ```
 
-```
+````
 
 ### Aside: Neural Network Toolboxes
 
@@ -734,7 +734,7 @@ Would your answer change if you worked at the Federal Reserve?
 What if you worked at a news company such as the Economist or the New York
 Times?
 
-```
+````
 
 ### How Many leads?
 
@@ -803,7 +803,7 @@ could you try to avoid overfitting?
 
 Use `make_train_data_varying_leads` function below to construct your model.
 
-```{code-cell} python
+```{code-block} python
 def make_train_data_varying_leads(indicators, rec, nlead):
     """
     Apply per-indicator leads to each indicator and join with recession data
@@ -853,7 +853,7 @@ def make_train_data_varying_leads(indicators, rec, nlead):
 # your code here!
 ```
 
-```
+````
 
 ````{exercise}
 **Exercise 8**
@@ -862,10 +862,10 @@ Experiment with different classifiers. Which ones perform better or worse?
 
 How accurate can you become for each accuracy metric (accuracy, precision, and recall)?
 
-```
+````
 
 ## Exercises
 
 ````{exerciselist}
-```
+````
 
