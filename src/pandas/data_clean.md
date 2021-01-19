@@ -74,8 +74,9 @@ It throws an error!
 
 Can you figure out why?
 
-Hint: When looking at error messages, start at the very
-bottom.
+```{hint}
+When looking at error messages, start at the very bottom.
+```
 
 The final error says, `TypeError: Could not convert #23#24... to numeric`.
 
@@ -314,9 +315,11 @@ We'd like you to use this data to answer the following questions.
 - How many missing items are there in this dataset? How many missing
   items in each column?
 
-Hint: before you will be able to do any of these things you will need to
+```{hint}
+Before you will be able to do any of these things you will need to
 make sure the `item_price` column has a numeric `dtype` (probably
-float)
+float).
+```
 
 ````
 

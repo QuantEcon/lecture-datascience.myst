@@ -253,9 +253,12 @@ Do the following exercises in separate code cells below:
 - What was the maximum unemployment rate across the states in our
   sample? What state did it happen in? In what month/year was this
   achieved?
-    - Hint 1: What Python type (not `dtype`) is returned by the
-      aggregation?
-    - Hint 2: Read documentation for the method `idxmax`
+    - ```{hint}
+      What Python type (not `dtype`) is returned by the aggregation?
+      ```
+    - ```{hint}
+      Read documentation for the method `idxmax`.
+      ```
 - Classify each state as high or low volatility based on whether the
   variance of their unemployment is above or below 4.
 
@@ -398,10 +401,12 @@ medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
 1. (Challenging) This exercise has multiple parts:
     1. Use another transform on `unemp_bins` to count how many
        times each state had each of the three classifications.
-        - Hint 1: Will this value counting function be a Series or scalar
-          transform?
-        - Hint 2: Try googling "pandas count unique value" or something
-          similar to find the right transform.
+        - ```{hint}
+          Will this value counting function be a Series or scalar transform?
+          ```
+        - ```{hint}
+          Try googling "pandas count unique value" or something similar to find the right transform.
+          ```
     1. Construct a horizontal bar chart of the number of occurrences of
        each level with one bar per state and classification (21 total
        bars).

@@ -165,8 +165,10 @@ that the result is missing (spelled `NaN`).
 
 What happens when you apply the `mean` method to `im_ex_tiny`?
 
-In particular, what happens to columns that have missing data? (HINT:
-also looking at the output of the `sum` method might help)
+In particular, what happens to columns that have missing data? 
+```{hint}
+Also looking at the output of the `sum` method might help.
+```
 
 ````
 
@@ -491,8 +493,10 @@ a few of the slicing examples from the previous exercise.
 For each of these examples, use `pd.IndexSlice` to extract the same
 data from `df6`.
 
-(HINT: You will need to *swap* the order of the row slicing arguments
-within the `pd.IndexSlice`.)
+```{hint}
+You will need to *swap* the order of the row slicing arguments
+within the `pd.IndexSlice`.
+```
 
 ```{code-block} python
 wdi2 = df.set_index(["year", "country"])

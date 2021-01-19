@@ -258,9 +258,11 @@ Some arguments you might consider exploring are:
 - `color`
 - `kind`
 
-Hint: You can browse the [official pandas plotting
+```{hint}
+You can browse the [official pandas plotting
 documentation](https://pandas.pydata.org/pandas-docs/stable/visualization.html)
 for inspiration.
+```
 
 ````
 
@@ -431,7 +433,9 @@ the documentation.
 
 For your reference, record your findings in a markdown cell below.
 
-Hint: Use `to_plot.plot?` to pull up the docs.
+```{hint}
+Use `to_plot.plot?` to pull up the docs.
+```
 
 ````
 

@@ -338,19 +338,27 @@ that order.
 
 Here are a few hints:
 
-- Think about what columns you will need to call `set_index` on so
+- ```{hint}
+  Think about what columns you will need to call `set_index` on so
   that their data ends up as labels (either in index or columns).
-- Leave other columns (e.g. the actual game stats) as actual columns so
+  ```
+- ```{hint}
+  Leave other columns (e.g. the actual game stats) as actual columns so
   their data can stay data during your reshaping.
+  ```
 
 Don't spend too much time on this... if you get stuck, open up **this**
 markdown cell, and you will see our answer hidden.
 
-**Hint**: You might need to add `.sort_index(axis=1)` after you are
+```{hint}
+You might need to add `.sort_index(axis=1)` after you are
 finished to get the columns in the same order.
+```
 
-**Hint**: You may not end up with a `variable` header on the second
+```{hint}
+You may not end up with a `variable` header on the second
 level of column labels. This is ok.
+```
 
 ```{raw} html
 <div style="display: none;">
@@ -423,8 +431,11 @@ above.
   differ from `bball.melt(id_vars=["Year", "Player"])`?
 - Consider the differences between `bball.stack` and `bball.melt`.
   Is there a way to make them generate the same output?
-  (Hint: you might need to use both `stack` and another method from
-  above)? Write your thoughts.
+  Write your thoughts.
+  - ```{hint}
+    You might need to use both `stack` and another method from
+    above
+    ```
 
 ````
 
