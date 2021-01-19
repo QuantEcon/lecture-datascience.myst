@@ -104,8 +104,8 @@ We can also use `@` to denote dot products (and matrix multiplication which we'l
 print("Dot product with @", x @ y)
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
@@ -244,8 +244,8 @@ print(y1 @ x1)
 Despite our options, we stick to using `@` because
 it is simplest to read and write.
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Which of the following operations will work and which will
 create errors because of size issues?
@@ -761,8 +761,8 @@ dist /= dist.sum()
 print(f"The distribution of workers is given by {dist}")
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Compare the distribution above to the final values of a long simulation.
 

@@ -395,8 +395,8 @@ ax.set_xlabel("Price of Apples")
 ax.legend()
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Try solving the constrained maximization problem by hand via the Lagrangian method.
 
@@ -423,8 +423,8 @@ $$
 
 To numerically calculate the maximum (which you can probably see through inspection), one must directly solve the constrained maximization problem.
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Using a similar approach to that of the apples/bananas example above, solve for the optimal
 basket of potato chips and chocolate bars when `W = 10`, `p_P = 1`, and `p_C = 2`.

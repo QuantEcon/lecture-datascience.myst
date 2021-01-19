@@ -158,8 +158,8 @@ ax[2].hist(draws_10000)
 fig.tight_layout()
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Wikipedia and other credible statistics sources tell us that the mean and
 variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
@@ -456,8 +456,8 @@ for t in range(10):
     x = mc.P.T @ x
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.
 
@@ -478,8 +478,8 @@ probabilities must lead to this outcome.
 
 ````
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Let's revisit the unemployment example from the {doc}`linear algebra lecture <applied_linalg>`.
 
@@ -587,8 +587,8 @@ ax.set_xlim((0, 20))
 ax.legend();
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Assume you have been given the opportunity to choose between one of three financial assets:
 

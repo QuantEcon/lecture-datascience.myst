@@ -198,8 +198,8 @@ print(x_3d[0, 1, 0])
 
 Success!
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Try indexing into another element of your choice from the
 3-dimensional array.
@@ -209,8 +209,8 @@ type of operation several times -- without skipping steps!
 
 ````
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Look at the 2-dimensional array `x_2d`.
 
@@ -240,8 +240,8 @@ print(x_3d[:, 0, 0:2])
 print(x_3d[:, 0, :2])  # the 0  in 0:2 is optional
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 What would you do to extract the array `[[5, 6], [50, 60]]`?
 
@@ -336,8 +336,8 @@ print("2 * x = ", 2 * x)
 print("x / 2 = ", x / 2)
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Do you recall what multiplication by an integer did for lists?
 
@@ -411,8 +411,8 @@ z = np.array([1,2,3])
 np.log(z) * z
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Let's revisit a bond pricing example we saw in {doc}`Control flow <../python_fundamentals/control_flow>`.
 
