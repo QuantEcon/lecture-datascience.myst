@@ -174,8 +174,8 @@ num_list.extend([20, 4])
 print(num_list)
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 In the first cell, try `y.append(z)`.
 
@@ -286,8 +286,8 @@ To turn the `range` into a list:
 list(r)
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Experiment with the other two versions of the `range` function.
 
@@ -346,8 +346,8 @@ t[0]  # still start counting at 0
 t[2]
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Verify that tuples are indeed immutable by attempting the following:
 
@@ -500,8 +500,8 @@ collection.
 Notice that the third item is `(2, 'c')` because
 `["a", "b", "c"][2]` is `'c'`
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 **Challenging** For the tuple `foo` below, use a combination of `zip`,
 `range`, and `len` to mimic `enumerate(foo)`.
@@ -594,8 +594,8 @@ will be strings, but we could also use numbers (`int`, or
 
 The values can be **any** type and different from each other.
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Create a new dict which associates stock tickers with its stock price.
 
@@ -670,8 +670,8 @@ china_data["unemployment"] = 4.051
 print(china_data)
 ```
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Look at the [World Factbook for Australia](https://www.cia.gov/-library/publications/the-world-factbook/geos/as.html)
 and create a dictionary with data containing the following types:
@@ -727,8 +727,8 @@ china_data.get("irrigated_land", "Data Not Available")
 china_data.get("death_rate", "Data Not Available")
 ```
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Use Jupyter's help facilities to learn how to use the `pop` method to
 remove the key `"irrigated_land"` (and its value) from the dict.
@@ -740,8 +740,8 @@ remove the key `"irrigated_land"` (and its value) from the dict.
 
 ````
 
-````{exercise}
-**Exercise 8**
+````{exercise} 8
+:nonumber:
 
 Explain what happens to the value you popped.
 
@@ -781,8 +781,8 @@ print("s has type", type(s))
 s
 ```
 
-````{exercise}
-**Exercise 9**
+````{exercise} 9
+:nonumber:
 
 Try creating a set with repeated elements (e.g. `{1, 2, 1, 2, 1, 2}`).
 
@@ -844,8 +844,8 @@ Consider the set `s` from above and the set
 - `s.symmetric_difference(s2)`: returns a set with all elements in
   only one of `s` and `s2`
 
-````{exercise}
-**Exercise 10**
+````{exercise} 10
+:nonumber:
 
 Test out two of the operations described above using the original set we
 created, `s`, and the set created below `s2`.
