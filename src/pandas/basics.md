@@ -104,8 +104,8 @@ When plotting, a DataFrame knows the column and index names.
 unemp.plot(figsize=(8, 6))
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Looking at the displayed DataFrame above, can you identify the index? The columns?
 
@@ -242,8 +242,8 @@ Notice that `agg` can also accept multiple functions at once.
 unemp.agg([min, max, high_or_low])
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Do the following exercises in separate code cells below:
 
@@ -387,8 +387,8 @@ To do this, we use the following pattern:
 Complete the exercise below to practice writing and using your own scalar
 transforms.
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Imagine that we want to determine whether unemployment was high (> 6.5),
 medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
@@ -619,8 +619,8 @@ msg = "Out of {} months, {} had high unemployment across all states"
 print(msg.format(len(all_high), all_high.sum()))
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 - For a single state of your choice, determine what the mean
   unemployment is during "Low", "Medium", and "High" unemployment times

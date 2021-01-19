@@ -320,8 +320,8 @@ levels to `unstack`.
 We needed to use this in our solution to the exercise below.
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 (*Warning*: This one is challenging):
 
@@ -420,8 +420,8 @@ other columns were put into two new columns:
 Using this method is an effective way to get our data in *tidy* form as noted
 above.
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 - What do you think would happen if we wrote `bball.melt(id_vars=["Year", "Player"])`
   rather than `bball.melt(id_vars=["Year", "Player", "Team", "TeamName"])`?
@@ -566,8 +566,8 @@ We can even pass multiple aggregation functions!
 bball.pivot_table(index="Year", columns="Player", values="Pts", aggfunc=[max, len])
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 - First, take a breath... That was a lot to take in.
 - Can you think of a reason to ever use `pivot` rather than

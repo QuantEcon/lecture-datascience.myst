@@ -160,8 +160,8 @@ only find a value in one DataFrame: the other value was missing.
 When pandas tries to add a number to something that is missing, it says
 that the result is missing (spelled `NaN`).
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 What happens when you apply the `mean` method to `im_ex_tiny`?
 
@@ -385,8 +385,8 @@ We can also restrict `.loc` to extract certain columns by doing:
 1. `df.loc[rows, ["GDP", "Consumption"]]`: return the rows specified by rows
    (see rules above) and only columns `GDP` and `Consumption`
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 For each of the examples below do the following:
 
@@ -437,8 +437,8 @@ The data alignment features we talked about above also apply to a
 
 The exercise below gives you a chance to experiment with this.
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Try setting `my_df` to some subset of the rows in `wdi` (use one of the
 `.loc` variations above).
@@ -481,8 +481,8 @@ Notice that the `:` in the first part of `[:, ["A", "D"]]`
 instructed pandas to give us rows for all values of the outer most index
 level and that the `:` just before `]` said grab all the columns.
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Below, we create `wdi2`, which is the same as `df4` except that the
 levels of the index are swapped.
@@ -544,8 +544,8 @@ wdiT.loc[:, ["United States", "Canada"]]
 wdiT.loc[:, (["United States", "Canada"], 2010)]
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Use `pd.IndexSlice` to extract all data from `wdiT` where the `year`
 level of the column names (the second level) is one of 2010, 2012, and 2014
@@ -565,8 +565,8 @@ sets the index of the returned DataFrame to the default of
 wdi.reset_index()
 ```
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Look up the documentation for the `reset_index` method and study it to
 learn how to do the following:

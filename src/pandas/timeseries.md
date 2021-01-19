@@ -159,8 +159,8 @@ The official [Python
 documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) contains a complete list of possible `%`something patterns that are accepted
 in the `format` argument.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 By referring to table found at the link above, figure out the correct argument to
 pass as `format` in order to parse the dates in the next three cells below.
@@ -206,8 +206,8 @@ For example,
 christmas.strftime("We love %A %B %d (also written %c)")
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Use `pd.to_datetime` to express the birthday of one of your friends
 or family members as a `datetime` object.
@@ -290,8 +290,8 @@ date for selection.
 btc_usd.loc["April 1, 2015":"April 10, 2015"]
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 For each item in the list, extract the specified data from `btc_usd`:
 
@@ -381,8 +381,8 @@ btc_usd.shift(-2).head()
 btc_usd.shift(-2).tail()
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Using the `shift` function, determine the week with the largest percent change
 in the volume of trades (the `"Volume (BTC)"` column).
@@ -457,8 +457,8 @@ def is_volatile(x):
 btc_small.rolling("2d").apply(is_volatile)
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Imagine that you have access to the [DeLorean time machine](https://en.wikipedia.org/wiki/DeLorean_time_machine)
 from "Back to the Future".
@@ -491,8 +491,8 @@ To make the optimal decision, we need to know the maximum
 difference between the close price at the end of the window and the open
 price at the start of the window.
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Do the following:
 
@@ -553,8 +553,8 @@ btc_usd.resample("2BQS").agg(["min", "max"])
 As with `groupby` and `rolling`, you can also provide custom
 functions to `.resample(...).agg` and `.resample(...).apply`
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Now suppose you still have access to the DeLorean, but the conditions are
 slightly different.
@@ -587,8 +587,8 @@ To make the optimal decision we need to, for each month,
 compute the maximum value of the close price on any day minus the open
 price on the first day of the month.
 
-````{exercise}
-**Exercise 8**
+````{exercise} 8
+:nonumber:
 
 Do the following:
 

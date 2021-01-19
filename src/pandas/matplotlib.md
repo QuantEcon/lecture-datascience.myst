@@ -149,8 +149,8 @@ plot to a file on your computer require methods on a `Figure`.
 Let's start by getting our hands dirty and practicing using these
 objects.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 **Exercise:** Using the `.plot` method, plot the opening share price
 for Apple's stock.
@@ -228,8 +228,8 @@ aapl[["Low", "High"]].plot(ax=axs2[1])
 fig2
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Using the `plt.subplots` function, make a Figure with a two-by-one
 grid of subplots (two rows, one column).
@@ -243,8 +243,8 @@ Google for how to set a title for a `Figure` object and then do so.
 
 ````
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Take 5 minutes to explore the different arguments to the DataFrame `.plot`
 method. Try to make a plot that is both good looking and interesting (
@@ -423,8 +423,8 @@ to_plot.plot(
 );
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Think about  what each of the argument we passed to `.plot` does.
 
@@ -534,8 +534,8 @@ for i in range(announcement_dates.shape[0]):
 fig
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 For each operation in the list below (copied from above), make a note
 of which functions/methods were called to achieve the result.

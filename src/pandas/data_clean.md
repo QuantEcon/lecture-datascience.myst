@@ -80,8 +80,8 @@ When looking at error messages, start at the very bottom.
 
 The final error says, `TypeError: Could not convert #23#24... to numeric`.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Convert the string below into a number.
 
@@ -158,8 +158,8 @@ df["colors"].str.contains("p")
 df["colors"].str.capitalize()
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Make a new column called `colors_upper` that contains the elements of
 `colors` with all uppercase letters.
@@ -208,8 +208,8 @@ df["numbers_numeric"].astype(str)
 df["numbers_numeric"].astype(float)
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Convert the column `"nums"` to a numeric type using `pd.to_numeric` and
 save it to the DataFrame as `"nums_tonumeric"`.
@@ -304,8 +304,8 @@ chipotle = qeds.data.load("chipotle_raw")
 chipotle.head()
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 We'd like you to use this data to answer the following questions.
 
