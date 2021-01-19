@@ -183,8 +183,10 @@ In the second cell try `y.extend(z)`.
 
 Explain the behavior.
 
-HINT: When you are trying to explain use `y.append?` and `y.extend?` to
+```{hint}
+When you are trying to explain use `y.append?` and `y.extend?` to
 see a description of what these methods are supposed to do.
+```
 
 ```{code-block} python
 y = ["a", "b", "c"]
@@ -507,8 +509,10 @@ Notice that the third item is `(2, 'c')` because
 Verify that your proposed solution is correct by converting each to a list
 and checking equality with `==`.
 
-HINT: You can see what the answer should look like by starting with
+```{hint}
+You can see what the answer should look like by starting with
 `list(enumerate(foo))`.
+```
 
 ```{code-block} python
 foo = ("good", "luck!")

@@ -449,9 +449,11 @@ What is the optimal basket if we expand the budget constraint to have `W = 150`?
 # Your code here
 ```
 
-Hint: You can no longer assume that the `A_bc` function is always binding, as we did before, and will need to check results more carefully.
+```{hint}
+You can no longer assume that the `A_bc` function is always binding, as we did before, and will need to check results more carefully.
 
-Hint: while not required, you can take this opportunity to play around with other scipy functions such as Scipy optimize <https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html>.
+While not required, you can take this opportunity to play around with other scipy functions such as Scipy optimize <https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html>.
+```
 
 ````
 
