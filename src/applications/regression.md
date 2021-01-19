@@ -205,8 +205,8 @@ logp_5000 = sqft_lr_model.predict([[5000]])[0]
 print(f"The model predicts a 5,000 sq. foot home would cost {np.exp(logp_5000):.2f} dollars")
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Use the `sqft_lr_model` that we fit to generate predictions for all data points
 in our sample.
@@ -235,8 +235,8 @@ fig, ax = plt.subplots()
 
 ````
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Use the `metrics.mean_squared_error` function to evaluate the loss
 function used by `sklearn` when it fits the model for us.
@@ -315,8 +315,8 @@ scatter_model(sqft_lr_model, X[["sqft_living"]], ax, color=colors[2])
 ax.legend(["data", "full model", "sqft model"])
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Compare the mean squared error for the `lr_model` and the `sqft_lr_model`.
 
@@ -359,8 +359,8 @@ old_mse = metrics.mean_squared_error(y, sqft_lr_model.predict(X2[["sqft_living"]
 print(f"The mse changed from {old_mse:.4f} to {new_mse:.4f} by including our new feature")
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Explore how you can improve the fit of the full model by adding additional
 features created from the existing ones.
@@ -630,8 +630,8 @@ The `sklearn` function `model_selection.train_test_split` will do this for you:
 X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.25)
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Experiment with how the size of the holdout dataset can impact a diagnosis
 of overfitting.
@@ -794,8 +794,8 @@ In the above description, the minimum leaf size, maximum tree depth, and
 $\alpha$ in the pruning step serve as regularization
 parameters.
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Read the documentation for `sklearn.tree.DecisionTreeRegressor` and
 then experiment with adjusting some regularization parameters to see how they
@@ -806,8 +806,8 @@ affect the fitted tree.
 ```
 ````
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Fit a regression tree to the housing price data and use graphviz
 to visualize the decision graph.
@@ -887,8 +887,8 @@ feature resulted in larger MSE decreases.
 forest.feature_importances_
 ```
 
-````{exercise}
-**Exercise 8**
+````{exercise} 8
+:nonumber:
 
 Fit a random forest to the housing price data.
 
@@ -964,8 +964,8 @@ where the $\cdots$ represents layers 3 to $N$.
 Notice the pattern of a linear regression ($(\cdot) w + b$),
 followed by applying an activation function ($f$) at each step.
 
-````{exercise}
-**Exercise 9**
+````{exercise} 9
+:nonumber:
 
 In the pseudocode below, fill in the blanks for the generic MLP.
 
@@ -1096,8 +1096,8 @@ observations have a mean of 0 and a standard deviation of 1.
 
 This is known as scaling or normalizing the inputs.
 
-````{exercise}
-**Exercise 10**
+````{exercise} 10
+:nonumber:
 
 Scale all variables in `X` by subtracting their mean and dividing by the
 standard deviation.
@@ -1193,8 +1193,8 @@ We'll discuss a few of them here.
   networks, the various approaches to regularization should be studied and evaluated,
   especially when building networks used for decision-making.
 
-````{exercise}
-**Exercise 11**
+````{exercise} 11
+:nonumber:
 
 Read the documentation for sklearn.neural_network.MLPRegressor and
 use the full housing data to experiment with how adjusting layer depth, width, and other

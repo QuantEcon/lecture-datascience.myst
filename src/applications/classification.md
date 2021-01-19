@@ -159,8 +159,8 @@ recidivism".
 
 Then, the positive coefficient on `decile_score` means that there is some cutoff score above which all individuals will be labeled as high-risk.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Determine the level of this cutoff value. Recall that the COMPAS
 score takes on integer values between 1 and 10, inclusive.
@@ -259,8 +259,8 @@ This is likely caused by two things:
 1. Drawing a straight line (linear) that perfectly separates
    true observations from the false is impossible.
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Experiment with different pairs of features to see which ones show the
 clearest decision boundaries.
@@ -426,8 +426,8 @@ predicts recidivism, recidivism will likely occur -- in other words,
 we would favor a high true positive rate even if the false positive rate is
 higher.
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Use the `metrics.roc_curve` function to determine an appropriate value
 for the probability threshold, keeping in mind our preference for
@@ -483,8 +483,8 @@ print(f"Initial AUC value is {auc:.4f}")
 # help(linear_model.LogisticRegression)
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 The `LogisticRegression` class with default arguments implements the
 regression including `l2` regularization (it penalizes coefficient
@@ -564,8 +564,8 @@ interpretability.
 
 For a more detailed discussion, review the {doc}`regression lecture <regression>`.
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Use a multi-layer perceptron in our recidivism example via the `neural_network.MLPClassifier` class.
 
@@ -723,8 +723,8 @@ fig.tight_layout();
 For each of the chosen variables, you can see that the leading indicator
 has a distinct move in periods leading up to a recession (noted by the grey bands in background).
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Let's pause here to take a few minutes and digest.
 
@@ -794,8 +794,8 @@ different number of periods before the recession hits.
 
 The exercise below asks you to explore this idea.
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Extend the logic from the previous example and allow a different number
 of leading periods for each variable.
@@ -857,8 +857,8 @@ def make_train_data_varying_leads(indicators, rec, nlead):
 
 ````
 
-````{exercise}
-**Exercise 8**
+````{exercise} 8
+:nonumber:
 
 Experiment with different classifiers. Which ones perform better or worse?
 

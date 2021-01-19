@@ -663,8 +663,8 @@ txt_low = [(_,x) for _, x in sorted(zip(phat,docs), key=lambda pair: pair[0])]
 txt_low[:10]
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Use another classification method to predict incidents. Check whether
 your method outperforms the Naive Bayes classifier.
@@ -810,8 +810,8 @@ From this plot, we can immediately see two things. First, most documents
 are closest to topic 0. Second, most topics are not
 well-separated.
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Apply LSA to the weather or snowpack descriptions. Can you notice
 any patterns?
@@ -853,16 +853,16 @@ lda_display = pyLDAvis.gensim.prepare(ldamodel, bow_data, dictionary)
 lda_display
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Apply LDA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
 ````
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Use the reduced rank representation of text from LSA or LDA as a
 feature matrix to predict avalanche incidents. Compare the
