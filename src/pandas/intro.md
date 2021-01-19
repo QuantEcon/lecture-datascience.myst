@@ -154,8 +154,8 @@ unemp.loc[1995]
 unemp.loc[[1995, 2005, 2015]]
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 For each of the following exercises, we recommend reading the documentation
 for help.
@@ -301,8 +301,8 @@ unemp_region.West.corr(unemp_region["MidWest"])
 unemp_region.corr()
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 For each of the following, we recommend reading the documentation for help.
 

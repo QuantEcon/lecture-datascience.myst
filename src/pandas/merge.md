@@ -265,8 +265,8 @@ wdi_pop["GDP"] / wdi_pop["Population"]
 wdi_pop["Consumption"] / wdi_pop["Population"]
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Use your new `merge` skills to answer the final question from above: What
 is the population density of each country? How much does it change over
@@ -404,8 +404,8 @@ pd.merge(wdi2017_no_US, sq_miles, on="country", how="inner")
 pd.merge(wdi2017_no_US, sq_miles_no_germany, on="country", how="outer")
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Compare the `how="left"` with `how="inner"` options using the
 DataFrames `wdi2017_no_US` and `sq_miles_no_germany`.
@@ -424,8 +424,8 @@ questions.
 
 ````
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Can you pick the correct argument for `how` such that `pd.merge(wdi2017, sq_miles,
 how="left")` is equal to `pd.merge(sq_miles, wdi2017, how=XXX)`?
@@ -630,8 +630,8 @@ rated books on Goodreads.
 
 I wonder what the bottom of the distribution looks like...
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Repeat the analysis above to determine the average rating for the books with the
 *least* number ratings.
@@ -805,8 +805,8 @@ pd.merge(dfL, dfR, on="Key", how="right")
 
 ### Exercises With Artificial Data
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 In writing, describe what the output looks like when you do
 `pd.concat([dfL, dfR], axis=1)` (see above and/or run the cell below).
@@ -823,8 +823,8 @@ pd.concat([dfL, dfR], axis=1)
 
 ````
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Determine what happens when you run each of the two cells below.
 
@@ -842,8 +842,8 @@ pd.concat([dfR, dfR], axis=1)
 
 ````
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Describe in words why the output of `pd.merge(dfL, dfR,
 how="right")` has more rows than either `dfL` or `dfR`.

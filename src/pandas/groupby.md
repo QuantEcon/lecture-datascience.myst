@@ -122,8 +122,8 @@ gbA.get_group(2)
 We can *apply* some of our favorite aggregation functions directly on the
 `GroupBy` object.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Look closely at the output of the cells below.
 
@@ -147,8 +147,8 @@ gbA.sum()
 
 ````
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Use introspection (tab completion) to see what other aggregations are
 defined for GroupBy objects.
@@ -273,8 +273,8 @@ DataFrame returned by `smallest_by_b`.
 Had our function returned something other than the index from `df`,
 that would appear in the result of the call to `.apply`.
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 
 ```{note} 
@@ -466,8 +466,8 @@ for agg in ["mean", "sum", "positive"]:
 #     fig.tight_layout();
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Think about what is shown in the the plots above.
 
@@ -560,8 +560,8 @@ def delay_type_plot(df, start, end):
 #         fig.tight_layout();
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Verify that we wrote the functions properly by setting the arguments to
 appropriate values to replicate the plots from above.
