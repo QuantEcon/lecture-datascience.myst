@@ -217,8 +217,8 @@ for (i, year) in enumerate(df.year.unique()):
     ax[i].set_title(str(year))
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Create a draft of the alternative way to organize time and education -- that is, have two subplots (one for each education level) and four groups of points (one for each year).
 
@@ -817,8 +817,8 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.
