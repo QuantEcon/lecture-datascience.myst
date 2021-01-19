@@ -332,8 +332,8 @@ def returns_to_scale(K, L, gamma):
 returns_to_scale(1.0, 0.5, 2.0)
 ```
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 What happens if we try different inputs in our Cobb-Douglas production
 function?
@@ -369,8 +369,8 @@ $$
 Note that if $\alpha_2 = 1 - \alpha_1$, this is our Cobb-Douglas
 production function.
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Define a function named `var` that takes a list (call it `x`) and
 computes the variance. This function should use the mean function that we
@@ -521,8 +521,8 @@ nontrivial functions.
 This is in the same spirit as adding comments to your code — it makes it easier
 for future readers/users (including yourself) to understand what the code does.
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Redefine the `returns_to_scale` function and add a docstring.
 
@@ -591,8 +591,8 @@ Here's how to do that with our `cobb_douglas` example.
 cobb_douglas(1.0, 0.5, z = 1.5)
 ```
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Experiment with the `sep` and `end` arguments to the `print` function.
 

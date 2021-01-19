@@ -69,8 +69,8 @@ consuming 1.00 today and $(1+r)(1+r) = 1.21$ dollars two years from now
 Inverting this formula, 1 delivered two years from now is equivalent to
 $\frac{1}{(1+r)^2}$ today.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 Government bonds are often issued as *zero-coupon bonds* meaning that they
 make no payments throughout the entire time that they are held, but, rather
@@ -227,8 +227,8 @@ if val is True: # check an expression
 print("Code runs after 'if' block, regardless of val")
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Run the following two variations on the code with only a single change in the indentation.
 
@@ -282,8 +282,8 @@ if 1 < 2:
     print("1 < 2")
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 Using the code cell below as a start, print `"Good afternoon"` if the
 `current_time` is past noon.
@@ -305,8 +305,8 @@ more text after
 
 ````
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 In this example, you will generate a random number between 0 and 1
 and then display "x > 0.5" or "x < 0.5" depending on the value of the
@@ -470,8 +470,8 @@ When the for loop is executed, `item` will take on one value from `iterable`
 at a time and execute the loop body for each value.
 
 (human_capital_application)=
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 In economics, when an individual has some knowledge, skills, or education
 which provides them with a source of future income, we call it [human
@@ -551,8 +551,8 @@ for index, city in enumerate(cities):
     print(f"{city} is in {state}")
 ```
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Instead of the above, write a for loop that uses the lists of cities
 and states below to print the same "{city} is in {state}" using
@@ -642,8 +642,8 @@ while i < 3:
 print("done")
 ```
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Companies often invest in training their employees to raise their
 productivity. Economists sometimes wonder why companies
@@ -701,8 +701,8 @@ for i in range(1001):
 print("The answer is", i)
 ```
 
-````{exercise}
-**Exercise 8**
+````{exercise} 8
+:nonumber:
 
 Try to find the index of the first value in `x`
 that is greater than 0.999 using a for loop and `break`.
@@ -751,8 +751,8 @@ for i in range(1, 11):
     print(i, "is an odd number!")
 ```
 
-````{exercise}
-**Exercise 9**
+````{exercise} 9
+:nonumber:
 
 Write a for loop that adds up all values in `x` that are greater than
 or equal to 0.5.
@@ -836,8 +836,8 @@ sin_x = [math.sin(x_val) for x_val in x]
 sin_x
 ```
 
-````{exercise}
-**Exercise 10**
+````{exercise} 10
+:nonumber:
 
 Returning to our previous example: print "{city} is in {state}" for each combination
 using a `zip` and a comprehension.

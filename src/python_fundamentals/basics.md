@@ -82,8 +82,8 @@ First, the right side of the equal sign is computed.
 Then, that computed value is stored as the variable to the left of the
 equal sign.
 
-````{exercise}
-**Exercise 1**
+````{exercise} 1
+:nonumber:
 
 What do you think the value of `z` is after running the code below?
 
@@ -160,8 +160,8 @@ Depending on how you launched Jupyter, this will either launch
 # print? # remove the comment and <Shift-Enter>
 ```
 
-````{exercise}
-**Exercise 2**
+````{exercise} 2
+:nonumber:
 
 Read about out what the `len` function does (by writing len?).
 
@@ -297,8 +297,8 @@ import sys   # for dealing with your computer's system
 sys.version  # information about the Python version in use
 ```
 
-````{exercise}
-**Exercise 3**
+````{exercise} 3
+:nonumber:
 
 We can use our introspection skills to investigate a package's contents.
 
@@ -349,8 +349,8 @@ to the common ones.
 
 You will learn what these common ones are over time.
 
-````{exercise}
-**Exercise 4**
+````{exercise} 4
+:nonumber:
 
 Try running `import time as t` in the cell below, then see if you can
 call the function you identified above.
@@ -408,8 +408,8 @@ zf = 1230.5  # Notice -- There are no commas!
 zf2 = 1_230.5  # If needed, we use `_` to separate numbers for readability
 ```
 
-````{exercise}
-**Exercise 5**
+````{exercise} 5
+:nonumber:
 
 Create the following variables:
 
@@ -482,8 +482,8 @@ What do you think `z1` is?
 
 How about `z2`?
 
-````{exercise}
-**Exercise 6**
+````{exercise} 6
+:nonumber:
 
 Remember the variables we created earlier?
 
@@ -538,8 +538,8 @@ Now, we can use `math.[TAB]` to see what functions are available to us.
 math.sin(2.5)
 ```
 
-````{exercise}
-**Exercise 7**
+````{exercise} 7
+:nonumber:
 
 Verify the "trick" where the percent difference ($\frac{x - y}{x}$)
 between two numbers close to 1 can be well approximated by the difference
@@ -617,8 +617,8 @@ its answer to `str`.
 type("this is a string")
 ```
 
-````{exercise}
-**Exercise 8**
+````{exercise} 8
+:nonumber:
 
 The code below is invalid Python code
 
@@ -670,8 +670,8 @@ a * b
 a - b
 ```
 
-````{exercise}
-**Exercise 9**
+````{exercise} 9
+:nonumber:
 
 Using the variables `x` and `y`, how could you create the sentence
 `Hello World`?
@@ -709,8 +709,8 @@ x.count("l")  # Counts number of a particular string
 x.count("ll")
 ```
 
-````{exercise}
-**Exercise 10**
+````{exercise} 10
+:nonumber:
 
 One of our favorite (and most frequently used) string methods is
 `replace`.
@@ -731,8 +731,8 @@ test = "abc"
 
 ````
 
-````{exercise}
-**Exercise 11**
+````{exercise} 11
+:nonumber:
 
 Suppose you are working with price data and encounter the value
 `"$6.50"`.
@@ -792,8 +792,8 @@ print(my_string)
 In these cases, the `f` in front of the string causes Python interpolate
 any valid expression within the `{}` braces.
 
-````{exercise}
-**Exercise 12**
+````{exercise} 12
+:nonumber:
 
 Lookup a country in [World Bank database](https://data.worldbank.org), and
 format a string showing the growth rate of GDP over the last 2 years.
@@ -808,16 +808,16 @@ gdp_string = "{country} had ${GDP} billion in {year}"
 gdp_string.format(country = "Vietnam", GDP = 223.9, year = 2017)
 ```
 
-````{exercise}
-**Exercise 13**
+````{exercise} 13
+:nonumber:
 
 Instead of hard-coding the values above, try to use the `country`, `GDP` and
 `year` variables you previously defined.
 
 ````
 
-````{exercise}
-**Exercise 14**
+````{exercise} 14
+:nonumber:
 
 Create a new string and use formatting to produce each of the following
 statements
@@ -949,8 +949,8 @@ False or False
 True and (False or True)
 ```
 
-````{exercise}
-**Exercise 15**
+````{exercise} 15
+:nonumber:
 
 Without typing the commands, determine whether the following statements are
 true or false.
@@ -1003,8 +1003,8 @@ is `True` and returns `False` otherwise.
 
 The exercise below will give you a chance to practice.
 
-````{exercise}
-**Exercise 16**
+````{exercise} 16
+:nonumber:
 
 For each of the code cells below, think carefully about what you expect to
 be returned *before* evaluating the cell.

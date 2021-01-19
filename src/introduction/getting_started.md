@@ -288,9 +288,8 @@ Some useful commands:
 - You can evaluate a cell by pressing `Shift + Enter` (meaning `Shift` and `Enter` at
   the same time)
 
-````{exercise}
-**Exercise 1**
-
+````{exercise} 1
+:nonumber:
 In the *code* cell below (notice the `[ ]:` to the left) type a quote (`"`), your name,
 then another quote (`"`) and evaluate the cell
 
