@@ -31,9 +31,6 @@ kernelspec:
 
 - US state unemployment data from Bureau of Labor Statistics
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```

@@ -22,9 +22,6 @@ kernelspec:
 - Understand how to select subsets of data by slicing on index and columns
 - Understand that for DataFrames, the column names also align data
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```

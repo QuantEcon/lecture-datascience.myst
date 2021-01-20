@@ -25,9 +25,6 @@ kernelspec:
 
 - Results for all NFL games between September 1920 to February 2017
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```
