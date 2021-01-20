@@ -23,9 +23,6 @@ kernelspec:
 - Understand how economists use machine learning in
   academic research
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```

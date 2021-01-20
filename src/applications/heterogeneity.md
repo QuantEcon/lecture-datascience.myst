@@ -52,9 +52,6 @@ might be heterogeneous. That is, different people could be affected by
 the experiment differently. We will use machine learning methods to
 explore this heterogeneity in treatment effects.
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Background and Data
 

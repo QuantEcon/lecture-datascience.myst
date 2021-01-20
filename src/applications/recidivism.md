@@ -26,9 +26,6 @@ kernelspec:
 - See an end-to-end data science exercise
 - Application of regression
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```

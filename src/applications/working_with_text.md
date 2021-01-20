@@ -28,9 +28,6 @@ kernelspec:
 - Use folium to create an interactive map
 - Request and combine json data from a web server
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```

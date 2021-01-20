@@ -29,9 +29,6 @@ kernelspec:
 - Understand the basics of the multi-layer perceptron
 - Use scikit-learn to fit linear regression, lasso, regression forests, and multi-layer perceptron to data on housing prices near Seattle, WA
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```

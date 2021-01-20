@@ -23,9 +23,6 @@ kernelspec:
 
 - Use geopandas to create maps
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```

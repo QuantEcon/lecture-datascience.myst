@@ -24,9 +24,6 @@ kernelspec:
 - Know when to use each of the core plots
 - Introductory ability to make effective visualizations
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```
