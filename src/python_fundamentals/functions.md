@@ -28,9 +28,6 @@ kernelspec:
     - Know why we use functions
     - Understand scoping rules and blocks
 
-```{contents} Outline
-:depth: 2
-```
 
 (production_functions)=
 ## Application: Production Functions

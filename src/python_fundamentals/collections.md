@@ -33,11 +33,7 @@ kernelspec:
     - Understand how a set differs from a list and a tuple
     - Know when to use a set vs a list or a tuple
 
-**Outline**
 
-```{contents} Contents
-:depth: 2
-```
 
 ## Ordered Collections
 

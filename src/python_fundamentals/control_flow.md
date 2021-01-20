@@ -30,9 +30,6 @@ kernelspec:
     - Be able to write `for` and `while` loops
     - Understand the keywords `break` and `continue`
 
-```{contents} Outline
-:depth: 2
-```
 
 (deterministic_asset_pricing)=
 ## Net Present Values and Asset Pricing
