@@ -24,9 +24,6 @@ kernelspec:
 - Understand the basics of Markov chains and using the `quantecon` library to study them
 - Simulate discrete and continuous random variables and processes
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```

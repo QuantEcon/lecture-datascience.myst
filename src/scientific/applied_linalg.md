@@ -21,9 +21,6 @@ kernelspec:
 - Apply concepts to understanding unemployment and pricing portfolios
 - Use `numpy` to do linear algebra operations
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```
