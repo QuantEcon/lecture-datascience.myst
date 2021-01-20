@@ -25,9 +25,7 @@ kernelspec:
 - Be able to open a Jupyter notebook in JupyterLab
 - Know Jupyter Notebook basics: cell modes, editing/evaluating cells
 
-```{contents} Outline
-:depth: 2
-```
+
 
 ## Welcome
 

@@ -12,9 +12,6 @@ kernelspec:
 (troubleshooting)=
 # Troubleshooting
 
-```{contents} Contents
-:depth: 2
-```
 
 This troubleshooting page is to help ensure your environment is setup correctly
 to run this lecture. You can follow [cloud setup instructions](https://datascience.quantecon.org/introduction/cloud_setup.html) or [local setup instructions](https://datascience.quantecon.org/introduction/local_install.html) to set up a standard environment.

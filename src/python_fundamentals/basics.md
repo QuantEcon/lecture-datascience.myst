@@ -34,9 +34,6 @@ kernelspec:
     - Understand what a boolean is
     - Become familiar with all binary operators that return booleans
 
-```{contents} Outline
-:depth: 2
-```
 
 ## First Steps
 
