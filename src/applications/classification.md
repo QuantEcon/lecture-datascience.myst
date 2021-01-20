@@ -26,9 +26,6 @@ kernelspec:
 - Understand what problems classification solves
 - Evaluate classification models using a variety of metrics
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```
