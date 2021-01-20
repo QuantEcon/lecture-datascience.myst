@@ -37,9 +37,6 @@ import numpy as np
 import qeds
 ```
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Cleaning Data
 

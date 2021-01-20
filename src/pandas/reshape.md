@@ -36,9 +36,6 @@ import qeds
 qeds.themes.mpl_style();
 ```
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Tidy Data
 
