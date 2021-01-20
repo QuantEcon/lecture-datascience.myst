@@ -21,9 +21,6 @@ kernelspec:
 - Perform optimization by hand using derivatives
 - Understand ideas from gradient descent
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```

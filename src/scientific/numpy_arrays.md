@@ -21,9 +21,6 @@ kernelspec:
 - Index into multi-dimensional arrays
 - Use universal functions/broadcasting to do element-wise operations on arrays
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Numpy Arrays
 
