@@ -156,16 +156,10 @@ recidivism".
 
 Then, the positive coefficient on `decile_score` means that there is some cutoff score above which all individuals will be labeled as high-risk.
 
-````{exercise} 1
+````{exercise}
 :nonumber:
-
-Determine the level of this cutoff value. Recall that the COMPAS
-score takes on integer values between 1 and 10, inclusive.
-
-What happens to the cutoff level of the `decile_score` when you change
-the classification threshold from 0.5 to 0.7? What about 0.3? Remember this
-idea -- we'll come back to it soon.
-
+:label: app-cls-dir1
+See {ref}`exercise 1 <app-cls-ex1>` in the exercise list.
 ````
 
 ### Visualization: Decision Boundaries
@@ -256,14 +250,10 @@ This is likely caused by two things:
 1. Drawing a straight line (linear) that perfectly separates
    true observations from the false is impossible.
 
-````{exercise} 2
+````{exercise}
 :nonumber:
-
-Experiment with different pairs of features to see which ones show the
-clearest decision boundaries.
-
-Feed different `X` DataFrames into the `fit_and_plot_decision_boundary` function above.
-
+:label: app-cls-dir2
+See {ref}`exercise 2 <app-cls-ex2>` in the exercise list.
 ````
 
 ## Model Evaluation
@@ -423,36 +413,10 @@ predicts recidivism, recidivism will likely occur -- in other words,
 we would favor a high true positive rate even if the false positive rate is
 higher.
 
-````{exercise} 3
+````{exercise}
 :nonumber:
-
-Use the `metrics.roc_curve` function to determine an appropriate value
-for the probability threshold, keeping in mind our preference for
-high precision over high recall.
-
-The third return value of `metrics.roc_curve` is an array of the
-probability thresholds (`p`) used to compute each false positive rate and
-true positive rate.
-
-To do this problem, you may wish to do the following steps:
-
-- Concoct objective function in terms of the `fpr` and `tpr`.
-- Evaluate the objective function using the `fpr` and `tpr` variables returned by the `metrics.roc_curve` function.
-- Use `np.argmin` to find the  *index* of the smallest value of the objective function.
-- Extract the value at the margin index from the probability threshold values array.
-
-```{hint}
-If we cared about both precision and recall equally (we don't here),
-we might choose `(fpr - tpr)**2` as one objective function. With this
-objective function, we would find the probability threshold value
-that makes the false positive and true positive rates as equal as
-possible.
-```
-
-```{code-block} python
-# your code here
-```
-
+:label: app-cls-dir3
+See {ref}`exercise 3 <app-cls-ex3>` in the exercise list.
 ````
 
 The ROC curve can also be used to do hyper-parameter selection for the model's
@@ -480,32 +444,10 @@ print(f"Initial AUC value is {auc:.4f}")
 # help(linear_model.LogisticRegression)
 ```
 
-````{exercise} 4
+````{exercise}
 :nonumber:
-
-The `LogisticRegression` class with default arguments implements the
-regression including `l2` regularization (it penalizes coefficient
-vectors with an l2-norm).
-
-The regularization strength is controlled by a parameter `C` that is
-passed to the `LogisticRegression` constructor.
-
-Smaller values of `C` lead to stronger regularization.
-
-For example, `LogisticRegression(C=10)` would have weaker regularization
-than `LogisticRegression(C=0.5)`.
-
-Your task here is to use the `model_selection.cross_val_score` method to select an
-optimal level for the regularization parameter `C`. The `scoring` argument should be set
-to `roc_auc`.
-
-Refer to the example in the {doc}`recidivism lecture <recidivism>` for how
-to use `model_selection.cross_val_score`.
-
-```{code-block} python
-# your code here
-```
-
+:label: app-cls-dir4
+See {ref}`exercise 4 <app-cls-ex4>` in the exercise list.
 ````
 
 ## Neural Network Classifiers
@@ -561,28 +503,10 @@ interpretability.
 
 For a more detailed discussion, review the {doc}`regression lecture <regression>`.
 
-````{exercise} 5
+````{exercise}
 :nonumber:
-
-Use a multi-layer perceptron in our recidivism example via the `neural_network.MLPClassifier` class.
-
-Experiment with different inputs such as:
-
-- The features to include
-- The number of layers and number of neurons in each layer
-- The l2 regularization parameter `alpha`
-- The solver
-
-See if you can create a model that outperforms logistic regression.
-
-Keep in mind other things, like the degree of overfitting and time required
-to estimate the model parameters. How do these compare to logistic
-regression?
-
-```{code-block} python
-# your code here
-```
-
+:label: app-cls-dir5
+See {ref}`exercise 5 <app-cls-ex5>` in the exercise list.
 ````
 
 ### Aside: Neural Network Toolboxes
@@ -720,19 +644,10 @@ fig.tight_layout();
 For each of the chosen variables, you can see that the leading indicator
 has a distinct move in periods leading up to a recession (noted by the grey bands in background).
 
-````{exercise} 6
+````{exercise}
 :nonumber:
-
-Let's pause here to take a few minutes and digest.
-
-If the task is to use these leading indicators to predict a recession,
-would high recall or high precision be more important for our model?
-
-Would your answer change if you worked at the Federal Reserve?
-
-What if you worked at a news company such as the Economist or the New York
-Times?
-
+:label: app-cls-dir6
+See {ref}`exercise 6 <app-cls-ex6>` in the exercise list.
 ````
 
 ### How Many leads?
@@ -791,8 +706,149 @@ different number of periods before the recession hits.
 
 The exercise below asks you to explore this idea.
 
+````{exercise}
+:nonumber:
+:label: app-cls-dir7
+See {ref}`exercise 7 <app-cls-ex7>` in the exercise list.
+````
+````{exercise}
+:nonumber:
+:label: app-cls-dir8
+See {ref}`exercise 8 <app-cls-ex8>` in the exercise list.
+````
+
+## Exercises
+
+````{exercise} 1
+:nonumber:
+:label: app-cls-ex1
+
+Determine the level of this cutoff value. Recall that the COMPAS
+score takes on integer values between 1 and 10, inclusive.
+
+What happens to the cutoff level of the `decile_score` when you change
+the classification threshold from 0.5 to 0.7? What about 0.3? Remember this
+idea -- we'll come back to it soon.
+
+({ref}`back to text <app-cls-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: app-cls-ex2
+
+Experiment with different pairs of features to see which ones show the
+clearest decision boundaries.
+
+Feed different `X` DataFrames into the `fit_and_plot_decision_boundary` function above.
+
+({ref}`back to text <app-cls-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: app-cls-ex3
+
+Use the `metrics.roc_curve` function to determine an appropriate value
+for the probability threshold, keeping in mind our preference for
+high precision over high recall.
+
+The third return value of `metrics.roc_curve` is an array of the
+probability thresholds (`p`) used to compute each false positive rate and
+true positive rate.
+
+To do this problem, you may wish to do the following steps:
+
+- Concoct objective function in terms of the `fpr` and `tpr`.
+- Evaluate the objective function using the `fpr` and `tpr` variables returned by the `metrics.roc_curve` function.
+- Use `np.argmin` to find the  *index* of the smallest value of the objective function.
+- Extract the value at the margin index from the probability threshold values array.
+
+```{hint}
+If we cared about both precision and recall equally (we don't here),
+we might choose `(fpr - tpr)**2` as one objective function. With this
+objective function, we would find the probability threshold value
+that makes the false positive and true positive rates as equal as
+possible.
+```
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-cls-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: app-cls-ex4
+
+The `LogisticRegression` class with default arguments implements the
+regression including `l2` regularization (it penalizes coefficient
+vectors with an l2-norm).
+
+The regularization strength is controlled by a parameter `C` that is
+passed to the `LogisticRegression` constructor.
+
+Smaller values of `C` lead to stronger regularization.
+
+For example, `LogisticRegression(C=10)` would have weaker regularization
+than `LogisticRegression(C=0.5)`.
+
+Your task here is to use the `model_selection.cross_val_score` method to select an
+optimal level for the regularization parameter `C`. The `scoring` argument should be set
+to `roc_auc`.
+
+Refer to the example in the {doc}`recidivism lecture <recidivism>` for how
+to use `model_selection.cross_val_score`.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-cls-dir4>`)
+````
+````{exercise} 5
+:nonumber:
+:label: app-cls-ex5
+
+Use a multi-layer perceptron in our recidivism example via the `neural_network.MLPClassifier` class.
+
+Experiment with different inputs such as:
+
+- The features to include
+- The number of layers and number of neurons in each layer
+- The l2 regularization parameter `alpha`
+- The solver
+
+See if you can create a model that outperforms logistic regression.
+
+Keep in mind other things, like the degree of overfitting and time required
+to estimate the model parameters. How do these compare to logistic
+regression?
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-cls-dir5>`)
+````
+````{exercise} 6
+:nonumber:
+:label: app-cls-ex6
+
+Let's pause here to take a few minutes and digest.
+
+If the task is to use these leading indicators to predict a recession,
+would high recall or high precision be more important for our model?
+
+Would your answer change if you worked at the Federal Reserve?
+
+What if you worked at a news company such as the Economist or the New York
+Times?
+
+({ref}`back to text <app-cls-dir6>`)
+````
 ````{exercise} 7
 :nonumber:
+:label: app-cls-ex7
 
 Extend the logic from the previous example and allow a different number
 of leading periods for each variable.
@@ -852,19 +908,15 @@ def make_train_data_varying_leads(indicators, rec, nlead):
 # your code here!
 ```
 
+({ref}`back to text <app-cls-dir7>`)
 ````
-
 ````{exercise} 8
 :nonumber:
+:label: app-cls-ex8
 
 Experiment with different classifiers. Which ones perform better or worse?
 
 How accurate can you become for each accuracy metric (accuracy, precision, and recall)?
 
+({ref}`back to text <app-cls-dir8>`)
 ````
-
-## Exercises
-
-````{exerciselist}
-````
-
