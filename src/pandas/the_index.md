@@ -157,16 +157,10 @@ only find a value in one DataFrame: the other value was missing.
 When pandas tries to add a number to something that is missing, it says
 that the result is missing (spelled `NaN`).
 
-````{exercise} 1
+````{exercise}
 :nonumber:
-
-What happens when you apply the `mean` method to `im_ex_tiny`?
-
-In particular, what happens to columns that have missing data? 
-```{hint}
-Also looking at the output of the `sum` method might help.
-```
-
+:label: pd-idx-dir1
+See {ref}`exercise 1 <pd-idx-ex1>` in the exercise list.
 ````
 
 ## Setting the Index
@@ -382,49 +376,10 @@ We can also restrict `.loc` to extract certain columns by doing:
 1. `df.loc[rows, ["GDP", "Consumption"]]`: return the rows specified by rows
    (see rules above) and only columns `GDP` and `Consumption`
 
-````{exercise} 2
+````{exercise}
 :nonumber:
-
-For each of the examples below do the following:
-
-- Determine which of the rules above applies.
-- Identify the `type` of the returned value.
-- Explain why the slicing operation returned the data it did.
-
-Write your answers.
-
-```{code-block} python
-wdi.loc[["United States", "Canada"]]
-```
-
-```{code-block} python
-wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
-```
-
-```{code-block} python
-wdi.loc["United States"]
-```
-
-```{code-block} python
-wdi.loc[("United States", 2010), ["GDP", "Exports"]]
-```
-
-```{code-block} python
-wdi.loc[("United States", 2010)]
-```
-
-```{code-block} python
-wdi.loc[[("United States", 2010), ("Canada", 2015)]]
-```
-
-```{code-block} python
-wdi.loc[["United States", "Canada"], "GDP"]
-```
-
-```{code-block} python
-wdi.loc["United States", "GDP"]
-```
-
+:label: pd-idx-dir2
+See {ref}`exercise 2 <pd-idx-ex2>` in the exercise list.
 ````
 
 ### Alignment with `MultiIndex`
@@ -434,17 +389,10 @@ The data alignment features we talked about above also apply to a
 
 The exercise below gives you a chance to experiment with this.
 
-````{exercise} 3
+````{exercise}
 :nonumber:
-
-Try setting `my_df` to some subset of the rows in `wdi` (use one of the
-`.loc` variations above).
-
-Then see what happens when you do `wdi / my_df` or `my_df ** wdi`.
-
-Try changing the subset of rows in `my_df` and repeat until you
-understand what is happening.
-
+:label: pd-idx-dir3
+See {ref}`exercise 3 <pd-idx-ex3>` in the exercise list.
 ````
 
 ### `pd.IndexSlice`
@@ -478,39 +426,10 @@ Notice that the `:` in the first part of `[:, ["A", "D"]]`
 instructed pandas to give us rows for all values of the outer most index
 level and that the `:` just before `]` said grab all the columns.
 
-````{exercise} 4
+````{exercise}
 :nonumber:
-
-Below, we create `wdi2`, which is the same as `df4` except that the
-levels of the index are swapped.
-
-In the cells after `df6` is defined, we have commented out
-a few of the slicing examples from the previous exercise.
-
-For each of these examples, use `pd.IndexSlice` to extract the same
-data from `df6`.
-
-```{hint}
-You will need to *swap* the order of the row slicing arguments
-within the `pd.IndexSlice`.
-```
-
-```{code-block} python
-wdi2 = df.set_index(["year", "country"])
-```
-
-```{code-block} python
-# wdi.loc["United States"]
-```
-
-```{code-block} python
-# wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
-```
-
-```{code-block} python
-# wdi.loc[["United States", "Canada"], "GDP"]
-```
-
+:label: pd-idx-dir4
+See {ref}`exercise 4 <pd-idx-ex4>` in the exercise list.
 ````
 
 ### Multi-index Columns
@@ -541,12 +460,10 @@ wdiT.loc[:, ["United States", "Canada"]]
 wdiT.loc[:, (["United States", "Canada"], 2010)]
 ```
 
-````{exercise} 5
+````{exercise}
 :nonumber:
-
-Use `pd.IndexSlice` to extract all data from `wdiT` where the `year`
-level of the column names (the second level) is one of 2010, 2012, and 2014
-
+:label: pd-idx-dir5
+See {ref}`exercise 5 <pd-idx-ex5>` in the exercise list.
 ````
 
 ## Re-setting the Index
@@ -562,28 +479,10 @@ sets the index of the returned DataFrame to the default of
 wdi.reset_index()
 ```
 
-````{exercise} 6
+````{exercise}
 :nonumber:
-
-Look up the documentation for the `reset_index` method and study it to
-learn how to do the following:
-
-- Move just the `year` level of the index back as a column.
-- Completely throw away all levels of the index.
-- Remove the `country` of the index and *do not* keep it as a column.
-
-```{code-block} python
-# remove just year level and add as column
-```
-
-```{code-block} python
-# throw away all levels of index
-```
-
-```{code-block} python
-# Remove country from the index -- don't keep it as a column
-```
-
+:label: pd-idx-dir6
+See {ref}`exercise 6 <pd-idx-ex6>` in the exercise list.
 ````
 
 ## Choose the Index Carefully
@@ -631,6 +530,146 @@ correct index.
 
 ## Exercises
 
-````{exerciselist}
-````
+````{exercise} 1
+:nonumber:
+:label: pd-idx-ex1
 
+What happens when you apply the `mean` method to `im_ex_tiny`?
+
+In particular, what happens to columns that have missing data? 
+```{hint}
+Also looking at the output of the `sum` method might help.
+```
+
+({ref}`back to text <pd-idx-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-idx-ex2
+
+For each of the examples below do the following:
+
+- Determine which of the rules above applies.
+- Identify the `type` of the returned value.
+- Explain why the slicing operation returned the data it did.
+
+Write your answers.
+
+```{code-block} python
+wdi.loc[["United States", "Canada"]]
+```
+
+```{code-block} python
+wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
+```
+
+```{code-block} python
+wdi.loc["United States"]
+```
+
+```{code-block} python
+wdi.loc[("United States", 2010), ["GDP", "Exports"]]
+```
+
+```{code-block} python
+wdi.loc[("United States", 2010)]
+```
+
+```{code-block} python
+wdi.loc[[("United States", 2010), ("Canada", 2015)]]
+```
+
+```{code-block} python
+wdi.loc[["United States", "Canada"], "GDP"]
+```
+
+```{code-block} python
+wdi.loc["United States", "GDP"]
+```
+
+({ref}`back to text <pd-idx-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: pd-idx-ex3
+
+Try setting `my_df` to some subset of the rows in `wdi` (use one of the
+`.loc` variations above).
+
+Then see what happens when you do `wdi / my_df` or `my_df ** wdi`.
+
+Try changing the subset of rows in `my_df` and repeat until you
+understand what is happening.
+
+({ref}`back to text <pd-idx-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: pd-idx-ex4
+
+Below, we create `wdi2`, which is the same as `df4` except that the
+levels of the index are swapped.
+
+In the cells after `df6` is defined, we have commented out
+a few of the slicing examples from the previous exercise.
+
+For each of these examples, use `pd.IndexSlice` to extract the same
+data from `df6`.
+
+```{hint}
+You will need to *swap* the order of the row slicing arguments
+within the `pd.IndexSlice`.
+```
+
+```{code-block} python
+wdi2 = df.set_index(["year", "country"])
+```
+
+```{code-block} python
+# wdi.loc["United States"]
+```
+
+```{code-block} python
+# wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
+```
+
+```{code-block} python
+# wdi.loc[["United States", "Canada"], "GDP"]
+```
+
+({ref}`back to text <pd-idx-dir4>`)
+````
+````{exercise} 5
+:nonumber:
+:label: pd-idx-ex5
+
+Use `pd.IndexSlice` to extract all data from `wdiT` where the `year`
+level of the column names (the second level) is one of 2010, 2012, and 2014
+
+({ref}`back to text <pd-idx-dir5>`)
+````
+````{exercise} 6
+:nonumber:
+:label: pd-idx-ex6
+
+Look up the documentation for the `reset_index` method and study it to
+learn how to do the following:
+
+- Move just the `year` level of the index back as a column.
+- Completely throw away all levels of the index.
+- Remove the `country` of the index and *do not* keep it as a column.
+
+```{code-block} python
+# remove just year level and add as column
+```
+
+```{code-block} python
+# throw away all levels of index
+```
+
+```{code-block} python
+# Remove country from the index -- don't keep it as a column
+```
+
+({ref}`back to text <pd-idx-dir6>`)
+````

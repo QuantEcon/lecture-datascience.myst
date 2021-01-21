@@ -101,17 +101,10 @@ When plotting, a DataFrame knows the column and index names.
 unemp.plot(figsize=(8, 6))
 ```
 
-````{exercise} 1
+````{exercise}
 :nonumber:
-
-Looking at the displayed DataFrame above, can you identify the index? The columns?
-
-You can use the cell below to verify your visual intuition.
-
-```{code-block} python
-# your code here
-```
-
+:label: pd-bas-dir1
+See {ref}`exercise 1 <pd-bas-ex1>` in the exercise list.
 ````
 
 ## Dates in pandas
@@ -239,42 +232,10 @@ Notice that `agg` can also accept multiple functions at once.
 unemp.agg([min, max, high_or_low])
 ```
 
-````{exercise} 2
+````{exercise}
 :nonumber:
-
-Do the following exercises in separate code cells below:
-
-- At each date, what is the minimum unemployment rate across all states
-  in our sample?
-- What was the median unemployment rate in each state?
-- What was the maximum unemployment rate across the states in our
-  sample? What state did it happen in? In what month/year was this
-  achieved?
-    - ```{hint}
-      What Python type (not `dtype`) is returned by the aggregation?
-      ```
-    - ```{hint}
-      Read documentation for the method `idxmax`.
-      ```
-- Classify each state as high or low volatility based on whether the
-  variance of their unemployment is above or below 4.
-
-```{code-block} python
-# min unemployment rate by state
-```
-
-```{code-block} python
-# median unemployment rate by state
-```
-
-```{code-block} python
-# max unemployment rate across all states and Year
-```
-
-```{code-block} python
-# low or high volatility
-```
-
+:label: pd-bas-dir2
+See {ref}`exercise 2 <pd-bas-ex2>` in the exercise list.
 ````
 
 ## Transforms
@@ -384,52 +345,10 @@ To do this, we use the following pattern:
 Complete the exercise below to practice writing and using your own scalar
 transforms.
 
-````{exercise} 3
+````{exercise}
 :nonumber:
-
-Imagine that we want to determine whether unemployment was high (> 6.5),
-medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
-
-1. Write a Python function that takes a single number as an input and
-   outputs a single string noting if that number is high, medium, or low.
-1. Pass your function to `applymap` (quiz: why `applymap` and not
-   `agg` or `apply`?) and save the result in a new DataFrame called
-   `unemp_bins`.
-1. (Challenging) This exercise has multiple parts:
-    1. Use another transform on `unemp_bins` to count how many
-       times each state had each of the three classifications.
-        - ```{hint}
-          Will this value counting function be a Series or scalar transform?
-          ```
-        - ```{hint}
-          Try googling "pandas count unique value" or something similar to find the right transform.
-          ```
-    1. Construct a horizontal bar chart of the number of occurrences of
-       each level with one bar per state and classification (21 total
-       bars).
-1. (Challenging) Repeat the previous step, but count how many states had
-   each classification in each month. Which month had the most states
-   with high unemployment? What about medium and low?
-
-```{code-block} python
-# Part 1: Write a Python function to classify unemployment levels.
-```
-
-```{code-block} python
-# Part 2: Pass your function from part 1 to applymap
-unemp_bins = unemp.applymap#replace this comment with your code!!
-```
-
-```{code-block} python
-# Part 3: Count the number of times each state had each classification.
-
-## then make a horizontal bar chart here
-```
-
-```{code-block} python
-# Part 4: Apply the same transform from part 4, but to each date instead of to each state.
-```
-
+:label: pd-bas-dir3
+See {ref}`exercise 3 <pd-bas-ex3>` in the exercise list.
 ````
 
 ## Boolean Selection
@@ -616,8 +535,119 @@ msg = "Out of {} months, {} had high unemployment across all states"
 print(msg.format(len(all_high), all_high.sum()))
 ```
 
+````{exercise}
+:nonumber:
+:label: pd-bas-dir4
+See {ref}`exercise 4 <pd-bas-ex4>` in the exercise list.
+````
+
+## Exercises
+
+````{exercise} 1
+:nonumber:
+:label: pd-bas-ex1
+
+Looking at the displayed DataFrame above, can you identify the index? The columns?
+
+You can use the cell below to verify your visual intuition.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <pd-bas-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-bas-ex2
+
+Do the following exercises in separate code cells below:
+
+- At each date, what is the minimum unemployment rate across all states
+  in our sample?
+- What was the median unemployment rate in each state?
+- What was the maximum unemployment rate across the states in our
+  sample? What state did it happen in? In what month/year was this
+  achieved?
+    - ```{hint}
+      What Python type (not `dtype`) is returned by the aggregation?
+      ```
+    - ```{hint}
+      Read documentation for the method `idxmax`.
+      ```
+- Classify each state as high or low volatility based on whether the
+  variance of their unemployment is above or below 4.
+
+```{code-block} python
+# min unemployment rate by state
+```
+
+```{code-block} python
+# median unemployment rate by state
+```
+
+```{code-block} python
+# max unemployment rate across all states and Year
+```
+
+```{code-block} python
+# low or high volatility
+```
+
+({ref}`back to text <pd-bas-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: pd-bas-ex3
+
+Imagine that we want to determine whether unemployment was high (> 6.5),
+medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
+
+1. Write a Python function that takes a single number as an input and
+   outputs a single string noting if that number is high, medium, or low.
+1. Pass your function to `applymap` (quiz: why `applymap` and not
+   `agg` or `apply`?) and save the result in a new DataFrame called
+   `unemp_bins`.
+1. (Challenging) This exercise has multiple parts:
+    1. Use another transform on `unemp_bins` to count how many
+       times each state had each of the three classifications.
+        - ```{hint}
+          Will this value counting function be a Series or scalar transform?
+          ```
+        - ```{hint}
+          Try googling "pandas count unique value" or something similar to find the right transform.
+          ```
+    1. Construct a horizontal bar chart of the number of occurrences of
+       each level with one bar per state and classification (21 total
+       bars).
+1. (Challenging) Repeat the previous step, but count how many states had
+   each classification in each month. Which month had the most states
+   with high unemployment? What about medium and low?
+
+```{code-block} python
+# Part 1: Write a Python function to classify unemployment levels.
+```
+
+```{code-block} python
+# Part 2: Pass your function from part 1 to applymap
+unemp_bins = unemp.applymap#replace this comment with your code!!
+```
+
+```{code-block} python
+# Part 3: Count the number of times each state had each classification.
+
+## then make a horizontal bar chart here
+```
+
+```{code-block} python
+# Part 4: Apply the same transform from part 4, but to each date instead of to each state.
+```
+
+({ref}`back to text <pd-bas-dir3>`)
+````
 ````{exercise} 4
 :nonumber:
+:label: pd-bas-ex4
 
 - For a single state of your choice, determine what the mean
   unemployment is during "Low", "Medium", and "High" unemployment times
@@ -631,10 +661,5 @@ print(msg.format(len(all_high), all_high.sum()))
   months in which the mean unemployment rate in our sample is greater
   than 7.
 
+({ref}`back to text <pd-bas-dir4>`)
 ````
-
-## Exercises
-
-````{exerciselist}
-````
-

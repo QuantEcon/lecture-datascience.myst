@@ -151,17 +151,10 @@ unemp.loc[1995]
 unemp.loc[[1995, 2005, 2015]]
 ```
 
-````{exercise} 1
+````{exercise}
 :nonumber:
-
-For each of the following exercises, we recommend reading the documentation
-for help.
-
-- Display only the first 2 elements of the Series using the `.head` method.
-- Using the `plot` method, make a bar plot.
-- Use `.loc` to select the lowest/highest unemployment rate shown in the Series.
-- Run the code `unemp.dtype` below. What does it give you? Where do you think it comes from?
-
+:label: pd-int-dir1
+See {ref}`exercise 1 <pd-int-ex1>` in the exercise list.
 ````
 
 ## DataFrame
@@ -298,20 +291,10 @@ unemp_region.West.corr(unemp_region["MidWest"])
 unemp_region.corr()
 ```
 
-````{exercise} 2
+````{exercise}
 :nonumber:
-
-For each of the following, we recommend reading the documentation for help.
-
-- Use introspection (or google-fu) to find a way to obtain a list with
-  all of the column names in `unemp_region`.
-- Using the `plot` method, make a bar plot. What does it look like
-  now?
-- Use `.loc` to select the the unemployment data for the
-  `NorthEast` and `West` for the years 1995, 2005, 2011, and 2015.
-- Run the code `unemp_region.dtypes` below. What does it give you?
-  How does this compare with `unemp.dtype`?
-
+:label: pd-int-dir2
+See {ref}`exercise 2 <pd-int-ex2>` in the exercise list.
 ````
 
 ## Data Types
@@ -498,6 +481,34 @@ unemp_shortname.head()
 
 ## Exercises
 
-````{exerciselist}
-````
+````{exercise} 1
+:nonumber:
+:label: pd-int-ex1
 
+For each of the following exercises, we recommend reading the documentation
+for help.
+
+- Display only the first 2 elements of the Series using the `.head` method.
+- Using the `plot` method, make a bar plot.
+- Use `.loc` to select the lowest/highest unemployment rate shown in the Series.
+- Run the code `unemp.dtype` below. What does it give you? Where do you think it comes from?
+
+({ref}`back to text <pd-int-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-int-ex2
+
+For each of the following, we recommend reading the documentation for help.
+
+- Use introspection (or google-fu) to find a way to obtain a list with
+  all of the column names in `unemp_region`.
+- Using the `plot` method, make a bar plot. What does it look like
+  now?
+- Use `.loc` to select the the unemployment data for the
+  `NorthEast` and `West` for the years 1995, 2005, 2011, and 2015.
+- Run the code `unemp_region.dtypes` below. What does it give you?
+  How does this compare with `unemp.dtype`?
+
+({ref}`back to text <pd-int-dir2>`)
+````

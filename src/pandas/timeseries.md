@@ -156,26 +156,10 @@ The official [Python
 documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) contains a complete list of possible `%`something patterns that are accepted
 in the `format` argument.
 
-````{exercise} 1
+````{exercise}
 :nonumber:
-
-By referring to table found at the link above, figure out the correct argument to
-pass as `format` in order to parse the dates in the next three cells below.
-
-Test your work by passing your format string to `pd.to_datetime`.
-
-```{code-block} python
-christmas_str2 = "2017:12:25"
-```
-
-```{code-block} python
-dbacks_win = "M:11 D:4 Y:2001 9:15 PM"
-```
-
-```{code-block} python
-america_bday = "America was born on July 4, 1776"
-```
-
+:label: pd-tim-dir1
+See {ref}`exercise 1 <pd-tim-ex1>` in the exercise list.
 ````
 
 ### Multiple Dates
@@ -203,20 +187,10 @@ For example,
 christmas.strftime("We love %A %B %d (also written %c)")
 ```
 
-````{exercise} 2
+````{exercise}
 :nonumber:
-
-Use `pd.to_datetime` to express the birthday of one of your friends
-or family members as a `datetime` object.
-
-Then use the `strftime` method to write a message of the format:
-
-```{code-block} python
-NAME's birthday is June 10, 1989 (a Saturday)
-```
-
-(where the name and date are replaced by the appropriate values)
-
+:label: pd-tim-dir2
+See {ref}`exercise 2 <pd-tim-ex2>` in the exercise list.
 ````
 
 ## Extracting Data
@@ -287,15 +261,10 @@ date for selection.
 btc_usd.loc["April 1, 2015":"April 10, 2015"]
 ```
 
-````{exercise} 3
+````{exercise}
 :nonumber:
-
-For each item in the list, extract the specified data from `btc_usd`:
-
-- July 2017 through August 2017 (inclusive)
-- April 25, 2015 to June 10, 2016
-- October 31, 2017
-
+:label: pd-tim-dir3
+See {ref}`exercise 3 <pd-tim-ex3>` in the exercise list.
 ````
 
 ## Accessing Date Properties
@@ -378,25 +347,10 @@ btc_usd.shift(-2).head()
 btc_usd.shift(-2).tail()
 ```
 
-````{exercise} 4
+````{exercise}
 :nonumber:
-
-Using the `shift` function, determine the week with the largest percent change
-in the volume of trades (the `"Volume (BTC)"` column).
-
-Repeat the analysis at the bi-weekly and monthly frequencies.
-
-```{hint}
-We have data at a *daily* frequency and one week is `7` days.
-```
-```{hint}
-Approximate a month by 30 days.
-```
-
-```{code-block} python
-# your code here
-```
-
+:label: pd-tim-dir4
+See {ref}`exercise 4 <pd-tim-ex4>` in the exercise list.
 ````
 
 ## Rolling Computations: `.rolling`
@@ -454,62 +408,20 @@ def is_volatile(x):
 btc_small.rolling("2d").apply(is_volatile)
 ```
 
-````{exercise} 5
+````{exercise}
 :nonumber:
-
-Imagine that you have access to the [DeLorean time machine](https://en.wikipedia.org/wiki/DeLorean_time_machine)
-from "Back to the Future".
-
-You are allowed to use the DeLorean only once, subject to the following
-conditions:
-
-- You may travel back to any day in the past.
-- On that day, you may purchase one bitcoin *at market open*.
-- You can then take the time machine 30 days into the future and sell your bitcoin *at market close*.
-- Then you return to the present, pocketing the profits.
-
-How would you pick the day?
-
-Think carefully about what you would need to compute to make the
-optimal choice. Try writing it out in the markdown cell below so you
-have a clear description of the *want* operator that we will apply after
-the exercise.
-
-(Note: **Don't** look too far below, because in the next non-empty cell
-we have written out our answer.)
-
-To make this decision, we want to know ...
-
-**Your answer here**
-
+:label: pd-tim-dir5
+See {ref}`exercise 5 <pd-tim-ex5>` in the exercise list.
 ````
 
 To make the optimal decision, we need to know the maximum
 difference between the close price at the end of the window and the open
 price at the start of the window.
 
-````{exercise} 6
+````{exercise}
 :nonumber:
-
-Do the following:
-
-1. Write a pandas function that implements your strategy.
-1. Pass it to the `agg` method of `rolling_btc`.
-1. Extract the `"Open"` column from the result.
-1. Find the date associated with the maximum value in that column.
-
-How much money did you make? Compare with your neighbor.
-
-```{code-block} python
-def daily_value(df):
-    # DELETE `pass` below and replace it with your code
-    pass
-
-rolling_btc = btc_usd.rolling("30d")
-
-# do steps 2-4 here
-```
-
+:label: pd-tim-dir6
+See {ref}`exercise 6 <pd-tim-ex6>` in the exercise list.
 ````
 
 ## Changing Frequencies: `.resample`
@@ -550,8 +462,175 @@ btc_usd.resample("2BQS").agg(["min", "max"])
 As with `groupby` and `rolling`, you can also provide custom
 functions to `.resample(...).agg` and `.resample(...).apply`
 
+````{exercise}
+:nonumber:
+:label: pd-tim-dir7
+See {ref}`exercise 7 <pd-tim-ex7>` in the exercise list.
+````
+
+To make the optimal decision we need to, for each month,
+compute the maximum value of the close price on any day minus the open
+price on the first day of the month.
+
+````{exercise}
+:nonumber:
+:label: pd-tim-dir8
+See {ref}`exercise 8 <pd-tim-ex8>` in the exercise list.
+````
+
+## Optional: API keys
+
+Recall above that we had the line of code:
+
+```{code-block} python
+quandl.ApiConfig.api_key = "Dn6BtVoBhzuKTuyo6hbp"
+```
+
+This line told the `quandl` library that when obtaining making requests for data, it should use the *API key* `Dn6BtVoBhzuKTuyo6hbp`.
+
+An API key is a sort of password that web services (like the Quandl API) require you to provide when you make requests.
+
+Using this password, we were able to make a request to Quandl to obtain data directly from them.
+
+The API key used here is one that we requested on behalf of this course.
+
+If you plan to use Quandl more extensively, you should obtain your own personal API key from [their website](https://docs.quandl.com/docs#section-authentication) and re-run the `quandl.ApiConfig.api_key...` line of code with your new API key on the right-hand side.
+
+## Exercises
+
+````{exercise} 1
+:nonumber:
+:label: pd-tim-ex1
+
+By referring to table found at the link above, figure out the correct argument to
+pass as `format` in order to parse the dates in the next three cells below.
+
+Test your work by passing your format string to `pd.to_datetime`.
+
+```{code-block} python
+christmas_str2 = "2017:12:25"
+```
+
+```{code-block} python
+dbacks_win = "M:11 D:4 Y:2001 9:15 PM"
+```
+
+```{code-block} python
+america_bday = "America was born on July 4, 1776"
+```
+
+({ref}`back to text <pd-tim-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-tim-ex2
+
+Use `pd.to_datetime` to express the birthday of one of your friends
+or family members as a `datetime` object.
+
+Then use the `strftime` method to write a message of the format:
+
+```{code-block} python
+NAME's birthday is June 10, 1989 (a Saturday)
+```
+
+(where the name and date are replaced by the appropriate values)
+
+({ref}`back to text <pd-tim-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: pd-tim-ex3
+
+For each item in the list, extract the specified data from `btc_usd`:
+
+- July 2017 through August 2017 (inclusive)
+- April 25, 2015 to June 10, 2016
+- October 31, 2017
+
+({ref}`back to text <pd-tim-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: pd-tim-ex4
+
+Using the `shift` function, determine the week with the largest percent change
+in the volume of trades (the `"Volume (BTC)"` column).
+
+Repeat the analysis at the bi-weekly and monthly frequencies.
+
+```{hint}
+We have data at a *daily* frequency and one week is `7` days.
+```
+```{hint}
+Approximate a month by 30 days.
+```
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <pd-tim-dir4>`)
+````
+````{exercise} 5
+:nonumber:
+:label: pd-tim-ex5
+
+Imagine that you have access to the [DeLorean time machine](https://en.wikipedia.org/wiki/DeLorean_time_machine)
+from "Back to the Future".
+
+You are allowed to use the DeLorean only once, subject to the following
+conditions:
+
+- You may travel back to any day in the past.
+- On that day, you may purchase one bitcoin *at market open*.
+- You can then take the time machine 30 days into the future and sell your bitcoin *at market close*.
+- Then you return to the present, pocketing the profits.
+
+How would you pick the day?
+
+Think carefully about what you would need to compute to make the
+optimal choice. Try writing it out in the markdown cell below so you
+have a clear description of the *want* operator that we will apply after
+the exercise.
+
+(Note: **Don't** look too far below, because in the next non-empty cell
+we have written out our answer.)
+
+To make this decision, we want to know ...
+
+**Your answer here**
+
+({ref}`back to text <pd-tim-dir5>`)
+````
+````{exercise} 6
+:nonumber:
+:label: pd-tim-ex6
+
+Do the following:
+
+1. Write a pandas function that implements your strategy.
+1. Pass it to the `agg` method of `rolling_btc`.
+1. Extract the `"Open"` column from the result.
+1. Find the date associated with the maximum value in that column.
+
+How much money did you make? Compare with your neighbor.
+
+```{code-block} python
+def daily_value(df):
+    # DELETE `pass` below and replace it with your code
+    pass
+
+rolling_btc = btc_usd.rolling("30d")
+
+# do steps 2-4 here
+```
+
+({ref}`back to text <pd-tim-dir6>`)
+````
 ````{exercise} 7
 :nonumber:
+:label: pd-tim-ex7
 
 Now suppose you still have access to the DeLorean, but the conditions are
 slightly different.
@@ -578,14 +657,11 @@ To make the optimal decision we need ...
 
 **Your answer here**
 
+({ref}`back to text <pd-tim-dir7>`)
 ````
-
-To make the optimal decision we need to, for each month,
-compute the maximum value of the close price on any day minus the open
-price on the first day of the month.
-
 ````{exercise} 8
 :nonumber:
+:label: pd-tim-ex8
 
 Do the following:
 
@@ -608,28 +684,6 @@ resampled_btc = btc_usd.resample("MS")
 # Do steps 2-4 here
 ```
 
-````
-
-## Optional: API keys
-
-Recall above that we had the line of code:
-
-```{code-block} python
-quandl.ApiConfig.api_key = "Dn6BtVoBhzuKTuyo6hbp"
-```
-
-This line told the `quandl` library that when obtaining making requests for data, it should use the *API key* `Dn6BtVoBhzuKTuyo6hbp`.
-
-An API key is a sort of password that web services (like the Quandl API) require you to provide when you make requests.
-
-Using this password, we were able to make a request to Quandl to obtain data directly from them.
-
-The API key used here is one that we requested on behalf of this course.
-
-If you plan to use Quandl more extensively, you should obtain your own personal API key from [their website](https://docs.quandl.com/docs#section-authentication) and re-run the `quandl.ApiConfig.api_key...` line of code with your new API key on the right-hand side.
-
-## Exercises
-
-````{exerciselist}
+({ref}`back to text <pd-tim-dir8>`)
 ````
 
