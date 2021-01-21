@@ -66,20 +66,11 @@ consuming 1.00 today and $(1+r)(1+r) = 1.21$ dollars two years from now
 Inverting this formula, 1 delivered two years from now is equivalent to
 $\frac{1}{(1+r)^2}$ today.
 
-````{exercise} 1
+````{exercise}
 :nonumber:
+:label: dir2-3-1
 
-Government bonds are often issued as *zero-coupon bonds* meaning that they
-make no payments throughout the entire time that they are held, but, rather
-make a single payment at the time of maturity.
-
-How much should you be willing to pay for a zero-coupon bond that paid
-100 in 10 years with an interest rate of 5%?
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 1 <ex2-3-1>` in the exercise list.
 ````
 
 (npv)=
@@ -224,31 +215,11 @@ if val is True: # check an expression
 print("Code runs after 'if' block, regardless of val")
 ```
 
-````{exercise} 2
+````{exercise}
 :nonumber:
+:label: dir2-3-2
 
-Run the following two variations on the code with only a single change in the indentation.
-
-After, modify the `x` to print `3` and then `2, 3` instead.
-
-```{code-block} python
-x = 1
-
-if x > 0:
-    print("1")
-    print("2")
-print("3")
-```
-
-```{code-block} python
-x = 1
-
-if x > 0:
-    print("1")
-print("2") # changed the indentation
-print("3")
-```
-
+See {ref}`exercise 2 <ex2-3-2>` in the exercise list.
 ````
 
 The next example shows us how `else` works.
@@ -279,48 +250,21 @@ if 1 < 2:
     print("1 < 2")
 ```
 
-````{exercise} 3
+````{exercise}
 :nonumber:
+:label: dir2-3-3
 
-Using the code cell below as a start, print `"Good afternoon"` if the
-`current_time` is past noon.
-
-Otherwise, do nothing.
-
-```{hint}
-Write some conditional based on `current_time.hour`.
-```
-
-```{code-block} python
-import datetime
-current_time = datetime.datetime.now()
-
-## your code here
-```
-
-more text after
-
+See {ref}`exercise 3 <ex2-3-3>` in the exercise list.
 ````
 
-````{exercise} 4
+
+````{exercise}
 :nonumber:
+:label: dir2-3-4
 
-In this example, you will generate a random number between 0 and 1
-and then display "x > 0.5" or "x < 0.5" depending on the value of the
-number.
-
-This also introduces a new package `numpy.random` for
-drawing random numbers (more in the [randomness](../scientific/randomness) lecture).
-
-```{code-block} python
-import numpy as np
-x = np.random.random()
-print(f"x = {x}")
-
-## your code here
-```
-
+See {ref}`exercise 4 <ex2-3-4>` in the exercise list.
 ````
+
 
 ### `elif` clauses
 
@@ -467,51 +411,13 @@ When the for loop is executed, `item` will take on one value from `iterable`
 at a time and execute the loop body for each value.
 
 (human_capital_application)=
-````{exercise} 5
+````{exercise}
 :nonumber:
+:label: dir2-3-5
 
-In economics, when an individual has some knowledge, skills, or education
-which provides them with a source of future income, we call it [human
-capital](https://en.wikipedia.org/wiki/Human_capital).
-
-When a student graduating from high school is considering whether to
-continue with post-secondary education, they may consider that it gives
-them higher paying jobs in the future, but requires that they don't begin
-working until after graduation.
-
-Consider the simplified example where a student has perfectly forecastable
-employment and is given two choices:
-
-1. Begin working immediately and make 40,000 a year until they retire 40
-years later.
-2. Pay 5,000 a year for the next 4 years to attend university, then
-get a job paying 50,000 a year until they retire 40 years after making
-the college attendance decision.
-
-Should the student enroll in school if the discount rate is r = 0.05?
-
-```{code-block} python
-
-# Discount rate
-r = 0.05
-
-# High school wage
-w_hs = 40_000
-
-# College wage and cost of college
-c_college = 5_000
-w_college = 50_000
-
-# Compute npv of being a hs worker
-
-# Compute npv of attending college
-
-# Compute npv of being a college worker
-
-# Is npv_collegeworker - npv_collegecost > npv_hsworker
-```
-
+See {ref}`exercise 5 <ex2-3-5>` in the exercise list.
 ````
+
 
 When iterating, each `item` in `iterable` might actually contain more than
 one value.
@@ -548,25 +454,13 @@ for index, city in enumerate(cities):
     print(f"{city} is in {state}")
 ```
 
-````{exercise} 6
+````{exercise}
 :nonumber:
+:label: dir2-3-6
 
-Instead of the above, write a for loop that uses the lists of cities
-and states below to print the same "{city} is in {state}" using
-a `zip` instead of an `enumerate`.
-
-```{hint}
-Try using `zip`
-```
-
-```{code-block} python
-cities = ["Phoenix", "Austin", "San Diego", "New York"]
-states = ["Arizona", "Texas", "California", "New York"]
-
-# Your code here
-```
-
+See {ref}`exercise 6 <ex2-3-6>` in the exercise list.
 ````
+
 
 ### `while` Loops
 
@@ -639,39 +533,13 @@ while i < 3:
 print("done")
 ```
 
-````{exercise} 7
+````{exercise}
 :nonumber:
+:label: dir2-3-7
 
-Companies often invest in training their employees to raise their
-productivity. Economists sometimes wonder why companies
-spend this money when this incentivizes other companies to hire
-their employees away with higher salaries since employees gain human capital from training?
-
-Let's say that it costs a company 25,000 dollars to teach their
-employees Python, but it raises their output by 2,500 per month. How
-many months would an employee need to stay for the company to find it
-profitable to pay for their employees to learn Python if their discount
-rate is r = 0.01?
-
-```{code-block} python
-# Define cost of teaching python
-cost = 25_000
-r = 0.01
-
-# Per month value
-added_value = 2500
-
-n_months = 0
-total_npv = 0.0
-
-# Put condition below here
-while False: # (replace False with your condition here)
-    n_months = n_months + 1  # Increment how many months they've worked
-
-    # Increase total_npv
-```
-
+See {ref}`exercise 7 <ex2-3-7>` in the exercise list.
 ````
+
 
 ### `break` and `continue`
 
@@ -698,22 +566,13 @@ for i in range(1001):
 print("The answer is", i)
 ```
 
-````{exercise} 8
+````{exercise}
 :nonumber:
+:label: dir2-3-8
 
-Try to find the index of the first value in `x`
-that is greater than 0.999 using a for loop and `break`.
-
-```{hint}
-try iterating over `range(len(x))`.
-```
-
-```{code-block} python
-x = np.random.rand(10_000)
-# Your code here
-```
-
+See {ref}`exercise 8 <ex2-3-8>` in the exercise list.
 ````
+
 
 #### `continue` to the Next Iteration
 
@@ -748,26 +607,13 @@ for i in range(1, 11):
     print(i, "is an odd number!")
 ```
 
-````{exercise} 9
+````{exercise}
 :nonumber:
+:label: dir2-3-9
 
-Write a for loop that adds up all values in `x` that are greater than
-or equal to 0.5.
-
-Use the `continue` word to end the body of the loop early for all values
-of `x` that are less than 0.5.
-
-```{hint}
-Try starting your loop with `for value in x:` instead of
-iterating over the indices of `x`.
-```
-
-```{code-block} python
-x = np.random.rand(10_000)
-# Your code here
-```
-
+See {ref}`exercise 9 <ex2-3-9>` in the exercise list.
 ````
+
 
 ## Comprehension
 
@@ -833,23 +679,11 @@ sin_x = [math.sin(x_val) for x_val in x]
 sin_x
 ```
 
-````{exercise} 10
+````{exercise}
 :nonumber:
+:label: dir2-3-10
 
-Returning to our previous example: print "{city} is in {state}" for each combination
-using a `zip` and a comprehension.
-
-```{hint}
-Try using `zip`
-```
-
-```{code-block} python
-cities = ["Phoenix", "Austin", "San Diego", "New York"]
-states = ["Arizona", "Texas", "California", "New York"]
-
-# your code here
-```
-
+See {ref}`exercise 10 <ex2-3-10>` in the exercise list.
 ````
 
 Finally, we can use this approach to build complicated nested dictionaries.
@@ -870,6 +704,265 @@ print(data_dict)
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: ex2-3-1
+
+Government bonds are often issued as *zero-coupon bonds* meaning that they
+make no payments throughout the entire time that they are held, but, rather
+make a single payment at the time of maturity.
+
+How much should you be willing to pay for a zero-coupon bond that paid
+100 in 10 years with an interest rate of 5%?
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <dir2-3-1>`)
 ````
 
+````{exercise} 2
+:nonumber:
+:label: ex2-3-2
+
+Run the following two variations on the code with only a single change in the indentation.
+
+After, modify the `x` to print `3` and then `2, 3` instead.
+
+```{code-block} python
+x = 1
+
+if x > 0:
+    print("1")
+    print("2")
+print("3")
+```
+
+```{code-block} python
+x = 1
+
+if x > 0:
+    print("1")
+print("2") # changed the indentation
+print("3")
+```
+
+({ref}`back to text <dir2-3-2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex2-3-3
+
+Using the code cell below as a start, print `"Good afternoon"` if the
+`current_time` is past noon.
+
+Otherwise, do nothing.
+
+```{hint}
+Write some conditional based on `current_time.hour`.
+```
+
+```{code-block} python
+import datetime
+current_time = datetime.datetime.now()
+
+## your code here
+```
+
+more text after
+
+({ref}`back to text <dir2-3-3>`)
+````
+
+````{exercise} 4
+:nonumber:
+:label: ex2-3-4
+
+In this example, you will generate a random number between 0 and 1
+and then display "x > 0.5" or "x < 0.5" depending on the value of the
+number.
+
+This also introduces a new package `numpy.random` for
+drawing random numbers (more in the [randomness](../scientific/randomness) lecture).
+
+```{code-block} python
+import numpy as np
+x = np.random.random()
+print(f"x = {x}")
+
+## your code here
+```
+
+({ref}`back to text <dir2-3-4>`)
+````
+
+````{exercise} 5
+:nonumber:
+:label: ex2-3-5
+
+In economics, when an individual has some knowledge, skills, or education
+which provides them with a source of future income, we call it [human
+capital](https://en.wikipedia.org/wiki/Human_capital).
+
+When a student graduating from high school is considering whether to
+continue with post-secondary education, they may consider that it gives
+them higher paying jobs in the future, but requires that they don't begin
+working until after graduation.
+
+Consider the simplified example where a student has perfectly forecastable
+employment and is given two choices:
+
+1. Begin working immediately and make 40,000 a year until they retire 40
+years later.
+2. Pay 5,000 a year for the next 4 years to attend university, then
+get a job paying 50,000 a year until they retire 40 years after making
+the college attendance decision.
+
+Should the student enroll in school if the discount rate is r = 0.05?
+
+```{code-block} python
+
+# Discount rate
+r = 0.05
+
+# High school wage
+w_hs = 40_000
+
+# College wage and cost of college
+c_college = 5_000
+w_college = 50_000
+
+# Compute npv of being a hs worker
+
+# Compute npv of attending college
+
+# Compute npv of being a college worker
+
+# Is npv_collegeworker - npv_collegecost > npv_hsworker
+```
+
+({ref}`back to text <dir2-3-5>`)
+````
+
+````{exercise} 6
+:nonumber:
+:label: ex2-3-6
+
+Instead of the above, write a for loop that uses the lists of cities
+and states below to print the same "{city} is in {state}" using
+a `zip` instead of an `enumerate`.
+
+```{hint}
+Try using `zip`
+```
+
+```{code-block} python
+cities = ["Phoenix", "Austin", "San Diego", "New York"]
+states = ["Arizona", "Texas", "California", "New York"]
+
+# Your code here
+```
+
+({ref}`back to text <dir2-3-6>`)
+````
+
+````{exercise} 7
+:nonumber:
+:label: ex2-3-7
+
+Companies often invest in training their employees to raise their
+productivity. Economists sometimes wonder why companies
+spend this money when this incentivizes other companies to hire
+their employees away with higher salaries since employees gain human capital from training?
+
+Let's say that it costs a company 25,000 dollars to teach their
+employees Python, but it raises their output by 2,500 per month. How
+many months would an employee need to stay for the company to find it
+profitable to pay for their employees to learn Python if their discount
+rate is r = 0.01?
+
+```{code-block} python
+# Define cost of teaching python
+cost = 25_000
+r = 0.01
+
+# Per month value
+added_value = 2500
+
+n_months = 0
+total_npv = 0.0
+
+# Put condition below here
+while False: # (replace False with your condition here)
+    n_months = n_months + 1  # Increment how many months they've worked
+
+    # Increase total_npv
+```
+
+({ref}`back to text <dir2-3-7>`)
+````
+
+````{exercise} 8
+:nonumber:
+:label: ex2-3-8
+
+Try to find the index of the first value in `x`
+that is greater than 0.999 using a for loop and `break`.
+
+```{hint}
+try iterating over `range(len(x))`.
+```
+
+```{code-block} python
+x = np.random.rand(10_000)
+# Your code here
+```
+
+({ref}`back to text <dir2-3-8>`)
+````
+
+````{exercise} 9
+:nonumber:
+:label: ex2-3-9
+
+Write a for loop that adds up all values in `x` that are greater than
+or equal to 0.5.
+
+Use the `continue` word to end the body of the loop early for all values
+of `x` that are less than 0.5.
+
+```{hint}
+Try starting your loop with `for value in x:` instead of
+iterating over the indices of `x`.
+```
+
+```{code-block} python
+x = np.random.rand(10_000)
+# Your code here
+```
+
+({ref}`back to text <dir2-3-9>`)
+````
+
+````{exercise} 10
+:nonumber:
+:label: ex2-3-10
+
+Returning to our previous example: print "{city} is in {state}" for each combination
+using a `zip` and a comprehension.
+
+```{hint}
+Try using `zip`
+```
+
+```{code-block} python
+cities = ["Phoenix", "Austin", "San Diego", "New York"]
+states = ["Arizona", "Texas", "California", "New York"]
+
+# your code here
+```
+
+({ref}`back to text <dir2-3-10>`)
+````

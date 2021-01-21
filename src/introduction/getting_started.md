@@ -286,15 +286,11 @@ Some useful commands:
 - You can evaluate a cell by pressing `Shift + Enter` (meaning `Shift` and `Enter` at
   the same time)
 
-````{exercise} 1
+````{exercise}
 :nonumber:
-In the *code* cell below (notice the `[ ]:` to the left) type a quote (`"`), your name,
-then another quote (`"`) and evaluate the cell
+:label: dir1-1-1
 
-```{code-block} python
-# code here!
-```
-
+See {ref}`exercise 1 <ex1-1-1>` in the exercise list.
 ````
 
 **Advanced Usage and Getting Help**
@@ -306,6 +302,17 @@ For more help with JupyterLab and Jupyter Notebook, see the user guides:
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: ex1-1-1
+
+In the *code* cell below (notice the `[ ]:` to the left) type a quote (`"`), your name,
+then another quote (`"`) and evaluate the cell
+
+```{code-block} python
+# code here!
+```
+
+({ref}`back to text <dir1-1-1>`)
 ````
 
