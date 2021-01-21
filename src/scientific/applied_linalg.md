@@ -103,15 +103,9 @@ print("Dot product with @", x @ y)
 
 ````{exercise} 1
 :nonumber:
+:label: dir3-3-1
 
-Alice is a stock broker who owns two types of assets: A and B. She owns 100
-units of asset A and 50 units of asset B. The current interest rate is 5%.
-Each of the A assets have a remaining duration of 6 years and pay
-\$1500 each year, while each of the B assets have a remaining duration
-of 4 years and pay \$500 each year. Alice would like to retire if she
-can sell her assets for more than \$500,000. Use vector addition, scalar
-multiplication, and dot products to determine whether she can retire.
-
+See {ref}`exercise 1 <ex3-3-1>` in the exercise list.
 ````
 
 ```{code-cell} python
@@ -241,31 +235,14 @@ print(y1 @ x1)
 Despite our options, we stick to using `@` because
 it is simplest to read and write.
 
+
 ````{exercise} 2
 :nonumber:
+:label: dir3-3-2
 
-Which of the following operations will work and which will
-create errors because of size issues?
-
-Test out your intuitions in the code cell below
-
-```{code-block} python
-x1 @ x2
-x2 @ x1
-x2 @ x3
-x3 @ x2
-x1 @ x3
-x4 @ y1
-x4 @ y2
-y1 @ x4
-y2 @ x4
-```
-
-```{code-block} python
-# testing area
-```
-
+See {ref}`exercise 2 <ex3-3-2>` in the exercise list.
 ````
+
 
 ### Other Linear Algebra Concepts
 
@@ -760,6 +737,60 @@ print(f"The distribution of workers is given by {dist}")
 
 ````{exercise} 3
 :nonumber:
+:label: dir3-3-3
+
+See {ref}`exercise 3 <ex3-3-3>` in the exercise list.
+````
+
+
+## Exercises
+
+````{exercise} 1
+:nonumber:
+:label: ex3-3-1
+
+Alice is a stock broker who owns two types of assets: A and B. She owns 100
+units of asset A and 50 units of asset B. The current interest rate is 5%.
+Each of the A assets have a remaining duration of 6 years and pay
+\$1500 each year, while each of the B assets have a remaining duration
+of 4 years and pay \$500 each year. Alice would like to retire if she
+can sell her assets for more than \$500,000. Use vector addition, scalar
+multiplication, and dot products to determine whether she can retire.
+
+({ref}`back to text <dir3-3-1>`)
+````
+
+````{exercise} 2
+:nonumber:
+:label: ex3-3-2
+
+Which of the following operations will work and which will
+create errors because of size issues?
+
+Test out your intuitions in the code cell below
+
+```{code-block} python
+x1 @ x2
+x2 @ x1
+x2 @ x3
+x3 @ x2
+x1 @ x3
+x4 @ y1
+x4 @ y2
+y1 @ x4
+y2 @ x4
+```
+
+```{code-block} python
+# testing area
+```
+
+({ref}`back to text <dir3-3-2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex3-3-3
 
 Compare the distribution above to the final values of a long simulation.
 
@@ -769,10 +800,5 @@ If you multiply the distribution by 1,000,000 (the number of workers), do you ge
 # your code here
 ```
 
+({ref}`back to text <dir3-3-3>`)
 ````
-
-## Exercises
-
-````{exerciselist}
-````
-
