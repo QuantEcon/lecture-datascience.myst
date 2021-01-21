@@ -195,27 +195,20 @@ print(x_3d[0, 1, 0])
 
 Success!
 
+
 ````{exercise} 1
 :nonumber:
+:label: dir3-1-1
 
-Try indexing into another element of your choice from the
-3-dimensional array.
-
-Building an understanding of indexing means working through this
-type of operation several times -- without skipping steps!
-
+See {ref}`exercise 1 <ex3-1-1>` in the exercise list.
 ````
+
 
 ````{exercise} 2
 :nonumber:
+:label: dir3-1-2
 
-Look at the 2-dimensional array `x_2d`.
-
-Does the inner-most index correspond to rows or columns? What does the
-outer-most index correspond to?
-
-Write your thoughts.
-
+See {ref}`exercise 2 <ex3-1-2>` in the exercise list.
 ````
 
 We can also select multiple elements at a time -- this is called slicing.
@@ -237,12 +230,14 @@ print(x_3d[:, 0, 0:2])
 print(x_3d[:, 0, :2])  # the 0  in 0:2 is optional
 ```
 
+
 ````{exercise} 3
 :nonumber:
+:label: dir3-1-3
 
-What would you do to extract the array `[[5, 6], [50, 60]]`?
-
+See {ref}`exercise 3 <ex3-1-3>` in the exercise list.
 ````
+
 
 ### Array Functionality
 
@@ -333,13 +328,12 @@ print("2 * x = ", 2 * x)
 print("x / 2 = ", x / 2)
 ```
 
+
 ````{exercise} 4
 :nonumber:
+:label: dir3-1-4
 
-Do you recall what multiplication by an integer did for lists?
-
-How does this differ?
-
+See {ref}`exercise 4 <ex3-1-4>` in the exercise list.
 ````
 
 Operations between two arrays of the same size, in this case `(2, 2)`, simply apply the operation
@@ -408,44 +402,12 @@ z = np.array([1,2,3])
 np.log(z) * z
 ```
 
+
 ````{exercise} 5
 :nonumber:
+:label: dir3-1-5
 
-Let's revisit a bond pricing example we saw in {doc}`Control flow <../python_fundamentals/control_flow>`.
-
-Recall that the equation for pricing a bond with coupon payment $C$,
-face value $M$, yield to maturity $i$, and periods to maturity
-$N$ is
-
-$$
-\begin{align*}
-    P &= \left(\sum_{n=1}^N \frac{C}{(i+1)^n}\right) + \frac{M}{(1+i)^N} \\
-      &= C \left(\frac{1 - (1+i)^{-N}}{i} \right) + M(1+i)^{-N}
-\end{align*}
-$$
-
-In the code cell below, we have defined variables for `i`, `M` and `C`.
-
-You have two tasks:
-
-1. Define a numpy array `N` that contains all maturities between 1 and 10 
-
-    ```{hint}
-    look at the `np.arange` function.
-    ```
-
-1. Using the equation above, determine the bond prices of all maturity levels in your array.
-
-```{code-block} python
-i = 0.03
-M = 100
-C = 5
-
-# Define array here
-
-# price bonds here
-```
-
+See {ref}`exercise 5 <ex3-1-5>` in the exercise list.
 ````
 
 ### Other Useful Array Operations
@@ -523,6 +485,91 @@ When speed matters, directly write a `f` function to work on arrays.
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: ex3-1-1
+
+Try indexing into another element of your choice from the
+3-dimensional array.
+
+Building an understanding of indexing means working through this
+type of operation several times -- without skipping steps!
+
+({ref}`back to text <dir3-1-1>`)
 ````
 
+````{exercise} 2
+:nonumber:
+:label: ex3-1-2
+
+Look at the 2-dimensional array `x_2d`.
+
+Does the inner-most index correspond to rows or columns? What does the
+outer-most index correspond to?
+
+Write your thoughts.
+
+({ref}`back to text <dir3-1-2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex3-1-3
+
+What would you do to extract the array `[[5, 6], [50, 60]]`?
+
+({ref}`back to text <dir3-1-3>`)
+````
+
+````{exercise} 4
+:nonumber:
+:label: ex3-1-4
+
+Do you recall what multiplication by an integer did for lists?
+
+How does this differ?
+
+({ref}`back to text <dir3-1-4>`)
+````
+
+````{exercise} 5
+:nonumber:
+:label: ex3-1-5
+
+Let's revisit a bond pricing example we saw in {doc}`Control flow <../python_fundamentals/control_flow>`.
+
+Recall that the equation for pricing a bond with coupon payment $C$,
+face value $M$, yield to maturity $i$, and periods to maturity
+$N$ is
+
+$$
+\begin{align*}
+    P &= \left(\sum_{n=1}^N \frac{C}{(i+1)^n}\right) + \frac{M}{(1+i)^N} \\
+      &= C \left(\frac{1 - (1+i)^{-N}}{i} \right) + M(1+i)^{-N}
+\end{align*}
+$$
+
+In the code cell below, we have defined variables for `i`, `M` and `C`.
+
+You have two tasks:
+
+1. Define a numpy array `N` that contains all maturities between 1 and 10 
+
+    ```{hint}
+    look at the `np.arange` function.
+    ```
+
+1. Using the equation above, determine the bond prices of all maturity levels in your array.
+
+```{code-block} python
+i = 0.03
+M = 100
+C = 5
+
+# Define array here
+
+# price bonds here
+```
+
+({ref}`back to text <dir3-1-5>`)
+````

@@ -157,14 +157,11 @@ fig.tight_layout()
 
 ````{exercise} 1
 :nonumber:
+:label: dir3-4-1
 
-Wikipedia and other credible statistics sources tell us that the mean and
-variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
-
-How could we check whether the numpy random numbers approximate these
-values?
-
+See {ref}`exercise 1 <ex3-4-1>` in the exercise list.
 ````
+
 
 ### Discrete Distributions
 
@@ -453,70 +450,20 @@ for t in range(10):
     x = mc.P.T @ x
 ```
 
+
 ````{exercise} 2
 :nonumber:
+:label: dir3-4-2
 
-In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.
-
-The stationary distribution of a Markov chain is the probability distribution that would
-result after an infinite number of steps *for any initial distribution*.
-
-Mathematically, a stationary distribution $x$ is a distribution where $x = P'x$.
-
-In the code cell below, use the `stationary_distributions` property of `mc` to
-determine the stationary distribution of our Markov chain.
-
-After doing your computation, think about the answer... think about why our transition
-probabilities must lead to this outcome.
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 2 <ex3-4-2>` in the exercise list.
 ````
+
 
 ````{exercise} 3
 :nonumber:
+:label: dir3-4-3
 
-Let's revisit the unemployment example from the {doc}`linear algebra lecture <applied_linalg>`.
-
-We'll repeat necessary details here.
-
-Consider an economy where in any given year, $\alpha = 5\%$ of workers lose their jobs, and
-$\phi = 10\%$ of unemployed workers find jobs.
-
-Initially, 90% of the 1,000,000 workers are employed.
-
-Also suppose that the average employed worker earns 10 dollars, while an unemployed worker
-earns 1 dollar per period.
-
-You now have four tasks:
-
-1. Represent this problem as a Markov chain by defining the three components defined above.
-1. Construct an instance of the quantecon MarkovChain by using the objects defined in part 1.
-1. Simulate the Markov chain 30 times for 50 time periods, and plot each chain over time (see
-   helper code below).
-1. Determine the average long run payment for a worker in this setting
-
-```{hint}
-Think about the stationary distribution.
-```
-
-```{code-block} python
-# define components here
-
-# construct Markov chain
-
-# simulate (see docstring for how to do many repetitions of
-# the simulation in one function call)
-# uncomment the lines below and fill in the blanks
-# sim = XXXXX.simulate(XXXX)
-# fig, ax = plt.subplots(figsize=(10, 8))
-# ax.plot(range(50), sim.T, alpha=0.4)
-
-# Long-run average payment
-```
-
+See {ref}`exercise 3 <ex3-4-3>` in the exercise list.
 ````
 
 ### Continuous Distributions
@@ -586,6 +533,100 @@ ax.legend();
 
 ````{exercise} 4
 :nonumber:
+:label: dir3-4-4
+
+See {ref}`exercise 4 <ex3-4-4>` in the exercise list.
+````
+
+
+## Exercises
+
+````{exercise} 1
+:nonumber:
+:label: ex3-4-1
+
+Wikipedia and other credible statistics sources tell us that the mean and
+variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
+
+How could we check whether the numpy random numbers approximate these
+values?
+
+({ref}`back to text <dir3-4-1>`)
+````
+
+````{exercise} 2
+:nonumber:
+:label: ex3-4-2
+
+In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.
+
+The stationary distribution of a Markov chain is the probability distribution that would
+result after an infinite number of steps *for any initial distribution*.
+
+Mathematically, a stationary distribution $x$ is a distribution where $x = P'x$.
+
+In the code cell below, use the `stationary_distributions` property of `mc` to
+determine the stationary distribution of our Markov chain.
+
+After doing your computation, think about the answer... think about why our transition
+probabilities must lead to this outcome.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <dir3-4-2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex3-4-3
+
+Let's revisit the unemployment example from the {doc}`linear algebra lecture <applied_linalg>`.
+
+We'll repeat necessary details here.
+
+Consider an economy where in any given year, $\alpha = 5\%$ of workers lose their jobs, and
+$\phi = 10\%$ of unemployed workers find jobs.
+
+Initially, 90% of the 1,000,000 workers are employed.
+
+Also suppose that the average employed worker earns 10 dollars, while an unemployed worker
+earns 1 dollar per period.
+
+You now have four tasks:
+
+1. Represent this problem as a Markov chain by defining the three components defined above.
+1. Construct an instance of the quantecon MarkovChain by using the objects defined in part 1.
+1. Simulate the Markov chain 30 times for 50 time periods, and plot each chain over time (see
+   helper code below).
+1. Determine the average long run payment for a worker in this setting
+
+```{hint}
+Think about the stationary distribution.
+```
+
+```{code-block} python
+# define components here
+
+# construct Markov chain
+
+# simulate (see docstring for how to do many repetitions of
+# the simulation in one function call)
+# uncomment the lines below and fill in the blanks
+# sim = XXXXX.simulate(XXXX)
+# fig, ax = plt.subplots(figsize=(10, 8))
+# ax.plot(range(50), sim.T, alpha=0.4)
+
+# Long-run average payment
+```
+
+({ref}`back to text <dir3-4-3>`)
+````
+
+````{exercise} 4
+:nonumber:
+:label: ex3-4-4
 
 Assume you have been given the opportunity to choose between one of three financial assets:
 
@@ -613,10 +654,5 @@ and express your preferences.
 # your code here
 ```
 
+({ref}`back to text <dir3-4-4>`)
 ````
-
-## Exercises
-
-````{exerciselist}
-````
-
