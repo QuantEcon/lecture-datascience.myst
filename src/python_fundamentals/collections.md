@@ -169,35 +169,11 @@ print(num_list)
 num_list.extend([20, 4])
 print(num_list)
 ```
-
-````{exercise} 1
+````{exercise}
 :nonumber:
+:label: dir2-2-1
 
-In the first cell, try `y.append(z)`.
-
-In the second cell try `y.extend(z)`.
-
-Explain the behavior.
-
-```{hint}
-When you are trying to explain use `y.append?` and `y.extend?` to
-see a description of what these methods are supposed to do.
-```
-
-```{code-block} python
-y = ["a", "b", "c"]
-z = [1, 2, 3]
-# your code here
-print(y)
-```
-
-```{code-block} python
-y = ["a", "b", "c"]
-z = [1, 2, 3]
-# your code here
-print(y)
-```
-
+See {ref}`exercise 1 <ex2-2-1>` in the exercise list.
 ````
 
 (inhomogenous_lists)=
@@ -282,19 +258,11 @@ To turn the `range` into a list:
 list(r)
 ```
 
-````{exercise} 2
+````{exercise}
 :nonumber:
+:label: dir2-2-2
 
-Experiment with the other two versions of the `range` function.
-
-```{code-block} python
-# try list(range(a, N)) -- you pick `a` and `N`
-```
-
-```{code-block} python
-# try list(range(a, N, d)) -- you pick `a`, `N`, and `d`
-```
-
+See {ref}`exercise 2 <ex2-2-2>` in the exercise list.
 ````
 
 ### What are Tuples?
@@ -342,34 +310,13 @@ t[0]  # still start counting at 0
 t[2]
 ```
 
-````{exercise} 3
+````{exercise}
 :nonumber:
+:label: dir2-2-3
 
-Verify that tuples are indeed immutable by attempting the following:
-
-- Changing the first element of `t` to be `100`
-- Appending a new element `"!!"` to the end of `t` (remember with a
-  list `x` we would use `x.append("!!")` to do this
-- Sorting `t`
-- Reversing `t`
-
-```{code-block} python
-# change first element of t
-```
-
-```{code-block} python
-# appending to t
-```
-
-```{code-block} python
-# sorting t
-```
-
-```{code-block} python
-# reversing t
-```
-
+See {ref}`exercise 3 <ex2-2-3>` in the exercise list.
 ````
+
 
 Tuples (and lists) can be unpacked directly into variables.
 
@@ -496,24 +443,11 @@ collection.
 Notice that the third item is `(2, 'c')` because
 `["a", "b", "c"][2]` is `'c'`
 
-````{exercise} 4
+````{exercise}
 :nonumber:
+:label: dir2-2-4
 
-**Challenging** For the tuple `foo` below, use a combination of `zip`,
-`range`, and `len` to mimic `enumerate(foo)`.
-
-Verify that your proposed solution is correct by converting each to a list
-and checking equality with `==`.
-
-```{hint}
-You can see what the answer should look like by starting with
-`list(enumerate(foo))`.
-```
-
-```{code-block} python
-foo = ("good", "luck!")
-```
-
+See {ref}`exercise 4 <ex2-2-4>` in the exercise list.
 ````
 
 An important quirk of some iterable types that are not lists (such as the above `zip`) is that
@@ -590,21 +524,11 @@ will be strings, but we could also use numbers (`int`, or
 
 The values can be **any** type and different from each other.
 
-````{exercise} 5
+````{exercise}
 :nonumber:
+:label: dir2-2-5
 
-Create a new dict which associates stock tickers with its stock price.
-
-Here are some tickers and a price.
-
-- AAPL: 175.96
-- GOOGL: 1047.43
-- TVIX: 8.38
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 5 <ex2-2-5>` in the exercise list.
 ````
 
 This next example is meant to emphasize how values can be
@@ -666,19 +590,11 @@ china_data["unemployment"] = 4.051
 print(china_data)
 ```
 
-````{exercise} 6
+````{exercise}
 :nonumber:
+:label: dir2-2-6
 
-Look at the [World Factbook for Australia](https://www.cia.gov/-library/publications/the-world-factbook/geos/as.html)
-and create a dictionary with data containing the following types:
-float, string, integer, list, and dict.  Choose any data you wish.
-
-To confirm, you should have a dictionary that you identified via a key.
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 6 <ex2-2-6>` in the exercise list.
 ````
 
 #### Common `dict` Functionality
@@ -723,30 +639,18 @@ china_data.get("irrigated_land", "Data Not Available")
 china_data.get("death_rate", "Data Not Available")
 ```
 
-````{exercise} 7
+````{exercise}
 :nonumber:
+:label: dir2-2-7
 
-Use Jupyter's help facilities to learn how to use the `pop` method to
-remove the key `"irrigated_land"` (and its value) from the dict.
-
-```{code-block} python
-# uncomment and use the Inspector or ?
-#china_data.pop(
-```
-
+See {ref}`exercise 7 <ex2-2-7>` in the exercise list.
 ````
 
-````{exercise} 8
+````{exercise}
 :nonumber:
+:label: dir2-2-8
 
-Explain what happens to the value you popped.
-
-Experiment with calling `pop` twice.
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 8 <ex2-2-8>` in the exercise list.
 ````
 
 ### Sets (Optional)
@@ -777,19 +681,11 @@ print("s has type", type(s))
 s
 ```
 
-````{exercise} 9
+````{exercise}
 :nonumber:
+:label: dir2-2-9
 
-Try creating a set with repeated elements (e.g. `{1, 2, 1, 2, 1, 2}`).
-
-What happens?
-
-Why?
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 9 <ex2-2-9>` in the exercise list.
 ````
 
 As with lists and tuples, we can check if something is `in` the set
@@ -840,24 +736,11 @@ Consider the set `s` from above and the set
 - `s.symmetric_difference(s2)`: returns a set with all elements in
   only one of `s` and `s2`
 
-````{exercise} 10
+````{exercise}
 :nonumber:
+:label: dir2-2-10
 
-Test out two of the operations described above using the original set we
-created, `s`, and the set created below `s2`.
-
-```{code-block} python
-s2 = {"hello", "world"}
-```
-
-```{code-block} python
-# Operation 1
-```
-
-```{code-block} python
-# Operation 2
-```
-
+See {ref}`exercise 10 <ex2-2-10>` in the exercise list.
 ````
 
 As with tuples and lists, a `set` function can convert other
@@ -885,6 +768,204 @@ tuple(s)
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: ex2-2-1
+
+In the first cell, try `y.append(z)`.
+
+In the second cell try `y.extend(z)`.
+
+Explain the behavior.
+
+```{hint}
+When you are trying to explain use `y.append?` and `y.extend?` to
+see a description of what these methods are supposed to do.
+```
+
+```{code-block} python
+y = ["a", "b", "c"]
+z = [1, 2, 3]
+# your code here
+print(y)
+```
+
+```{code-block} python
+y = ["a", "b", "c"]
+z = [1, 2, 3]
+# your code here
+print(y)
+```
+({ref}`back to text <dir2-2-1>`)
 ````
 
+````{exercise} 2
+:nonumber:
+:label: ex2-2-2
+
+Experiment with the other two versions of the `range` function.
+
+```{code-block} python
+# try list(range(a, N)) -- you pick `a` and `N`
+```
+
+```{code-block} python
+# try list(range(a, N, d)) -- you pick `a`, `N`, and `d`
+```
+({ref}`back to text <dir2-2-2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex2-2-3
+
+Verify that tuples are indeed immutable by attempting the following:
+
+- Changing the first element of `t` to be `100`
+- Appending a new element `"!!"` to the end of `t` (remember with a
+  list `x` we would use `x.append("!!")` to do this
+- Sorting `t`
+- Reversing `t`
+
+```{code-block} python
+# change first element of t
+```
+
+```{code-block} python
+# appending to t
+```
+
+```{code-block} python
+# sorting t
+```
+
+```{code-block} python
+# reversing t
+```
+
+({ref}`back to text <dir2-2-3>`)
+````
+
+````{exercise} 4
+:nonumber:
+:label: ex2-2-4
+
+**Challenging** For the tuple `foo` below, use a combination of `zip`,
+`range`, and `len` to mimic `enumerate(foo)`.
+
+Verify that your proposed solution is correct by converting each to a list
+and checking equality with `==`.
+
+```{hint}
+You can see what the answer should look like by starting with
+`list(enumerate(foo))`.
+```
+
+```{code-block} python
+foo = ("good", "luck!")
+```
+
+({ref}`back to text <dir2-2-4>`)
+````
+
+````{exercise} 5
+:nonumber:
+:label: ex2-2-5
+
+Create a new dict which associates stock tickers with its stock price.
+
+Here are some tickers and a price.
+
+- AAPL: 175.96
+- GOOGL: 1047.43
+- TVIX: 8.38
+
+```{code-block} python
+# your code here
+```
+({ref}`back to text <dir2-2-5>`)
+````
+
+````{exercise} 6
+:nonumber:
+:label: ex2-2-6
+
+Look at the [World Factbook for Australia](https://www.cia.gov/-library/publications/the-world-factbook/geos/as.html)
+and create a dictionary with data containing the following types:
+float, string, integer, list, and dict.  Choose any data you wish.
+
+To confirm, you should have a dictionary that you identified via a key.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <dir2-2-6>`)
+````
+
+````{exercise} 7
+:nonumber:
+:label: ex2-2-7
+
+Use Jupyter's help facilities to learn how to use the `pop` method to
+remove the key `"irrigated_land"` (and its value) from the dict.
+
+```{code-block} python
+# uncomment and use the Inspector or ?
+#china_data.pop()
+```
+
+({ref}`back to text <dir2-2-7>`)
+````
+
+````{exercise} 8
+:nonumber:
+:label: ex2-2-8
+
+Explain what happens to the value you popped.
+
+Experiment with calling `pop` twice.
+
+```{code-block} python
+# your code here
+```
+({ref}`back to text <dir2-2-8>`)
+````
+
+````{exercise} 9
+:nonumber:
+:label: ex2-2-9
+
+Try creating a set with repeated elements (e.g. `{1, 2, 1, 2, 1, 2}`).
+
+What happens?
+
+Why?
+
+```{code-block} python
+# your code here
+```
+({ref}`back to text <dir2-2-9>`)
+````
+
+````{exercise} 10
+:nonumber:
+:label: ex2-2-10
+
+Test out two of the operations described above using the original set we
+created, `s`, and the set created below `s2`.
+
+```{code-block} python
+s2 = {"hello", "world"}
+```
+
+```{code-block} python
+# Operation 1
+```
+
+```{code-block} python
+# Operation 2
+```
+
+({ref}`back to text <dir2-2-10>`)
+````

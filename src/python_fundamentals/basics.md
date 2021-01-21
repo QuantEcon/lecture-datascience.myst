@@ -79,17 +79,11 @@ First, the right side of the equal sign is computed.
 Then, that computed value is stored as the variable to the left of the
 equal sign.
 
-````{exercise} 1
+````{exercise}
 :nonumber:
+:label: dir1
 
-What do you think the value of `z` is after running the code below?
-
-```{code-block} python
-z = 3
-z = z + 4
-print("z is", z)
-```
-
+See {ref}`exercise 1 <ex1>` in the exercise list.
 ````
 
 Keep in mind that the variable binds a name to something stored in memory.
@@ -157,15 +151,11 @@ Depending on how you launched Jupyter, this will either launch
 # print? # remove the comment and <Shift-Enter>
 ```
 
-````{exercise} 2
+````{exercise}
 :nonumber:
+:label: dir2
 
-Read about out what the `len` function does (by writing len?).
-
-What will it produce if we give it the variable `x`?
-
-Check whether you were right by running the code `len(x)`.
-
+See {ref}`exercise 2 <ex2>` in the exercise list.
 ````
 
 JupyterLab also has a "Contextual Help" (previously called "Inspector") window.  To use,
@@ -293,29 +283,11 @@ Here's an example.
 import sys   # for dealing with your computer's system
 sys.version  # information about the Python version in use
 ```
-
-````{exercise} 3
+````{exercise}
 :nonumber:
+:label: dir3
 
-We can use our introspection skills to investigate a package's contents.
-
-In the cell below, use tab completion to find a function from the `time`
-module that will display the **local** time.
-
-Use `time.FUNC_NAME?` (where `FUNC_NAME` is replaced with the
-function you found) to see information about that function and
-then call the function.
-
-```{hint} 
-Look for something to do with the word `local`
-
-```
-
-```{code-block} python
-import time
-# your code here -- notice the comment!
-```
-
+See {ref}`exercise 3 <ex3>` in the exercise list.
 ````
 
 ### Module Aliases
@@ -346,14 +318,11 @@ to the common ones.
 
 You will learn what these common ones are over time.
 
-````{exercise} 4
+````{exercise}
 :nonumber:
+:label: dir4
 
-Try running `import time as t` in the cell below, then see if you can
-call the function you identified above.
-
-Does it work?
-
+See {ref}`exercise 4 <ex4>` in the exercise list.
 ````
 
 ## Good Code Habits
@@ -405,21 +374,11 @@ zf = 1230.5  # Notice -- There are no commas!
 zf2 = 1_230.5  # If needed, we use `_` to separate numbers for readability
 ```
 
-````{exercise} 5
+````{exercise}
 :nonumber:
+:label: dir5
 
-Create the following variables:
-
-- `D`: A floating point number with the value 10,000
-- `r`: A floating point number with value 0.025
-- `T`: An integer with value 30
-
-We will use them in a later exercise.
-
-```{code-block} python
-# your code here!
-```
-
+See {ref}`exercise 5 <ex5>` in the exercise list.
 ````
 
 ### Python as a Calculator
@@ -479,28 +438,11 @@ What do you think `z1` is?
 
 How about `z2`?
 
-````{exercise} 6
+````{exercise}
 :nonumber:
+:label: dir6
 
-Remember the variables we created earlier?
-
-Let's compute the present discounted value of a payment ($D$) made
-in $T$ years assuming an interest rate of 2.5%. Save this value to
-a new variable called `PDV` and print your output.
-
-```{hint}
-The formula is
-
-$$
-\text{PDV} = \frac{D}{(1 + r)^T}
-$$
-
-```
-
-```{code-block} python
-# your code here
-```
-
+See {ref}`exercise 6 <ex6>` in the exercise list.
 ````
 
 ### Other Math Functions
@@ -535,25 +477,11 @@ Now, we can use `math.[TAB]` to see what functions are available to us.
 math.sin(2.5)
 ```
 
-````{exercise} 7
+````{exercise}
 :nonumber:
+:label: dir7
 
-Verify the "trick" where the percent difference ($\frac{x - y}{x}$)
-between two numbers close to 1 can be well approximated by the difference
-between the log of the two numbers ($\log(x) - \log(y)$).
-
-Use the numbers `x` and `y` below.
-
-```{hint}
-you will want to use the
-`math.log` function
-```
-
-```{code-block} python
-x = 1.05
-y = 1.02
-```
-
+See {ref}`exercise 7 <ex7>` in the exercise list.
 ````
 
 #### Floor/Modulus Division Operators
@@ -614,23 +542,13 @@ its answer to `str`.
 type("this is a string")
 ```
 
-````{exercise} 8
+````{exercise}
 :nonumber:
+:label: dir8
 
-The code below is invalid Python code
-
-```{code-block} markdown
-x = 'What's wrong with this string'
-```
-
-Can you fix it?
-
-```{hint}
-Try creating a code cell below and testing things out until you
-find a solution.
-```
-
+See {ref}`exercise 8 <ex8>` in the exercise list.
 ````
+
 
 ### String Operations
 
@@ -667,16 +585,11 @@ a * b
 a - b
 ```
 
-````{exercise} 9
+````{exercise}
 :nonumber:
+:label: dir9
 
-Using the variables `x` and `y`, how could you create the sentence
-`Hello World`?
-
-```{hint}
-Think about how to represent a space as a string.
-```
-
+See {ref}`exercise 9 <ex9>` in the exercise list.
 ````
 
 ### String Methods
@@ -706,51 +619,18 @@ x.count("l")  # Counts number of a particular string
 x.count("ll")
 ```
 
-````{exercise} 10
+````{exercise}
 :nonumber:
+:label: dir10
 
-One of our favorite (and most frequently used) string methods is
-`replace`.
-
-It substitutes all occurrences of a particular pattern with a different pattern.
-
-For the variable `test` below, use the `replace` method to change the
-`c` to a `d`.
-
-```{hint}
-Type `test.replace?` to get some help for how to use the method
-replace.
-```
-
-```{code-block} python
-test = "abc"
-```
-
+See {ref}`exercise 10 <ex10>` in the exercise list.
 ````
 
-````{exercise} 11
+````{exercise}
 :nonumber:
+:label: dir11
 
-Suppose you are working with price data and encounter the value
-`"$6.50"`.
-
-We recognize this as being a number representing the quantity "six dollars and fifty cents."
-
-However, Python interprets the value as the string
-`"$6.50"`. (Quiz: why is this a problem? Think about the examples above.)
-
-In this exercise, your task is to convert the variable `price` below
-into a number.
-
-```{hint}
-Once the string is in a suitable format, you can call write
-`float(clean_price)` to make it a number.
-```
-
-```{code-block} python
-price = "$6.50"
-```
-
+See {ref}`exercise 11 <ex11>` in the exercise list.
 ````
 
 ### String Formatting
@@ -789,12 +669,11 @@ print(my_string)
 In these cases, the `f` in front of the string causes Python interpolate
 any valid expression within the `{}` braces.
 
-````{exercise} 12
+````{exercise}
 :nonumber:
+:label: dir12
 
-Lookup a country in [World Bank database](https://data.worldbank.org), and
-format a string showing the growth rate of GDP over the last 2 years.
-
+See {ref}`exercise 12 <ex12>` in the exercise list.
 ````
 
 Alternatively, to reuse a formatted string, you can call the `format` method (noting that you do **not** put `f` in front).
@@ -805,26 +684,21 @@ gdp_string = "{country} had ${GDP} billion in {year}"
 gdp_string.format(country = "Vietnam", GDP = 223.9, year = 2017)
 ```
 
-````{exercise} 13
+````{exercise}
 :nonumber:
+:label: dir13
 
-Instead of hard-coding the values above, try to use the `country`, `GDP` and
-`year` variables you previously defined.
-
+See {ref}`exercise 13 <ex13>` in the exercise list.
 ````
 
-````{exercise} 14
+
+````{exercise}
 :nonumber:
+:label: dir14
 
-Create a new string and use formatting to produce each of the following
-statements
-
-- "The 1st quarter revenue was 110M"
-- "The 2nd quarter revenue was 95M"
-- "The 3rd quarter revenue was 100M"
-- "The 4th quarter revenue was 130M"
-
+See {ref}`exercise 14 <ex14>` in the exercise list.
 ````
+
 
 For more information on what you can do with string formatting (there is *a lot*
 that can be done...), see the [official Python documentation](https://docs.python.org/3.6/library/string.html) on the subject.
@@ -946,8 +820,296 @@ False or False
 True and (False or True)
 ```
 
+````{exercise}
+:nonumber:
+:label: dir15
+
+See {ref}`exercise 15 <ex15>` in the exercise list.
+````
+
+### `all` and `any`
+
+We have seen how we can use the words `and` and `or` to process two booleans
+at a time.
+
+The functions `all` and `any` allow us to process an unlimited number of
+booleans at once.
+
+`all(bools)` will return `True` if and only if all the booleans in `bools`
+is `True` and returns `False` otherwise.
+
+`any(bools)` returns `True` whenever one or more of `bools` is `True`.
+
+The exercise below will give you a chance to practice.
+
+````{exercise}
+:nonumber:
+:label: dir16
+
+See {ref}`exercise 16 <ex16>` in the exercise list.
+````
+
+
+## Exercises
+
+````{exercise} 1
+:nonumber:
+:label: ex1
+
+What do you think the value of `z` is after running the code below?
+
+```{code-block} python
+z = 3
+z = z + 4
+print("z is", z)
+```
+
+({ref}`back to text <dir1>`)
+````
+
+````{exercise} 2
+:nonumber:
+:label: ex2
+
+Read about out what the `len` function does (by writing len?).
+
+What will it produce if we give it the variable `x`?
+
+Check whether you were right by running the code `len(x)`.
+
+({ref}`back to text <dir2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex3
+
+We can use our introspection skills to investigate a package's contents.
+
+In the cell below, use tab completion to find a function from the `time`
+module that will display the **local** time.
+
+Use `time.FUNC_NAME?` (where `FUNC_NAME` is replaced with the
+function you found) to see information about that function and
+then call the function.
+
+```{hint} 
+Look for something to do with the word `local`
+
+```
+
+```{code-block} python
+import time
+# your code here -- notice the comment!
+```
+({ref}`back to text <dir3>`)
+
+````
+
+````{exercise} 4
+:nonumber:
+:label: ex4
+
+Try running `import time as t` in the cell below, then see if you can
+call the function you identified above.
+
+Does it work?
+
+({ref}`back to text <dir4>`)
+
+````
+
+````{exercise} 5
+:nonumber:
+:label: ex5
+
+Create the following variables:
+
+- `D`: A floating point number with the value 10,000
+- `r`: A floating point number with value 0.025
+- `T`: An integer with value 30
+
+We will use them in a later exercise.
+
+```{code-block} python
+# your code here!
+```
+
+({ref}`back to text <dir5>`)
+````
+
+````{exercise} 6
+:nonumber:
+:label: ex6
+
+Remember the variables we created earlier?
+
+Let's compute the present discounted value of a payment ($D$) made
+in $T$ years assuming an interest rate of 2.5%. Save this value to
+a new variable called `PDV` and print your output.
+
+```{hint}
+The formula is
+
+$$
+\text{PDV} = \frac{D}{(1 + r)^T}
+$$
+
+```
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <dir6>`)
+````
+
+````{exercise} 7
+:nonumber:
+:label: ex7
+
+Verify the "trick" where the percent difference ($\frac{x - y}{x}$)
+between two numbers close to 1 can be well approximated by the difference
+between the log of the two numbers ($\log(x) - \log(y)$).
+
+Use the numbers `x` and `y` below.
+
+```{hint}
+you will want to use the
+`math.log` function
+```
+
+```{code-block} python
+x = 1.05
+y = 1.02
+```
+
+({ref}`back to text <dir7>`)
+````
+
+````{exercise} 8
+:nonumber:
+:label: ex8
+
+The code below is invalid Python code
+
+```{code-block} markdown
+x = 'What's wrong with this string'
+```
+
+Can you fix it?
+
+```{hint}
+Try creating a code cell below and testing things out until you
+find a solution.
+```
+
+({ref}`back to text <dir8>`)
+````
+
+````{exercise} 9
+:nonumber:
+:label: ex9
+
+Using the variables `x` and `y`, how could you create the sentence
+`Hello World`?
+
+```{hint}
+Think about how to represent a space as a string.
+```
+
+({ref}`back to text <dir9>`)
+````
+
+````{exercise} 10
+:nonumber:
+:label: ex10
+
+One of our favorite (and most frequently used) string methods is
+`replace`.
+
+It substitutes all occurrences of a particular pattern with a different pattern.
+
+For the variable `test` below, use the `replace` method to change the
+`c` to a `d`.
+
+```{hint}
+Type `test.replace?` to get some help for how to use the method
+replace.
+```
+
+```{code-block} python
+test = "abc"
+```
+
+({ref}`back to text <dir10>`)
+````
+
+````{exercise} 11
+:nonumber:
+:label: ex11
+
+Suppose you are working with price data and encounter the value
+`"$6.50"`.
+
+We recognize this as being a number representing the quantity "six dollars and fifty cents."
+
+However, Python interprets the value as the string
+`"$6.50"`. (Quiz: why is this a problem? Think about the examples above.)
+
+In this exercise, your task is to convert the variable `price` below
+into a number.
+
+```{hint}
+Once the string is in a suitable format, you can call write
+`float(clean_price)` to make it a number.
+```
+
+```{code-block} python
+price = "$6.50"
+```
+
+({ref}`back to text <dir11>`)
+````
+
+````{exercise} 12
+:nonumber:
+:label: ex12
+
+Lookup a country in [World Bank database](https://data.worldbank.org), and
+format a string showing the growth rate of GDP over the last 2 years.
+
+({ref}`back to text <dir12>`)
+````
+
+````{exercise} 13
+:nonumber:
+:label: ex13
+
+Instead of hard-coding the values above, try to use the `country`, `GDP` and
+`year` variables you previously defined.
+
+({ref}`back to text <dir13>`)
+````
+
+````{exercise} 14
+:nonumber:
+:label: ex14
+
+Create a new string and use formatting to produce each of the following
+statements
+
+- "The 1st quarter revenue was 110M"
+- "The 2nd quarter revenue was 95M"
+- "The 3rd quarter revenue was 100M"
+- "The 4th quarter revenue was 130M"
+
+({ref}`back to text <dir14>`)
+````
+
 ````{exercise} 15
 :nonumber:
+:label: ex15
 
 Without typing the commands, determine whether the following statements are
 true or false.
@@ -983,25 +1145,12 @@ True and ((x < z) or (x < y))
 # code here!
 ```
 
+({ref}`back to text <dir15>`)
 ````
-
-### `all` and `any`
-
-We have seen how we can use the words `and` and `or` to process two booleans
-at a time.
-
-The functions `all` and `any` allow us to process an unlimited number of
-booleans at once.
-
-`all(bools)` will return `True` if and only if all the booleans in `bools`
-is `True` and returns `False` otherwise.
-
-`any(bools)` returns `True` whenever one or more of `bools` is `True`.
-
-The exercise below will give you a chance to practice.
 
 ````{exercise} 16
 :nonumber:
+:label: ex16
 
 For each of the code cells below, think carefully about what you expect to
 be returned *before* evaluating the cell.
@@ -1035,10 +1184,5 @@ any([False, True, False])
 any([False, False, False])
 ```
 
+({ref}`back to text <dir16>`)
 ````
-
-## Exercises
-
-````{exerciselist}
-````
-

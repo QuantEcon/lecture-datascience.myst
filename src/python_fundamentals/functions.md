@@ -329,16 +329,11 @@ def returns_to_scale(K, L, gamma):
 returns_to_scale(1.0, 0.5, 2.0)
 ```
 
-````{exercise} 1
+````{exercise}
 :nonumber:
+:label: dir2-4-1
 
-What happens if we try different inputs in our Cobb-Douglas production
-function?
-
-```{code-block} python
-# Compute returns to scale with different values of `K` and `L` and `gamma`
-```
-
+See {ref}`exercise 1 <ex2-4-1>` in the exercise list.
 ````
 
 It turns out that with a little bit of algebra, we can check that this will
@@ -366,23 +361,11 @@ $$
 Note that if $\alpha_2 = 1 - \alpha_1$, this is our Cobb-Douglas
 production function.
 
-````{exercise} 2
+````{exercise}
 :nonumber:
+:label: dir2-4-2
 
-Define a function named `var` that takes a list (call it `x`) and
-computes the variance. This function should use the mean function that we
-defined earlier.
-
-```{hint}
-
-$\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
-
-```
-
-```{code-block} python
-# Your code here.
-```
-
+See {ref}`exercise 2 <ex2-4-2>` in the exercise list.
 ````
 
 (marginal_products)=
@@ -518,26 +501,11 @@ nontrivial functions.
 This is in the same spirit as adding comments to your code — it makes it easier
 for future readers/users (including yourself) to understand what the code does.
 
-````{exercise} 3
+````{exercise}
 :nonumber:
+:label: dir2-4-3
 
-Redefine the `returns_to_scale` function and add a docstring.
-
-Confirm that it works by running the cell containing `returns_to_scale?` below.
-
-*Note*: You do not need to change the actual code in the function — just
-copy/paste and add a docstring in the correct line.
-
-```{code-block} python
-# re-define the `returns_to_scale` function here
-```
-
-```{code-block} python
-# test it here
-
-returns_to_scale?
-```
-
+See {ref}`exercise 3 <ex2-4-3>` in the exercise list.
 ````
 
 ### Default and Keyword Arguments
@@ -588,17 +556,11 @@ Here's how to do that with our `cobb_douglas` example.
 cobb_douglas(1.0, 0.5, z = 1.5)
 ```
 
-````{exercise} 4
+````{exercise}
 :nonumber:
+:label: dir2-4-4
 
-Experiment with the `sep` and `end` arguments to the `print` function.
-
-These can *only* be set by name.
-
-```{code-block} python
-# Your code here.
-```
-
+See {ref}`exercise 4 <ex2-4-4>` in the exercise list.
 ````
 
 In terms of variable scope, the `z` name within the function is
@@ -769,6 +731,76 @@ alphas = [0.2, 0.3, 0.5]
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: ex2-4-1
+
+What happens if we try different inputs in our Cobb-Douglas production
+function?
+
+```{code-block} python
+# Compute returns to scale with different values of `K` and `L` and `gamma`
+```
+
+({ref}`back to text <dir2-4-1>`)
 ````
 
+````{exercise} 2
+:nonumber:
+:label: ex2-4-2
+
+Define a function named `var` that takes a list (call it `x`) and
+computes the variance. This function should use the mean function that we
+defined earlier.
+
+```{hint}
+
+$\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
+
+```
+
+```{code-block} python
+# Your code here.
+```
+
+({ref}`back to text <dir2-4-2>`)
+````
+
+````{exercise} 3
+:nonumber:
+:label: ex2-4-3
+
+Redefine the `returns_to_scale` function and add a docstring.
+
+Confirm that it works by running the cell containing `returns_to_scale?` below.
+
+*Note*: You do not need to change the actual code in the function — just
+copy/paste and add a docstring in the correct line.
+
+```{code-block} python
+# re-define the `returns_to_scale` function here
+```
+
+```{code-block} python
+# test it here
+
+returns_to_scale?
+```
+
+({ref}`back to text <dir2-4-3>`)
+````
+
+````{exercise} 4
+:nonumber:
+:label: ex2-4-4
+
+Experiment with the `sep` and `end` arguments to the `print` function.
+
+These can *only* be set by name.
+
+```{code-block} python
+# Your code here.
+```
+
+({ref}`back to text <dir2-4-4>`)
+````
