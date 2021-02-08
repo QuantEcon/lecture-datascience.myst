@@ -156,10 +156,9 @@ recidivism".
 
 Then, the positive coefficient on `decile_score` means that there is some cutoff score above which all individuals will be labeled as high-risk.
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir1
-See {ref}`exercise 1 <app-cls-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir1
+See exercise 1 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
 ### Visualization: Decision Boundaries
@@ -250,10 +249,9 @@ This is likely caused by two things:
 1. Drawing a straight line (linear) that perfectly separates
    true observations from the false is impossible.
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir2
-See {ref}`exercise 2 <app-cls-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir2
+See exercise 2 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
 ## Model Evaluation
@@ -413,10 +411,9 @@ predicts recidivism, recidivism will likely occur -- in other words,
 we would favor a high true positive rate even if the false positive rate is
 higher.
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir3
-See {ref}`exercise 3 <app-cls-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir3
+See exercise 3 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
 The ROC curve can also be used to do hyper-parameter selection for the model's
@@ -444,10 +441,9 @@ print(f"Initial AUC value is {auc:.4f}")
 # help(linear_model.LogisticRegression)
 ```
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir4
-See {ref}`exercise 4 <app-cls-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir4
+See exercise 4 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
 ## Neural Network Classifiers
@@ -503,10 +499,9 @@ interpretability.
 
 For a more detailed discussion, review the {doc}`regression lecture <regression>`.
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir5
-See {ref}`exercise 5 <app-cls-ex5>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir5
+See exercise 5 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
 ### Aside: Neural Network Toolboxes
@@ -644,10 +639,9 @@ fig.tight_layout();
 For each of the chosen variables, you can see that the leading indicator
 has a distinct move in periods leading up to a recession (noted by the grey bands in background).
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir6
-See {ref}`exercise 6 <app-cls-ex6>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir6
+See exercise 6 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
 ### How Many leads?
@@ -706,22 +700,19 @@ different number of periods before the recession hits.
 
 The exercise below asks you to explore this idea.
 
-````{exercise}
-:nonumber:
-:label: app-cls-dir7
-See {ref}`exercise 7 <app-cls-ex7>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir7
+See exercise 7 in the {ref}`exercise list <app-cls-ex>`.
 ````
-````{exercise}
-:nonumber:
-:label: app-cls-dir8
-See {ref}`exercise 8 <app-cls-ex8>` in the exercise list.
+````{admonition} Exercise
+:name: app-cls-dir8
+See exercise 8 in the {ref}`exercise list <app-cls-ex>`.
 ````
 
+(app-cls-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: app-cls-ex1
+### Exercise 1
 
 Determine the level of this cutoff value. Recall that the COMPAS
 score takes on integer values between 1 and 10, inclusive.
@@ -731,10 +722,8 @@ the classification threshold from 0.5 to 0.7? What about 0.3? Remember this
 idea -- we'll come back to it soon.
 
 ({ref}`back to text <app-cls-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: app-cls-ex2
+
+### Exercise 2
 
 Experiment with different pairs of features to see which ones show the
 clearest decision boundaries.
@@ -742,10 +731,8 @@ clearest decision boundaries.
 Feed different `X` DataFrames into the `fit_and_plot_decision_boundary` function above.
 
 ({ref}`back to text <app-cls-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: app-cls-ex3
+
+### Exercise 3
 
 Use the `metrics.roc_curve` function to determine an appropriate value
 for the probability threshold, keeping in mind our preference for
@@ -770,15 +757,13 @@ that makes the false positive and true positive rates as equal as
 possible.
 ```
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <app-cls-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: app-cls-ex4
+
+### Exercise 4
 
 The `LogisticRegression` class with default arguments implements the
 regression including `l2` regularization (it penalizes coefficient
@@ -799,15 +784,13 @@ to `roc_auc`.
 Refer to the example in the {doc}`recidivism lecture <recidivism>` for how
 to use `model_selection.cross_val_score`.
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <app-cls-dir4>`)
-````
-````{exercise} 5
-:nonumber:
-:label: app-cls-ex5
+
+### Exercise 5
 
 Use a multi-layer perceptron in our recidivism example via the `neural_network.MLPClassifier` class.
 
@@ -824,15 +807,13 @@ Keep in mind other things, like the degree of overfitting and time required
 to estimate the model parameters. How do these compare to logistic
 regression?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <app-cls-dir5>`)
-````
-````{exercise} 6
-:nonumber:
-:label: app-cls-ex6
+
+### Exercise 6
 
 Let's pause here to take a few minutes and digest.
 
@@ -845,10 +826,8 @@ What if you worked at a news company such as the Economist or the New York
 Times?
 
 ({ref}`back to text <app-cls-dir6>`)
-````
-````{exercise} 7
-:nonumber:
-:label: app-cls-ex7
+
+### Exercise 7
 
 Extend the logic from the previous example and allow a different number
 of leading periods for each variable.
@@ -858,7 +837,7 @@ could you try to avoid overfitting?
 
 Use `make_train_data_varying_leads` function below to construct your model.
 
-```{code-block} python
+```{code-cell} python
 def make_train_data_varying_leads(indicators, rec, nlead):
     """
     Apply per-indicator leads to each indicator and join with recession data
@@ -909,14 +888,12 @@ def make_train_data_varying_leads(indicators, rec, nlead):
 ```
 
 ({ref}`back to text <app-cls-dir7>`)
-````
-````{exercise} 8
-:nonumber:
-:label: app-cls-ex8
+
+### Exercise 8
 
 Experiment with different classifiers. Which ones perform better or worse?
 
 How accurate can you become for each accuracy metric (accuracy, precision, and recall)?
 
 ({ref}`back to text <app-cls-dir8>`)
-````
+
