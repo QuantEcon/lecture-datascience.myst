@@ -101,10 +101,9 @@ When plotting, a DataFrame knows the column and index names.
 unemp.plot(figsize=(8, 6))
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-bas-dir1
-See {ref}`exercise 1 <pd-bas-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-bas-dir1
+See exercise 1 in the {ref}`exercise list <pd-bas-ex>`.
 ````
 
 ## Dates in pandas
@@ -232,10 +231,9 @@ Notice that `agg` can also accept multiple functions at once.
 unemp.agg([min, max, high_or_low])
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-bas-dir2
-See {ref}`exercise 2 <pd-bas-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-bas-dir2
+See exercise 2 in the {ref}`exercise list <pd-bas-ex>`.
 ````
 
 ## Transforms
@@ -345,10 +343,9 @@ To do this, we use the following pattern:
 Complete the exercise below to practice writing and using your own scalar
 transforms.
 
-````{exercise}
-:nonumber:
-:label: pd-bas-dir3
-See {ref}`exercise 3 <pd-bas-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-bas-dir3
+See exercise 3 in the {ref}`exercise list <pd-bas-ex>`.
 ````
 
 ## Boolean Selection
@@ -535,31 +532,27 @@ msg = "Out of {} months, {} had high unemployment across all states"
 print(msg.format(len(all_high), all_high.sum()))
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-bas-dir4
-See {ref}`exercise 4 <pd-bas-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: pd-bas-dir4
+See exercise 4 in the {ref}`exercise list <pd-bas-ex>`.
 ````
 
+(pd-bas-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-bas-ex1
+### Exercise 1
 
 Looking at the displayed DataFrame above, can you identify the index? The columns?
 
 You can use the cell below to verify your visual intuition.
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <pd-bas-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-bas-ex2
+
+### Exercise 2
 
 Do the following exercises in separate code cells below:
 
@@ -578,27 +571,25 @@ Do the following exercises in separate code cells below:
 - Classify each state as high or low volatility based on whether the
   variance of their unemployment is above or below 4.
 
-```{code-block} python
+```{code-cell} python
 # min unemployment rate by state
 ```
 
-```{code-block} python
+```{code-cell} python
 # median unemployment rate by state
 ```
 
-```{code-block} python
+```{code-cell} python
 # max unemployment rate across all states and Year
 ```
 
-```{code-block} python
+```{code-cell} python
 # low or high volatility
 ```
 
 ({ref}`back to text <pd-bas-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: pd-bas-ex3
+
+### Exercise 3
 
 Imagine that we want to determine whether unemployment was high (> 6.5),
 medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
@@ -624,30 +615,28 @@ medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
    each classification in each month. Which month had the most states
    with high unemployment? What about medium and low?
 
-```{code-block} python
+```{code-cell} python
 # Part 1: Write a Python function to classify unemployment levels.
 ```
 
-```{code-block} python
+```{code-cell} python
 # Part 2: Pass your function from part 1 to applymap
 unemp_bins = unemp.applymap#replace this comment with your code!!
 ```
 
-```{code-block} python
+```{code-cell} python
 # Part 3: Count the number of times each state had each classification.
 
 ## then make a horizontal bar chart here
 ```
 
-```{code-block} python
+```{code-cell} python
 # Part 4: Apply the same transform from part 4, but to each date instead of to each state.
 ```
 
 ({ref}`back to text <pd-bas-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: pd-bas-ex4
+
+### Exercise 4
 
 - For a single state of your choice, determine what the mean
   unemployment is during "Low", "Medium", and "High" unemployment times
@@ -662,4 +651,4 @@ unemp_bins = unemp.applymap#replace this comment with your code!!
   than 7.
 
 ({ref}`back to text <pd-bas-dir4>`)
-````
+

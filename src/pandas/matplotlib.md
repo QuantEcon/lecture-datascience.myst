@@ -146,10 +146,9 @@ plot to a file on your computer require methods on a `Figure`.
 Let's start by getting our hands dirty and practicing using these
 objects.
 
-````{exercise}
-:nonumber:
-:label: pd-mpl-dir1
-See {ref}`exercise 1 <pd-mpl-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mpl-dir1
+See exercise 1 in the {ref}`exercise list <pd-mpl-ex>`.
 ````
 
 You should have seen that the object returned by the `.plot` method is
@@ -211,16 +210,14 @@ aapl[["Low", "High"]].plot(ax=axs2[1])
 fig2
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-mpl-dir2
-See {ref}`exercise 2 <pd-mpl-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mpl-dir2
+See exercise 2 in the {ref}`exercise list <pd-mpl-ex>`.
 ````
 
-````{exercise}
-:nonumber:
-:label: pd-mpl-dir3
-See {ref}`exercise 3 <pd-mpl-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mpl-dir3
+See exercise 3 in the {ref}`exercise list <pd-mpl-ex>`.
 ````
 
 ## Data Cleaning
@@ -380,10 +377,9 @@ to_plot.plot(
 );
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-mpl-dir4
-See {ref}`exercise 4 <pd-mpl-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mpl-dir4
+See exercise 4 in the {ref}`exercise list <pd-mpl-ex>`.
 ````
 
 ### Subplot Spacing: `fig.tight_layout`
@@ -481,10 +477,9 @@ for i in range(announcement_dates.shape[0]):
 fig
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-mpl-dir5
-See {ref}`exercise 5 <pd-mpl-ex5>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mpl-dir5
+See exercise 5 in the {ref}`exercise list <pd-mpl-ex>`.
 ````
 
 Let's continue and add tick labels to the right of the far right
@@ -698,11 +693,10 @@ Typically, our plotting code will be much more concise and simple
 because we don't usually require the same standards for aesthetic
 properties as professional journalists do.
 
+(pd-mpl-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-mpl-ex1
+### Exercise 1
 
 **Exercise:** Using the `.plot` method, plot the opening share price
 for Apple's stock.
@@ -720,10 +714,8 @@ What methods does this object have?
 ```
 
 ({ref}`back to text <pd-mpl-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-mpl-ex2
+
+### Exercise 2
 
 Using the `plt.subplots` function, make a Figure with a two-by-one
 grid of subplots (two rows, one column).
@@ -736,10 +728,8 @@ an argument on the `plot` method to change the kind of plot).
 Google for how to set a title for a `Figure` object and then do so.
 
 ({ref}`back to text <pd-mpl-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: pd-mpl-ex3
+
+### Exercise 3
 
 Take 5 minutes to explore the different arguments to the DataFrame `.plot`
 method. Try to make a plot that is both good looking and interesting (
@@ -760,10 +750,8 @@ for inspiration.
 ```
 
 ({ref}`back to text <pd-mpl-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: pd-mpl-ex4
+
+### Exercise 4
 
 Think about  what each of the argument we passed to `.plot` does.
 
@@ -777,10 +765,8 @@ Use `to_plot.plot?` to pull up the docs.
 ```
 
 ({ref}`back to text <pd-mpl-dir4>`)
-````
-````{exercise} 5
-:nonumber:
-:label: pd-mpl-ex5
+
+### Exercise 5
 
 For each operation in the list below (copied from above), make a note
 of which functions/methods were called to achieve the result.
@@ -802,4 +788,3 @@ you remember them when you need them later on.
 - Add a white circle to (0, 100) on each Axes
 
 ({ref}`back to text <pd-mpl-dir5>`)
-````
