@@ -169,11 +169,11 @@ print(num_list)
 num_list.extend([20, 4])
 print(num_list)
 ```
-````{exercise}
-:nonumber:
-:label: dir2-2-1
 
-See {ref}`exercise 1 <ex2-2-1>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-1
+
+See exercise 1 in the {ref}`exercise list <ex2-2>`.
 ````
 
 (inhomogenous_lists)=
@@ -258,11 +258,10 @@ To turn the `range` into a list:
 list(r)
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-2-2
+````{admonition} Exercise
+:name: dir2-2-2
 
-See {ref}`exercise 2 <ex2-2-2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex2-2>`.
 ````
 
 ### What are Tuples?
@@ -310,11 +309,11 @@ t[0]  # still start counting at 0
 t[2]
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-2-3
 
-See {ref}`exercise 3 <ex2-2-3>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-3
+
+See exercise 3 in the {ref}`exercise list <ex2-2>`.
 ````
 
 
@@ -443,11 +442,11 @@ collection.
 Notice that the third item is `(2, 'c')` because
 `["a", "b", "c"][2]` is `'c'`
 
-````{exercise}
-:nonumber:
-:label: dir2-2-4
 
-See {ref}`exercise 4 <ex2-2-4>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-4
+
+See exercise 4 in the {ref}`exercise list <ex2-2>`.
 ````
 
 An important quirk of some iterable types that are not lists (such as the above `zip`) is that
@@ -524,11 +523,11 @@ will be strings, but we could also use numbers (`int`, or
 
 The values can be **any** type and different from each other.
 
-````{exercise}
-:nonumber:
-:label: dir2-2-5
 
-See {ref}`exercise 5 <ex2-2-5>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-5
+
+See exercise 5 in the {ref}`exercise list <ex2-2>`.
 ````
 
 This next example is meant to emphasize how values can be
@@ -590,11 +589,11 @@ china_data["unemployment"] = 4.051
 print(china_data)
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-2-6
 
-See {ref}`exercise 6 <ex2-2-6>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-6
+
+See exercise 6 in the {ref}`exercise list <ex2-2>`.
 ````
 
 #### Common `dict` Functionality
@@ -639,18 +638,18 @@ china_data.get("irrigated_land", "Data Not Available")
 china_data.get("death_rate", "Data Not Available")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-2-7
 
-See {ref}`exercise 7 <ex2-2-7>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-7
+
+See exercise 7 in the {ref}`exercise list <ex2-2>`.
 ````
 
-````{exercise}
-:nonumber:
-:label: dir2-2-8
 
-See {ref}`exercise 8 <ex2-2-8>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-8
+
+See exercise 8 in the {ref}`exercise list <ex2-2>`.
 ````
 
 ### Sets (Optional)
@@ -681,11 +680,10 @@ print("s has type", type(s))
 s
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-2-9
+````{admonition} Exercise
+:name: dir2-2-9
 
-See {ref}`exercise 9 <ex2-2-9>` in the exercise list.
+See exercise 9 in the {ref}`exercise list <ex2-2>`.
 ````
 
 As with lists and tuples, we can check if something is `in` the set
@@ -736,11 +734,11 @@ Consider the set `s` from above and the set
 - `s.symmetric_difference(s2)`: returns a set with all elements in
   only one of `s` and `s2`
 
-````{exercise}
-:nonumber:
-:label: dir2-2-10
 
-See {ref}`exercise 10 <ex2-2-10>` in the exercise list.
+````{admonition} Exercise
+:name: dir2-2-10
+
+See exercise 10 in the {ref}`exercise list <ex2-2>`.
 ````
 
 As with tuples and lists, a `set` function can convert other
@@ -766,11 +764,10 @@ list(s)
 tuple(s)
 ```
 
+(ex2-2)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex2-2-1
+###### Exercise 1
 
 In the first cell, try `y.append(z)`.
 
@@ -783,41 +780,35 @@ When you are trying to explain use `y.append?` and `y.extend?` to
 see a description of what these methods are supposed to do.
 ```
 
-```{code-block} python
+```{code-cell} python
 y = ["a", "b", "c"]
 z = [1, 2, 3]
 # your code here
 print(y)
 ```
 
-```{code-block} python
+```{code-cell} python
 y = ["a", "b", "c"]
 z = [1, 2, 3]
 # your code here
 print(y)
 ```
 ({ref}`back to text <dir2-2-1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex2-2-2
+###### Exercise 2
 
 Experiment with the other two versions of the `range` function.
 
-```{code-block} python
+```{code-cell} python
 # try list(range(a, N)) -- you pick `a` and `N`
 ```
 
-```{code-block} python
+```{code-cell} python
 # try list(range(a, N, d)) -- you pick `a`, `N`, and `d`
 ```
 ({ref}`back to text <dir2-2-2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: ex2-2-3
+###### Exercise 3
 
 Verify that tuples are indeed immutable by attempting the following:
 
@@ -827,28 +818,25 @@ Verify that tuples are indeed immutable by attempting the following:
 - Sorting `t`
 - Reversing `t`
 
-```{code-block} python
+```{code-cell} python
 # change first element of t
 ```
 
-```{code-block} python
+```{code-cell} python
 # appending to t
 ```
 
-```{code-block} python
+```{code-cell} python
 # sorting t
 ```
 
-```{code-block} python
+```{code-cell} python
 # reversing t
 ```
 
 ({ref}`back to text <dir2-2-3>`)
-````
 
-````{exercise} 4
-:nonumber:
-:label: ex2-2-4
+###### Exercise 4
 
 **Challenging** For the tuple `foo` below, use a combination of `zip`,
 `range`, and `len` to mimic `enumerate(foo)`.
@@ -861,16 +849,13 @@ You can see what the answer should look like by starting with
 `list(enumerate(foo))`.
 ```
 
-```{code-block} python
+```{code-cell} python
 foo = ("good", "luck!")
 ```
 
 ({ref}`back to text <dir2-2-4>`)
-````
 
-````{exercise} 5
-:nonumber:
-:label: ex2-2-5
+###### Exercise 5
 
 Create a new dict which associates stock tickers with its stock price.
 
@@ -880,15 +865,12 @@ Here are some tickers and a price.
 - GOOGL: 1047.43
 - TVIX: 8.38
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 ({ref}`back to text <dir2-2-5>`)
-````
 
-````{exercise} 6
-:nonumber:
-:label: ex2-2-6
+###### Exercise 6
 
 Look at the [World Factbook for Australia](https://www.cia.gov/-library/publications/the-world-factbook/geos/as.html)
 and create a dictionary with data containing the following types:
@@ -896,45 +878,36 @@ float, string, integer, list, and dict.  Choose any data you wish.
 
 To confirm, you should have a dictionary that you identified via a key.
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <dir2-2-6>`)
-````
 
-````{exercise} 7
-:nonumber:
-:label: ex2-2-7
+###### Exercise 7
 
 Use Jupyter's help facilities to learn how to use the `pop` method to
 remove the key `"irrigated_land"` (and its value) from the dict.
 
-```{code-block} python
+```{code-cell} python
 # uncomment and use the Inspector or ?
 #china_data.pop()
 ```
 
 ({ref}`back to text <dir2-2-7>`)
-````
 
-````{exercise} 8
-:nonumber:
-:label: ex2-2-8
+###### Exercise 8
 
 Explain what happens to the value you popped.
 
 Experiment with calling `pop` twice.
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 ({ref}`back to text <dir2-2-8>`)
-````
 
-````{exercise} 9
-:nonumber:
-:label: ex2-2-9
+###### Exercise 9
 
 Try creating a set with repeated elements (e.g. `{1, 2, 1, 2, 1, 2}`).
 
@@ -942,30 +915,26 @@ What happens?
 
 Why?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 ({ref}`back to text <dir2-2-9>`)
-````
 
-````{exercise} 10
-:nonumber:
-:label: ex2-2-10
+###### Exercise 10
 
 Test out two of the operations described above using the original set we
 created, `s`, and the set created below `s2`.
 
-```{code-block} python
+```{code-cell} python
 s2 = {"hello", "world"}
 ```
 
-```{code-block} python
+```{code-cell} python
 # Operation 1
 ```
 
-```{code-block} python
+```{code-cell} python
 # Operation 2
 ```
 
 ({ref}`back to text <dir2-2-10>`)
-````

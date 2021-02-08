@@ -79,11 +79,10 @@ First, the right side of the equal sign is computed.
 Then, that computed value is stored as the variable to the left of the
 equal sign.
 
-````{exercise}
-:nonumber:
-:label: dir1
+````{admonition} Exercise
+:name: dir1
 
-See {ref}`exercise 1 <ex1>` in the exercise list.
+See exercise 1 in the {ref}`exercise list <ex>`.
 ````
 
 Keep in mind that the variable binds a name to something stored in memory.
@@ -151,11 +150,10 @@ Depending on how you launched Jupyter, this will either launch
 # print? # remove the comment and <Shift-Enter>
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2
+````{admonition} Exercise
+:name: dir2
 
-See {ref}`exercise 2 <ex2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex>`.
 ````
 
 JupyterLab also has a "Contextual Help" (previously called "Inspector") window.  To use,
@@ -283,11 +281,11 @@ Here's an example.
 import sys   # for dealing with your computer's system
 sys.version  # information about the Python version in use
 ```
-````{exercise}
-:nonumber:
-:label: dir3
 
-See {ref}`exercise 3 <ex3>` in the exercise list.
+````{admonition} Exercise
+:name: dir3
+
+See exercise 3 in the {ref}`exercise list <ex>`.
 ````
 
 ### Module Aliases
@@ -318,11 +316,10 @@ to the common ones.
 
 You will learn what these common ones are over time.
 
-````{exercise}
-:nonumber:
-:label: dir4
+````{admonition} Exercise
+:name: dir4
 
-See {ref}`exercise 4 <ex4>` in the exercise list.
+See exercise 4 in the {ref}`exercise list <ex>`.
 ````
 
 ## Good Code Habits
@@ -374,11 +371,10 @@ zf = 1230.5  # Notice -- There are no commas!
 zf2 = 1_230.5  # If needed, we use `_` to separate numbers for readability
 ```
 
-````{exercise}
-:nonumber:
-:label: dir5
+````{admonition} Exercise
+:name: dir5
 
-See {ref}`exercise 5 <ex5>` in the exercise list.
+See exercise 5 in the {ref}`exercise list <ex>`.
 ````
 
 ### Python as a Calculator
@@ -438,11 +434,10 @@ What do you think `z1` is?
 
 How about `z2`?
 
-````{exercise}
-:nonumber:
-:label: dir6
+````{admonition} Exercise
+:name: dir6
 
-See {ref}`exercise 6 <ex6>` in the exercise list.
+See exercise 6 in the {ref}`exercise list <ex>`.
 ````
 
 ### Other Math Functions
@@ -477,11 +472,10 @@ Now, we can use `math.[TAB]` to see what functions are available to us.
 math.sin(2.5)
 ```
 
-````{exercise}
-:nonumber:
-:label: dir7
+````{admonition} Exercise
+:name: dir7
 
-See {ref}`exercise 7 <ex7>` in the exercise list.
+See exercise 7 in the {ref}`exercise list <ex>`.
 ````
 
 #### Floor/Modulus Division Operators
@@ -542,11 +536,10 @@ its answer to `str`.
 type("this is a string")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir8
+````{admonition} Exercise
+:name: dir8
 
-See {ref}`exercise 8 <ex8>` in the exercise list.
+See exercise 8 in the {ref}`exercise list <ex>`.
 ````
 
 
@@ -585,11 +578,10 @@ a * b
 a - b
 ```
 
-````{exercise}
-:nonumber:
-:label: dir9
+````{admonition} Exercise
+:name: dir9
 
-See {ref}`exercise 9 <ex9>` in the exercise list.
+See exercise 9 in the {ref}`exercise list <ex>`.
 ````
 
 ### String Methods
@@ -619,18 +611,16 @@ x.count("l")  # Counts number of a particular string
 x.count("ll")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir10
+````{admonition} Exercise
+:name: dir10
 
-See {ref}`exercise 10 <ex10>` in the exercise list.
+See exercise 10 in the {ref}`exercise list <ex>`.
 ````
 
-````{exercise}
-:nonumber:
-:label: dir11
+````{admonition} Exercise
+:name: dir11
 
-See {ref}`exercise 11 <ex11>` in the exercise list.
+See exercise 11 in the {ref}`exercise list <ex>`.
 ````
 
 ### String Formatting
@@ -669,11 +659,10 @@ print(my_string)
 In these cases, the `f` in front of the string causes Python interpolate
 any valid expression within the `{}` braces.
 
-````{exercise}
-:nonumber:
-:label: dir12
+````{admonition} Exercise
+:name: dir12
 
-See {ref}`exercise 12 <ex12>` in the exercise list.
+See exercise 12 in the {ref}`exercise list <ex>`.
 ````
 
 Alternatively, to reuse a formatted string, you can call the `format` method (noting that you do **not** put `f` in front).
@@ -684,21 +673,16 @@ gdp_string = "{country} had ${GDP} billion in {year}"
 gdp_string.format(country = "Vietnam", GDP = 223.9, year = 2017)
 ```
 
-````{exercise}
-:nonumber:
-:label: dir13
+````{admonition} Exercise
+:name: dir13
 
-See {ref}`exercise 13 <ex13>` in the exercise list.
+See exercise 13 in the {ref}`exercise list <ex>`.
 ````
+````{admonition} Exercise
+:name: dir14
 
-
-````{exercise}
-:nonumber:
-:label: dir14
-
-See {ref}`exercise 14 <ex14>` in the exercise list.
+See exercise 14 in the {ref}`exercise list <ex>`.
 ````
-
 
 For more information on what you can do with string formatting (there is *a lot*
 that can be done...), see the [official Python documentation](https://docs.python.org/3.6/library/string.html) on the subject.
@@ -820,11 +804,10 @@ False or False
 True and (False or True)
 ```
 
-````{exercise}
-:nonumber:
-:label: dir15
+````{admonition} Exercise
+:name: dir15
 
-See {ref}`exercise 15 <ex15>` in the exercise list.
+See exercise 15 in the {ref}`exercise list <ex>`.
 ````
 
 ### `all` and `any`
@@ -842,34 +825,29 @@ is `True` and returns `False` otherwise.
 
 The exercise below will give you a chance to practice.
 
-````{exercise}
-:nonumber:
-:label: dir16
+````{admonition} Exercise
+:name: dir16
 
-See {ref}`exercise 16 <ex16>` in the exercise list.
+See exercise 16 in the {ref}`exercise list <ex>`.
 ````
 
-
+(ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex1
+###### Exercise 1
 
 What do you think the value of `z` is after running the code below?
 
-```{code-block} python
+```{code-cell} python
 z = 3
 z = z + 4
 print("z is", z)
 ```
 
 ({ref}`back to text <dir1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex2
+
+###### Exercise 2
 
 Read about out what the `len` function does (by writing len?).
 
@@ -878,11 +856,8 @@ What will it produce if we give it the variable `x`?
 Check whether you were right by running the code `len(x)`.
 
 ({ref}`back to text <dir2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: ex3
+###### Exercise 3
 
 We can use our introspection skills to investigate a package's contents.
 
@@ -898,17 +873,13 @@ Look for something to do with the word `local`
 
 ```
 
-```{code-block} python
+```{code-cell} python
 import time
 # your code here -- notice the comment!
 ```
 ({ref}`back to text <dir3>`)
 
-````
-
-````{exercise} 4
-:nonumber:
-:label: ex4
+###### Exercise 4
 
 Try running `import time as t` in the cell below, then see if you can
 call the function you identified above.
@@ -917,11 +888,7 @@ Does it work?
 
 ({ref}`back to text <dir4>`)
 
-````
-
-````{exercise} 5
-:nonumber:
-:label: ex5
+###### Exercise 5
 
 Create the following variables:
 
@@ -931,16 +898,13 @@ Create the following variables:
 
 We will use them in a later exercise.
 
-```{code-block} python
+```{code-cell} python
 # your code here!
 ```
 
 ({ref}`back to text <dir5>`)
-````
 
-````{exercise} 6
-:nonumber:
-:label: ex6
+###### Exercise 6
 
 Remember the variables we created earlier?
 
@@ -957,16 +921,13 @@ $$
 
 ```
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <dir6>`)
-````
 
-````{exercise} 7
-:nonumber:
-:label: ex7
+###### Exercise 7
 
 Verify the "trick" where the percent difference ($\frac{x - y}{x}$)
 between two numbers close to 1 can be well approximated by the difference
@@ -979,21 +940,18 @@ you will want to use the
 `math.log` function
 ```
 
-```{code-block} python
+```{code-cell} python
 x = 1.05
 y = 1.02
 ```
 
 ({ref}`back to text <dir7>`)
-````
 
-````{exercise} 8
-:nonumber:
-:label: ex8
+###### Exercise 8
 
 The code below is invalid Python code
 
-```{code-block} markdown
+```{code-cell} markdown
 x = 'What's wrong with this string'
 ```
 
@@ -1005,11 +963,8 @@ find a solution.
 ```
 
 ({ref}`back to text <dir8>`)
-````
 
-````{exercise} 9
-:nonumber:
-:label: ex9
+###### Exercise 9
 
 Using the variables `x` and `y`, how could you create the sentence
 `Hello World`?
@@ -1019,11 +974,8 @@ Think about how to represent a space as a string.
 ```
 
 ({ref}`back to text <dir9>`)
-````
 
-````{exercise} 10
-:nonumber:
-:label: ex10
+###### Exercise 10
 
 One of our favorite (and most frequently used) string methods is
 `replace`.
@@ -1038,16 +990,13 @@ Type `test.replace?` to get some help for how to use the method
 replace.
 ```
 
-```{code-block} python
+```{code-cell} python
 test = "abc"
 ```
 
 ({ref}`back to text <dir10>`)
-````
 
-````{exercise} 11
-:nonumber:
-:label: ex11
+###### Exercise 11
 
 Suppose you are working with price data and encounter the value
 `"$6.50"`.
@@ -1065,36 +1014,27 @@ Once the string is in a suitable format, you can call write
 `float(clean_price)` to make it a number.
 ```
 
-```{code-block} python
+```{code-cell} python
 price = "$6.50"
 ```
 
 ({ref}`back to text <dir11>`)
-````
 
-````{exercise} 12
-:nonumber:
-:label: ex12
+###### Exercise 12
 
 Lookup a country in [World Bank database](https://data.worldbank.org), and
 format a string showing the growth rate of GDP over the last 2 years.
 
 ({ref}`back to text <dir12>`)
-````
 
-````{exercise} 13
-:nonumber:
-:label: ex13
+###### Exercise 13
 
 Instead of hard-coding the values above, try to use the `country`, `GDP` and
 `year` variables you previously defined.
 
 ({ref}`back to text <dir13>`)
-````
 
-````{exercise} 14
-:nonumber:
-:label: ex14
+###### Exercise 14
 
 Create a new string and use formatting to produce each of the following
 statements
@@ -1105,11 +1045,8 @@ statements
 - "The 4th quarter revenue was 130M"
 
 ({ref}`back to text <dir14>`)
-````
 
-````{exercise} 15
-:nonumber:
-:label: ex15
+###### Exercise 15
 
 Without typing the commands, determine whether the following statements are
 true or false.
@@ -1117,7 +1054,7 @@ true or false.
 Once you have evaluated whether the command is `True` or `False`, run the
 code in Python.
 
-```{code-block} python
+```{code-cell} python
 x = 2
 y = 2
 z = 4
@@ -1141,16 +1078,13 @@ x == y
 True and ((x < z) or (x < y))
 ```
 
-```{code-block} python
+```{code-cell} python
 # code here!
 ```
 
 ({ref}`back to text <dir15>`)
-````
 
-````{exercise} 16
-:nonumber:
-:label: ex16
+###### Exercise 16
 
 For each of the code cells below, think carefully about what you expect to
 be returned *before* evaluating the cell.
@@ -1160,29 +1094,28 @@ Then evaluate the cell to check your intuitions.
 NOTE: For now, do not worry about what the `[` and `]` mean -- they
 allow us to create lists which we will learn about in an upcoming lecture.
 
-```{code-block} python
+```{code-cell} python
 all([True, True, True])
 ```
 
-```{code-block} python
+```{code-cell} python
 all([False, True, False])
 ```
 
-```{code-block} python
+```{code-cell} python
 all([False, False, False])
 ```
 
-```{code-block} python
+```{code-cell} python
 any([True, True, True])
 ```
 
-```{code-block} python
+```{code-cell} python
 any([False, True, False])
 ```
 
-```{code-block} python
+```{code-cell} python
 any([False, False, False])
 ```
 
 ({ref}`back to text <dir16>`)
-````

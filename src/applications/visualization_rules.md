@@ -217,16 +217,10 @@ for (i, year) in enumerate(df.year.unique()):
     ax[i].set_title(str(year))
 ```
 
-````{exercise}
-**Exercise 1**
+````{admonition} Exercise
+:name: app-vis-dir1
 
-Create a draft of the alternative way to organize time and education -- that is, have two subplots (one for each education level) and four groups of points (one for each year).
-
-Why do you think they chose to organize the information as they did rather than this way?
-
-```{code-block} python
-# Your code here
-```
+See exercise 1 in the {ref}`exercise list <app-vis-ex>`.
 ````
 
 #### Fine-tune
@@ -817,24 +811,10 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 ```
 
-````{exercise}
-**Exercise 2**
+````{admonition} Exercise
+:name: app-vis-dir2
 
-Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
-bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.
-
-```{code-block} python
-ca_gdp = pd.Series(
-    [5.2, 1.8, 3.0, 1.9, 3.1, 3.2, 2.8, 2.2, 1.0, -2.8, 3.2, 3.1, 1.7, 2.5, 2.9, 1.0, 1.4, 3.0],
-    index=list(range(2000, 2018))
-)
-
-fig, ax = plt.subplots()
-
-for side in ["right", "top", "left", "bottom"]:
-    ax.spines[side].set_visible(False)
-```
-
+See exercise 2 in the {ref}`exercise list <app-vis-ex>`.
 ````
 
 #### Don't Use Color to Differentiate Small Objects
@@ -1424,8 +1404,36 @@ visualizations, and very few consist solely of text. Also, notice
 the ways that the NYT modified Autor's figures and think about
 whether these changes improved the figures.
 
+(app-vis-ex)=
 ## Exercises
 
-````{exerciselist}
-````
+###### Exercise 1
 
+Create a draft of the alternative way to organize time and education -- that is, have two subplots (one for each education level) and four groups of points (one for each year).
+
+Why do you think they chose to organize the information as they did rather than this way?
+
+```{code-cell} python
+# Your code here
+```
+
+({ref}`back to text <app-vis-dir1>`)
+
+###### Exercise  2
+
+Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
+bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.
+
+```{code-cell} python
+ca_gdp = pd.Series(
+    [5.2, 1.8, 3.0, 1.9, 3.1, 3.2, 2.8, 2.2, 1.0, -2.8, 3.2, 3.1, 1.7, 2.5, 2.9, 1.0, 1.4, 3.0],
+    index=list(range(2000, 2018))
+)
+
+fig, ax = plt.subplots()
+
+for side in ["right", "top", "left", "bottom"]:
+    ax.spines[side].set_visible(False)
+```
+
+({ref}`back to text <app-vis-dir2>`)

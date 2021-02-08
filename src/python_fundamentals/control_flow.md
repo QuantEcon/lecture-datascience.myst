@@ -66,13 +66,11 @@ consuming 1.00 today and $(1+r)(1+r) = 1.21$ dollars two years from now
 Inverting this formula, 1 delivered two years from now is equivalent to
 $\frac{1}{(1+r)^2}$ today.
 
-````{exercise}
-:nonumber:
-:label: dir2-3-1
+````{admonition} Exercise
+:name: dir2-3-1
 
-See {ref}`exercise 1 <ex2-3-1>` in the exercise list.
+See exercise 1 in the {ref}`exercise list <ex2-3>`.
 ````
-
 (npv)=
 ### Net Present Value
 
@@ -215,11 +213,10 @@ if val is True: # check an expression
 print("Code runs after 'if' block, regardless of val")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-2
+````{admonition} Exercise
+:name: dir2-3-2
 
-See {ref}`exercise 2 <ex2-3-2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex2-3>`.
 ````
 
 The next example shows us how `else` works.
@@ -250,19 +247,17 @@ if 1 < 2:
     print("1 < 2")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-3
+````{admonition} Exercise
+:name: dir2-3-3
 
-See {ref}`exercise 3 <ex2-3-3>` in the exercise list.
+See exercise 3 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
-````{exercise}
-:nonumber:
-:label: dir2-3-4
+````{admonition} Exercise
+:name: dir2-3-4
 
-See {ref}`exercise 4 <ex2-3-4>` in the exercise list.
+See exercise 4 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
@@ -411,11 +406,10 @@ When the for loop is executed, `item` will take on one value from `iterable`
 at a time and execute the loop body for each value.
 
 (human_capital_application)=
-````{exercise}
-:nonumber:
-:label: dir2-3-5
+````{admonition} Exercise
+:name: dir2-3-5
 
-See {ref}`exercise 5 <ex2-3-5>` in the exercise list.
+See exercise 5 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
@@ -454,11 +448,10 @@ for index, city in enumerate(cities):
     print(f"{city} is in {state}")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-6
+````{admonition} Exercise
+:name: dir2-3-6
 
-See {ref}`exercise 6 <ex2-3-6>` in the exercise list.
+See exercise 6 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
@@ -533,11 +526,10 @@ while i < 3:
 print("done")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-7
+````{admonition} Exercise
+:name: dir2-3-7
 
-See {ref}`exercise 7 <ex2-3-7>` in the exercise list.
+See exercise 7 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
@@ -566,11 +558,10 @@ for i in range(1001):
 print("The answer is", i)
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-8
+````{admonition} Exercise
+:name: dir2-3-8
 
-See {ref}`exercise 8 <ex2-3-8>` in the exercise list.
+See exercise 8 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
@@ -607,11 +598,10 @@ for i in range(1, 11):
     print(i, "is an odd number!")
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-9
+````{admonition} Exercise
+:name: dir2-3-9
 
-See {ref}`exercise 9 <ex2-3-9>` in the exercise list.
+See exercise 9 in the {ref}`exercise list <ex2-3>`.
 ````
 
 
@@ -679,11 +669,10 @@ sin_x = [math.sin(x_val) for x_val in x]
 sin_x
 ```
 
-````{exercise}
-:nonumber:
-:label: dir2-3-10
+````{admonition} Exercise
+:name: dir2-3-10
 
-See {ref}`exercise 10 <ex2-3-10>` in the exercise list.
+See exercise 10 in the {ref}`exercise list <ex2-3>`.
 ````
 
 Finally, we can use this approach to build complicated nested dictionaries.
@@ -701,12 +690,10 @@ print(data_dict)
 # total exports by year
 [data_dict[year]["exports"]["services"] for year in data_dict.keys()]
 ```
-
+(ex2-3)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex2-3-1
+###### Exercise 1
 
 Government bonds are often issued as *zero-coupon bonds* meaning that they
 make no payments throughout the entire time that they are held, but, rather
@@ -715,22 +702,19 @@ make a single payment at the time of maturity.
 How much should you be willing to pay for a zero-coupon bond that paid
 100 in 10 years with an interest rate of 5%?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <dir2-3-1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex2-3-2
+###### Exercise 2
 
 Run the following two variations on the code with only a single change in the indentation.
 
 After, modify the `x` to print `3` and then `2, 3` instead.
 
-```{code-block} python
+```{code-cell} python
 x = 1
 
 if x > 0:
@@ -739,7 +723,7 @@ if x > 0:
 print("3")
 ```
 
-```{code-block} python
+```{code-cell} python
 x = 1
 
 if x > 0:
@@ -749,11 +733,8 @@ print("3")
 ```
 
 ({ref}`back to text <dir2-3-2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: ex2-3-3
+###### Exercise 3
 
 Using the code cell below as a start, print `"Good afternoon"` if the
 `current_time` is past noon.
@@ -764,7 +745,7 @@ Otherwise, do nothing.
 Write some conditional based on `current_time.hour`.
 ```
 
-```{code-block} python
+```{code-cell} python
 import datetime
 current_time = datetime.datetime.now()
 
@@ -774,11 +755,8 @@ current_time = datetime.datetime.now()
 more text after
 
 ({ref}`back to text <dir2-3-3>`)
-````
 
-````{exercise} 4
-:nonumber:
-:label: ex2-3-4
+###### Exercise 4
 
 In this example, you will generate a random number between 0 and 1
 and then display "x > 0.5" or "x < 0.5" depending on the value of the
@@ -787,7 +765,7 @@ number.
 This also introduces a new package `numpy.random` for
 drawing random numbers (more in the [randomness](../scientific/randomness) lecture).
 
-```{code-block} python
+```{code-cell} python
 import numpy as np
 x = np.random.random()
 print(f"x = {x}")
@@ -796,11 +774,8 @@ print(f"x = {x}")
 ```
 
 ({ref}`back to text <dir2-3-4>`)
-````
 
-````{exercise} 5
-:nonumber:
-:label: ex2-3-5
+###### Exercise 5
 
 In economics, when an individual has some knowledge, skills, or education
 which provides them with a source of future income, we call it [human
@@ -822,7 +797,7 @@ the college attendance decision.
 
 Should the student enroll in school if the discount rate is r = 0.05?
 
-```{code-block} python
+```{code-cell} python
 
 # Discount rate
 r = 0.05
@@ -844,11 +819,8 @@ w_college = 50_000
 ```
 
 ({ref}`back to text <dir2-3-5>`)
-````
 
-````{exercise} 6
-:nonumber:
-:label: ex2-3-6
+###### Exercise 6
 
 Instead of the above, write a for loop that uses the lists of cities
 and states below to print the same "{city} is in {state}" using
@@ -858,7 +830,7 @@ a `zip` instead of an `enumerate`.
 Try using `zip`
 ```
 
-```{code-block} python
+```{code-cell} python
 cities = ["Phoenix", "Austin", "San Diego", "New York"]
 states = ["Arizona", "Texas", "California", "New York"]
 
@@ -866,11 +838,8 @@ states = ["Arizona", "Texas", "California", "New York"]
 ```
 
 ({ref}`back to text <dir2-3-6>`)
-````
 
-````{exercise} 7
-:nonumber:
-:label: ex2-3-7
+###### Exercise 7
 
 Companies often invest in training their employees to raise their
 productivity. Economists sometimes wonder why companies
@@ -883,7 +852,7 @@ many months would an employee need to stay for the company to find it
 profitable to pay for their employees to learn Python if their discount
 rate is r = 0.01?
 
-```{code-block} python
+```{code-cell} python
 # Define cost of teaching python
 cost = 25_000
 r = 0.01
@@ -902,11 +871,8 @@ while False: # (replace False with your condition here)
 ```
 
 ({ref}`back to text <dir2-3-7>`)
-````
 
-````{exercise} 8
-:nonumber:
-:label: ex2-3-8
+###### Exercise 8
 
 Try to find the index of the first value in `x`
 that is greater than 0.999 using a for loop and `break`.
@@ -915,17 +881,14 @@ that is greater than 0.999 using a for loop and `break`.
 try iterating over `range(len(x))`.
 ```
 
-```{code-block} python
+```{code-cell} python
 x = np.random.rand(10_000)
 # Your code here
 ```
 
 ({ref}`back to text <dir2-3-8>`)
-````
 
-````{exercise} 9
-:nonumber:
-:label: ex2-3-9
+###### Exercise 9
 
 Write a for loop that adds up all values in `x` that are greater than
 or equal to 0.5.
@@ -938,17 +901,14 @@ Try starting your loop with `for value in x:` instead of
 iterating over the indices of `x`.
 ```
 
-```{code-block} python
+```{code-cell} python
 x = np.random.rand(10_000)
 # Your code here
 ```
 
 ({ref}`back to text <dir2-3-9>`)
-````
 
-````{exercise} 10
-:nonumber:
-:label: ex2-3-10
+###### Exercise 10
 
 Returning to our previous example: print "{city} is in {state}" for each combination
 using a `zip` and a comprehension.
@@ -957,7 +917,7 @@ using a `zip` and a comprehension.
 Try using `zip`
 ```
 
-```{code-block} python
+```{code-cell} python
 cities = ["Phoenix", "Austin", "San Diego", "New York"]
 states = ["Arizona", "Texas", "California", "New York"]
 
@@ -965,4 +925,3 @@ states = ["Arizona", "Texas", "California", "New York"]
 ```
 
 ({ref}`back to text <dir2-3-10>`)
-````

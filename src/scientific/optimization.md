@@ -395,15 +395,10 @@ ax.set_xlabel("Price of Apples")
 ax.legend()
 ```
 
-````{exercise}
-**Exercise 1**
+````{admonition} Exercise
+:name: dir3-5-1
 
-Try solving the constrained maximization problem by hand via the Lagrangian method.
-
-Is it surprising that the demand for bananas is unaffected by the change in apple prices?
-
-Why might this be?
-
+See exercise 1 in the {ref}`exercise list <ex3-5>`.
 ````
 
 #### Satiation Point
@@ -423,8 +418,27 @@ $$
 
 To numerically calculate the maximum (which you can probably see through inspection), one must directly solve the constrained maximization problem.
 
-````{exercise}
-**Exercise 2**
+
+````{admonition} Exercise
+:name: dir3-5-2
+
+See exercise 2 in the {ref}`exercise list <ex3-5>`.
+````
+
+(ex3-5)=
+## Exercises
+
+###### Exercise 1
+
+Try solving the constrained maximization problem by hand via the Lagrangian method.
+
+Is it surprising that the demand for bananas is unaffected by the change in apple prices?
+
+Why might this be?
+
+({ref}`back to text <dir3-5-1>`)
+
+###### Exercise 2
 
 Using a similar approach to that of the apples/bananas example above, solve for the optimal
 basket of potato chips and chocolate bars when `W = 10`, `p_P = 1`, and `p_C = 2`.
@@ -453,10 +467,4 @@ Hint: You can no longer assume that the `A_bc` function is always binding, as we
 
 Hint: while not required, you can take this opportunity to play around with other scipy functions such as Scipy optimize <https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html>.
 
-````
-
-## Exercises
-
-````{exerciselist}
-````
-
+({ref}`back to text <dir3-5-2>`)

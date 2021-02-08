@@ -104,17 +104,10 @@ We can also use `@` to denote dot products (and matrix multiplication which we'l
 print("Dot product with @", x @ y)
 ```
 
-````{exercise}
-**Exercise 1**
+````{admonition} Exercise
+:name: dir3-3-1
 
-Alice is a stock broker who owns two types of assets: A and B. She owns 100
-units of asset A and 50 units of asset B. The current interest rate is 5%.
-Each of the A assets have a remaining duration of 6 years and pay
-\$1500 each year, while each of the B assets have a remaining duration
-of 4 years and pay \$500 each year. Alice would like to retire if she
-can sell her assets for more than \$500,000. Use vector addition, scalar
-multiplication, and dot products to determine whether she can retire.
-
+See exercise 1 in the {ref}`exercise list <ex3-3>`.
 ````
 
 ```{code-cell} python
@@ -244,31 +237,15 @@ print(y1 @ x1)
 Despite our options, we stick to using `@` because
 it is simplest to read and write.
 
-````{exercise}
-**Exercise 2**
+````{admonition} Exercise
+:name: dir3-3-2
 
-Which of the following operations will work and which will
-create errors because of size issues?
-
-Test out your intuitions in the code cell below
-
-```{code-block} python
-x1 @ x2
-x2 @ x1
-x2 @ x3
-x3 @ x2
-x1 @ x3
-x4 @ y1
-x4 @ y2
-y1 @ x4
-y2 @ x4
-```
+See exercise 2 in the {ref}`exercise list <ex3-3>`.
+````
 
 ```{code-block} python
 # testing area
 ```
-
-````
 
 ### Other Linear Algebra Concepts
 
@@ -761,21 +738,60 @@ dist /= dist.sum()
 print(f"The distribution of workers is given by {dist}")
 ```
 
-````{exercise}
-**Exercise 3**
+````{admonition} Exercise
+:name: dir3-3-3
+
+See exercise 3 in the {ref}`exercise list <ex3-3>`.
+````
+
+(ex3-3)=
+## Exercises
+
+###### Exercise 1
+
+Alice is a stock broker who owns two types of assets: A and B. She owns 100
+units of asset A and 50 units of asset B. The current interest rate is 5%.
+Each of the A assets have a remaining duration of 6 years and pay
+\$1500 each year, while each of the B assets have a remaining duration
+of 4 years and pay \$500 each year. Alice would like to retire if she
+can sell her assets for more than \$500,000. Use vector addition, scalar
+multiplication, and dot products to determine whether she can retire.
+
+({ref}`back to text <dir3-3-1>`)
+
+###### Exercise 2
+
+Which of the following operations will work and which will
+create errors because of size issues?
+
+Test out your intuitions in the code cell below
+
+```{code-cell} python
+x1 @ x2
+x2 @ x1
+x2 @ x3
+x3 @ x2
+x1 @ x3
+x4 @ y1
+x4 @ y2
+y1 @ x4
+y2 @ x4
+```
+
+```{code-cell} python
+# testing area
+```
+
+({ref}`back to text <dir3-3-2>`)
+
+###### Exercise 3
 
 Compare the distribution above to the final values of a long simulation.
 
 If you multiply the distribution by 1,000,000 (the number of workers), do you get (roughly) the same number as the simulation?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
-````
-
-## Exercises
-
-````{exerciselist}
-````
-
+({ref}`back to text <dir3-3-3>`)
