@@ -195,20 +195,16 @@ print(x_3d[0, 1, 0])
 
 Success!
 
+````{admonition} Exercise
+:name: dir3-1-1
 
-````{exercise} 1
-:nonumber:
-:label: dir3-1-1
-
-See {ref}`exercise 1 <ex3-1-1>` in the exercise list.
+See exercise 1 in the {ref}`exercise list <ex3-1>`.
 ````
 
+````{admonition} Exercise
+:name: dir3-1-2
 
-````{exercise} 2
-:nonumber:
-:label: dir3-1-2
-
-See {ref}`exercise 2 <ex3-1-2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex3-1>`.
 ````
 
 We can also select multiple elements at a time -- this is called slicing.
@@ -230,12 +226,10 @@ print(x_3d[:, 0, 0:2])
 print(x_3d[:, 0, :2])  # the 0  in 0:2 is optional
 ```
 
+````{admonition} Exercise
+:name: dir3-1-3
 
-````{exercise} 3
-:nonumber:
-:label: dir3-1-3
-
-See {ref}`exercise 3 <ex3-1-3>` in the exercise list.
+See exercise 3 in the {ref}`exercise list <ex3-1>`.
 ````
 
 
@@ -329,11 +323,10 @@ print("x / 2 = ", x / 2)
 ```
 
 
-````{exercise} 4
-:nonumber:
-:label: dir3-1-4
+````{admonition} Exercise
+:name: dir3-1-4
 
-See {ref}`exercise 4 <ex3-1-4>` in the exercise list.
+See exercise 4 in the {ref}`exercise list <ex3-1>`.
 ````
 
 Operations between two arrays of the same size, in this case `(2, 2)`, simply apply the operation
@@ -402,12 +395,10 @@ z = np.array([1,2,3])
 np.log(z) * z
 ```
 
+````{admonition} Exercise
+:name: dir3-1-5
 
-````{exercise} 5
-:nonumber:
-:label: dir3-1-5
-
-See {ref}`exercise 5 <ex3-1-5>` in the exercise list.
+See exercise 5 in the {ref}`exercise list <ex3-1>`.
 ````
 
 ### Other Useful Array Operations
@@ -483,11 +474,10 @@ but is not intended to be high performance.
 
 When speed matters, directly write a `f` function to work on arrays.
 
+(ex3-1)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex3-1-1
+###### Exercise 1
 
 Try indexing into another element of your choice from the
 3-dimensional array.
@@ -496,11 +486,8 @@ Building an understanding of indexing means working through this
 type of operation several times -- without skipping steps!
 
 ({ref}`back to text <dir3-1-1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex3-1-2
+###### Exercise 2
 
 Look at the 2-dimensional array `x_2d`.
 
@@ -510,31 +497,22 @@ outer-most index correspond to?
 Write your thoughts.
 
 ({ref}`back to text <dir3-1-2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: ex3-1-3
+###### Exercise 3
 
 What would you do to extract the array `[[5, 6], [50, 60]]`?
 
 ({ref}`back to text <dir3-1-3>`)
-````
 
-````{exercise} 4
-:nonumber:
-:label: ex3-1-4
+###### Exercise 4
 
 Do you recall what multiplication by an integer did for lists?
 
 How does this differ?
 
 ({ref}`back to text <dir3-1-4>`)
-````
 
-````{exercise} 5
-:nonumber:
-:label: ex3-1-5
+###### Exercise 5
 
 Let's revisit a bond pricing example we saw in {doc}`Control flow <../python_fundamentals/control_flow>`.
 
@@ -561,7 +539,7 @@ You have two tasks:
 
 1. Using the equation above, determine the bond prices of all maturity levels in your array.
 
-```{code-block} python
+```{code-cell} python
 i = 0.03
 M = 100
 C = 5
@@ -572,4 +550,3 @@ C = 5
 ```
 
 ({ref}`back to text <dir3-1-5>`)
-````

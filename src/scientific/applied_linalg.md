@@ -101,11 +101,10 @@ We can also use `@` to denote dot products (and matrix multiplication which we'l
 print("Dot product with @", x @ y)
 ```
 
-````{exercise} 1
-:nonumber:
-:label: dir3-3-1
+````{admonition} Exercise
+:name: dir3-3-1
 
-See {ref}`exercise 1 <ex3-3-1>` in the exercise list.
+See exercise 1 in the {ref}`exercise list <ex3-3>`.
 ````
 
 ```{code-cell} python
@@ -236,11 +235,10 @@ Despite our options, we stick to using `@` because
 it is simplest to read and write.
 
 
-````{exercise} 2
-:nonumber:
-:label: dir3-3-2
+````{admonition} Exercise
+:name: dir3-3-2
 
-See {ref}`exercise 2 <ex3-3-2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex3-3>`.
 ````
 
 
@@ -735,19 +733,17 @@ dist /= dist.sum()
 print(f"The distribution of workers is given by {dist}")
 ```
 
-````{exercise} 3
-:nonumber:
-:label: dir3-3-3
 
-See {ref}`exercise 3 <ex3-3-3>` in the exercise list.
+````{admonition} Exercise
+:name: dir3-3-3
+
+See exercise 3 in the {ref}`exercise list <ex3-3>`.
 ````
 
-
+(ex3-3)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex3-3-1
+###### Exercise 1
 
 Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
@@ -758,18 +754,15 @@ can sell her assets for more than \$500,000. Use vector addition, scalar
 multiplication, and dot products to determine whether she can retire.
 
 ({ref}`back to text <dir3-3-1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex3-3-2
+###### Exercise 2
 
 Which of the following operations will work and which will
 create errors because of size issues?
 
 Test out your intuitions in the code cell below
 
-```{code-block} python
+```{code-cell} python
 x1 @ x2
 x2 @ x1
 x2 @ x3
@@ -781,24 +774,20 @@ y1 @ x4
 y2 @ x4
 ```
 
-```{code-block} python
+```{code-cell} python
 # testing area
 ```
 
 ({ref}`back to text <dir3-3-2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: ex3-3-3
+###### Exercise 3
 
 Compare the distribution above to the final values of a long simulation.
 
 If you multiply the distribution by 1,000,000 (the number of workers), do you get (roughly) the same number as the simulation?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <dir3-3-3>`)
-````

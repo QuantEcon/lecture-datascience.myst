@@ -660,10 +660,10 @@ txt_low = [(_,x) for _, x in sorted(zip(phat,docs), key=lambda pair: pair[0])]
 txt_low[:10]
 ```
 
-````{exercise}
-:nonumber:
-:label: app-txt-dir1
-See {ref}`exercise 1 <app-txt-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: app-txt-dir1
+
+See exercise 1 in the {ref}`exercise list <app-txt-ex>`.
 ````
 
 Predicting deaths from forecast text is very difficult because deaths
@@ -805,10 +805,10 @@ From this plot, we can immediately see two things. First, most documents
 are closest to topic 0. Second, most topics are not
 well-separated.
 
-````{exercise}
-:nonumber:
-:label: app-txt-dir2
-See {ref}`exercise 2 <app-txt-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: app-txt-dir2
+
+See exercise 2 in the {ref}`exercise list <app-txt-ex>`.
 ````
 
 ### Latent Dirichlet Analysis
@@ -846,53 +846,48 @@ lda_display = pyLDAvis.gensim.prepare(ldamodel, bow_data, dictionary)
 lda_display
 ```
 
-````{exercise}
-:nonumber:
-:label: app-txt-dir3
-See {ref}`exercise 3 <app-txt-ex3>` in the exercise list.
-````
-````{exercise}
-:nonumber:
-:label: app-txt-dir4
-See {ref}`exercise 4 <app-txt-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: app-txt-dir3
+
+See exercise 3 in the {ref}`exercise list <app-txt-ex>`.
 ````
 
+````{admonition} Exercise
+:name: app-txt-dir4
+
+See exercise 4 in the {ref}`exercise list <app-txt-ex>`.
+````
+
+(app-txt-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: app-txt-ex1
+###### Exercise 1
 
 Use another classification method to predict incidents. Check whether
 your method outperforms the Naive Bayes classifier.
 
 ({ref}`back to text <app-txt-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: app-txt-ex2
+
+
+###### Exercise 2
 
 Apply LSA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
 ({ref}`back to text <app-txt-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: app-txt-ex3
+
+###### Exercise 3
 
 Apply LDA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
 ({ref}`back to text <app-txt-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: app-txt-ex4
+
+
+###### Exercise 4
 
 Use the reduced rank representation of text from LSA or LDA as a
 feature matrix to predict avalanche incidents. Compare the
 performance with the bag of words feature matrix.
 
 ({ref}`back to text <app-txt-dir4>`)
-````

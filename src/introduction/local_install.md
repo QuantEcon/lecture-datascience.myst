@@ -195,23 +195,20 @@ Note that:
 - The filenames on the left will be different.
 - It *should* list the contents of your personal home directory (folder).
 
-````{exercise}
-:nonumber:
-:label: dir1-2-1
+````{admonition} Exercise
+:name: dir1-2-1
 
-See {ref}`exercise 1 <ex1-2-1>` in the exercise list.
+See exercise 1 in the {ref}`exercise list <ex1-2>`.
 ````
 
 
+(ex1-2)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex1-2-1
+###### Exercise 1
 
 Open this file in Jupyter by navigating to the QuantEcon Data Science folder that we downloaded
 earlier, then click on the `introduction` folder, and select the `getting_started.ipynb` file.
 
 ({ref}`back to text <dir1-2-1>`)
-````
 

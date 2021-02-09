@@ -155,11 +155,11 @@ ax[2].hist(draws_10000)
 fig.tight_layout()
 ```
 
-````{exercise} 1
-:nonumber:
-:label: dir3-4-1
 
-See {ref}`exercise 1 <ex3-4-1>` in the exercise list.
+````{admonition} Exercise
+:name: dir3-4-1
+
+See exercise 1 in the {ref}`exercise list <ex3-4>`.
 ````
 
 
@@ -450,20 +450,16 @@ for t in range(10):
     x = mc.P.T @ x
 ```
 
+````{admonition} Exercise
+:name: dir3-4-2
 
-````{exercise} 2
-:nonumber:
-:label: dir3-4-2
-
-See {ref}`exercise 2 <ex3-4-2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex3-4>`.
 ````
 
+````{admonition} Exercise
+:name: dir3-4-3
 
-````{exercise} 3
-:nonumber:
-:label: dir3-4-3
-
-See {ref}`exercise 3 <ex3-4-3>` in the exercise list.
+See exercise 3 in the {ref}`exercise list <ex3-4>`.
 ````
 
 ### Continuous Distributions
@@ -531,19 +527,17 @@ ax.set_xlim((0, 20))
 ax.legend();
 ```
 
-````{exercise} 4
-:nonumber:
-:label: dir3-4-4
+````{admonition} Exercise
+:name: dir3-4-4
 
-See {ref}`exercise 4 <ex3-4-4>` in the exercise list.
+See exercise 4 in the {ref}`exercise list <ex3-4>`.
 ````
 
 
+(ex3-4)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex3-4-1
+###### Exercise 1
 
 Wikipedia and other credible statistics sources tell us that the mean and
 variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
@@ -552,11 +546,8 @@ How could we check whether the numpy random numbers approximate these
 values?
 
 ({ref}`back to text <dir3-4-1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex3-4-2
+###### Exercise 2
 
 In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.
 
@@ -571,16 +562,14 @@ determine the stationary distribution of our Markov chain.
 After doing your computation, think about the answer... think about why our transition
 probabilities must lead to this outcome.
 
-```{code-block} python
+
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <dir3-4-2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: ex3-4-3
+###### Exercise 3
 
 Let's revisit the unemployment example from the {doc}`linear algebra lecture <applied_linalg>`.
 
@@ -606,7 +595,7 @@ You now have four tasks:
 Think about the stationary distribution.
 ```
 
-```{code-block} python
+```{code-cell} python
 # define components here
 
 # construct Markov chain
@@ -622,11 +611,9 @@ Think about the stationary distribution.
 ```
 
 ({ref}`back to text <dir3-4-3>`)
-````
 
-````{exercise} 4
-:nonumber:
-:label: ex3-4-4
+
+###### Exercise 4
 
 Assume you have been given the opportunity to choose between one of three financial assets:
 
@@ -650,9 +637,8 @@ There is not a single right answer here. Be creative
 and express your preferences.
 ```
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <dir3-4-4>`)
-````

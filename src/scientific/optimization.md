@@ -392,12 +392,10 @@ ax.set_xlabel("Price of Apples")
 ax.legend()
 ```
 
+````{admonition} Exercise
+:name: dir3-5-1
 
-````{exercise} 1
-:nonumber:
-:label: dir3-5-1
-
-See {ref}`exercise 1 <ex3-5-1>` in the exercise list.
+See exercise 1 in the {ref}`exercise list <ex3-5>`.
 ````
 
 #### Satiation Point
@@ -418,19 +416,16 @@ $$
 To numerically calculate the maximum (which you can probably see through inspection), one must directly solve the constrained maximization problem.
 
 
-````{exercise} 2
-:nonumber:
-:label: dir3-5-2
+````{admonition} Exercise
+:name: dir3-5-2
 
-See {ref}`exercise 2 <ex3-5-2>` in the exercise list.
+See exercise 2 in the {ref}`exercise list <ex3-5>`.
 ````
 
-
+(ex3-5)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: ex3-5-1
+###### Exercise 1
 
 Try solving the constrained maximization problem by hand via the Lagrangian method.
 
@@ -439,11 +434,8 @@ Is it surprising that the demand for bananas is unaffected by the change in appl
 Why might this be?
 
 ({ref}`back to text <dir3-5-1>`)
-````
 
-````{exercise} 2
-:nonumber:
-:label: ex3-5-2
+###### Exercise 2
 
 Using a similar approach to that of the apples/bananas example above, solve for the optimal
 basket of potato chips and chocolate bars when `W = 10`, `p_P = 1`, and `p_C = 2`.
@@ -475,4 +467,3 @@ While not required, you can take this opportunity to play around with other scip
 ```
 
 ({ref}`back to text <dir3-5-2>`)
-````
