@@ -677,7 +677,7 @@ See exercise 10 in the {ref}`exercise list <ex2-3>`.
 
 Finally, we can use this approach to build complicated nested dictionaries.
 
-```{code-block} python
+```{code-cell} python
 gdp_data = [9.607, 10.48, 11.06]
 years = [2013, 2014, 2015]
 exports = [ {"manufacturing": 2.4, "agriculture": 1.5, "services": 0.5},

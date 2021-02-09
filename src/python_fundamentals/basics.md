@@ -667,7 +667,7 @@ See exercise 12 in the {ref}`exercise list <ex>`.
 
 Alternatively, to reuse a formatted string, you can call the `format` method (noting that you do **not** put `f` in front).
 
-```{code-block} python
+```{code-cell} python
 gdp_string = "{country} had ${GDP} billion in {year}"
 
 gdp_string.format(country = "Vietnam", GDP = 223.9, year = 2017)
