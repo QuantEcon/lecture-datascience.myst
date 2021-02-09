@@ -21,9 +21,6 @@ kernelspec:
 - Index into multi-dimensional arrays
 - Use universal functions/broadcasting to do element-wise operations on arrays
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Numpy Arrays
 
@@ -234,6 +231,7 @@ print(x_3d[:, 0, :2])  # the 0  in 0:2 is optional
 
 See exercise 3 in the {ref}`exercise list <ex3-1>`.
 ````
+
 
 ### Array Functionality
 

@@ -28,9 +28,6 @@ kernelspec:
 - Use folium to create an interactive map
 - Request and combine json data from a web server
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```
@@ -878,7 +875,6 @@ Apply LSA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
 ({ref}`back to text <app-txt-dir2>`)
-
 
 ###### Exercise 3
 

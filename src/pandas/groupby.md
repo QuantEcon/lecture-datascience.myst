@@ -47,9 +47,6 @@ import qeds
 qeds.themes.mpl_style();
 ```
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Split-Apply-Combine
 
@@ -123,52 +120,16 @@ We can *apply* some of our favorite aggregation functions directly on the
 `GroupBy` object.
 
 ````{exercise}
-**Exercise 1**
-
-Look closely at the output of the cells below.
-
-How did pandas compute the sum of `gbA`? What happened to the `NaN`
-entries in column `C`?
-
-Write your thoughts.
-
-Hint: try `gbA.count()` or `gbA.mean()` if you can't decide what
-happened to the `NaN`.
-
-```{code-block} python
-df
-```
-
-```{code-block} python
-gbA.sum()
-```
-
+:nonumber:
+:label: pd-grp-dir1
+See {ref}`exercise 1 <pd-grp-ex1>` in the exercise list.
 ````
-
 ````{exercise}
-**Exercise 2**
-
-Use introspection (tab completion) to see what other aggregations are
-defined for GroupBy objects.
-
-Pick three and evaluate them in the cells below.
-
-Does the output of each of these commands have the same features as the
-output of `gbA.sum()` from above? If not, what is different?
-
-```{code-block} python
-# method 1
-```
-
-```{code-block} python
-# method 2
-```
-
-```{code-block} python
-# method 3
-```
-
+:nonumber:
+:label: pd-grp-dir2
+See {ref}`exercise 2 <pd-grp-ex2>` in the exercise list.
 ````
+
 
 If we pass a list of strings to `groupby`, it will group based on
 unique combinations of values from all columns in the list.
@@ -272,34 +233,9 @@ Had our function returned something other than the index from `df`,
 that would appear in the result of the call to `.apply`.
 
 ````{exercise}
-**Exercise 3**
-
-
-```{note} 
-This exercise has a few steps:
-```
-
-1. Write a function that, given a DataFrame, computes each entry's
-deviation from the mean of its column.
-2. Apply the function to `gbA`.
-3. With your neighbor describe what the index and and columns are? Where
-are the group keys (the `A` column)?
-4. Determine the correct way to add these results back into `df` as
-new columns. (Hint: remember the {doc}`merge<merge>` lecture)
-
-```{code-block} python
-# write function here
-
-
-# apply function here
-```
-
-```{code-block} python
-# add output of function as new columns to df here...
-```
-
-Note that if the group keys remained in the index as the `.apply`'s output, the merge/join step would have been complicated.
-
+:nonumber:
+:label: pd-grp-dir3
+See {ref}`exercise 3 <pd-grp-ex3>` in the exercise list.
 ````
 
 ### `pd.Grouper`
@@ -462,22 +398,9 @@ for agg in ["mean", "sum", "positive"]:
 ```
 
 ````{exercise}
-**Exercise 4**
-
-Think about what is shown in the the plots above.
-
-Answer questions like:
-
-- Which type of delay was the most common?
-- Which one caused the largest average delay?
-- Does that vary by airline?
-
-Write your thoughts.
-
-```{code-block} python
-# your code here if needed
-```
-
+:nonumber:
+:label: pd-grp-dir4
+See {ref}`exercise 4 <pd-grp-ex4>` in the exercise list.
 ````
 
 Let's summarize what we did:
@@ -556,19 +479,9 @@ def delay_type_plot(df, start, end):
 ```
 
 ````{exercise}
-**Exercise 5**
-
-Verify that we wrote the functions properly by setting the arguments to
-appropriate values to replicate the plots from above.
-
-```{code-block} python
-# call mean_delay_plot here
-```
-
-```{code-block} python
-# call delay_type_plot here
-```
-
+:nonumber:
+:label: pd-grp-dir5
+See {ref}`exercise 5 <pd-grp-ex5>` in the exercise list.
 ````
 
 Now let's look at that plot at a daily frequency. (Note that we need the
@@ -683,19 +596,26 @@ There is more than one way to code this, but here are some suggested
 steps.
 
 1. Convert the `Day` column to have a `datetime` `dtype` instead
-   of object (Hint: use the `pd.to_datetime` function).
+   of object.
+    - ```{hint}
+      Use the `pd.to_datetime` function.
+      ```
 1. Add a new column that specifies the date associated with each
    customer's `"First-time"` order.
-    - Hint 1: You can do this with a combination of `groupby` and
+    - ```{hint}
+      You can do this with a combination of `groupby` and
       `join`.
-    - Hint 2: `customer_type` is always one of `Returning` and
-      `First-time`.
-    - Hint 3: Some customers don't have a
-      `customer_type == "First-time"` entry. You will need to set the
+      ```
+    - ```{hint}
+      `customer_type` is always one of `Returning` and `First-time`.
+      ```
+    - ```{hint}
+      Some customers don't have a `customer_type == "First-time"` entry. You will need to set the
       value for these users to some date that precedes the dates in the
       sample. After adding valid data back into `orders` DataFrame,
       you can identify which customers don't have a `"First-Time"`
       entry by checking for missing data in the new column.
+      ```
 1. You'll need to group by 3 things.
 1. You can apply one of the built-in aggregation functions to the GroupBy.
 1. After doing the aggregation, you'll need to use your reshaping skills to
@@ -705,6 +625,127 @@ Good luck!
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: pd-grp-ex1
+
+Look closely at the output of the cells below.
+
+How did pandas compute the sum of `gbA`? What happened to the `NaN`
+entries in column `C`?
+
+Write your thoughts.
+
+```{hint}
+Try `gbA.count()` or `gbA.mean()` if you can't decide what
+happened to the `NaN`.
+```
+
+```{code-block} python
+df
+```
+
+```{code-block} python
+gbA.sum()
+```
+
+({ref}`back to text <pd-grp-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-grp-ex2
+
+Use introspection (tab completion) to see what other aggregations are
+defined for GroupBy objects.
+
+Pick three and evaluate them in the cells below.
+
+Does the output of each of these commands have the same features as the
+output of `gbA.sum()` from above? If not, what is different?
+
+```{code-block} python
+# method 1
+```
+
+```{code-block} python
+# method 2
+```
+
+```{code-block} python
+# method 3
+```
+
+({ref}`back to text <pd-grp-dir2>`)
 ````
 
+````{exercise} 3
+:nonumber:
+:label: pd-grp-ex3
+
+```{note} 
+This exercise has a few steps:
+```
+
+1. Write a function that, given a DataFrame, computes each entry's
+deviation from the mean of its column.
+2. Apply the function to `gbA`.
+3. With your neighbor describe what the index and and columns are? Where
+are the group keys (the `A` column)?
+4. Determine the correct way to add these results back into `df` as
+new columns. 
+    - ```{hint}
+      Remember the {doc}`merge<merge>` lecture.
+      ```
+
+```{code-block} python
+# write function here
+
+
+# apply function here
+```
+
+```{code-block} python
+# add output of function as new columns to df here...
+```
+
+Note that if the group keys remained in the index as the `.apply`'s output, the merge/join step would have been complicated.
+
+({ref}`back to text <pd-grp-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: pd-grp-ex4
+
+Think about what is shown in the the plots above.
+
+Answer questions like:
+
+- Which type of delay was the most common?
+- Which one caused the largest average delay?
+- Does that vary by airline?
+
+Write your thoughts.
+
+```{code-block} python
+# your code here if needed
+```
+
+({ref}`back to text <pd-grp-dir4>`)
+````
+````{exercise} 5
+:nonumber:
+:label: pd-grp-ex5
+
+Verify that we wrote the functions properly by setting the arguments to
+appropriate values to replicate the plots from above.
+
+```{code-block} python
+# call mean_delay_plot here
+```
+
+```{code-block} python
+# call delay_type_plot here
+```
+
+({ref}`back to text <pd-grp-dir5>`)
+````

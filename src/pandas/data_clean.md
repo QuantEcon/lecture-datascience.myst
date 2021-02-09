@@ -37,9 +37,6 @@ import numpy as np
 import qeds
 ```
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Cleaning Data
 
@@ -74,20 +71,16 @@ It throws an error!
 
 Can you figure out why?
 
-Hint: When looking at error messages, start at the very
-bottom.
+```{hint}
+When looking at error messages, start at the very bottom.
+```
 
 The final error says, `TypeError: Could not convert #23#24... to numeric`.
 
 ````{exercise}
-**Exercise 1**
-
-Convert the string below into a number.
-
-```{code-block} python
-c2n = "#39"
-```
-
+:nonumber:
+:label: pd-cln-dir1
+See {ref}`exercise 1 <pd-cln-ex1>` in the exercise list.
 ````
 
 ## String Methods
@@ -158,11 +151,9 @@ df["colors"].str.capitalize()
 ```
 
 ````{exercise}
-**Exercise 2**
-
-Make a new column called `colors_upper` that contains the elements of
-`colors` with all uppercase letters.
-
+:nonumber:
+:label: pd-cln-dir2
+See {ref}`exercise 2 <pd-cln-ex2>` in the exercise list.
 ````
 
 ## Type Conversions
@@ -208,20 +199,9 @@ df["numbers_numeric"].astype(float)
 ```
 
 ````{exercise}
-**Exercise 3**
-
-Convert the column `"nums"` to a numeric type using `pd.to_numeric` and
-save it to the DataFrame as `"nums_tonumeric"`.
-
-Notice that there is a missing value, and a value that is not a number.
-
-Look at the documentation for `pd.to_numeric` and think about how to
-overcome this.
-
-Think about why this could be a bad idea of used without
-knowing what your data looks like. (Think about what happens when you
-apply it to the `"numbers"` column before replacing the `"#"`.)
-
+:nonumber:
+:label: pd-cln-dir3
+See {ref}`exercise 3 <pd-cln-ex3>` in the exercise list.
 ````
 
 ## Missing Data
@@ -304,21 +284,11 @@ chipotle.head()
 ```
 
 ````{exercise}
-**Exercise 4**
-
-We'd like you to use this data to answer the following questions.
-
-- What is the average price of an item with chicken?
-- What is the average price of an item with steak?
-- Did chicken or steak produce more revenue (total)?
-- How many missing items are there in this dataset? How many missing
-  items in each column?
-
-Hint: before you will be able to do any of these things you will need to
-make sure the `item_price` column has a numeric `dtype` (probably
-float)
-
+:nonumber:
+:label: pd-cln-dir4
+See {ref}`exercise 4 <pd-cln-ex4>` in the exercise list.
 ````
+
 
 ## Appendix: Performance of `.str` Methods
 
@@ -354,6 +324,62 @@ We got the exact same result in a fraction of the time!
 
 ## Exercises
 
-````{exerciselist}
-````
+````{exercise} 1
+:nonumber:
+:label: pd-cln-ex1
 
+Convert the string below into a number.
+
+```{code-block} python
+c2n = "#39"
+```
+
+({ref}`back to text <pd-cln-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-cln-ex2
+
+Make a new column called `colors_upper` that contains the elements of
+`colors` with all uppercase letters.
+
+({ref}`back to text <pd-cln-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: pd-cln-ex3
+
+Convert the column `"nums"` to a numeric type using `pd.to_numeric` and
+save it to the DataFrame as `"nums_tonumeric"`.
+
+Notice that there is a missing value, and a value that is not a number.
+
+Look at the documentation for `pd.to_numeric` and think about how to
+overcome this.
+
+Think about why this could be a bad idea of used without
+knowing what your data looks like. (Think about what happens when you
+apply it to the `"numbers"` column before replacing the `"#"`.)
+
+({ref}`back to text <pd-cln-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: pd-cln-ex4
+
+We'd like you to use this data to answer the following questions.
+
+- What is the average price of an item with chicken?
+- What is the average price of an item with steak?
+- Did chicken or steak produce more revenue (total)?
+- How many missing items are there in this dataset? How many missing
+  items in each column?
+
+```{hint}
+Before you will be able to do any of these things you will need to
+make sure the `item_price` column has a numeric `dtype` (probably
+float).
+```
+
+({ref}`back to text <pd-cln-dir4>`)
+````

@@ -26,9 +26,6 @@ kernelspec:
 - See an end-to-end data science exercise
 - Application of regression
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```
@@ -520,10 +517,9 @@ for (_name, _coef) in zip(names, lr_model.coef_):
 What stands out to you about these coefficients?
 
 ````{exercise}
-**Exercise 1**
-
-Can you develop a model that performs better at mimicking their risk scores?
-
+:nonumber:
+:label: app-rcd-dir1
+See {ref}`exercise 1 <app-rcd-ex1>` in the exercise list.
 ````
 
 ### Binary Probability Models
@@ -770,15 +766,9 @@ For dots below the 45 degree line, the algorithm is overpredicting
 recidivism.
 
 ````{exercise}
-**Exercise 2**
-
-We made our calibration plot using a held-out test sample. What
-do you think would happen if made the calibration plot using the
-training sample? Check and see.
-
-```{code-block} python
-# Create calibration plot using training data
-```
+:nonumber:
+:label: app-rcd-dir2
+See {ref}`exercise 2 <app-rcd-ex2>` in the exercise list.
 ````
 
 The algorithm appears fairly well-calibrated.
@@ -1003,14 +993,9 @@ false negative and false positive rates are not well balanced across
 racial groups.
 
 ````{exercise}
-**Exercise 3**
-
-Try to improve balance and/or calibration by creating an
-alternative prediction.
-
-```{code-block} python
-# Fit your prediction model and plot calibration and balance
-```
+:nonumber:
+:label: app-rcd-dir3
+See {ref}`exercise 3 <app-rcd-ex3>` in the exercise list.
 ````
 
 ### Regularizing to Maximize Balance
@@ -1115,11 +1100,9 @@ balance_threshold_plot(bf_mod.best_estimator_.predict_proba(X_test)[:,1],y_test,
 ```
 
 ````{exercise}
-**Exercise 4**
-
-Modify the cross-validation scoring function to see how it affects
-calibration and balance.
-
+:nonumber:
+:label: app-rcd-dir4
+See {ref}`exercise 4 <app-rcd-ex4>` in the exercise list.
 ````
 
 ### Tradeoffs are Inevitable
@@ -1141,6 +1124,47 @@ Improvements in balance necessarily make calibration worse.
 
 ## Exercises
 
-````{exerciselist}
-````
+````{exercise} 1
+:nonumber:
+:label: app-rcd-ex1
 
+Can you develop a model that performs better at mimicking their risk scores?
+
+({ref}`back to text <app-rcd-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: app-rcd-ex2
+
+We made our calibration plot using a held-out test sample. What
+do you think would happen if made the calibration plot using the
+training sample? Check and see.
+
+```{code-block} python
+# Create calibration plot using training data
+```
+
+({ref}`back to text <app-rcd-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: app-rcd-ex3
+
+Try to improve balance and/or calibration by creating an
+alternative prediction.
+
+```{code-block} python
+# Fit your prediction model and plot calibration and balance
+```
+
+({ref}`back to text <app-rcd-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: app-rcd-ex4
+
+Modify the cross-validation scoring function to see how it affects
+calibration and balance.
+
+({ref}`back to text <app-rcd-dir4>`)
+````

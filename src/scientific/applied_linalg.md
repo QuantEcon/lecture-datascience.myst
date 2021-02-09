@@ -21,9 +21,6 @@ kernelspec:
 - Apply concepts to understanding unemployment and pricing portfolios
 - Use `numpy` to do linear algebra operations
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```
@@ -237,15 +234,13 @@ print(y1 @ x1)
 Despite our options, we stick to using `@` because
 it is simplest to read and write.
 
+
 ````{admonition} Exercise
 :name: dir3-3-2
 
 See exercise 2 in the {ref}`exercise list <ex3-3>`.
 ````
 
-```{code-block} python
-# testing area
-```
 
 ### Other Linear Algebra Concepts
 
@@ -737,6 +732,7 @@ dist /= dist.sum()
 
 print(f"The distribution of workers is given by {dist}")
 ```
+
 
 ````{admonition} Exercise
 :name: dir3-3-3

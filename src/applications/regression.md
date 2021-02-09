@@ -29,9 +29,6 @@ kernelspec:
 - Understand the basics of the multi-layer perceptron
 - Use scikit-learn to fit linear regression, lasso, regression forests, and multi-layer perceptron to data on housing prices near Seattle, WA
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```
@@ -206,49 +203,14 @@ print(f"The model predicts a 5,000 sq. foot home would cost {np.exp(logp_5000):.
 ```
 
 ````{exercise}
-**Exercise 1**
-
-Use the `sqft_lr_model` that we fit to generate predictions for all data points
-in our sample.
-
-Note that you need to pass a DataFrame (not Series)
-containing the `sqft_living` column to the `predict`. (See how we passed that to `.fit`
-above for help)
-
-Make a scatter chart with the actual data and the predictions on the same
-figure. Does it look familiar?
-
-When making the scatter for model predictions, we recommend passing
-`c="red"` and `alpha=0.25` so you can distinguish the data from
-predictions.
-
-```{code-block} python
-# Generate predictions
-
-# Plot
-fig, ax = plt.subplots()
-
-# Make scatter of data
-
-# Make scatter of predictions
-```
-
+:nonumber:
+:label: app-reg-dir1
+See {ref}`exercise 1 <app-reg-ex1>` in the exercise list.
 ````
-
 ````{exercise}
-**Exercise 2**
-
-Use the `metrics.mean_squared_error` function to evaluate the loss
-function used by `sklearn` when it fits the model for us.
-
-Read the docstring to learn which the arguments that function takes.
-
-```{code-block} python
-from sklearn import metrics
-
-# your code here
-```
-
+:nonumber:
+:label: app-reg-dir2
+See {ref}`exercise 2 <app-reg-ex2>` in the exercise list.
 ````
 
 ### Multivariate Linear Regression
@@ -316,12 +278,9 @@ ax.legend(["data", "full model", "sqft model"])
 ```
 
 ````{exercise}
-**Exercise 3**
-
-Compare the mean squared error for the `lr_model` and the `sqft_lr_model`.
-
-Which model has a better fit? Defend your choice.
-
+:nonumber:
+:label: app-reg-dir3
+See {ref}`exercise 3 <app-reg-ex3>` in the exercise list.
 ````
 
 ### Nonlinear Relationships in Linear Regression
@@ -360,15 +319,9 @@ print(f"The mse changed from {old_mse:.4f} to {new_mse:.4f} by including our new
 ```
 
 ````{exercise}
-**Exercise 4**
-
-Explore how you can improve the fit of the full model by adding additional
-features created from the existing ones.
-
-```{code-block} python
-# your code here
-```
-
+:nonumber:
+:label: app-reg-dir4
+See {ref}`exercise 4 <app-reg-ex4>` in the exercise list.
 ````
 
 Determining which columns belong in $X$ is called *feature
@@ -631,15 +584,9 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_s
 ```
 
 ````{exercise}
-**Exercise 5**
-
-Experiment with how the size of the holdout dataset can impact a diagnosis
-of overfitting.
-
-Evaluate only the `LinearRegression` model on the full feature set and use
-the `model_selection.train_test_split` function with various values for
-`test_size`.
-
+:nonumber:
+:label: app-reg-dir5
+See {ref}`exercise 5 <app-reg-ex5>` in the exercise list.
 ````
 
 ### Lasso in Econometrics
@@ -795,27 +742,14 @@ $\alpha$ in the pruning step serve as regularization
 parameters.
 
 ````{exercise}
-**Exercise 6**
-
-Read the documentation for `sklearn.tree.DecisionTreeRegressor` and
-then experiment with adjusting some regularization parameters to see how they
-affect the fitted tree.
-
-```{code-block} python
-# plot trees when varying some regularization parameter(s)
-```
+:nonumber:
+:label: app-reg-dir6
+See {ref}`exercise 6 <app-reg-ex6>` in the exercise list.
 ````
-
 ````{exercise}
-**Exercise 7**
-
-Fit a regression tree to the housing price data and use graphviz
-to visualize the decision graph.
-
-```{code-block} python
-# your code here
-```
-
+:nonumber:
+:label: app-reg-dir7
+See {ref}`exercise 7 <app-reg-ex7>` in the exercise list.
 ````
 
 An advantage of regression trees (and random forests) is that they adapt
@@ -888,22 +822,9 @@ forest.feature_importances_
 ```
 
 ````{exercise}
-**Exercise 8**
-
-Fit a random forest to the housing price data.
-
-Compare the MSE on a testing set to that of lasso.
-
-```{code-block} python
-# Fit random forest and compute MSE
-```
-
-Produce a bar chart of feature importances for predicting house
-prices.
-
-```{code-block} python
-```
-
+:nonumber:
+:label: app-reg-dir8
+See {ref}`exercise 8 <app-reg-ex8>` in the exercise list.
 ````
 
 ## Neural Networks
@@ -965,33 +886,9 @@ Notice the pattern of a linear regression ($(\cdot) w + b$),
 followed by applying an activation function ($f$) at each step.
 
 ````{exercise}
-**Exercise 9**
-
-In the pseudocode below, fill in the blanks for the generic MLP.
-
-Note that this is inside a markdown cell because the code is not valid
-Python.
-
-```{code-block} python
-ws = [w1, w2, ..., wend]
-bs = [b1, b2, ..., bend]
-
-def eval_mlp(X, ws, bs, f):
-    """
-    Evaluate MLP-given weights (ws), bias (bs) and an activation (f)
-
-    Assumes that the same activation is applied to all hidden layers
-    """
-    N = len(ws) - 1
-
-    out = X
-    for i in range(N):
-        out = f(__)  # replace the __
-
-    # For this step remember python starts counting at 0!
-    return out@__ + __  # replace the __
-```
-
+:nonumber:
+:label: app-reg-dir9
+See {ref}`exercise 9 <app-reg-ex9>` in the exercise list.
 ````
 
 The loss or error function typically used when using an MLP for regression is
@@ -1097,17 +994,9 @@ observations have a mean of 0 and a standard deviation of 1.
 This is known as scaling or normalizing the inputs.
 
 ````{exercise}
-**Exercise 10**
-
-Scale all variables in `X` by subtracting their mean and dividing by the
-standard deviation.
-
-Verify that the transformed data has mean 0 and standard deviation 1.
-
-```{code-block} python
-# your code here
-```
-
+:nonumber:
+:label: app-reg-dir10
+See {ref}`exercise 10 <app-reg-ex10>` in the exercise list.
 ````
 
 If we decide to scale our variables, we must remember to apply the same
@@ -1194,17 +1083,10 @@ We'll discuss a few of them here.
   especially when building networks used for decision-making.
 
 ````{exercise}
-**Exercise 11**
-
-Read the documentation for sklearn.neural_network.MLPRegressor and
-use the full housing data to experiment with how adjusting layer depth, width, and other
-regularization parameters affects prediction.
-
-```{code-block} python
-# your code here
-```
+:nonumber:
+:label: app-reg-dir11
+See {ref}`exercise 11 <app-reg-ex11>` in the exercise list.
 ````
-
 
 ## References
 
@@ -1219,6 +1101,195 @@ Two good text books covering the above regression methods are
 
 ## Exercises
 
-````{exerciselist}
+````{exercise} 1
+:nonumber:
+:label: app-reg-ex1
+
+Use the `sqft_lr_model` that we fit to generate predictions for all data points
+in our sample.
+
+Note that you need to pass a DataFrame (not Series)
+containing the `sqft_living` column to the `predict`. (See how we passed that to `.fit`
+above for help)
+
+Make a scatter chart with the actual data and the predictions on the same
+figure. Does it look familiar?
+
+When making the scatter for model predictions, we recommend passing
+`c="red"` and `alpha=0.25` so you can distinguish the data from
+predictions.
+
+```{code-block} python
+# Generate predictions
+
+# Plot
+fig, ax = plt.subplots()
+
+# Make scatter of data
+
+# Make scatter of predictions
+```
+
+({ref}`back to text <app-reg-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: app-reg-ex2
+
+Use the `metrics.mean_squared_error` function to evaluate the loss
+function used by `sklearn` when it fits the model for us.
+
+Read the docstring to learn which the arguments that function takes.
+
+```{code-block} python
+from sklearn import metrics
+
+# your code here
+```
+
+({ref}`back to text <app-reg-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: app-reg-ex3
+
+Compare the mean squared error for the `lr_model` and the `sqft_lr_model`.
+
+Which model has a better fit? Defend your choice.
+
+({ref}`back to text <app-reg-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: app-reg-ex4
+
+Explore how you can improve the fit of the full model by adding additional
+features created from the existing ones.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-reg-dir4>`)
+````
+````{exercise} 5
+:nonumber:
+:label: app-reg-ex5
+
+Experiment with how the size of the holdout dataset can impact a diagnosis
+of overfitting.
+
+Evaluate only the `LinearRegression` model on the full feature set and use
+the `model_selection.train_test_split` function with various values for
+`test_size`.
+
+({ref}`back to text <app-reg-dir5>`)
+````
+````{exercise} 6
+:nonumber:
+:label: app-reg-ex6
+
+Read the documentation for `sklearn.tree.DecisionTreeRegressor` and
+then experiment with adjusting some regularization parameters to see how they
+affect the fitted tree.
+
+```{code-block} python
+# plot trees when varying some regularization parameter(s)
+```
+
+({ref}`back to text <app-reg-dir6>`)
+````
+````{exercise} 7
+:nonumber:
+:label: app-reg-ex7
+
+Fit a regression tree to the housing price data and use graphviz
+to visualize the decision graph.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-reg-dir7>`)
+````
+````{exercise} 8
+:nonumber:
+:label: app-reg-ex8
+
+Fit a random forest to the housing price data.
+
+Compare the MSE on a testing set to that of lasso.
+
+```{code-block} python
+# Fit random forest and compute MSE
+```
+
+Produce a bar chart of feature importances for predicting house
+prices.
+
+```{code-block} python
+```
+
+({ref}`back to text <app-reg-dir8>`)
+````
+````{exercise} 9
+:nonumber:
+:label: app-reg-ex9
+
+In the pseudocode below, fill in the blanks for the generic MLP.
+
+Note that this is inside a markdown cell because the code is not valid
+Python.
+
+```{code-block} python
+ws = [w1, w2, ..., wend]
+bs = [b1, b2, ..., bend]
+
+def eval_mlp(X, ws, bs, f):
+    """
+    Evaluate MLP-given weights (ws), bias (bs) and an activation (f)
+
+    Assumes that the same activation is applied to all hidden layers
+    """
+    N = len(ws) - 1
+
+    out = X
+    for i in range(N):
+        out = f(__)  # replace the __
+
+    # For this step remember python starts counting at 0!
+    return out@__ + __  # replace the __
+```
+
+({ref}`back to text <app-reg-dir9>`)
+````
+````{exercise} 10
+:nonumber:
+:label: app-reg-ex10
+
+Scale all variables in `X` by subtracting their mean and dividing by the
+standard deviation.
+
+Verify that the transformed data has mean 0 and standard deviation 1.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-reg-dir10>`)
+````
+````{exercise} 11
+:nonumber:
+:label: app-reg-ex11
+
+Read the documentation for sklearn.neural_network.MLPRegressor and
+use the full housing data to experiment with how adjusting layer depth, width, and other
+regularization parameters affects prediction.
+
+```{code-block} python
+# your code here
+```
+
+({ref}`back to text <app-reg-dir11>`)
 ````
 

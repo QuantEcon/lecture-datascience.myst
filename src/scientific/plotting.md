@@ -20,9 +20,6 @@ kernelspec:
 - Understand components of matplotlib plots
 - Make basic plots
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```

@@ -36,9 +36,6 @@ import qeds
 qeds.themes.mpl_style();
 ```
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Tidy Data
 
@@ -321,51 +318,9 @@ We needed to use this in our solution to the exercise below.
 ```
 
 ````{exercise}
-**Exercise 1**
-
-(*Warning*: This one is challenging):
-
-Recall the `bball_wide` DataFrame from above (repeated below to jog
-your memory).
-
-In this task, you will start from `ball` and re-recreate `bball_wide`
-by combining the operations we just learned about.
-
-There are many ways to do this, so be creative.
-
-Our solution used `set_index`, `T`, `stack`, and `unstack` in
-that order.
-
-Here are a few hints:
-
-- Think about what columns you will need to call `set_index` on so
-  that their data ends up as labels (either in index or columns).
-- Leave other columns (e.g. the actual game stats) as actual columns so
-  their data can stay data during your reshaping.
-
-Don't spend too much time on this... if you get stuck, open up **this**
-markdown cell, and you will see our answer hidden.
-
-**Hint**: You might need to add `.sort_index(axis=1)` after you are
-finished to get the columns in the same order.
-
-**Hint**: You may not end up with a `variable` header on the second
-level of column labels. This is ok.
-
-```{raw} html
-<div style="display: none;">
-```
-
-`bball.drop("TeamName", axis=1).set_index(["Year", "Player", "Team"]).stack().unstack(level=[1, 3, 2]).sort_index(axis=1)`
-
-```{raw} html
-</div>
-```
-
-```{code-block} python
-bball_wide
-```
-
+:nonumber:
+:label: pd-shp-dir1
+See {ref}`exercise 1 <pd-shp-ex1>` in the exercise list.
 ````
 
 ### Summary
@@ -413,19 +368,9 @@ Using this method is an effective way to get our data in *tidy* form as noted
 above.
 
 ````{exercise}
-**Exercise 2**
-
-- What do you think would happen if we wrote `bball.melt(id_vars=["Year", "Player"])`
-  rather than `bball.melt(id_vars=["Year", "Player", "Team", "TeamName"])`?
-  Were you right? Write your thoughts.
-- Read the documentation and focus on the argument `value_vars`. How
-  does `bball.melt(id_vars=["Year", "Player"], value_vars=["Pts", "Rebound"])`
-  differ from `bball.melt(id_vars=["Year", "Player"])`?
-- Consider the differences between `bball.stack` and `bball.melt`.
-  Is there a way to make them generate the same output?
-  (Hint: you might need to use both `stack` and another method from
-  above)? Write your thoughts.
-
+:nonumber:
+:label: pd-shp-dir2
+See {ref}`exercise 2 <pd-shp-ex2>` in the exercise list.
 ````
 
 ## `pivot` and `pivot_table`
@@ -556,16 +501,9 @@ bball.pivot_table(index="Year", columns="Player", values="Pts", aggfunc=[max, le
 ```
 
 ````{exercise}
-**Exercise 3**
-
-- First, take a breath... That was a lot to take in.
-- Can you think of a reason to ever use `pivot` rather than
-  `pivot_table`? Write your thoughts.
-- Create a pivot table with column `Player` as the index, `TeamName` as the
-  columns, and `[Rebound, Assist]` as the values. What happens when you use
-  `aggfunc=[np.max, np.min, len]`? Describe how Python produced
-  each of the values in the resultant pivot table.
-
+:nonumber:
+:label: pd-shp-dir3
+See {ref}`exercise 3 <pd-shp-ex3>` in the exercise list.
 ````
 
 ## Visualizing Reshaping
@@ -652,7 +590,95 @@ df_melted
 ```
 
 ## Exercises
+````{exercise} 1
+:nonumber:
+:label: pd-shp-ex1
 
-````{exerciselist}
+(*Warning*: This one is challenging):
+
+Recall the `bball_wide` DataFrame from above (repeated below to jog
+your memory).
+
+In this task, you will start from `ball` and re-recreate `bball_wide`
+by combining the operations we just learned about.
+
+There are many ways to do this, so be creative.
+
+Our solution used `set_index`, `T`, `stack`, and `unstack` in
+that order.
+
+Here are a few hints:
+
+- ```{hint}
+  Think about what columns you will need to call `set_index` on so
+  that their data ends up as labels (either in index or columns).
+  ```
+- ```{hint}
+  Leave other columns (e.g. the actual game stats) as actual columns so
+  their data can stay data during your reshaping.
+  ```
+
+Don't spend too much time on this... if you get stuck, open up **this**
+markdown cell, and you will see our answer hidden.
+
+```{hint}
+You might need to add `.sort_index(axis=1)` after you are
+finished to get the columns in the same order.
+```
+
+```{hint}
+You may not end up with a `variable` header on the second
+level of column labels. This is ok.
+```
+
+```{raw} html
+<div style="display: none;">
+```
+
+`bball.drop("TeamName", axis=1).set_index(["Year", "Player", "Team"]).stack().unstack(level=[1, 3, 2]).sort_index(axis=1)`
+
+```{raw} html
+</div>
+```
+
+```{code-block} python
+bball_wide
+```
+
+({ref}`back to text <pd-shp-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-shp-ex2
+
+- What do you think would happen if we wrote `bball.melt(id_vars=["Year", "Player"])`
+  rather than `bball.melt(id_vars=["Year", "Player", "Team", "TeamName"])`?
+  Were you right? Write your thoughts.
+- Read the documentation and focus on the argument `value_vars`. How
+  does `bball.melt(id_vars=["Year", "Player"], value_vars=["Pts", "Rebound"])`
+  differ from `bball.melt(id_vars=["Year", "Player"])`?
+- Consider the differences between `bball.stack` and `bball.melt`.
+  Is there a way to make them generate the same output?
+  Write your thoughts.
+  - ```{hint}
+    You might need to use both `stack` and another method from
+    above
+    ```
+
+({ref}`back to text <pd-shp-dir2>`)
 ````
 
+````{exercise} 3
+:nonumber:
+:label: pd-shp-ex3
+
+- First, take a breath... That was a lot to take in.
+- Can you think of a reason to ever use `pivot` rather than
+  `pivot_table`? Write your thoughts.
+- Create a pivot table with column `Player` as the index, `TeamName` as the
+  columns, and `[Rebound, Assist]` as the values. What happens when you use
+  `aggfunc=[np.max, np.min, len]`? Describe how Python produced
+  each of the values in the resultant pivot table.
+
+({ref}`back to text <pd-shp-dir3>`)
+````

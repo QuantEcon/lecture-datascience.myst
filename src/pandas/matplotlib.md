@@ -51,9 +51,6 @@ import qeds
 qeds.themes.mpl_style();
 ```
 
-```{contents} Outline
-:depth: 2
-```
 
 ## Introduction
 
@@ -150,23 +147,9 @@ Let's start by getting our hands dirty and practicing using these
 objects.
 
 ````{exercise}
-**Exercise 1**
-
-**Exercise:** Using the `.plot` method, plot the opening share price
-for Apple's stock.
-
-What `type` of object is returned from that method?
-
-What methods does this object have?
-
-```{code-block} python
-# make plot here
-```
-
-```{code-block} python
-# explore methods here
-```
-
+:nonumber:
+:label: pd-mpl-dir1
+See {ref}`exercise 1 <pd-mpl-ex1>` in the exercise list.
 ````
 
 You should have seen that the object returned by the `.plot` method is
@@ -229,39 +212,15 @@ fig2
 ```
 
 ````{exercise}
-**Exercise 2**
-
-Using the `plt.subplots` function, make a Figure with a two-by-one
-grid of subplots (two rows, one column).
-
-On the upper Axes, plot the adjusted close price.
-
-On the lower one, plot the adjusted volume as an area chart (search for
-an argument on the `plot` method to change the kind of plot).
-
-Google for how to set a title for a `Figure` object and then do so.
-
+:nonumber:
+:label: pd-mpl-dir2
+See {ref}`exercise 2 <pd-mpl-ex2>` in the exercise list.
 ````
 
 ````{exercise}
-**Exercise 3**
-
-Take 5 minutes to explore the different arguments to the DataFrame `.plot`
-method. Try to make a plot that is both good looking and interesting (
-we know, those are subjective, but do your best!).
-
-Some arguments you might consider exploring are:
-
-- `sharex` or `sharey`
-- `style`
-- `grid`
-- `color`
-- `kind`
-
-Hint: You can browse the [official pandas plotting
-documentation](https://pandas.pydata.org/pandas-docs/stable/visualization.html)
-for inspiration.
-
+:nonumber:
+:label: pd-mpl-dir3
+See {ref}`exercise 3 <pd-mpl-ex3>` in the exercise list.
 ````
 
 ## Data Cleaning
@@ -422,17 +381,9 @@ to_plot.plot(
 ```
 
 ````{exercise}
-**Exercise 4**
-
-Think about  what each of the argument we passed to `.plot` does.
-
-For some you might be able to guess, for others you will need to look at
-the documentation.
-
-For your reference, record your findings in a markdown cell below.
-
-Hint: Use `to_plot.plot?` to pull up the docs.
-
+:nonumber:
+:label: pd-mpl-dir4
+See {ref}`exercise 4 <pd-mpl-ex4>` in the exercise list.
 ````
 
 ### Subplot Spacing: `fig.tight_layout`
@@ -531,27 +482,9 @@ fig
 ```
 
 ````{exercise}
-**Exercise 5**
-
-For each operation in the list below (copied from above), make a note
-of which functions/methods were called to achieve the result.
-Edit the markdown cell containing the list directly.
-
-Note: This might seem redundant since the comments above give the answers,
-but forcing yourself to write out the names of the functions will help
-you remember them when you need them later on.
-
-- Change background color
-- Add Axes titles
-- Remove the x axis titles
-- Remove tick marks on y axis
-- Add a "faint" version of the line from the first subplot
-- Remove x axis tick labels
-- Make x axis ticks longer and semi-transparent
-- Make sure all Axes have same y limits
-- Remove the spines (the border on each Axes)
-- Add a white circle to (0, 100) on each Axes
-
+:nonumber:
+:label: pd-mpl-dir5
+See {ref}`exercise 5 <pd-mpl-ex5>` in the exercise list.
 ````
 
 Let's continue and add tick labels to the right of the far right
@@ -767,6 +700,106 @@ properties as professional journalists do.
 
 ## Exercises
 
-````{exerciselist}
-````
+````{exercise} 1
+:nonumber:
+:label: pd-mpl-ex1
 
+**Exercise:** Using the `.plot` method, plot the opening share price
+for Apple's stock.
+
+What `type` of object is returned from that method?
+
+What methods does this object have?
+
+```{code-block} python
+# make plot here
+```
+
+```{code-block} python
+# explore methods here
+```
+
+({ref}`back to text <pd-mpl-dir1>`)
+````
+````{exercise} 2
+:nonumber:
+:label: pd-mpl-ex2
+
+Using the `plt.subplots` function, make a Figure with a two-by-one
+grid of subplots (two rows, one column).
+
+On the upper Axes, plot the adjusted close price.
+
+On the lower one, plot the adjusted volume as an area chart (search for
+an argument on the `plot` method to change the kind of plot).
+
+Google for how to set a title for a `Figure` object and then do so.
+
+({ref}`back to text <pd-mpl-dir2>`)
+````
+````{exercise} 3
+:nonumber:
+:label: pd-mpl-ex3
+
+Take 5 minutes to explore the different arguments to the DataFrame `.plot`
+method. Try to make a plot that is both good looking and interesting (
+we know, those are subjective, but do your best!).
+
+Some arguments you might consider exploring are:
+
+- `sharex` or `sharey`
+- `style`
+- `grid`
+- `color`
+- `kind`
+
+```{hint}
+You can browse the [official pandas plotting
+documentation](https://pandas.pydata.org/pandas-docs/stable/visualization.html)
+for inspiration.
+```
+
+({ref}`back to text <pd-mpl-dir3>`)
+````
+````{exercise} 4
+:nonumber:
+:label: pd-mpl-ex4
+
+Think about  what each of the argument we passed to `.plot` does.
+
+For some you might be able to guess, for others you will need to look at
+the documentation.
+
+For your reference, record your findings in a markdown cell below.
+
+```{hint}
+Use `to_plot.plot?` to pull up the docs.
+```
+
+({ref}`back to text <pd-mpl-dir4>`)
+````
+````{exercise} 5
+:nonumber:
+:label: pd-mpl-ex5
+
+For each operation in the list below (copied from above), make a note
+of which functions/methods were called to achieve the result.
+Edit the markdown cell containing the list directly.
+
+Note: This might seem redundant since the comments above give the answers,
+but forcing yourself to write out the names of the functions will help
+you remember them when you need them later on.
+
+- Change background color
+- Add Axes titles
+- Remove the x axis titles
+- Remove tick marks on y axis
+- Add a "faint" version of the line from the first subplot
+- Remove x axis tick labels
+- Make x axis ticks longer and semi-transparent
+- Make sure all Axes have same y limits
+- Remove the spines (the border on each Axes)
+- Add a white circle to (0, 100) on each Axes
+
+({ref}`back to text <pd-mpl-dir5>`)
+````

@@ -24,9 +24,6 @@ kernelspec:
 - Understand the basics of Markov chains and using the `quantecon` library to study them
 - Simulate discrete and continuous random variables and processes
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_light.raw
 ```
@@ -158,11 +155,13 @@ ax[2].hist(draws_10000)
 fig.tight_layout()
 ```
 
+
 ````{admonition} Exercise
 :name: dir3-4-1
 
 See exercise 1 in the {ref}`exercise list <ex3-4>`.
 ````
+
 
 ### Discrete Distributions
 
@@ -563,6 +562,7 @@ determine the stationary distribution of our Markov chain.
 After doing your computation, think about the answer... think about why our transition
 probabilities must lead to this outcome.
 
+
 ```{code-cell} python
 # your code here
 ```
@@ -612,6 +612,7 @@ Think about the stationary distribution.
 
 ({ref}`back to text <dir3-4-3>`)
 
+
 ###### Exercise 4
 
 Assume you have been given the opportunity to choose between one of three financial assets:
@@ -629,8 +630,12 @@ Use `scipy.stats` to answer the following questions:
 - Which asset has the highest average returns?
 - Which asset has the highest median returns?
 - Which asset has the lowest coefficient of variation (standard deviation divided by mean)?
-- Which asset would you choose? Why? (Hint: There is not a single right answer here. Be creative
-  and express your preferences)
+- Which asset would you choose? Why? 
+
+```{hint}
+There is not a single right answer here. Be creative
+and express your preferences.
+```
 
 ```{code-cell} python
 # your code here

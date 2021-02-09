@@ -24,9 +24,6 @@ kernelspec:
 - Know when to use each of the core plots
 - Introductory ability to make effective visualizations
 
-```{contents} Outline
-:depth: 2
-```
 
 ```{literalinclude} _static/colab_full.raw
 ```
@@ -216,6 +213,7 @@ for (i, year) in enumerate(df.year.unique()):
     single_scatter_plot(df, year, "noncollege", ax[i], "r")
     ax[i].set_title(str(year))
 ```
+
 
 ````{admonition} Exercise
 :name: app-vis-dir1
@@ -1412,6 +1410,7 @@ whether these changes improved the figures.
 Create a draft of the alternative way to organize time and education -- that is, have two subplots (one for each education level) and four groups of points (one for each year).
 
 Why do you think they chose to organize the information as they did rather than this way?
+
 
 ```{code-cell} python
 # Your code here
