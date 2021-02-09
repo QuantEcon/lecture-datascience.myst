@@ -119,15 +119,13 @@ gbA.get_group(2)
 We can *apply* some of our favorite aggregation functions directly on the
 `GroupBy` object.
 
-````{exercise}
-:nonumber:
-:label: pd-grp-dir1
-See {ref}`exercise 1 <pd-grp-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-grp-dir1
+See exercise 1 in the {ref}`exercise list <pd-grp-ex>`.
 ````
-````{exercise}
-:nonumber:
-:label: pd-grp-dir2
-See {ref}`exercise 2 <pd-grp-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-grp-dir2
+See exercise 2 in the {ref}`exercise list <pd-grp-ex>`.
 ````
 
 
@@ -232,10 +230,9 @@ DataFrame returned by `smallest_by_b`.
 Had our function returned something other than the index from `df`,
 that would appear in the result of the call to `.apply`.
 
-````{exercise}
-:nonumber:
-:label: pd-grp-dir3
-See {ref}`exercise 3 <pd-grp-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-grp-dir3
+See exercise 3 in the {ref}`exercise list <pd-grp-ex>`.
 ````
 
 ### `pd.Grouper`
@@ -397,10 +394,9 @@ for agg in ["mean", "sum", "positive"]:
 #     fig.tight_layout();
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-grp-dir4
-See {ref}`exercise 4 <pd-grp-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: pd-grp-dir4
+See exercise 4 in the {ref}`exercise list <pd-grp-ex>`.
 ````
 
 Let's summarize what we did:
@@ -478,10 +474,9 @@ def delay_type_plot(df, start, end):
 #         fig.tight_layout();
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-grp-dir5
-See {ref}`exercise 5 <pd-grp-ex5>` in the exercise list.
+````{admonition} Exercise
+:name: pd-grp-dir5
+See exercise 5 in the {ref}`exercise list <pd-grp-ex>`.
 ````
 
 Now let's look at that plot at a daily frequency. (Note that we need the
@@ -623,11 +618,10 @@ steps.
 
 Good luck!
 
+(pd-grp-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-grp-ex1
+### Exercise 1
 
 Look closely at the output of the cells below.
 
@@ -641,19 +635,17 @@ Try `gbA.count()` or `gbA.mean()` if you can't decide what
 happened to the `NaN`.
 ```
 
-```{code-block} python
+```{code-cell} python
 df
 ```
 
-```{code-block} python
+```{code-cell} python
 gbA.sum()
 ```
 
 ({ref}`back to text <pd-grp-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-grp-ex2
+
+### Exercise 2
 
 Use introspection (tab completion) to see what other aggregations are
 defined for GroupBy objects.
@@ -663,24 +655,21 @@ Pick three and evaluate them in the cells below.
 Does the output of each of these commands have the same features as the
 output of `gbA.sum()` from above? If not, what is different?
 
-```{code-block} python
+```{code-cell} python
 # method 1
 ```
 
-```{code-block} python
+```{code-cell} python
 # method 2
 ```
 
-```{code-block} python
+```{code-cell} python
 # method 3
 ```
 
 ({ref}`back to text <pd-grp-dir2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: pd-grp-ex3
+### Exercise 3
 
 ```{note} 
 This exercise has a few steps:
@@ -697,24 +686,22 @@ new columns.
       Remember the {doc}`merge<merge>` lecture.
       ```
 
-```{code-block} python
+```{code-cell} python
 # write function here
 
 
 # apply function here
 ```
 
-```{code-block} python
+```{code-cell} python
 # add output of function as new columns to df here...
 ```
 
 Note that if the group keys remained in the index as the `.apply`'s output, the merge/join step would have been complicated.
 
 ({ref}`back to text <pd-grp-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: pd-grp-ex4
+
+### Exercise 4
 
 Think about what is shown in the the plots above.
 
@@ -726,26 +713,24 @@ Answer questions like:
 
 Write your thoughts.
 
-```{code-block} python
+```{code-cell} python
 # your code here if needed
 ```
 
 ({ref}`back to text <pd-grp-dir4>`)
-````
-````{exercise} 5
-:nonumber:
-:label: pd-grp-ex5
+
+### Exercise 5
 
 Verify that we wrote the functions properly by setting the arguments to
 appropriate values to replicate the plots from above.
 
-```{code-block} python
+```{code-cell} python
 # call mean_delay_plot here
 ```
 
-```{code-block} python
+```{code-cell} python
 # call delay_type_plot here
 ```
 
 ({ref}`back to text <pd-grp-dir5>`)
-````
+

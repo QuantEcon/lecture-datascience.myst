@@ -317,10 +317,9 @@ levels to `unstack`.
 We needed to use this in our solution to the exercise below.
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-shp-dir1
-See {ref}`exercise 1 <pd-shp-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-shp-dir1
+See exercise 1 in the {ref}`exercise list <pd-shp-ex>`.
 ````
 
 ### Summary
@@ -367,10 +366,9 @@ other columns were put into two new columns:
 Using this method is an effective way to get our data in *tidy* form as noted
 above.
 
-````{exercise}
-:nonumber:
-:label: pd-shp-dir2
-See {ref}`exercise 2 <pd-shp-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-shp-dir2
+See exercise 2 in the {ref}`exercise list <pd-shp-ex>`.
 ````
 
 ## `pivot` and `pivot_table`
@@ -500,10 +498,9 @@ We can even pass multiple aggregation functions!
 bball.pivot_table(index="Year", columns="Player", values="Pts", aggfunc=[max, len])
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-shp-dir3
-See {ref}`exercise 3 <pd-shp-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-shp-dir3
+See exercise 3 in the {ref}`exercise list <pd-shp-ex>`.
 ````
 
 ## Visualizing Reshaping
@@ -589,10 +586,10 @@ df_melted = df.melt(id_vars=["A", "B"])
 df_melted
 ```
 
+(pd-shp-ex)=
 ## Exercises
-````{exercise} 1
-:nonumber:
-:label: pd-shp-ex1
+
+### Exercise 1
 
 (*Warning*: This one is challenging):
 
@@ -641,15 +638,13 @@ level of column labels. This is ok.
 </div>
 ```
 
-```{code-block} python
+```{code-cell} python
 bball_wide
 ```
 
 ({ref}`back to text <pd-shp-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-shp-ex2
+
+### Exercise 2
 
 - What do you think would happen if we wrote `bball.melt(id_vars=["Year", "Player"])`
   rather than `bball.melt(id_vars=["Year", "Player", "Team", "TeamName"])`?
@@ -666,11 +661,8 @@ bball_wide
     ```
 
 ({ref}`back to text <pd-shp-dir2>`)
-````
 
-````{exercise} 3
-:nonumber:
-:label: pd-shp-ex3
+### Exercise 3
 
 - First, take a breath... That was a lot to take in.
 - Can you think of a reason to ever use `pivot` rather than
@@ -681,4 +673,3 @@ bball_wide
   each of the values in the resultant pivot table.
 
 ({ref}`back to text <pd-shp-dir3>`)
-````

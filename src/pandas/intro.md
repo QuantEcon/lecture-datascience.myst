@@ -151,10 +151,9 @@ unemp.loc[1995]
 unemp.loc[[1995, 2005, 2015]]
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-int-dir1
-See {ref}`exercise 1 <pd-int-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-int-dir1
+See exercise 1 in the {ref}`exercise list <pd-int-ex>`.
 ````
 
 ## DataFrame
@@ -291,10 +290,9 @@ unemp_region.West.corr(unemp_region["MidWest"])
 unemp_region.corr()
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-int-dir2
-See {ref}`exercise 2 <pd-int-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-int-dir2
+See exercise 2 in the {ref}`exercise list <pd-int-ex>`.
 ````
 
 ## Data Types
@@ -479,11 +477,10 @@ unemp_shortname = unemp_region.rename(columns=names)
 unemp_shortname.head()
 ```
 
+(pd-int-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-int-ex1
+### Exercise 1
 
 For each of the following exercises, we recommend reading the documentation
 for help.
@@ -494,10 +491,8 @@ for help.
 - Run the code `unemp.dtype` below. What does it give you? Where do you think it comes from?
 
 ({ref}`back to text <pd-int-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-int-ex2
+
+### Exercise 2
 
 For each of the following, we recommend reading the documentation for help.
 
@@ -511,4 +506,4 @@ For each of the following, we recommend reading the documentation for help.
   How does this compare with `unemp.dtype`?
 
 ({ref}`back to text <pd-int-dir2>`)
-````
+

@@ -262,10 +262,9 @@ wdi_pop["GDP"] / wdi_pop["Population"]
 wdi_pop["Consumption"] / wdi_pop["Population"]
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir1
-See {ref}`exercise 1 <pd-mrg-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir1
+See exercise 1 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
 
 ## Arguments to `merge`
@@ -394,15 +393,13 @@ pd.merge(wdi2017_no_US, sq_miles, on="country", how="inner")
 pd.merge(wdi2017_no_US, sq_miles_no_germany, on="country", how="outer")
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir2
-See {ref}`exercise 2 <pd-mrg-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir2
+See exercise 2 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir3
-See {ref}`exercise 3 <pd-mrg-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir3
+See exercise 3 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
 
 ### `df.merge(df2)`
@@ -599,10 +596,9 @@ rated books on Goodreads.
 
 I wonder what the bottom of the distribution looks like...
 
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir4
-See {ref}`exercise 4 <pd-mrg-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir4
+See exercise 4 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
 
 Let's compute the average number of ratings for each book in our sample.
@@ -762,41 +758,35 @@ pd.merge(dfL, dfR, on="Key", how="right")
 ```
 
 ### Exercises With Artificial Data
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir5
-See {ref}`exercise 5 <pd-mrg-ex5>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir5
+See exercise 5 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir6
-See {ref}`exercise 6 <pd-mrg-ex6>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir6
+See exercise 6 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
-````{exercise}
-:nonumber:
-:label: pd-mrg-dir7
-See {ref}`exercise 7 <pd-mrg-ex7>` in the exercise list.
+````{admonition} Exercise
+:name: pd-mrg-dir7
+See exercise 7 in the {ref}`exercise list <pd-mrg-ex>`.
 ````
 
+(pd-mrg-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-mrg-ex1
+### Exercise 1
 
 Use your new `merge` skills to answer the final question from above: What
 is the population density of each country? How much does it change over
 time?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <pd-mrg-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-mrg-ex2
+
+### Exercise 2
 
 Compare the `how="left"` with `how="inner"` options using the
 DataFrames `wdi2017_no_US` and `sq_miles_no_germany`.
@@ -809,28 +799,24 @@ Will this happen for all pairs of DataFrames, or are `wdi2017_no_US` and
 Also compare `how="right"` and `how="outer"` and answer the same
 questions.
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <pd-mrg-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: pd-mrg-ex3
+
+### Exercise 3
 
 Can you pick the correct argument for `how` such that `pd.merge(wdi2017, sq_miles,
 how="left")` is equal to `pd.merge(sq_miles, wdi2017, how=XXX)`?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <pd-mrg-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: pd-mrg-ex4
+
+### Exercise 4
 
 Repeat the analysis above to determine the average rating for the books with the
 *least* number ratings.
@@ -840,15 +826,13 @@ the most rated books?
 
 Did you recognize any of the books?
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <pd-mrg-dir4>`)
-````
-````{exercise} 5
-:nonumber:
-:label: pd-mrg-ex5
+
+### Exercise 5
 
 In writing, describe what the output looks like when you do
 `pd.concat([dfL, dfR], axis=1)` (see above and/or run the cell below).
@@ -859,44 +843,39 @@ Be sure to describe things like:
 - What is the index?
 - Do any `NaN`s get introduced? If so, where? Why?
 
-```{code-block} python
+```{code-cell} python
 pd.concat([dfL, dfR], axis=1)
 ```
 
 ({ref}`back to text <pd-mrg-dir5>`)
-````
-````{exercise} 6
-:nonumber:
-:label: pd-mrg-ex6
+
+### Exercise 6
 
 Determine what happens when you run each of the two cells below.
 
 For each cell, answer the list of questions from the previous exercise.
 
-```{code-block} python
+```{code-cell} python
 # First code cell for above exercise
 pd.concat([dfL, dfL], axis=0)
 ```
 
-```{code-block} python
+```{code-cell} python
 # Second code cell for above exercise
 pd.concat([dfR, dfR], axis=1)
 ```
 
 ({ref}`back to text <pd-mrg-dir6>`)
-````
-````{exercise} 7
-:nonumber:
-:label: pd-mrg-ex7
+
+### Exercise 7
 
 Describe in words why the output of `pd.merge(dfL, dfR,
 how="right")` has more rows than either `dfL` or `dfR`.
 
 Run the cell below to see the output of that operation.
 
-```{code-block} python
+```{code-cell} python
 pd.merge(dfL, dfR, how="right")
 ```
 
 ({ref}`back to text <pd-mrg-dir7>`)
-````

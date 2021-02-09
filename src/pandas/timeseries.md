@@ -156,10 +156,9 @@ The official [Python
 documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) contains a complete list of possible `%`something patterns that are accepted
 in the `format` argument.
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir1
-See {ref}`exercise 1 <pd-tim-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir1
+See exercise 1 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 ### Multiple Dates
@@ -187,10 +186,9 @@ For example,
 christmas.strftime("We love %A %B %d (also written %c)")
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir2
-See {ref}`exercise 2 <pd-tim-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir2
+See exercise 2 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 ## Extracting Data
@@ -261,10 +259,9 @@ date for selection.
 btc_usd.loc["April 1, 2015":"April 10, 2015"]
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir3
-See {ref}`exercise 3 <pd-tim-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir3
+See exercise 3 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 ## Accessing Date Properties
@@ -347,10 +344,9 @@ btc_usd.shift(-2).head()
 btc_usd.shift(-2).tail()
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir4
-See {ref}`exercise 4 <pd-tim-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir4
+See exercise 4 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 ## Rolling Computations: `.rolling`
@@ -408,20 +404,18 @@ def is_volatile(x):
 btc_small.rolling("2d").apply(is_volatile)
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir5
-See {ref}`exercise 5 <pd-tim-ex5>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir5
+See exercise 5 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 To make the optimal decision, we need to know the maximum
 difference between the close price at the end of the window and the open
 price at the start of the window.
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir6
-See {ref}`exercise 6 <pd-tim-ex6>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir6
+See exercise 6 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 ## Changing Frequencies: `.resample`
@@ -462,20 +456,18 @@ btc_usd.resample("2BQS").agg(["min", "max"])
 As with `groupby` and `rolling`, you can also provide custom
 functions to `.resample(...).agg` and `.resample(...).apply`
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir7
-See {ref}`exercise 7 <pd-tim-ex7>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir7
+See exercise 7 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 To make the optimal decision we need to, for each month,
 compute the maximum value of the close price on any day minus the open
 price on the first day of the month.
 
-````{exercise}
-:nonumber:
-:label: pd-tim-dir8
-See {ref}`exercise 8 <pd-tim-ex8>` in the exercise list.
+````{admonition} Exercise
+:name: pd-tim-dir8
+See exercise 8 in the {ref}`exercise list <pd-tim-ex>`.
 ````
 
 ## Optional: API keys
@@ -496,51 +488,46 @@ The API key used here is one that we requested on behalf of this course.
 
 If you plan to use Quandl more extensively, you should obtain your own personal API key from [their website](https://docs.quandl.com/docs#section-authentication) and re-run the `quandl.ApiConfig.api_key...` line of code with your new API key on the right-hand side.
 
+(pd-tim-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-tim-ex1
+### Exercise 1
 
 By referring to table found at the link above, figure out the correct argument to
 pass as `format` in order to parse the dates in the next three cells below.
 
 Test your work by passing your format string to `pd.to_datetime`.
 
-```{code-block} python
+```{code-cell} python
 christmas_str2 = "2017:12:25"
 ```
 
-```{code-block} python
+```{code-cell} python
 dbacks_win = "M:11 D:4 Y:2001 9:15 PM"
 ```
 
-```{code-block} python
+```{code-cell} python
 america_bday = "America was born on July 4, 1776"
 ```
 
 ({ref}`back to text <pd-tim-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-tim-ex2
+
+### Exercise 2
 
 Use `pd.to_datetime` to express the birthday of one of your friends
 or family members as a `datetime` object.
 
 Then use the `strftime` method to write a message of the format:
 
-```{code-block} python
+```{code-cell} python
 NAME's birthday is June 10, 1989 (a Saturday)
 ```
 
 (where the name and date are replaced by the appropriate values)
 
 ({ref}`back to text <pd-tim-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: pd-tim-ex3
+
+### Exercise 3
 
 For each item in the list, extract the specified data from `btc_usd`:
 
@@ -549,10 +536,8 @@ For each item in the list, extract the specified data from `btc_usd`:
 - October 31, 2017
 
 ({ref}`back to text <pd-tim-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: pd-tim-ex4
+
+### Exercise 4
 
 Using the `shift` function, determine the week with the largest percent change
 in the volume of trades (the `"Volume (BTC)"` column).
@@ -566,15 +551,13 @@ We have data at a *daily* frequency and one week is `7` days.
 Approximate a month by 30 days.
 ```
 
-```{code-block} python
+```{code-cell} python
 # your code here
 ```
 
 ({ref}`back to text <pd-tim-dir4>`)
-````
-````{exercise} 5
-:nonumber:
-:label: pd-tim-ex5
+
+### Exercise 5
 
 Imagine that you have access to the [DeLorean time machine](https://en.wikipedia.org/wiki/DeLorean_time_machine)
 from "Back to the Future".
@@ -602,10 +585,8 @@ To make this decision, we want to know ...
 **Your answer here**
 
 ({ref}`back to text <pd-tim-dir5>`)
-````
-````{exercise} 6
-:nonumber:
-:label: pd-tim-ex6
+
+### Exercise 6
 
 Do the following:
 
@@ -616,7 +597,7 @@ Do the following:
 
 How much money did you make? Compare with your neighbor.
 
-```{code-block} python
+```{code-cell} python
 def daily_value(df):
     # DELETE `pass` below and replace it with your code
     pass
@@ -627,10 +608,8 @@ rolling_btc = btc_usd.rolling("30d")
 ```
 
 ({ref}`back to text <pd-tim-dir6>`)
-````
-````{exercise} 7
-:nonumber:
-:label: pd-tim-ex7
+
+### Exercise 7
 
 Now suppose you still have access to the DeLorean, but the conditions are
 slightly different.
@@ -658,10 +637,8 @@ To make the optimal decision we need ...
 **Your answer here**
 
 ({ref}`back to text <pd-tim-dir7>`)
-````
-````{exercise} 8
-:nonumber:
-:label: pd-tim-ex8
+
+### Exercise 8
 
 Do the following:
 
@@ -674,7 +651,7 @@ How much money did you make? Compare with your neighbor.
 
 Was this strategy more profitable than the previous one? By how much?
 
-```{code-block} python
+```{code-cell} python
 def monthly_value(df):
     # DELETE `pass` below and replace it with your code
     pass
@@ -685,5 +662,4 @@ resampled_btc = btc_usd.resample("MS")
 ```
 
 ({ref}`back to text <pd-tim-dir8>`)
-````
 

@@ -77,10 +77,9 @@ When looking at error messages, start at the very bottom.
 
 The final error says, `TypeError: Could not convert #23#24... to numeric`.
 
-````{exercise}
-:nonumber:
-:label: pd-cln-dir1
-See {ref}`exercise 1 <pd-cln-ex1>` in the exercise list.
+````{admonition} Exercise
+:name: pd-cln-dir1
+See exercise 1 in the {ref}`exercise list <pd-cln-ex>`.
 ````
 
 ## String Methods
@@ -150,10 +149,9 @@ df["colors"].str.contains("p")
 df["colors"].str.capitalize()
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-cln-dir2
-See {ref}`exercise 2 <pd-cln-ex2>` in the exercise list.
+````{admonition} Exercise
+:name: pd-cln-dir2
+See exercise 2 <pd-cln-ex2> in the {ref}`exercise list <pd-cln-ex>`.
 ````
 
 ## Type Conversions
@@ -198,10 +196,9 @@ df["numbers_numeric"].astype(str)
 df["numbers_numeric"].astype(float)
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-cln-dir3
-See {ref}`exercise 3 <pd-cln-ex3>` in the exercise list.
+````{admonition} Exercise
+:name: pd-cln-dir3
+See exercise 3 in the {ref}`exercise list <pd-cln-ex>`.
 ````
 
 ## Missing Data
@@ -283,10 +280,9 @@ chipotle = qeds.data.load("chipotle_raw")
 chipotle.head()
 ```
 
-````{exercise}
-:nonumber:
-:label: pd-cln-dir4
-See {ref}`exercise 4 <pd-cln-ex4>` in the exercise list.
+````{admonition} Exercise
+:name: pd-cln-dir4
+See exercise 4 in the {ref}`exercise list <pd-cln-ex>`.
 ````
 
 
@@ -322,32 +318,27 @@ test["numbers_str_method"].equals(test["numbers_loop"])
 
 We got the exact same result in a fraction of the time!
 
+(pd-cln-ex)=
 ## Exercises
 
-````{exercise} 1
-:nonumber:
-:label: pd-cln-ex1
+### Exercise 1
 
 Convert the string below into a number.
 
-```{code-block} python
+```{code-cell} python
 c2n = "#39"
 ```
 
 ({ref}`back to text <pd-cln-dir1>`)
-````
-````{exercise} 2
-:nonumber:
-:label: pd-cln-ex2
+
+### Exercise 2
 
 Make a new column called `colors_upper` that contains the elements of
 `colors` with all uppercase letters.
 
 ({ref}`back to text <pd-cln-dir2>`)
-````
-````{exercise} 3
-:nonumber:
-:label: pd-cln-ex3
+
+### Exercise 3
 
 Convert the column `"nums"` to a numeric type using `pd.to_numeric` and
 save it to the DataFrame as `"nums_tonumeric"`.
@@ -362,10 +353,8 @@ knowing what your data looks like. (Think about what happens when you
 apply it to the `"numbers"` column before replacing the `"#"`.)
 
 ({ref}`back to text <pd-cln-dir3>`)
-````
-````{exercise} 4
-:nonumber:
-:label: pd-cln-ex4
+
+### Exercise 4
 
 We'd like you to use this data to answer the following questions.
 
@@ -382,4 +371,3 @@ float).
 ```
 
 ({ref}`back to text <pd-cln-dir4>`)
-````
