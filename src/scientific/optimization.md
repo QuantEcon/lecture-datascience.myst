@@ -425,7 +425,7 @@ See exercise 2 in the {ref}`exercise list <ex3-5>`.
 (ex3-5)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Try solving the constrained maximization problem by hand via the Lagrangian method.
 
@@ -435,7 +435,7 @@ Why might this be?
 
 ({ref}`back to text <dir3-5-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 Using a similar approach to that of the apples/bananas example above, solve for the optimal
 basket of potato chips and chocolate bars when `W = 10`, `p_P = 1`, and `p_C = 2`.

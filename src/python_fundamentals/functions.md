@@ -727,7 +727,7 @@ alphas = [0.2, 0.3, 0.5]
 (ex2-4)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 What happens if we try different inputs in our Cobb-Douglas production
 function?
@@ -738,7 +738,7 @@ function?
 
 ({ref}`back to text <dir2-4-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 Define a function named `var` that takes a list (call it `x`) and
 computes the variance. This function should use the mean function that we
@@ -756,7 +756,7 @@ $\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
 
 ({ref}`back to text <dir2-4-2>`)
 
-###### Exercise 3
+### Exercise 3
 
 Redefine the `returns_to_scale` function and add a docstring.
 
@@ -777,7 +777,7 @@ returns_to_scale?
 
 ({ref}`back to text <dir2-4-3>`)
 
-###### Exercise 4
+### Exercise 4
 
 Experiment with the `sep` and `end` arguments to the `print` function.
 

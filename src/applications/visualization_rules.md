@@ -1405,7 +1405,7 @@ whether these changes improved the figures.
 (app-vis-ex)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Create a draft of the alternative way to organize time and education -- that is, have two subplots (one for each education level) and four groups of points (one for each year).
 
@@ -1418,7 +1418,7 @@ Why do you think they chose to organize the information as they did rather than 
 
 ({ref}`back to text <app-vis-dir1>`)
 
-###### Exercise  2
+### Exercise  2
 
 Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.

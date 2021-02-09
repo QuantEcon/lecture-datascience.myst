@@ -477,7 +477,7 @@ When speed matters, directly write a `f` function to work on arrays.
 (ex3-1)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Try indexing into another element of your choice from the
 3-dimensional array.
@@ -487,7 +487,7 @@ type of operation several times -- without skipping steps!
 
 ({ref}`back to text <dir3-1-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 Look at the 2-dimensional array `x_2d`.
 
@@ -498,13 +498,13 @@ Write your thoughts.
 
 ({ref}`back to text <dir3-1-2>`)
 
-###### Exercise 3
+### Exercise 3
 
 What would you do to extract the array `[[5, 6], [50, 60]]`?
 
 ({ref}`back to text <dir3-1-3>`)
 
-###### Exercise 4
+### Exercise 4
 
 Do you recall what multiplication by an integer did for lists?
 
@@ -512,7 +512,7 @@ How does this differ?
 
 ({ref}`back to text <dir3-1-4>`)
 
-###### Exercise 5
+### Exercise 5
 
 Let's revisit a bond pricing example we saw in {doc}`Control flow <../python_fundamentals/control_flow>`.
 
