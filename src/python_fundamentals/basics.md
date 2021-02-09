@@ -163,9 +163,9 @@ JupyterLab also has a "Contextual Help" (previously called "Inspector") window. 
 - Then, type `print` or any other function
   into a cell and see the help.
   
-  ```{code-cell} python
-  # len? # remove the comment and <Shift-Enter>
-  ```
+```{code-cell} python
+# len? # remove the comment and <Shift-Enter>
+```
   
 
 We will learn much more about functions, including how to write our own, in a
