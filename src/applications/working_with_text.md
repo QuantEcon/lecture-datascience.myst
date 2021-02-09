@@ -861,7 +861,7 @@ See exercise 4 in the {ref}`exercise list <app-txt-ex>`.
 (app-txt-ex)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Use another classification method to predict incidents. Check whether
 your method outperforms the Naive Bayes classifier.
@@ -869,14 +869,14 @@ your method outperforms the Naive Bayes classifier.
 ({ref}`back to text <app-txt-dir1>`)
 
 
-###### Exercise 2
+### Exercise 2
 
 Apply LSA to the weather or snowpack descriptions. Can you notice
 any patterns?
 
 ({ref}`back to text <app-txt-dir2>`)
 
-###### Exercise 3
+### Exercise 3
 
 Apply LDA to the weather or snowpack descriptions. Can you notice
 any patterns?
@@ -884,7 +884,7 @@ any patterns?
 ({ref}`back to text <app-txt-dir3>`)
 
 
-###### Exercise 4
+### Exercise 4
 
 Use the reduced rank representation of text from LSA or LDA as a
 feature matrix to predict avalanche incidents. Compare the

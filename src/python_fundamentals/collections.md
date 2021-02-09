@@ -767,7 +767,7 @@ tuple(s)
 (ex2-2)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 In the first cell, try `y.append(z)`.
 
@@ -795,7 +795,7 @@ print(y)
 ```
 ({ref}`back to text <dir2-2-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 Experiment with the other two versions of the `range` function.
 
@@ -808,7 +808,7 @@ Experiment with the other two versions of the `range` function.
 ```
 ({ref}`back to text <dir2-2-2>`)
 
-###### Exercise 3
+### Exercise 3
 
 Verify that tuples are indeed immutable by attempting the following:
 
@@ -836,7 +836,7 @@ Verify that tuples are indeed immutable by attempting the following:
 
 ({ref}`back to text <dir2-2-3>`)
 
-###### Exercise 4
+### Exercise 4
 
 **Challenging** For the tuple `foo` below, use a combination of `zip`,
 `range`, and `len` to mimic `enumerate(foo)`.
@@ -855,7 +855,7 @@ foo = ("good", "luck!")
 
 ({ref}`back to text <dir2-2-4>`)
 
-###### Exercise 5
+### Exercise 5
 
 Create a new dict which associates stock tickers with its stock price.
 
@@ -870,7 +870,7 @@ Here are some tickers and a price.
 ```
 ({ref}`back to text <dir2-2-5>`)
 
-###### Exercise 6
+### Exercise 6
 
 Look at the [World Factbook for Australia](https://www.cia.gov/-library/publications/the-world-factbook/geos/as.html)
 and create a dictionary with data containing the following types:
@@ -884,7 +884,7 @@ To confirm, you should have a dictionary that you identified via a key.
 
 ({ref}`back to text <dir2-2-6>`)
 
-###### Exercise 7
+### Exercise 7
 
 Use Jupyter's help facilities to learn how to use the `pop` method to
 remove the key `"irrigated_land"` (and its value) from the dict.
@@ -896,7 +896,7 @@ remove the key `"irrigated_land"` (and its value) from the dict.
 
 ({ref}`back to text <dir2-2-7>`)
 
-###### Exercise 8
+### Exercise 8
 
 Explain what happens to the value you popped.
 
@@ -907,7 +907,7 @@ Experiment with calling `pop` twice.
 ```
 ({ref}`back to text <dir2-2-8>`)
 
-###### Exercise 9
+### Exercise 9
 
 Try creating a set with repeated elements (e.g. `{1, 2, 1, 2, 1, 2}`).
 
@@ -920,7 +920,7 @@ Why?
 ```
 ({ref}`back to text <dir2-2-9>`)
 
-###### Exercise 10
+### Exercise 10
 
 Test out two of the operations described above using the original set we
 created, `s`, and the set created below `s2`.

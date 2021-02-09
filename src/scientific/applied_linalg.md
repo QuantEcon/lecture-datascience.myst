@@ -743,7 +743,7 @@ See exercise 3 in the {ref}`exercise list <ex3-3>`.
 (ex3-3)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
@@ -755,7 +755,7 @@ multiplication, and dot products to determine whether she can retire.
 
 ({ref}`back to text <dir3-3-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 Which of the following operations will work and which will
 create errors because of size issues?
@@ -780,7 +780,7 @@ y2 @ x4
 
 ({ref}`back to text <dir3-3-2>`)
 
-###### Exercise 3
+### Exercise 3
 
 Compare the distribution above to the final values of a long simulation.
 

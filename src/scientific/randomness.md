@@ -537,7 +537,7 @@ See exercise 4 in the {ref}`exercise list <ex3-4>`.
 (ex3-4)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Wikipedia and other credible statistics sources tell us that the mean and
 variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
@@ -547,7 +547,7 @@ values?
 
 ({ref}`back to text <dir3-4-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.
 
@@ -569,7 +569,7 @@ probabilities must lead to this outcome.
 
 ({ref}`back to text <dir3-4-2>`)
 
-###### Exercise 3
+### Exercise 3
 
 Let's revisit the unemployment example from the {doc}`linear algebra lecture <applied_linalg>`.
 
@@ -613,7 +613,7 @@ Think about the stationary distribution.
 ({ref}`back to text <dir3-4-3>`)
 
 
-###### Exercise 4
+### Exercise 4
 
 Assume you have been given the opportunity to choose between one of three financial assets:
 

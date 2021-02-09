@@ -693,7 +693,7 @@ print(data_dict)
 (ex2-3)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 Government bonds are often issued as *zero-coupon bonds* meaning that they
 make no payments throughout the entire time that they are held, but, rather
@@ -708,7 +708,7 @@ How much should you be willing to pay for a zero-coupon bond that paid
 
 ({ref}`back to text <dir2-3-1>`)
 
-###### Exercise 2
+### Exercise 2
 
 Run the following two variations on the code with only a single change in the indentation.
 
@@ -734,7 +734,7 @@ print("3")
 
 ({ref}`back to text <dir2-3-2>`)
 
-###### Exercise 3
+### Exercise 3
 
 Using the code cell below as a start, print `"Good afternoon"` if the
 `current_time` is past noon.
@@ -756,7 +756,7 @@ more text after
 
 ({ref}`back to text <dir2-3-3>`)
 
-###### Exercise 4
+### Exercise 4
 
 In this example, you will generate a random number between 0 and 1
 and then display "x > 0.5" or "x < 0.5" depending on the value of the
@@ -775,7 +775,7 @@ print(f"x = {x}")
 
 ({ref}`back to text <dir2-3-4>`)
 
-###### Exercise 5
+### Exercise 5
 
 In economics, when an individual has some knowledge, skills, or education
 which provides them with a source of future income, we call it [human
@@ -820,7 +820,7 @@ w_college = 50_000
 
 ({ref}`back to text <dir2-3-5>`)
 
-###### Exercise 6
+### Exercise 6
 
 Instead of the above, write a for loop that uses the lists of cities
 and states below to print the same "{city} is in {state}" using
@@ -839,7 +839,7 @@ states = ["Arizona", "Texas", "California", "New York"]
 
 ({ref}`back to text <dir2-3-6>`)
 
-###### Exercise 7
+### Exercise 7
 
 Companies often invest in training their employees to raise their
 productivity. Economists sometimes wonder why companies
@@ -872,7 +872,7 @@ while False: # (replace False with your condition here)
 
 ({ref}`back to text <dir2-3-7>`)
 
-###### Exercise 8
+### Exercise 8
 
 Try to find the index of the first value in `x`
 that is greater than 0.999 using a for loop and `break`.
@@ -888,7 +888,7 @@ x = np.random.rand(10_000)
 
 ({ref}`back to text <dir2-3-8>`)
 
-###### Exercise 9
+### Exercise 9
 
 Write a for loop that adds up all values in `x` that are greater than
 or equal to 0.5.
@@ -908,7 +908,7 @@ x = np.random.rand(10_000)
 
 ({ref}`back to text <dir2-3-9>`)
 
-###### Exercise 10
+### Exercise 10
 
 Returning to our previous example: print "{city} is in {state}" for each combination
 using a `zip` and a comprehension.

@@ -834,7 +834,7 @@ See exercise 16 in the {ref}`exercise list <ex>`.
 (ex)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 What do you think the value of `z` is after running the code below?
 
@@ -847,7 +847,7 @@ print("z is", z)
 ({ref}`back to text <dir1>`)
 
 
-###### Exercise 2
+### Exercise 2
 
 Read about out what the `len` function does (by writing len?).
 
@@ -857,7 +857,7 @@ Check whether you were right by running the code `len(x)`.
 
 ({ref}`back to text <dir2>`)
 
-###### Exercise 3
+### Exercise 3
 
 We can use our introspection skills to investigate a package's contents.
 
@@ -879,7 +879,7 @@ import time
 ```
 ({ref}`back to text <dir3>`)
 
-###### Exercise 4
+### Exercise 4
 
 Try running `import time as t` in the cell below, then see if you can
 call the function you identified above.
@@ -888,7 +888,7 @@ Does it work?
 
 ({ref}`back to text <dir4>`)
 
-###### Exercise 5
+### Exercise 5
 
 Create the following variables:
 
@@ -904,7 +904,7 @@ We will use them in a later exercise.
 
 ({ref}`back to text <dir5>`)
 
-###### Exercise 6
+### Exercise 6
 
 Remember the variables we created earlier?
 
@@ -927,7 +927,7 @@ $$
 
 ({ref}`back to text <dir6>`)
 
-###### Exercise 7
+### Exercise 7
 
 Verify the "trick" where the percent difference ($\frac{x - y}{x}$)
 between two numbers close to 1 can be well approximated by the difference
@@ -947,7 +947,7 @@ y = 1.02
 
 ({ref}`back to text <dir7>`)
 
-###### Exercise 8
+### Exercise 8
 
 The code below is invalid Python code
 
@@ -964,7 +964,7 @@ find a solution.
 
 ({ref}`back to text <dir8>`)
 
-###### Exercise 9
+### Exercise 9
 
 Using the variables `x` and `y`, how could you create the sentence
 `Hello World`?
@@ -975,7 +975,7 @@ Think about how to represent a space as a string.
 
 ({ref}`back to text <dir9>`)
 
-###### Exercise 10
+### Exercise 10
 
 One of our favorite (and most frequently used) string methods is
 `replace`.
@@ -996,7 +996,7 @@ test = "abc"
 
 ({ref}`back to text <dir10>`)
 
-###### Exercise 11
+### Exercise 11
 
 Suppose you are working with price data and encounter the value
 `"$6.50"`.
@@ -1020,21 +1020,21 @@ price = "$6.50"
 
 ({ref}`back to text <dir11>`)
 
-###### Exercise 12
+### Exercise 12
 
 Lookup a country in [World Bank database](https://data.worldbank.org), and
 format a string showing the growth rate of GDP over the last 2 years.
 
 ({ref}`back to text <dir12>`)
 
-###### Exercise 13
+### Exercise 13
 
 Instead of hard-coding the values above, try to use the `country`, `GDP` and
 `year` variables you previously defined.
 
 ({ref}`back to text <dir13>`)
 
-###### Exercise 14
+### Exercise 14
 
 Create a new string and use formatting to produce each of the following
 statements
@@ -1046,7 +1046,7 @@ statements
 
 ({ref}`back to text <dir14>`)
 
-###### Exercise 15
+### Exercise 15
 
 Without typing the commands, determine whether the following statements are
 true or false.
@@ -1084,7 +1084,7 @@ True and ((x < z) or (x < y))
 
 ({ref}`back to text <dir15>`)
 
-###### Exercise 16
+### Exercise 16
 
 For each of the code cells below, think carefully about what you expect to
 be returned *before* evaluating the cell.

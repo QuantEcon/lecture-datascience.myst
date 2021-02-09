@@ -303,7 +303,7 @@ For more help with JupyterLab and Jupyter Notebook, see the user guides:
 (ex1-1)=
 ## Exercises
 
-###### Exercise 1
+### Exercise 1
 
 In the *code* cell below (notice the `[ ]:` to the left) type a quote (`"`), your name,
 then another quote (`"`) and evaluate the cell
