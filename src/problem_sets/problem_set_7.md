@@ -81,7 +81,7 @@ for (i, year) in enumerate(df.year.unique()):
 ## Questions 3-5
 
 These question uses a dataset from the [Bureau of Transportation
-Statistics]([https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time))
+Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
 that describes the cause for all US domestic flight delays
 in November 2016. We used the same data in the previous problem set.
 
