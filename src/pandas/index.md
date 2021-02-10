@@ -14,8 +14,7 @@ kernelspec:
 This section of the workshop covers data ingestion, cleaning,
 manipulation, analysis, and visualization in Python.
 
-We build on the skills learned in the {doc}`Python
-fundamentals <../python_fundamentals/index>` section and teach the
+We build on the skills learned in the {doc}`Python fundamentals <../python_fundamentals/index>` section and teach the
 [pandas](https://pandas.pydata.org) library.
 
 At the end of this section, you will be able to:
