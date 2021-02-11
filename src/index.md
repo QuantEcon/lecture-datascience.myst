@@ -17,16 +17,3 @@ kernelspec:
 # Datascience for Economists
 ```
 
-```{tableofcontents}
----
-maxdepth: 2
-titlesonly: 
----
-
-introduction/index
-python_fundamentals/index
-scientific/index
-pandas/index
-applications/index
-```
-
