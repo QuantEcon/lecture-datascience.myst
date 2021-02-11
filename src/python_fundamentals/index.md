@@ -28,16 +28,3 @@ By the end, you should have a solid grasp on core Python
 concepts, be prepared to study the next sections on numerical programming,
 and feel comfortable handling data.
 
-```{raw} html
-<div class="toctree">
-```
-
-```{tableofcontents}
-:maxdepth: 2
-
-python_fundamentals/basics
-python_fundamentals/collections
-python_fundamentals/control_flow
-python_fundamentals/functions
-```
-

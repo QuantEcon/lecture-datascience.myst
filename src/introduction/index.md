@@ -28,17 +28,4 @@ We then present two potential environments for working through this course mater
 At the end of this section, we hope you understand what you'd like to accomplish with these lectures
 and that you are able to start and use a Jupyter notebook.
 
-```{raw} html
-<div class="toctree">
-```
-
-```{tableofcontents}
-:maxdepth: 2
-
-introduction/overview
-introduction/getting_started
-introduction/cloud_setup
-introduction/local_install
-introduction/troubleshooting
-```
 
