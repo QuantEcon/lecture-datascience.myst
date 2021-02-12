@@ -142,7 +142,7 @@ You can update a package by running:
 
 **Note:** If you have errors using `graphviz` on Windows, then open a `powershell` terminal and execute the following two lines:
 
-```{code-block} powershell
+```{code-block}
 $pp = (python -c "import sys; print(sys.exec_prefix)")
 
 Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value "$((Get-ItemProperty -path HKCU:\Environment\ -Name Path).Path);$($pp)\Library\bin\graphviz"

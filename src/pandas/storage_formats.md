@@ -314,7 +314,7 @@ Support for this format is provided by a separate Python package called `pyarrow
 This package is not installed by default. To install it, copy/paste the code
 below into a code cell and execute.
 
-```{code-block} markdown
+```{code-block}
 !pip install pyarrow
 ```
 
