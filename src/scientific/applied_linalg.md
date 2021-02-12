@@ -22,7 +22,7 @@ kernelspec:
 - Use `numpy` to do linear algebra operations
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

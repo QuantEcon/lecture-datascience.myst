@@ -24,7 +24,7 @@ kernelspec:
 - Understand potential outcomes and treatment effects
 - Apply generic machine learning inference to data from a randomized experiment
 
-```{literalinclude} _static/colab_full.raw
+```{literalinclude} ../_static/colab_full.raw
 ```
 
 ```{code-cell} python

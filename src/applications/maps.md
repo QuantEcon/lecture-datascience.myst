@@ -24,7 +24,7 @@ kernelspec:
 - Use geopandas to create maps
 
 
-```{literalinclude} _static/colab_full.raw
+```{literalinclude} ../_static/colab_full.raw
 ```
 
 ```{code-cell} python

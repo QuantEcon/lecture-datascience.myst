@@ -31,7 +31,7 @@ kernelspec:
 - Bitcoin to USD exchange rates from March 2014 to the present
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

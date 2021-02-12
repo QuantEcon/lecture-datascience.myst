@@ -30,7 +30,7 @@ kernelspec:
 - iPhone announcement dates
 - Apple stock price
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

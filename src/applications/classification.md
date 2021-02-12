@@ -27,7 +27,7 @@ kernelspec:
 - Evaluate classification models using a variety of metrics
 
 
-```{literalinclude} _static/colab_full.raw
+```{literalinclude} ../_static/colab_full.raw
 ```
 
 ## Introduction to Classification

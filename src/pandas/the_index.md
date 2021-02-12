@@ -23,7 +23,7 @@ kernelspec:
 - Understand that for DataFrames, the column names also align data
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

@@ -31,7 +31,7 @@ kernelspec:
   obtained from the [Bureau of Transportation
   Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

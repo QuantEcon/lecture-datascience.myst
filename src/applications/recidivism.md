@@ -27,7 +27,7 @@ kernelspec:
 - Application of regression
 
 
-```{literalinclude} _static/colab_full.raw
+```{literalinclude} ../_static/colab_full.raw
 ```
 
 ```{code-cell} python

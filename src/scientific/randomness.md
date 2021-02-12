@@ -25,7 +25,7 @@ kernelspec:
 - Simulate discrete and continuous random variables and processes
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ## Randomness

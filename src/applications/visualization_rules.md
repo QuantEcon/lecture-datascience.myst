@@ -25,7 +25,7 @@ kernelspec:
 - Introductory ability to make effective visualizations
 
 
-```{literalinclude} _static/colab_full.raw
+```{literalinclude} ../_static/colab_full.raw
 ```
 
 ```{code-cell} python

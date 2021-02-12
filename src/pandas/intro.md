@@ -27,7 +27,7 @@ kernelspec:
 - US regional unemployment data from Bureau of Labor Statistics
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ## pandas

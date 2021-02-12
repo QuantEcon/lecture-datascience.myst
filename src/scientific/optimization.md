@@ -22,7 +22,7 @@ kernelspec:
 - Understand ideas from gradient descent
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

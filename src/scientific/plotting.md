@@ -21,7 +21,7 @@ kernelspec:
 - Make basic plots
 
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ## Visualization

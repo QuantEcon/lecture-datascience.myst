@@ -23,7 +23,7 @@ kernelspec:
 - Practice transformations of indices
 - Understand tidy data
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

@@ -28,7 +28,7 @@ kernelspec:
 - Item information from about 3,000 Chipotle meals from about 1,800
   Grubhub orders
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 ```{code-cell} python

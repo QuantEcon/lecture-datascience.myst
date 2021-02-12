@@ -29,7 +29,7 @@ kernelspec:
 - Request and combine json data from a web server
 
 
-```{literalinclude} _static/colab_full.raw
+```{literalinclude} ../_static/colab_full.raw
 ```
 
 ## Introduction

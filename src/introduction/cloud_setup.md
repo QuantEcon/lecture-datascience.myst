@@ -149,7 +149,7 @@ code that follows.
 
 See the code below to see what we mean:
 
-```{literalinclude} _static/colab_light.raw
+```{literalinclude} ../_static/colab_light.raw
 ```
 
 **5.** To navigate sections within a Colab notebook, click on the little arrow at the top left corner
