@@ -39,23 +39,3 @@ The expression "practice makes perfect" is especially true here.
 
 As you work with these tools, both the time to write and the time to run
 your programs will fall dramatically.
-
-```{raw} html
-<div class="toctree">
-```
-
-```{tableofcontents}
-:maxdepth: 2
-
-pandas/intro
-pandas/basics
-pandas/the_index
-pandas/storage_formats
-pandas/data_clean
-pandas/reshape
-pandas/merge
-pandas/groupby
-pandas/timeseries
-pandas/matplotlib
-```
-

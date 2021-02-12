@@ -26,26 +26,12 @@ In this section, we will cover
 Many of the tools learned in this section will continue to show up throughout the
 {doc}`pandas <../pandas/index>` and {doc}`applications <../applications/index>` sections.
 
-```{note}
-**Warning**: This section has more formal math than the previous material (and there will be more
+```{warning}
+This section has more formal math than the previous material (and there will be more
 math as you cover certain methods).
 
 We expect that students' mathematical backgrounds will range widely, so for those who have slightly less preparation, please don't let this scare you.
 
 We have found that although understanding these tools will require some extra effort, it will give you a leg up in almost any career you might consider.
-```
-
-```{raw} html
-<div class="toctree">
-```
-
-```{tableofcontents}
-:maxdepth: 2
-
-scientific/numpy_arrays
-scientific/plotting
-scientific/applied_linalg
-scientific/randomness
-scientific/optimization
 ```
 
