@@ -446,6 +446,9 @@ We often want to use other math functions on our numbers. Let's try to
 calculate sin(2.5).
 
 ```{code-cell} python
+---
+tags: [raises-exception]
+---
 sin(2.5)
 ```
 
@@ -569,12 +572,18 @@ What happens if we try `*` with two strings, or `-` or `/`?
 The best way to find out is to try it!
 
 ```{code-cell} python
+---
+tags: [raises-exception]
+---
 a = "1"
 b = "2"
 a * b
 ```
 
 ```{code-cell} python
+---
+tags: [raises-exception]
+---
 a - b
 ```
 
@@ -952,6 +961,9 @@ y = 1.02
 The code below is invalid Python code
 
 ```{code-cell} markdown
+---
+tags: [raises-exception]
+---
 x = 'What's wrong with this string'
 ```
 
@@ -1004,7 +1016,7 @@ Suppose you are working with price data and encounter the value
 We recognize this as being a number representing the quantity "six dollars and fifty cents."
 
 However, Python interprets the value as the string
-`"$6.50"`. (Quiz: why is this a problem? Think about the examples above.)
+`$"$6.50"$`. (Quiz: why is this a problem? Think about the examples above.)
 
 In this exercise, your task is to convert the variable `price` below
 into a number.

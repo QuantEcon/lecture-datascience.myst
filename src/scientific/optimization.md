@@ -203,10 +203,8 @@ ax.set_ylabel("U(B=1.5, A)")
 
 We note that
 
-U(B,1) is always higher with more B, hence, consuming more bananas has a
-: positive marginal utility  i.e. \frac{d U(B,1)}{d B} > 0.
-
-- $$
+- $U(B,1)$ is always higher with more B, hence, consuming more bananas has a 
+: positive marginal utility  i.e. $\frac{d U(B,1)}{d B} > 0$.
 - The more bananas we consume, the smaller the change in marginal utility, i.e.
   $\frac{d^2 U(B,1)}{d B^2} < 0$.
 

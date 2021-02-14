@@ -53,14 +53,11 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 
 **Github Desktop** (Mac/Windows only), recommended for most users.
 
-```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/download_lectures_github_desktop.png
-
-```
-
 1. Install [Github Desktop](https://desktop.github.com/).
 1. Click the "Open in Github Desktop" option in the clone button menu. It should open a Github
    Desktop popup that looks like this:
-   
+   ```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/download_lectures_github_desktop.png
+   ```
    You should choose the path (folder) where you would like to download the repository. The default path on
    Windows should be `C:/Users/YOUR_USERNAME/Documents/GitHub`.
 
