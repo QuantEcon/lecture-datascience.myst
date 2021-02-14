@@ -11,13 +11,13 @@ kernelspec:
 
 # Regression
 
-[](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)> **Co-author**
-> - Paul Schrimpf *UBC*
+**Co-author**
+> - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
 
 **Prerequisites**
 
-- {doc}`../scientific/applied_linalg <../scientific/applied_linalg>`
-- {doc}`../scientific/optimization <../scientific/optimization>`
+- {doc}`Applied Linear Algebra <../scientific/applied_linalg>`
+- {doc}`Optimization <../scientific/optimization>`
 
 **Outcomes**
 

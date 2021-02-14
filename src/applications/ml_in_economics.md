@@ -11,8 +11,8 @@ kernelspec:
 
 # Machine Learning in Economics
 
-[](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)> **Author**
-> - Paul Schrimpf *UBC*
+**Author**
+> - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
 
 **Prerequisites**
 

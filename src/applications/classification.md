@@ -11,11 +11,11 @@ kernelspec:
 
 # Classification
 
-[](https://github.com/QBatista)[](http://www.tomsargent.com/)[](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)[](https://github.com/natashawatkins)> **Co-authors**
-> - Quentin Batista *University of Tokyo*
-> - Thomas Sargent *NYU*
-> - Paul Schrimpf *UBC*
-> - Natasha Watkins *UCLA*
+**Co-authors**
+> - [Quentin Batista *University of Tokyo*](https://github.com/QBatista)
+> - [Thomas Sargent *NYU*](http://www.tomsargent.com/)
+> - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
+> - [Natasha Watkins *UCLA*](https://github.com/natashawatkins)
 
 **Prerequisites**
 

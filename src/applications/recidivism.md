@@ -11,9 +11,9 @@ kernelspec:
 
 # Case Study: Recidivism
 
-[](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)[](http://arnavsood.com/about/)> **Co-authors**
-> - Paul Schrimpf *UBC*
-> - Arnav Sood *UBC*
+**Co-authors**
+> - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
+> - [Arnav Sood *UBC*](https://arnavsood.com)
 
 **Prerequisites**
 

@@ -11,8 +11,8 @@ kernelspec:
 
 # Data Visualization: Rules and Guidelines
 
-[](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)> **Co-author**
-> - Paul Schrimpf *UBC*
+**Co-author**
+> - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
 
 **Prerequisites**
 

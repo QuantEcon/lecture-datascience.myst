@@ -11,8 +11,8 @@ kernelspec:
 
 # Mapping in Python
 
-[](http://kimjruhl.com)> **Co-author**
-> - Kim Ruhl *University of Wisconsin*
+**Co-author**
+> - [Kim Ruhl *University of Wisconsin*](http://kimjruhl.com)
 
 **Prerequisites**
 
