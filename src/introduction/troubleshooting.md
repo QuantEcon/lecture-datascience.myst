@@ -14,7 +14,7 @@ kernelspec:
 
 
 This troubleshooting page is to help ensure your environment is setup correctly
-to run this lecture. You can follow [cloud setup instructions](https://datascience.quantecon.org/introduction/cloud_setup.html) or [local setup instructions](https://datascience.quantecon.org/introduction/local_install.html) to set up a standard environment.
+to run this lecture. You can follow {doc}`cloud setup instructions <../introduction/cloud_setup>` or {doc}`local setup instructions <../introduction/local_install>` to set up a standard environment.
 
 ## Resetting Lectures
 
@@ -39,7 +39,7 @@ Otherwise, follow these steps:
 
 ### Local Machines
 
-The workflow is a bit different on a local machine. We are assuming that you have followed the [local setup instructions](https://datascience.quantecon.org/introduction/local_install.html), and have installed GitHub desktop.
+The workflow is a bit different on a local machine. We are assuming that you have followed the {doc}`local setup instructions <../introduction/local_install>`, and have installed GitHub desktop.
 
 1. Open GitHub desktop, and navigate to the repository (you can click "find" under "edit" in the top menu bar, and then type `quantecon-notebooks-datascience`, if you are having trouble.)
 1. To **reset everything**, click "discard all changes" under "branch" in the top menu bar.

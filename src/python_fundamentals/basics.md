@@ -1016,7 +1016,7 @@ Suppose you are working with price data and encounter the value
 We recognize this as being a number representing the quantity "six dollars and fifty cents."
 
 However, Python interprets the value as the string
-`$"$6.50"$`. (Quiz: why is this a problem? Think about the examples above.)
+`"$6.50"`. (Quiz: why is this a problem? Think about the examples above.)
 
 In this exercise, your task is to convert the variable `price` below
 into a number.
