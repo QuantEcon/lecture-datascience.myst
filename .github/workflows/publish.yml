@@ -56,15 +56,13 @@ jobs:
       - name: Commit latest notebooks to lecture-datascience.notebooks
         uses: cpina/github-action-push-to-another-repository@master
         env:
-          API_TOKEN_GITHUB: ${{ secrets.QUANTECON_SERVICES_PAT }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: '_build/lecture-datascience.notebooks/'
-          destination-repository-username: 'QuantEcon'
+          source-directory: '_build/lecture-datascience.notebooks'
+          destination-github-username: 'QuantEcon'
           destination-repository-name: 'lecture-datascience.notebooks'
-          commit-message: 'auto publishing updates to notebooks'
-          destination-github-username: 'quantecon-services'
           user-email: services@quantecon.org
-   
+
           
 
           
