@@ -52,8 +52,6 @@ jobs:
         run: |
           mkdir -p _build/lecture-datascience.notebooks
           cp -a _build/jupyter/ _build/lecture-datascience.notebooks
-          rm -r _build/lecture-datascience.notebooks/_static 
-          rm -r _build/lecture-datascience.notebooks/_panels_static
           ls -a _build/lecture-datascience.notebooks
       - name: Commit latest notebooks to lecture-datascience.notebooks
         uses: cpina/github-action-push-to-another-repository@master
