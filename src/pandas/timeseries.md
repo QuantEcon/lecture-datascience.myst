@@ -519,7 +519,7 @@ or family members as a `datetime` object.
 
 Then use the `strftime` method to write a message of the format:
 
-```{code-cell} python
+```{code-block} python
 NAME's birthday is June 10, 1989 (a Saturday)
 ```
 
