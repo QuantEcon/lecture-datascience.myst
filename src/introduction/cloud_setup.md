@@ -13,8 +13,7 @@ kernelspec:
 
 ## Launch Environments
 
-Various cloud-based Jupyter server environments have been configured to work with
-[QuantEcon Data Science](https://datascience.quantecon.org).
+Various cloud-based Jupyter server environments have been configured to work with {doc}`QuantEcon Data Science <../index>`.
 
 These environments provide a Jupyter interface which displays in your browser, but the code is hosted
 and run on the cloud.
