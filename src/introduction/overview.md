@@ -37,8 +37,7 @@ Students who complete this course will be prepared to:
 * Continue onto QuantEcon's "Lectures in Quantitative Economics" in preparation for graduate school
   in economics, policy, or other related fields.
 
-To get an idea of what one can do after taking this course, please take a look at
-[previous student projects](/projects.html).
+To get an idea of what one can do after taking this course, please take a look at [previous student projects](../theme/projects.md).
 
 ### Course Outline
 
