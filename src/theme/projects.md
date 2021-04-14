@@ -15,7 +15,7 @@ We are proud of the work that our previous students have produced for this class
 
 This page contains a list of projects produced by our students that we share with their permission.
 
-This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](https://bayeswhu.github.io/teaching/qeds.html) and their students' final projects.
+This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](../theme/projects_hust.md) and their students' final projects.
 
 ### 2020
 
@@ -23,6 +23,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Jallow Abdullah
 
 - [Effect of Temperature on COVID-19 Transmission](https://nbviewer.jupyter.org/github/Kunal06/COVID-Temperature/blob/master/Code.ipynb)
+  - Kunal Aildasani
   - Jenil Doshi
 
 - [The Effect of Fatalities on the Popularity of Partido Demokratiko Pilipino](https://nbviewer.jupyter.org/github/mattaraneta/Econ-323-final-project/blob/master/final%20project%20CLEAN%202.ipynb)
