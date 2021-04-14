@@ -1213,7 +1213,7 @@ In the pseudocode below, fill in the blanks for the generic MLP.
 Note that this is inside a markdown cell because the code is not valid
 Python.
 
-```{code-cell} python
+```{code-block} python
 ws = [w1, w2, ..., wend]
 bs = [b1, b2, ..., bend]
 
