@@ -21,4 +21,6 @@ This website presents a series of lectures on programming, data science, and eco
 
 This work was supported in part by the Center for Innovative Data in Economics Research (CIDER) at the [Vancouver School of Economics](https://economics.ubc.ca/), UBC, funded by the Canada Excellence Research Chair grant.
 
-To get an idea of what one can do after taking this course, please take a look at [previous student projects](https://datascience.quantecon.org/projects.html).
+To get an idea of what one can do after taking this course, please take a look at [previous student projects](../theme/projects.md).
+
+[Chase Coleman](http://www.chasegcoleman.com/), [Spencer Lyon](http://spencerlyon.com/), [Jesse Perla](http://jesseperla.com/), [More Contributors](../theme/contributors.md).

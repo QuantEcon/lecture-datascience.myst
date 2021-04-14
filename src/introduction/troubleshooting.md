@@ -48,7 +48,7 @@ The workflow is a bit different on a local machine. We are assuming that you hav
 
 ## Reporting an Issue
 
-One way to give feedback is to raise an issue through our [issue tracker](https://github.com/QuantEcon/quantecon-notebooks-datascience/issues).
+One way to give feedback is to raise an issue through our [issue tracker](https://github.com/QuantEcon/lecture-datascience.myst/issues).
 
 Please be as specific as possible. Tell us where the problem is and as much
 detail about your local set up as you can provide.
