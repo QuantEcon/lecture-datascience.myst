@@ -15,7 +15,7 @@ We are proud of the work that our previous students have produced for this class
 
 This page contains a list of projects produced by our students that we share with their permission.
 
-This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](../theme/projects_hust.md) and their students' final projects.
+This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](https://bayeswhu.github.io/teaching/qeds.html) and their students' [final projects](../theme/projects_hust.md).
 
 ### 2020
 
