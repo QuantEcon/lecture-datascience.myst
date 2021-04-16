@@ -401,7 +401,7 @@ and posted it online.
 Below, we show an example of using `pd.read_csv` to read this file.
 
 ```{code-cell} python
-df1_url = "https://storage.googleapis.com/workshop_materials/df1.csv"
+df1_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/pandas/df1.csv"
 df1_web = pd.read_csv(df1_url, index_col=0)
 df1_web.head()
 ```

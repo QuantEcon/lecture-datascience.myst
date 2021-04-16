@@ -840,9 +840,9 @@ for topic in topics:
 
 ```{code-cell} python
 import pyLDAvis
-import pyLDAvis.gensim
+import pyLDAvis.gensim_models
 pyLDAvis.enable_notebook()
-lda_display = pyLDAvis.gensim.prepare(ldamodel, bow_data, dictionary)
+lda_display = pyLDAvis.gensim_models.prepare(ldamodel, bow_data, dictionary)
 lda_display
 ```
 

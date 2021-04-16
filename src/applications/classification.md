@@ -611,7 +611,7 @@ def get_recession_data():
 
     end_dates = recession.loc[recession.diff() < 0].index.tolist()
 
-    if len(start_dates) != len(end_dates):
+    if (len(start_dates) != len(end_dates)) and (len(start_dates) != len(end_dates) + 1):
         raise ValueError("Need to have same number of start/end dates!")
 
     return recession, start_dates, end_dates
