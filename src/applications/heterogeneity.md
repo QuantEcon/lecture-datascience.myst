@@ -34,7 +34,7 @@ import patsy
 from sklearn import linear_model, ensemble, base, neural_network
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
-from sklearn.utils.testing import ignore_warnings
+from sklearn.utils._testing import ignore_warnings
 from sklearn.exceptions import ConvergenceWarning
 
 %matplotlib inline
