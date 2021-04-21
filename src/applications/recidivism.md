@@ -1037,8 +1037,7 @@ grid_cv = model_selection.GridSearchCV(
     np.exp(np.linspace(-10,10,10))},
     return_train_score=True,
     verbose=True,
-    refit=True,
-    iid=True)
+    refit=True,)
 
 balance_mod=grid_cv.fit(X_train,y_train)
 ```

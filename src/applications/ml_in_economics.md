@@ -427,14 +427,14 @@ nnp = pipeline.Pipeline(steps=[
 nndcv = model_selection.GridSearchCV(estimator=nnp, scoring= 'neg_mean_squared_error', cv=4,
                                      param_grid = {'nn__alpha': np.exp(np.linspace(-5,5, 10))},
                                      return_train_score=True, verbose=True, refit=False,
-                                     iid=True).fit(X,female)
+                                     ).fit(X,female)
 ```
 
 ```{code-cell} python
 nnycv = model_selection.GridSearchCV(estimator=nnp, scoring= 'neg_mean_squared_error', cv=4,
                                      param_grid = {'nn__alpha': np.exp(np.linspace(-5,5, 10))},
                                      return_train_score=True, verbose=True, refit=False,
-                                     iid=True).fit(X,logearn)
+                                     ).fit(X,logearn)
 ```
 
 ```{code-cell} python
