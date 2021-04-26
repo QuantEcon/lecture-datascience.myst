@@ -54,7 +54,7 @@ jobs:
           cp -a _build/jupyter/. _build/lecture-datascience.notebooks
           ls -a _build/lecture-datascience.notebooks
       - name: Commit latest notebooks to lecture-datascience.notebooks
-        uses: cpina/github-action-push-to-another-repository@master
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
