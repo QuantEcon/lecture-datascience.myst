@@ -1,4 +1,5 @@
-name: lecture-datascience
+# for notebooks repos only.
+name: lecture-datascience-binder
 channels:
   - default
 dependencies:
@@ -6,14 +7,8 @@ dependencies:
   - anaconda=2020.07
   - pip
   - pip:
-    - git+git://github.com/QuantEcon/quantecon-book-theme@jupyterlab
-    - jupyter-book
-    - sphinxext-rediraffe
-    - sphinx-multitoc-numbering
-    - sphinx-exercise
     - joblib
     - interpolation
-    - sphinx-tojupyter
     - qeds 
     - fiona 
     - geopandas 
@@ -26,7 +21,6 @@ dependencies:
     - graphviz
     - scikit-learn >= 0.24.0
     - bokeh
-    - sphinxcontrib-bibtex < 2.0.0
     - nltk
   - conda:
     - python-graphviz
