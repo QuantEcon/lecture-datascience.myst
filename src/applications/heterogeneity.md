@@ -16,8 +16,8 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`regression <regression>`
-- {doc}`ml_in_economics <ml_in_economics>`
+- {doc}`Regression <regression>`
+- {doc}`Machine Learning in Economics <ml_in_economics>`
 
 **Outcomes**
 
