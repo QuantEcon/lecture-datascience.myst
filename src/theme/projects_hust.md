@@ -9,13 +9,13 @@ kernelspec:
   name: python3
 ---
 
-## Previous Projects:
+# Previous Projects:
 
 We are excited that these materials were used to teach students at [Huazhong University of Science and Technology]("http://english.hust.edu.cn/").
 
 We were impressed with the work that they produced and, with their permission, we share links to some of their final projects on this page.
 
-### 2020
+## 2020
 
 - [Urbanization in China](https://nbviewer.jupyter.org/github/bayeswhu/2020Spring/blob/master/Python/%E8%A6%83%E4%B8%B9/%E8%A6%83%E4%B8%B9U201816119.ipynb)
   - Dan Qin

@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-## Previous Projects:
+# Previous Projects:
 
 We are proud of the work that our previous students have produced for this class.
 
@@ -17,7 +17,7 @@ This page contains a list of projects produced by our students that we share wit
 
 This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](https://bayeswhu.github.io/teaching/qeds.html) and their students' [final projects](../theme/projects_hust.md).
 
-### 2020
+## 2020
 
 - [Machine Learning Models for the Prediction of Obesity](https://nbviewer.jupyter.org/github/ajallow625/ML-models-for-the-Prediction-of-Obesity/blob/master/FINAL%20PROJECT.ipynb)
   - Jallow Abdullah
@@ -65,7 +65,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 - [Analysis on U.S.-China Trade War](https://nbviewer.jupyter.org/github/roddyzihao/U.S.-China-Trade-War/blob/master/U.S.-China%20Trade%20War%20for%20UBC%20Econ%20323.ipynb)
   - Zihao Wang
 
-### 2019
+## 2019
 
 - [US Courts and Judges](https://nbviewer.jupyter.org/github/isapollnik/uscourts/blob/master/US%20Courts%20and%20Judges%20-%20ECON%20407%20Final%20Project.ipynb)
   - Ian Sapollnik 
