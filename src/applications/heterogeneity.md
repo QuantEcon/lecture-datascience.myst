@@ -594,6 +594,6 @@ relatively low dimension) to get precise estimates.
 ```{bibliography}
 :keyprefix: het-
 :labelprefix: het
-:cited:
+:filter: docname in docnames
 ```
 
