@@ -592,8 +592,8 @@ relatively low dimension) to get precise estimates.
 ## References
 
 ```{bibliography}
-:keyprefix: het-
-:labelprefix: het
 :filter: docname in docnames
+:labelprefix: het
+:keyprefix: het-
 ```
 
