@@ -844,6 +844,7 @@ Be sure to describe things like:
 - Do any `NaN`s get introduced? If so, where? Why?
 
 ```{code-cell} python
+:tags: ["remove-output"]
 pd.concat([dfL, dfR], axis=1)
 ```
 
@@ -856,11 +857,13 @@ Determine what happens when you run each of the two cells below.
 For each cell, answer the list of questions from the previous exercise.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # First code cell for above exercise
 pd.concat([dfL, dfL], axis=0)
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # Second code cell for above exercise
 pd.concat([dfR, dfR], axis=1)
 ```
@@ -875,6 +878,7 @@ how="right")` has more rows than either `dfL` or `dfR`.
 Run the cell below to see the output of that operation.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 pd.merge(dfL, dfR, how="right")
 ```
 

@@ -715,6 +715,7 @@ Run the following two variations on the code with only a single change in the in
 After, modify the `x` to print `3` and then `2, 3` instead.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 x = 1
 
 if x > 0:
@@ -724,6 +725,7 @@ print("3")
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 x = 1
 
 if x > 0:
@@ -766,6 +768,7 @@ This also introduces a new package `numpy.random` for
 drawing random numbers (more in the [randomness](../scientific/randomness) lecture).
 
 ```{code-cell} python
+:tags: ["remove-output"]
 import numpy as np
 x = np.random.random()
 print(f"x = {x}")

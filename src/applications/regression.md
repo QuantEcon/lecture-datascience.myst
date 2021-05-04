@@ -1108,6 +1108,7 @@ When making the scatter for model predictions, we recommend passing
 predictions.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # Generate predictions
 
 # Plot

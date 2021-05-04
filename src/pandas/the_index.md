@@ -547,34 +547,42 @@ For each of the examples below do the following:
 Write your answers.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc[["United States", "Canada"]]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc["United States"]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc[("United States", 2010), ["GDP", "Exports"]]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc[("United States", 2010)]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc[[("United States", 2010), ("Canada", 2015)]]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc[["United States", "Canada"], "GDP"]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi.loc["United States", "GDP"]
 ```
 
@@ -609,18 +617,22 @@ within the `pd.IndexSlice`.
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 wdi2 = df.set_index(["year", "country"])
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # wdi.loc["United States"]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # wdi.loc[(["United States", "Canada"], [2010, 2011, 2012]), :]
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # wdi.loc[["United States", "Canada"], "GDP"]
 ```
 

@@ -848,6 +848,7 @@ See exercise 16 in the {ref}`exercise list <ex>`.
 What do you think the value of `z` is after running the code below?
 
 ```{code-cell} python
+:tags: ["remove-output"]
 z = 3
 z = z + 4
 print("z is", z)
@@ -961,9 +962,7 @@ y = 1.02
 The code below is invalid Python code
 
 ```{code-cell} markdown
----
-tags: [raises-exception]
----
+:tags: ["remove-output"]
 x = 'What's wrong with this string'
 ```
 
@@ -1067,6 +1066,7 @@ Once you have evaluated whether the command is `True` or `False`, run the
 code in Python.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 x = 2
 y = 2
 z = 4
@@ -1107,26 +1107,32 @@ NOTE: For now, do not worry about what the `[` and `]` mean -- they
 allow us to create lists which we will learn about in an upcoming lecture.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 all([True, True, True])
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 all([False, True, False])
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 all([False, False, False])
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 any([True, True, True])
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 any([False, True, False])
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 any([False, False, False])
 ```
 

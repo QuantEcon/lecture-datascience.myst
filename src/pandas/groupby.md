@@ -636,10 +636,12 @@ happened to the `NaN`.
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 df
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 gbA.sum()
 ```
 

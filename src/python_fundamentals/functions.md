@@ -770,6 +770,7 @@ copy/paste and add a docstring in the correct line.
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 # test it here
 
 returns_to_scale?

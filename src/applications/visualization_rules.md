@@ -1424,6 +1424,7 @@ Using the data on Canadian GDP growth below, create a bar chart which uses one c
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.
 
 ```{code-cell} python
+:tags: ["remove-output"]
 ca_gdp = pd.Series(
     [5.2, 1.8, 3.0, 1.9, 3.1, 3.2, 2.8, 2.2, 1.0, -2.8, 3.2, 3.1, 1.7, 2.5, 2.9, 1.0, 1.4, 3.0],
     index=list(range(2000, 2018))

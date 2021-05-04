@@ -781,6 +781,7 @@ see a description of what these methods are supposed to do.
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 y = ["a", "b", "c"]
 z = [1, 2, 3]
 # your code here
@@ -788,6 +789,7 @@ print(y)
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 y = ["a", "b", "c"]
 z = [1, 2, 3]
 # your code here

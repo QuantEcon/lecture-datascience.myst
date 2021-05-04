@@ -639,6 +639,7 @@ level of column labels. This is ok.
 ```
 
 ```{code-cell} python
+:tags: ["remove-output"]
 bball_wide
 ```
 

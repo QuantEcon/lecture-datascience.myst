@@ -762,10 +762,7 @@ create errors because of size issues?
 
 Test out your intuitions in the code cell below
 
-```{code-cell} python
----
-tags: [raises-exception]
----
+```{code-block} python
 x1 @ x2
 x2 @ x1
 x2 @ x3
