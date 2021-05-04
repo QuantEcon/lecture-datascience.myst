@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Setup &#8212; QuantEcon DataScience</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/introduction/cloud_setup.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Local Installation" href="local_install.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/introduction/cloud_setup.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#launch-environments">
+   Launch Environments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pacific-institute-for-mathematical-sciences-syzygy">
+     Pacific Institute for Mathematical Sciences: syzygy
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#launching-on-pims-syzygy-ca">
+       Launching on pims.syzygy.ca
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-management-on-syzygy">
+       File Management on syzygy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#google-colab">
+     Google Colab
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#launching-colab">
+       Launching Colab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-management-on-colab">
+       File Management on Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="cloud-setup">
+<h1>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="launch-environments">
+<h2>Launch Environments<a class="headerlink" href="#launch-environments" title="Permalink to this headline">¶</a></h2>
+<p>Various cloud-based Jupyter server environments have been configured to work with <a class="reference internal" href="../index.html"><span class="doc">QuantEcon Data Science</span></a>.</p>
+<p>These environments provide a Jupyter interface which displays in your browser, but the code is hosted
+and run on the cloud.</p>
+<p>This allows you to interact with this lecture material without requiring you to install Python or
+any other required software on your own computer.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button opens a new tab in your browser where a Jupyter notebook version of the
+current lecture page will be opened with the selected cloud service.</p>
+<p>The settings icon allows you to change your cloud environment from the default.  To use
+click the over the settings icon on the bottom right of the page (see image).</p>
+<br>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/cloud_launch.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/cloud_launch.png" />
+</div>
+<br>
+<p>Making a selection will open a new tab in your browser where a Jupyter notebook version of the
+current lecture page will be opened with the selected cloud service.</p>
+<p>We discuss each of the options below.</p>
+<div class="section" id="pacific-institute-for-mathematical-sciences-syzygy">
+<h3>Pacific Institute for Mathematical Sciences: syzygy<a class="headerlink" href="#pacific-institute-for-mathematical-sciences-syzygy" title="Permalink to this headline">¶</a></h3>
+<p>This cloud service is provided by the
+<a class="reference external" href="https://www.pims.math.ca">Pacific Institute for Mathematical Sciences (PIMS)</a> at UBC.</p>
+<p>A major benefit of this environment is that we have worked with PIMS to install all of the software
+that shows up in our lectures.</p>
+<p>Additionally, they are serving an unaltered version of Jupyter so it will be easy to find help
+online, and it will feel very similar to a local installation if you have one configured.</p>
+<p>Finally, it is the only service that has persistent storage.
+<strong>Note:</strong>  PIMS is providing the hub “as is”, and may be turned off at any time, so backup your notebooks.  Storage used by accounts with more than 30 days of inactivity may be recycled.</p>
+<p>This is the service that we typically recommend.</p>
+<div class="section" id="launching-on-pims-syzygy-ca">
+<h4>Launching on <a class="reference external" href="http://pims.syzygy.ca">pims.syzygy.ca</a><a class="headerlink" href="#launching-on-pims-syzygy-ca" title="Permalink to this headline">¶</a></h4>
+<p>As <a class="reference external" href="http://pims.syzygy.ca">pims.syzygy.ca</a> is the default hub, you will not need to change your configuration.  However,
+if you chose a different hub, select the settings icon on the launchbar to select the PIMS hub.</p>
+<p><strong>1.</strong> Click the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
+<p><strong>2.</strong> After you have done this, you will be brought to a screen that looks like the following</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/syzygy_login.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/syzygy_login.png" />
+</div>
+<p>Once you reach this page, you should click the red home button and sign in with your Google account.</p>
+<p>The server will create an account for you associated with that Google account and you will have
+access to all files that you have worked on anytime you log in with that Google account.</p>
+<p><strong>3.</strong> After you sign in with your Google account, then you will see something similar to the
+following picture</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/syzygy_jupyter.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/syzygy_jupyter.png" />
+</div>
+</div>
+<div class="section" id="file-management-on-syzygy">
+<h4>File Management on syzygy<a class="headerlink" href="#file-management-on-syzygy" title="Permalink to this headline">¶</a></h4>
+<p>By default, syzygy will open the notebook that you clicked “Launch” from, but it downloads the other
+notebooks as well.</p>
+<p>You can navigate to these other notebooks in the left bar (the JupyterLab file explorer).</p>
+<p>You can also create new notebooks and text files.</p>
+<p>We recommend spending some time playing with the environment and working through some of the Help
+menu at the top.</p>
+<p>If you have made changes to one of the notebooks and decide that you want to reset them (and put
+the notebook back to the original state), then follow these steps:</p>
+<ul class="simple">
+<li><p>Delete the notebook and close the browser tab with syzygy instance.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> again from the website.</p></li>
+</ul>
+<p>Once you’ve done this, syzygy will restore the notebook back to what the original lecture material.</p>
+<p>As a reminder, while the PIMS syzygy will maintain persistent files between sessions, you should backup
+your files as the service is provided “as is”, and inactive accounts may have their storage recycled.</p>
+</div>
+</div>
+<div class="section" id="google-colab">
+<h3>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://research.google.com/colaboratory/faq.html">Google Colab</a> is a cloud service hosted by
+Google.</p>
+<p>With this environment, you can potentially use GPUs and other specialized
+computational platforms.</p>
+<p>This won’t make a difference at first, but having access to a
+GPU or TPU could improve performance.</p>
+<p>We recommend starting with the other cloud options because the environment provided isn’t
+quite the same as what you would get on your computer because Google has made their own modifications
+to underlying Jupyter software.</p>
+<div class="section" id="launching-colab">
+<h4>Launching Colab<a class="headerlink" href="#launching-colab" title="Permalink to this headline">¶</a></h4>
+<p>To launch course material through Google Colab:</p>
+<p><strong>1.</strong> Choose the settings icon on the launch bar to change the backend hub</p>
+<p>You will need to select choose <code class="docutils literal notranslate"><span class="pre">google</span> <span class="pre">colab</span></code> from the public options.</p>
+<p><strong>2.</strong> Click on the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
+<p><strong>3.</strong> You will be asked to sign in with your Google account and you will see something similar to
+the following picture.</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/colab_jupyter.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/colab_jupyter.png" />
+</div>
+<p><strong>4.</strong> Once you have launched a Colab notebook, you will need to make sure that any software missing
+from Colab gets installed — this step isn’t required for all notebooks.</p>
+<p>For lectures where this step is required, we have provided a script that automatically configures missing
+software.</p>
+<p>To run this script, you will need to uncomment the code at the top of the notebook and execute the
+cell — when we say “uncomment”, all we mean is to remove the <code class="docutils literal notranslate"><span class="pre">#</span></code> that precedes the <code class="docutils literal notranslate"><span class="pre">!</span></code> in the
+code that follows.</p>
+<p>See the code below to see what we mean:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install qeds</span>
+</pre></div>
+</div>
+<p><strong>5.</strong> To navigate sections within a Colab notebook, click on the little arrow at the top left corner
+of the page,</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/colab_table_of_contents_arrow.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/colab_table_of_contents_arrow.png" />
+</div>
+<p>Then, “table of contents” will pop up. You can click on sections or subsections for different parts
+of the notebook.</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/colab_table_of_contents.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/colab_table_of_contents.png" />
+</div>
+</div>
+<div class="section" id="file-management-on-colab">
+<h4>File Management on Colab<a class="headerlink" href="#file-management-on-colab" title="Permalink to this headline">¶</a></h4>
+<p>By default, Colab will erase any work that you have done after you have exited a notebook.</p>
+<p>If you would like to store your work, you can save it onto your Google Drive by clicking the
+<code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">to</span> <span class="pre">Drive</span></code> button.</p>
+<p>You can create a new notebook by clicking <code class="docutils literal notranslate"><span class="pre">File</span></code> on the menubar and selecting
+<code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">notebook</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">Getting Started</a>
+    <a class='right-next' id="next-link" href="local_install.html" title="next page">Local Installation</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

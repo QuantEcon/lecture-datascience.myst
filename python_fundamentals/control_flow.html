@@ -1,0 +1,1649 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Flow &#8212; QuantEcon DataScience</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://datascience.quantecon.org/python_fundamentals/control_flow.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="prev" title="Collections" href="collections.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Python Fundamentals
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/python_fundamentals/control_flow.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#net-present-values-and-asset-pricing">
+   Net Present Values and Asset Pricing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#net-present-value">
+     Net Present Value
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-statements-and-blocks">
+   Conditional Statements and Blocks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elif-clauses">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     clauses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iteration">
+   Iteration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-contrived-example">
+     A Contrived Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-loops">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-loops">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#break-and-continue">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       continue
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#break-out-of-a-loop">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         break
+        </span>
+       </code>
+       Out of a Loop
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continue-to-the-next-iteration">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         continue
+        </span>
+       </code>
+       to the Next Iteration
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comprehension">
+   Comprehension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5">
+     Exercise 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-6">
+     Exercise 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7">
+     Exercise 7
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-8">
+     Exercise 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-9">
+     Exercise 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-10">
+     Exercise 10
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="control-flow">
+<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p>Booleans section in <a class="reference internal" href="basics.html"><span class="doc">Basics</span></a></p></li>
+<li><p><a class="reference internal" href="collections.html"><span class="doc">Collections</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Asset pricing and NPV</p>
+<ul>
+<li><p>Understand basic principles of pricing assets with deterministic payoffs</p></li>
+<li><p>Apply programming with iteration and conditionals to asset pricing examples</p></li>
+</ul>
+</li>
+<li><p>Conditionals</p>
+<ul>
+<li><p>Understand what a conditional is</p></li>
+<li><p>Be able to construct <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code> conditional blocks</p></li>
+<li><p>Understand how conditionals can be used to selectively execute blocks of code</p></li>
+</ul>
+</li>
+<li><p>Iteration</p>
+<ul>
+<li><p>Understand what an iterable is</p></li>
+<li><p>Be able to write <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops</p></li>
+<li><p>Understand the keywords <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="net-present-values-and-asset-pricing">
+<span id="deterministic-asset-pricing"></span><h2>Net Present Values and Asset Pricing<a class="headerlink" href="#net-present-values-and-asset-pricing" title="Permalink to this headline">¶</a></h2>
+<p>In this lecture, we’ll introduce two related topics from economics:</p>
+<ul class="simple">
+<li><p>Net present valuations</p></li>
+<li><p>Asset pricing</p></li>
+</ul>
+<p>These topics will motivate some of the programming we do in this course.</p>
+<p>In economics and finance, “assets” provide a stream of
+payoffs.</p>
+<p>These “assets” can be concrete or abstract: a stock pays dividends over time, a
+bond pays interest, an apple tree provides apples, a job pays wages, and an
+education provides possible jobs (which, in turn, pay wages).</p>
+<p>When deciding the price to pay for an asset or how to choose between
+different alternatives, we need to take into account that most people would
+prefer to receive 1 today vs. 1 next year.</p>
+<p>This reflection on consumer preferences leads to the notion of a discount rate.
+If you are indifferent between receiving 1.00 today and 1.10 next year, then
+the discount rate over the next year is <span class="math notranslate nohighlight">\(r = 0.10\)</span>.</p>
+<p>If we assume that an individuals preferences are consistent over time, then we
+can apply that same discount rate to valuing assets further into the future.</p>
+<p>For example, we would expect that the consumer would be indifferent between
+consuming 1.00 today and <span class="math notranslate nohighlight">\((1+r)(1+r) = 1.21\)</span> dollars two years from now
+(i.e. discount twice).</p>
+<p>Inverting this formula, 1 delivered two years from now is equivalent to
+<span class="math notranslate nohighlight">\(\frac{1}{(1+r)^2}\)</span> today.</p>
+<div class="admonition-exercise admonition" id="dir2-3-1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="section" id="net-present-value">
+<span id="npv"></span><h3>Net Present Value<a class="headerlink" href="#net-present-value" title="Permalink to this headline">¶</a></h3>
+<p>If an asset pays a stream of payoffs over multiple time periods, then we
+can use a discount rate to calculate the value to the consumer of a entire
+sequence of payoffs.</p>
+<p>Most generally, we enumerate each discrete time period (e.g. year, month, day) by
+the index <span class="math notranslate nohighlight">\(t\)</span> where today is <span class="math notranslate nohighlight">\(t=0\)</span> and the asset lives for <span class="math notranslate nohighlight">\(T\)</span>
+periods.</p>
+<p>List the payoff at each time period as <span class="math notranslate nohighlight">\(y_t\)</span>,  which we will assume, for
+now, is known in advance.</p>
+<p>Then if the discount factor is <span class="math notranslate nohighlight">\(r \geq 0\)</span>, the consumer “values” the
+payoff <span class="math notranslate nohighlight">\(y_t\)</span> delivered at time <span class="math notranslate nohighlight">\(t\)</span> as <span class="math notranslate nohighlight">\(\frac{1}{(1+r)^t}y_t\)</span>
+where we note that if <span class="math notranslate nohighlight">\(t=0\)</span>, the value is just the current payoff
+<span class="math notranslate nohighlight">\(y_0\)</span>.</p>
+<p>Using this logic, we can write an expression for the value of the entire
+sequence of payoffs with a sum.</p>
+<div class="math notranslate nohighlight" id="equation-eq-npv">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-npv" title="Permalink to this equation">¶</a></span>\[P_0 = \sum_{t=0}^T \left(\frac{1}{1 + r}\right)^t y_t\]</div>
+<p>If <span class="math notranslate nohighlight">\(y_t\)</span> is a constant, then we can compute this sum with a simple formula!</p>
+<p>Below, we present some useful formulas that come from infinite series that we
+will use to get our net present value formula.</p>
+<p>For any constant <span class="math notranslate nohighlight">\(0 &lt; \beta &lt; 1\)</span> and integer value <span class="math notranslate nohighlight">\(\tau &gt; 0\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-infinite-sums">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-infinite-sums" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{aligned}
+\sum_{t=0}^{\infty} \beta^t &amp; = \frac{1}{1-\beta}\\
+\sum_{t=0}^{\tau} \beta^t &amp;= \frac{1- \beta^{\tau+1}}{1-\beta}\\
+\sum_{t=\tau}^{\infty} \beta^t &amp;=  \frac{\beta^{\tau}}{1-\beta}
+\end{aligned}\end{split}\]</div>
+<p>In the case of an asset which pays one dollar until time <span class="math notranslate nohighlight">\(T\)</span>, we can use
+these formulas, taking <span class="math notranslate nohighlight">\(\beta = \frac{1}{1+r}\)</span> and <span class="math notranslate nohighlight">\(T = \tau\)</span>, to
+find</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+P_0 &amp;= \sum_{t=0}^T \left(\frac{1}{1 + r}\right)^t = \frac{1- (\frac{1}{1+r})^{\tau+1}}{1-\frac{1}{1+r}}\\
+&amp;= \frac{1 + r}{r} - \frac{1}{r}\left(\frac{1}{1+r} \right)^\tau
+\end{aligned}
+\end{split}\]</div>
+<p>Note that we can also consider an asset that lives and pays forever if
+<span class="math notranslate nohighlight">\(T= \infty\)</span>, and from <a class="reference internal" href="#equation-eq-infinite-sums">(2)</a>, the value of an asset which
+pays 1 forever is <span class="math notranslate nohighlight">\(\frac{1+r}{r}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="conditional-statements-and-blocks">
+<h2>Conditional Statements and Blocks<a class="headerlink" href="#conditional-statements-and-blocks" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, we will only want to execute some piece of code if a certain condition
+is met.</p>
+<p>These conditions can be anything.</p>
+<p>For example, we might add to total sales if the transaction value is positive,
+but add to total returns if the value is negative.</p>
+<p>Or, we might want to add up all incurred costs, only if the transaction happened
+before a certain date.</p>
+<p>We use <em>conditionals</em> to run particular pieces of code when certain criterion
+are met.</p>
+<p>Conditionals are closely tied to booleans, so if you don’t remember what those
+are, go back to the <a class="reference internal" href="basics.html"><span class="doc">basics</span></a> lecture for a refresher.</p>
+<p>The basic syntax for conditionals is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># code to run when condition is True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># code to run if no conditions above are True</span>
+</pre></div>
+</div>
+<p>Note that immediately following the condition, there is a colon <em>and</em>
+that the next line begins with blank spaces.</p>
+<p>Using 4 spaces is a <em>very strong</em> convention, so that is what
+we do — we recommend that you do the same.</p>
+<p>Also note that the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is optional.</p>
+<p>Let’s see some simple examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `True` code is run&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is where `True` code is run
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, you could have a test which returns a booleans</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `True` code is run&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is where `True` code is run
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example is equivalent to just typing the print statement, but the
+example below isn’t…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `True` code is run&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `True` code is run&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that when you run the cells above nothing is printed.</p>
+<p>That is because the condition for the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement was not true, so the code
+inside the indented block was never run.</p>
+<p>This also allows us to demonstrate the role of indentation
+in determining the “block” of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># check an expression</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `True` code is run&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;More code in the if block&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code runs after &#39;if&#39; block, regardless of val&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Code runs after &#39;if&#39; block, regardless of val
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-2">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 2 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>The next example shows us how <code class="docutils literal notranslate"><span class="pre">else</span></code> works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># returns False</span>
+<span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `True` code is run&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is where `False` code is run&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;More else code&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code runs after &#39;if&#39; block, regardless of val&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is where `False` code is run
+More else code
+Code runs after &#39;if&#39; block, regardless of val
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">False:</span> <span class="pre">...</span></code> part of this example is the same as the example
+before, but now, we added an <code class="docutils literal notranslate"><span class="pre">else:</span></code> clause.</p>
+<p>In this case, because the conditional for the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement was not
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, the if code block was not executed, but the <code class="docutils literal notranslate"><span class="pre">else</span></code> block was.</p>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">Condition</span> <span class="pre">is</span> <span class="pre">True</span></code> is assumed in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, and is often left out.  For example, the following are identical</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 &lt; 2&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 &lt; 2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 &lt; 2
+1 &lt; 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-3">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 3 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-4">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 4 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="section" id="elif-clauses">
+<h3><code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses<a class="headerlink" href="#elif-clauses" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, you have more than one condition you want to check.</p>
+<p>For example, you might want to run a different set of code based on which
+quarter a particular transaction took place in.</p>
+<p>In this case you could check whether the date is in Q1, or in Q2, or in Q3, or if not
+any of these it must be in Q4.</p>
+<p>The way to express this type of conditional is to use one or more <code class="docutils literal notranslate"><span class="pre">elif</span></code>
+clause in addition to the <code class="docutils literal notranslate"><span class="pre">if</span></code> and the <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>The syntax is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+    <span class="c1"># code to run when condition1 is True</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+    <span class="c1"># code to run when condition2 is True</span>
+<span class="k">elif</span> <span class="n">condition3</span><span class="p">:</span>
+    <span class="c1"># code to run when condition3 is True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># code to run when none of the above are true</span>
+</pre></div>
+</div>
+<p>You can include as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses as you want.</p>
+<p>As before, the <code class="docutils literal notranslate"><span class="pre">else</span></code> part is optional.</p>
+<p>Here’s how we might express the quarter example referred to above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">halloween</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">halloween</span><span class="o">.</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Halloween is in Q4&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">halloween</span><span class="o">.</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Halloween is in Q3&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">halloween</span><span class="o">.</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Halloween is in Q2&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Halloween is in Q1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Halloween is in Q4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that when there are multiple <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions, only the code
+corresponding to the <strong>first</strong> true clause is run.</p>
+<p>We saw this in action above.</p>
+<p>We know that when <code class="docutils literal notranslate"><span class="pre">halloween.month</span> <span class="pre">&gt;</span> <span class="pre">9</span></code> is true, then <code class="docutils literal notranslate"><span class="pre">halloween.month</span> <span class="pre">&gt;</span> <span class="pre">6</span></code>
+and <code class="docutils literal notranslate"><span class="pre">halloween.month</span> <span class="pre">&gt;</span> <span class="pre">3</span></code> must also be true, but only the code block
+associated with <code class="docutils literal notranslate"><span class="pre">halloween.month</span> <span class="pre">&gt;</span> <span class="pre">9</span></code> was printed.</p>
+</div>
+</div>
+<div class="section" id="iteration">
+<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h2>
+<p>When doing computations or analyzing data, we often need to repeat certain
+operations a finite number of times or until some condition is met.</p>
+<p>Examples include processing all data files in a directory (folder), aggregating
+revenues and costs for every period in a year, or computing the net present
+value of certain assets. (In fact, later in this section, we will verify the equations
+that we wrote down above.)</p>
+<p>These are all examples of a programming concept called iteration.</p>
+<p>We feel the concept is best understood through example, so we will present a
+contrived example and then discuss the details behind doing iteration in Python.</p>
+<div class="section" id="a-contrived-example">
+<h3>A Contrived Example<a class="headerlink" href="#a-contrived-example" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we wanted to print out the first 10 integers and their squares.</p>
+<p>We <em>could</em> do something like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;1**2 = </span><span class="si">{</span><span class="mi">1</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;2**2 = </span><span class="si">{</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;3**2 = </span><span class="si">{</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;4**2 = </span><span class="si">{</span><span class="mi">4</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># .. and so on until 10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1**2 = 1
+2**2 = 4
+3**2 = 9
+4**2 = 16
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the code above is repetitive.</p>
+<p>For each integer, the code is exactly the same except for the two places where
+the “current” integer appears.</p>
+<p>Suppose that I asked you to write the same print statement for an int stored in
+a variable named <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p>You might write the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">**2 = </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This more general version of the operation suggests a strategy for achieving our
+goal with less repetition: have a variable <code class="docutils literal notranslate"><span class="pre">i</span></code> take on the values 1 through 10
+(Quiz: How can we use <code class="docutils literal notranslate"><span class="pre">range</span></code> to create the numbers 1 to 10?) and run the line
+of code above for each new value of <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<p>This can be accomplished with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">**2 = </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1**2 = 1
+2**2 = 4
+3**2 = 9
+4**2 = 16
+5**2 = 25
+6**2 = 36
+7**2 = 49
+8**2 = 64
+9**2 = 81
+10**2 = 100
+</pre></div>
+</div>
+</div>
+</div>
+<p>Whoa, what just happened?</p>
+<p>The integer <code class="docutils literal notranslate"><span class="pre">i</span></code> took on the values in <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">11)</span></code> one by one and
+for each new value it did the operations in the indented block (here
+just one line that called the <code class="docutils literal notranslate"><span class="pre">print</span></code> function).</p>
+</div>
+<div class="section" id="for-loops">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
+<p>The general structure of a standard <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+   <span class="c1"># operation 1 with item</span>
+   <span class="c1"># operation 2 with item</span>
+   <span class="c1"># ...</span>
+   <span class="c1"># operation N with item</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">iterable</span></code> is anything capable of producing one item at a time (see
+<a class="reference external" href="https://docs.python.org/3/glossary.html#term-iterable">here</a> for official
+definition from the Python team).</p>
+<p>We’ve actually already seen some of the most common iterables!</p>
+<p>Lists, tuples,
+dicts, and range/zip/enumerate objects are all iterables.</p>
+<p>Note that we can have as many operations as we want inside the indented block.</p>
+<p>We will refer to the indented block as the “body” of the loop.</p>
+<p>When the for loop is executed, <code class="docutils literal notranslate"><span class="pre">item</span></code> will take on one value from <code class="docutils literal notranslate"><span class="pre">iterable</span></code>
+at a time and execute the loop body for each value.</p>
+<div class="admonition-exercise admonition" id="dir2-3-5">
+<span id="human-capital-application"></span><p class="admonition-title">Exercise</p>
+<p>See exercise 5 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>When iterating, each <code class="docutils literal notranslate"><span class="pre">item</span></code> in <code class="docutils literal notranslate"><span class="pre">iterable</span></code> might actually contain more than
+one value.</p>
+<p>Recall that tuples (and lists) can be unpacked directly into variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">tup</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;i = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, tup = </span><span class="si">{</span><span class="n">tup</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i = 4, x = test, tup = (4, &#39;test&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also, recall that the value of a <code class="docutils literal notranslate"><span class="pre">enumerate(iterable)</span></code> is a tuple of the
+form <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">x)</span></code> where <code class="docutils literal notranslate"><span class="pre">iterable[i]</span> <span class="pre">==</span> <span class="pre">x</span></code>.</p>
+<p>When we use <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> in a for loop, we can “unpack” both values at the same
+time as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># revenue by quarter</span>
+<span class="n">company_revenue</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.20</span><span class="p">,</span> <span class="mf">5.50</span><span class="p">,</span> <span class="mf">6.50</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">company_revenue</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;quarter </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> revenue is $</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> million&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quarter 0 revenue is $5.12 million
+quarter 1 revenue is $5.2 million
+quarter 2 revenue is $5.5 million
+quarter 3 revenue is $6.5 million
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, the index can be used to access another vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Phoenix&quot;</span><span class="p">,</span> <span class="s2">&quot;Austin&quot;</span><span class="p">,</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+<span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Arizona&quot;</span><span class="p">,</span> <span class="s2">&quot;Texas&quot;</span><span class="p">,</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">city</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">city</span><span class="si">}</span><span class="s2"> is in </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Phoenix is in Arizona
+Austin is in Texas
+San Diego is in California
+New York is in New York
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-6">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 6 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="while-loops">
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h3>
+<p>A related but slightly different form of iteration is to repeat something
+until some condition is met.</p>
+<p>This is typically achieved using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<p>The structure of a while loop is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">True_condition</span><span class="p">:</span>
+    <span class="c1"># repeat these steps</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">True_condition</span></code> is some conditional statement that should evaluate to
+<code class="docutils literal notranslate"><span class="pre">True</span></code> when iterations should continue and <code class="docutils literal notranslate"><span class="pre">False</span></code> when Python should stop
+iterating.</p>
+<p>For example, suppose we wanted to know the smallest <code class="docutils literal notranslate"><span class="pre">N</span></code> such that
+<span class="math notranslate nohighlight">\(\sum_{i=0}^N i &gt; 1000\)</span>.</p>
+<p>We figure this out using a while loop as follows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">total</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is 45
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check our work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Should be just less than 1000 because range(45) goes from 0 to 44</span>
+<span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>990
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># should be between 990 + 45 = 1035</span>
+<span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">46</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1035
+</pre></div>
+</div>
+</div>
+</div>
+<p>A warning: one common programming error with while loops is to forget to
+set the variable you use in the condition prior to executing.  For example,
+take the following code which correctly sets a counter</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And then executes a while loop</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+done
+</pre></div>
+</div>
+</div>
+</div>
+<p>No problems.  But if you were to execute the above cell again, or another cell, the <code class="docutils literal notranslate"><span class="pre">i=3</span></code> remains, and code is never executed (since <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> begins as False).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-7">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 7 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="break-and-continue">
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-and-continue" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="break-out-of-a-loop">
+<h4><code class="docutils literal notranslate"><span class="pre">break</span></code> Out of a Loop<a class="headerlink" href="#break-out-of-a-loop" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes we want to stop a loop early if some condition is met.</p>
+<p>Let’s revisit the example of finding the smallest <code class="docutils literal notranslate"><span class="pre">N</span></code> such that
+<span class="math notranslate nohighlight">\(\sum_{i=0}^N i &gt; 1000\)</span>.</p>
+<p>Clearly <code class="docutils literal notranslate"><span class="pre">N</span></code> must be less than 1000, so we know we will find the answer
+if we start with a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop over all items in <code class="docutils literal notranslate"><span class="pre">range(1001)</span></code>.</p>
+<p>Then, we can keep a running total as we proceed and tell Python to stop
+iterating through our range once total goes above 1000.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1001</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The answer is&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is 45
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-8">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 8 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="continue-to-the-next-iteration">
+<h4><code class="docutils literal notranslate"><span class="pre">continue</span></code> to the Next Iteration<a class="headerlink" href="#continue-to-the-next-iteration" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes we might want to stop the <em>body of a loop</em> early if a condition is met.</p>
+<p>To do this we can use the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword.</p>
+<p>The basic syntax for doing this is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="c1"># always do these operations</span>
+    <span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># only do these operations if condition is False</span>
+</pre></div>
+</div>
+<p>Inside the loop body, Python will stop that loop iteration of the loop and continue directly to the next iteration when it encounters the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement.</p>
+<p>For example, suppose I ask you to loop over the numbers 1 to 10 and print out
+the message “{i} An odd number!” whenever the number <code class="docutils literal notranslate"><span class="pre">i</span></code> is odd, and do
+nothing otherwise.</p>
+<p>You can use continue to do this as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># an even number... This is modulus division</span>
+        <span class="k">continue</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;is an odd number!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 is an odd number!
+3 is an odd number!
+5 is an odd number!
+7 is an odd number!
+9 is an odd number!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-9">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 9 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comprehension">
+<h2>Comprehension<a class="headerlink" href="#comprehension" title="Permalink to this headline">¶</a></h2>
+<p>Often, we will want to perform a very simple operation for every element of some iterable and
+create a new iterable with these values.</p>
+<p>This could be done by writing a for loop and saving each
+value, but often using what is called a <em>comprehension</em> is more readable.</p>
+<p>Like many Python concepts, a comprehension is easiest to understand through example.</p>
+<p>Imagine that we have a list <code class="docutils literal notranslate"><span class="pre">x</span></code> with a list of numbers. We would like to create a list <code class="docutils literal notranslate"><span class="pre">x2</span></code> which has
+the squared values of x.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Create squared values with a loop</span>
+<span class="n">x2_loop</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x_val</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">x2_loop</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_val</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Create squared values with a comprehension</span>
+<span class="n">x2_comp</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_val</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x_val</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x2_loop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x2_comp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9]
+[0, 1, 4, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that much of the same text appears when we do the operation in the loop and when we do the
+operation with the comprehension.</p>
+<ul class="simple">
+<li><p>We need to specify what we are iterating over – in both cases, this is <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">x_val</span> <span class="pre">in</span> <span class="pre">x</span></code>.</p></li>
+<li><p>We need to square each element <code class="docutils literal notranslate"><span class="pre">x_val**2</span></code>.</p></li>
+<li><p>It needs to be stored somewhere – in <code class="docutils literal notranslate"><span class="pre">x2_loop</span></code>, this is done by appending each element to a list,
+and in <code class="docutils literal notranslate"><span class="pre">x2_comp</span></code>, this is done automatically because the operation is enclosed in a list.</p></li>
+</ul>
+<p>We can do comprehension with many different types of iterables, so we demonstrate a few more below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary from lists</span>
+<span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span> <span class="s2">&quot;GOOGL&quot;</span><span class="p">,</span> <span class="s2">&quot;TVIX&quot;</span><span class="p">]</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">175.96</span><span class="p">,</span> <span class="mf">1047.43</span><span class="p">,</span> <span class="mf">8.38</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span> <span class="n">prices</span><span class="p">)}</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;AAPL&#39;: 175.96, &#39;GOOGL&#39;: 1047.43, &#39;TVIX&#39;: 8.38}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a list from a dictionary</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;AMZN&quot;</span><span class="p">:</span> <span class="s2">&quot;Seattle&quot;</span><span class="p">,</span> <span class="s2">&quot;TVIX&quot;</span><span class="p">:</span> <span class="s2">&quot;Zurich&quot;</span><span class="p">,</span> <span class="s2">&quot;AAPL&quot;</span><span class="p">:</span> <span class="s2">&quot;Cupertino&quot;</span><span class="p">}</span>
+
+<span class="n">hq_cities</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="n">ticker</span><span class="p">]</span> <span class="k">for</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+<span class="n">hq_cities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Seattle&#39;, &#39;Zurich&#39;, &#39;Cupertino&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># List from list</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">sin_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_val</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">sin_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0,
+ 0.8414709848078965,
+ 0.9092974268256817,
+ 0.1411200080598672,
+ -0.7568024953079282,
+ -0.9589242746631385,
+ -0.27941549819892586,
+ 0.6569865987187891,
+ 0.9893582466233818,
+ 0.4121184852417566]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir2-3-10">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 10 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>Finally, we can use this approach to build complicated nested dictionaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">9.607</span><span class="p">,</span> <span class="mf">10.48</span><span class="p">,</span> <span class="mf">11.06</span><span class="p">]</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">]</span>
+<span class="n">exports</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span><span class="s2">&quot;manufacturing&quot;</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">,</span> <span class="s2">&quot;agriculture&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s2">&quot;services&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;manufacturing&quot;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">&quot;agriculture&quot;</span><span class="p">:</span> <span class="mf">1.4</span><span class="p">,</span> <span class="s2">&quot;services&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;manufacturing&quot;</span><span class="p">:</span> <span class="mf">2.7</span><span class="p">,</span> <span class="s2">&quot;agriculture&quot;</span><span class="p">:</span> <span class="mf">1.4</span><span class="p">,</span> <span class="s2">&quot;services&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">}]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_data</span><span class="p">,</span><span class="n">exports</span><span class="p">)</span>
+<span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">year</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;gdp&quot;</span> <span class="p">:</span> <span class="n">gdp</span><span class="p">,</span> <span class="s2">&quot;exports&quot;</span><span class="p">:</span> <span class="n">exports</span><span class="p">}</span> <span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">gdp</span><span class="p">,</span> <span class="n">exports</span> <span class="ow">in</span> <span class="n">data</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span>
+
+<span class="c1"># total exports by year</span>
+<span class="p">[</span><span class="n">data_dict</span><span class="p">[</span><span class="n">year</span><span class="p">][</span><span class="s2">&quot;exports&quot;</span><span class="p">][</span><span class="s2">&quot;services&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2013: {&#39;gdp&#39;: 9.607, &#39;exports&#39;: {&#39;manufacturing&#39;: 2.4, &#39;agriculture&#39;: 1.5, &#39;services&#39;: 0.5}}, 2014: {&#39;gdp&#39;: 10.48, &#39;exports&#39;: {&#39;manufacturing&#39;: 2.5, &#39;agriculture&#39;: 1.4, &#39;services&#39;: 0.9}}, 2015: {&#39;gdp&#39;: 11.06, &#39;exports&#39;: {&#39;manufacturing&#39;: 2.7, &#39;agriculture&#39;: 1.4, &#39;services&#39;: 1.5}}}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.5, 0.9, 1.5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ex2-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Government bonds are often issued as <em>zero-coupon bonds</em> meaning that they
+make no payments throughout the entire time that they are held, but, rather
+make a single payment at the time of maturity.</p>
+<p>How much should you be willing to pay for a zero-coupon bond that paid
+100 in 10 years with an interest rate of 5%?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Run the following two variations on the code with only a single change in the indentation.</p>
+<p>After, modify the <code class="docutils literal notranslate"><span class="pre">x</span></code> to print <code class="docutils literal notranslate"><span class="pre">3</span></code> and then <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3</span></code> instead.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="c1"># changed the indentation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-2"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Using the code cell below as a start, print <code class="docutils literal notranslate"><span class="pre">&quot;Good</span> <span class="pre">afternoon&quot;</span></code> if the
+<code class="docutils literal notranslate"><span class="pre">current_time</span></code> is past noon.</p>
+<p>Otherwise, do nothing.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Write some conditional based on <code class="docutils literal notranslate"><span class="pre">current_time.hour</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+<span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>more text after</p>
+<p>(<a class="reference internal" href="#dir2-3-3"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+<p>In this example, you will generate a random number between 0 and 1
+and then display “x &gt; 0.5” or “x &lt; 0.5” depending on the value of the
+number.</p>
+<p>This also introduces a new package <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> for
+drawing random numbers (more in the <a class="reference internal" href="../scientific/randomness.html"><span class="doc std std-doc">randomness</span></a> lecture).</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-4"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+<p>In economics, when an individual has some knowledge, skills, or education
+which provides them with a source of future income, we call it <a class="reference external" href="https://en.wikipedia.org/wiki/Human_capital">human
+capital</a>.</p>
+<p>When a student graduating from high school is considering whether to
+continue with post-secondary education, they may consider that it gives
+them higher paying jobs in the future, but requires that they don’t begin
+working until after graduation.</p>
+<p>Consider the simplified example where a student has perfectly forecastable
+employment and is given two choices:</p>
+<ol class="simple">
+<li><p>Begin working immediately and make 40,000 a year until they retire 40
+years later.</p></li>
+<li><p>Pay 5,000 a year for the next 4 years to attend university, then
+get a job paying 50,000 a year until they retire 40 years after making
+the college attendance decision.</p></li>
+</ol>
+<p>Should the student enroll in school if the discount rate is r = 0.05?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Discount rate</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># High school wage</span>
+<span class="n">w_hs</span> <span class="o">=</span> <span class="mi">40_000</span>
+
+<span class="c1"># College wage and cost of college</span>
+<span class="n">c_college</span> <span class="o">=</span> <span class="mi">5_000</span>
+<span class="n">w_college</span> <span class="o">=</span> <span class="mi">50_000</span>
+
+<span class="c1"># Compute npv of being a hs worker</span>
+
+<span class="c1"># Compute npv of attending college</span>
+
+<span class="c1"># Compute npv of being a college worker</span>
+
+<span class="c1"># Is npv_collegeworker - npv_collegecost &gt; npv_hsworker</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-5"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+<p>Instead of the above, write a for loop that uses the lists of cities
+and states below to print the same “{city} is in {state}” using
+a <code class="docutils literal notranslate"><span class="pre">zip</span></code> instead of an <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Try using <code class="docutils literal notranslate"><span class="pre">zip</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Phoenix&quot;</span><span class="p">,</span> <span class="s2">&quot;Austin&quot;</span><span class="p">,</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+<span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Arizona&quot;</span><span class="p">,</span> <span class="s2">&quot;Texas&quot;</span><span class="p">,</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-6"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h3>
+<p>Companies often invest in training their employees to raise their
+productivity. Economists sometimes wonder why companies
+spend this money when this incentivizes other companies to hire
+their employees away with higher salaries since employees gain human capital from training?</p>
+<p>Let’s say that it costs a company 25,000 dollars to teach their
+employees Python, but it raises their output by 2,500 per month. How
+many months would an employee need to stay for the company to find it
+profitable to pay for their employees to learn Python if their discount
+rate is r = 0.01?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define cost of teaching python</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="mi">25_000</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1"># Per month value</span>
+<span class="n">added_value</span> <span class="o">=</span> <span class="mi">2500</span>
+
+<span class="n">n_months</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_npv</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="c1"># Put condition below here</span>
+<span class="k">while</span> <span class="kc">False</span><span class="p">:</span> <span class="c1"># (replace False with your condition here)</span>
+    <span class="n">n_months</span> <span class="o">=</span> <span class="n">n_months</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Increment how many months they&#39;ve worked</span>
+
+    <span class="c1"># Increase total_npv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-7"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h3>
+<p>Try to find the index of the first value in <code class="docutils literal notranslate"><span class="pre">x</span></code>
+that is greater than 0.999 using a for loop and <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>try iterating over <code class="docutils literal notranslate"><span class="pre">range(len(x))</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-8"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">¶</a></h3>
+<p>Write a for loop that adds up all values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than
+or equal to 0.5.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">continue</span></code> word to end the body of the loop early for all values
+of <code class="docutils literal notranslate"><span class="pre">x</span></code> that are less than 0.5.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Try starting your loop with <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">value</span> <span class="pre">in</span> <span class="pre">x:</span></code> instead of
+iterating over the indices of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-9"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">¶</a></h3>
+<p>Returning to our previous example: print “{city} is in {state}” for each combination
+using a <code class="docutils literal notranslate"><span class="pre">zip</span></code> and a comprehension.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Try using <code class="docutils literal notranslate"><span class="pre">zip</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Phoenix&quot;</span><span class="p">,</span> <span class="s2">&quot;Austin&quot;</span><span class="p">,</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+<span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Arizona&quot;</span><span class="p">,</span> <span class="s2">&quot;Texas&quot;</span><span class="p">,</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+
+<span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-3-10"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./python_fundamentals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="collections.html" title="previous page">Collections</a>
+    <a class='right-next' id="next-link" href="functions.html" title="next page">Functions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

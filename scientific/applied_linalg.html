@@ -1,0 +1,1467 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applied Linear Algebra &#8212; QuantEcon DataScience</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://datascience.quantecon.org/scientific/applied_linalg.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Randomness" href="randomness.html" />
+    <link rel="prev" title="Plotting" href="plotting.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Scientific Computing
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/scientific/applied_linalg.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectors-and-matrices">
+   Vectors and Matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectors">
+     Vectors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices">
+     Matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-linear-algebra-concepts">
+     Other Linear Algebra Concepts
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#transpose">
+       Transpose
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#identity-matrix">
+       Identity Matrix
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inverse">
+       Inverse
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#portfolios">
+   Portfolios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#static-payoffs">
+     Static Payoffs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#npv-of-a-portfolio">
+     NPV of a Portfolio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unemployment-dynamics">
+     Unemployment Dynamics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="applied-linear-algebra">
+<h1><span class="target" id="index-0"></span>Applied Linear Algebra<a class="headerlink" href="#applied-linear-algebra" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Refresh some important linear algebra concepts</p></li>
+<li><p>Apply concepts to understanding unemployment and pricing portfolios</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">numpy</span></code> to do linear algebra operations</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install qeds</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import numpy to prepare for code below</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># activate plot theme</span>
+<span class="kn">import</span> <span class="nn">qeds</span>
+<span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vectors-and-matrices">
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h3>
+<p>A (N-element) vector is <span class="math notranslate nohighlight">\(N\)</span> numbers stored together.</p>
+<p>We typically write a vector as <span class="math notranslate nohighlight">\(x = \begin{bmatrix} x_1 \\ x_2 \\ \dots \\ x_N \end{bmatrix}\)</span>.</p>
+<p>In numpy terms, a vector is a 1-dimensional array.</p>
+<p>We often think of 2-element vectors as directional lines in the XY axes.</p>
+<p>This image, from the <a class="reference external" href="https://lectures.quantecon.org/py/linear_algebra.html">QuantEcon Python lecture</a>
+is an example of what this might look like for the vectors <code class="docutils literal notranslate"><span class="pre">(-4,</span> <span class="pre">3.5)</span></code>, <code class="docutils literal notranslate"><span class="pre">(-3,</span> <span class="pre">3)</span></code>, and <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">4)</span></code>.</p>
+<div class="figure align-default">
+<img alt="vector.png" src="https://datascience.quantecon.org/assets/_static/applied_linalg_files/vector.png" />
+</div>
+<p>In a previous lecture, we saw some types of operations that can be done on
+vectors, such as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Element-wise operations</strong>: Let <span class="math notranslate nohighlight">\(z = x ? y\)</span> for some operation <span class="math notranslate nohighlight">\(?\)</span>, one of
+the standard <em>binary</em> operations (<span class="math notranslate nohighlight">\(+, -, \times, \div\)</span>). Then we can write
+<span class="math notranslate nohighlight">\(z = \begin{bmatrix} x_1 ? y_1 &amp; x_2 ? y_2 \end{bmatrix}\)</span>. Element-wise operations require
+that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have the same size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Addition&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Subtraction&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Multiplication&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Division&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Element-wise Addition [5 7 9]
+Element-wise Subtraction [-3 -3 -3]
+Element-wise Multiplication [ 4 10 18]
+Element-wise Division [0.25 0.4  0.5 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Scalar operations</strong>: Let <span class="math notranslate nohighlight">\(w = a ? x\)</span> for some operation <span class="math notranslate nohighlight">\(?\)</span>, one of the
+standard <em>binary</em> operations (<span class="math notranslate nohighlight">\(+, -, \times, \div\)</span>). Then we can write
+<span class="math notranslate nohighlight">\(w = \begin{bmatrix} a ? x_1 &amp; a ? x_2 \end{bmatrix}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Addition&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Subtraction&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Multiplication&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Division&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scalar Addition [4 5 6]
+Scalar Subtraction [2 1 0]
+Scalar Multiplication [3 6 9]
+Scalar Division [3.  1.5 1. ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another operation very frequently used in data science is the <strong>dot product</strong>.</p>
+<p>The dot between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> is written <span class="math notranslate nohighlight">\(x \cdot y\)</span> and is
+equal to <span class="math notranslate nohighlight">\(\sum_{i=1}^N x_i y_i\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dot product&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dot product 32
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> to denote dot products (and matrix multiplication which we’ll see soon!).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dot product with @&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">@</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dot product with @ 32
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir3-3-1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#ex3-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nA</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">nB</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">nassets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">nA</span><span class="p">,</span> <span class="n">nB</span><span class="p">])</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">durationA</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">durationB</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># Do your computations here</span>
+
+<span class="c1"># Compute price</span>
+
+<span class="c1"># uncomment below to see a message!</span>
+<span class="c1"># if condition:</span>
+<span class="c1">#     print(&quot;Alice can retire&quot;)</span>
+<span class="c1"># else:</span>
+<span class="c1">#     print(&quot;Alice cannot retire yet&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrices">
+<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h3>
+<p>An <span class="math notranslate nohighlight">\(N \times M\)</span> matrix can be thought of as a collection of M
+N-element vectors stacked side-by-side as columns.</p>
+<p>We write a matrix as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} x_{11} &amp; x_{12} &amp; \dots &amp; x_{1M} \\
+                x_{21} &amp; \dots &amp; \dots &amp; x_{2M} \\
+                \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+                x_{N1} &amp; x_{N2} &amp; \dots &amp; x_{NM}
+\end{bmatrix}
+\end{split}\]</div>
+<p>In numpy terms, a matrix is a 2-dimensional array.</p>
+<p>We can create a matrix by passing a list of lists to the <code class="docutils literal notranslate"><span class="pre">np.array</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can perform element-wise and scalar operations as we did with vectors. In fact, we can do
+these two operations on arrays of any dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Addition</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Subtraction</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Multiplication</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element-wise Division</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Addition</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Subtraction</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Multiplication</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scalar Division</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Element-wise Addition
+ [[2. 3. 4.]
+ [5. 6. 7.]]
+Element-wise Subtraction
+ [[0. 1. 2.]
+ [3. 4. 5.]]
+Element-wise Multiplication
+ [[1. 2. 3.]
+ [4. 5. 6.]]
+Element-wise Division
+ [[1. 2. 3.]
+ [4. 5. 6.]]
+Scalar Addition
+ [[4 5 6]
+ [7 8 9]]
+Scalar Subtraction
+ [[ 2  1  0]
+ [-1 -2 -3]]
+Scalar Multiplication
+ [[ 3  6  9]
+ [12 15 18]]
+Scalar Division
+ [[3.   1.5  1.  ]
+ [0.75 0.6  0.5 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to how we combine vectors with a dot product, matrices can do what we’ll call <em>matrix
+multiplication</em>.</p>
+<p>Matrix multiplication is effectively a generalization of dot products.</p>
+<p><strong>Matrix multiplication</strong>: Let <span class="math notranslate nohighlight">\(v = x \cdot y\)</span> then we can write
+<span class="math notranslate nohighlight">\(v_{ij} = \sum_{k=1}^N x_{ik} y_{kj}\)</span> where <span class="math notranslate nohighlight">\(x_{ij}\)</span> is notation that denotes the
+element found in the ith row and jth column of the matrix <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The image below from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Matrix_multiplication_diagram.svg">Wikipedia</a>,
+by Bilou, shows how matrix multiplication simplifies to a series of dot products:</p>
+<div class="figure align-default">
+<img alt="matmult.png" src="https://datascience.quantecon.org/assets/_static/applied_linalg_files/mat_mult_wiki_bilou.png" />
+</div>
+<p>After looking at the math and image above, you might have realized that matrix
+multiplication requires very specific matrix shapes!</p>
+<p>For two matrices <span class="math notranslate nohighlight">\(x, y\)</span> to be multiplied, <span class="math notranslate nohighlight">\(x\)</span>
+must have the same number of columns as <span class="math notranslate nohighlight">\(y\)</span> has rows.</p>
+<p>Formally, we require that for some integer numbers, <span class="math notranslate nohighlight">\(M, N,\)</span> and <span class="math notranslate nohighlight">\(K\)</span>
+that if <span class="math notranslate nohighlight">\(x\)</span> is <span class="math notranslate nohighlight">\(N \times M\)</span> then <span class="math notranslate nohighlight">\(y\)</span> must be <span class="math notranslate nohighlight">\(M \times
+K\)</span>.</p>
+<p>If we think of a vector as a <span class="math notranslate nohighlight">\(1 \times M\)</span> or <span class="math notranslate nohighlight">\(M \times 1\)</span> matrix, we can even do
+matrix multiplication between a matrix and a vector!</p>
+<p>Let’s see some examples of this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">x4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy allows us to do matrix multiplication in three ways.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the matmul function for two matrices&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the dot function for two matrices&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using @ for two matrices&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x1</span> <span class="o">@</span> <span class="n">x4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using the matmul function for two matrices
+[[1. 1. 1.]
+ [5. 5. 5.]
+ [9. 9. 9.]]
+Using the dot function for two matrices
+[[1. 1. 1.]
+ [5. 5. 5.]
+ [9. 9. 9.]]
+Using @ for two matrices
+[[1. 1. 1.]
+ [5. 5. 5.]
+ [9. 9. 9.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the matmul function for vec and mat&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the dot function for vec and mat&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">x1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using @ for vec and mat&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y1</span> <span class="o">@</span> <span class="n">x1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using the matmul function for vec and mat
+[16 22]
+Using the dot function for vec and mat
+[16 22]
+Using @ for vec and mat
+[16 22]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Despite our options, we stick to using <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> because
+it is simplest to read and write.</p>
+<div class="admonition-exercise admonition" id="dir3-3-2">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 2 in the <a class="reference internal" href="#ex3-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="other-linear-algebra-concepts">
+<h3>Other Linear Algebra Concepts<a class="headerlink" href="#other-linear-algebra-concepts" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="transpose">
+<h4>Transpose<a class="headerlink" href="#transpose" title="Permalink to this headline">¶</a></h4>
+<p>A matrix transpose is an operation that flips all elements of a matrix along the diagonal.</p>
+<p>More formally, the <span class="math notranslate nohighlight">\((i, j)\)</span> element of <span class="math notranslate nohighlight">\(x\)</span> becomes the <span class="math notranslate nohighlight">\((j, i)\)</span> element of
+<span class="math notranslate nohighlight">\(x^T\)</span>.</p>
+<p>In particular, let <span class="math notranslate nohighlight">\(x\)</span> be given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\
+                    4 &amp; 5 &amp; 6 \\
+                    7 &amp; 8 &amp; 9 \\
+    \end{bmatrix}
+\end{split}\]</div>
+<p>then <span class="math notranslate nohighlight">\(x\)</span> transpose, written as <span class="math notranslate nohighlight">\(x'\)</span>, is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x = \begin{bmatrix} 1 &amp; 4 &amp; 7 \\
+                    2 &amp; 5 &amp; 8 \\
+                    3 &amp; 6 &amp; 9 \\
+    \end{bmatrix}
+\end{split}\]</div>
+<p>In Python, we do this by</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x transpose is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x transpose is
+[[1 4 7]
+ [2 5 8]
+ [3 6 9]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="identity-matrix">
+<h4>Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">¶</a></h4>
+<p>In linear algebra, one particular matrix acts very similarly to how 1 behaves for scalar numbers.</p>
+<p>This matrix is known as the <em>identity matrix</em> and is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I = \begin{bmatrix} 1  &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
+                    0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
+                    \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+                    0 &amp; 0 &amp; 0 &amp; \dots &amp; 1
+    \end{bmatrix}
+\end{split}\]</div>
+<p>As seen above, it has 1s on the diagonal and 0s everywhere else.</p>
+<p>When we multiply any matrix or vector by the identity matrix, we get the original matrix or vector
+back!</p>
+<p>Let’s see some examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I @ x&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">I</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x @ I&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">x</span> <span class="o">@</span> <span class="n">I</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I @ y&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">I</span> <span class="o">@</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y @ I&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">@</span> <span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I @ x 
+ [[0. 1. 2.]
+ [3. 4. 5.]
+ [6. 7. 8.]]
+x @ I 
+ [[0. 1. 2.]
+ [3. 4. 5.]
+ [6. 7. 8.]]
+I @ y 
+ [1. 2. 3.]
+y @ I 
+ [1. 2. 3.]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inverse">
+<h4>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">¶</a></h4>
+<p>If you recall, you learned in your primary education about solving equations for certain variables.</p>
+<p>For example, you might have been given the equation</p>
+<div class="math notranslate nohighlight">
+\[
+3x + 7 = 16
+\]</div>
+<p>and then asked to solve for <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>You probably did this by subtracting 7 and then dividing by 3.</p>
+<p>Now let’s write an equation that contains matrices and vectors.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}
+\end{split}\]</div>
+<p>How would we solve for <span class="math notranslate nohighlight">\(x = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\)</span>?</p>
+<p>Unfortunately, there is no “matrix divide” operation that does the opposite of matrix multiplication.</p>
+<p>Instead, we first have to do what’s known as finding the inverse. We must multiply both sides by this inverse to solve.</p>
+<p>Consider some matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>The inverse of <span class="math notranslate nohighlight">\(A\)</span>, given by <span class="math notranslate nohighlight">\(A^{-1}\)</span>, is a matrix such that <span class="math notranslate nohighlight">\(A A^{-1} = I\)</span>
+where <span class="math notranslate nohighlight">\(I\)</span> is our identity matrix.</p>
+<p>Notice in our equation above, if we can find the inverse of
+<span class="math notranslate nohighlight">\(\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix}\)</span> then we can multiply both sides by the inverse
+to get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix}^{-1}\begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} &amp;= \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix}^{-1}\begin{bmatrix} 3 \\ 4 \end{bmatrix} \\
+I \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} &amp;= \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix}^{-1} \begin{bmatrix} 3 \\ 4 \end{bmatrix} \\
+ \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} &amp;= \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 1 \end{bmatrix}^{-1} \begin{bmatrix} 3 \\ 4 \end{bmatrix}
+\end{align*}
+\end{split}\]</div>
+<p>Computing the inverse requires that a matrix be square and satisfy some other conditions
+(non-singularity) that are beyond the scope of this lecture.</p>
+<p>We also skip the exact details of how this inverse is computed, but, if you are interested,
+you can visit the
+<a class="reference external" href="https://lectures.quantecon.org/py/linear_algebra.html">QuantEcon Linear Algebra lecture</a>
+for more details.</p>
+<p>We demonstrate how to compute the inverse with numpy below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a square (N x N) non-singular matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is A inverse&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check that A @ A inverse is I&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is A inverse
+[[-0.2  0.4  0. ]
+ [ 0.6 -0.2  0. ]
+ [-0.3  0.1  0.5]]
+Check that A @ A inverse is I
+[[ 1.00000000e+00  0.00000000e+00  0.00000000e+00]
+ [ 2.77555756e-17  1.00000000e+00  0.00000000e+00]
+ [-1.38777878e-17  0.00000000e+00  1.00000000e+00]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="portfolios">
+<h2>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="../python_fundamentals/control_flow.html"><span class="doc">control flow</span></a>, we learned to value a stream of payoffs from a single
+asset.</p>
+<p>In this section, we generalize this to value a portfolio of multiple assets, or an asset
+that has easily separable components.</p>
+<p>Vectors and inner products give us a convenient way to organize and calculate these payoffs.</p>
+<div class="section" id="static-payoffs">
+<h3>Static Payoffs<a class="headerlink" href="#static-payoffs" title="Permalink to this headline">¶</a></h3>
+<p>As an example, consider a portfolio with 4 units of asset A, 2.5 units of asset B, and 8 units of
+asset C.</p>
+<p>At a particular point in time, the assets pay <span class="math notranslate nohighlight">\(3\)</span>/unit of asset A, <span class="math notranslate nohighlight">\(5\)</span>/unit of B, and
+<span class="math notranslate nohighlight">\(1.10\)</span>/unit of C.</p>
+<p>First, calculate the value of this portfolio directly with a sum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">4.0</span> <span class="o">*</span> <span class="mf">3.0</span> <span class="o">+</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="mf">1.1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can make this more convenient and general by using arrays for accounting, and then sum then in a
+loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span> <span class="c1"># portfolio units</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span> <span class="c1"># payoffs</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># i.e. 0, 1, 2</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above would have worked with <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> as <code class="docutils literal notranslate"><span class="pre">list</span></code> rather than <code class="docutils literal notranslate"><span class="pre">np.array</span></code>.</p>
+<p>Note that the general pattern above is the sum.</p>
+<div class="math notranslate nohighlight">
+\[
+p = \sum_{i=0}^{n-1} x_i y_i = x \cdot y
+\]</div>
+<p>This is an inner product as implemented by the <code class="docutils literal notranslate"><span class="pre">np.dot</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>This approach allows us to simultaneously price different portfolios by stacking them in a matrix and using the dot product.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span> <span class="c1"># payoffs</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">])</span> <span class="c1"># portfolio 1</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span> <span class="c1"># portfolio 2</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">))</span>
+
+<span class="c1"># calculate with inner products</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculating separately&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">])</span>
+
+<span class="c1"># or with a matrix multiplication</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculating with matrices&quot;</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculating separately
+[33.3, 13.5]
+Calculating with matrices
+[33.3 13.5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="npv-of-a-portfolio">
+<h3>NPV of a Portfolio<a class="headerlink" href="#npv-of-a-portfolio" title="Permalink to this headline">¶</a></h3>
+<p>If a set of assets has payoffs over time, we can calculate the NPV of that portfolio in a similar way to the calculation in
+<a class="reference internal" href="../python_fundamentals/control_flow.html#npv"><span class="std std-ref">npv</span></a>.</p>
+<p>First, consider an example with an asset with claims to multiple streams of payoffs which are easily
+separated.</p>
+<p>You are considering purchasing an oilfield with 2 oil wells, named <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> where</p>
+<ul class="simple">
+<li><p>Both oilfields have a finite lifetime of 20 years.</p></li>
+<li><p>In oilfield <code class="docutils literal notranslate"><span class="pre">A</span></code>, you can extract 5 units in the first year, and production in each subsequent year
+decreases by <span class="math notranslate nohighlight">\(20\%\)</span> of the previous year so that
+<span class="math notranslate nohighlight">\(x^A_0 = 5, x^A_1 = 0.8 \times 5, x^A_2 = 0.8^2 \times 5, \ldots\)</span></p></li>
+<li><p>In oilfield <code class="docutils literal notranslate"><span class="pre">B</span></code>, you can extract 2 units in the first year, but production only drops by
+<span class="math notranslate nohighlight">\(10\%\)</span> each year (i.e. <span class="math notranslate nohighlight">\(x^B_0 = 2, x^B_1 = 0.9 \times 2, x^B_2 = 0.9^2 \times 2, \ldots\)</span></p></li>
+<li><p>Future cash flows are discounted at a rate of <span class="math notranslate nohighlight">\(r = 0.05\)</span> each year.</p></li>
+<li><p>The price for oil in both wells are normalized as <span class="math notranslate nohighlight">\(p_A = p_B = 1\)</span>.</p></li>
+</ul>
+<p>These traits can be separated so that the price you would be willing to pay is the sum of the two, where
+we define <span class="math notranslate nohighlight">\(\gamma_A = 0.8, \gamma_B = 0.9\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+V_A &amp;= \sum_{t=0}^{T-1} \left(\frac{1}{1 + r}\right)^t p_A y^A_t = \sum_{t=0}^{T-1} \left(\frac{1}{1 + r}\right)^t (p_A \, x_{A0}\, \gamma_A^t)\\
+V_B &amp;= \sum_{t=0}^{T-1} \left(\frac{1}{1 + r}\right)^t p_B y^B_t = \sum_{t=0}^{T-1} \left(\frac{1}{1 + r}\right)^t (p_B \, x_{B0}\, \gamma_B^t)\\
+V &amp;= V_A + V_B
+\end{aligned}
+\end{split}\]</div>
+<p>Let’s compute the value of each of these assets using the dot product.</p>
+<p>The first question to ask yourself is: “For which two vectors should I compute the dot product?”</p>
+<p>It turns out that this depends on which two vectors you’d like to create.</p>
+<p>One reasonable choice is presented in the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Depreciation of production rates</span>
+<span class="n">gamma_A</span> <span class="o">=</span> <span class="mf">0.80</span>
+<span class="n">gamma_B</span> <span class="o">=</span> <span class="mf">0.90</span>
+
+<span class="c1"># Interest rate discounting</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">discount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">))</span><span class="o">**</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)])</span>
+
+<span class="c1"># Let&#39;s first create arrays that have the production of each oilfield</span>
+<span class="n">oil_A</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">gamma_A</span><span class="o">**</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)])</span>
+<span class="n">oil_B</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">gamma_B</span><span class="o">**</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)])</span>
+<span class="n">oilfields</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">oil_A</span><span class="p">,</span> <span class="n">oil_B</span><span class="p">])</span>
+
+<span class="c1"># Use matrix multiplication to get discounted sum of oilfield values and then sum</span>
+<span class="c1"># the two values</span>
+<span class="n">Vs</span> <span class="o">=</span> <span class="n">oilfields</span> <span class="o">@</span> <span class="n">discount</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The npv of oilfields is </span><span class="si">{</span><span class="n">Vs</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The npv of oilfields is 34.267256487477496
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now consider the approximation where instead of the oilfields having a finite lifetime of 20 years,
+we let them produce forever, i.e. <span class="math notranslate nohighlight">\(T = \infty\)</span>.</p>
+<p>With a little algebra,</p>
+<div class="math notranslate nohighlight">
+\[
+V_A = p_A \sum_{t=0}^{\infty}\left(\frac{1}{1 + r}\right)^t (x_{A0} \gamma_A^t) = x_{A0}\sum_{t=0}^{\infty}\left(\frac{\gamma_A}{1 + r}\right)^t
+\]</div>
+<p>And, using the infinite sum formula from <a class="reference internal" href="../python_fundamentals/control_flow.html"><span class="doc">../python_fundamentals/control_flow</span></a> (i.e. <span class="math notranslate nohighlight">\(\sum_{t=0}^{\infty}\beta^t = (1 - \beta)^{-1}\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+= \frac{p_A x_{A0}}{1 - \left(\gamma_A\frac{1}{1 + r} \right)}
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(V_B\)</span> is defined symmetrically.</p>
+<p>How different is this infinite horizon approximation from the <span class="math notranslate nohighlight">\(T = 20\)</span> version, and why?</p>
+<p>Now, let’s compute the <span class="math notranslate nohighlight">\(T = \infty\)</span> version of the net present value and make a graph to help
+us see how many periods are needed to approach the infinite horizon value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Depreciation of production rates</span>
+<span class="n">gamma_A</span> <span class="o">=</span> <span class="mf">0.80</span>
+<span class="n">gamma_B</span> <span class="o">=</span> <span class="mf">0.90</span>
+
+<span class="c1"># Interest rate discounting</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+
+<span class="k">def</span> <span class="nf">infhor_NPV_oilfield</span><span class="p">(</span><span class="n">starting_output</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">starting_output</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">compute_NPV_oilfield</span><span class="p">(</span><span class="n">starting_output</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">starting_output</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">gamma</span><span class="o">**</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">)])</span>
+    <span class="n">discount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">))</span><span class="o">**</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">)])</span>
+
+    <span class="n">npv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">discount</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">npv</span>
+
+<span class="n">Ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+
+<span class="n">NPVs_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">compute_NPV_oilfield</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">gamma_A</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">Ts</span><span class="p">])</span>
+<span class="n">NPVs_B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">compute_NPV_oilfield</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">gamma_B</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">Ts</span><span class="p">])</span>
+
+<span class="n">NPVs_T</span> <span class="o">=</span> <span class="n">NPVs_A</span> <span class="o">+</span> <span class="n">NPVs_B</span>
+<span class="n">NPV_oo</span> <span class="o">=</span> <span class="n">infhor_NPV_oilfield</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">gamma_A</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="n">infhor_NPV_oilfield</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">gamma_B</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;NPV with Varying T&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;NPV&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ts</span><span class="p">,</span> <span class="n">NPVs_A</span> <span class="o">+</span> <span class="n">NPVs_B</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">NPV_oo</span><span class="p">,</span> <span class="n">Ts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>  <span class="c1"># Plot infinite horizon value</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/applied_linalg_40_0.png" src="../_images/applied_linalg_40_0.png" />
+</div>
+</div>
+<p>It is also worth noting that the computation of the infinite horizon net present value can be
+simplified even further by using matrix multiplication. That is, the formula given above is
+equivalent to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V = \begin{bmatrix}p_A &amp; p_B \end{bmatrix} \cdot \sum_{t=0}^{\infty} \left(\left(\frac{1}{1 + r}\right)^t \begin{bmatrix} \gamma_A &amp; 0 \\ 0 &amp; \gamma_B \end{bmatrix}^t \cdot x_0\right)
+\end{split}\]</div>
+<p>and where <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix} x_{A0} \\ x_{B0} \end{bmatrix}\)</span>.</p>
+<p>We recognize that this equation is of the form</p>
+<div class="math notranslate nohighlight">
+\[
+V = G \sum_{t=0}^{\infty} \left(\frac{1}{1 + r}\right)^t A^t x_0
+\]</div>
+<p>Without proof, and given important assumptions on <span class="math notranslate nohighlight">\(\frac{1}{1 + r}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, this
+equation reduces to</p>
+<div class="math notranslate nohighlight" id="equation-eq-deterministic-asset-pricing">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-deterministic-asset-pricing" title="Permalink to this equation">¶</a></span>\[V = G \left(I - \frac{1}{1+r} A\right)^{-1} x_0\]</div>
+<p>Using the matrix inverse, where <code class="docutils literal notranslate"><span class="pre">I</span></code> is the identity matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_A</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">p_B</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">p_A</span><span class="p">,</span> <span class="n">p_B</span><span class="p">])</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="n">gamma_A</span> <span class="o">=</span> <span class="mf">0.80</span>
+<span class="n">gamma_B</span> <span class="o">=</span> <span class="mf">0.90</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">gamma_A</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">gamma_B</span><span class="p">]])</span>
+
+<span class="n">x_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Compute with matrix formula</span>
+<span class="n">NPV_mf</span> <span class="o">=</span> <span class="n">G</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">beta</span><span class="o">*</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">x_0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">NPV_mf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.99999999999999
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: While our matrix above was very simple, this approach works for much more
+complicated <code class="docutils literal notranslate"><span class="pre">A</span></code> matrices as long as we can write <span class="math notranslate nohighlight">\(x_t\)</span> using <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(x_0\)</span> as
+<span class="math notranslate nohighlight">\(x_t = A^t x_0\)</span> (For an advanced description of this topic, adding randomness, read about
+linear state-space models with Python <a class="reference external" href="https://lectures.quantecon.org/py/linear_models.html">https://lectures.quantecon.org/py/linear_models.html</a>).</p>
+</div>
+<div class="section" id="unemployment-dynamics">
+<h3>Unemployment Dynamics<a class="headerlink" href="#unemployment-dynamics" title="Permalink to this headline">¶</a></h3>
+<p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 5\%\)</span> of workers lose their jobs and
+<span class="math notranslate nohighlight">\(\phi = 10\%\)</span> of unemployed workers find jobs.</p>
+<p>Define the vector <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix} 900,000 &amp; 100,000 \end{bmatrix}\)</span> as the number of
+employed and unemployed workers (respectively) at time <span class="math notranslate nohighlight">\(0\)</span> in the economy.</p>
+<p>Our goal is to determine the dynamics of unemployment in this economy.</p>
+<p>First, let’s define the matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix} 1 - \alpha &amp; \alpha \\ \phi &amp; 1 - \phi \end{bmatrix}
+\end{split}\]</div>
+<p>Note that with this definition, we can describe the evolution of employment and unemployment
+from <span class="math notranslate nohighlight">\(x_0\)</span> to <span class="math notranslate nohighlight">\(x_1\)</span> using linear algebra.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x_1 = \begin{bmatrix} (1 - \alpha) 900,000 + \phi 100,000 \\ \alpha 900,000 + (1-\phi) 100,000\end{bmatrix} = A' x_0
+\end{split}\]</div>
+<p>However, since the transitions do not change over time, we can use this to describe the evolution
+from any arbitrary time <span class="math notranslate nohighlight">\(t\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+x_{t+1} = A' x_t
+\]</div>
+<p>Let’s code up a python function that will let us track the evolution of unemployment over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">900_000</span><span class="p">,</span> <span class="mi">100_000</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">,</span> <span class="n">alpha</span><span class="p">],</span> <span class="p">[</span><span class="n">phi</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">phi</span><span class="p">]])</span>
+
+<span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate the dynamics of unemployment for T periods starting from x0</span>
+<span class="sd">    and using values of A for probabilities of moving between employment</span>
+<span class="sd">    and unemployment</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nX</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">T</span><span class="p">,</span> <span class="n">nX</span><span class="p">))</span>
+    <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">x0</span>
+
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">out</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use this function to plot unemployment and employment levels for 10 periods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_simulation</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Employed&quot;</span><span class="p">,</span> <span class="s2">&quot;Unemployed&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">ax</span>
+
+<span class="n">plot_simulation</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;t&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/applied_linalg_46_1.png" src="../_images/applied_linalg_46_1.png" />
+</div>
+</div>
+<p>Notice that the levels of unemployed an employed workers seem to be heading to constant numbers.</p>
+<p>We refer to this phenomenon as <em>convergence</em> because the values appear to converge to a constant
+number.</p>
+<p>Let’s check that the values are permanently converging.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_simulation</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;t&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/applied_linalg_48_1.png" src="../_images/applied_linalg_48_1.png" />
+</div>
+</div>
+<p>The convergence of this system is a property determined by the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>The long-run distribution of employed and unemployed workers is equal to the <a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">left-eigenvector</a>
+of <span class="math notranslate nohighlight">\(A'\)</span>, corresponding to the eigenvalue equal to 1.</p>
+<p>Let’s have numpy compute the eigenvalues and eigenvectors and compare the results to our simulated results above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">eigvals</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">eigvals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">which_eig</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We are looking for eigenvalue </span><span class="si">{</span><span class="n">which_eig</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We are looking for eigenvalue 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s look at the corresponding eigenvector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span> <span class="o">=</span> <span class="n">eigvecs</span><span class="p">[:,</span> <span class="n">which_eig</span><span class="p">]</span>
+
+<span class="c1"># need to divide by sum so it adds to 1</span>
+<span class="n">dist</span> <span class="o">/=</span> <span class="n">dist</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The distribution of workers is given by </span><span class="si">{</span><span class="n">dist</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The distribution of workers is given by [0.66666667 0.33333333]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir3-3-3">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 3 in the <a class="reference internal" href="#ex3-3"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ex3-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Alice is a stock broker who owns two types of assets: A and B. She owns 100
+units of asset A and 50 units of asset B. The current interest rate is 5%.
+Each of the A assets have a remaining duration of 6 years and pay
+$1500 each year, while each of the B assets have a remaining duration
+of 4 years and pay $500 each year. Alice would like to retire if she
+can sell her assets for more than $500,000. Use vector addition, scalar
+multiplication, and dot products to determine whether she can retire.</p>
+<p>(<a class="reference internal" href="#dir3-3-1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Which of the following operations will work and which will
+create errors because of size issues?</p>
+<p>Test out your intuitions in the code cell below</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">@</span> <span class="n">x2</span>
+<span class="n">x2</span> <span class="o">@</span> <span class="n">x1</span>
+<span class="n">x2</span> <span class="o">@</span> <span class="n">x3</span>
+<span class="n">x3</span> <span class="o">@</span> <span class="n">x2</span>
+<span class="n">x1</span> <span class="o">@</span> <span class="n">x3</span>
+<span class="n">x4</span> <span class="o">@</span> <span class="n">y1</span>
+<span class="n">x4</span> <span class="o">@</span> <span class="n">y2</span>
+<span class="n">y1</span> <span class="o">@</span> <span class="n">x4</span>
+<span class="n">y2</span> <span class="o">@</span> <span class="n">x4</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># testing area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir3-3-2"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Compare the distribution above to the final values of a long simulation.</p>
+<p>If you multiply the distribution by 1,000,000 (the number of workers), do you get (roughly) the same number as the simulation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir3-3-3"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./scientific"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="plotting.html" title="previous page">Plotting</a>
+    <a class='right-next' id="next-link" href="randomness.html" title="next page">Randomness</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
