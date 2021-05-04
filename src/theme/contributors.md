@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-## Contributors:
+# Contributors:
 
 This project would not have been possible without contributions from the people listed 
 on this page. They were involved in authoring/editing material, designing the website, 
