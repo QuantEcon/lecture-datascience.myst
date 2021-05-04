@@ -307,7 +307,7 @@ You can download the `cb_2016_us_state_5m.zip` by hand, or simply allow `geopand
 the relevant information from the zip file online.
 
 ```{code-cell} python
-state_df = gpd.read_file("http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_5m.zip")
+state_df = gpd.read_file("cb_2016_us_state_5m.zip")
 state_df.head()
 ```
 
