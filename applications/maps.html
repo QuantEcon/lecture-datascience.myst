@@ -1085,122 +1085,67 @@ Census’s website here</a>.</p>
 the relevant information from the zip file online.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;https://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_state_5m.zip&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;cb_2016_us_state_5m.zip&quot;</span><span class="p">)</span>
 <span class="n">state_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CPLE_OpenFailedError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<span class="nn">fiona/_shim.pyx</span> in <span class="ni">fiona._shim.gdal_open_vector</span><span class="nt">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">fiona/_err.pyx</span> in <span class="ni">fiona._err.exc_wrap_pointer</span><span class="nt">()</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>STATEFP</th>
-      <th>STATENS</th>
-      <th>AFFGEOID</th>
-      <th>GEOID</th>
-      <th>STUSPS</th>
-      <th>NAME</th>
-      <th>LSAD</th>
-      <th>ALAND</th>
-      <th>AWATER</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>01</td>
-      <td>01779775</td>
-      <td>0400000US01</td>
-      <td>01</td>
-      <td>AL</td>
-      <td>Alabama</td>
-      <td>00</td>
-      <td>131173688951</td>
-      <td>4593686489</td>
-      <td>MULTIPOLYGON (((-88.04374 30.51742, -88.03661 ...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>02</td>
-      <td>01785533</td>
-      <td>0400000US02</td>
-      <td>02</td>
-      <td>AK</td>
-      <td>Alaska</td>
-      <td>00</td>
-      <td>1477946266785</td>
-      <td>245390495931</td>
-      <td>MULTIPOLYGON (((-133.65582 55.62562, -133.6249...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>04</td>
-      <td>01779777</td>
-      <td>0400000US04</td>
-      <td>04</td>
-      <td>AZ</td>
-      <td>Arizona</td>
-      <td>00</td>
-      <td>294198560125</td>
-      <td>1027346486</td>
-      <td>POLYGON ((-114.79968 32.59362, -114.80939 32.6...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>08</td>
-      <td>01779779</td>
-      <td>0400000US08</td>
-      <td>08</td>
-      <td>CO</td>
-      <td>Colorado</td>
-      <td>00</td>
-      <td>268429343790</td>
-      <td>1175112870</td>
-      <td>POLYGON ((-109.06025 38.59933, -109.05954 38.7...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>09</td>
-      <td>01779780</td>
-      <td>0400000US09</td>
-      <td>09</td>
-      <td>CT</td>
-      <td>Connecticut</td>
-      <td>00</td>
-      <td>12542638347</td>
-      <td>1815476291</td>
-      <td>POLYGON ((-73.72777 41.10070, -73.69595 41.115...</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">CPLE_OpenFailedError</span>: &#39;/vsizip/cb_2016_us_state_5m.zip&#39; does not exist in the file system, and is not recognized as a supported dataset name.
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">DriverError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">ad5c925990c9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">state_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;cb_2016_us_state_5m.zip&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">state_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/geopandas/io/file.py</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, rows, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span> 
+<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="k">with</span> <span class="n">fiona_env</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">160</span>         <span class="k">with</span> <span class="n">reader</span><span class="p">(</span><span class="n">path_or_bytes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">features</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> 
+<span class="g g-Whitespace">    </span><span class="mi">162</span>             <span class="c1"># In a future Fiona release the crs attribute of features will</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/fiona/env.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>         <span class="k">if</span> <span class="n">local</span><span class="o">.</span><span class="n">_env</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">408</span>             <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/fiona/__init__.py</span> in <span class="ni">open</span><span class="nt">(fp, mode, driver, schema, crs, encoding, layer, vfs, enabled_drivers, crs_wkt, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span> 
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="k">if</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">256</span>             <span class="n">c</span> <span class="o">=</span> <span class="n">Collection</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>                            <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span> <span class="n">enabled_drivers</span><span class="o">=</span><span class="n">enabled_drivers</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span>         <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/fiona/collection.py</span> in <span class="ni">__init__</span><span class="nt">(self, path, mode, driver, schema, crs, encoding, layer, vsi, archive, enabled_drivers, crs_wkt, ignore_fields, ignore_geometry, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>             <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">WritingSession</span><span class="p">()</span>
+
+<span class="nn">fiona/ogrext.pyx</span> in <span class="ni">fiona.ogrext.Session.start</span><span class="nt">()</span>
+
+<span class="nn">fiona/_shim.pyx</span> in <span class="ni">fiona._shim.gdal_open_vector</span><span class="nt">()</span>
+
+<span class="ne">DriverError</span>: &#39;/vsizip/cb_2016_us_state_5m.zip&#39; does not exist in the file system, and is not recognized as a supported dataset name.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;STATEFP&#39;, &#39;STATENS&#39;, &#39;AFFGEOID&#39;, &#39;GEOID&#39;, &#39;STUSPS&#39;, &#39;NAME&#39;, &#39;LSAD&#39;,
-       &#39;ALAND&#39;, &#39;AWATER&#39;, &#39;geometry&#39;],
-      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -1214,9 +1159,6 @@ the relevant information from the zip file online.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/maps_32_0.png" src="../_images/maps_32_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="find-and-plot-county-borders">
@@ -1227,68 +1169,8 @@ site</a>.</p>
 <p>Once again, we will use the 5m resolution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">county_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;https://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_5m.zip&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">county_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;cb_2016_us_county_5m.zip&quot;</span><span class="p">)</span>
 <span class="n">county_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="mi">3</span><span class="n">d92a40f3f65</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">county_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;https://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_us_county_5m.zip&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">county_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/geopandas/io/file.py</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, rows, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="n">_check_fiona</span><span class="p">(</span><span class="s2">&quot;&#39;read_file&#39; function&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">if</span> <span class="n">_is_url</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">129</span>         <span class="n">req</span> <span class="o">=</span> <span class="n">_urlopen</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="n">path_or_bytes</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="n">reader</span> <span class="o">=</span> <span class="n">fiona</span><span class="o">.</span><span class="n">BytesCollection</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/urllib/request.py</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
-<span class="ne">--&gt; </span><span class="mi">222</span>     <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> 
-<span class="g g-Whitespace">    </span><span class="mi">224</span> <span class="k">def</span> <span class="nf">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">):</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/urllib/request.py</span> in <span class="ni">open</span><span class="nt">(self, fullurl, data, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>         <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>             <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">531</span>             <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span> 
-<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/urllib/request.py</span> in <span class="ni">http_response</span><span class="nt">(self, request, response)</span>
-<span class="g g-Whitespace">    </span><span class="mi">638</span>         <span class="c1"># request was successfully received, understood, and accepted.</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span>         <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">640</span>             <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span>                 <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span> 
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/urllib/request.py</span> in <span class="ni">error</span><span class="nt">(self, proto, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>             <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
-<span class="ne">--&gt; </span><span class="mi">569</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span> 
-<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="c1"># XXX probably also want an abstract factory that knows when it makes</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/urllib/request.py</span> in <span class="ni">_call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>             <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">502</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>             <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>                 <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/urllib/request.py</span> in <span class="ni">http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="k">class</span> <span class="nc">HTTPDefaultErrorHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">648</span>     <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">649</span>         <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span> 
-<span class="g g-Whitespace">    </span><span class="mi">651</span> <span class="k">class</span> <span class="nc">HTTPRedirectHandler</span><span class="p">(</span><span class="n">BaseHandler</span><span class="p">):</span>
-
-<span class="ne">HTTPError</span>: HTTP Error 504: Gateway Time-out
 </pre></div>
 </div>
 </div>
