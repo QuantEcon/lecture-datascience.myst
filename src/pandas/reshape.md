@@ -628,15 +628,9 @@ You may not end up with a `variable` header on the second
 level of column labels. This is ok.
 ```
 
-```{raw} html
 <div style="display: none;">
-```
-
 `bball.drop("TeamName", axis=1).set_index(["Year", "Player", "Team"]).stack().unstack(level=[1, 3, 2]).sort_index(axis=1)`
-
-```{raw} html
 </div>
-```
 
 ```{code-cell} python
 :tags: ["remove-output"]
