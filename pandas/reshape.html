@@ -4712,7 +4712,8 @@ finished to get the columns in the same order.</p>
 <p>You may not end up with a <code class="docutils literal notranslate"><span class="pre">variable</span></code> header on the second
 level of column labels. This is ok.</p>
 </div>
-<div style="display: none;"><p><code class="docutils literal notranslate"><span class="pre">bball.drop(&quot;TeamName&quot;,</span> <span class="pre">axis=1).set_index([&quot;Year&quot;,</span> <span class="pre">&quot;Player&quot;,</span> <span class="pre">&quot;Team&quot;]).stack().unstack(level=[1,</span> <span class="pre">3,</span> <span class="pre">2]).sort_index(axis=1)</span></code></p>
+<div style="display: none;">
+`bball.drop("TeamName", axis=1).set_index(["Year", "Player", "Team"]).stack().unstack(level=[1, 3, 2]).sort_index(axis=1)`
 </div><div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span>
