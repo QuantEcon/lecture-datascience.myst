@@ -187,7 +187,7 @@ Here, we see that an increase in the `decile_score` still leads to an increase i
 the predicted probability of recidivism, while older individuals are slightly
 less likely to commit crime again.
 
-We'll build on an example from the [scikit-learn documentation](https://scikit-learn.org/stable/auto_examples/svm/plot_iris.html) to visualize the predictions of this model.
+We'll build on an example from the [scikit-learn documentation](https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html) to visualize the predictions of this model.
 
 ```{code-cell} python
 def plot_contours(ax, mod, xx, yy, **params):
