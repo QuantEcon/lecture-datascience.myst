@@ -301,7 +301,7 @@ Along the way, we will learn a couple of valuable lessons:
 ### Find and Plot State Border
 
 Our first step will be to find the border for the state of interest. This can be found on the [US
-Census's website here](https://www.census.gov/geo/maps-data/data/cbf/cbf_state.html).
+Census's website here](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html).
 
 You can download the `cb_2016_us_state_5m.zip` by hand, or simply allow `geopandas` to extract
 the relevant information from the zip file online.
