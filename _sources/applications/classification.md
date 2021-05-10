@@ -19,7 +19,7 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`Regression <../applications/regression>`
+- {doc}`Regression </applications/regression>`
 
 **Outcomes**
 
