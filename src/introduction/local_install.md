@@ -16,7 +16,7 @@ kernelspec:
 Visit [continuum.io](https://www.anaconda.com/download) and download the
 Anaconda Python distribution for your operating system (Windows/Mac OS/Linux).
 
-Be sure to download the Python 3.X (where X is some number greater than or equal to 7) version, not
+Be sure to download the Python 3.X (where X is some number greater than or equal to 8) version, not
 the 2.7 version.
 
 ```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/install_python.png
