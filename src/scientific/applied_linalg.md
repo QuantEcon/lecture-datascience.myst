@@ -48,7 +48,7 @@ In numpy terms, a vector is a 1-dimensional array.
 
 We often think of 2-element vectors as directional lines in the XY axes.
 
-This image, from the [QuantEcon Python lecture](https://lectures.quantecon.org/py/linear_algebra.html#)
+This image, from the [QuantEcon Python lecture](https://python.quantecon.org/linear_algebra.html)
 is an example of what this might look like for the vectors `(-4, 3.5)`, `(-3, 3)`, and `(2, 4)`.
 
 ```{figure} https://datascience.quantecon.org/assets/_static/applied_linalg_files/vector.png
@@ -358,7 +358,7 @@ Computing the inverse requires that a matrix be square and satisfy some other co
 
 We also skip the exact details of how this inverse is computed, but, if you are interested,
 you can visit the
-[QuantEcon Linear Algebra lecture](https://lectures.quantecon.org/py/linear_algebra.html)
+[QuantEcon Linear Algebra lecture](https://python.quantecon.org/linear_algebra.html)
 for more details.
 
 We demonstrate how to compute the inverse with numpy below.
@@ -621,7 +621,7 @@ print(NPV_mf)
 Note: While our matrix above was very simple, this approach works for much more
 complicated `A` matrices as long as we can write $x_t$ using $A$ and $x_0$ as
 $x_t = A^t x_0$ (For an advanced description of this topic, adding randomness, read about
-linear state-space models with Python <https://lectures.quantecon.org/py/linear_models.html>).
+linear state-space models with Python <https://python.quantecon.org/linear_models.html>).
 
 ### Unemployment Dynamics
 
