@@ -280,16 +280,7 @@ We don't need to understand all the details behind what this means
 For now, just recognize that particular syntax as the way to write
 multiple sheets to an Excel workbook.
 
-```{raw} html
-<p style="color:red;">
-```
-
-WARNING:
-
-```{raw} html
-</p>
-```
-
+````{warning}
 Saving `df2` to an excel file takes a very long time.
 
 For that reason, we will just show the code and hard-code the output
@@ -303,7 +294,7 @@ df2.to_excel("df2.xlsx")
 ```{code-block} python
  Wall time: 25.7 s
 ```
-
+````
 ### [pyarrow.feather.write_feather](https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html#pyarrow.feather.write_feather)
 
 As noted above, the feather file format was developed for very efficient
