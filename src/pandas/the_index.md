@@ -234,7 +234,7 @@ Setting just the year as index has one more potential issue: we will
 get data alignment only on the year, which may not be sufficient.
 
 To demonstrate this point, suppose now you are asked to use our WDI dataset
-to compute an approximation for net exports and investment in in 2009.
+to compute an approximation for net exports and investment in 2009.
 
 As a seasoned economist, you would remember the expenditure formula for GDP is
 written
