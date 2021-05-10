@@ -41,7 +41,7 @@ Otherwise, follow these steps:
 
 The workflow is a bit different on a local machine. We are assuming that you have followed the {doc}`local setup instructions <../introduction/local_install>`, and have installed GitHub desktop.
 
-1. Open GitHub desktop, and navigate to the repository (you can click "find" under "edit" in the top menu bar, and then type `quantecon-notebooks-datascience`, if you are having trouble.)
+1. Open GitHub desktop, and navigate to the repository (you can click "find" under "edit" in the top menu bar, and then type `lecture-datascience.notebooks`, if you are having trouble.)
 1. To **reset everything**, click "discard all changes" under "branch" in the top menu bar.
 1. To **reset a specific notebook**, right-click the specific file in the changes side tab, and then click "discard changes."
 1. To **pull the latest from the server**, first make sure you don't have any conflicting changes (i.e., do step (2) above), and then click "pull" under "repository" in the top menu bar.
