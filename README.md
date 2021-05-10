@@ -8,6 +8,8 @@ Website: https://quantecon.github.io/lecture-datascience.myst/.
 
 ## Development 
 
+### Setup
+
 1. Install [`conda`](https://www.anaconda.com/products/individual)
 
 2. Download this repo, and create a conda environment for it: 
@@ -16,7 +18,9 @@ Website: https://quantecon.github.io/lecture-datascience.myst/.
 conda env create -f environment.yml
 ```
 
-:warning: **Note**: Make sure you activate this environment whenever working on the lectures, by running `conda activate lecture-datascience`
+This will install all packages required to edit and build the lectures.
+
+**Note**: Make sure you activate this environment whenever working on the lectures, by running `conda activate lecture-datascience`
 
 3. Try building the lectures
 
