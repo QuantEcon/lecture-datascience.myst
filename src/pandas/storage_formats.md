@@ -295,6 +295,7 @@ df2.to_excel("df2.xlsx")
  Wall time: 25.7 s
 ```
 ````
+
 ### [pyarrow.feather.write_feather](https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html#pyarrow.feather.write_feather)
 
 As noted above, the feather file format was developed for very efficient
