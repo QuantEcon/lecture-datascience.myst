@@ -56,17 +56,17 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 1. Install [Github Desktop](https://desktop.github.com/).
 1. Click the "Open in Github Desktop" option in the clone button menu. It should open a Github
    Desktop popup that looks like this:
-   ```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/download_lectures_github_desktop.png
+   ```{figure} ../_static/download_lectures_github_desktop.png
    ```
    You should choose the path (folder) where you would like to download the repository. The default path on
-   Windows should be `C:/Users/YOUR_USERNAME/Documents/GitHub`.
+   Windows should be `C:\Users\YOUR_USERNAME\Documents\GitHub`.
 
 **Terminal**
 
 1. Make sure that `git` is installed on your computer. (`git` is not installed on Windows by default. You can download and install it from [here](https://git-scm.com/download/win)).
 1. Open a terminal.
 1. Set the path to where you would like to download the lectures. The default one is your home directory.
-1. Run `git clone https://github.com/QuantEcon/quantecon-notebooks-datascience` which will
+1. Run `git clone https://github.com/QuantEcon/lecture-datascience.notebooks` which will
    download the repository with notebooks in your working directory. *Pro tip*: If you would rather
    not type this command on your own, you can click "Copy clone command to clipboard" on the clone
    button menu and paste it into the terminal.
