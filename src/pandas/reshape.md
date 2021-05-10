@@ -615,8 +615,7 @@ Here are a few hints:
   their data can stay data during your reshaping.
   ```
 
-Don't spend too much time on this... if you get stuck, open up **this**
-markdown cell, and you will see our answer hidden.
+Don't spend too much time on this... if you get stuck, you will find our answer [here](https://github.com/QuantEcon/lecture-datascience.myst/raw/main/src/_static/reshape-ex1-ans.txt).
 
 ```{hint}
 You might need to add `.sort_index(axis=1)` after you are
@@ -627,10 +626,6 @@ finished to get the columns in the same order.
 You may not end up with a `variable` header on the second
 level of column labels. This is ok.
 ```
-
-<div style="display: none;">
-`bball.drop("TeamName", axis=1).set_index(["Year", "Player", "Team"]).stack().unstack(level=[1, 3, 2]).sort_index(axis=1)`
-</div>
 
 ```{code-cell} python
 :tags: ["remove-output"]
