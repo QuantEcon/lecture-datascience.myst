@@ -17,6 +17,17 @@ This page contains a list of projects produced by our students that we share wit
 
 This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](https://bayeswhu.github.io/teaching/qeds.html) and their students' [final projects](../theme/projects_hust.md).
 
+## 2021
+
+- [Centrists Win: Evidence from US House Elections](https:/nbviewer.jupyter.org/github/HJIzt/Predicting-Election-Wins-in-the-2018-US-Congressional-Midterms---ECON-323-Project/blob/main/ECON%20323%20Final%20Project%20-%20Harry%20Izatt%20Reduced%20Copy.ipynb)
+  - Harry Izatt
+
+- [Factors affecting bike share in San Francisco](https://nbviewer.jupyter.org/github/patkarns/econ-323-final-project/blob/main/final_draft.ipynb)
+  - Napat Karnsakultorn
+
+- [Visualization of Circum-Pacific Belt Earthquakes](https://nbviewer.jupyter.org/github/jessicashi98/ECON323/blob/main/final323.ipynb)
+  - Jessica Shi
+
 ## 2020
 
 - [Machine Learning Models for the Prediction of Obesity](https://nbviewer.jupyter.org/github/ajallow625/ML-models-for-the-Prediction-of-Obesity/blob/master/FINAL%20PROJECT.ipynb)
