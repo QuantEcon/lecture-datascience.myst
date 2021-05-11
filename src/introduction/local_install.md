@@ -59,7 +59,7 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
    ```{figure} ../_static/download_lectures_github_desktop.png
    ```
    You should choose the path (folder) where you would like to download the repository. The default path on
-   Windows should be `C:\Users\YOUR_USERNAME\Documents\GitHub`.
+   Windows should be `C:/Users/YOUR_USERNAME/Documents/GitHub`.
 
 **Terminal**
 
