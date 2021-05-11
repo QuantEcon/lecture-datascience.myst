@@ -28,7 +28,7 @@ kernelspec:
   [Goodreads](https://www.goodreads.com/)
 - Details for all delayed US domestic flights in November 2016,
   obtained from the [Bureau of Transportation
-  Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
+  Statistics](https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp)
 
 
 ```{literalinclude} ../_static/colab_light.raw
@@ -629,7 +629,7 @@ It looks like most books have an average rating of just below 4.
 Let's look at one more example.
 
 This time, we will use a dataset from the [Bureau of Transportation
-Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
+Statistics](https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp)
 that describes the cause of all US domestic flight delays
 in November 2016:
 

@@ -241,7 +241,7 @@ Good luck!
 Let's look at another example.
 
 This time, we will use a dataset from the [Bureau of Transportation
-Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
+Statistics](https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp)
 that describes the cause for all US domestic flight delays in November 2016:
 
 Loading this dataset the first time will take a minute or two because it is quite hefty... We recommend taking a break to view this [xkcd comic](https://xkcd.com/303/).

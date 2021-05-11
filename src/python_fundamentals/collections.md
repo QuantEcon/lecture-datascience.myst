@@ -874,7 +874,7 @@ Here are some tickers and a price.
 
 ### Exercise 6
 
-Look at the [World Factbook for Australia](https://www.cia.gov/-library/publications/the-world-factbook/geos/as.html)
+Look at the [World Factbook for Australia](https://www.cia.gov/the-world-factbook/countries/australia)
 and create a dictionary with data containing the following types:
 float, string, integer, list, and dict.  Choose any data you wish.
 
