@@ -175,3 +175,14 @@ If you would like to store your work, you can save it onto your Google Drive by 
 You can create a new notebook by clicking `File` on the menubar and selecting
 `New Python 3 notebook`.
 
+### BinderHub
+
+#### Launching BinderHub
+
+To launch course material through BinderHub:
+
+**1.** Choose the settings icon on the launch bar to change the backend hub
+
+You will need to select choose `BinderHub` from the public options.
+
+**2.** Click on the `Launch Notebook` button.
