@@ -612,7 +612,7 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc698dbefa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f11ac7d9cd0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/classification_3_1.png" src="../_images/classification_3_1.png" />
@@ -646,7 +646,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3647 + 0.2609 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4220 + 0.2745 decile_score)
 </pre></div>
 </div>
 </div>
@@ -691,7 +691,7 @@ will always have this cutoff structure.</p>
 <p>Here, we see that an increase in the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> still leads to an increase in
 the predicted probability of recidivism, while older individuals are slightly
 less likely to commit crime again.</p>
-<p>We’ll build on an example from the <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/svm/plot_iris.html">scikit-learn documentation</a> to visualize the predictions of this model.</p>
+<p>We’ll build on an example from the <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html">scikit-learn documentation</a> to visualize the predictions of this model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
@@ -1303,53 +1303,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.85   0.645]
- [ 1.315  3.19 ]]
+ [[37.885  0.625]
+ [ 1.42   3.07 ]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.78   0.93 ]
- [ 2.57   2.365]]
+ [[37.665  0.66 ]
+ [ 2.365  2.31 ]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.855  0.65 ]
- [ 2.51   1.985]]
+ [[37.835  0.73 ]
+ [ 2.485  1.95 ]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[37.675  0.37 ]
- [ 2.88   2.075]]
+ [[37.84   0.475]
+ [ 2.68   2.005]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.46   0.715]
- [ 3.48   1.345]]
+ [[37.345  0.83 ]
+ [ 3.32   1.505]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.97  1.06]
- [ 3.66  1.31]]
+ [[36.69  1.2 ]
+ [ 3.82  1.29]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.42   1.395]
- [ 3.37   1.815]]
+ [[36.385  1.34 ]
+ [ 3.58   1.695]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[36.03  1.24]
- [ 3.7   2.03]]
+ [[36.095  1.295]
+ [ 3.625  1.985]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.545  1.64 ]
- [ 4.13   1.685]]
+ [[35.43   1.685]
+ [ 4.23   1.655]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.79  1.56]
- [ 4.69  0.96]]
+ [[34.485  1.72 ]
+ [ 4.86   0.935]]
 </pre></div>
 </div>
 </div>

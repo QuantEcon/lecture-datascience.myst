@@ -273,7 +273,7 @@ In general, numpy code that is *vectorized* will perform better than numpy code 
 element at a time.
 
 For more information see the
-[QuantEcon lecture on performance Python](https://lectures.quantecon.org/py/numba.html) code.
+[QuantEcon lecture on performance Python](https://python-programming.quantecon.org/numba.html) code.
 
 #### Profitability Threshold
 

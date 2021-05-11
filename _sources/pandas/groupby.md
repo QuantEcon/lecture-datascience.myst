@@ -29,8 +29,8 @@ kernelspec:
 
 - Details for all delayed US domestic flights in December 2016,
   obtained from the [Bureau of Transportation
-  Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time)
-
+  Statistics](https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp)
+  
 ```{literalinclude} ../_static/colab_light.raw
 ```
 
