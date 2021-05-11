@@ -19,14 +19,11 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 
 ## 2021
 
-- [Centrists Win: Evidence from US House Elections]()
+- [Centrists Win: Evidence from US House Elections](https:/nbviewer.jupyter.org/github/HJIzt/Predicting-Election-Wins-in-the-2018-US-Congressional-Midterms---ECON-323-Project/blob/main/ECON%20323%20Final%20Project%20-%20Harry%20Izatt%20Reduced%20Copy.ipynb)
   - Harry Izatt
 
 - [Factors affecting bike share in San Francisco](https://nbviewer.jupyter.org/github/patkarns/econ-323-final-project/blob/main/final_draft.ipynb)
   - Napat Karnsakultorn
-
-- [Predicting Heart Disease Detections]()
-  - Aishiwarya More
 
 - [Visualization of Circum-Pacific Belt Earthquakes](https://nbviewer.jupyter.org/github/jessicashi98/ECON323/blob/main/final323.ipynb)
   - Jessica Shi
