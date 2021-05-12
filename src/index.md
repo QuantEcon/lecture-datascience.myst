@@ -9,13 +9,8 @@ kernelspec:
   name: python3
 ---
 
-```{only} html
-# Home
-```
 
-```{only} latex
 # Datascience for Economists
-```
 
 This website presents a series of lectures on programming, data science, and economics. The emphasis of these materials is not just the programming and statistics necessary to analyze data, but also on interpreting the results through the lens of economics.
 
@@ -24,3 +19,18 @@ This work was supported in part by the Center for Innovative Data in Economics R
 To get an idea of what one can do after taking this course, please take a look at [previous student projects](../theme/projects.md).
 
 [Chase Coleman](http://www.chasegcoleman.com/), [Spencer Lyon](http://spencerlyon.com/), [Jesse Perla](http://jesseperla.com/), [More Contributors](../theme/contributors.md).
+
+## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Introduction](../introduction/index.md)
+Course description, software installation
+
+## <i class="fab fa-python" style="color:#ffd053"></i> [Python Fundamentals](../python_fundamentals/index.md)
+Basic Python programming
+
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Scientific Computing](../scientific/index.md)
+Numerical and scientific methods
+
+## <i class="fas fa-code" style="color:#6dae5c"></i> [Pandas](../pandas/index.md)
+The "data" in data science
+
+## <i class="fas fa-cogs" style="color:#1665ad"></i> [Applications](../applications/index.md)
+Applications and statistical tools
