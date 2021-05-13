@@ -36,7 +36,8 @@ jobs:
         shell: bash -l {0}
         run: |
           mkdir _build/html/_notebooks
-          cp _build/jupyter/*.ipynb _build/html/_notebooks
+          import shutil
+          shutil.copytree(_build/jupyter/, _build/html/_notebooks)
       - name: Deploy website to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
