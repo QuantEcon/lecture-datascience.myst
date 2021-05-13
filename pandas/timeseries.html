@@ -820,19 +820,19 @@ so let’s load up some data and take a look.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-DatetimeIndex: 2558 entries, 2014-05-01 to 2021-05-10
+DatetimeIndex: 2560 entries, 2014-05-01 to 2021-05-12
 Data columns (total 7 columns):
  #   Column             Non-Null Count  Dtype  
 ---  ------             --------------  -----  
- 0   Open               2558 non-null   float64
- 1   High               2558 non-null   float64
- 2   Low                2558 non-null   float64
- 3   Close              2558 non-null   float64
- 4   Volume (BTC)       2558 non-null   float64
- 5   Volume (Currency)  2558 non-null   float64
- 6   Weighted Price     2558 non-null   float64
+ 0   Open               2560 non-null   float64
+ 1   High               2560 non-null   float64
+ 2   Low                2560 non-null   float64
+ 3   Close              2560 non-null   float64
+ 4   Volume (BTC)       2560 non-null   float64
+ 5   Volume (Currency)  2560 non-null   float64
+ 6   Weighted Price     2560 non-null   float64
 dtypes: float64(7)
-memory usage: 159.9 KB
+memory usage: 160.0 KB
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2032,7 +2032,7 @@ like to access.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014,
             ...
             2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2558)
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2560)
 </pre></div>
 </div>
 </div>
@@ -2046,8 +2046,8 @@ like to access.</p>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
             ...
-             1,  2,  3,  4,  5,  6,  7,  8,  9, 10],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2558)
+             3,  4,  5,  6,  7,  8,  9, 10, 11, 12],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2560)
 </pre></div>
 </div>
 </div>
@@ -2743,37 +2743,37 @@ data.)</p>
   </thead>
   <tbody>
     <tr>
-      <th>2021-05-06</th>
-      <td>57371.02</td>
-      <td>59564.24</td>
-      <td>56977.5</td>
-      <td>58984.75</td>
-      <td>2928.993454</td>
-      <td>1.718288e+08</td>
-      <td>58664.793179</td>
-    </tr>
-    <tr>
-      <th>2021-05-07</th>
-      <td>58964.89</td>
-      <td>59300.62</td>
-      <td>56256.0</td>
-      <td>58305.24</td>
-      <td>2589.625619</td>
-      <td>1.499454e+08</td>
-      <td>57902.329794</td>
-    </tr>
-    <tr>
       <th>2021-05-08</th>
       <td>58336.16</td>
       <td>59603.00</td>
-      <td>53500.0</td>
-      <td>56214.76</td>
-      <td>6364.964532</td>
-      <td>3.628500e+08</td>
-      <td>57007.387128</td>
+      <td>53500.00</td>
+      <td>55880.72</td>
+      <td>6589.427140</td>
+      <td>3.753983e+08</td>
+      <td>56969.792917</td>
     </tr>
     <tr>
       <th>2021-05-09</th>
+      <td>55854.43</td>
+      <td>56972.33</td>
+      <td>54500.00</td>
+      <td>56763.70</td>
+      <td>4203.169069</td>
+      <td>2.346195e+08</td>
+      <td>55819.673480</td>
+    </tr>
+    <tr>
+      <th>2021-05-10</th>
+      <td>56763.70</td>
+      <td>58021.26</td>
+      <td>51576.05</td>
+      <td>52860.88</td>
+      <td>5276.319332</td>
+      <td>2.909309e+08</td>
+      <td>55138.985234</td>
+    </tr>
+    <tr>
+      <th>2021-05-11</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2783,7 +2783,7 @@ data.)</p>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>2021-05-10</th>
+      <th>2021-05-12</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3047,7 +3047,7 @@ window for the whole dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6cdb9c8eb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f14dc595e20&gt;
 </pre></div>
 </div>
 <img alt="../_images/timeseries_54_1.png" src="../_images/timeseries_54_1.png" />
@@ -3524,13 +3524,13 @@ to compute the average <em>within</em> each calendar month.</p>
     </tr>
     <tr>
       <th>2021-06-30</th>
-      <td>57130.870500</td>
-      <td>58543.202250</td>
-      <td>55317.173000</td>
-      <td>57068.332500</td>
-      <td>4497.750940</td>
-      <td>2.538847e+08</td>
-      <td>57049.946477</td>
+      <td>57091.736905</td>
+      <td>58493.373333</td>
+      <td>55208.642143</td>
+      <td>56952.948571</td>
+      <td>4514.618776</td>
+      <td>2.546069e+08</td>
+      <td>56974.260085</td>
     </tr>
   </tbody>
 </table>
