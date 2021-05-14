@@ -119,7 +119,72 @@ You can find the official documentation of `scipy.stats` [here](https://docs.sci
 # your code here
 ```
 
+## Question 5
+
+Take the example with preferences over bananas (B) and apples (A) in {doc}`Optimization <../scientific/optimization>`
+
+The consumer solves the following problem:
+
+$$
+\begin{aligned}
+\max_{A, B} & B^{\alpha}A^{1-\alpha}\\
+\text{s.t. } & p_A A + B \leq W
+\end{aligned}
+$$
+
+Fix $p_A = 2$ and $\alpha = 0.33$.  Make a grid of ``W`` between ``1`` and ``3`` and then plot the optimal ratio of B to A.
+
+```{code-cell} python
+p_A = 2
+alpha = 0.33
+
+# Your code here
+```
+
+Do the same graph for $\alpha = 0.5$ and compare/interpret.
+
+```{code-cell} python
+# Your code here
+```
+
 <!---
+.. Next year...
+.. **TODO assignment?** See how the marginal utility changes as you take alpha towards 0 or 1, and explain.  Then look at how the indifference curves change.
+.. **TODO assignment?** Numerically demonstrate the wealth effect and the income effect in a graph using the optimization approach.  Maybe look at another utility function such as log utility?
+-->
+
+## Question 6
+Normalize the price of potato chips to be $1$ and set the price of chocolate bars to be $q$.
+
+Using a similar approach as seen in the apples/bananas example above, solve for the optimal
+basket of potato chips and chocolate bars.
+
+$$
+\begin{aligned}
+\max_{P, C} & -(P - 20)^2 - 2 * (C - 1)^2\\
+\text{s.t. } & P + q C \leq W
+\end{aligned}
+$$
+
+Hint:  When analyzing bliss points, as in {doc}`Optimization ../scientific/optimization`, we need to consider that they may not reach the bliss point.  Remember that in the algebra for our problems, we were only able to substitute using the budget constraint if the budget constraint is binding under optimal consumption bundles.
+
+Fix the price for chocolate bars to be $q = 10$
+
+Find the optimal quantity of $C$ and $P$ for $W = 20$
+
+```{code-cell} python
+W = 20
+q = 10
+
+# Your code here
+```
+
+Now, do the same thing for a grid of $W$ between $20$ and $50$ and plot the optimal $C$ and $P$ in a single graph.
+
+```{code-cell} python
+# Your code here
+```
+
 ## Question 7
 
 Let's revisit the unemployment example from the {doc}`Applied Linear Algebra <../scientific/applied_linalg>`.
@@ -184,6 +249,3 @@ With this simulation, plot the average proportion of `M` agents in the employmen
 
 # Long-run average payment
 ```
--->
-
-<!--- add new Q5, Q6 here -->
