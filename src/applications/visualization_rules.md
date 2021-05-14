@@ -1254,6 +1254,12 @@ ax[1].set_xticks(np.arange(0, 27, 5))
 ax[1].set_xticklabels(np.arange(0, 27, 5))
 ```
 
+```{code-cell} python
+:tags: ["remove-cell"]
+print("Unit test running")
+assert True, "Failure in unit test"
+```
+
 ### No Background Colors
 
 There are no reasons to use background colors in your visualizations.
@@ -1437,3 +1443,4 @@ for side in ["right", "top", "left", "bottom"]:
 ```
 
 ({ref}`back to text <app-vis-dir2>`)
+
