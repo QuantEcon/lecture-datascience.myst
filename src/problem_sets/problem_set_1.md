@@ -11,19 +11,19 @@ kernelspec:
 
 # Problem Set 1
 
-See "Check Your Understanding" from {doc}`basics <../python_fundamentals/basics>` and {doc}`collections <../python_fundamentals/collections>`
+See "Check Your Understanding" from {doc}`Basics <../python_fundamentals/basics>` and {doc}`Collections <../python_fundamentals/collections>`
 
 ## Question 1
 
 Below this cell, add
 
-1. A markdown cell with
+1. A Markdown cell with
    -  two levels of headings;
-   -  a numbered list;
-   -  an unnumbered list;
+   -  a numbered list (We ask for a list in Markdown, not a Python list object);
+   -  an unnumbered list (again not a Python list object);
    -  text with a `%` and a `-` sign (hint: look at this cell and [escape characters](https://www.markdownguide.org/basic-syntax/#characters-you-can-escape))
    -  backticked code (see [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet))
-1. A markdown cell with
+1. A Markdown cell with
    - the [quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula) embedded in the cell using [LaTeX](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html)
 
 ## Question 2

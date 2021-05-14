@@ -11,9 +11,9 @@ kernelspec:
 
 # Problem Set 4
 
-See "Check Your Understanding" from {doc}`../scientific/applied_linalg <../scientific/applied_linalg>` and {doc}`../scientific/randomness <../scientific/randomness>`
+See "Check Your Understanding" from {doc}`Applied Linear Algebra <../scientific/applied_linalg>`, {doc}`Randomness <../scientific/randomness>`, and {doc}`Optimization <../scientific/optimization>`
 
-## Question 1 and 2
+## Question 1
 
 Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
@@ -21,8 +21,6 @@ Each of the A assets have a remaining duration of 6 years and pay
 $1500$ dollars each year while each of the B assets have a remaining duration
 of 4 years and pay $500$ dollars each year (assume the first payment starts at the beginning of the
 first year and hence, should not be discounted).
-
-### Question 1
 
 Alice would like to retire if she
 can sell her assets for more than $1 million. Use vector addition, scalar
@@ -34,25 +32,9 @@ r = 0.05
 # your code here
 ```
 
-### Question 2
+## Question 2
 
-Consider if Alice had several alternate portfolios and decide which is the most valuable.
-Use a matrix product to simultaneously calculate the values of each portfolio,
-as we did in the lecture notes.
-
-- Portfolio 1: 100 units of A, 40 units of B
-- Portfolio 2: 50 units of A, 150 units of B
-- Portfolio 3: 120 units of A, 0 units of B
-
-```{code-cell} python
-r = 0.05
-
-# your code here
-```
-
-## Question 3
-
-As in {doc}`../scientific/applied_linalg <../scientific/applied_linalg>`:
+As in {doc}`Applied Linear Algebra <../scientific/applied_linalg>`:
 
 Consider an economy where in any given year, $\alpha = 3\%$ of workers lose their jobs and
 $\phi = 12\%$ of unemployed workers find jobs.
@@ -81,6 +63,7 @@ one.
 # your code here
 ```
 
+<!---
 ## Question 4
 
 Adapt our unemployment example to add in an additional category: a probationary period where a firm is deciding if they want to make
@@ -97,26 +80,27 @@ Adapting the code from the lecture notes, plot the mass of all three types of em
 ```{code-cell} python
 # your code here
 ```
+-->
 
-## Question 5
+## Question 3
 
 Wikipedia and other credible statistics sources tell us that the mean and
 variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.
 
 How could we check whether the numpy random numbers approximate these
-values? (*hint*: some functions in {doc}`../scientific/numpy_arrays <../scientific/numpy_arrays>` and {doc}`../scientific/randomness <../scientific/randomness>` might be useful)
+values? (*hint*: some functions in {doc}`Introduction to Numpy <../scientific/numpy_arrays>` and {doc}`Randomness <../scientific/randomness>` might be useful)
 
 ```{code-cell} python
 # your code here
 ```
 
-## Question 6
+## Question 4
 
 Assume you have been given the opportunity to choose between one of three financial assets.
 
 You will be given the asset for free, allowed to hold it indefinitely, and will keep all payoffs.
 
-Also assume the assets' payoffs are distributed as follows (the notations are the same as in "Continuous Distributions" subsection of {doc}`../scientific/randomness <../scientific/randomness>`):
+Also assume the assets' payoffs are distributed as follows (the notations are the same as in "Continuous Distributions" subsection of {doc}`Randomness <../scientific/randomness>`):
 
 1. Normal with $\mu = 10, \sigma = 5$
 1. Gamma with $k = 5.3, \theta = 2$
@@ -126,7 +110,7 @@ Use `scipy.stats` to answer the following questions:
 
 - Which asset has the highest average returns?
 - Which asset has the highest median returns?
-- Which asset has the lowest coefficient of variation, i.e., standard deviation divided by mean? (This measure is similar to "Sharpe Ratio")
+- Which asset has the lowest coefficient of variation, i.e., standard deviation divided by mean?
 - Which asset would you choose? Why? (There is not a single right answer here. Just be creative and express your preferences.)
 
 You can find the official documentation of `scipy.stats` [here](https://docs.scipy.org/doc/scipy/reference/stats.html)
@@ -135,9 +119,10 @@ You can find the official documentation of `scipy.stats` [here](https://docs.sci
 # your code here
 ```
 
+<!---
 ## Question 7
 
-Let's revisit the unemployment example from the {doc}`../scientific/applied_linalg <../scientific/applied_linalg>`.
+Let's revisit the unemployment example from the {doc}`Applied Linear Algebra <../scientific/applied_linalg>`.
 
 We'll repeat necessary details here.
 
@@ -199,4 +184,6 @@ With this simulation, plot the average proportion of `M` agents in the employmen
 
 # Long-run average payment
 ```
+-->
 
+<!--- add new Q5, Q6 here -->

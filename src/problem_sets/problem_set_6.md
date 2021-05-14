@@ -11,7 +11,7 @@ kernelspec:
 
 # Problem Set 6
 
-See {doc}`../pandas/merge <../pandas/merge>`, {doc}`../pandas/reshape <../pandas/reshape>`, and {doc}`../pandas/groupby <../pandas/groupby>`
+See {doc}`Merge <../pandas/merge>`, {doc}`Reshape <../pandas/reshape>`, and {doc}`GroupBy <../pandas/groupby>`
 
 ```{code-cell} python
 import matplotlib.pyplot as plt

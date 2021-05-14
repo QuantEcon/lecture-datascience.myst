@@ -11,7 +11,7 @@ kernelspec:
 
 # Problem Set 3
 
-See "Check Your Understanding" from {doc}`../python_fundamentals/control_flow <../python_fundamentals/control_flow>`, {doc}`../python_fundamentals/functions <../python_fundamentals/functions>`, and {doc}`../scientific/numpy_arrays <../scientific/numpy_arrays>`
+See "Check Your Understanding" from {doc}`Control Flow <../python_fundamentals/control_flow>`, {doc}`Functions <../python_fundamentals/functions>`, and {doc}`Introduction to Numpy <../scientific/numpy_arrays>`
 
 ## Question 1
 
@@ -92,7 +92,7 @@ F2(1.0, 0.5)
 
 Now, it is your turn...
 
-Re-write the `returns_to_scale` function above to accept an additional argument
+Re-write the `returns_to_scale` function above as we had in {doc}`Functions <../python_fundamentals/functions>` to accept an additional argument
 `F` that represents a production function. The function should take in `K` and `L`
 and return output.
 
@@ -133,7 +133,7 @@ What are the returns to scale when you set `alpha_1 = 0.3` and `alpha_2 = 0.6`?
 What about when you use `alpha_1 = 0.4` and `alpha_2 = 0.65`?
 
 ```{code-cell} python
-# test with alpha_1 = 0.3 and alpha_2 = 0.65
+# test with alpha_1 = 0.4 and alpha_2 = 0.65
 ```
 
 What do returns to scale have to do with the quantity $\alpha_1 + \alpha_2$? When will returns to scale be greater or less than 1?
