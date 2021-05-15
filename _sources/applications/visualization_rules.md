@@ -530,8 +530,7 @@ Choosing colors for your plots is not always a straightforward task.
 
 Visualization expert Edward Tufte <https://www.edwardtufte.com/tufte/> wrote,
 
-[](https://www.edwardtufte.com/tufte/books_ei)> ... Avoiding catastrophe becomes the first principle in bringing color to information: Above
-> all, do no harm (*Envisioning Information* by Edward Tufte)
+> ... Avoiding catastrophe becomes the first principle in bringing color to information: Above all, do no harm ([*Envisioning Information*](https://www.edwardtufte.com/tufte/books_ei) by Edward Tufte)
 
 So how do we "do no harm"?
 
