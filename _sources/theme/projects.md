@@ -25,6 +25,9 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 - [Factors affecting bike share in San Francisco](https://nbviewer.jupyter.org/github/patkarns/econ-323-final-project/blob/main/final_draft.ipynb)
   - Napat Karnsakultorn
 
+- [Evolution of NBA Player Salary Determinants](https://nbviewer.jupyter.org/github/silaslm/NBA-Player-Salary-Determinants/blob/main/NBA_Player_Salary_Determinants-2.ipynb)
+  - Silas Lee-McNamee
+
 - [Visualization of Circum-Pacific Belt Earthquakes](https://nbviewer.jupyter.org/github/jessicashi98/ECON323/blob/main/final323.ipynb)
   - Jessica Shi
 

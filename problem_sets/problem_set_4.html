@@ -380,21 +380,14 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-1-and-2">
-   Question 1 and 2
+  <a class="reference internal nav-link" href="#question-1">
+   Question 1
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-1">
-     Question 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-2">
-     Question 2
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2">
+   Question 2
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-3">
@@ -434,17 +427,15 @@
                 
   <div class="section" id="problem-set-4">
 <h1>Problem Set 4<a class="headerlink" href="#problem-set-4" title="Permalink to this headline">¶</a></h1>
-<p>See “Check Your Understanding” from <a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">../scientific/applied_linalg</span></a> and <a class="reference internal" href="../scientific/randomness.html"><span class="doc">../scientific/randomness</span></a></p>
-<div class="section" id="question-1-and-2">
-<h2>Question 1 and 2<a class="headerlink" href="#question-1-and-2" title="Permalink to this headline">¶</a></h2>
+<p>See “Check Your Understanding” from <a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">Applied Linear Algebra</span></a>, <a class="reference internal" href="../scientific/randomness.html"><span class="doc">Randomness</span></a>, and <a class="reference internal" href="../scientific/optimization.html"><span class="doc">Optimization</span></a></p>
+<div class="section" id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
 <p>Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
 Each of the A assets have a remaining duration of 6 years and pay
 <span class="math notranslate nohighlight">\(1500\)</span> dollars each year while each of the B assets have a remaining duration
 of 4 years and pay <span class="math notranslate nohighlight">\(500\)</span> dollars each year (assume the first payment starts at the beginning of the
 first year and hence, should not be discounted).</p>
-<div class="section" id="question-1">
-<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h3>
 <p>Alice would like to retire if she
 can sell her assets for more than $1 million. Use vector addition, scalar
 multiplication, and dot products to determine whether she can retire.</p>
@@ -459,29 +450,8 @@ multiplication, and dot products to determine whether she can retire.</p>
 </div>
 </div>
 <div class="section" id="question-2">
-<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h3>
-<p>Consider if Alice had several alternate portfolios and decide which is the most valuable.
-Use a matrix product to simultaneously calculate the values of each portfolio,
-as we did in the lecture notes.</p>
-<ul class="simple">
-<li><p>Portfolio 1: 100 units of A, 40 units of B</p></li>
-<li><p>Portfolio 2: 50 units of A, 150 units of B</p></li>
-<li><p>Portfolio 3: 120 units of A, 0 units of B</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.05</span>
-
-<span class="c1"># your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="question-3">
-<h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
-<p>As in <a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">../scientific/applied_linalg</span></a>:</p>
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
+<p>As in <a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">Applied Linear Algebra</span></a>:</p>
 <p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 3\%\)</span> of workers lose their jobs and
 <span class="math notranslate nohighlight">\(\phi = 12\%\)</span> of unemployed workers find jobs.</p>
 <p>Define the vector <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix} 600,000 &amp; 200,000 \end{bmatrix}\)</span> as the number of
@@ -513,33 +483,31 @@ one.</p>
 </div>
 </div>
 </div>
+<!---
+## Question 4
+
+Adapt our unemployment example to add in an additional category: a probationary period where a firm is deciding if they want to make
+an employee a permanent offer.  Now, in any given year
+-  $\alpha = 3\%$ of workers with full job offers lose their jobs.
+-  $\phi = 12\%$ of unemployed workers find a "probationary" job (i.e., they cannot get the permanent job directly).
+-  Probation lasts for exactly an entire period, at which point $\lambda = 60\%$ of the employees get a permanent job offer, while the remainder become unemployed.
+
+Define the vector $x_0 = \begin{bmatrix} 600,000 & 200,000 & 100,000\end{bmatrix}$ as the number of
+fully employed, unemployed, and probationary workers (respectively) at time $0$ in the economy.
+
+Adapting the code from the lecture notes, plot the mass of all three types of employment situations in this economy for $t = 0, \ldots 20$.
+
+```{code-cell} python
+# your code here
+```
+-->
 </div>
-<div class="section" id="question-4">
-<h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
-<p>Adapt our unemployment example to add in an additional category: a probationary period where a firm is deciding if they want to make
-an employee a permanent offer.  Now, in any given year</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\alpha = 3\%\)</span> of workers with full job offers lose their jobs.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\phi = 12\%\)</span> of unemployed workers find a “probationary” job (i.e., they cannot get the permanent job directly).</p></li>
-<li><p>Probation lasts for exactly an entire period, at which point <span class="math notranslate nohighlight">\(\lambda = 60\%\)</span> of the employees get a permanent job offer, while the remainder become unemployed.</p></li>
-</ul>
-<p>Define the vector <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix} 600,000 &amp; 200,000 &amp; 100,000\end{bmatrix}\)</span> as the number of
-fully employed, unemployed, and probationary workers (respectively) at time <span class="math notranslate nohighlight">\(0\)</span> in the economy.</p>
-<p>Adapting the code from the lecture notes, plot the mass of all three types of employment situations in this economy for <span class="math notranslate nohighlight">\(t = 0, \ldots 20\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="question-5">
-<h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
 <p>Wikipedia and other credible statistics sources tell us that the mean and
 variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.</p>
 <p>How could we check whether the numpy random numbers approximate these
-values? (<em>hint</em>: some functions in <a class="reference internal" href="../scientific/numpy_arrays.html"><span class="doc">../scientific/numpy_arrays</span></a> and <a class="reference internal" href="../scientific/randomness.html"><span class="doc">../scientific/randomness</span></a> might be useful)</p>
+values? (<em>hint</em>: some functions in <a class="reference internal" href="../scientific/numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a> and <a class="reference internal" href="../scientific/randomness.html"><span class="doc">Randomness</span></a> might be useful)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
@@ -548,11 +516,11 @@ values? (<em>hint</em>: some functions in <a class="reference internal" href="..
 </div>
 </div>
 </div>
-<div class="section" id="question-6">
-<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question-4">
+<h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
 <p>Assume you have been given the opportunity to choose between one of three financial assets.</p>
 <p>You will be given the asset for free, allowed to hold it indefinitely, and will keep all payoffs.</p>
-<p>Also assume the assets’ payoffs are distributed as follows (the notations are the same as in “Continuous Distributions” subsection of <a class="reference internal" href="../scientific/randomness.html"><span class="doc">../scientific/randomness</span></a>):</p>
+<p>Also assume the assets’ payoffs are distributed as follows (the notations are the same as in “Continuous Distributions” subsection of <a class="reference internal" href="../scientific/randomness.html"><span class="doc">Randomness</span></a>):</p>
 <ol class="simple">
 <li><p>Normal with <span class="math notranslate nohighlight">\(\mu = 10, \sigma = 5\)</span></p></li>
 <li><p>Gamma with <span class="math notranslate nohighlight">\(k = 5.3, \theta = 2\)</span></p></li>
@@ -562,7 +530,7 @@ values? (<em>hint</em>: some functions in <a class="reference internal" href="..
 <ul class="simple">
 <li><p>Which asset has the highest average returns?</p></li>
 <li><p>Which asset has the highest median returns?</p></li>
-<li><p>Which asset has the lowest coefficient of variation, i.e., standard deviation divided by mean? (This measure is similar to “Sharpe Ratio”)</p></li>
+<li><p>Which asset has the lowest coefficient of variation, i.e., standard deviation divided by mean?</p></li>
 <li><p>Which asset would you choose? Why? (There is not a single right answer here. Just be creative and express your preferences.)</p></li>
 </ul>
 <p>You can find the official documentation of <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">here</a></p>
@@ -574,9 +542,79 @@ values? (<em>hint</em>: some functions in <a class="reference internal" href="..
 </div>
 </div>
 </div>
+<div class="section" id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h2>
+<p>Take the example with preferences over bananas (B) and apples (A) in <a class="reference internal" href="../scientific/optimization.html"><span class="doc">Optimization</span></a></p>
+<p>The consumer solves the following problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\max_{A, B} &amp; B^{\alpha}A^{1-\alpha}\\
+\text{s.t. } &amp; p_A A + B \leq W
+\end{aligned}
+\end{split}\]</div>
+<p>Fix <span class="math notranslate nohighlight">\(p_A = 2\)</span> and <span class="math notranslate nohighlight">\(\alpha = 0.33\)</span>.  Make a grid of <code class="docutils literal notranslate"><span class="pre">W</span></code> between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> and then plot the optimal ratio of B to A.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_A</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.33</span>
+
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do the same graph for <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span> and compare/interpret.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!---
+.. Next year...
+.. **TODO assignment?** See how the marginal utility changes as you take alpha towards 0 or 1, and explain.  Then look at how the indifference curves change.
+.. **TODO assignment?** Numerically demonstrate the wealth effect and the income effect in a graph using the optimization approach.  Maybe look at another utility function such as log utility?
+-->
+</div>
+<div class="section" id="question-6">
+<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h2>
+<p>Normalize the price of potato chips to be <span class="math notranslate nohighlight">\(1\)</span> and set the price of chocolate bars to be <span class="math notranslate nohighlight">\(q\)</span>.</p>
+<p>Using a similar approach as seen in the apples/bananas example above, solve for the optimal
+basket of potato chips and chocolate bars.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\max_{P, C} &amp; -(P - 20)^2 - 2 * (C - 1)^2\\
+\text{s.t. } &amp; P + q C \leq W
+\end{aligned}
+\end{split}\]</div>
+<p>Hint:  When analyzing bliss points, as in <span class="xref std std-doc">Optimization ../scientific/optimization</span>, we need to consider that they may not reach the bliss point.  Remember that in the algebra for our problems, we were only able to substitute using the budget constraint if the budget constraint is binding under optimal consumption bundles.</p>
+<p>Fix the price for chocolate bars to be <span class="math notranslate nohighlight">\(q = 10\)</span></p>
+<p>Find the optimal quantity of <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(P\)</span> for <span class="math notranslate nohighlight">\(W = 20\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, do the same thing for a grid of <span class="math notranslate nohighlight">\(W\)</span> between <span class="math notranslate nohighlight">\(20\)</span> and <span class="math notranslate nohighlight">\(50\)</span> and plot the optimal <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(P\)</span> in a single graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="question-7">
 <h2>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">¶</a></h2>
-<p>Let’s revisit the unemployment example from the <a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">../scientific/applied_linalg</span></a>.</p>
+<p>Let’s revisit the unemployment example from the <a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">Applied Linear Algebra</span></a>.</p>
 <p>We’ll repeat necessary details here.</p>
 <p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 5\%\)</span> of workers lose their jobs, and
 <span class="math notranslate nohighlight">\(\phi = 10\%\)</span> of unemployed workers find jobs.</p>

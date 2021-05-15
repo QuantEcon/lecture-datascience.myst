@@ -11,7 +11,7 @@ kernelspec:
 
 # Problem Set 2
 
-See "Check Your Understanding" from {doc}`collections <../python_fundamentals/collections>` and {doc}`control flow <../python_fundamentals/control_flow>`
+See "Check Your Understanding" from {doc}`Collections <../python_fundamentals/collections>` and {doc}`Control Flow <../python_fundamentals/control_flow>`
 
 Note:  unless stated otherwise, the timing of streams of payoffs is immediately at
 time `0` where appropriate.  For example, dividends $\{d_1, d_2, \ldots d_{\infty}\}$

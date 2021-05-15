@@ -11,7 +11,7 @@ kernelspec:
 
 # Problem Set 5
 
-See {doc}`../scientific/optimization <../scientific/optimization>`, {doc}`../pandas/intro <../pandas/intro>`, and {doc}`../pandas/basics <../pandas/basics>`
+See {doc}`Optimization <../scientific/optimization>`, {doc}`Introduction <../pandas/intro>`, and {doc}`Basic Functionality <../pandas/basics>`
 
 ```{code-cell} python
 import pandas as pd
@@ -25,7 +25,7 @@ qeds.themes.mpl_style();
 
 ## Setup for Question 1-5
 
-Load data from the {doc}`../pandas/basics <../pandas/basics>` lecture.
+Load data from the {doc}`Basic Functionality <../pandas/basics>` lecture.
 
 ```{code-cell} python
 url = "https://datascience.quantecon.org/assets/data/state_unemployment.csv"
