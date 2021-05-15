@@ -962,7 +962,7 @@ y = 1.02
 The code below is invalid Python code
 
 ```{code-cell} python
-:tags: ["remove-output"]
+:tags: ["remove-output", raises-exception]
 x = 'What's wrong with this string'
 ```
 
