@@ -16,32 +16,32 @@ on this page. They were involved in authoring/editing material, designing the we
 and providing technological support. We are grateful to each of these individuals for 
 their contributions.
 
-- [Quentin Batista](https://github.com/QBatista)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Quentin Batista](https://github.com/QBatista)
   - Becker Friedman Institute
 
-- [Kim Ruhl](http://kimjruhl.com/)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Kim Ruhl](http://kimjruhl.com/)
   - UW
 
-- [Thomas Sargent](http://www.tomsargent.com/)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Thomas Sargent](http://www.tomsargent.com/)
   - NYU
 
-- [Paul Schrimpf](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Paul Schrimpf](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
   - UBC
 
-- [Arnav Sood](https://arnavsood.com)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Arnav Sood](https://arnavsood.com)
   - UBC
 
-- [Andrij Stachurski](https://drdrij.com/)
+## <i class="fas fa-user-ninja" style="color:#1665ad"></i> [Andrij Stachurski](https://drdrij.com/)
   - Web Consultant
 
-- [John Stachurski](http://johnstachurski.net)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [John Stachurski](http://johnstachurski.net)
   - ANU
 
-- [Natasha Watkins](https://github.com/natashawatkins)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Natasha Watkins](https://github.com/natashawatkins)
   - UCLA
 
-- [Michael Waugh](http://www.waugheconomics.com/)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Michael Waugh](http://www.waugheconomics.com/)
   - NYU
 
-- [Peifan Wu](https://peifanwu.weebly.com)
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Peifan Wu](https://peifanwu.weebly.com)
   - UBC
