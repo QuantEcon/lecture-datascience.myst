@@ -11,7 +11,7 @@ kernelspec:
 
 # Problem Set 7
 
-```{code-cell} python3
+```{code-cell} python
 import matplotlib.colors as mplc
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
@@ -21,13 +21,13 @@ import qeds
 
 ## Question 1
 
-From {doc}`../applications/visualization_rules <../applications/visualization_rules>`
+From {doc}`Data Visualization: Rules and Guidelines <../applications/visualization_rules>`
 
 Create a bar chart of the below data on Canadian GDP growth.
 Use a non-red color for the years 2000 to 2008, red for
 2009, and the first color again for 2010 to 2018.
 
-```{code-cell} python3
+```{code-cell} python
 ca_gdp = pd.Series(
     [5.2, 1.8, 3.0, 1.9, 3.1, 3.2, 2.8, 2.2, 1.0, -2.8, 3.2, 3.1, 1.7, 2.5, 2.9, 1.0, 1.4, 3.0],
     index=list(range(2000, 2018))
@@ -41,7 +41,7 @@ for side in ["right", "top", "left", "bottom"]:
 
 ## Question 2
 
-From {doc}`../applications/visualization_rules <../applications/visualization_rules>`
+From {doc}`Data Visualization: Rules and Guidelines <../applications/visualization_rules>`
 
 Draft another way to organize time and education by modifying the code below.
 That is, have two subplots (one for each
@@ -50,7 +50,7 @@ education level) and four groups of points (one for each year).
 Why do you think they chose to organize the information the way they
 did rather than this way?
 
-```{code-cell} python3
+```{code-cell} python
 # Read in data
 df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
@@ -85,7 +85,7 @@ Statistics](https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp)
 that describes the cause for all US domestic flight delays
 in November 2016. We used the same data in the previous problem set.
 
-```{code-cell} python3
+```{code-cell} python
 air_perf = qeds.load("airline_performance_dec16") #[["CRSDepTime", "Carrier", "CarrierDelay", "ArrDelay"]]
 air_perf.info()
 air_perf.head
