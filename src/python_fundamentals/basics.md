@@ -961,7 +961,7 @@ y = 1.02
 
 The code below is invalid Python code
 
-```{code-cell} markdown
+```{code-cell} python
 :tags: ["remove-output"]
 x = 'What's wrong with this string'
 ```
