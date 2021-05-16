@@ -166,7 +166,7 @@ $$
 \end{aligned}
 $$
 
-Hint:  When analyzing bliss points, as in {doc}`Optimization ../scientific/optimization`, we need to consider that they may not reach the bliss point.  Remember that in the algebra for our problems, we were only able to substitute using the budget constraint if the budget constraint is binding under optimal consumption bundles.
+Hint:  When analyzing bliss points, as in {doc}`Optimization <../scientific/optimization>`, we need to consider that they may not reach the bliss point.  Remember that in the algebra for our problems, we were only able to substitute using the budget constraint if the budget constraint is binding under optimal consumption bundles.
 
 Fix the price for chocolate bars to be $q = 10$
 
