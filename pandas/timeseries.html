@@ -820,19 +820,19 @@ so let’s load up some data and take a look.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-DatetimeIndex: 2562 entries, 2014-05-01 to 2021-05-14
+DatetimeIndex: 2563 entries, 2014-05-01 to 2021-05-15
 Data columns (total 7 columns):
  #   Column             Non-Null Count  Dtype  
 ---  ------             --------------  -----  
- 0   Open               2562 non-null   float64
- 1   High               2562 non-null   float64
- 2   Low                2562 non-null   float64
- 3   Close              2562 non-null   float64
- 4   Volume (BTC)       2562 non-null   float64
- 5   Volume (Currency)  2562 non-null   float64
- 6   Weighted Price     2562 non-null   float64
+ 0   Open               2563 non-null   float64
+ 1   High               2563 non-null   float64
+ 2   Low                2563 non-null   float64
+ 3   Close              2563 non-null   float64
+ 4   Volume (BTC)       2563 non-null   float64
+ 5   Volume (Currency)  2563 non-null   float64
+ 6   Weighted Price     2563 non-null   float64
 dtypes: float64(7)
-memory usage: 160.1 KB
+memory usage: 160.2 KB
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2032,7 +2032,7 @@ like to access.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014,
             ...
             2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2562)
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2563)
 </pre></div>
 </div>
 </div>
@@ -2046,8 +2046,8 @@ like to access.</p>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
             ...
-             5,  6,  7,  8,  9, 10, 11, 12, 13, 14],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2562)
+             6,  7,  8,  9, 10, 11, 12, 13, 14, 15],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2563)
 </pre></div>
 </div>
 </div>
@@ -2743,16 +2743,6 @@ data.)</p>
   </thead>
   <tbody>
     <tr>
-      <th>2021-05-10</th>
-      <td>56763.70</td>
-      <td>58021.26</td>
-      <td>48530.00</td>
-      <td>49386.56</td>
-      <td>6367.354102</td>
-      <td>3.466229e+08</td>
-      <td>54437.515079</td>
-    </tr>
-    <tr>
       <th>2021-05-11</th>
       <td>49419.44</td>
       <td>51420.72</td>
@@ -2767,13 +2757,23 @@ data.)</p>
       <td>49711.64</td>
       <td>51572.00</td>
       <td>48875.69</td>
-      <td>49920.86</td>
-      <td>3944.777129</td>
-      <td>1.984430e+08</td>
-      <td>50305.241940</td>
+      <td>49880.43</td>
+      <td>4011.081904</td>
+      <td>2.017585e+08</td>
+      <td>50300.265936</td>
     </tr>
     <tr>
       <th>2021-05-13</th>
+      <td>49883.89</td>
+      <td>50710.93</td>
+      <td>46894.80</td>
+      <td>47933.87</td>
+      <td>3196.418141</td>
+      <td>1.552635e+08</td>
+      <td>48574.208125</td>
+    </tr>
+    <tr>
+      <th>2021-05-14</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2783,7 +2783,7 @@ data.)</p>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>2021-05-14</th>
+      <th>2021-05-15</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -3047,7 +3047,7 @@ window for the whole dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe311f8aaf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fc5591b2b80&gt;
 </pre></div>
 </div>
 <img alt="../_images/timeseries_54_1.png" src="../_images/timeseries_54_1.png" />
@@ -3524,13 +3524,13 @@ to compute the average <em>within</em> each calendar month.</p>
     </tr>
     <tr>
       <th>2021-06-30</th>
-      <td>56749.637045</td>
-      <td>58175.327273</td>
-      <td>54779.377500</td>
-      <td>56549.212273</td>
-      <td>4630.595094</td>
-      <td>2.590390e+08</td>
-      <td>56636.434630</td>
+      <td>56597.064889</td>
+      <td>58009.451778</td>
+      <td>54604.164667</td>
+      <td>56356.861778</td>
+      <td>4600.197934</td>
+      <td>2.568066e+08</td>
+      <td>56457.163463</td>
     </tr>
   </tbody>
 </table>
@@ -3865,13 +3865,13 @@ function at once.</p>
       <td>64895.22</td>
       <td>45700.00</td>
       <td>61998.90</td>
-      <td>49128.43</td>
+      <td>47933.87</td>
       <td>63564.48</td>
       <td>1440.631820</td>
       <td>12869.859374</td>
       <td>8.294065e+07</td>
       <td>7.152348e+08</td>
-      <td>49230.663906</td>
+      <td>48574.208125</td>
       <td>63314.685801</td>
     </tr>
   </tbody>
