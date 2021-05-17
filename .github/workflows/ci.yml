@@ -32,13 +32,11 @@ jobs:
         shell: bash -l {0}
         run: |
           jb build src --path-output ./
-      - name: Download "build" folder (cache)
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          workflow: publish.yml
-          branch: main
-          name: build-cache
-          path: _build
+      - name: Copy Download Notebooks for GH-PAGES
+        shell: bash -l {0}
+        run: |
+          mkdir _build/html/_notebooks
+          rsync -r  _build/jupyter/ _build/html/_notebooks/
       # - name: Build Download Notebooks (sphinx-tojupyter)
       #   shell: bash -l {0}
       #   run: |
