@@ -32,11 +32,6 @@ jobs:
         shell: bash -l {0}
         run: |
           jb build src --path-output ./ --builder=custom --custom-builder=jupyter
-      - name: Copy Download Notebooks for GH-PAGES
-        shell: bash -l {0}
-        run: |
-          mkdir _build/html/_notebooks
-          rsync -r  _build/jupyter/ _build/html/_notebooks/
       - name: Deploy website to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
