@@ -35,7 +35,6 @@ jobs:
       - name: Copy Download Notebooks for GH-PAGES
         shell: bash -l {0}
         run: |
-          mkdir _build/html/_notebooks
           rsync -r  _build/jupyter/ _build/html/_notebooks/
       # - name: Build Download Notebooks (sphinx-tojupyter)
       #   shell: bash -l {0}
