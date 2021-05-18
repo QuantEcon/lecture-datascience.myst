@@ -35,3 +35,12 @@ We expect that students' mathematical backgrounds will range widely, so for thos
 We have found that although understanding these tools will require some extra effort, it will give you a leg up in almost any career you might consider.
 ```
 
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Introduction to Numpy](../scientific/numpy_arrays.md)
+
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Plotting](../scientific/plotting.md)
+
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Applied Linear Algebra](../scientific/applied_linalg.md)
+
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Randomness](../scientific/randomness.md)
+
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Optimization](../scientific/optimization.md)

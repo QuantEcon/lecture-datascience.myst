@@ -29,3 +29,12 @@ At the end of this section, we hope you understand what you'd like to accomplish
 and that you are able to start and use a Jupyter notebook.
 
 
+## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Course Description](../introduction/overview.md)
+
+## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Getting Started](../introduction/getting_started.md)
+
+## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Cloud Setup](../introduction/cloud_setup.md)
+
+## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Local Installation](../introduction/local_install.md)
+
+## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Troubleshooting](../introduction/troubleshooting.md)
