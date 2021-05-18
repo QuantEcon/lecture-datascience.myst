@@ -379,7 +379,7 @@ Key criteria for tuple use are when you want to:
 - ensure the actual values of the elements can't
   change
 - use the collection as a key in a dict (we will learn what this
-  means {doc}`soon <collections>`)
+  means {ref}`soon <dictionaries>`)
 
 ### `zip` and `enumerate`
 
@@ -470,7 +470,7 @@ print(m)
 ```
 
 ## Associative Collections
-
+(dictionaries)=
 ### Dictionaries
 
 A dictionary (or dict) associates `key`s with `value`s.
