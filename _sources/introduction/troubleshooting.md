@@ -24,7 +24,7 @@ Here are instructions to restore some or all lectures to their original states.
 
 To refresh a **single** notebook:
 
-1. Open the lecture folder in the JupyterHub where it's installed (e.g., the [PIMS Syzygy](https://quantecon.syzygy.ca) server.)
+1. Open the lecture folder in the JupyterHub where it's installed (e.g., the [PIMS Syzygy](https://pims.syzygy.ca) server.)
 1. Navigate to the lecture in question (i.e., by double-clicking on the folder for that section), and delete it by right-clicking.
 1. Go back to the {doc}`lectures website <../index>`, navigate to the page for that lecture.
 1. Make sure the settings wheel next to the launch bar is pointing at the right hub, and click the link again. This will repopulate the file freshly from the server.

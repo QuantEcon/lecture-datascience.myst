@@ -516,7 +516,7 @@ $$
 V_A = p_A \sum_{t=0}^{\infty}\left(\frac{1}{1 + r}\right)^t (x_{A0} \gamma_A^t) = x_{A0}\sum_{t=0}^{\infty}\left(\frac{\gamma_A}{1 + r}\right)^t
 $$
 
-And, using the infinite sum formula from {doc}`../python_fundamentals/control_flow <../python_fundamentals/control_flow>` (i.e. $\sum_{t=0}^{\infty}\beta^t = (1 - \beta)^{-1}$)
+And, using the infinite sum formula from {doc}`Control Flow <../python_fundamentals/control_flow>` (i.e. $\sum_{t=0}^{\infty}\beta^t = (1 - \beta)^{-1}$)
 
 $$
 = \frac{p_A x_{A0}}{1 - \left(\gamma_A\frac{1}{1 + r} \right)}
