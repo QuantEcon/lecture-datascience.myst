@@ -65,7 +65,7 @@ observation.
 
 pandas refers to the row labels as the *index* of the Series.
 
-```{figure} https://datascience.quantecon.org/assets/_static/intro_files/PandasSeries.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/PandasSeries.png
 :alt: PandasSeries.png
 ```
 
@@ -170,7 +170,7 @@ In addition to row labels (an index), DataFrames also have column labels.
 
 We refer to these column labels as the columns or column names.
 
-```{figure} https://datascience.quantecon.org/assets/_static/intro_files/PandasDataFrame.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/PandasDataFrame.png
 :alt: PandasDataFrame.png
 ```
 
