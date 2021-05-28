@@ -25,6 +25,16 @@ jobs:
       - name: Display Pip Versions
         shell: bash -l {0}
         run: pip list
+      # Build Assets (Download Notebooks and PDF via LaTeX)
+      # - name: Build PDF from LaTeX
+      #   shell: bash -l {0}
+      #   run: |
+      #     jb build src --builder pdflatex --path-output ./ -n --keep-going
+      # - name: Copy LaTeX PDF for GH-PAGES
+      #   shell: bash -l {0}
+      #   run: |
+      #     mkdir -p _build/html/_pdf
+      #     cp -u _build/latex/*.pdf _build/html/_pdf
       - name: Build Download Notebooks (sphinx-tojupyter)
         shell: bash -l {0}
         run: |
@@ -39,6 +49,7 @@ jobs:
         run: |
           mkdir -p _build/html/_notebooks
           rsync -r  _build/jupyter/ _build/html/_notebooks/
+      # Build Website
       - name: Build HTML
         shell: bash -l {0}
         run: |
@@ -48,29 +59,25 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html/
+          # cname: datascience.quantecon.org
       - name: Upload "_build" folder (cache)
         uses: actions/upload-artifact@v2
         with:
-          name: build-cache
+          name: build-publish
           path: _build
-      - name: Prepare lecture-datascience.notebooks sync
-        shell: bash -l {0}
-        run: |
-          mkdir -p _build/lecture-datascience.notebooks
-          cp -a _build/jupyter/. _build/lecture-datascience.notebooks
-          ls -a _build/lecture-datascience.notebooks
-      - name: Commit latest notebooks to lecture-datascience.notebooks
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: '_build/lecture-datascience.notebooks'
-          destination-github-username: 'QuantEcon'
-          destination-repository-name: 'lecture-datascience.notebooks'
-          user-email: services@quantecon.org
-          target-branch: 'main'
-
-          
-
-          
-          # cname: datascience.quantecon.org
+      # - name: Prepare lecture-datascience.notebooks sync
+      #   shell: bash -l {0}
+      #   run: |
+      #     mkdir -p _build/lecture-datascience.notebooks
+      #     cp -a _build/jupyter/. _build/lecture-datascience.notebooks
+      #     ls -a _build/lecture-datascience.notebooks
+      # - name: Commit latest notebooks to lecture-datascience.notebooks
+      #   uses: cpina/github-action-push-to-another-repository@main
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     source-directory: '_build/lecture-datascience.notebooks'
+      #     destination-github-username: 'QuantEcon'
+      #     destination-repository-name: 'lecture-datascience.notebooks'
+      #     user-email: services@quantecon.org
+      #     target-branch: 'main'
