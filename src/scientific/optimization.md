@@ -109,7 +109,7 @@ f'(x) = 4 x^3 - 6 x = 0
 $$
 
 $$
-\rightarrow x = \{0, \frac{\sqrt{6}}{2}, \frac{-\sqrt{6}}{2} \}
+\rightarrow x = \left\{0, \frac{\sqrt{6}}{2}, \frac{-\sqrt{6}}{2} \right\}
 $$
 
 Let's check whether we can get the same answers with Python! To do this, we import a new
