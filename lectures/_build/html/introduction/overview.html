@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Description &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/introduction/overview.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/introduction/overview.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Course Description" />
+<meta property="og:description" content="Course Description  Course Objectives and Scope  Scope of Lecture Notes  This course is a lecture series on data science, economics, programming, and how they c" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/introduction/overview.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-objectives-and-scope">
+   Course Objectives and Scope
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scope-of-lecture-notes">
+     Scope of Lecture Notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#course-outline">
+     Course Outline
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculus">
+     Calculus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra">
+     Linear Algebra
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability">
+     Probability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#economics">
+     Economics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="course-description">
+<h1>Course Description<a class="headerlink" href="#course-description" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="course-objectives-and-scope">
+<h2>Course Objectives and Scope<a class="headerlink" href="#course-objectives-and-scope" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scope-of-lecture-notes">
+<h3>Scope of Lecture Notes<a class="headerlink" href="#scope-of-lecture-notes" title="Permalink to this headline">¶</a></h3>
+<p>This course is a lecture series on data science, economics, programming, and how
+they can be used to understand the world around us.</p>
+<p>We envision this as a complement to econometrics. We focus on learning practical programming
+skills for the workplace and future studies in economics and finance.</p>
+<p>Unlike courses in computer science, data science, or statistics, the emphasis of this course
+includes both the programming and the statistics necessary to analyze data <em>and</em> subsequently
+interpret results through the lens of economics.</p>
+<p>While anyone with the appropriate prerequisites will benefit from this course, undergraduate
+programs will find the lecture series suitable for 2nd to 3rd year students who have taken two
+calculus classes and their school’s equivalent of Econ 101. No prior programming experience is
+required.</p>
+<p>Students who complete this course will be prepared to:</p>
+<ul class="simple">
+<li><p>Work in a data analyst or a data science role with the ability to frame problems in a broader
+economic context and provide unique insights associated with that context, and/or,</p></li>
+<li><p>Continue onto QuantEcon’s “Lectures in Quantitative Economics” in preparation for graduate school
+in economics, policy, or other related fields.</p></li>
+</ul>
+<p>To get an idea of what one can do after taking this course, please take a look at <a class="reference internal" href="../theme/projects.html"><span class="doc std std-doc">previous student projects</span></a>.</p>
+</div>
+<div class="section" id="course-outline">
+<h3>Course Outline<a class="headerlink" href="#course-outline" title="Permalink to this headline">¶</a></h3>
+<p>The essential outcome of the course is: Students will be able to recognize and understand the
+connections between economic theory and the practice of data science, expanding beyond atheoretical
+statistical approaches.</p>
+<p>The course is divided into three segments.</p>
+<p>The first segment of this course covers programming and basic scientific computing in Python by
+re-examining basic Econ 101 concepts and models.</p>
+<p>This provides a natural introduction to thinking of economics as a quantitative discipline, with
+principles and applications grounded in real world problems.</p>
+<p>The second segment dives into data analysis and data science, with the associated data wrangling
+skills, as a way to leverage economic data, tools, and concepts.</p>
+<p>The final segment is a sequence of case studies designed to help students answer specific questions
+and recommend solutions.</p>
+<p>Students will learn and apply more advanced techniques and models, as well as examine new data sources.</p>
+</div>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>While we have kept the prerequisites to a minimum, some degree of mathematical fluency is required.</p>
+<p>Most importantly, while familiarity with computers is expected, <strong>no</strong> programming knowledge is
+required for this course.</p>
+<p>To summarize the background we expect that you should have at least: (1) an introductory “ECON 101”
+class; (2) one to two terms of calculus; and (3) either an elementary course in matrix algebra, or a
+willingness to learn the basics on your own.</p>
+<div class="section" id="calculus">
+<h3>Calculus<a class="headerlink" href="#calculus" title="Permalink to this headline">¶</a></h3>
+<p>You should have one course (and possibly two, depending on your university) in Calculus.</p>
+<p>The core concepts used throughout the lectures are</p>
+<ul class="simple">
+<li><p>Basic rules of differentiation of univariate functions (e.g. chain rule, product rule)</p></li>
+<li><p>Exponentials, natural logarithms, and their derivatives</p></li>
+<li><p>Inverse functions and implicit functions</p></li>
+<li><p>Maximization/minimization of univariate functions</p></li>
+<li><p>Sequences, series, and infinite series</p></li>
+<li><p>Partial derivatives and multivariate functions</p></li>
+<li><p>Unconstrained Minimization and maximization of multivariate functions</p></li>
+<li><p>Simple constrained optimization (including Lagrange multipliers)</p></li>
+</ul>
+</div>
+<div class="section" id="linear-algebra">
+<h3>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this headline">¶</a></h3>
+<p>If you have not taken a first course in applied linear algebra or matrix algebra, you will need to
+learn concepts of</p>
+<ul class="simple">
+<li><p>Vectors and matrices</p></li>
+<li><p>Matrices and systems of linear equations</p></li>
+<li><p>Dimension and rank</p></li>
+<li><p>Matrix operations (e.g. addition, multiplication, inverse)</p></li>
+<li><p>Inner products</p></li>
+<li><p>Least squares</p></li>
+</ul>
+</div>
+<div class="section" id="probability">
+<h3>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h3>
+<p>Basic probability is sometimes covered in a second calculus course, but if you have never
+encountered the topics, then review</p>
+<ul class="simple">
+<li><p>Basic probability of discrete and continuous distributions</p></li>
+<li><p>Conditional and marginal distributions</p></li>
+<li><p>Expected value, variance, and standard deviation</p></li>
+</ul>
+</div>
+<div class="section" id="economics">
+<h3>Economics<a class="headerlink" href="#economics" title="Permalink to this headline">¶</a></h3>
+<p>While more economics is always better, we will try to assume an “Econ 101” background.</p>
+<p>Otherwise, we will try to provide additional background material on the economics topics.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">Getting Started</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

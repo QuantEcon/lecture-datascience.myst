@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Installation &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/introduction/local_install.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Cloud Setup" href="cloud_setup.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/introduction/local_install.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Local Installation" />
+<meta property="og:description" content="Local Installation  Installation  Visit continuum.io and download the Anaconda Python distribution for your operating system (Windows/Mac OS/Linux).  Be sure to" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/introduction/local_install.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-the-quantecon-data-science-lectures">
+   Downloading the QuantEcon Data Science Lectures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-management">
+   Package Management
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-jupyter">
+   Starting Jupyter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opening-a-jupyter-notebook">
+     Opening a Jupyter Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="local-installation">
+<h1>Local Installation<a class="headerlink" href="#local-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Visit <a class="reference external" href="https://www.anaconda.com/download">continuum.io</a> and download the
+Anaconda Python distribution for your operating system (Windows/Mac OS/Linux).</p>
+<p>Be sure to download the Python 3.X (where X is some number greater than or equal to 8) version, not
+the 2.7 version.</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/install_python.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/install_python.png" />
+</div>
+<br>
+<p>Make sure that during the installation <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a>
+is added to your environment/path.</p>
+<p>On Mac OS and Linux, this should happen by default.</p>
+<p>For Windows users, we recommend installing for “just me” instead of “all users”. Windows users will need to <strong>check the upper box</strong> when the page shown below appears (disregard the “not recommended” warning from Anaconda).</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/install_python_path.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/install_python_path.png" />
+</div>
+</div>
+<div class="section" id="downloading-the-quantecon-data-science-lectures">
+<h2>Downloading the QuantEcon Data Science Lectures<a class="headerlink" href="#downloading-the-quantecon-data-science-lectures" title="Permalink to this headline">¶</a></h2>
+<p>To download the QuantEcon Data Science lectures, we use the <code class="docutils literal notranslate"><span class="pre">Clone</span></code> button on the toolbar
+as seen in the following image.</p>
+<br>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/clone_button.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/clone_button.png" />
+</div>
+<br>
+<p>You can download the lectures through either <strong>Github Desktop</strong> or <strong>Terminal</strong>:</p>
+<p><strong>Github Desktop</strong> (Mac/Windows only), recommended for most users.</p>
+<ol>
+<li><p>Install <a class="reference external" href="https://desktop.github.com/">Github Desktop</a>.</p></li>
+<li><p>Click the “Open in Github Desktop” option in the clone button menu. It should open a Github
+Desktop popup that looks like this:</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/download_lectures_github_desktop.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/download_lectures_github_desktop.png" />
+</div>
+<p>You should choose the path (folder) where you would like to download the repository. The default path on
+Windows should be <code class="docutils literal notranslate"><span class="pre">C:/Users/YOUR_USERNAME/Documents/GitHub</span></code>.</p>
+</li>
+</ol>
+<p><strong>Terminal</strong></p>
+<ol class="simple">
+<li><p>Make sure that <code class="docutils literal notranslate"><span class="pre">git</span></code> is installed on your computer. (<code class="docutils literal notranslate"><span class="pre">git</span></code> is not installed on Windows by default. You can download and install it from <a class="reference external" href="https://git-scm.com/download/win">here</a>).</p></li>
+<li><p>Open a terminal.</p></li>
+<li><p>Set the path to where you would like to download the lectures. The default one is your home directory.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/QuantEcon/lecture-datascience.notebooks</span></code> which will
+download the repository with notebooks in your working directory. <em>Pro tip</em>: If you would rather
+not type this command on your own, you can click “Copy clone command to clipboard” on the clone
+button menu and paste it into the terminal.</p></li>
+</ol>
+</div>
+<div class="section" id="package-management">
+<h2>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h2>
+<p>In addition to Jupyter, the Anaconda Python distribution comes with two package management tools <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>These will help you ensure that you have the right packages (think of these as “add-ons” to Python
+that give you additional functionality… We will discuss these more in depth later!) and help you
+keep them all up to date.</p>
+<p>We will work through an example below to install some new package functionality needed for some
+later lectures. Generally, packages can be installed by using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;package</span> <span class="pre">name&gt;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package</span> <span class="pre">name&gt;</span></code>.</p>
+<p>Please install the packages you will need later by following the instructions below for your
+computer’s operating system.</p>
+<p><strong>Linux/Mac</strong></p>
+<ul>
+<li><p>Open a terminal.</p></li>
+<li><p>Run the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Python packages</span>
+conda install python-graphviz
+conda install -c conda-forge <span class="s2">&quot;nodejs&gt;=10.0&quot;</span> xgboost
+pip install qeds fiona geopandas pyLDAvis gensim folium descartes pyarrow --upgrade
+
+<span class="c1"># Activate jlab extensions</span>
+jupyter labextension install @jupyterlab/toc  --no-build
+jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
+jupyter labextension install plotlywidget --no-build
+jupyter labextension install jupyterlab-plotly --no-build
+jupyter lab build
+</pre></div>
+</div>
+<p>Press <code class="docutils literal notranslate"><span class="pre">y</span></code> and enter whenever you see <code class="docutils literal notranslate"><span class="pre">Proceed</span> <span class="pre">[y]/n</span></code> from your terminal.</p>
+</li>
+<li><p>Close the terminal when the installation finishes.</p></li>
+</ul>
+<p><strong>Windows</strong></p>
+<ul>
+<li><p>Open a command prompt by pressing Windows + R to open the <code class="docutils literal notranslate"><span class="pre">run</span></code> box, type <code class="docutils literal notranslate"><span class="pre">powershell</span></code>, and press
+Enter.</p></li>
+<li><p>Run the following commands in order:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Python packages</span>
+conda install geopandas python-graphviz
+conda install -c conda-forge nodejs
+pip install qeds pyLDAvis gensim folium xgboost descartes pyarrow graphviz --upgrade
+
+<span class="c1"># Activate jlab extensions</span>
+jupyter labextension install @jupyterlab/toc  --no-build
+jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
+jupyter labextension install plotlywidget --no-build
+jupyter labextension install jupyterlab-plotly --no-build
+jupyter lab build
+</pre></div>
+</div>
+<p>Press <code class="docutils literal notranslate"><span class="pre">y</span></code> and enter whenever you see <code class="docutils literal notranslate"><span class="pre">Proceed</span> <span class="pre">[y]/n</span></code> from your terminal.</p>
+</li>
+<li><p>Close the command window after the installation finishes, log out of Windows, and then log in.</p></li>
+</ul>
+<p>If you are told that you are missing a package at any point in time, we recommend trying to install
+the package with <code class="docutils literal notranslate"><span class="pre">conda</span></code> first and, if that doesn’t work, installing with <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>You can update a package by running:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">&lt;package</span> <span class="pre">name&gt;</span></code> for conda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package</span> <span class="pre">name&gt;</span> <span class="pre">--upgrade</span></code> for pip</p></li>
+</ul>
+<p><strong>Note:</strong> If you have errors using <code class="docutils literal notranslate"><span class="pre">graphviz</span></code> on Windows, then open a <code class="docutils literal notranslate"><span class="pre">powershell</span></code> terminal and execute the following two lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$pp = (python -c &quot;import sys; print(sys.exec_prefix)&quot;)
+
+Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value &quot;$((Get-ItemProperty -path HKCU:\Environment\ -Name Path).Path);$($pp)\Library\bin\graphviz&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="starting-jupyter">
+<h2>Starting Jupyter<a class="headerlink" href="#starting-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Start JupyterLab by following these steps:</p>
+<ol class="simple">
+<li><p>Open a new terminal (for Windows, you should use the Powershell: press Win + R and type
+<code class="docutils literal notranslate"><span class="pre">powershell</span></code> in the run box, then hit enter).</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> and press Enter.</p></li>
+</ol>
+<p>If a web browser doesn’t open by default, look at the terminal text and find something that looks
+like:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Copy/paste this URL into your browser when you connect for the first time,
+to login with a token:
+    http://localhost:8888/?token=9a39d3741a4f0b200c6e4b07d8e5c04a089899cddc72e7f8
+</pre></div>
+</div>
+<p>and copy/paste the line starting with <code class="docutils literal notranslate"><span class="pre">http://</span></code> into your web browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The terminal you opened must stay open while you are editing the notebooks.</p>
+</div>
+<div class="section" id="opening-a-jupyter-notebook">
+<h3>Opening a Jupyter Notebook<a class="headerlink" href="#opening-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<p>Once the web browser is open, you should see the JupyterLab dashboard. You can open a new Jupyter
+notebook by clicking Python 3 when you see something like the following image in your browser:</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_lab.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_lab.png" />
+</div>
+<br>
+<p>Once the notebook is open, you should something similar to the following image:</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_lab_notebook.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_lab_notebook.png" />
+</div>
+<br>
+<p>Note that:</p>
+<ul class="simple">
+<li><p>The filenames on the left will be different.</p></li>
+<li><p>It <em>should</em> list the contents of your personal home directory (folder).</p></li>
+</ul>
+<div class="admonition-exercise admonition" id="dir1-2-1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#ex1-2"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ex1-2"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Open this file in Jupyter by navigating to the QuantEcon Data Science folder that we downloaded
+earlier, then click on the <code class="docutils literal notranslate"><span class="pre">introduction</span></code> folder, and select the <code class="docutils literal notranslate"><span class="pre">getting_started.ipynb</span></code> file.</p>
+<p>(<a class="reference internal" href="#dir1-2-1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="cloud_setup.html" title="previous page">Cloud Setup</a>
+    <a class='right-next' id="next-link" href="troubleshooting.html" title="next page">Troubleshooting</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimization &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/scientific/optimization.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pandas" href="../pandas/index.html" />
+    <link rel="prev" title="Randomness" href="randomness.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/scientific/optimization.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Optimization" />
+<meta property="og:description" content="Optimization  Prerequisites  Introduction to Numpy  Applied Linear Algebra  Outcomes  Perform optimization by hand using derivatives  Understand ideas from grad" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Scientific Computing
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/scientific/optimization.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-optimization">
+   What is Optimization?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derivatives-and-optima">
+     Derivatives and Optima
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-consumer-theory">
+     Application: Consumer Theory
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#preferences-and-utility-functions">
+       Preferences and Utility Functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#budget-constraints">
+       Budget Constraints
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optimal-choice">
+       Optimal Choice
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#satiation-point">
+       Satiation Point
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="optimization">
+<h1>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
+<li><p><a class="reference internal" href="applied_linalg.html"><span class="doc">Applied Linear Algebra</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Perform optimization by hand using derivatives</p></li>
+<li><p>Understand ideas from gradient descent</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install qeds</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># imports for later</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># activate plot theme</span>
+<span class="kn">import</span> <span class="nn">qeds</span>
+<span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-is-optimization">
+<h2>What is Optimization?<a class="headerlink" href="#what-is-optimization" title="Permalink to this headline">¶</a></h2>
+<p>Optimization is the branch of mathematics focused on finding extreme values (max or min) of
+functions.</p>
+<p>Optimization tools will appear in many places throughout this course, including:</p>
+<ul class="simple">
+<li><p>Building economic models in which individuals make decisions that maximize their utility.</p></li>
+<li><p>Building statistical models and maximizing the fit of these models by optimizing certain fit
+functions.</p></li>
+</ul>
+<p>In this lecture, we will focus mostly on the first to limit the moving pieces, but in other lectures, we’ll discuss the second in detail.</p>
+<div class="section" id="derivatives-and-optima">
+<h3>Derivatives and Optima<a class="headerlink" href="#derivatives-and-optima" title="Permalink to this headline">¶</a></h3>
+<p>Here, we revisit some of the theory that you have already learned in your calculus class.</p>
+<p>Consider function <span class="math notranslate nohighlight">\(f(x)\)</span> which maps a number into another number. We can say that any point
+where <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> is a local extremum of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Let’s work through an example. Consider the function</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^4 - 3 x^2
+\]</div>
+<p>Its derivative is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x} = 4 x^3 - 6 x
+\]</div>
+<p>Let’s plot the function and its derivative to pick out the local extremum by hand.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+
+<span class="k">def</span> <span class="nf">fp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span>
+
+<span class="c1"># Create 100 evenly spaced points between -2 and 2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Evaluate the functions at x values</span>
+<span class="n">fx</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">fpx</span> <span class="o">=</span> <span class="n">fp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Create plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fx</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Function&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fpx</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Derivative&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_ax</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">:</span>
+    <span class="n">_ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/optimization_3_0.png" src="../_images/optimization_3_0.png" />
+</div>
+</div>
+<p>If you stare at this picture, you can probably determine the the local maximum is at
+<span class="math notranslate nohighlight">\(x = 0\)</span> and the local minima at <span class="math notranslate nohighlight">\(x \approx -1\)</span> and <span class="math notranslate nohighlight">\(x \approx 1\)</span>.</p>
+<p>To properly determine the minima and maxima, we find the solutions to <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> below:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = 4 x^3 - 6 x = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\rightarrow x = \{0, \frac{\sqrt{6}}{2}, \frac{-\sqrt{6}}{2} \}
+\]</div>
+<p>Let’s check whether we can get the same answers with Python! To do this, we import a new
+package that we haven’t seen yet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">opt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then using the function definitions from earlier, we search for the minimum and maximum values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a scalar problem, we give it the function and the bounds between</span>
+<span class="c1"># which we want to search</span>
+<span class="n">neg_min</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>
+<span class="n">pos_min</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The negative minimum is: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">neg_min</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The positive minimum is: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pos_min</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The negative minimum is: 
+      fun: -2.2499999999999996
+    nfev: 16
+     nit: 12
+ success: True
+       x: -1.2247448697638397
+The positive minimum is: 
+      fun: -2.2499999999999996
+    nfev: 16
+     nit: 12
+ success: True
+       x: 1.2247448697638397
+</pre></div>
+</div>
+</div>
+</div>
+<p>The scipy optimize package only has functions that find minimums… You might be wondering, then, how we
+will verify our maximum value.</p>
+<p>It turns out that finding the maximum is equivalent to simply finding the minimum of the negative function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a function that evaluates to negative f</span>
+<span class="k">def</span> <span class="nf">neg_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">max_out</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">minimize_scalar</span><span class="p">(</span><span class="n">neg_f</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The maximum is: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">max_out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The maximum is: 
+      fun: 1.1519919564363613e-23
+    nfev: 13
+     nit: 9
+ success: True
+       x: 1.9595849530247992e-12
+</pre></div>
+</div>
+</div>
+</div>
+<p>We won’t dive into the details of optimization algorithms in this lecture, but we’ll impart some brief
+intuition to help you understand the types of problems these algorithms are good at solving and
+the types of problems they will struggle with:</p>
+<p>The general intuition is that when you’re finding a maximum, an algorithm takes a step
+in the direction of the derivative… (Conversely, to find a minimum, the algorithm takes a step opposite the direction of the derivative.)
+This requires the function to be relatively smooth and continuous. The algorithm also has an easier time if there is only one (or very few) extremum to be found…</p>
+<p>For minimization, you can imagine the algorithm as a marble in a bowl.</p>
+<p>The marble will keep rolling down the slope of the bowl until it finds the bottom.</p>
+<p>It may overshoot, but once it hits the slope on the other side, it will continue to roll back
+and forth until it comes to rest.</p>
+<p>Thus, when deciding whether numerical optimization is an effective method for a
+particular problem, you could try visualizing the function to determine whether a marble
+would be able to come to rest at the extreme values you are looking for.</p>
+</div>
+<div class="section" id="application-consumer-theory">
+<h3>Application: Consumer Theory<a class="headerlink" href="#application-consumer-theory" title="Permalink to this headline">¶</a></h3>
+<p>A common use of maximization in economics is to model
+optimal consumption decisions <a class="reference external" href="https://en.wikipedia.org/wiki/Consumer_choice">https://en.wikipedia.org/wiki/Consumer_choice</a>.</p>
+<div class="section" id="preferences-and-utility-functions">
+<h4>Preferences and Utility Functions<a class="headerlink" href="#preferences-and-utility-functions" title="Permalink to this headline">¶</a></h4>
+<p>To summarize introductory economics, take a set of
+<a class="reference external" href="https://en.wikipedia.org/wiki/Preference_%28economics%29">preferences</a> of consumers over “bundles”
+of goods (e.g. 2 apples and 3 oranges is preferred to 3 apples and 2 oranges, or a 100% chance to
+win <span class="math notranslate nohighlight">\(1\)</span> dollar is preferred to a 50% chance to win <span class="math notranslate nohighlight">\(2.10\)</span> dollars).</p>
+<p>Under certain assumptions, you rationalize the preferences as a utility function over the different
+goods (always remembering that the utility is simply a tool to order preferences and the numbers are
+usually not meaningful themselves).</p>
+<p>For example, consider a utility function over bundles of bananas (B) and apples (A)</p>
+<div class="math notranslate nohighlight">
+\[
+U(B, A) = B^{\alpha}A^{1-\alpha}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\alpha \in [0,1]\)</span>.</p>
+<p>First, let’s take a look at this particular utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">U</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">B</span><span class="o">**</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">A</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">U</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;U(B=1.5, A)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;U(B=1.5, A)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/optimization_11_1.png" src="../_images/optimization_11_1.png" />
+</div>
+</div>
+<p>We note that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U(B,1)\)</span> is always higher with more B, hence, consuming more bananas has a
+: positive marginal utility  i.e. <span class="math notranslate nohighlight">\(\frac{d U(B,1)}{d B} &gt; 0\)</span>.</p></li>
+<li><p>The more bananas we consume, the smaller the change in marginal utility, i.e.
+<span class="math notranslate nohighlight">\(\frac{d^2 U(B,1)}{d B^2} &lt; 0\)</span>.</p></li>
+</ul>
+<p>If we plot both the <span class="math notranslate nohighlight">\(B\)</span> and the <span class="math notranslate nohighlight">\(A\)</span>, we can see how the utility changes with different
+bundles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">contours</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">U</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;U(A,B)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;U(A,B)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/optimization_13_1.png" src="../_images/optimization_13_1.png" />
+</div>
+</div>
+<p>We can find the bundles between which the consumer would be indifferent by fixing a
+utility <span class="math notranslate nohighlight">\(\bar{U}\)</span> and by determining all combinations of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> where
+<span class="math notranslate nohighlight">\(\bar{U} = U(B, A)\)</span>.</p>
+<p>In this example, we can implement this calculation by letting <span class="math notranslate nohighlight">\(B\)</span> be the variable on the
+x-axis and solving for <span class="math notranslate nohighlight">\(A(\bar{U}, B)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+A(B, \bar{U}) = U^{\frac{1}{1-\alpha}}B^{\frac{-\alpha}{1-\alpha}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">A_indifference</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ubar</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ubar</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span> <span class="o">*</span> <span class="n">B</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">plot_indifference_curves</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ubar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">A_indifference</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">ubar</span><span class="p">,</span> <span class="n">alpha</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="sa">r</span><span class="s2">&quot;$\bar</span><span class="si">{U}</span><span class="s2">$&quot;</span> <span class="o">+</span> <span class="s2">&quot; = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ubar</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$A(B, \bar</span><span class="si">{U}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plot_indifference_curves</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/optimization_15_0.png" src="../_images/optimization_15_0.png" />
+</div>
+</div>
+<p>Note that in every case, if you increase either the number of apples or bananas (holding the other
+fixed), you reach a higher indifference curve.</p>
+<p>Consequently, in a world without scarcity or budgets, consumers would consume
+an arbitrarily high number of both to maximize their utility.</p>
+</div>
+<div class="section" id="budget-constraints">
+<h4>Budget Constraints<a class="headerlink" href="#budget-constraints" title="Permalink to this headline">¶</a></h4>
+<p>While the above example plots consumer preferences, it says nothing about what the consumers can afford.</p>
+<p>The simplest sort of constraint is a budget constraint where bananas and apples both have a price
+and the consumer has a limited amount of funds.</p>
+<p>If the prices per banana and per apple are identical, no matter how many you consume, then the
+affordable bundles are simply all pairs of apples and bananas below the line.
+<span class="math notranslate nohighlight">\(p_a A + p_b B \leq W\)</span>.</p>
+<p>For example, if consumer has a budget of <span class="math notranslate nohighlight">\(W\)</span>, the price of apples is <span class="math notranslate nohighlight">\(p_A = 2\)</span> dollars per
+apple, and the price of bananas is normalized to be <span class="math notranslate nohighlight">\(p_B = 1\)</span> dollar per banana, then the consumer
+can afford anything below the line.</p>
+<div class="math notranslate nohighlight">
+\[
+2 A + B \leq W
+\]</div>
+<p>Or, letting <span class="math notranslate nohighlight">\(W = 20\)</span> and plotting</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">A_bc</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="s2">&quot;Given B, W, and pa return the max amount of A our consumer can afford&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">W</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">/</span> <span class="n">pa</span>
+
+<span class="k">def</span> <span class="nf">plot_budget_constraint</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">B_bc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">W</span><span class="p">])</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">A_bc</span><span class="p">(</span><span class="n">B_bc</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">pa</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">B_bc</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">B_bc</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plot_budget_constraint</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x25274a48bb0&gt;
+</pre></div>
+</div>
+<img alt="../_images/optimization_17_1.png" src="../_images/optimization_17_1.png" />
+</div>
+</div>
+<p>While the consumer can afford any of the bundles in that area, most will not be optimal.</p>
+</div>
+<div class="section" id="optimal-choice">
+<h4>Optimal Choice<a class="headerlink" href="#optimal-choice" title="Permalink to this headline">¶</a></h4>
+<p>Putting the budget constraints and the utility functions together lets us visualize the optimal
+decision of a consumer. Choose the bundle with the highest possible indifference curve within its
+budget set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plot_indifference_curves</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plot_budget_constraint</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x25274968fd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/optimization_19_1.png" src="../_images/optimization_19_1.png" />
+</div>
+</div>
+<p>We have several ways to find the particular point <span class="math notranslate nohighlight">\(A, B\)</span> of maximum utility, such as
+finding the point where the indifference curve and the budget constraint have the same slope, but a
+simple approach is to just solve the direct maximization problem.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\max_{A, B} &amp; B^{\alpha}A^{1-\alpha}\\
+\text{s.t. } &amp; p_A A + B \leq W
+\end{aligned}
+\end{split}\]</div>
+<p>Solving this problem directly requires solving a multi-dimensional constrained optimization problem,
+where scipy <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html#constrained-minimization-of-multivariate-scalar-functions-minimize">https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html#constrained-minimization-of-multivariate-scalar-functions-minimize</a>
+has several options.</p>
+<p>For this particular problem, we notice two things: (1) The utility function is increasing in both
+<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, and (2) there are only 2 goods.</p>
+<p>This allows us 1) to assume that the budget constraint holds at equality, <span class="math notranslate nohighlight">\(p_a A + B = W\)</span>, 2) to
+form a new function <span class="math notranslate nohighlight">\(A(B) = (W - B) / p_a\)</span> by rearranging the budget constraint at equality, and
+3) to substitute that function directly to form:</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{B}  B^{\alpha}A(B)^{1-\alpha}
+\]</div>
+<p>Compared to before, this problem has been turned into an unconstrained univariate optimization
+problem.</p>
+<p>To implement this in code, notice that the <span class="math notranslate nohighlight">\(A(B)\)</span> function is what we defined before
+as <code class="docutils literal notranslate"><span class="pre">A_bc</span></code>.</p>
+<p>We will solve this by using the function <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize_scalar</span></code>, which takes a function
+<code class="docutils literal notranslate"><span class="pre">f(x)</span></code> and returns the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> that minimizes <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize_scalar</span>
+
+<span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return value of -U for a given B, when we consume as much A as possible</span>
+
+<span class="sd">    Note that we return -U because scipy wants to minimize functions,</span>
+<span class="sd">    and the value of B that minimizes -U will maximize U</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">A_bc</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">pa</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">U</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">objective</span><span class="p">)</span>
+<span class="n">optimal_B</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+<span class="n">optimal_A</span> <span class="o">=</span> <span class="n">A_bc</span><span class="p">(</span><span class="n">optimal_B</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">optimal_U</span> <span class="o">=</span> <span class="n">U</span><span class="p">(</span><span class="n">optimal_A</span><span class="p">,</span> <span class="n">optimal_B</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The optimal U is &quot;</span><span class="p">,</span> <span class="n">optimal_U</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;and was found at (A,B) =&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">optimal_A</span><span class="p">,</span> <span class="n">optimal_B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The optimal U is  6.666666666666667
+and was found at (A,B) = (6.666666630651958, 6.666666738696083)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This allows us to do experiments, such as examining how consumption patterns change as prices or
+wealth levels change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create various prices</span>
+<span class="n">n_pa</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">prices_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">n_pa</span><span class="p">)</span>
+<span class="n">W</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># Create lists to store the results of the optimal A and B calculation</span>
+<span class="n">optimal_As</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">optimal_Bs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pa</span> <span class="ow">in</span> <span class="n">prices_A</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">minimize_scalar</span><span class="p">(</span><span class="n">objective</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">pa</span><span class="p">))</span>
+    <span class="n">opt_B_val</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="n">optimal_Bs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opt_B_val</span><span class="p">)</span>
+    <span class="n">optimal_As</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A_bc</span><span class="p">(</span><span class="n">opt_B_val</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">pa</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prices_A</span><span class="p">,</span> <span class="n">optimal_As</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Purchased Apples&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">prices_A</span><span class="p">,</span> <span class="n">optimal_Bs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Purchased Bananas&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Price of Apples&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x25274b2b490&gt;
+</pre></div>
+</div>
+<img alt="../_images/optimization_23_1.png" src="../_images/optimization_23_1.png" />
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir3-5-1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#ex3-5"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="satiation-point">
+<h4>Satiation Point<a class="headerlink" href="#satiation-point" title="Permalink to this headline">¶</a></h4>
+<p>The above example is a particular utility function where consumers prefer to “eat” as much as
+possible of every good available, but that may not be the case for all preferences.</p>
+<p>When an optimum exists for the unconstrained problem (e.g. with an infinite budget), it is called a
+bliss point, or satiation.</p>
+<p>Instead of bananas and apples, consider a utility function for potato chips (<code class="docutils literal notranslate"><span class="pre">P</span></code>) and chocolate
+bars (<code class="docutils literal notranslate"><span class="pre">C</span></code>).</p>
+<div class="math notranslate nohighlight">
+\[
+U(P, C) = -(P - 20)^2 - 2 * (C - 1)^2
+\]</div>
+<p>To numerically calculate the maximum (which you can probably see through inspection), one must directly solve the constrained maximization problem.</p>
+<div class="admonition-exercise admonition" id="dir3-5-2">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 2 in the <a class="reference internal" href="#ex3-5"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ex3-5"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Try solving the constrained maximization problem by hand via the Lagrangian method.</p>
+<p>Is it surprising that the demand for bananas is unaffected by the change in apple prices?</p>
+<p>Why might this be?</p>
+<p>(<a class="reference internal" href="#dir3-5-1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Using a similar approach to that of the apples/bananas example above, solve for the optimal
+basket of potato chips and chocolate bars when <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">=</span> <span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">p_P</span> <span class="pre">=</span> <span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">p_C</span> <span class="pre">=</span> <span class="pre">2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">p_P</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">p_C</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the optimal basket if we expand the budget constraint to have <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">=</span> <span class="pre">50</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the optimal basket if we expand the budget constraint to have <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">=</span> <span class="pre">150</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can no longer assume that the <code class="docutils literal notranslate"><span class="pre">A_bc</span></code> function is always binding, as we did before, and will need to check results more carefully.</p>
+<p>While not required, you can take this opportunity to play around with other scipy functions such as Scipy optimize <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html">https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html</a>.</p>
+</div>
+<p>(<a class="reference internal" href="#dir3-5-2"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./scientific"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="randomness.html" title="previous page">Randomness</a>
+    <a class='right-next' id="next-link" href="../pandas/index.html" title="next page">pandas</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

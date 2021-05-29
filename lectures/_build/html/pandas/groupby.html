@@ -1,0 +1,2782 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupBy &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/pandas/groupby.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Time series" href="timeseries.html" />
+    <link rel="prev" title="Merge" href="merge.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/pandas/groupby.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="GroupBy" />
+<meta property="og:description" content="GroupBy  Prerequisites  Functions  pandas introduction 1 and 2  Reshape  Outcomes  Understand the split-apply-combine strategy for aggregate computations on gro" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   pandas
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pandas/groupby.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-apply-combine">
+   Split-Apply-Combine
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-example">
+     Simple Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#custom-aggregate-functions">
+     Custom Aggregate Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transforms-the-apply-method">
+     Transforms: The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply
+      </span>
+     </code>
+     Method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pd-grouper">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pd.Grouper
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-study-airline-delays">
+   Case Study: Airline Delays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-cohort-analysis-using-shopify-data">
+   Exercise: Cohort Analysis using Shopify Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-exercise">
+     Extended Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5">
+     Exercise 5
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="groupby">
+<h1>GroupBy<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../python_fundamentals/functions.html"><span class="doc">Functions</span></a></p></li>
+<li><p>pandas introduction <a class="reference internal" href="intro.html"><span class="doc">1</span></a> and <a class="reference internal" href="basics.html"><span class="doc">2</span></a></p></li>
+<li><p><a class="reference internal" href="reshape.html"><span class="doc">Reshape</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Understand the split-apply-combine strategy for aggregate
+computations on groups of data</p></li>
+<li><p>Be able use basic aggregation methods on <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> to compute
+within group statistics</p></li>
+<li><p>Understand how to group by multiple keys at once</p></li>
+</ul>
+<p><strong>Data</strong></p>
+<ul class="simple">
+<li><p>Details for all delayed US domestic flights in December 2016,
+obtained from the <a class="reference external" href="https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp">Bureau of Transportation
+Statistics</a></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install qeds</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">qeds</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># activate plot theme</span>
+<span class="kn">import</span> <span class="nn">qeds</span>
+<span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="split-apply-combine">
+<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<p>One powerful paradigm for analyzing data is the “Split-Apply-Combine”
+strategy.</p>
+<p>This strategy has three steps:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Split</span></code>: split the data into groups based on values in one or more columns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Apply</span></code>: apply a function or routine to each group separately.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Combine</span></code>: combine the output of the apply step into a DataFrame,
+using the group identifiers as the index.</p></li>
+</ol>
+<p>We will cover the main components in this lecture, but we encourage you
+to also study the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/groupby.html">official
+documentation</a>
+to learn more about what is possible.</p>
+<p>To describe the concepts, we will need some data.</p>
+<p>We will begin with a simple made-up dataset to discuss the concepts and
+then work through extended example and exercises with real data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">C</span><span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="s2">&quot;B&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">C</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>1</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="simple-example">
+<h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h3>
+<p>To perform the <em>Split</em> step, we call the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> method on our
+DataFrame.</p>
+<p>The first argument to <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is a description of how we want to
+construct groups.</p>
+<p>In the most basic version, we will pass a string identifying the column
+name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> of variable we get back is a <code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code>, which we
+will sometimes refer to as GroupBy for short.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">gbA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.groupby.generic.DataFrameGroupBy
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looking at the “groups” inside of the GroupBy object can help us
+understand what the GroupBy represents.</p>
+<p>We can do this with the <code class="docutils literal notranslate"><span class="pre">gb.get_group(group_name)</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>1</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can <em>apply</em> some of our favorite aggregation functions directly on the
+<code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object.</p>
+<div class="admonition-exercise admonition" id="pd-grp-dir1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#pd-grp-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="admonition-exercise admonition" id="pd-grp-dir2">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 2 in the <a class="reference internal" href="#pd-grp-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>If we pass a list of strings to <code class="docutils literal notranslate"><span class="pre">groupby</span></code>, it will group based on
+unique combinations of values from all columns in the list.</p>
+<p>Let’s see an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">gbAB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.groupby.generic.DataFrameGroupBy
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice that we still have a GroupBy object, so we can apply our favorite
+aggregations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1</th>
+      <th>1</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2</th>
+      <th>1</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice that the output is a DataFrame with two levels on the index
+and a single column <code class="docutils literal notranslate"><span class="pre">C</span></code>. (Quiz: how do we know it is a DataFrame with
+one column and not a Series?)</p>
+<p>This highlights a principle of how pandas handles the <em>Combine</em> part of
+the strategy:</p>
+<blockquote>
+<div><p>The index of the combined DataFrame will be the group identifiers,
+with one index level per group key.</p>
+</div></blockquote>
+</div>
+<div class="section" id="custom-aggregate-functions">
+<h3>Custom Aggregate Functions<a class="headerlink" href="#custom-aggregate-functions" title="Permalink to this headline">¶</a></h3>
+<p>So far, we have been applying built-in aggregations to our GroupBy object.</p>
+<p>We can also apply custom aggregations to each group of a GroupBy in two
+steps:</p>
+<ol class="simple">
+<li><p>Write our custom aggregation as a Python function.</p></li>
+<li><p>Passing our function as an argument to the <code class="docutils literal notranslate"><span class="pre">.agg</span></code> method of a GroupBy.</p></li>
+</ol>
+<p>Let’s see an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s2">&quot;Return the number of missing items in each column of df&quot;</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can call this function on our original DataFrame to get the number of
+missing items in each column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    0
+B    0
+C    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also apply it to a GroupBy object to get the number of missing
+items in each column <em>for each group</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">num_missing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>2.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The key to keep in mind is that the function we pass to <code class="docutils literal notranslate"><span class="pre">agg</span></code> should
+take in a DataFrame (or Series) and return a Series (or single value)
+with one item per column in the original DataFrame.</p>
+<p>When the function is called, the data for each group will be passed to
+our function as a DataFrame (or Series).</p>
+</div>
+<div class="section" id="transforms-the-apply-method">
+<h3>Transforms: The <code class="docutils literal notranslate"><span class="pre">apply</span></code> Method<a class="headerlink" href="#transforms-the-apply-method" title="Permalink to this headline">¶</a></h3>
+<p>As we saw in the <a class="reference internal" href="basics.html"><span class="doc">basics lecture</span></a>, we can apply transforms to DataFrames.</p>
+<p>We can do the same with GroupBy objects using the <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method.</p>
+<p>Let’s see an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>1</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smallest_by_b</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">smallest_by_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1</th>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2</th>
+      <th>4</th>
+      <td>2</td>
+      <td>1</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice that the return value from applying our series transform to <code class="docutils literal notranslate"><span class="pre">gbA</span></code>
+was the group key on the outer level (the <code class="docutils literal notranslate"><span class="pre">A</span></code> column) and the original
+index from <code class="docutils literal notranslate"><span class="pre">df</span></code> on the inner level.</p>
+<p>The original index came along because that was the index of the
+DataFrame returned by <code class="docutils literal notranslate"><span class="pre">smallest_by_b</span></code>.</p>
+<p>Had our function returned something other than the index from <code class="docutils literal notranslate"><span class="pre">df</span></code>,
+that would appear in the result of the call to <code class="docutils literal notranslate"><span class="pre">.apply</span></code>.</p>
+<div class="admonition-exercise admonition" id="pd-grp-dir3">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 3 in the <a class="reference internal" href="#pd-grp-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="pd-grouper">
+<h3><code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code><a class="headerlink" href="#pd-grouper" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, in order to construct the groups you want, you need to give
+pandas more information than just a column name.</p>
+<p>Some examples are:</p>
+<ul class="simple">
+<li><p>Grouping by a column and a level of the index.</p></li>
+<li><p>Grouping time series data at a particular frequency.</p></li>
+</ul>
+<p>pandas lets you do this through the <code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code> type.</p>
+<p>To see it in action, let’s make a copy of <code class="docutils literal notranslate"><span class="pre">df</span></code> with <code class="docutils literal notranslate"><span class="pre">A</span></code> moved to the
+index and a <code class="docutils literal notranslate"><span class="pre">Date</span></code> column added.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">),</span>
+    <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;BQ&quot;</span><span class="p">,</span>
+    <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-16-66f059155868&gt;:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B</th>
+      <th>C</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1.0</td>
+      <td>2021-06-30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2.0</td>
+      <td>2021-09-30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>3.0</td>
+      <td>2021-12-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>NaN</td>
+      <td>2022-03-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>5.0</td>
+      <td>2022-06-30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2022-09-30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can group by year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-12-31</th>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2022-12-31</th>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can group by the <code class="docutils literal notranslate"><span class="pre">A</span></code> level of the index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B</th>
+      <th>C</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can combine these to group by both.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>A</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-12-31</th>
+      <th>1</th>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2022-12-31</th>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>And we can combine <code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code> with a string, where the string
+denotes a column name</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">2021-12-31</th>
+      <th>1</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2022-12-31</th>
+      <th>1</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="case-study-airline-delays">
+<h2>Case Study: Airline Delays<a class="headerlink" href="#case-study-airline-delays" title="Permalink to this headline">¶</a></h2>
+<p>Let’s apply our new split-apply-combine skills to the airline dataset we
+saw in the <a class="reference internal" href="merge.html"><span class="doc">merge</span></a> lecture.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">air_dec</span> <span class="o">=</span> <span class="n">qeds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;airline_performance_dec16&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First, we compute the average delay in arrival time for all carriers
+each week.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weekly_delays</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">air_dec</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;W&quot;</span><span class="p">),</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">])</span>
+    <span class="p">[</span><span class="s2">&quot;ArrDelay&quot;</span><span class="p">]</span>               <span class="c1"># extract one column</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">()</span>                    <span class="c1"># take average</span>
+    <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Carrier&quot;</span><span class="p">)</span>  <span class="c1"># Flip carrier up as column names</span>
+<span class="p">)</span>
+<span class="n">weekly_delays</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Carrier</th>
+      <th>AA</th>
+      <th>AS</th>
+      <th>B6</th>
+      <th>DL</th>
+      <th>EV</th>
+      <th>F9</th>
+      <th>HA</th>
+      <th>NK</th>
+      <th>OO</th>
+      <th>UA</th>
+      <th>VX</th>
+      <th>WN</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-12-04</th>
+      <td>-1.714887</td>
+      <td>2.724273</td>
+      <td>-2.894269</td>
+      <td>-5.088351</td>
+      <td>8.655332</td>
+      <td>-2.894212</td>
+      <td>-0.558282</td>
+      <td>5.468909</td>
+      <td>2.749573</td>
+      <td>5.564496</td>
+      <td>-2.121821</td>
+      <td>-1.663695</td>
+    </tr>
+    <tr>
+      <th>2016-12-11</th>
+      <td>1.148833</td>
+      <td>12.052031</td>
+      <td>5.795062</td>
+      <td>2.507745</td>
+      <td>13.220673</td>
+      <td>4.578861</td>
+      <td>2.054302</td>
+      <td>8.713755</td>
+      <td>15.429660</td>
+      <td>4.094176</td>
+      <td>12.080938</td>
+      <td>1.865933</td>
+    </tr>
+    <tr>
+      <th>2016-12-18</th>
+      <td>16.357561</td>
+      <td>7.643767</td>
+      <td>34.608356</td>
+      <td>18.000000</td>
+      <td>23.876622</td>
+      <td>45.014888</td>
+      <td>9.388889</td>
+      <td>22.857899</td>
+      <td>30.901639</td>
+      <td>22.398130</td>
+      <td>33.651128</td>
+      <td>18.373400</td>
+    </tr>
+    <tr>
+      <th>2016-12-25</th>
+      <td>6.364513</td>
+      <td>2.719699</td>
+      <td>5.586836</td>
+      <td>-0.916113</td>
+      <td>6.857143</td>
+      <td>54.084959</td>
+      <td>5.075747</td>
+      <td>10.443369</td>
+      <td>15.004780</td>
+      <td>5.332474</td>
+      <td>17.286917</td>
+      <td>10.197685</td>
+    </tr>
+    <tr>
+      <th>2017-01-01</th>
+      <td>2.321836</td>
+      <td>1.226662</td>
+      <td>10.661577</td>
+      <td>2.048116</td>
+      <td>6.800898</td>
+      <td>8.280298</td>
+      <td>6.970016</td>
+      <td>8.361123</td>
+      <td>8.971083</td>
+      <td>0.061786</td>
+      <td>1.349580</td>
+      <td>5.213019</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s also plot this data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="n">weekly_delays</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="c1"># tweak spacing between subplots and xaxis labels</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">weekly_delays</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2">, %b. </span><span class="si">%d</span><span class="s2">&#39;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/groupby_41_0.png" src="../_images/groupby_41_0.png" />
+</div>
+</div>
+<p>It looks like more delays occurred during the week ending Sunday
+December 18th than any other week (except for Frontier, who did <em>worse</em>
+on Christmas week).</p>
+<p>Let’s see why.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">air_dec</span></code> DataFrame has information on the minutes of delay
+attributed to 5 different categories:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delay_cols</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;CarrierDelay&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;WeatherDelay&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NASDelay&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SecurityDelay&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LateAircraftDelay&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a quick look at each of those delay categories for the week ending December 18, 2016.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_christmas</span> <span class="o">=</span> <span class="n">air_dec</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">air_dec</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;2016-12-12&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">air_dec</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;2016-12-18&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># custom agg function</span>
+<span class="k">def</span> <span class="nf">positive</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">delay_totals</span> <span class="o">=</span> <span class="n">pre_christmas</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">)[</span><span class="n">delay_cols</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="p">])</span>
+<span class="n">delay_totals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">CarrierDelay</th>
+      <th colspan="3" halign="left">WeatherDelay</th>
+      <th colspan="3" halign="left">NASDelay</th>
+      <th colspan="3" halign="left">SecurityDelay</th>
+      <th colspan="3" halign="left">LateAircraftDelay</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>positive</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>positive</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>positive</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>positive</th>
+      <th>sum</th>
+      <th>mean</th>
+      <th>positive</th>
+    </tr>
+    <tr>
+      <th>Carrier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AA</th>
+      <td>105732.0</td>
+      <td>6.258553</td>
+      <td>2922.0</td>
+      <td>21820.0</td>
+      <td>1.291583</td>
+      <td>456.0</td>
+      <td>77279.0</td>
+      <td>4.574346</td>
+      <td>3159.0</td>
+      <td>721.0</td>
+      <td>0.042678</td>
+      <td>35.0</td>
+      <td>141249.0</td>
+      <td>8.360897</td>
+      <td>2574.0</td>
+    </tr>
+    <tr>
+      <th>AS</th>
+      <td>8762.0</td>
+      <td>2.691032</td>
+      <td>250.0</td>
+      <td>3219.0</td>
+      <td>0.988636</td>
+      <td>61.0</td>
+      <td>16344.0</td>
+      <td>5.019656</td>
+      <td>614.0</td>
+      <td>163.0</td>
+      <td>0.050061</td>
+      <td>10.0</td>
+      <td>13599.0</td>
+      <td>4.176597</td>
+      <td>271.0</td>
+    </tr>
+    <tr>
+      <th>B6</th>
+      <td>49421.0</td>
+      <td>9.031615</td>
+      <td>1575.0</td>
+      <td>9894.0</td>
+      <td>1.808114</td>
+      <td>112.0</td>
+      <td>38741.0</td>
+      <td>7.079861</td>
+      <td>1326.0</td>
+      <td>672.0</td>
+      <td>0.122807</td>
+      <td>30.0</td>
+      <td>100811.0</td>
+      <td>18.423063</td>
+      <td>1433.0</td>
+    </tr>
+    <tr>
+      <th>DL</th>
+      <td>151188.0</td>
+      <td>8.864212</td>
+      <td>2878.0</td>
+      <td>39145.0</td>
+      <td>2.295087</td>
+      <td>783.0</td>
+      <td>75110.0</td>
+      <td>4.403729</td>
+      <td>2605.0</td>
+      <td>107.0</td>
+      <td>0.006273</td>
+      <td>2.0</td>
+      <td>122896.0</td>
+      <td>7.205441</td>
+      <td>2289.0</td>
+    </tr>
+    <tr>
+      <th>EV</th>
+      <td>87408.0</td>
+      <td>9.939504</td>
+      <td>1375.0</td>
+      <td>3824.0</td>
+      <td>0.434842</td>
+      <td>76.0</td>
+      <td>49703.0</td>
+      <td>5.651922</td>
+      <td>1580.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>89773.0</td>
+      <td>10.208438</td>
+      <td>1568.0</td>
+    </tr>
+    <tr>
+      <th>F9</th>
+      <td>19568.0</td>
+      <td>10.430704</td>
+      <td>361.0</td>
+      <td>6198.0</td>
+      <td>3.303838</td>
+      <td>57.0</td>
+      <td>22459.0</td>
+      <td>11.971748</td>
+      <td>493.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>32236.0</td>
+      <td>17.183369</td>
+      <td>316.0</td>
+    </tr>
+    <tr>
+      <th>HA</th>
+      <td>7199.0</td>
+      <td>5.034266</td>
+      <td>218.0</td>
+      <td>3650.0</td>
+      <td>2.552448</td>
+      <td>145.0</td>
+      <td>86.0</td>
+      <td>0.060140</td>
+      <td>4.0</td>
+      <td>35.0</td>
+      <td>0.024476</td>
+      <td>3.0</td>
+      <td>4024.0</td>
+      <td>2.813986</td>
+      <td>189.0</td>
+    </tr>
+    <tr>
+      <th>NK</th>
+      <td>14735.0</td>
+      <td>5.294646</td>
+      <td>452.0</td>
+      <td>2240.0</td>
+      <td>0.804887</td>
+      <td>56.0</td>
+      <td>30361.0</td>
+      <td>10.909450</td>
+      <td>840.0</td>
+      <td>50.0</td>
+      <td>0.017966</td>
+      <td>5.0</td>
+      <td>22247.0</td>
+      <td>7.993891</td>
+      <td>372.0</td>
+    </tr>
+    <tr>
+      <th>OO</th>
+      <td>120307.0</td>
+      <td>10.439691</td>
+      <td>1378.0</td>
+      <td>26349.0</td>
+      <td>2.286446</td>
+      <td>308.0</td>
+      <td>54141.0</td>
+      <td>4.698108</td>
+      <td>2289.0</td>
+      <td>171.0</td>
+      <td>0.014839</td>
+      <td>12.0</td>
+      <td>166102.0</td>
+      <td>14.413572</td>
+      <td>2459.0</td>
+    </tr>
+    <tr>
+      <th>UA</th>
+      <td>66693.0</td>
+      <td>6.312636</td>
+      <td>1851.0</td>
+      <td>31602.0</td>
+      <td>2.991197</td>
+      <td>521.0</td>
+      <td>74992.0</td>
+      <td>7.098154</td>
+      <td>2065.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>118728.0</td>
+      <td>11.237861</td>
+      <td>1696.0</td>
+    </tr>
+    <tr>
+      <th>VX</th>
+      <td>8048.0</td>
+      <td>5.608362</td>
+      <td>246.0</td>
+      <td>3807.0</td>
+      <td>2.652962</td>
+      <td>126.0</td>
+      <td>12619.0</td>
+      <td>8.793728</td>
+      <td>224.0</td>
+      <td>73.0</td>
+      <td>0.050871</td>
+      <td>4.0</td>
+      <td>25242.0</td>
+      <td>17.590244</td>
+      <td>331.0</td>
+    </tr>
+    <tr>
+      <th>WN</th>
+      <td>123882.0</td>
+      <td>4.873790</td>
+      <td>5393.0</td>
+      <td>23516.0</td>
+      <td>0.925171</td>
+      <td>328.0</td>
+      <td>78645.0</td>
+      <td>3.094067</td>
+      <td>4247.0</td>
+      <td>252.0</td>
+      <td>0.009914</td>
+      <td>18.0</td>
+      <td>285073.0</td>
+      <td>11.215399</td>
+      <td>6472.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Want</strong>: plot total, average, and number of each type of delay by
+carrier</p>
+<p>To do this, we need to have a DataFrame with:</p>
+<ul class="simple">
+<li><p>Delay type in index (so it is on horizontal-axis)</p></li>
+<li><p>Aggregation method on <em>outer</em> most level of columns (so we can do
+<code class="docutils literal notranslate"><span class="pre">data[&quot;mean&quot;]</span></code> to get averages)</p></li>
+<li><p>Carrier name on inner level of columns</p></li>
+</ul>
+<p>Many sequences of the reshaping commands can accomplish this.</p>
+<p>We show one example below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reshaped_delays</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">delay_totals</span>
+    <span class="o">.</span><span class="n">stack</span><span class="p">()</span>             <span class="c1"># move aggregation method into index (with Carrier)</span>
+    <span class="o">.</span><span class="n">T</span>                   <span class="c1"># put delay type in index and Carrier+agg in column</span>
+    <span class="o">.</span><span class="n">swaplevel</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># make agg method outer level of column label</span>
+    <span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># sort column labels so it prints nicely</span>
+<span class="p">)</span>
+<span class="n">reshaped_delays</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="10" halign="left">mean</th>
+      <th>...</th>
+      <th colspan="10" halign="left">sum</th>
+    </tr>
+    <tr>
+      <th>Carrier</th>
+      <th>AA</th>
+      <th>AS</th>
+      <th>B6</th>
+      <th>DL</th>
+      <th>EV</th>
+      <th>F9</th>
+      <th>HA</th>
+      <th>NK</th>
+      <th>OO</th>
+      <th>UA</th>
+      <th>...</th>
+      <th>B6</th>
+      <th>DL</th>
+      <th>EV</th>
+      <th>F9</th>
+      <th>HA</th>
+      <th>NK</th>
+      <th>OO</th>
+      <th>UA</th>
+      <th>VX</th>
+      <th>WN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CarrierDelay</th>
+      <td>6.258553</td>
+      <td>2.691032</td>
+      <td>9.031615</td>
+      <td>8.864212</td>
+      <td>9.939504</td>
+      <td>10.430704</td>
+      <td>5.034266</td>
+      <td>5.294646</td>
+      <td>10.439691</td>
+      <td>6.312636</td>
+      <td>...</td>
+      <td>49421.0</td>
+      <td>151188.0</td>
+      <td>87408.0</td>
+      <td>19568.0</td>
+      <td>7199.0</td>
+      <td>14735.0</td>
+      <td>120307.0</td>
+      <td>66693.0</td>
+      <td>8048.0</td>
+      <td>123882.0</td>
+    </tr>
+    <tr>
+      <th>WeatherDelay</th>
+      <td>1.291583</td>
+      <td>0.988636</td>
+      <td>1.808114</td>
+      <td>2.295087</td>
+      <td>0.434842</td>
+      <td>3.303838</td>
+      <td>2.552448</td>
+      <td>0.804887</td>
+      <td>2.286446</td>
+      <td>2.991197</td>
+      <td>...</td>
+      <td>9894.0</td>
+      <td>39145.0</td>
+      <td>3824.0</td>
+      <td>6198.0</td>
+      <td>3650.0</td>
+      <td>2240.0</td>
+      <td>26349.0</td>
+      <td>31602.0</td>
+      <td>3807.0</td>
+      <td>23516.0</td>
+    </tr>
+    <tr>
+      <th>NASDelay</th>
+      <td>4.574346</td>
+      <td>5.019656</td>
+      <td>7.079861</td>
+      <td>4.403729</td>
+      <td>5.651922</td>
+      <td>11.971748</td>
+      <td>0.060140</td>
+      <td>10.909450</td>
+      <td>4.698108</td>
+      <td>7.098154</td>
+      <td>...</td>
+      <td>38741.0</td>
+      <td>75110.0</td>
+      <td>49703.0</td>
+      <td>22459.0</td>
+      <td>86.0</td>
+      <td>30361.0</td>
+      <td>54141.0</td>
+      <td>74992.0</td>
+      <td>12619.0</td>
+      <td>78645.0</td>
+    </tr>
+    <tr>
+      <th>SecurityDelay</th>
+      <td>0.042678</td>
+      <td>0.050061</td>
+      <td>0.122807</td>
+      <td>0.006273</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.024476</td>
+      <td>0.017966</td>
+      <td>0.014839</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>672.0</td>
+      <td>107.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>50.0</td>
+      <td>171.0</td>
+      <td>0.0</td>
+      <td>73.0</td>
+      <td>252.0</td>
+    </tr>
+    <tr>
+      <th>LateAircraftDelay</th>
+      <td>8.360897</td>
+      <td>4.176597</td>
+      <td>18.423063</td>
+      <td>7.205441</td>
+      <td>10.208438</td>
+      <td>17.183369</td>
+      <td>2.813986</td>
+      <td>7.993891</td>
+      <td>14.413572</td>
+      <td>11.237861</td>
+      <td>...</td>
+      <td>100811.0</td>
+      <td>122896.0</td>
+      <td>89773.0</td>
+      <td>32236.0</td>
+      <td>4024.0</td>
+      <td>22247.0</td>
+      <td>166102.0</td>
+      <td>118728.0</td>
+      <td>25242.0</td>
+      <td>285073.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">agg</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;positive&quot;</span><span class="p">]:</span>
+    <span class="n">axs</span> <span class="o">=</span> <span class="n">reshaped_delays</span><span class="p">[</span><span class="n">agg</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
+<span class="c1">#     fig.tight_layout();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/groupby_48_0.png" src="../_images/groupby_48_0.png" />
+<img alt="../_images/groupby_48_1.png" src="../_images/groupby_48_1.png" />
+<img alt="../_images/groupby_48_2.png" src="../_images/groupby_48_2.png" />
+</div>
+</div>
+<div class="admonition-exercise admonition" id="pd-grp-dir4">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 4 in the <a class="reference internal" href="#pd-grp-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>Let’s summarize what we did:</p>
+<ul class="simple">
+<li><p>Computed average flight delay for each airline for each week.</p></li>
+<li><p>Noticed that one week had more delays for all airlines.</p></li>
+<li><p>Studied the flights in that week to determine the <em>cause</em> of the
+delays in that week.</p></li>
+</ul>
+<p>Suppose now that we want to repeat that analysis, but at a daily
+frequency instead of weekly.</p>
+<p>We could copy/paste the code from above and change the <code class="docutils literal notranslate"><span class="pre">W</span></code> to a <code class="docutils literal notranslate"><span class="pre">D</span></code>,
+but there’s a better way…</p>
+<p>Let’s convert the steps above into two functions:</p>
+<ol class="simple">
+<li><p>Produce the set of bar charts for average delays at each frequency.</p></li>
+<li><p>Produce the second set of charts for the total, average, and number
+of occurrences of each type of delay.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_delay_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make a bar chart of average flight delays for each carrier at</span>
+<span class="sd">    a given frequency.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mean_delays</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">),</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">])</span>
+        <span class="p">[</span><span class="s2">&quot;ArrDelay&quot;</span><span class="p">]</span>               <span class="c1"># extract one column</span>
+        <span class="o">.</span><span class="n">mean</span><span class="p">()</span>                    <span class="c1"># take average</span>
+        <span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Carrier&quot;</span><span class="p">)</span>  <span class="c1"># Flip carrier up as column names</span>
+    <span class="p">)</span>
+
+    <span class="c1"># plot</span>
+    <span class="n">axs</span> <span class="o">=</span> <span class="n">mean_delays</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+    <span class="c1"># tweak spacing between subplots and x-axis labels</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">mean_delays</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2">, %b. </span><span class="si">%d</span><span class="s2">&#39;&quot;</span><span class="p">))</span>
+
+    <span class="c1"># return the axes in case we want to further tweak the plot outside the function</span>
+    <span class="k">return</span> <span class="n">axs</span>
+
+
+<span class="k">def</span> <span class="nf">delay_type_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make bar charts for total minutes, average minutes, and number of</span>
+<span class="sd">    occurrences for each delay type, for all flights that were scheduled</span>
+<span class="sd">    between `start` date and `end` date</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sub_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">positive</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="n">aggs</span> <span class="o">=</span> <span class="n">sub_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">)[</span><span class="n">delay_cols</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="p">])</span>
+
+    <span class="n">reshaped</span> <span class="o">=</span> <span class="n">aggs</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">swaplevel</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">agg</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;positive&quot;</span><span class="p">]:</span>
+        <span class="n">axs</span> <span class="o">=</span> <span class="n">reshaped</span><span class="p">[</span><span class="n">agg</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+            <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">agg</span><span class="p">)</span>
+<span class="c1">#         fig.tight_layout();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="pd-grp-dir5">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 5 in the <a class="reference internal" href="#pd-grp-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>Now let’s look at that plot at a daily frequency. (Note that we need the
+figure to be a bit wider in order to see the dates.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_delay_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/groupby_52_0.png" src="../_images/groupby_52_0.png" />
+</div>
+</div>
+<p>As we expected given our analysis above, the longest average delays
+seemed to happen in the third week.</p>
+<p>In particular, it looks like December 17th and 18th had — on average —
+higher delays than other days in December.</p>
+<p>Let’s use the <code class="docutils literal notranslate"><span class="pre">delay_type_plot</span></code> function to determine the cause of the
+delays on those two days.</p>
+<p>Because our analysis is captured in a single function, we can look at
+the days together and separately without much effort.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># both days</span>
+<span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-17-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/groupby_54_0.png" src="../_images/groupby_54_0.png" />
+<img alt="../_images/groupby_54_1.png" src="../_images/groupby_54_1.png" />
+<img alt="../_images/groupby_54_2.png" src="../_images/groupby_54_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only the 17th</span>
+<span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-17-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-17-16&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/groupby_55_0.png" src="../_images/groupby_55_0.png" />
+<img alt="../_images/groupby_55_1.png" src="../_images/groupby_55_1.png" />
+<img alt="../_images/groupby_55_2.png" src="../_images/groupby_55_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only the 18th</span>
+<span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/groupby_56_0.png" src="../_images/groupby_56_0.png" />
+<img alt="../_images/groupby_56_1.png" src="../_images/groupby_56_1.png" />
+<img alt="../_images/groupby_56_2.png" src="../_images/groupby_56_2.png" />
+</div>
+</div>
+<p>The purpose of this exercise was to drive home the ability to <em>automate</em>
+tasks.</p>
+<p>We were able to write a pair of <code class="docutils literal notranslate"><span class="pre">functions</span></code> that allows us to easily
+repeat the exact same analysis on different subsets of the data, or
+different datasets entirely (e.g. we could do the same analysis on
+November 2016 data, with two lines of code).</p>
+<p>These principles can be applied in many settings.</p>
+<p>Keep that in mind as we work through the rest of the materials.</p>
+</div>
+<div class="section" id="exercise-cohort-analysis-using-shopify-data">
+<h2>Exercise: Cohort Analysis using Shopify Data<a class="headerlink" href="#exercise-cohort-analysis-using-shopify-data" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">qeds</span></code> library includes routines to simulate data sets in the
+format of common sources</p>
+<p>One of these sources is <a class="reference external" href="https://www.shopify.com/">Shopify</a> — an
+e-commerce platform used by many retail companies for online sales</p>
+<p>The code below will simulate a fairly large data set that has the
+properties of a order-detail report from Shopify</p>
+<p>We’ll first look at the data, and then describe the exercise</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the &quot;randomness&quot; seeds</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">orders</span> <span class="o">=</span> <span class="n">qeds</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shopify</span><span class="o">.</span><span class="n">simulate_orders</span><span class="p">(</span><span class="mi">500000</span><span class="p">)</span>
+<span class="n">orders</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+
+<span class="n">orders</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\qeds\data\shopify.py:288: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+  end_date = pd.datetime.now().strftime(&quot;%Y-%m-%d&quot;)
+C:\Users\Lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\qeds\data\shopify.py:317: RuntimeWarning: overflow encountered in long_scalars
+  if fmid * fa &gt; 0:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 715449 entries, 0 to 715448
+Data columns (total 14 columns):
+ #   Column             Non-Null Count   Dtype  
+---  ------             --------------   -----  
+ 0   Day                715449 non-null  object 
+ 1   customer_type      715449 non-null  object 
+ 2   Customer ID        715449 non-null  int64  
+ 3   orders             715449 non-null  int32  
+ 4   total_sales        715449 non-null  float64
+ 5   Returns            715449 non-null  float64
+ 6   Ordered quantity   715449 non-null  int32  
+ 7   Gross sales        715449 non-null  float64
+ 8   Net sales          715449 non-null  float64
+ 9   Shipping           715449 non-null  float64
+ 10  Tax                715449 non-null  float64
+ 11  Net quantity       715449 non-null  int32  
+ 12  Returned quantity  715449 non-null  int32  
+ 13  Discounts          715449 non-null  float64
+dtypes: float64(7), int32(4), int64(1), object(2)
+memory usage: 65.5+ MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Day</th>
+      <th>customer_type</th>
+      <th>Customer ID</th>
+      <th>orders</th>
+      <th>total_sales</th>
+      <th>Returns</th>
+      <th>Ordered quantity</th>
+      <th>Gross sales</th>
+      <th>Net sales</th>
+      <th>Shipping</th>
+      <th>Tax</th>
+      <th>Net quantity</th>
+      <th>Returned quantity</th>
+      <th>Discounts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-05-06</td>
+      <td>Returning</td>
+      <td>6535260</td>
+      <td>1</td>
+      <td>41.03</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>41.03</td>
+      <td>41.03</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015-01-24</td>
+      <td>First-time</td>
+      <td>4283889</td>
+      <td>1</td>
+      <td>37.96</td>
+      <td>-0.0</td>
+      <td>2</td>
+      <td>37.96</td>
+      <td>37.96</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017-08-18</td>
+      <td>Returning</td>
+      <td>5270434</td>
+      <td>1</td>
+      <td>-25.40</td>
+      <td>-30.5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-30.50</td>
+      <td>5.09</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017-10-01</td>
+      <td>Returning</td>
+      <td>4836086</td>
+      <td>1</td>
+      <td>12.70</td>
+      <td>-0.0</td>
+      <td>4</td>
+      <td>12.70</td>
+      <td>12.70</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-09-10</td>
+      <td>Returning</td>
+      <td>9541330</td>
+      <td>1</td>
+      <td>216.58</td>
+      <td>-0.0</td>
+      <td>3</td>
+      <td>208.59</td>
+      <td>208.59</td>
+      <td>7.99</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We define a customer’s cohort as the month in which a customer placed
+their first order and the customer type as an indicator of whether this
+was their first order or a returning order.</p>
+<p>We now describe the <em>want</em> for the exercise, which we ask you to
+complete.</p>
+<p><strong>Want</strong>: Compute the monthly total number of orders, total sales, and
+total quantity separated by customer cohort and customer type.</p>
+<p>Read that carefully one more time…</p>
+<div class="section" id="extended-exercise">
+<h3>Extended Exercise<a class="headerlink" href="#extended-exercise" title="Permalink to this headline">¶</a></h3>
+<p>Using the reshape and <code class="docutils literal notranslate"><span class="pre">groupby</span></code> tools you have learned, apply the want
+operator described above.</p>
+<p>See below for advice on how to proceed.</p>
+<p>When you are finished, you should have something that looks like this:</p>
+<div class="figure align-default">
+<img alt="groupby\_cohort\_analysis\_exercise\_output.png" src="https://datascience.quantecon.org/assets/_static/groupby_files/groupby_cohort_analysis_exercise_output.png" />
+</div>
+<p>Two notes on the table above:</p>
+<p>Your actual output will be much bigger. This is just to give you an
+: idea of what it might look like.</p>
+<p>The numbers you produce should actually be the same as what are
+: included in this table… Index into your answer and compare what you
+have with this table to verify your progress.</p>
+<p>Now, how to do it?</p>
+<p>There is more than one way to code this, but here are some suggested
+steps.</p>
+<ol>
+<li><p>Convert the <code class="docutils literal notranslate"><span class="pre">Day</span></code> column to have a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> <code class="docutils literal notranslate"><span class="pre">dtype</span></code> instead
+of object.</p>
+<ul>
+<li><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code> function.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Add a new column that specifies the date associated with each
+customer’s <code class="docutils literal notranslate"><span class="pre">&quot;First-time&quot;</span></code> order.</p>
+<ul>
+<li><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can do this with a combination of <code class="docutils literal notranslate"><span class="pre">groupby</span></code> and
+<code class="docutils literal notranslate"><span class="pre">join</span></code>.</p>
+</div>
+</li>
+<li><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">customer_type</span></code> is always one of <code class="docutils literal notranslate"><span class="pre">Returning</span></code> and <code class="docutils literal notranslate"><span class="pre">First-time</span></code>.</p>
+</div>
+</li>
+<li><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Some customers don’t have a <code class="docutils literal notranslate"><span class="pre">customer_type</span> <span class="pre">==</span> <span class="pre">&quot;First-time&quot;</span></code> entry. You will need to set the
+value for these users to some date that precedes the dates in the
+sample. After adding valid data back into <code class="docutils literal notranslate"><span class="pre">orders</span></code> DataFrame,
+you can identify which customers don’t have a <code class="docutils literal notranslate"><span class="pre">&quot;First-Time&quot;</span></code>
+entry by checking for missing data in the new column.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p>You’ll need to group by 3 things.</p></li>
+<li><p>You can apply one of the built-in aggregation functions to the GroupBy.</p></li>
+<li><p>After doing the aggregation, you’ll need to use your reshaping skills to
+move things to the right place in rows and columns.</p></li>
+</ol>
+<p>Good luck!</p>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="pd-grp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Look closely at the output of the cells below.</p>
+<p>How did pandas compute the sum of <code class="docutils literal notranslate"><span class="pre">gbA</span></code>? What happened to the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+entries in column <code class="docutils literal notranslate"><span class="pre">C</span></code>?</p>
+<p>Write your thoughts.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Try <code class="docutils literal notranslate"><span class="pre">gbA.count()</span></code> or <code class="docutils literal notranslate"><span class="pre">gbA.mean()</span></code> if you can’t decide what
+happened to the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#pd-grp-dir1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Use introspection (tab completion) to see what other aggregations are
+defined for GroupBy objects.</p>
+<p>Pick three and evaluate them in the cells below.</p>
+<p>Does the output of each of these commands have the same features as the
+output of <code class="docutils literal notranslate"><span class="pre">gbA.sum()</span></code> from above? If not, what is different?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#pd-grp-dir2"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This exercise has a few steps:</p>
+</div>
+<ol>
+<li><p>Write a function that, given a DataFrame, computes each entry’s
+deviation from the mean of its column.</p></li>
+<li><p>Apply the function to <code class="docutils literal notranslate"><span class="pre">gbA</span></code>.</p></li>
+<li><p>With your neighbor describe what the index and and columns are? Where
+are the group keys (the <code class="docutils literal notranslate"><span class="pre">A</span></code> column)?</p></li>
+<li><p>Determine the correct way to add these results back into <code class="docutils literal notranslate"><span class="pre">df</span></code> as
+new columns.</p>
+<ul>
+<li><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Remember the <a class="reference internal" href="merge.html"><span class="doc">merge</span></a> lecture.</p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write function here</span>
+
+
+<span class="c1"># apply function here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add output of function as new columns to df here...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that if the group keys remained in the index as the <code class="docutils literal notranslate"><span class="pre">.apply</span></code>’s output, the merge/join step would have been complicated.</p>
+<p>(<a class="reference internal" href="#pd-grp-dir3"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+<p>Think about what is shown in the the plots above.</p>
+<p>Answer questions like:</p>
+<ul class="simple">
+<li><p>Which type of delay was the most common?</p></li>
+<li><p>Which one caused the largest average delay?</p></li>
+<li><p>Does that vary by airline?</p></li>
+</ul>
+<p>Write your thoughts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here if needed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#pd-grp-dir4"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+<p>Verify that we wrote the functions properly by setting the arguments to
+appropriate values to replicate the plots from above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call mean_delay_plot here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call delay_type_plot here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#pd-grp-dir5"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="merge.html" title="previous page">Merge</a>
+    <a class='right-next' id="next-link" href="timeseries.html" title="next page">Time series</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

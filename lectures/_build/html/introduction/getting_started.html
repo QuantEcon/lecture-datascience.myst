@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/introduction/getting_started.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cloud Setup" href="cloud_setup.html" />
+    <link rel="prev" title="Course Description" href="overview.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/introduction/getting_started.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Getting Started" />
+<meta property="og:description" content="Getting Started  Prerequisites  Good attitude  Good work ethic  Outcomes  Understand what a programming language is.  Know why we chose Python  Know what the Ju" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Introduction
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/introduction/getting_started.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#welcome">
+   Welcome
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-python">
+     Why Python?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-open-source">
+     Why Open Source?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-environment">
+     Computing Environment
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter">
+       Jupyter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-the-lectures">
+       Running the Lectures
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-basics">
+       Jupyter Basics
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p>Good attitude</p></li>
+<li><p>Good work ethic</p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Understand what a programming language is.</p></li>
+<li><p>Know why we chose Python</p></li>
+<li><p>Know what the Jupyter Notebook is</p></li>
+<li><p>Be able to start JupyterLab in the chosen environment (cloud or personal computer)</p></li>
+<li><p>Be able to open a Jupyter notebook in JupyterLab</p></li>
+<li><p>Know Jupyter Notebook basics: cell modes, editing/evaluating cells</p></li>
+</ul>
+<div class="section" id="welcome">
+<h2>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h2>
+<p>Welcome to the start of your path to learning how to work with data in the
+Python programming language!</p>
+<p>A programming language is, loosely speaking, a structured subset of natural
+language (words) and special characters (e.g. <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">{</span></code>) that allow humans
+to describe operations they would like their computer to perform on their behalf.</p>
+<p>The programming language translates these words and
+symbols into instructions the computer can execute.</p>
+<div class="section" id="why-python">
+<h3>Why Python?<a class="headerlink" href="#why-python" title="Permalink to this headline">¶</a></h3>
+<p>Among the hundreds of programming languages to choose from, we chose to teach you Python for the
+following reasons:</p>
+<ul class="simple">
+<li><p>Easy to learn and use (relative to other programming languages).</p></li>
+<li><p>Designed with readability in mind.</p></li>
+<li><p>Excellent tools for handling data efficiently and succinctly.</p></li>
+<li><p>Cemented as the world’s <a class="reference external" href="https://www.zdnet.com/article/programming-language-of-the-year-python-is-standout-in-latest-rankings/">third most popular</a>
+programming language, the most popular scripting language, and an increasing standard for
+<a class="reference external" href="https://medium.com/&#64;data_driven/python-vs-r-for-data-science-and-the-winner-is-3ebb1a968197">data analysis in industry</a>.</p></li>
+<li><p>General purpose: Initially you will learn Python for data analysis, but it
+can also used for websites, database management, web scraping, financial
+modeling, data visualization, etc.  In particular, it is the world’s best language for
+<a class="reference external" href="https://en.wikipedia.org/wiki/Glue_code">gluing</a>  those different pieces together.</p></li>
+</ul>
+<p>However, the general purpose nature of Python comes at a cost: it is often said that Python is “the
+best language for nothing but the second best language for everything”.</p>
+<p>We aren’t sure this is true, but a more optimistic view of that quote is that Python is a great
+language to have in your toolbox to solve all sorts of problems and patch them together.</p>
+<p>A versatile “second-best” language might be the best one to learn first.</p>
+<p>Some other languages to consider:</p>
+<ul class="simple">
+<li><p>R has an impressive ecosystem of statistical packages, and is defensible as a choice for pure
+data science. It could be a useful second language to learn for projects that are entirely
+statistical.</p></li>
+<li><p>Matlab has much more natural notation for writing linear algebra heavy code.  However, it is:
+(a) expensive; (b) poor at dealing with data analysis; (c) grossly inferior to Python as a
+language; and (d) being left behind as Python and Julia ecosystems expand to more packages.</p></li>
+<li><p>Julia is in part a far better version of Matlab, which can be as fast as Fortran or C.  However,
+it has a young and immature environment and is currently more appropriate for academics and
+scientific computing specialists.</p></li>
+</ul>
+<p>Another consideration for programming language choice is runtime performance. On this dimension,
+Python, R, and Matlab can be slow for certain types of tasks.</p>
+<p>Luckily, this will not be an issue for data science and the types of analysis we will do in this
+course, because most of the data analytics packages in Python (and R) rely on high-performance
+code written in other languages in the background.</p>
+<p>If you are writing more traditional scientific/technical computing in Python, there are
+<a class="reference external" href="http://numba.pydata.org/">things that can help</a> make Python faster in some situations,
+but another language like Julia may be a better fit.</p>
+</div>
+<div class="section" id="why-open-source">
+<h3>Why Open Source?<a class="headerlink" href="#why-open-source" title="Permalink to this headline">¶</a></h3>
+<p>Software development has changed radically in the last decade, increasingly becoming a process of
+stitching together both established high quality libraries, and state-of-the-art research projects.</p>
+<p>A major disadvantage of Matlab, Stata, and other proprietary languages is that they are not
+open-source, and unable to work within this new paradigm.</p>
+<p>Forgetting the cost for a moment, the benefits of using an open-source language are pragmatic rather
+than ideological.</p>
+<ul class="simple">
+<li><p>Open source languages are easier for everyone in the world to write and share packages because
+the code is accessible and available.</p></li>
+<li><p>With the right kinds of open source licenses; academics, businesses, and hobbyists all have
+incentives to contribute.</p></li>
+<li><p>Because open-source languages are managed on publicly accessible sites (e.g. GitHub), it is
+easier to build a community and collaborate.</p></li>
+<li><p>Package management systems (i.e. a way to find, download, install, and upgrade packages) in
+open-source languages can be very open and accessible since they don’t need to deal with
+proprietary software licenses.</p></li>
+</ul>
+</div>
+<div class="section" id="computing-environment">
+<h3>Computing Environment<a class="headerlink" href="#computing-environment" title="Permalink to this headline">¶</a></h3>
+<p>These materials are meant to be interacted with, not passively read.</p>
+<p>To help you do this, we use a software called <a class="reference external" href="https://jupyter.org/">Jupyter</a> and files known as
+Jupyter notebooks which allow us to bundle a mixture of text, code, and code output together.</p>
+<p>In fact, right now you are either directly reading a Jupyter notebook or a website that was
+generated from a Jupyter notebook.</p>
+<div class="section" id="jupyter">
+<h4>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">¶</a></h4>
+<p>We will refer to two components of Jupyter’s software: JupyterLab and Jupyter Notebook.</p>
+<p><strong>JupyterLab</strong></p>
+<p>JupyterLab is a software that runs in your browser and allows you to do a variety of things such
+as: edit text, view files, and (most importantly) work with Jupyter notebooks.</p>
+<p><strong>Jupyter Notebook</strong></p>
+<p>This is the actual file that allows you to mix code and text.</p>
+<p>The content inside a Jupyter notebook is organized into cells.</p>
+<p>Cells can have <em>inputs</em> and <em>outputs</em>.</p>
+<p>There are two main types of cells:</p>
+<ol class="simple">
+<li><p>Markdown cells</p>
+<ul class="simple">
+<li><p><em>Inputs</em> are written in <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">markdown</a> and can contain formatted text, images, equations, and more.</p></li>
+<li><p><em>Outputs</em> are rendered <strong>in place of the input</strong> when the cell is executed.</p></li>
+</ul>
+</li>
+<li><p>Code cells</p>
+<ul class="simple">
+<li><p><em>Inputs</em> Contain Python code (or code in <a class="reference external" href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">another language</a>).</p></li>
+<li><p><em>Outputs</em> are placed below the input cell and contain the results generated when the input code is executed.</p></li>
+</ul>
+</li>
+</ol>
+<p>Below is an image that demonstrates what a Jupyter Notebook looks like:</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_notebook.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_notebook.png" />
+</div>
+<br>
+<p>Notice a few things about this image:</p>
+<ul class="simple">
+<li><p>Inputs to code cells have a <code class="docutils literal notranslate"> <span class="pre">[</span> <span class="pre">]:</span></code> to the left of them and have a darker background than the
+surrounding area.</p></li>
+<li><p>Code cells that have not yet been executed do not have a number in the <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code> box and have no
+corresponding output.</p></li>
+<li><p>Executed code cells have a <code class="docutils literal notranslate"><span class="pre">[#]:</span></code> to the left of them (where <code class="docutils literal notranslate"><span class="pre">#</span></code> is a number) and, depending
+on what the code in that cell does, may or may not have an output.</p></li>
+<li><p>Executed markdown cells are displayed as formatted text, rather than the input/output structure.</p></li>
+</ul>
+<p>Being able to include both text and code allows us to do interesting computations <em>and</em> explain them.</p>
+<p>This combination has caused leading companies like <a class="reference external" href="https://medium.com/netflix-techblog/notebook-innovation-591ee3221233">Netflix</a>
+and <a class="reference external" href="https://www.techatbloomberg.com/blog/inside-the-collaboration-that-built-the-open-source-jupyterlab-project/">Bloomberg</a>
+to adopt Jupyter as a tool of choice for data analytics and reporting.</p>
+<p>We will follow in their path and leverage Jupyter Notebook throughout these materials.</p>
+</div>
+<div class="section" id="running-the-lectures">
+<h4>Running the Lectures<a class="headerlink" href="#running-the-lectures" title="Permalink to this headline">¶</a></h4>
+<p>The interactivity of a Jupyter notebook is driven by two main components:</p>
+<ol class="simple">
+<li><p>Server that is responsible for executing code</p></li>
+<li><p>GUI that runs in your web browser (what we learned above above)</p></li>
+</ol>
+<p>We will edit the content of the notebook and request code execution from the web GUI.</p>
+<p>The Jupyter application will then ask the server to execute the code and send the results back to
+the GUI.</p>
+<p>You can choose to interact with these materials from two server environments:</p>
+<ol class="simple">
+<li><p>The cloud</p></li>
+<li><p>Your own computer</p></li>
+</ol>
+<p><strong>Cloud Computing</strong></p>
+<p>A cloud solution provides a pre-installed environment for you.</p>
+<p>As long as you have an internet connection, you will be able to interact with the lectures
+through a few cloud computing options.</p>
+<p>We try to ensure that you’ll be able to run any of the lectures from each of the cloud options,
+but because these services are hosted by others, we cannot provide any guarantees.</p>
+<p>Using the cloud is a great option if</p>
+<ol class="simple">
+<li><p>You aren’t sure whether you’d like to learn these skills and just want to test the lectures
+out without any additional commitment.</p></li>
+<li><p>You are away from your typical work station and would like to spend a few minutes interacting
+with our lectures — we often take this route with our colleagues over coffee (or other
+conversation stimulants).</p></li>
+</ol>
+<p>If you would like to work on these lectures from the cloud, please read the instructions for
+getting set up with <a class="reference internal" href="cloud_setup.html"><span class="doc">cloud computing</span></a>.</p>
+<p>These instructions describe several of the possible computing environments that you can choose,
+discuss their pros and cons, and explain what JupyterHub is.</p>
+<p>After reading the instructions, return to this page and proceed with the Jupyter Basics section.</p>
+<p><strong>Local Installation</strong></p>
+<p>With a local installation, you will install the required software onto your own computer.</p>
+<p>This is typically a straightforward task and, once you have done this, you will be able to run the
+lecture code (and any other code you write for your own projects!) on your personal computer.</p>
+<p>If you are confident that these are skills you would like to acquire and are willing to have the
+software installed on your computer, then this is a great option.</p>
+<p>If you would like to work from a local installation, please read the instructions in
+<a class="reference internal" href="local_install.html"><span class="doc">local installation instructions</span></a> page.</p>
+<p>These instructions will walk you through the installation procedure, help with some basic setup,
+and show you how to open JupyterLab.</p>
+<p>Once you have completed installing the software, return to this page and proceed with the Jupyter
+Basics section.</p>
+</div>
+<div class="section" id="jupyter-basics">
+<h4>Jupyter Basics<a class="headerlink" href="#jupyter-basics" title="Permalink to this headline">¶</a></h4>
+<p>Now that you can open a JupyterLab instance on the cloud or on your own computer, we can talk about
+how you should use them.</p>
+<p>Note, not all of this will apply if you are using the Google Colab cloud server since they are
+running a modified version of Jupyter. For more help on using Colab, see their help menu.</p>
+<p><strong>JupyterLab Dashboard</strong></p>
+<p>When you open a new session in Jupyter, you will be taken to the JupyterLab dashboard page.</p>
+<p>This page shows the file system of the machine running the Jupyter server and allows you to
+navigate and open particular Jupyter Notebooks (or other types of files!).</p>
+<p>The dashboard page is shown below.</p>
+<div class="figure align-default">
+<img alt="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_lab_dashboard.png" src="https://datascience.quantecon.org/assets/_static/introduction_files/jupyter_lab_dashboard.png" />
+</div>
+<br>
+<p>You can open existing files or change folders by double clicking on them in the left panel of the
+dashboard (similar to a file explorer you would find on your computer).</p>
+<p>You can create new notebooks by clicking <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> in the Launcher (see red square in the image).</p>
+<p>If you don’t see the Launcher as one of your tabs, you can open it by clicking the <code class="docutils literal notranslate"><span class="pre">+</span></code> at the top
+of the file explorer section of the JupyterLab dashboard (see the red circle in the image).</p>
+<p><strong>Editing Jupyter Notebooks</strong></p>
+<p>Once you have opened a particular notebook, you can be in one of two “edit modes”.</p>
+<ol class="simple">
+<li><p>Command mode: This mode is for making high level changes to the notebook
+itself. For example changing the order of cells, creating a new cell, etc…</p>
+<ul class="simple">
+<li><p>You know you’re in command mode when a blue sidebar appears on the left of the
+cell.</p></li>
+<li><p>Pressing keys tells Jupyter Notebook to run commands. For example, <code class="docutils literal notranslate"><span class="pre">a</span></code>
+adds a new cell above the current cell, <code class="docutils literal notranslate"><span class="pre">b</span></code> adds one below the current
+cell, and <code class="docutils literal notranslate"><span class="pre">dd</span></code> deletes the current cell.</p></li>
+<li><p>up arrow (or <code class="docutils literal notranslate"><span class="pre">k</span></code>) changes the selected cell to the cell above the
+current one and down arrow (or <code class="docutils literal notranslate"><span class="pre">j</span></code>) changes to the cell below.</p></li>
+</ul>
+</li>
+<li><p>Edit mode: Used when editing the content inside of cells.</p>
+<ul class="simple">
+<li><p>When in edit mode, the selected cell displays a green sidebar on left.</p></li>
+<li><p>Can edit the content of a cell.</p></li>
+</ul>
+</li>
+</ol>
+<p>Some useful commands:</p>
+<ul class="simple">
+<li><p>To go from command mode to edit mode, press enter or double click the mouse</p></li>
+<li><p>Go from edit mode to command mode by pressing escape</p></li>
+<li><p>You can evaluate a cell by pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> (meaning <code class="docutils literal notranslate"><span class="pre">Shift</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code> at
+the same time)</p></li>
+</ul>
+<div class="admonition-exercise admonition" id="dir1-1-1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#ex1-1"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p><strong>Advanced Usage and Getting Help</strong></p>
+<p>For more help with JupyterLab and Jupyter Notebook, see the user guides:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/user/interface.html">JupyterLab</a></p></li>
+<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/latest/user/notebook.html">Jupyter Notebook</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ex1-1"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>In the <em>code</em> cell below (notice the <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code> to the left) type a quote (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>), your name,
+then another quote (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) and evaluate the cell</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir1-1-1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./introduction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">Course Description</a>
+    <a class='right-next' id="next-link" href="cloud_setup.html" title="next page">Cloud Setup</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

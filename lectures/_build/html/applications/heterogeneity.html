@@ -1,0 +1,1864 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heterogeneous Effects &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/applications/heterogeneity.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Machine Learning in Economics" href="ml_in_economics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/applications/heterogeneity.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Heterogeneous Effects" />
+<meta property="og:description" content="Heterogeneous Effects  Author  Paul Schrimpf UBC  Prerequisites  Regression  Machine Learning in Economics  Outcomes  Understand potential outcomes and treatmen" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/randomness.html">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../scientific/optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Applications
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/applications/heterogeneity.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#background-and-data">
+   Background and Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potential-outcomes-and-treatment-effects">
+   Potential Outcomes and Treatment Effects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-treatment-effects">
+     Average Treatment Effects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-average-treatment-effects">
+     Conditional Average Treatment Effects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generic-machine-learning-inference">
+   Generic Machine Learning Inference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-linear-projection-of-cate">
+     Best Linear Projection of CATE
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grouped-average-treatment-effects">
+     Grouped Average Treatment Effects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimation">
+     Estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assisted-delivery">
+     Assisted Delivery
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#covariate-means-by-group">
+     Covariate Means by Group
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caution">
+     Caution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causal-trees-and-forests">
+   Causal Trees and Forests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="heterogeneous-effects">
+<h1>Heterogeneous Effects<a class="headerlink" href="#heterogeneous-effects" title="Permalink to this headline">¶</a></h1>
+<p><strong>Author</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/">Paul Schrimpf <em>UBC</em></a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="regression.html"><span class="doc">Regression</span></a></p></li>
+<li><p><a class="reference internal" href="ml_in_economics.html"><span class="doc">Machine Learning in Economics</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Understand potential outcomes and treatment effects</p></li>
+<li><p>Apply generic machine learning inference to data from a randomized experiment</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install qeds fiona geopandas xgboost gensim folium pyLDAvis descartes</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">patsy</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">neural_network</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils._testing</span> <span class="kn">import</span> <span class="n">ignore_warnings</span>
+<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this notebook, we will learn how to apply machine learning methods to analyze
+results of a randomized experiment. We typically begin analyzing
+experimental results by calculating the difference in mean
+outcomes between the treated and control groups. This difference estimates well
+the average treatment effect. We can obtain more
+nuanced results by recognizing that the effect of most experiments
+might be heterogeneous. That is, different people could be affected by
+the experiment differently. We will use machine learning methods to
+explore this heterogeneity in treatment effects.</p>
+<div class="section" id="background-and-data">
+<h2>Background and Data<a class="headerlink" href="#background-and-data" title="Permalink to this headline">¶</a></h2>
+<p>We are going to use data from a randomized  experiment in Indonesia
+called Program Keluarga Harapan (PKH). PKH was a conditional cash
+transfer program designed to improve child health. Eligible pregnant
+women would receive a cash transfer if they attended at least 4
+pre-natal and 2 post-natal visits, received iron supplements, and had
+their baby delivered by a doctor or midwife. The cash transfers were
+given quarterly and were about 60-220 dollars or 15-20 percent of
+quarterly consumption. PKH eligibility was randomly assigned at the
+kecamatan (district) level. All pregnant women living in a treated
+kecamatan could choose to participate in the experiment. For more
+information see <a class="bibtex reference internal" href="#het-alatas2011" id="id1">[hetACE+11]</a> or <a class="bibtex reference internal" href="#het-triyana2016" id="id2">[hetTri16]</a>.</p>
+<p>We are using the data provided with <a class="bibtex reference internal" href="#het-triyana2016" id="id3">[hetTri16]</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/Triyana_2016_price_women_clean.csv.gz&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rid_panel</th>
+      <th>prov</th>
+      <th>Location_ID</th>
+      <th>dist</th>
+      <th>wave</th>
+      <th>edu</th>
+      <th>agecat</th>
+      <th>log_xp_percap</th>
+      <th>rhr031</th>
+      <th>rhr032</th>
+      <th>...</th>
+      <th>hh_xp_all</th>
+      <th>tv</th>
+      <th>parabola</th>
+      <th>fridge</th>
+      <th>motorbike</th>
+      <th>car</th>
+      <th>pig</th>
+      <th>goat</th>
+      <th>cow</th>
+      <th>horse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.225100e+04</td>
+      <td>22768.000000</td>
+      <td>2.277100e+04</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>...</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.00000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.406884e+12</td>
+      <td>42.761156</td>
+      <td>4.286882e+06</td>
+      <td>431842.012033</td>
+      <td>1.847174</td>
+      <td>52.765799</td>
+      <td>4.043081</td>
+      <td>13.420404</td>
+      <td>0.675157</td>
+      <td>0.754908</td>
+      <td>...</td>
+      <td>3.839181</td>
+      <td>0.754908</td>
+      <td>0.482148</td>
+      <td>0.498661</td>
+      <td>0.594792</td>
+      <td>0.470511</td>
+      <td>0.536691</td>
+      <td>0.53858</td>
+      <td>0.515041</td>
+      <td>0.470247</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.944106e+12</td>
+      <td>14.241982</td>
+      <td>1.423541e+06</td>
+      <td>143917.353784</td>
+      <td>0.875323</td>
+      <td>45.833778</td>
+      <td>1.280589</td>
+      <td>1.534089</td>
+      <td>0.468326</td>
+      <td>0.430151</td>
+      <td>...</td>
+      <td>1.481982</td>
+      <td>0.430151</td>
+      <td>0.499692</td>
+      <td>0.500009</td>
+      <td>0.490943</td>
+      <td>0.499141</td>
+      <td>0.498663</td>
+      <td>0.49852</td>
+      <td>0.499785</td>
+      <td>0.499125</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.100103e+10</td>
+      <td>31.000000</td>
+      <td>3.175010e+06</td>
+      <td>3524.000000</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+      <td>0.000000</td>
+      <td>7.461401</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.731008e+12</td>
+      <td>32.000000</td>
+      <td>3.210180e+06</td>
+      <td>323210.000000</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>11.972721</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.491004e+12</td>
+      <td>35.000000</td>
+      <td>3.517171e+06</td>
+      <td>353517.000000</td>
+      <td>2.000000</td>
+      <td>12.000000</td>
+      <td>5.000000</td>
+      <td>12.851639</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.061008e+12</td>
+      <td>53.000000</td>
+      <td>5.307020e+06</td>
+      <td>535307.000000</td>
+      <td>3.000000</td>
+      <td>99.000000</td>
+      <td>5.000000</td>
+      <td>15.018967</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>6.681013e+12</td>
+      <td>75.000000</td>
+      <td>7.571030e+06</td>
+      <td>757571.000000</td>
+      <td>3.000000</td>
+      <td>99.000000</td>
+      <td>5.000000</td>
+      <td>15.018967</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 121 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="potential-outcomes-and-treatment-effects">
+<h2>Potential Outcomes and Treatment Effects<a class="headerlink" href="#potential-outcomes-and-treatment-effects" title="Permalink to this headline">¶</a></h2>
+<p>Since program eligibility was randomly assigned (and what
+policymakers could choose to change), we will focus on estimating
+the effect of eligibility. We will let
+<span class="math notranslate nohighlight">\(d_i\)</span> be a 1 if person <span class="math notranslate nohighlight">\(i\)</span> was eligible and be 0 if not.
+Let <span class="math notranslate nohighlight">\(y_i\)</span> be an outcome of interest. Below, we
+will look at midwife usage and birth weight as outcomes.</p>
+<p>It is
+useful to think about potential outcomes of the treatment. The potential treated
+outcome is <span class="math notranslate nohighlight">\(y_i(1)\)</span>. For subjects who actually were treated,
+<span class="math notranslate nohighlight">\(y_i(1) = y_i\)</span> is the observed outcome. For untreated subjects,
+<span class="math notranslate nohighlight">\(y_i(1)\)</span> is what mother i ‘s baby’s birth weight would have
+been if she had been eligible for the program. Similarly, we can
+define the potential untreated outcome <span class="math notranslate nohighlight">\(y_i(0)\)</span> .</p>
+<p>The individual treatment effect for subject i is <span class="math notranslate nohighlight">\(y_i(1) - y_i(0)\)</span>.</p>
+<p>Individual treatment effects are impossible to know since we always
+only observe <span class="math notranslate nohighlight">\(y_i(1)\)</span> or <span class="math notranslate nohighlight">\(y_i(0)\)</span>, but never both.</p>
+<p>When treatment is randomly assigned, we can estimate average treatment
+effects because</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
+&amp; \text{random assignment } \\
+= &amp; E[y_i(1) | d_i = 1] - E[y_i(0) | d_i = 0] \\
+= &amp; E[y_i | d_i = 1] - E[y_i | d_i = 0 ]
+\end{align*}
+\end{split}\]</div>
+<div class="section" id="average-treatment-effects">
+<h3>Average Treatment Effects<a class="headerlink" href="#average-treatment-effects" title="Permalink to this headline">¶</a></h3>
+<p>Let’s estimate the average treatment effect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># some data prep for later</span>
+<span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">bw ~ pkh_kec_ever +</span>
+<span class="s2">  C(edu)*C(agecat) + log_xp_percap + hh_land + hh_home + C(dist) +</span>
+<span class="s2">  hh_phone + hh_rf_tile + hh_rf_shingle + hh_rf_fiber +</span>
+<span class="s2">  hh_wall_plaster + hh_wall_brick + hh_wall_wood + hh_wall_fiber +</span>
+<span class="s2">  hh_fl_tile + hh_fl_plaster + hh_fl_wood + hh_fl_dirt +</span>
+<span class="s2">  hh_water_pam + hh_water_mechwell + hh_water_well + hh_water_spring + hh_water_river +</span>
+<span class="s2">  hh_waterhome +</span>
+<span class="s2">  hh_toilet_own + hh_toilet_pub + hh_toilet_none +</span>
+<span class="s2">  hh_waste_tank + hh_waste_hole + hh_waste_river + hh_waste_field +</span>
+<span class="s2">  hh_kitchen +</span>
+<span class="s2">  hh_cook_wood + hh_cook_kerosene + hh_cook_gas +</span>
+<span class="s2">  tv + fridge + motorbike + car + goat + cow + horse</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">bw</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">patsy</span><span class="o">.</span><span class="n">dmatrices</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s2">&quot;dataframe&quot;</span><span class="p">)</span>
+<span class="c1"># some categories are empty after dropping rows will Null, drop now</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">bw</span> <span class="o">=</span> <span class="n">bw</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">treatment_variable</span> <span class="o">=</span> <span class="s2">&quot;pkh_kec_ever&quot;</span>
+<span class="n">treatment</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;pkh_kec_ever&quot;</span><span class="p">]</span>
+<span class="n">Xl</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Intercept&quot;</span><span class="p">,</span> <span class="s2">&quot;pkh_kec_ever&quot;</span><span class="p">,</span> <span class="s2">&quot;C(dist)[T.313175]&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#scale = bw.std()</span>
+<span class="c1">#center = bw.mean()</span>
+<span class="n">loc_id</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;Location_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># remove [ ] from names for compatibility with xgboost</span>
+<span class="n">Xl</span> <span class="o">=</span> <span class="n">Xl</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\[|\]&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate average treatment effects</span>
+<span class="kn">from</span> <span class="nn">statsmodels.iolib.summary2</span> <span class="kn">import</span> <span class="n">summary_col</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">birthweight</span><span class="o">=</span><span class="n">bw</span><span class="p">,</span><span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span><span class="n">assisted_delivery</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;good_assisted_delivery&quot;</span><span class="p">]))</span>
+<span class="n">usage</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;assisted_delivery ~ treatment&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span> <span class="n">cov_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;groups&#39;</span><span class="p">:</span><span class="n">loc_id</span><span class="p">})</span>
+<span class="n">health</span><span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;bw ~ treatment&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span> <span class="n">cov_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;groups&#39;</span><span class="p">:</span><span class="n">loc_id</span><span class="p">})</span>
+<span class="n">summary_col</span><span class="p">([</span><span class="n">usage</span><span class="p">,</span> <span class="n">health</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+      <td></td>      <th>assisted_delivery</th>    <th>bw</th>    
+</tr>
+<tr>
+  <th>Intercept</th>      <td>0.7827</td>       <td>3173.4067</td>
+</tr>
+<tr>
+  <th></th>              <td>(0.0124)</td>      <td>(10.2323)</td>
+</tr>
+<tr>
+  <th>treatment</th>      <td>0.0235</td>       <td>-14.8992</td> 
+</tr>
+<tr>
+  <th></th>              <td>(0.0192)</td>      <td>(24.6304)</td>
+</tr>
+<tr>
+  <th>R-squared</th>      <td>0.0002</td>        <td>-0.0001</td> 
+</tr>
+<tr>
+  <th></th>               <td>0.0004</td>        <td>0.0001</td>  
+</tr>
+</table></div></div>
+</div>
+<p>The program did increase the percent of births assisted by a medical
+professional, but on average, did not affect birth weight.</p>
+</div>
+<div class="section" id="conditional-average-treatment-effects">
+<h3>Conditional Average Treatment Effects<a class="headerlink" href="#conditional-average-treatment-effects" title="Permalink to this headline">¶</a></h3>
+<p>Although we can never estimate individual treatment effects, the
+logic that lets us estimate unconditional average treatment effects
+also suggests that we can estimate conditional average treatment effects.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+E[y_i(1) - y_i(0) |X_i=x] = &amp; E[y_i(1)|X_i = x] - E[y_i(0)|X_i=x] \\
+&amp; \text{random assignment } \\
+= &amp; E[y_i(1) | d_i = 1, X_i=x] - E[y_i(0) | d_i = 0, X_i=x] \\
+= &amp; E[y_i | d_i = 1, X_i = x] - E[y_i | d_i = 0, X_i=x ]
+\end{align*}
+\end{split}\]</div>
+<p>Conditional average treatment effects tell us whether there are
+identifiable (by X) groups of people for with varying treatment effects vary.</p>
+<p>Since conditional average treatment effects involve conditional
+expectations, machine learning methods might be useful.</p>
+<p>However, if we want to be able to perform statistical inference, we
+must use machine learning methods carefully. We will detail one
+approach below. <a class="bibtex reference internal" href="#het-athey2016b" id="id4">[hetAI16]</a> and <a class="bibtex reference internal" href="#het-wager2018" id="id5">[hetWA18]</a> are
+alternative approaches.</p>
+</div>
+</div>
+<div class="section" id="generic-machine-learning-inference">
+<h2>Generic Machine Learning Inference<a class="headerlink" href="#generic-machine-learning-inference" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will describe the “generic machine learning
+inference” method of <a class="bibtex reference internal" href="#het-cddf2018" id="id6">[hetCDDFV18]</a> to explore heterogeneity in
+conditional average treatment effects.</p>
+<p>This approach allows any
+machine learning method to be used to estimate <span class="math notranslate nohighlight">\(E[y_i(1) -
+y_i(0) |X_i=x]\)</span>.</p>
+<p>Inference for functions estimated by machine learning methods is
+typically either impossible or requires very restrictive assumptions.
+<a class="bibtex reference internal" href="#het-cddf2018" id="id7">[hetCDDFV18]</a> gets around this problem by focusing on inference for
+certain summary statistics of the machine learning prediction for
+<span class="math notranslate nohighlight">\(E[y_i(1) - y_i(0) |X_i=x]\)</span> rather than
+<span class="math notranslate nohighlight">\(E[y_i(1) - y_i(0) |X_i=x]\)</span> itself.</p>
+<div class="section" id="best-linear-projection-of-cate">
+<h3>Best Linear Projection of CATE<a class="headerlink" href="#best-linear-projection-of-cate" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(s_0(x) = E[y_i(1) - y_i(0) |X_i=x]\)</span> denote the true
+conditional average treatment effect. Let <span class="math notranslate nohighlight">\(S(x)\)</span> be an estimate
+or noisy proxy for <span class="math notranslate nohighlight">\(s_0(x)\)</span>. One way to summarize how well
+<span class="math notranslate nohighlight">\(S(x)\)</span> approximates <span class="math notranslate nohighlight">\(s_0(x)\)</span> is to look at the best linear
+projection of <span class="math notranslate nohighlight">\(s_0(x)\)</span> on <span class="math notranslate nohighlight">\(S(x)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\DeclareMathOperator*{\argmin}{arg\,min}
+\beta_0, \beta_1 = \argmin_{b_0,b_1} E[(s_0(x) -
+b_0 - b_1 (S(x)-E[S(x)]))^2]
+\]</div>
+<p>Showing that <span class="math notranslate nohighlight">\(\beta_0 = E[y_i(1) - y_i(0)]\)</span>
+is the unconditional average treatment effect is not difficult. More interestingly,
+<span class="math notranslate nohighlight">\(\beta_1\)</span> is related to how well <span class="math notranslate nohighlight">\(S(x)\)</span> approximates
+<span class="math notranslate nohighlight">\(s_0(x)\)</span>. If <span class="math notranslate nohighlight">\(S(x) = s_0(x)\)</span>, then <span class="math notranslate nohighlight">\(\beta_1=1\)</span>. If
+<span class="math notranslate nohighlight">\(S(x)\)</span> is completely uncorrelated with <span class="math notranslate nohighlight">\(s_0(x)\)</span>, then
+<span class="math notranslate nohighlight">\(\beta_1 = 0\)</span>.</p>
+<p>The best linear projection of the conditional average treatment
+effect tells us something about how well <span class="math notranslate nohighlight">\(S(x)\)</span> approximates
+<span class="math notranslate nohighlight">\(s_0(x)\)</span>, but does not directly quantify how much the conditional
+average treatment effect varies with <span class="math notranslate nohighlight">\(x\)</span>. We could try looking
+at <span class="math notranslate nohighlight">\(S(x)\)</span> directly, but if <span class="math notranslate nohighlight">\(x\)</span> is high dimensional, reporting or visualizing
+<span class="math notranslate nohighlight">\(S(x)\)</span> will be difficult. Moreover, most
+machine learning methods have no satisfactory method to determine inferences
+on <span class="math notranslate nohighlight">\(S(x)\)</span>. This is very problematic if we want to use
+<span class="math notranslate nohighlight">\(S(x)\)</span> to shape future policy decisions. For example, we might
+want to use <span class="math notranslate nohighlight">\(S(x)\)</span> to target the treatment to people with
+different <span class="math notranslate nohighlight">\(x\)</span>. If we do this, we need to know whether the
+estimated differences across <span class="math notranslate nohighlight">\(x\)</span> in <span class="math notranslate nohighlight">\(S(x)\)</span> are precise or
+caused by noise.</p>
+</div>
+<div class="section" id="grouped-average-treatment-effects">
+<h3>Grouped Average Treatment Effects<a class="headerlink" href="#grouped-average-treatment-effects" title="Permalink to this headline">¶</a></h3>
+<p>To deal with both these issues, <a class="bibtex reference internal" href="#het-cddf2018" id="id8">[hetCDDFV18]</a> focuses on
+grouped average treatment effects (GATE) with groups defined by
+<span class="math notranslate nohighlight">\(S(x)\)</span>. Partition the data into a fixed, finite number of groups
+based on <span class="math notranslate nohighlight">\(S(x)\)</span> . Let
+<span class="math notranslate nohighlight">\(G_{k}(x) = 1\{\ell_{k-1} \leq S(x) \leq \ell_k \}\)</span> where
+<span class="math notranslate nohighlight">\(\ell_k\)</span> could be a constant chosen by the researcher or evenly
+spaced quantiles of <span class="math notranslate nohighlight">\(S(x)\)</span>. The <span class="math notranslate nohighlight">\(k\)</span> th grouped average
+treatment effect is then <span class="math notranslate nohighlight">\(\gamma_k = E[y(1) - y(0) | G_k(x)]\)</span>.
+If the true <span class="math notranslate nohighlight">\(s_0(x)\)</span> is not constant, and <span class="math notranslate nohighlight">\(S(x)\)</span>
+approximates <span class="math notranslate nohighlight">\(s_0(x)\)</span> well, then the grouped average treatment
+effects will increase with <span class="math notranslate nohighlight">\(k\)</span>. If the conditional average treatment effect
+has no heterogeneity (i.e. <span class="math notranslate nohighlight">\(s_0(x)\)</span> is constant) and/or
+<span class="math notranslate nohighlight">\(S(x)\)</span> is a poor approximation to <span class="math notranslate nohighlight">\(s_0(x)\)</span>,
+then the grouped average treatment effect will tend to
+be constant with <span class="math notranslate nohighlight">\(k\)</span> and may even be non-monotonic due to
+estimation error.</p>
+</div>
+<div class="section" id="estimation">
+<h3>Estimation<a class="headerlink" href="#estimation" title="Permalink to this headline">¶</a></h3>
+<p>We can estimate both the best linear projection of the conditional average treatment
+effect and the grouped treatment effects by using
+particular regressions. Let <span class="math notranslate nohighlight">\(B(x)\)</span> be an estimate of the outcome
+conditional on no treatment, i.e. <span class="math notranslate nohighlight">\(B(x) = \widehat{E[y(0)|x]}\)</span>
+. Then the estimates of <span class="math notranslate nohighlight">\(\beta\)</span> from the regression</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = \alpha_0 + \alpha_1 B(x_i) + \beta_0 (d_i-P(d=1)) + \beta_1
+(d_i-P(d=1))(S(x_i) - E[S(x_i)]) + \epsilon_i
+\]</div>
+<p>are consistent estimates of the best linear projection of the
+conditional average treatment effect if <span class="math notranslate nohighlight">\(B(x_i)\)</span> and
+<span class="math notranslate nohighlight">\(S(x_i)\)</span> are uncorrelated with <span class="math notranslate nohighlight">\(y_i\)</span> . We can ensure that
+<span class="math notranslate nohighlight">\(B(x_i)\)</span> and <span class="math notranslate nohighlight">\(S(x_i)\)</span> are uncorrelated with <span class="math notranslate nohighlight">\(y_i\)</span> by
+using the familiar idea of sample-splitting and cross-validation. The
+usual regression standard errors will also be valid.</p>
+<p>Similarly, we can estimate grouped average treatment effects from the
+following regression.</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = \alpha_0 + \alpha_1 B(x_i) + \sum_k \gamma_k (d_i-P(d=1)) 1(G_k(x_i)) +
+u_i
+\]</div>
+<p>The resulting estimates of <span class="math notranslate nohighlight">\(\gamma_k\)</span> will be consistent and
+asymptotically normal with the usual regression standard errors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for clustering standard errors</span>
+<span class="k">def</span> <span class="nf">get_treatment_se</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cluster_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">cluster_id</span><span class="p">)</span>
+        <span class="n">vcov</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sandwich_covariance</span><span class="o">.</span><span class="n">cov_cluster</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">vcov</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">fit</span><span class="o">.</span><span class="n">HC0_se</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generic_ml_model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">nobs</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">blp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_split</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">blp_se</span> <span class="o">=</span> <span class="n">blp</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_split</span><span class="p">,</span> <span class="n">n_group</span><span class="p">))</span>
+    <span class="n">gate_se</span> <span class="o">=</span> <span class="n">gate</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">baseline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nobs</span><span class="p">,</span> <span class="n">n_split</span><span class="p">))</span>
+    <span class="n">cate</span> <span class="o">=</span> <span class="n">baseline</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">lamb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_split</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_split</span><span class="p">):</span>
+        <span class="n">main</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+        <span class="n">rows1</span> <span class="o">=</span> <span class="o">~</span><span class="n">main</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">treatment</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">rows0</span> <span class="o">=</span> <span class="o">~</span><span class="n">main</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">treatment</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">mod1</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows1</span><span class="p">,</span> <span class="p">:],</span> <span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows1</span><span class="p">]))</span>
+        <span class="n">mod0</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows0</span><span class="p">,</span> <span class="p">:],</span> <span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rows0</span><span class="p">]))</span>
+
+        <span class="n">B</span> <span class="o">=</span> <span class="n">mod0</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">mod1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">B</span>
+        <span class="n">baseline</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span>
+        <span class="n">cate</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span>
+        <span class="n">ES</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="c1">## BLP</span>
+        <span class="c1"># assume P(treat|x) = P(treat) = mean(treat)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">treatment</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">reg_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">B</span><span class="o">=</span><span class="n">B</span><span class="p">,</span> <span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span> <span class="n">S</span><span class="o">=</span><span class="n">S</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="n">main</span><span class="p">,</span> <span class="n">excess_S</span><span class="o">=</span><span class="n">S</span><span class="o">-</span><span class="n">ES</span>
+        <span class="p">))</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;y ~ B + I(treatment-p) + I((treatment-p)*(S-ES))&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">reg_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">main</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="n">reg_fit</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+        <span class="n">blp</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">reg_fit</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">blp_se</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">get_treatment_se</span><span class="p">(</span><span class="n">reg_fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">main</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+
+        <span class="n">lamb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg_fit</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">S</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+
+        <span class="c1">## GATEs</span>
+        <span class="n">cutoffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_group</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">cutoffs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_group</span><span class="p">):</span>
+            <span class="n">reg_df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;G</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">cutoffs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">S</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">S</span> <span class="o">&lt;</span> <span class="n">cutoffs</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">g_form</span> <span class="o">=</span> <span class="s2">&quot;y ~ B + &quot;</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;I((treatment-p)*G</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_group</span><span class="p">)])</span>
+        <span class="n">g_reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">g_form</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">reg_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">main</span><span class="p">,</span> <span class="p">:])</span>
+        <span class="n">g_fit</span> <span class="o">=</span> <span class="n">g_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+        <span class="n">gate</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">g_fit</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1">#g_fit.params.filter(regex=&quot;G&quot;).values</span>
+        <span class="n">gate_se</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">get_treatment_se</span><span class="p">(</span><span class="n">g_fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">main</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+
+        <span class="n">lamb</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">gate</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="n">n_group</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">gate</span><span class="o">=</span><span class="n">gate</span><span class="p">,</span> <span class="n">gate_se</span><span class="o">=</span><span class="n">gate_se</span><span class="p">,</span>
+        <span class="n">blp</span><span class="o">=</span><span class="n">blp</span><span class="p">,</span> <span class="n">blp_se</span><span class="o">=</span><span class="n">blp_se</span><span class="p">,</span>
+        <span class="n">Lambda</span><span class="o">=</span><span class="n">lamb</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="n">baseline</span><span class="p">,</span> <span class="n">cate</span><span class="o">=</span><span class="n">cate</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">generic_ml_summary</span><span class="p">(</span><span class="n">generic_ml_output</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">generic_ml_output</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;blp&quot;</span><span class="p">,</span> <span class="s2">&quot;blp_se&quot;</span><span class="p">,</span> <span class="s2">&quot;gate&quot;</span><span class="p">,</span> <span class="s2">&quot;gate_se&quot;</span><span class="p">,</span> <span class="s2">&quot;Lambda&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">out</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">generic_ml_output</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xl</span><span class="p">,</span> <span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="n">loc_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@ignore_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">other_kw</span><span class="p">):</span>
+    <span class="n">all_kw</span> <span class="o">=</span> <span class="n">kw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">all_kw</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">all_kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">other_kw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">generic_ml_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">all_kw</span><span class="p">),</span> <span class="n">models</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="n">summaries</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">generic_ml_summary</span><span class="p">,</span> <span class="n">results</span><span class="p">))</span>
+    <span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="n">mod</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">mod</span><span class="p">[</span><span class="s2">&quot;cate&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">results</span>
+    <span class="p">})</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation in median CATE:&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">df_plot</span><span class="o">.</span><span class="n">corr</span><span class="p">())</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">,</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;reg&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Best linear projection of CATE&quot;</span><span class="p">)</span>
+    <span class="n">df_cate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">({</span>
+        <span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">blp</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;blp&quot;</span><span class="p">],</span> <span class="n">se</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;blp_se&quot;</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">summaries</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">df_cate</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Group average treatment effects:&quot;</span><span class="p">)</span>
+    <span class="n">df_groups</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">({</span>
+        <span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">gate</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">],</span> <span class="n">se</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;gate_se&quot;</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">summaries</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">df_groups</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_alphas</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">ensemble</span><span class="o">.</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">reg_lambda</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">reg_alpha</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">objective</span><span class="o">=</span><span class="s2">&quot;reg:squarederror&quot;</span><span class="p">),</span>
+    <span class="n">neural_network</span><span class="o">.</span><span class="n">MLPRegressor</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;logistic&quot;</span><span class="p">,</span>
+                                <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">early_stopping</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">bw</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation in median CATE:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LassoCV</th>
+      <td>1.000000</td>
+      <td>0.560277</td>
+      <td>0.213693</td>
+      <td>0.000488</td>
+    </tr>
+    <tr>
+      <th>RandomForestRegressor</th>
+      <td>0.560277</td>
+      <td>1.000000</td>
+      <td>0.463827</td>
+      <td>-0.175484</td>
+    </tr>
+    <tr>
+      <th>XGBRegressor</th>
+      <td>0.213693</td>
+      <td>0.463827</td>
+      <td>1.000000</td>
+      <td>-0.099631</td>
+    </tr>
+    <tr>
+      <th>MLPRegressor</th>
+      <td>0.000488</td>
+      <td>-0.175484</td>
+      <td>-0.099631</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best linear projection of CATE
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">blp</th>
+      <th>0</th>
+      <td>-10.802054</td>
+      <td>-12.539238</td>
+      <td>-2.420279</td>
+      <td>-37.448672</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.007988</td>
+      <td>-0.096529</td>
+      <td>0.087574</td>
+      <td>-1585.678248</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">se</th>
+      <th>0</th>
+      <td>32.343096</td>
+      <td>32.786535</td>
+      <td>32.878362</td>
+      <td>32.607646</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.679214</td>
+      <td>0.281949</td>
+      <td>0.081860</td>
+      <td>3598.596033</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group average treatment effects:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">gate</th>
+      <th>0</th>
+      <td>9.702750</td>
+      <td>45.298885</td>
+      <td>-21.509522</td>
+      <td>-17.273441</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-12.243634</td>
+      <td>-4.032086</td>
+      <td>-49.590555</td>
+      <td>-31.912999</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-8.722977</td>
+      <td>-49.038779</td>
+      <td>-43.871536</td>
+      <td>-13.933066</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000</td>
+      <td>-43.176104</td>
+      <td>-5.798301</td>
+      <td>-8.393773</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-9.003166</td>
+      <td>-8.149285</td>
+      <td>66.609352</td>
+      <td>-43.826183</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">se</th>
+      <th>0</th>
+      <td>70.167095</td>
+      <td>67.175310</td>
+      <td>67.388609</td>
+      <td>84.346395</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>63.088972</td>
+      <td>68.736113</td>
+      <td>64.526618</td>
+      <td>69.957019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>66.256069</td>
+      <td>65.732240</td>
+      <td>67.412109</td>
+      <td>68.180583</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>71.901589</td>
+      <td>67.821699</td>
+      <td>66.196590</td>
+      <td>66.019203</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>71.759311</td>
+      <td>72.970678</td>
+      <td>78.933687</td>
+      <td>61.122337</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/heterogeneity_15_6.png" src="../_images/heterogeneity_15_6.png" />
+</div>
+</div>
+<p>From the second table above, we see that regardless of the machine
+learning method, the estimated intercept (the first row of the table)
+is near 0 and statistically insignificant. Given our results for the unconditional
+ATE above, we should expect this. The estimate of the
+slopes are also either near 0, very imprecise, or both. This means
+that either the conditional average treatment effect is near 0 or that all
+four machine learning methods are very poor proxies for the true
+conditional average treatment effect.</p>
+</div>
+<div class="section" id="assisted-delivery">
+<h3>Assisted Delivery<a class="headerlink" href="#assisted-delivery" title="Permalink to this headline">¶</a></h3>
+<p>Let’s see what we get when we look at assisted delivery.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;good_assisted_delivery&quot;</span><span class="p">]</span><span class="c1">#&quot;midwife_birth&quot;]</span>
+<span class="n">results_ad</span> <span class="o">=</span> <span class="n">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">generate_report</span><span class="p">(</span><span class="n">results_ad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation in median CATE:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LassoCV</th>
+      <td>1.000000</td>
+      <td>0.876251</td>
+      <td>0.499848</td>
+      <td>0.882036</td>
+    </tr>
+    <tr>
+      <th>RandomForestRegressor</th>
+      <td>0.876251</td>
+      <td>1.000000</td>
+      <td>0.526313</td>
+      <td>0.718376</td>
+    </tr>
+    <tr>
+      <th>XGBRegressor</th>
+      <td>0.499848</td>
+      <td>0.526313</td>
+      <td>1.000000</td>
+      <td>0.420284</td>
+    </tr>
+    <tr>
+      <th>MLPRegressor</th>
+      <td>0.882036</td>
+      <td>0.718376</td>
+      <td>0.420284</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best linear projection of CATE
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">blp</th>
+      <th>0</th>
+      <td>0.045560</td>
+      <td>0.049834</td>
+      <td>0.050265</td>
+      <td>0.045347</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.426697</td>
+      <td>0.550976</td>
+      <td>0.124896</td>
+      <td>0.415732</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">se</th>
+      <th>0</th>
+      <td>0.020550</td>
+      <td>0.021551</td>
+      <td>0.021772</td>
+      <td>0.020754</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.134397</td>
+      <td>0.150928</td>
+      <td>0.079844</td>
+      <td>0.130379</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group average treatment effects:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">gate</th>
+      <th>0</th>
+      <td>-0.061807</td>
+      <td>-0.076014</td>
+      <td>-0.006786</td>
+      <td>-0.000325</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.014162</td>
+      <td>0.017620</td>
+      <td>0.015498</td>
+      <td>-0.032230</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.023541</td>
+      <td>0.021310</td>
+      <td>0.027673</td>
+      <td>-0.019428</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.106038</td>
+      <td>0.062236</td>
+      <td>0.052377</td>
+      <td>0.093442</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.150985</td>
+      <td>0.202127</td>
+      <td>0.143173</td>
+      <td>0.174291</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">se</th>
+      <th>0</th>
+      <td>0.041356</td>
+      <td>0.051658</td>
+      <td>0.049094</td>
+      <td>0.032223</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.040549</td>
+      <td>0.042046</td>
+      <td>0.041709</td>
+      <td>0.041638</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.046264</td>
+      <td>0.041131</td>
+      <td>0.039348</td>
+      <td>0.050149</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.045141</td>
+      <td>0.044690</td>
+      <td>0.048005</td>
+      <td>0.046182</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.052510</td>
+      <td>0.051122</td>
+      <td>0.048752</td>
+      <td>0.056078</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/heterogeneity_18_6.png" src="../_images/heterogeneity_18_6.png" />
+</div>
+</div>
+<p>Now, the results are more encouraging. For all four machine learning
+methods, the slope estimate is positive and statistically
+significant. From this, we can conclude that the true conditional
+average treatment effect must vary with at least some covariates, and
+the machine learning proxies are at least somewhat correlated with the
+true conditional average treatment effect.</p>
+</div>
+<div class="section" id="covariate-means-by-group">
+<h3>Covariate Means by Group<a class="headerlink" href="#covariate-means-by-group" title="Permalink to this headline">¶</a></h3>
+<p>Once we’ve detected heterogeneity in the grouped average treatment effects
+of using medical professionals for assisted delivery, it’s interesting to see
+how effects vary across groups. This could help
+us understand why the treatment effect varies or how to
+develop simple rules for targeting future treatments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;edu99&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">edu</span> <span class="o">==</span> <span class="mi">99</span>
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;educ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;edu&quot;</span><span class="p">]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;edu99&quot;</span><span class="p">],</span> <span class="s2">&quot;educ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;log_xp_percap&quot;</span><span class="p">,</span><span class="s2">&quot;agecat&quot;</span><span class="p">,</span><span class="s2">&quot;educ&quot;</span><span class="p">,</span><span class="s2">&quot;tv&quot;</span><span class="p">,</span><span class="s2">&quot;goat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cow&quot;</span><span class="p">,</span><span class="s2">&quot;motorbike&quot;</span><span class="p">,</span><span class="s2">&quot;hh_cook_wood&quot;</span><span class="p">,</span><span class="s2">&quot;pkh_ever&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cov_mean_by_group</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">):</span>
+    <span class="n">n_group</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">gate</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">gate_se</span> <span class="o">=</span> <span class="n">gate</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">dat</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;cate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;cate&quot;</span><span class="p">][:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">cutoffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_group</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="n">cutoffs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_group</span><span class="p">):</span>
+            <span class="n">dat</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;G</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">cutoffs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">S</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">S</span> <span class="o">&lt;</span> <span class="n">cutoffs</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span> <span class="o">*</span> <span class="mf">1.0</span>
+
+        <span class="n">g_form</span> <span class="o">=</span> <span class="s2">&quot;y ~ -1 + &quot;</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;G</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_group</span><span class="p">)])</span>
+        <span class="n">g_reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">g_form</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">dat</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+        <span class="n">g_fit</span> <span class="o">=</span> <span class="n">g_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+        <span class="n">gate</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">g_fit</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">regex</span><span class="o">=</span><span class="s2">&quot;G&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="o">~</span><span class="n">y</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+        <span class="n">gate_se</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">get_treatment_se</span><span class="p">(</span><span class="n">g_fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">rows</span><span class="p">)</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">mean</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">gate</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">se</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">gate_se</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">group</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_group</span><span class="p">))</span>
+    <span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_group_means_for_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="n">to_cat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+            <span class="n">to_cat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">cov_mean_by_group</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">res</span><span class="p">,</span> <span class="n">loc_id</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">variable</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="n">group_means</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">to_cat</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">group_means</span><span class="p">[</span><span class="s2">&quot;plus2sd&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group_means</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;mean + 1.96*se&quot;</span><span class="p">)</span>
+    <span class="n">group_means</span><span class="p">[</span><span class="s2">&quot;minus2sd&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group_means</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;mean - 1.96*se&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">group_means</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_means_ad</span> <span class="o">=</span> <span class="n">compute_group_means_for_results</span><span class="p">(</span><span class="n">results_ad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">group_means_ad</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;plus2sd&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;minus2sd&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/heterogeneity_24_0.png" src="../_images/heterogeneity_24_0.png" />
+</div>
+</div>
+<p>From this, we see that the group predicted to be most affected by treatment
+are less educated, less likely to own a TV or
+motorbike, and more likely to participate in the program.</p>
+<p>If we wanted to maximize the program impact with a limited budget, targeting the program towards
+less educated and less wealthy mothers could be a good idea. The existing financial incentive
+already does this to some extent. As one might expect, a fixed-size
+cash incentive has a bigger behavioral impact on less wealthy
+individuals. If we want to further target these individuals, we
+could alter eligibility rules and/or increase the cash transfer
+for those with lower wealth.</p>
+</div>
+<div class="section" id="caution">
+<h3>Caution<a class="headerlink" href="#caution" title="Permalink to this headline">¶</a></h3>
+<p>When exploring treatment heterogeneity like above, we need to
+interpret our results carefully. In particular, looking at grouped
+treatment effects and covariate means conditional on group leads to
+many hypothesis tests (although we never stated null hypotheses or
+reported p-values, the inevitable eye-balling of differences in the
+above graphs compared to their confidence intervals has the same
+issues as formal hypothesis tests).  When we perform many hypothesis
+tests, we will likely stumble upon some statistically
+significant differences by chance. Therefore, writing about a single large difference found in the
+above analysis as though it is our main
+finding would be misleading (and perhaps unethical). The correct thing to do is to present all
+results that we have looked at.  See <a class="reference external" href="https://slate.com/technology/2013/07/statistics-and-psychology-multiple-comparisons-give-spurious-results.html">this excellent news article</a>
+by statistician Andrew Gelman for more information.</p>
+</div>
+</div>
+<div class="section" id="causal-trees-and-forests">
+<h2>Causal Trees and Forests<a class="headerlink" href="#causal-trees-and-forests" title="Permalink to this headline">¶</a></h2>
+<p><a class="bibtex reference internal" href="#het-athey2016b" id="id9">[hetAI16]</a> develop the idea of “causal trees.” The purpose and
+method are qualitatively similar to the grouped average treatment
+effects. The main difference is that the groups in <a class="bibtex reference internal" href="#het-athey2016b" id="id10">[hetAI16]</a>
+are determined by a low-depth regression tree instead of by quantiles
+of a noisy estimate of the conditional average treatment effect. As
+above, sample-splitting is used to facilitate inference.</p>
+<p>Causal trees share many downsides of regression trees. In
+particular, the branches of the tree and subsequent results can be
+sensitive to small changes in the data.  <a class="bibtex reference internal" href="#het-wager2018" id="id11">[hetWA18]</a> develop a
+causal forest estimator to address this concern. This causal forest
+estimates <span class="math notranslate nohighlight">\(E[y_i(1) - y_i(0) |X_i=x]\)</span> directly. Unlike most
+machine learning estimators, <a class="bibtex reference internal" href="#het-wager2018" id="id12">[hetWA18]</a> prove that causal
+forests are consistent and pointwise asymptotically normal, albeit
+with a slower than <span class="math notranslate nohighlight">\(\sqrt{n}\)</span> rate of convergence. In practice,
+this means that either the sample size must be very large (and/or <span class="math notranslate nohighlight">\(x\)</span>
+relatively low dimension) to get precise estimates.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-applications/heterogeneity-0"><dl class="citation">
+<dt class="bibtex label" id="het-alatas2011"><span class="brackets"><a class="fn-backref" href="#id1">hetACE+11</a></span></dt>
+<dd><p>Vivi Alatas, Nur Cahyadi, Elisabeth Ekasari, Sarah Harmoun, Budi Hidayat, Edgar Janz, Jon Jellema, H Tuhiman, and M Wai-Poi. Program keluarga harapan : impact evaluation of indonesia’s pilot household conditional cash transfer program. Technical Report, World Bank, 2011. URL: <a class="reference external" href="http://documents.worldbank.org/curated/en/589171468266179965/Program-Keluarga-Harapan-impact-evaluation-of-Indonesias-Pilot-Household-Conditional-Cash-Transfer-Program">http://documents.worldbank.org/curated/en/589171468266179965/Program-Keluarga-Harapan-impact-evaluation-of-Indonesias-Pilot-Household-Conditional-Cash-Transfer-Program</a>.</p>
+</dd>
+<dt class="bibtex label" id="het-athey2016b"><span class="brackets">hetAI16</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id9">2</a>,<a href="#id10">3</a>)</span></dt>
+<dd><p>Susan Athey and Guido Imbens. Recursive partitioning for heterogeneous causal effects. <em>Proceedings of the National Academy of Sciences</em>, 113(27):7353–7360, 2016. URL: <a class="reference external" href="http://www.pnas.org/content/113/27/7353">http://www.pnas.org/content/113/27/7353</a>, <a class="reference external" href="https://arxiv.org/abs/http://www.pnas.org/content/113/27/7353.full.pdf">arXiv:http://www.pnas.org/content/113/27/7353.full.pdf</a>, <a class="reference external" href="https://doi.org/10.1073/pnas.1510489113">doi:10.1073/pnas.1510489113</a>.</p>
+</dd>
+<dt class="bibtex label" id="het-cddf2018"><span class="brackets">hetCDDFV18</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>,<a href="#id8">3</a>)</span></dt>
+<dd><p>Victor Chernozhukov, Mert Demirer, Esther Duflo, and Iván Fernández-Val. Generic machine learning inference on heterogenous treatment effects in randomized experimentsxo. Working Paper 24678, National Bureau of Economic Research, June 2018. URL: <a class="reference external" href="http://www.nber.org/papers/w24678">http://www.nber.org/papers/w24678</a>, <a class="reference external" href="https://doi.org/10.3386/w24678">doi:10.3386/w24678</a>.</p>
+</dd>
+<dt class="bibtex label" id="het-triyana2016"><span class="brackets">hetTri16</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>Margaret Triyana. Do health care providers respond to demand-side incentives? evidence from indonesia. <em>American Economic Journal: Economic Policy</em>, 8(4):255–88, November 2016. URL: <a class="reference external" href="http://www.aeaweb.org/articles?id=10.1257/pol.20140048">http://www.aeaweb.org/articles?id=10.1257/pol.20140048</a>, <a class="reference external" href="https://doi.org/10.1257/pol.20140048">doi:10.1257/pol.20140048</a>.</p>
+</dd>
+<dt class="bibtex label" id="het-wager2018"><span class="brackets">hetWA18</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id11">2</a>,<a href="#id12">3</a>)</span></dt>
+<dd><p>Stefan Wager and Susan Athey. Estimation and inference of heterogeneous treatment effects using random forests. <em>Journal of the American Statistical Association</em>, 0(0):1–15, 2018. URL: <a class="reference external" href="https://doi.org/10.1080/01621459.2017.1319839">https://doi.org/10.1080/01621459.2017.1319839</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1080/01621459.2017.1319839">arXiv:https://doi.org/10.1080/01621459.2017.1319839</a>, <a class="reference external" href="https://doi.org/10.1080/01621459.2017.1319839">doi:10.1080/01621459.2017.1319839</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./applications"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="ml_in_economics.html" title="previous page">Machine Learning in Economics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

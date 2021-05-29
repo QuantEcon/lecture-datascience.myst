@@ -1,0 +1,1226 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomness &#8212; QuantEcon DataScience</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/scientific/randomness.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Optimization" href="optimization.html" />
+    <link rel="prev" title="Applied Linear Algebra" href="applied_linalg.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://datascience.quantecon.org/scientific/randomness.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Randomness" />
+<meta property="og:description" content="Randomness  Prerequisites  Introduction to Numpy  Applied Linear Algebra  Outcomes  Recall basic probability  Draw random numbers from numpy  Understand why sim" />
+<meta property="og:image"       content="https://datascience.quantecon.org/_static/datascience-logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/datascience-logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">QuantEcon DataScience</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/overview.html">
+     Course Description
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/getting_started.html">
+     Getting Started
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/cloud_setup.html">
+     Cloud Setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/local_install.html">
+     Local Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../introduction/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/basics.html">
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/collections.html">
+     Collections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/control_flow.html">
+     Control Flow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python_fundamentals/functions.html">
+     Functions
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Scientific Computing
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="numpy_arrays.html">
+     Introduction to Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="applied_linalg.html">
+     Applied Linear Algebra
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Randomness
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="optimization.html">
+     Optimization
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/basics.html">
+     Basic Functionality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/the_index.html">
+     The Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/storage_formats.html">
+     Storage Formats
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/data_clean.html">
+     Cleaning Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/reshape.html">
+     Reshape
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/merge.html">
+     Merge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/groupby.html">
+     GroupBy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/timeseries.html">
+     Time series
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pandas/matplotlib.html">
+     Intermediate Plotting
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/visualization_rules.html">
+     Data Visualization: Rules and Guidelines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/regression.html">
+     Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/recidivism.html">
+     Case Study: Recidivism
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/maps.html">
+     Mapping in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/working_with_text.html">
+     Working with Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/ml_in_economics.html">
+     Machine Learning in Economics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/heterogeneity.html">
+     Heterogeneous Effects
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/scientific/randomness.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Randomness
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability">
+     Probability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulating-randomness-in-python">
+     Simulating Randomness in Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-do-we-need-randomness">
+     Why Do We Need Randomness?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-distributions">
+     Discrete Distributions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aside-vectorized-computations">
+       Aside: Vectorized Computations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#profitability-threshold">
+       Profitability Threshold
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loan-states">
+       Loan States
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-distributions">
+     Continuous Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="randomness">
+<h1>Randomness<a class="headerlink" href="#randomness" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
+<li><p><a class="reference internal" href="applied_linalg.html"><span class="doc">Applied Linear Algebra</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Recall basic probability</p></li>
+<li><p>Draw random numbers from numpy</p></li>
+<li><p>Understand why simulation is useful</p></li>
+<li><p>Understand the basics of Markov chains and using the <code class="docutils literal notranslate"><span class="pre">quantecon</span></code> library to study them</p></li>
+<li><p>Simulate discrete and continuous random variables and processes</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install qeds</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h2>Randomness<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> package to simulate randomness in Python.</p>
+<p>This lecture will present various probability distributions and then use
+numpy.random to numerically verify some of the facts associated with them.</p>
+<p>We import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as usual</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># activate plot theme</span>
+<span class="kn">import</span> <span class="nn">qeds</span>
+<span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="probability">
+<h3>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h3>
+<p>Before we learn how to use Python to generate randomness, we should make sure
+that we all agree on some basic concepts of probability.</p>
+<p>To think about the probability of some event occurring, we must understand what possible
+events could occur – mathematicians refer to this as the <em>event space</em>.</p>
+<p>Some examples are</p>
+<ul class="simple">
+<li><p>For a coin flip, the coin could either come up heads, tails, or land on its side.</p></li>
+<li><p>The inches of rain falling in a certain location on a given day could be any real
+number between 0 and <span class="math notranslate nohighlight">\(\infty\)</span>.</p></li>
+<li><p>The change in an S&amp;P500 stock price could be any real number between
+<span class="math notranslate nohighlight">\(-\)</span> opening price and <span class="math notranslate nohighlight">\(\infty\)</span>.</p></li>
+<li><p>An individual’s employment status tomorrow could either be employed or unemployed.</p></li>
+<li><p>And the list goes on…</p></li>
+</ul>
+<p>Notice that in some of these cases, the event space can be counted (coin flip and employment status)
+while in others, the event space cannot be counted (rain and stock prices).</p>
+<p>We refer to random variables with countable event spaces as <em>discrete random variables</em> and
+random variables with uncountable event spaces as <em>continuous random variables</em>.</p>
+<p>We then call certain numbers ‘probabilities’ and associate them with events from the event space.</p>
+<p>The following is true about probabilities.</p>
+<ol class="simple">
+<li><p>The probability of any event must be greater than or equal to 0.</p></li>
+<li><p>The probability of all events from the event space must sum (or integrate) to 1.</p></li>
+<li><p>If two events cannot occur at same time, then the probability that at least one of them occurs is
+the sum of the probabilities that each event occurs (known as independence).</p></li>
+</ol>
+<p>We won’t rely on these for much of what we learn in this class, but occasionally, these facts will
+help us reason through what is happening.</p>
+</div>
+<div class="section" id="simulating-randomness-in-python">
+<h3>Simulating Randomness in Python<a class="headerlink" href="#simulating-randomness-in-python" title="Permalink to this headline">¶</a></h3>
+<p>One of the most basic random numbers is a variable that has equal probability of being any value
+between 0 and 1.</p>
+<p>You may have previously learned about this probability distribution as the Uniform(0, 1).</p>
+<p>Let’s dive into generating some random numbers.</p>
+<p>Run the code below multiple times and see what numbers you get.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.44157677133047557
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also generate arrays of random numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.42233715, 0.89955558, 0.56168063, 0.1242596 , 0.60793815,
+       0.48367684, 0.26166245, 0.38393685, 0.26764671, 0.94137087,
+       0.92167532, 0.12753129, 0.39941244, 0.61535425, 0.37945098,
+       0.30040662, 0.1889989 , 0.31924277, 0.25411851, 0.18958214,
+       0.26823134, 0.9099526 , 0.32528166, 0.18630739, 0.86680525])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.38306152, 0.36229744, 0.75280371, 0.42610951, 0.91700702],
+       [0.32135584, 0.49733397, 0.82467339, 0.44182532, 0.31350504],
+       [0.61940785, 0.38399318, 0.10025899, 0.12391622, 0.29088547],
+       [0.745689  , 0.47819304, 0.11457824, 0.46409772, 0.09339671],
+       [0.953385  , 0.48227352, 0.47406813, 0.41516068, 0.41346644]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.23641995, 0.42747857, 0.11173363, 0.18507829],
+        [0.45212514, 0.33407782, 0.15920601, 0.12919984],
+        [0.68378667, 0.84391394, 0.41896023, 0.5722049 ]],
+
+       [[0.45521571, 0.64370461, 0.1356575 , 0.05499592],
+        [0.80055518, 0.75348515, 0.56952946, 0.01841025],
+        [0.40600233, 0.67511788, 0.41903472, 0.59604791]]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="why-do-we-need-randomness">
+<h3>Why Do We Need Randomness?<a class="headerlink" href="#why-do-we-need-randomness" title="Permalink to this headline">¶</a></h3>
+<p>As economists and data scientists, we study complex systems.</p>
+<p>These systems have inherent randomness, but they do not readily reveal their underlying distribution
+to us.</p>
+<p>In cases where we face this difficulty, we turn to a set of tools known as Monte Carlo
+methods.</p>
+<p>These methods effectively boil down to repeatedly simulating some event (or events) and looking at
+the outcome distribution.</p>
+<p>This tool is used to inform decisions in search and rescue missions, election predictions, sports,
+and even by the Federal Reserve.</p>
+<p>The reasons that Monte Carlo methods work is a mathematical theorem known as the <em>Law of Large
+Numbers</em>.</p>
+<p>The Law of Large Numbers basically says that under relatively general conditions, the distribution of simulated outcomes will mimic the true distribution as the number of simulated events goes to infinity.</p>
+<p>We already know how the uniform distribution looks, so let’s demonstrate the Law of Large Numbers by approximating the uniform distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw various numbers of uniform[0, 1] random variables</span>
+<span class="n">draws_10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">draws_200</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">draws_10000</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>
+
+<span class="c1"># Plot their histograms</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram with 10 draws&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">draws_10</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram with 200 draws&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">draws_200</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram with 10,000 draws&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">draws_10000</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/randomness_9_0.png" src="../_images/randomness_9_0.png" />
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir3-4-1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+<div class="section" id="discrete-distributions">
+<h3>Discrete Distributions<a class="headerlink" href="#discrete-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes we will encounter variables that can only take one of a
+few possible values.</p>
+<p>We refer to this type of random variable as a discrete distribution.</p>
+<p>For example, consider a small business loan company.</p>
+<p>Imagine that the company’s loan requires a repayment of <span class="math notranslate nohighlight">\(\$25,000\)</span> and must be repaid 1 year
+after the loan was made.</p>
+<p>The company discounts the future at 5%.</p>
+<p>Additionally, the loans made are repaid in full with 75% probability, while
+<span class="math notranslate nohighlight">\(\$12,500\)</span> of loans is repaid with probability 20%, and no repayment with 5%
+probability.</p>
+<p>How much would the small business loan company be willing to loan if they’d like to
+– on average – break even?</p>
+<p>In this case, we can compute this by hand:</p>
+<p>The amount repaid, on average, is: <span class="math notranslate nohighlight">\(0.75(25,000) + 0.2(12,500) + 0.05(0) = 21,250\)</span>.</p>
+<p>Since we’ll receive that amount in one year, we have to discount it:
+<span class="math notranslate nohighlight">\(\frac{1}{1+0.05} 21,250 \approx 20238\)</span>.</p>
+<p>We can now verify by simulating the outcomes of many loans.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You&#39;ll see why we call it `_slow` soon :)</span>
+<span class="k">def</span> <span class="nf">simulate_loan_repayments_slow</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
+                                  <span class="n">repayment_part</span><span class="o">=</span><span class="mf">12_500.0</span><span class="p">):</span>
+    <span class="n">repayment_sims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>  <span class="c1"># Draw a random number</span>
+
+        <span class="c1"># Full repayment 75% of time</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.75</span><span class="p">:</span>
+            <span class="n">repaid</span> <span class="o">=</span> <span class="n">repayment_full</span>
+        <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.95</span><span class="p">:</span>
+            <span class="n">repaid</span> <span class="o">=</span> <span class="n">repayment_part</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">repaid</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="n">repayment_sims</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">))</span> <span class="o">*</span> <span class="n">repaid</span>
+
+    <span class="k">return</span> <span class="n">repayment_sims</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulate_loan_repayments_slow</span><span class="p">(</span><span class="mi">25_000</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20187.619047619046
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aside-vectorized-computations">
+<h4>Aside: Vectorized Computations<a class="headerlink" href="#aside-vectorized-computations" title="Permalink to this headline">¶</a></h4>
+<p>The code above illustrates the concepts we were discussing but is much slower than
+necessary.</p>
+<p>Below is a version of our function that uses numpy arrays to perform computations
+instead of only storing the values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_repayments</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
+                             <span class="n">repayment_part</span><span class="o">=</span><span class="mf">12_500.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate present value of N loans given values for discount rate and</span>
+<span class="sd">    repayment values</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">random_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># start as 0 -- no repayment</span>
+    <span class="n">repayment_sims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># adjust for full and partial repayment</span>
+    <span class="n">partial</span> <span class="o">=</span> <span class="n">random_numbers</span> <span class="o">&lt;=</span> <span class="mf">0.20</span>
+    <span class="n">repayment_sims</span><span class="p">[</span><span class="n">partial</span><span class="p">]</span> <span class="o">=</span> <span class="n">repayment_part</span>
+
+    <span class="n">full</span> <span class="o">=</span> <span class="o">~</span><span class="n">partial</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">random_numbers</span> <span class="o">&lt;=</span> <span class="mf">0.95</span><span class="p">)</span>
+    <span class="n">repayment_sims</span><span class="p">[</span><span class="n">full</span><span class="p">]</span> <span class="o">=</span> <span class="n">repayment_full</span>
+
+    <span class="n">repayment_sims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">))</span> <span class="o">*</span> <span class="n">repayment_sims</span>
+
+    <span class="k">return</span> <span class="n">repayment_sims</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulate_loan_repayments</span><span class="p">(</span><span class="mi">25_000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20274.285714285714
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll quickly demonstrate the time difference in running both function versions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> simulate_loan_repayments_slow(250_000)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>220 ms ± 9.61 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> simulate_loan_repayments(250_000)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.4 ms ± 2.16 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The timings for my computer were 167 ms for <code class="docutils literal notranslate"><span class="pre">simulate_loan_repayments_slow</span></code> and 5.05 ms for
+<code class="docutils literal notranslate"><span class="pre">simulate_loan_repayments</span></code>.</p>
+<p>This function is simple enough that both times are acceptable, but the 33x time difference could
+matter in a more complicated operation.</p>
+<p>This illustrates a concept called <em>vectorization</em>, which is when computations
+operate on an entire array at a time.</p>
+<p>In general, numpy code that is <em>vectorized</em> will perform better than numpy code that operates on one
+element at a time.</p>
+<p>For more information see the
+<a class="reference external" href="https://python-programming.quantecon.org/numba.html">QuantEcon lecture on performance Python</a> code.</p>
+</div>
+<div class="section" id="profitability-threshold">
+<h4>Profitability Threshold<a class="headerlink" href="#profitability-threshold" title="Permalink to this headline">¶</a></h4>
+<p>Rather than looking for the break even point, we might be interested in the largest loan size that
+ensures we still have a 95% probability of profitability in a year we make 250 loans.</p>
+<p>This is something that could be computed by hand, but it is much easier to answer through
+simulation!</p>
+<p>If we simulate 250 loans many times and keep track of what the outcomes look like, then we can look
+at the the 5th percentile of total repayment to find the loan size needed for 95% probability of
+being profitable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_year_of_loans</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+
+    <span class="c1"># Create array where we store the values</span>
+    <span class="n">avg_repayments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+
+        <span class="n">repaid_year</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">n_loans</span> <span class="o">=</span> <span class="n">simulate_loan_repayments</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+        <span class="n">avg_repayments</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_loans</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">avg_repayments</span>
+
+<span class="n">loan_repayment_outcomes</span> <span class="o">=</span> <span class="n">simulate_year_of_loans</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+
+<span class="c1"># Think about why we use the 5th percentile of outcomes to</span>
+<span class="c1"># compute when we are profitable 95% of time</span>
+<span class="n">lro_5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">loan_repayment_outcomes</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The largest loan size such that we were profitable 95</span><span class="si">% o</span><span class="s2">f time is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lro_5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The largest loan size such that we were profitable 95% of time is
+19571.428571428572
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s consider what we could learn if our loan company had even more detailed information about
+how the life of their loans progressed.</p>
+</div>
+<div class="section" id="loan-states">
+<h4>Loan States<a class="headerlink" href="#loan-states" title="Permalink to this headline">¶</a></h4>
+<p>Loans can have 3 potential statuses (or states):</p>
+<ol class="simple">
+<li><p>Repaying: Payments are being made on loan.</p></li>
+<li><p>Delinquency: No payments are currently being made, but they might be made in the future.</p></li>
+<li><p>Default: No payments are currently being made and no more payments will be made in future.</p></li>
+</ol>
+<p>The small business loans company knows the following:</p>
+<ul class="simple">
+<li><p>If a loan is currently in repayment, then it has an 85% probability of continuing being repaid, a
+10% probability of going into delinquency, and a 5% probability of going into default.</p></li>
+<li><p>If a loan is currently in delinquency, then it has a 25% probability of returning to repayment, a
+60% probability of staying delinquent, and a 15% probability of going into default.</p></li>
+<li><p>If a loan is currently in default, then it remains in default with 100% probability.</p></li>
+</ul>
+<p>For simplicity, let’s imagine that 12 payments are made during the life of a loan, even though
+this means people who experience delinquency won’t be required to repay their remaining balance.</p>
+<p>Let’s write the code required to perform this dynamic simulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_lifetime</span><span class="p">(</span><span class="n">monthly_payment</span><span class="p">):</span>
+
+    <span class="c1"># Create arrays to store outputs</span>
+    <span class="n">payments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+    <span class="c1"># Note: dtype &#39;U12&#39; means a string with no more than 12 characters</span>
+    <span class="n">statuses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">[</span><span class="s2">&quot;repaying&quot;</span><span class="p">,</span> <span class="s2">&quot;delinquency&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;U12&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Everyone is repaying during their first month</span>
+    <span class="n">payments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly_payment</span>
+    <span class="n">statuses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;repaying&quot;</span>
+
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+        <span class="n">rn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;repaying&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">rn</span> <span class="o">&lt;</span> <span class="mf">0.85</span><span class="p">:</span>
+                <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly_payment</span>
+                <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;repaying&quot;</span>
+            <span class="k">elif</span> <span class="n">rn</span> <span class="o">&lt;</span> <span class="mf">0.95</span><span class="p">:</span>
+                <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;delinquency&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;delinquency&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">rn</span> <span class="o">&lt;</span> <span class="mf">0.25</span><span class="p">:</span>
+                <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly_payment</span>
+                <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;repaying&quot;</span>
+            <span class="k">elif</span> <span class="n">rn</span> <span class="o">&lt;</span> <span class="mf">0.85</span><span class="p">:</span>
+                <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;delinquency&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Default -- Stays in default after it gets there</span>
+            <span class="n">payments</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">statuses</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+
+    <span class="k">return</span> <span class="n">payments</span><span class="p">,</span> <span class="n">statuses</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use this model of the world to answer even more questions than the last model!</p>
+<p>For example, we can think about things like</p>
+<ul class="simple">
+<li><p>For the defaulted loans, how many payments did they make before going into default?</p></li>
+<li><p>For those who partially repaid, how much was repaid before the 12 months was over?</p></li>
+</ul>
+<p>Unbeknownst to you, we have just introduced a well-known mathematical concept known as a Markov
+chain.</p>
+<p>A Markov chain is a random process (Note: Random process is a sequence of random variables
+observed over time) where the probability of something happening tomorrow only depends on what we
+can observe today.</p>
+<p>In our small business loan example, this just means that the small business loan’s repayment status
+tomorrow only depended on what its repayment status was today.</p>
+<p>Markov chains often show up in economics and statistics, so we decided a simple introduction would
+be helpful, but we leave out many details for the interested reader to find.</p>
+<p>A Markov chain is defined by three objects:</p>
+<ol class="simple">
+<li><p>A description of the possible states and their associated value.</p></li>
+<li><p>A complete description of the probability of moving from one state to all other states.</p></li>
+<li><p>An initial distribution over the states (often a vector of all zeros except for a single 1 for
+some particular state).</p></li>
+</ol>
+<p>For the example above, we’ll define each of these three things in the Python code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. State description</span>
+<span class="n">state_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;repaying&quot;</span><span class="p">,</span> <span class="s2">&quot;delinquency&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">]</span>
+
+<span class="c1"># 2. Transition probabilities: encoded in a matrix (2d-array) where element [i, j]</span>
+<span class="c1"># is the probability of moving from state i to state j</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># 3. Initial distribution: assume loans start in repayment</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have these objects defined, we can use the a <code class="docutils literal notranslate"><span class="pre">MarkovChain</span></code> class from the
+<a class="reference external" href="https://github.com/QuantEcon/QuantEcon.py/">quantecon python library</a> to analyze this model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">markov</span><span class="o">.</span><span class="n">MarkovChain</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">state_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">mc</span></code> object to do common Markov chain operations.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">simulate</span></code> method will simulate the Markov chain for a specified number of steps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;repaying&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
+       &#39;repaying&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;,
+       &#39;default&#39;], dtype=&#39;&lt;U11&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Suppose we were to simulate the Markov chain for an infinite number of steps.</p>
+<p>Given the random nature of transitions, we might end up taking different paths at any given moment.</p>
+<p>We can summarize all possible paths over time by keeping track of a distribution.</p>
+<p>Below, we will print out the distribution for the first 10 time steps,
+starting from a distribution where the debtor is repaying in the first step.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;At time </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2"> the distribution is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">P</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At time 0 the distribution is [1 0 0]
+At time 1 the distribution is [0.85 0.1  0.05]
+At time 2 the distribution is [0.7475 0.145  0.1075]
+At time 3 the distribution is [0.671625 0.16175  0.166625]
+At time 4 the distribution is [0.61131875 0.1642125  0.22446875]
+At time 5 the distribution is [0.56067406 0.15965937 0.27966656]
+At time 6 the distribution is [0.5164878  0.15186303 0.33164917]
+At time 7 the distribution is [0.47698039 0.1427666  0.38025302]
+At time 8 the distribution is [0.44112498 0.133358   0.42551703]
+At time 9 the distribution is [0.40829573 0.1241273  0.46757697]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir3-4-2">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 2 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="admonition-exercise admonition" id="dir3-4-3">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 3 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="continuous-distributions">
+<h3>Continuous Distributions<a class="headerlink" href="#continuous-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Recall that a continuous distribution is one where the value can take on an uncountable number of values.</p>
+<p>It differs from a discrete distribution in that the events are not
+countable.</p>
+<p>We can use simulation to learn things about continuous distributions as we did with discrete
+distributions.</p>
+<p>Let’s use simulation to study what is arguably the most commonly encountered
+distributions – the normal distribution.</p>
+<p>The Normal (sometimes referred to as the Gaussian distribution) is bell-shaped and completely
+described by the mean and variance of that distribution.</p>
+<p>The mean is often referred to as <span class="math notranslate nohighlight">\(\mu\)</span> and the variance as <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+<p>Let’s take a look at the normal distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scipy is an extension of numpy, and the stats</span>
+<span class="c1"># subpackage has tools for working with various probability distributions</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># NOTE: first argument to st.norm is mean, second is standard deviation sigma (not sigma^2)</span>
+<span class="n">pdf_x</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Normal Distribution ($\mu = 0, \sigma = 1$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf_x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x22f5337c3a0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/randomness_30_1.png" src="../_images/randomness_30_1.png" />
+</div>
+</div>
+<p>Another common continuous distribution used in economics is the gamma distribution.</p>
+<p>A gamma distribution is defined for all positive numbers and described by both a shape
+parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale parameter <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Let’s see what the distribution looks like for various choices of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+    <span class="c1"># scipy refers to the rate parameter beta as a scale parameter</span>
+    <span class="n">pdf_x</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf_x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">  theta = </span><span class="si">{</span><span class="n">theta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ax</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">130</span><span class="p">)</span>
+<span class="n">plot_gamma</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+<span class="n">plot_gamma</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+<span class="n">plot_gamma</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+<span class="n">plot_gamma</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/randomness_32_0.png" src="../_images/randomness_32_0.png" />
+</div>
+</div>
+<div class="admonition-exercise admonition" id="dir3-4-4">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 4 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<span id="ex3-4"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Wikipedia and other credible statistics sources tell us that the mean and
+variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.</p>
+<p>How could we check whether the numpy random numbers approximate these
+values?</p>
+<p>(<a class="reference internal" href="#dir3-4-1"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.</p>
+<p>The stationary distribution of a Markov chain is the probability distribution that would
+result after an infinite number of steps <em>for any initial distribution</em>.</p>
+<p>Mathematically, a stationary distribution <span class="math notranslate nohighlight">\(x\)</span> is a distribution where <span class="math notranslate nohighlight">\(x = P'x\)</span>.</p>
+<p>In the code cell below, use the <code class="docutils literal notranslate"><span class="pre">stationary_distributions</span></code> property of <code class="docutils literal notranslate"><span class="pre">mc</span></code> to
+determine the stationary distribution of our Markov chain.</p>
+<p>After doing your computation, think about the answer… think about why our transition
+probabilities must lead to this outcome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir3-4-2"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Let’s revisit the unemployment example from the <a class="reference internal" href="applied_linalg.html"><span class="doc">linear algebra lecture</span></a>.</p>
+<p>We’ll repeat necessary details here.</p>
+<p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 5\%\)</span> of workers lose their jobs, and
+<span class="math notranslate nohighlight">\(\phi = 10\%\)</span> of unemployed workers find jobs.</p>
+<p>Initially, 90% of the 1,000,000 workers are employed.</p>
+<p>Also suppose that the average employed worker earns 10 dollars, while an unemployed worker
+earns 1 dollar per period.</p>
+<p>You now have four tasks:</p>
+<ol class="simple">
+<li><p>Represent this problem as a Markov chain by defining the three components defined above.</p></li>
+<li><p>Construct an instance of the quantecon MarkovChain by using the objects defined in part 1.</p></li>
+<li><p>Simulate the Markov chain 30 times for 50 time periods, and plot each chain over time (see
+helper code below).</p></li>
+<li><p>Determine the average long run payment for a worker in this setting</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Think about the stationary distribution.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define components here</span>
+
+<span class="c1"># construct Markov chain</span>
+
+<span class="c1"># simulate (see docstring for how to do many repetitions of</span>
+<span class="c1"># the simulation in one function call)</span>
+<span class="c1"># uncomment the lines below and fill in the blanks</span>
+<span class="c1"># sim = XXXXX.simulate(XXXX)</span>
+<span class="c1"># fig, ax = plt.subplots(figsize=(10, 8))</span>
+<span class="c1"># ax.plot(range(50), sim.T, alpha=0.4)</span>
+
+<span class="c1"># Long-run average payment</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir3-4-3"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+<div class="section" id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+<p>Assume you have been given the opportunity to choose between one of three financial assets:</p>
+<p>You will be given the asset for free, allowed to hold it indefinitely, and keeping all payoffs.</p>
+<p>Also assume the assets’ payoffs are distributed as follows:</p>
+<ol class="simple">
+<li><p>Normal with <span class="math notranslate nohighlight">\(\mu = 10, \sigma = 5\)</span></p></li>
+<li><p>Gamma with <span class="math notranslate nohighlight">\(k = 5.3, \theta = 2\)</span></p></li>
+<li><p>Gamma with <span class="math notranslate nohighlight">\(k = 5, \theta = 2\)</span></p></li>
+</ol>
+<p>Use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> to answer the following questions:</p>
+<ul class="simple">
+<li><p>Which asset has the highest average returns?</p></li>
+<li><p>Which asset has the highest median returns?</p></li>
+<li><p>Which asset has the lowest coefficient of variation (standard deviation divided by mean)?</p></li>
+<li><p>Which asset would you choose? Why?</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>There is not a single right answer here. Be creative
+and express your preferences.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir3-4-4"><span class="std std-ref">back to text</span></a>)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./scientific"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="applied_linalg.html" title="previous page">Applied Linear Algebra</a>
+    <a class='right-next' id="next-link" href="optimization.html" title="next page">Optimization</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chase Coleman, Spencer Lyon, and Jesse Perla<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

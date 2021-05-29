@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\nbclient\client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\nbclient\client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\nbclient\client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\users\lenovo\anaconda3\envs\lecture-datascience\lib\site-packages\nbclient\client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def get_recession_data():
+    recession = (
+        web.DataReader(["USRECQ"], "fred", start, end)
+        .rename(columns=dict(USRECQ="recession"))
+        ["recession"]
+    )
+
+    # extract start and end date for each recession
+    start_dates = recession.loc[recession.diff() > 0].index.tolist()
+    if recession.iloc[0] > 0:
+        start_dates = [recession.index[0]] + start_dates
+
+    end_dates = recession.loc[recession.diff() < 0].index.tolist()
+
+    if len(start_dates) != len(end_dates):
+        raise ValueError("Need to have same number of start/end dates!")
+
+    return recession, start_dates, end_dates
+
+recession, start_dates, end_dates = get_recession_data()
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+[1;32m<ipython-input-11-64e7682a3136>[0m in [0;36m<module>[1;34m[0m
+[0;32m     18[0m     [1;32mreturn[0m [0mrecession[0m[1;33m,[0m [0mstart_dates[0m[1;33m,[0m [0mend_dates[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     19[0m [1;33m[0m[0m
+[1;32m---> 20[1;33m [0mrecession[0m[1;33m,[0m [0mstart_dates[0m[1;33m,[0m [0mend_dates[0m [1;33m=[0m [0mget_recession_data[0m[1;33m([0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m
+[1;32m<ipython-input-11-64e7682a3136>[0m in [0;36mget_recession_data[1;34m()[0m
+[0;32m     14[0m [1;33m[0m[0m
+[0;32m     15[0m     [1;32mif[0m [0mlen[0m[1;33m([0m[0mstart_dates[0m[1;33m)[0m [1;33m!=[0m [0mlen[0m[1;33m([0m[0mend_dates[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 16[1;33m         [1;32mraise[0m [0mValueError[0m[1;33m([0m[1;34m"Need to have same number of start/end dates!"[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     17[0m [1;33m[0m[0m
+[0;32m     18[0m     [1;32mreturn[0m [0mrecession[0m[1;33m,[0m [0mstart_dates[0m[1;33m,[0m [0mend_dates[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mValueError[0m: Need to have same number of start/end dates!
+ValueError: Need to have same number of start/end dates!
+
