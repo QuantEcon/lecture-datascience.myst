@@ -404,7 +404,7 @@ named `avalanche_forecasts`.
 ```{code-cell} python
 def download_cached_forecasts():
     # download the zipped file and unzip it here
-    url = "https://datascience.quantecon.org/assets/data/avalanche_forecasts.zip"
+    url = "https://github.com/QuantEcon/lecture-datascience.myst/blob/main/src/applications/avalanche_forecasts.zip?raw=true"
     with requests.get(url) as res:
         if not res.ok:
             raise ValueError("failed to download the cached forecasts")
