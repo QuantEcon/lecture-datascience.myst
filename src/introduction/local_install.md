@@ -19,7 +19,7 @@ Anaconda Python distribution for your operating system (Windows/Mac OS/Linux).
 Be sure to download the Python 3.X (where X is some number greater than or equal to 8) version, not
 the 2.7 version.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/install_python.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/install_python.png
 
 ```
 
@@ -32,7 +32,7 @@ On Mac OS and Linux, this should happen by default.
 
 For Windows users, we recommend installing for "just me" instead of "all users". Windows users will need to **check the upper box** when the page shown below appears (disregard the "not recommended" warning from Anaconda).
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/install_python_path.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/install_python_path.png
 
 ```
 
@@ -43,7 +43,7 @@ as seen in the following image.
 
 <br>
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/clone_button.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/clone_button.png
 
 ```
 
@@ -56,7 +56,7 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 1. Install [Github Desktop](https://desktop.github.com/).
 1. Click the "Open in Github Desktop" option in the clone button menu. It should open a Github
    Desktop popup that looks like this:
-   ```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/download_lectures_github_desktop.png
+   ```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/download_lectures_github_desktop.png
    ```
    You should choose the path (folder) where you would like to download the repository. The default path on
    Windows should be `C:/Users/YOUR_USERNAME/Documents/GitHub`.
@@ -173,7 +173,7 @@ The terminal you opened must stay open while you are editing the notebooks.
 Once the web browser is open, you should see the JupyterLab dashboard. You can open a new Jupyter
 notebook by clicking Python 3 when you see something like the following image in your browser:
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/jupyter_lab.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/jupyter_lab.png
 
 ```
 
@@ -181,7 +181,7 @@ notebook by clicking Python 3 when you see something like the following image in
 
 Once the notebook is open, you should something similar to the following image:
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/jupyter_lab_notebook.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/jupyter_lab_notebook.png
 
 ```
 
