@@ -29,7 +29,7 @@ click the over the settings icon on the bottom right of the page (see image).
 
 <br>
 
-```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/cloud_launch.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/cloud_launch.png
 
 ```
 
@@ -67,7 +67,7 @@ You will need to select choose `google colab` from the public options.
 **3.** You will be asked to sign in with your Google account and you will see something similar to
 the following picture.
 
-```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/colab_jupyter.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/colab_jupyter.png
 
 ```
 
@@ -89,14 +89,14 @@ See the code below to see what we mean:
 **5.** To navigate sections within a Colab notebook, click on the little arrow at the top left corner
 of the page,
 
-```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/colab_table_of_contents_arrow.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/colab_table_of_contents_arrow.png
 
 ```
 
 Then, "table of contents" will pop up. You can click on sections or subsections for different parts
 of the notebook.
 
-```{figure} https://datascience.quantecon.org/assets/_static/introduction_files/colab_table_of_contents.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/colab_table_of_contents.png
 
 ```
 
