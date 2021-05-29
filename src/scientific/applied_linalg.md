@@ -51,7 +51,7 @@ We often think of 2-element vectors as directional lines in the XY axes.
 This image, from the [QuantEcon Python lecture](https://python.quantecon.org/linear_algebra.html)
 is an example of what this might look like for the vectors `(-4, 3.5)`, `(-3, 3)`, and `(2, 4)`.
 
-```{figure} https://datascience.quantecon.org/assets/_static/applied_linalg_files/vector.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/vector.png
 :alt: vector.png
 ```
 
@@ -182,7 +182,7 @@ element found in the ith row and jth column of the matrix $x$.
 The image below from [Wikipedia](https://commons.wikimedia.org/wiki/File:Matrix_multiplication_diagram.svg),
 by Bilou, shows how matrix multiplication simplifies to a series of dot products:
 
-```{figure} https://datascience.quantecon.org/assets/_static/applied_linalg_files/mat_mult_wiki_bilou.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/mat_mult_wiki_bilou.png
 :alt: matmult.png
 ```
 

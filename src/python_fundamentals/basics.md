@@ -187,7 +187,7 @@ hitting `TAB`.
 It should then list data and method names to the right of the
 variable name like this:
 
-```{figure} https://datascience.quantecon.org/assets/_static/python_fundamentals/introspection.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/_static/introspection.png
 :alt: introspection.png
 ```
 
