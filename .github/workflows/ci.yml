@@ -31,11 +31,11 @@ jobs:
       - name: Build HTML
         shell: bash -l {0}
         run: |
-          jb build src --path-output ./
+          jb build lectures --path-output ./
       - name: Build Download Notebooks (sphinx-tojupyter)
         shell: bash -l {0}
         run: |
-          jb build src --path-output ./ --builder=custom --custom-builder=jupyter
+          jb build lectures --path-output ./ --builder=custom --custom-builder=jupyter
           mkdir -p _build/html/_notebooks
           rsync -r  _build/jupyter/ _build/html/_notebooks/
       - name: Preview Deploy to Netlify
