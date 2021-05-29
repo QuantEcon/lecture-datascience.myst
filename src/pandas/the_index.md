@@ -58,7 +58,7 @@ Let's begin by loading some data on GDP components that we collected from
 the World Bank's World Development Indicators Dataset.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/wdi_data.csv"
+url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/src/pandas/wdi_data.csv"
 df = pd.read_csv(url)
 df.info()
 
