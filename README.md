@@ -25,7 +25,7 @@ This will install all packages required to edit and build the lectures.
 3. Try building the lectures
 
 ```
-jupyter-book build src
+jupyter-book build lectures
 ```
 
 This will take a while. But it will populate your cache, so future iteration is faster. 
@@ -33,5 +33,5 @@ This will take a while. But it will populate your cache, so future iteration is 
 4. To clean up (i.e., delete the build.)
 
 ```
-jupyter-book clean src
+jupyter-book clean lectures
 ```
