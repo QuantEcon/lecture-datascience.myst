@@ -70,7 +70,7 @@ information see {cite}`het-alatas2011` or {cite}`het-triyana2016`.
 We are using the data provided with {cite}`het-triyana2016`.
 
 ```{code-cell} python
-url = "https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/applications/Triyana_2016_price_women_clean.csv"
+url = "https://github.com/QuantEcon/lecture-datascience.myst/raw/add-warning-error/lectures/applications/Triyana_2016_price_women_clean.csv"
 df = pd.read_csv(url)
 df.describe()
 ```
