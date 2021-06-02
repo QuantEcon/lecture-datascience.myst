@@ -374,7 +374,7 @@ We'd like to add that such an exercise is also "good for you" (similar to how ve
 But, for the example in class, we'll simply start with his cleaned data.
 
 ```{code-cell} python
-results = pd.read_csv("https://datascience.quantecon.org/assets/data/ruhl_cleaned_results.csv", thousands=",")
+results = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/ruhl_cleaned_results.csv", thousands=",")
 results.head()
 ```
 

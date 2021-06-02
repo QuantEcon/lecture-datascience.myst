@@ -570,7 +570,7 @@ See below for advice on how to proceed.
 
 When you are finished, you should have something that looks like this:
 
-```{figure} https://datascience.quantecon.org/assets/_static/groupby_files/groupby_cohort_analysis_exercise_output.png
+```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/groupby_cohort_analysis_exercise_output.png
 :alt: groupby\_cohort\_analysis\_exercise\_output.png
 ```
 

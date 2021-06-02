@@ -55,7 +55,7 @@ First, we will download the data directly from a url and read it into a pandas D
 
 ```{code-cell} python
 ## Load up the data -- this will take a couple seconds
-url = "https://datascience.quantecon.org/assets/data/state_unemployment.csv"
+url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/state_unemployment.csv"
 unemp_raw = pd.read_csv(url, parse_dates=["Date"])
 ```
 

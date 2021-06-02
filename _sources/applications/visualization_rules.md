@@ -188,7 +188,7 @@ Below, we create a draft of our plot.
 
 ```{code-cell} python
 # Read in data
-df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
@@ -234,7 +234,7 @@ presenting the details.  However, the code we use to create the best version of 
 
 ```{code-cell} python
 # Read in data
-df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
@@ -392,7 +392,7 @@ chose to remove them.
 from sklearn.linear_model import LinearRegression
 
 # Read in data
-df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
@@ -552,7 +552,7 @@ We will use the [Hue Saturation Value](https://en.wikipedia.org/wiki/HSL_and_HSV
 
 The way in which HSV covers the color space is demonstrated in the following figure.
 
-```{figure} https://datascience.quantecon.org/assets/_static/visualization_files/HSV_color_solid_cylinder_saturation_gray.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/HSV_color_solid_cylinder_saturation_gray.png
 :alt: HSL_cylinder.png
 ```
 
@@ -764,14 +764,14 @@ fig.tight_layout()
 
 And here is the same image converted to grayscale.
 
-```{figure} https://datascience.quantecon.org/assets/_static/visualization_files/bar_grayscale.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/bar_grayscale.png
 :alt: bar_grayscale.png
 ```
 
 The image below, from [this flowingdata blog entry](https://flowingdata.com/2012/11/09/incredibly-divided-nation-in-a-map),
 shows what happens when you don't check your colors... Don't do this.
 
-```{figure} https://datascience.quantecon.org/assets/_static/visualization_files/Divided-nation.jpg
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/Divided-nation.jpg
 :alt: Divided-nation.jpg
 ```
 
@@ -1129,7 +1129,7 @@ A high age dependency ratio means that the government will have a smaller tax ba
 but have relatively higher health and pension expenditures to pay to the old.
 
 ```{code-cell} python
-download_url = "https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv"
+download_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/WorldBank_AgeDependencyRatio.csv"
 df = pd.read_csv(download_url, na_values="..")
 df = df[["Country Name", "1960", "1970", "1980", "1990", "2000", "2010", "2017"]]
 df = df.set_index("Country Name").T
@@ -1323,7 +1323,7 @@ Legends have several weaknesses:
 To demonstrate this, we revisit our age dependency ratio example from earlier.
 
 ```{code-cell} python
-download_url = "https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv"
+download_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/WorldBank_AgeDependencyRatio.csv"
 df = pd.read_csv(download_url, na_values="..")
 df = df[["Country Name", "1960", "1970", "1980", "1990", "2000", "2010", "2017"]]
 df = df.set_index("Country Name").T

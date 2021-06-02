@@ -83,7 +83,7 @@ striking figure from a Financial Times
 The figure shows how we can see the anticipation of and response to iPhone
 announcements in Apple stock share prices.
 
-```{figure} https://datascience.quantecon.org/assets/_static/matplotlib_files/aapl_iphone_announcments.png
+```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/aapl_iphone_announcments.png
 :alt: aapl\_iphone\_announcments.png
 ```
 

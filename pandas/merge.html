@@ -422,7 +422,7 @@ statistics for each group.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from WDI. Units trillions of 2010 USD</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/wdi_data.csv&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/wdi_data.csv&quot;</span>
 <span class="n">wdi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">wdi</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
@@ -706,7 +706,7 @@ memory usage: 3.9+ KB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from WDI. Units millions of people</span>
-<span class="n">pop_url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/wdi_population.csv&quot;</span>
+<span class="n">pop_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/wdi_population.csv&quot;</span>
 <span class="n">pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pop_url</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">pop</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">pop</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -2028,7 +2028,7 @@ output.</p>
 <p>The 4 possible options for this argument are summarized in
 the image below.</p>
 <div class="figure align-default">
-<img alt="merge\_venns.png" src="https://datascience.quantecon.org/assets/_static/merge_files/merge_venns.png" />
+<img alt="merge\_venns.png" src="https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/merge_venns.png" />
 </div>
 <p>In words, we have:</p>
 <ul class="simple">
@@ -4060,7 +4060,7 @@ one another:</p>
 </div>
 <p>Here’s how we might visualize that.</p>
 <div class="figure align-default">
-<img alt="concat\_axis0.gif" src="https://datascience.quantecon.org/assets/_static/merge_files/concat_axis0.gif" />
+<img alt="concat\_axis0.gif" src="https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/concat_axis0.gif" />
 </div>
 <p>We can also set <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to stack side by side.</p>
 <div class="cell docutils container">
@@ -4166,7 +4166,7 @@ one another:</p>
 </div>
 <p>Here’s how we might visualize that.</p>
 <div class="figure align-default">
-<img alt="concat\_axis1.gif" src="https://datascience.quantecon.org/assets/_static/merge_files/concat_axis1.gif" />
+<img alt="concat\_axis1.gif" src="https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/concat_axis1.gif" />
 </div>
 </div>
 <div class="section" id="id2">
@@ -4237,7 +4237,7 @@ one another:</p>
 </div></div></div>
 </div>
 <div class="figure align-default">
-<img alt="left\_merge.gif" src="https://datascience.quantecon.org/assets/_static/merge_files/left_merge.gif" />
+<img alt="left\_merge.gif" src="https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/left_merge.gif" />
 </div>
 <p>Now, let’s focus on what happens when we set <code class="docutils literal notranslate"><span class="pre">how=&quot;right&quot;</span></code>.</p>
 <p>Pay special attention to what happens when filling the output value for
@@ -4314,7 +4314,7 @@ the key <code class="docutils literal notranslate"><span class="pre">A</span></c
 </div></div></div>
 </div>
 <div class="figure align-default">
-<img alt="right\_merge.gif" src="https://datascience.quantecon.org/assets/_static/merge_files/right_merge.gif" />
+<img alt="right\_merge.gif" src="https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/right_merge.gif" />
 </div>
 </div>
 <div class="section" id="exercises-with-artificial-data">
@@ -4757,7 +4757,7 @@ the most rated books?</p>
                     
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/src/pandas/merge.md" download><i data-feather="github"></i></a></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/pandas/merge.md" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>

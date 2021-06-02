@@ -105,7 +105,7 @@ We will keep our discussion here as brief and simple as possible because
 these tools will reappear in subsequent lectures.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/bball.csv"
+url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/bball.csv"
 bball = pd.read_csv(url)
 bball.info()
 
@@ -540,7 +540,7 @@ df3.head()
 
 Below is an animation that shows how stacking works.
 
-```{figure} https://datascience.quantecon.org/assets/_static/reshape_files/stack.gif
+```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/stack.gif
 :alt: stack.gif
 ```
 
@@ -555,7 +555,7 @@ df2_stack
 
 And here is an animation that shows how unstacking works.
 
-```{figure} https://datascience.quantecon.org/assets/_static/reshape_files/unstack_level0.gif
+```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/unstack_level0.gif
 :alt: unstack\_level0.gif
 ```
 
@@ -573,7 +573,7 @@ As noted above, the `melt` method transforms data from wide to long in form.
 
 Here's a visualization of that operation.
 
-```{figure} https://datascience.quantecon.org/assets/_static/reshape_files/melt.gif
+```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/melt.gif
 :alt: melt.gif
 ```
 
@@ -615,7 +615,7 @@ Here are a few hints:
   their data can stay data during your reshaping.
   ```
 
-Don't spend too much time on this... if you get stuck, you will find our answer [here](https://github.com/QuantEcon/lecture-datascience.myst/raw/main/src/_static/reshape-ex1-ans.txt).
+Don't spend too much time on this... if you get stuck, you will find our answer [here](https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/reshape-ex1-ans.txt).
 
 ```{hint}
 You might need to add `.sort_index(axis=1)` after you are
