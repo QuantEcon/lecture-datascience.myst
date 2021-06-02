@@ -11,7 +11,7 @@ kernelspec:
 
 # Previous Projects:
 
-We are excited that these materials were used to teach students at [Huazhong University of Science and Technology]("http://english.hust.edu.cn/").
+We are excited that these materials were used to teach students at [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
 
 We were impressed with the work that they produced and, with their permission, we share links to some of their final projects on this page.
 
