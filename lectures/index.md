@@ -20,6 +20,14 @@ To get an idea of what one can do after taking this course, please take a look a
 
 [Chase Coleman](http://www.chasegcoleman.com/), [Spencer Lyon](http://spencerlyon.com/), [Jesse Perla](http://jesseperla.com/), [More Contributors](../theme/contributors.md).
 
+```{admonition} News
+[QuantEcon](https://quantecon.org) is moving to the [Jupyter Book](https://jupyterbook.org/intro.html)
+build system for all of its projects. We are a founding member of the
+[Executable Books Project](https://github.com/executablebooks), an international collaboration to
+build open source tools that facilitate publishing using the Jupyter
+ecosystem. Please send feedback to [contact@quantecon.org](mailto:contact@quantecon.org)
+```
+
 ## <i class="fas fa-concierge-bell" style="color:#1665ad"></i> [Introduction](../introduction/index.md)
 Course description, software installation
 
