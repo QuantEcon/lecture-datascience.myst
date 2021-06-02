@@ -7,6 +7,7 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+orphan: true
 ---
 
 # Problem Set 5
@@ -28,7 +29,7 @@ qeds.themes.mpl_style();
 Load data from the {doc}`Basic Functionality <../pandas/basics>` lecture.
 
 ```{code-cell} python
-url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/problem_sets/state_unemployment.csv"
+url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/state_unemployment.csv"
 unemp_raw = pd.read_csv(url, parse_dates=["Date"])
 ```
 
