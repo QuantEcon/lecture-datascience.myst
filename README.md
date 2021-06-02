@@ -35,3 +35,9 @@ This will take a while. But it will populate your cache, so future iteration is 
 ```
 jupyter-book clean lectures
 ```
+
+### Releasing updates to GH-PAGES
+
+To make a release you need to setup a tagged release using `publish-` tag. 
+
+Detailed instructions are avaiable in the [quantecon manual](https://manual.quantecon.org/publish/publishing.html#build-and-publish-automatically-via-github)
