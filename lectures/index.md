@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 
-# Datascience for Economists
+# Introduction to Economic Modeling and Data Science
 
 This website presents a series of lectures on programming, data science, and economics. The emphasis of these materials is not just the programming and statistics necessary to analyze data, but also on interpreting the results through the lens of economics.
 
