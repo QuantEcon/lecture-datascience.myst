@@ -54,7 +54,7 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 **Github Desktop** (Mac/Windows only), recommended for most users.
 
 1. Install [Github Desktop](https://desktop.github.com/).
-1. Go to the [Github repo](hhttps://github.com/QuantEcon/lecture-datascience.notebooks).
+1. Go to the [Github repo](https://github.com/QuantEcon/lecture-datascience.notebooks).
 1. Click the "Open with Github Desktop" option in the Code button menu. It should open a Github
    Desktop popup that looks like this:
    ```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/download_lectures_github_desktop.png
