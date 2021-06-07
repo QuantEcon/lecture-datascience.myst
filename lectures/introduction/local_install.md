@@ -38,7 +38,7 @@ For Windows users, we recommend installing for "just me" instead of "all users".
 
 ## Downloading the QuantEcon Data Science Lectures
 
-To download the QuantEcon Data Science lectures, go to its [Github repo](https://github.com/QuantEcon/lecture-datascience.myst), click on the
+To download the QuantEcon Data Science lectures, go to its [Github repo](https://github.com/QuantEcon/lecture-datascience.notebooks), click on the
 Code button. 
 
 <br>
@@ -54,6 +54,7 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 **Github Desktop** (Mac/Windows only), recommended for most users.
 
 1. Install [Github Desktop](https://desktop.github.com/).
+1. Go to the [Github repo](hhttps://github.com/QuantEcon/lecture-datascience.notebooks).
 1. Click the "Open with Github Desktop" option in the Code button menu. It should open a Github
    Desktop popup that looks like this:
    ```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/download_lectures_github_desktop.png
@@ -66,7 +67,7 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 1. Make sure that `git` is installed on your computer. (`git` is not installed on Windows by default. You can download and install it from [here](https://git-scm.com/download/win)).
 1. Open a terminal.
 1. Set the path to where you would like to download the lectures. The default one is your home directory.
-1. Run `git clone https://github.com/QuantEcon/lecture-datascience.myst.git` which will
+1. Run `git clone https://github.com/QuantEcon/lecture-datascience.notebooks.git` which will
    download the repository with notebooks in your working directory.
 
 ## Package Management
