@@ -9,6 +9,25 @@
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        MathJax = {
+          loader: {load: ['[tex]/boldsymbol']},
+          tex: {
+            packages: {'[+]': ['boldsymbol']},
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            processEscapes: true,
+            macros: {
+                "argmax" : "arg\\,max",
+                "argmin" : "arg\\,min"
+            }
+          },
+          svg: {
+            fontCache: 'global',
+            scale: 0.92,
+            displayAlign: "center",
+          },
+        };
+    </script>
     
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -27,7 +46,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/quantecon-book-theme.48c7e3a8f180f886af6ac238ed81cfdf.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/quantecon-book-theme.b2c9c855ebbf206c0b4223812193cad1.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -48,7 +67,7 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="../_static/quantecon-book-theme.21832e3f3b828982d19fffe4976dc10a.js"></script>
+    <script src="../_static/quantecon-book-theme.a5462485f8dd312884626d20cc9f547c.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -1739,15 +1758,15 @@ Publica article.</p>
 <p>In response to Pro Publica, Northpointe, the company that produces
 COMPAS, argued that COMPAS is not biased because the probabilities of
 outcomes conditional on predictions (like P(NoRecid|LowRisk)) are
-approximately equal across races <span id="id1">[<a class="reference internal" href="#id16"><span>recidDMB16</span></a>]</span>.</p>
-<p>Following <span id="id2">[<a class="reference internal" href="#id6"><span>recidKLL+17</span></a>]</span>, we will call a prediction algorithm with this
+approximately equal across races <span id="id1">[<a class="reference internal" href="#id16">recidDMB16</a>]</span>.</p>
+<p>Following <span id="id2">[<a class="reference internal" href="#id6">recidKLL+17</a>]</span>, we will call a prediction algorithm with this
 property  well-calibrated.</p>
 <p>Being well-calibrated is one criteria for fairness of a prediction algorithm.</p>
 <p>Pro Publica’s critique focuses on a different criteria – that the the
 probability of predicted categories conditional on true outcomes
 should be equal across groups (i.e. P(HighRisk|NoRecid) should be
 equal across races).</p>
-<p><span id="id3">[<a class="reference internal" href="#id6"><span>recidKLL+17</span></a>]</span> calls a prediction algorithm with this property balanced.</p>
+<p><span id="id3">[<a class="reference internal" href="#id6">recidKLL+17</a>]</span> calls a prediction algorithm with this property balanced.</p>
 </div>
 <div class="section" id="visualizing-calibration-and-balance">
 <h3>Visualizing Calibration and Balance<a class="headerlink" href="#visualizing-calibration-and-balance" title="Permalink to this headline">¶</a></h3>
@@ -2009,13 +2028,37 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
@@ -2030,34 +2073,7 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.0s finished
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    5.9s finished
 </pre></div>
 </div>
 </div>
@@ -2107,7 +2123,7 @@ consistent coefficient estimates.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2133,48 +2149,52 @@ consistent coefficient estimates.</p>
   </thead>
   <tbody>
     <tr>
+      <th>Intercept</th>
+      <td>0.025059</td>
+    </tr>
+    <tr>
       <th>sex[T.Male]</th>
-      <td>0.724470</td>
+      <td>0.724670</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.2]</th>
-      <td>0.325192</td>
+      <td>0.325199</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.3]</th>
-      <td>0.612239</td>
+      <td>0.612274</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.4]</th>
-      <td>0.749695</td>
+      <td>0.749699</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.5]</th>
-      <td>0.732774</td>
+      <td>0.732782</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.6]</th>
-      <td>0.792303</td>
+      <td>0.792322</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.7]</th>
-      <td>1.032680</td>
+      <td>1.032681</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.8]</th>
-      <td>1.322560</td>
+      <td>1.322557</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.9]</th>
-      <td>1.286939</td>
+      <td>1.286942</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.10]</th>
-      <td>1.318420</td>
+      <td>1.318416</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.11]</th>
-      <td>1.236907</td>
+      <td>1.236903</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.12]</th>
@@ -2182,267 +2202,267 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>C(priors_count)[T.13]</th>
-      <td>1.528309</td>
+      <td>1.528311</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.14]</th>
-      <td>0.406040</td>
+      <td>0.406021</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.15]</th>
-      <td>0.781425</td>
+      <td>0.781431</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.16]</th>
-      <td>0.355518</td>
+      <td>0.186480</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.17]</th>
-      <td>0.371037</td>
+      <td>0.370991</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.18]</th>
-      <td>1.524261</td>
+      <td>1.524259</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.19]</th>
-      <td>1.143308</td>
+      <td>1.143303</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.20]</th>
-      <td>0.116820</td>
+      <td>0.116828</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.21]</th>
-      <td>1.298531</td>
+      <td>1.298517</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.22]</th>
-      <td>1.676819</td>
+      <td>1.676817</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.23]</th>
-      <td>1.332184</td>
+      <td>1.332181</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.25]</th>
-      <td>0.481938</td>
+      <td>0.481925</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.26]</th>
-      <td>0.339281</td>
+      <td>0.553759</td>
     </tr>
     <tr>
       <th>c_charge_degree[T.M]</th>
-      <td>-0.228150</td>
+      <td>-0.228133</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
-      <td>-0.152889</td>
+      <td>-0.152872</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Assault W/dead Weap]</th>
-      <td>-0.457764</td>
+      <td>-0.457754</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Battery]</th>
-      <td>-0.426251</td>
+      <td>-0.426233</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery]</th>
-      <td>-0.008894</td>
+      <td>-0.008882</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery on Law Enforc Officer]</th>
-      <td>0.312816</td>
+      <td>0.312835</td>
     </tr>
     <tr>
       <th>charge_cat[T.Burglary Unoccupied Dwelling]</th>
-      <td>-0.151948</td>
+      <td>-0.151920</td>
     </tr>
     <tr>
       <th>charge_cat[T.Criminal Mischief]</th>
-      <td>0.441647</td>
+      <td>0.441661</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Level 0.15 Or Minor In Veh]</th>
-      <td>-0.043816</td>
+      <td>-0.043822</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Property Damage/Injury]</th>
-      <td>-0.957469</td>
+      <td>-0.957474</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving License Suspended]</th>
-      <td>-0.062548</td>
+      <td>-0.062541</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.141232</td>
+      <td>-0.141271</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.182781</td>
+      <td>0.182802</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Petit Theft]</th>
-      <td>0.697389</td>
+      <td>0.697394</td>
     </tr>
     <tr>
       <th>charge_cat[T.Grand Theft (Motor Vehicle)]</th>
-      <td>0.134820</td>
+      <td>0.134836</td>
     </tr>
     <tr>
       <th>charge_cat[T.Operating W/O Valid License]</th>
-      <td>-0.084310</td>
+      <td>-0.084298</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft]</th>
-      <td>0.574935</td>
+      <td>0.574942</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft $100- $300]</th>
-      <td>0.019324</td>
+      <td>0.019325</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss Pyrrolidinovalerophenone]</th>
-      <td>2.135462</td>
+      <td>2.135482</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
-      <td>-0.186724</td>
+      <td>-0.186710</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.394909</td>
+      <td>-0.394881</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cocaine]</th>
-      <td>0.595579</td>
+      <td>0.595592</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.135600</td>
+      <td>0.135592</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Pretrial Release Dom Viol]</th>
-      <td>0.231007</td>
+      <td>0.231020</td>
     </tr>
     <tr>
       <th>charge_cat[T.arrest case no charge]</th>
-      <td>-0.181108</td>
+      <td>-0.181098</td>
     </tr>
     <tr>
       <th>charge_cat[T.other]</th>
-      <td>-0.196727</td>
+      <td>-0.196716</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.1]</th>
-      <td>0.034423</td>
+      <td>0.034420</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.3]</th>
-      <td>0.087793</td>
+      <td>0.087764</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.6]</th>
-      <td>0.036038</td>
+      <td>0.036016</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.10]</th>
-      <td>0.200320</td>
+      <td>0.200330</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.14]</th>
-      <td>0.709747</td>
+      <td>0.709771</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.16]</th>
-      <td>0.952789</td>
+      <td>1.121825</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.17]</th>
-      <td>1.115162</td>
+      <td>1.115208</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.26]</th>
-      <td>0.568376</td>
+      <td>0.353907</td>
     </tr>
     <tr>
       <th>sex[T.Male]:c_charge_degree[T.M]</th>
-      <td>0.163748</td>
+      <td>0.163731</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Aggravated Battery / Pregnant]</th>
-      <td>0.024294</td>
+      <td>0.024303</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Burglary Conveyance Unoccup]</th>
-      <td>0.516814</td>
+      <td>0.516819</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Corrupt Public Servant]</th>
-      <td>0.717895</td>
+      <td>0.717906</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Crimin Mischief Damage $1000+]</th>
-      <td>0.044216</td>
+      <td>0.044231</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving License Suspended]</th>
-      <td>-0.000923</td>
+      <td>-0.000922</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.035011</td>
+      <td>-0.034968</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving While License Revoked]</th>
-      <td>-0.094719</td>
+      <td>-0.094705</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.False Ownership Info/Pawn Item]</th>
-      <td>0.480683</td>
+      <td>0.480691</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Battery w/Prior Convict]</th>
-      <td>-0.096465</td>
+      <td>-0.096461</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.114963</td>
+      <td>0.114959</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Grand Theft in the 3rd Degree]</th>
-      <td>0.277284</td>
+      <td>0.277291</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Petit Theft]</th>
-      <td>0.199617</td>
+      <td>0.199615</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.051148</td>
+      <td>-0.051160</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Resist/Obstruct W/O Violence]</th>
-      <td>0.272836</td>
+      <td>0.272843</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.325834</td>
+      <td>0.325847</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>-0.024237</td>
+      <td>-0.024233</td>
     </tr>
     <tr>
       <th>sex[T.Male]:age</th>
-      <td>-0.014786</td>
+      <td>-0.014791</td>
     </tr>
     <tr>
       <th>juv_fel_count</th>
-      <td>0.302094</td>
+      <td>0.302097</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_misd_count</th>
@@ -2450,11 +2470,11 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>juv_other_count</th>
-      <td>0.149159</td>
+      <td>0.149175</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_other_count</th>
-      <td>-0.019187</td>
+      <td>-0.019200</td>
     </tr>
   </tbody>
 </table>
@@ -3031,20 +3051,20 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>Portion_of_NoRecid_and_LowRisk</th>
-      <td>0.405421</td>
-      <td>0.328025</td>
+      <td>0.404243</td>
+      <td>0.325902</td>
       <td>0.483333</td>
       <td>0.574194</td>
-      <td>0.561960</td>
+      <td>0.556196</td>
       <td>0.365185</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_LowRisk</th>
-      <td>0.147908</td>
-      <td>0.165605</td>
+      <td>0.149087</td>
+      <td>0.167728</td>
       <td>0.128333</td>
       <td>0.116129</td>
-      <td>0.083573</td>
+      <td>0.089337</td>
       <td>0.164444</td>
     </tr>
     <tr>
@@ -3096,38 +3116,38 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>P(NoRecid|LowRisk)</th>
-      <td>0.681188</td>
-      <td>0.643750</td>
+      <td>0.680556</td>
+      <td>0.642259</td>
       <td>0.707317</td>
       <td>0.741667</td>
-      <td>0.701439</td>
+      <td>0.699275</td>
       <td>0.673497</td>
     </tr>
     <tr>
       <th>P(NoRecid|HighRisk)</th>
-      <td>0.365357</td>
-      <td>0.337662</td>
+      <td>0.367199</td>
+      <td>0.340517</td>
       <td>0.405263</td>
       <td>0.514286</td>
-      <td>0.420290</td>
+      <td>0.436620</td>
       <td>0.359223</td>
     </tr>
     <tr>
       <th>P(Recid|LowRisk)</th>
-      <td>0.318812</td>
-      <td>0.356250</td>
+      <td>0.319444</td>
+      <td>0.357741</td>
       <td>0.292683</td>
       <td>0.258333</td>
-      <td>0.298561</td>
+      <td>0.300725</td>
       <td>0.326503</td>
     </tr>
     <tr>
       <th>P(Recid|HighRisk)</th>
-      <td>0.634643</td>
-      <td>0.662338</td>
+      <td>0.632801</td>
+      <td>0.659483</td>
       <td>0.594737</td>
       <td>0.485714</td>
-      <td>0.579710</td>
+      <td>0.563380</td>
       <td>0.640777</td>
     </tr>
   </tbody>
@@ -3161,20 +3181,20 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>P(LowRisk|NoRecid)</th>
-      <td>0.732694</td>
-      <td>0.664516</td>
+      <td>0.730564</td>
+      <td>0.660215</td>
       <td>0.790191</td>
       <td>0.831776</td>
-      <td>0.870536</td>
+      <td>0.861607</td>
       <td>0.689510</td>
     </tr>
     <tr>
       <th>P(HighRisk|NoRecid)</th>
-      <td>0.267306</td>
-      <td>0.335484</td>
+      <td>0.269436</td>
+      <td>0.339785</td>
       <td>0.209809</td>
       <td>0.168224</td>
-      <td>0.129464</td>
+      <td>0.138393</td>
       <td>0.310490</td>
     </tr>
     <tr>
@@ -3211,7 +3231,7 @@ prediction and balance?</p>
 <h3>Tradeoffs are Inevitable<a class="headerlink" href="#tradeoffs-are-inevitable" title="Permalink to this headline">¶</a></h3>
 <p>We could try to tweak our predictions further to improve
 balance.</p>
-<p>However, motivated in part by this COMPAS example, <span id="id4">[<a class="reference internal" href="#id6"><span>recidKLL+17</span></a>]</span> proved
+<p>However, motivated in part by this COMPAS example, <span id="id4">[<a class="reference internal" href="#id6">recidKLL+17</a>]</span> proved
 that it is impossible for any prediction algorithm to be both perfectly
 balanced and well-calibrated.</p>
 <p>Improvements in balance necessarily make calibration worse.</p>
@@ -3574,7 +3594,6 @@ calibration and balance.</p>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
                     <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/recidivism.ipynb" download><i data-feather="download-cloud"></i></a></li>
-                    
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
                     <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/recidivism.md" download><i data-feather="github"></i></a></li>
@@ -3589,12 +3608,12 @@ calibration and balance.</p>
                     <p>Lecture (PDF)</p>
                 </li>
                 <li class="download-pdf-file">
-                    <a href="" download><p style="color: white;">Book (PDF)</p></a>
+                    <a href="" download><p>Book (PDF)</p></a>
                 </li>
             </ul>
         </div>
         <div id="settingsModal" style="display: none;">
-            <p class="modal-title">QuantEcon Notebook Launcher</p>
+            <p class="modal-title"> Notebook Launcher </p>
             <div class="modal-desc">
             <p>
                 Choose public or private cloud service for "Launch" button.
@@ -3615,7 +3634,7 @@ calibration and balance.</p>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="">
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="tree/lecture-datascience.notebooks/applications/recidivism.ipynb" data-branch=main>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
@@ -3649,14 +3668,18 @@ calibration and balance.</p>
                 }
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "applications/recidivism";
+                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
+                const urlPath = "tree/lecture-datascience.notebooks/applications/recidivism.ipynb";
+                const branch = "main"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
                 // Highlight public server option if previous selection exists
                 if (typeof localStorage.launcherPublic !== 'undefined') {
                   launcherPublic.value = localStorage.launcherPublic;
                 }
                 // Update local storage upon public server selection
                 launcherPublic.addEventListener('change', (event) => {
-                  launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
-                  localStorage.launcherPublic = launcherPublicValue;
                   setLaunchServer();
                 });
                 // Populate private server input if previous entry exists
@@ -3665,25 +3688,32 @@ calibration and balance.</p>
                 }
                 // Update local storage when a private server is entered
                 launcherPrivate.addEventListener('input', (event) => {
-                  launcherPrivateValue = launcherPrivate.value;
-                  localStorage.launcherPrivate = launcherPrivateValue;
                   setLaunchServer();
                 });
 
-                const pageName = "applications/recidivism";
-                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
-                const urlPath = "";
-                const launchNotebookLink = document.getElementById('advancedLaunchButton');
-
                 // Function to update the "Launch Notebook" link href
-                function setLaunchServer(){
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&urlpath=" + urlPath;
-                    launchNotebookLinkURL = localStorage.launcherPrivate.replace(/\/$/, "") + repoPrefix + pageName + ".ipynb";
-                  } else if ( localStorage.launcherType == 'launcher-public' ){
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
                     launchNotebookLinkURL = localStorage.launcherPublic;
                   }
-                  launchNotebookLink.href = launchNotebookLinkURL;
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
                 }
                 // Check if user has previously selected a server
                 if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
@@ -3694,5 +3724,6 @@ calibration and balance.</p>
         </div>
 
     </div> <!-- .wrapper-->
+    
   </body>
 </html>

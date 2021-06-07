@@ -5,10 +5,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Datascience for Economists &#8212; QuantEcon DataScience</title>
+    <title>Introduction to Economic Modeling and Data Science &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        MathJax = {
+          loader: {load: ['[tex]/boldsymbol']},
+          tex: {
+            packages: {'[+]': ['boldsymbol']},
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            processEscapes: true,
+            macros: {
+                "argmax" : "arg\\,max",
+                "argmin" : "arg\\,min"
+            }
+          },
+          svg: {
+            fontCache: 'global',
+            scale: 0.92,
+            displayAlign: "center",
+          },
+        };
+    </script>
     
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -27,7 +46,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/quantecon-book-theme.48c7e3a8f180f886af6ac238ed81cfdf.css" type="text/css" />
+    <link rel="stylesheet" href="_static/quantecon-book-theme.b2c9c855ebbf206c0b4223812193cad1.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -48,7 +67,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="_static/quantecon-book-theme.21832e3f3b828982d19fffe4976dc10a.js"></script>
+    <script src="_static/quantecon-book-theme.a5462485f8dd312884626d20cc9f547c.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -70,13 +89,13 @@
 <!-- Twitter tags -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@quantecon" />
-<meta name="twitter:title" content="Datascience for Economists"/>
+<meta name="twitter:title" content="Introduction to Economic Modeling and Data Science"/>
 <meta name="twitter:description" content="This website presents a series of lectures on programming, data science, and economics.">
 <meta name="twitter:creator" content="@quantecon">
 <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
 
 <!-- Opengraph tags -->
-<meta property="og:title" content="Datascience for Economists" />
+<meta property="og:title" content="Introduction to Economic Modeling and Data Science" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://datascience.quantecon.org/index.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
@@ -183,7 +202,7 @@
 
                         <p class="page__header-heading"><a href="index.html">QuantEcon DataScience</a></p>
 
-                        <p class="page__header-subheading">Datascience for Economists</p>
+                        <p class="page__header-subheading">Introduction to Economic Modeling and Data Science</p>
 
                     </div>
 
@@ -198,12 +217,20 @@
                     
                     <div>
                         
-  <div class="section" id="datascience-for-economists">
-<h1>Datascience for Economists<a class="headerlink" href="#datascience-for-economists" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduction-to-economic-modeling-and-data-science">
+<h1>Introduction to Economic Modeling and Data Science<a class="headerlink" href="#introduction-to-economic-modeling-and-data-science" title="Permalink to this headline">¶</a></h1>
 <p>This website presents a series of lectures on programming, data science, and economics. The emphasis of these materials is not just the programming and statistics necessary to analyze data, but also on interpreting the results through the lens of economics.</p>
 <p>This work was supported in part by the Center for Innovative Data in Economics Research (CIDER) at the <a class="reference external" href="https://economics.ubc.ca/">Vancouver School of Economics</a>, UBC, funded by the Canada Excellence Research Chair grant.</p>
 <p>To get an idea of what one can do after taking this course, please take a look at <a class="reference internal" href="theme/projects.html"><span class="doc std std-doc">previous student projects</span></a>.</p>
 <p><a class="reference external" href="http://www.chasegcoleman.com/">Chase Coleman</a>, <a class="reference external" href="http://spencerlyon.com/">Spencer Lyon</a>, <a class="reference external" href="http://jesseperla.com/">Jesse Perla</a>, <a class="reference internal" href="theme/contributors.html"><span class="doc std std-doc">More Contributors</span></a>.</p>
+<div class="admonition-news admonition">
+<p class="admonition-title">News</p>
+<p><a class="reference external" href="https://quantecon.org">QuantEcon</a> is moving to the <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a>
+build system for all of its projects. We are a founding member of the
+<a class="reference external" href="https://github.com/executablebooks">Executable Books Project</a>, an international collaboration to
+build open source tools that facilitate publishing using the Jupyter
+ecosystem. Please send feedback to <a class="reference external" href="mailto:contact&#37;&#52;&#48;quantecon&#46;org">contact<span>&#64;</span>quantecon<span>&#46;</span>org</a></p>
+</div>
 <div class="section" id="i-class-fas-fa-concierge-bell-style-color-1665ad-i-introduction">
 <h2><i class="fas fa-concierge-bell" style="color:#1665ad"></i> <a class="reference internal" href="introduction/index.html"><span class="doc std std-doc">Introduction</span></a><a class="headerlink" href="#i-class-fas-fa-concierge-bell-style-color-1665ad-i-introduction" title="Permalink to this headline">¶</a></h2>
 <p>Course description, software installation</p>
@@ -223,8 +250,8 @@
 <div class="section" id="i-class-fas-fa-cogs-style-color-1665ad-i-applications">
 <h2><i class="fas fa-cogs" style="color:#1665ad"></i> <a class="reference internal" href="applications/index.html"><span class="doc std std-doc">Applications</span></a><a class="headerlink" href="#i-class-fas-fa-cogs-style-color-1665ad-i-applications" title="Permalink to this headline">¶</a></h2>
 <p>Applications and statistical tools</p>
-<div class="toctree-wrapper compound">
 </div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -530,7 +557,6 @@
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
                     <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/index.ipynb" download><i data-feather="download-cloud"></i></a></li>
-                    
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
                     <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/index.md" download><i data-feather="github"></i></a></li>
@@ -545,12 +571,12 @@
                     <p>Lecture (PDF)</p>
                 </li>
                 <li class="download-pdf-file">
-                    <a href="" download><p style="color: white;">Book (PDF)</p></a>
+                    <a href="" download><p>Book (PDF)</p></a>
                 </li>
             </ul>
         </div>
         <div id="settingsModal" style="display: none;">
-            <p class="modal-title">QuantEcon Notebook Launcher</p>
+            <p class="modal-title"> Notebook Launcher </p>
             <div class="modal-desc">
             <p>
                 Choose public or private cloud service for "Launch" button.
@@ -571,7 +597,7 @@
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="">
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="tree/lecture-datascience.notebooks/index.ipynb" data-branch=main>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
@@ -605,14 +631,18 @@
                 }
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "index";
+                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
+                const urlPath = "tree/lecture-datascience.notebooks/index.ipynb";
+                const branch = "main"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
                 // Highlight public server option if previous selection exists
                 if (typeof localStorage.launcherPublic !== 'undefined') {
                   launcherPublic.value = localStorage.launcherPublic;
                 }
                 // Update local storage upon public server selection
                 launcherPublic.addEventListener('change', (event) => {
-                  launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
-                  localStorage.launcherPublic = launcherPublicValue;
                   setLaunchServer();
                 });
                 // Populate private server input if previous entry exists
@@ -621,25 +651,32 @@
                 }
                 // Update local storage when a private server is entered
                 launcherPrivate.addEventListener('input', (event) => {
-                  launcherPrivateValue = launcherPrivate.value;
-                  localStorage.launcherPrivate = launcherPrivateValue;
                   setLaunchServer();
                 });
 
-                const pageName = "index";
-                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
-                const urlPath = "";
-                const launchNotebookLink = document.getElementById('advancedLaunchButton');
-
                 // Function to update the "Launch Notebook" link href
-                function setLaunchServer(){
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&urlpath=" + urlPath;
-                    launchNotebookLinkURL = localStorage.launcherPrivate.replace(/\/$/, "") + repoPrefix + pageName + ".ipynb";
-                  } else if ( localStorage.launcherType == 'launcher-public' ){
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
                     launchNotebookLinkURL = localStorage.launcherPublic;
                   }
-                  launchNotebookLink.href = launchNotebookLinkURL;
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
                 }
                 // Check if user has previously selected a server
                 if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
@@ -650,5 +687,6 @@
         </div>
 
     </div> <!-- .wrapper-->
+    
   </body>
 </html>

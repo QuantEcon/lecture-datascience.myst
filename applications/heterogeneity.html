@@ -9,6 +9,25 @@
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        MathJax = {
+          loader: {load: ['[tex]/boldsymbol']},
+          tex: {
+            packages: {'[+]': ['boldsymbol']},
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            processEscapes: true,
+            macros: {
+                "argmax" : "arg\\,max",
+                "argmin" : "arg\\,min"
+            }
+          },
+          svg: {
+            fontCache: 'global',
+            scale: 0.92,
+            displayAlign: "center",
+          },
+        };
+    </script>
     
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -27,7 +46,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/quantecon-book-theme.48c7e3a8f180f886af6ac238ed81cfdf.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/quantecon-book-theme.b2c9c855ebbf206c0b4223812193cad1.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -48,7 +67,7 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="../_static/quantecon-book-theme.21832e3f3b828982d19fffe4976dc10a.js"></script>
+    <script src="../_static/quantecon-book-theme.a5462485f8dd312884626d20cc9f547c.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -248,7 +267,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">patsy</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">neural_network</span>
@@ -257,7 +276,7 @@
 <span class="kn">from</span> <span class="nn">sklearn.utils._testing</span> <span class="kn">import</span> <span class="n">ignore_warnings</span>
 <span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
@@ -285,16 +304,255 @@ given quarterly and were about 60-220 dollars or 15-20 percent of
 quarterly consumption. PKH eligibility was randomly assigned at the
 kecamatan (district) level. All pregnant women living in a treated
 kecamatan could choose to participate in the experiment. For more
-information see <span id="id1">[<a class="reference internal" href="#id21"><span>hetACE+11</span></a>]</span> or <span id="id2">[<a class="reference internal" href="#id22"><span>hetTri16</span></a>]</span>.</p>
-<p>We are using the data provided with <span id="id3">[<a class="reference internal" href="#id22"><span>hetTri16</span></a>]</span>.</p>
+information see <span id="id1">[<a class="reference internal" href="#id21">hetACE+11</a>]</span> or <span id="id2">[<a class="reference internal" href="#id22">hetTri16</a>]</span>.</p>
+<p>We are using the data provided with <span id="id3">[<a class="reference internal" href="#id22">hetTri16</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/applications/Triyana_2016_price_women_clean.csv.gz?raw=true&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/applications/Triyana_2016_price_women_clean.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rid_panel</th>
+      <th>prov</th>
+      <th>Location_ID</th>
+      <th>dist</th>
+      <th>wave</th>
+      <th>edu</th>
+      <th>agecat</th>
+      <th>log_xp_percap</th>
+      <th>rhr031</th>
+      <th>rhr032</th>
+      <th>...</th>
+      <th>hh_xp_all</th>
+      <th>tv</th>
+      <th>parabola</th>
+      <th>fridge</th>
+      <th>motorbike</th>
+      <th>car</th>
+      <th>pig</th>
+      <th>goat</th>
+      <th>cow</th>
+      <th>horse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.225100e+04</td>
+      <td>22768.000000</td>
+      <td>2.277100e+04</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>...</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+      <td>22771.00000</td>
+      <td>22771.000000</td>
+      <td>22771.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.406884e+12</td>
+      <td>42.761156</td>
+      <td>4.286882e+06</td>
+      <td>431842.012033</td>
+      <td>1.847174</td>
+      <td>52.765799</td>
+      <td>4.043081</td>
+      <td>13.420404</td>
+      <td>0.675157</td>
+      <td>0.754908</td>
+      <td>...</td>
+      <td>3.839181</td>
+      <td>0.754908</td>
+      <td>0.482148</td>
+      <td>0.498661</td>
+      <td>0.594792</td>
+      <td>0.470511</td>
+      <td>0.536691</td>
+      <td>0.53858</td>
+      <td>0.515041</td>
+      <td>0.470247</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.944106e+12</td>
+      <td>14.241982</td>
+      <td>1.423541e+06</td>
+      <td>143917.353784</td>
+      <td>0.875323</td>
+      <td>45.833778</td>
+      <td>1.280589</td>
+      <td>1.534089</td>
+      <td>0.468326</td>
+      <td>0.430151</td>
+      <td>...</td>
+      <td>1.481982</td>
+      <td>0.430151</td>
+      <td>0.499692</td>
+      <td>0.500009</td>
+      <td>0.490943</td>
+      <td>0.499141</td>
+      <td>0.498663</td>
+      <td>0.49852</td>
+      <td>0.499785</td>
+      <td>0.499125</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.100103e+10</td>
+      <td>31.000000</td>
+      <td>3.175010e+06</td>
+      <td>3524.000000</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+      <td>0.000000</td>
+      <td>7.461401</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.731008e+12</td>
+      <td>32.000000</td>
+      <td>3.210180e+06</td>
+      <td>323210.000000</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>11.972721</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>3.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.491004e+12</td>
+      <td>35.000000</td>
+      <td>3.517171e+06</td>
+      <td>353517.000000</td>
+      <td>2.000000</td>
+      <td>12.000000</td>
+      <td>5.000000</td>
+      <td>12.851639</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>5.061008e+12</td>
+      <td>53.000000</td>
+      <td>5.307020e+06</td>
+      <td>535307.000000</td>
+      <td>3.000000</td>
+      <td>99.000000</td>
+      <td>5.000000</td>
+      <td>15.018967</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>6.681013e+12</td>
+      <td>75.000000</td>
+      <td>7.571030e+06</td>
+      <td>757571.000000</td>
+      <td>3.000000</td>
+      <td>99.000000</td>
+      <td>5.000000</td>
+      <td>15.018967</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>5.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 121 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="potential-outcomes-and-treatment-effects">
@@ -331,7 +589,7 @@ E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
 <p>Let’s estimate the average treatment effect.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># some data prep for later</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># some data prep for later</span>
 <span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">bw ~ pkh_kec_ever +</span>
 <span class="s2">  C(edu)*C(agecat) + log_xp_percap + hh_land + hh_home + C(dist) +</span>
@@ -366,7 +624,7 @@ E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate average treatment effects</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate average treatment effects</span>
 <span class="kn">from</span> <span class="nn">statsmodels.iolib.summary2</span> <span class="kn">import</span> <span class="n">summary_col</span>
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">birthweight</span><span class="o">=</span><span class="n">bw</span><span class="p">,</span><span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span><span class="n">assisted_delivery</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;good_assisted_delivery&quot;</span><span class="p">]))</span>
 <span class="n">usage</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;assisted_delivery ~ treatment&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span> <span class="n">cov_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;groups&#39;</span><span class="p">:</span><span class="n">loc_id</span><span class="p">})</span>
@@ -375,6 +633,30 @@ E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+         <td></td>        <th>assisted_delivery</th>    <th>bw</th>    
+</tr>
+<tr>
+  <th>Intercept</th>           <td>0.7827</td>       <td>3173.4067</td>
+</tr>
+<tr>
+  <th></th>                   <td>(0.0124)</td>      <td>(10.2323)</td>
+</tr>
+<tr>
+  <th>treatment</th>           <td>0.0235</td>       <td>-14.8992</td> 
+</tr>
+<tr>
+  <th></th>                   <td>(0.0192)</td>      <td>(24.6304)</td>
+</tr>
+<tr>
+  <th>R-squared</th>           <td>0.0004</td>        <td>0.0001</td>  
+</tr>
+<tr>
+  <th>R-squared Adj.</th>      <td>0.0002</td>        <td>-0.0001</td> 
+</tr>
+</table></div></div>
 </div>
 <p>The program did increase the percent of births assisted by a medical
 professional, but on average, did not affect birth weight.</p>
@@ -399,21 +681,21 @@ identifiable (by X) groups of people for with varying treatment effects vary.</p
 expectations, machine learning methods might be useful.</p>
 <p>However, if we want to be able to perform statistical inference, we
 must use machine learning methods carefully. We will detail one
-approach below. <span id="id4">[<a class="reference internal" href="#id20"><span>hetAI16</span></a>]</span> and <span id="id5">[<a class="reference internal" href="#id19"><span>hetWA18</span></a>]</span> are
+approach below. <span id="id4">[<a class="reference internal" href="#id20">hetAI16</a>]</span> and <span id="id5">[<a class="reference internal" href="#id19">hetWA18</a>]</span> are
 alternative approaches.</p>
 </div>
 </div>
 <div class="section" id="generic-machine-learning-inference">
 <h2>Generic Machine Learning Inference<a class="headerlink" href="#generic-machine-learning-inference" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we will describe the “generic machine learning
-inference” method of <span id="id6">[<a class="reference internal" href="#id18"><span>hetCDDFV18</span></a>]</span> to explore heterogeneity in
+inference” method of <span id="id6">[<a class="reference internal" href="#id18">hetCDDFV18</a>]</span> to explore heterogeneity in
 conditional average treatment effects.</p>
 <p>This approach allows any
 machine learning method to be used to estimate <span class="math notranslate nohighlight">\(E[y_i(1) -
 y_i(0) |X_i=x]\)</span>.</p>
 <p>Inference for functions estimated by machine learning methods is
 typically either impossible or requires very restrictive assumptions.
-<span id="id7">[<a class="reference internal" href="#id18"><span>hetCDDFV18</span></a>]</span> gets around this problem by focusing on inference for
+<span id="id7">[<a class="reference internal" href="#id18">hetCDDFV18</a>]</span> gets around this problem by focusing on inference for
 certain summary statistics of the machine learning prediction for
 <span class="math notranslate nohighlight">\(E[y_i(1) - y_i(0) |X_i=x]\)</span> rather than
 <span class="math notranslate nohighlight">\(E[y_i(1) - y_i(0) |X_i=x]\)</span> itself.</p>
@@ -452,7 +734,7 @@ caused by noise.</p>
 </div>
 <div class="section" id="grouped-average-treatment-effects">
 <h3>Grouped Average Treatment Effects<a class="headerlink" href="#grouped-average-treatment-effects" title="Permalink to this headline">¶</a></h3>
-<p>To deal with both these issues, <span id="id8">[<a class="reference internal" href="#id18"><span>hetCDDFV18</span></a>]</span> focuses on
+<p>To deal with both these issues, <span id="id8">[<a class="reference internal" href="#id18">hetCDDFV18</a>]</span> focuses on
 grouped average treatment effects (GATE) with groups defined by
 <span class="math notranslate nohighlight">\(S(x)\)</span>. Partition the data into a fixed, finite number of groups
 based on <span class="math notranslate nohighlight">\(S(x)\)</span> . Let
@@ -498,7 +780,7 @@ u_i
 asymptotically normal with the usual regression standard errors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for clustering standard errors</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for clustering standard errors</span>
 <span class="k">def</span> <span class="nf">get_treatment_se</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">cluster_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -513,7 +795,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generic_ml_model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generic_ml_model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">nobs</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="n">blp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_split</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -588,14 +870,14 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xl</span><span class="p">,</span> <span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="n">loc_id</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kw</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Xl</span><span class="p">,</span> <span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="n">loc_id</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@ignore_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@ignore_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">other_kw</span><span class="p">):</span>
     <span class="n">all_kw</span> <span class="o">=</span> <span class="n">kw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">all_kw</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
@@ -607,7 +889,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
     <span class="n">summaries</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">generic_ml_summary</span><span class="p">,</span> <span class="n">results</span><span class="p">))</span>
     <span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
         <span class="n">mod</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">mod</span><span class="p">[</span><span class="s2">&quot;cate&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -637,7 +919,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
 <span class="n">models</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_alphas</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
     <span class="n">ensemble</span><span class="o">.</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
@@ -651,16 +933,241 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">bw</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">bw</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation in median CATE:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LassoCV</th>
+      <td>1.000000</td>
+      <td>0.514310</td>
+      <td>0.198907</td>
+      <td>-0.037106</td>
+    </tr>
+    <tr>
+      <th>RandomForestRegressor</th>
+      <td>0.514310</td>
+      <td>1.000000</td>
+      <td>0.479698</td>
+      <td>-0.169024</td>
+    </tr>
+    <tr>
+      <th>XGBRegressor</th>
+      <td>0.198907</td>
+      <td>0.479698</td>
+      <td>1.000000</td>
+      <td>-0.028867</td>
+    </tr>
+    <tr>
+      <th>MLPRegressor</th>
+      <td>-0.037106</td>
+      <td>-0.169024</td>
+      <td>-0.028867</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best linear projection of CATE
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">blp</th>
+      <th>0</th>
+      <td>-13.186414</td>
+      <td>-16.887200</td>
+      <td>-13.069156</td>
+      <td>-4.230650</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.018431</td>
+      <td>0.036594</td>
+      <td>0.108622</td>
+      <td>-1124.184150</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">se</th>
+      <th>0</th>
+      <td>32.781686</td>
+      <td>33.140690</td>
+      <td>31.663683</td>
+      <td>34.358828</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.511098</td>
+      <td>0.313569</td>
+      <td>0.080075</td>
+      <td>3109.282388</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group average treatment effects:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">gate</th>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>-23.678638</td>
+      <td>-49.905001</td>
+      <td>43.913261</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000000</td>
+      <td>-4.656046</td>
+      <td>-50.881362</td>
+      <td>-10.444364</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-2.624290</td>
+      <td>-23.897210</td>
+      <td>-23.897963</td>
+      <td>-13.897563</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000</td>
+      <td>-32.624980</td>
+      <td>12.990272</td>
+      <td>-15.145602</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-18.584957</td>
+      <td>-20.335883</td>
+      <td>34.256459</td>
+      <td>-1.221191</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">se</th>
+      <th>0</th>
+      <td>69.190783</td>
+      <td>71.041360</td>
+      <td>68.906517</td>
+      <td>78.289539</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>64.525590</td>
+      <td>67.721708</td>
+      <td>62.493571</td>
+      <td>71.588186</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>65.425889</td>
+      <td>66.177264</td>
+      <td>68.051584</td>
+      <td>70.898977</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>70.976447</td>
+      <td>69.764482</td>
+      <td>66.347683</td>
+      <td>67.541342</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>66.314562</td>
+      <td>72.861269</td>
+      <td>76.432977</td>
+      <td>62.388537</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/heterogeneity_15_6.png" src="../_images/heterogeneity_15_6.png" />
 </div>
 </div>
 <p>From the second table above, we see that regardless of the machine
@@ -677,7 +1184,7 @@ conditional average treatment effect.</p>
 <p>Let’s see what we get when we look at assisted delivery.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;good_assisted_delivery&quot;</span><span class="p">]</span><span class="c1">#&quot;midwife_birth&quot;]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ad</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;good_assisted_delivery&quot;</span><span class="p">]</span><span class="c1">#&quot;midwife_birth&quot;]</span>
 <span class="n">results_ad</span> <span class="o">=</span> <span class="n">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ad</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -685,9 +1192,234 @@ conditional average treatment effect.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">generate_report</span><span class="p">(</span><span class="n">results_ad</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">generate_report</span><span class="p">(</span><span class="n">results_ad</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation in median CATE:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LassoCV</th>
+      <td>1.000000</td>
+      <td>0.870073</td>
+      <td>0.512500</td>
+      <td>0.853592</td>
+    </tr>
+    <tr>
+      <th>RandomForestRegressor</th>
+      <td>0.870073</td>
+      <td>1.000000</td>
+      <td>0.551721</td>
+      <td>0.727693</td>
+    </tr>
+    <tr>
+      <th>XGBRegressor</th>
+      <td>0.512500</td>
+      <td>0.551721</td>
+      <td>1.000000</td>
+      <td>0.454731</td>
+    </tr>
+    <tr>
+      <th>MLPRegressor</th>
+      <td>0.853592</td>
+      <td>0.727693</td>
+      <td>0.454731</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best linear projection of CATE
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">blp</th>
+      <th>0</th>
+      <td>0.039746</td>
+      <td>0.037213</td>
+      <td>0.046889</td>
+      <td>0.041756</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.385388</td>
+      <td>0.473533</td>
+      <td>0.142846</td>
+      <td>0.472658</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">se</th>
+      <th>0</th>
+      <td>0.021257</td>
+      <td>0.021836</td>
+      <td>0.022573</td>
+      <td>0.020707</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.146120</td>
+      <td>0.139927</td>
+      <td>0.076341</td>
+      <td>0.129519</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group average treatment effects:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>LassoCV</th>
+      <th>RandomForestRegressor</th>
+      <th>XGBRegressor</th>
+      <th>MLPRegressor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">gate</th>
+      <th>0</th>
+      <td>-0.005625</td>
+      <td>-0.035390</td>
+      <td>-0.004443</td>
+      <td>-0.007944</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.037345</td>
+      <td>0.024968</td>
+      <td>0.012701</td>
+      <td>-0.034120</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.020485</td>
+      <td>0.008051</td>
+      <td>0.017718</td>
+      <td>-0.035516</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.075237</td>
+      <td>0.037249</td>
+      <td>0.088535</td>
+      <td>0.082187</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.167275</td>
+      <td>0.175949</td>
+      <td>0.113901</td>
+      <td>0.187014</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">se</th>
+      <th>0</th>
+      <td>0.041365</td>
+      <td>0.048381</td>
+      <td>0.046894</td>
+      <td>0.028924</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.042233</td>
+      <td>0.039203</td>
+      <td>0.047005</td>
+      <td>0.043827</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.046746</td>
+      <td>0.042464</td>
+      <td>0.044742</td>
+      <td>0.051505</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.047517</td>
+      <td>0.046047</td>
+      <td>0.042991</td>
+      <td>0.050002</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.055111</td>
+      <td>0.052048</td>
+      <td>0.051973</td>
+      <td>0.054068</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/heterogeneity_18_6.png" src="../_images/heterogeneity_18_6.png" />
 </div>
 </div>
 <p>Now, the results are more encouraging. For all four machine learning
@@ -706,7 +1438,7 @@ us understand why the treatment effect varies or how to
 develop simple rules for targeting future treatments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span>
 <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;edu99&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">edu</span> <span class="o">==</span> <span class="mi">99</span>
 <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;educ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;edu&quot;</span><span class="p">]</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;edu99&quot;</span><span class="p">],</span> <span class="s2">&quot;educ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
@@ -721,7 +1453,7 @@ develop simple rules for targeting future treatments.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cov_mean_by_group</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cov_mean_by_group</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">):</span>
     <span class="n">n_group</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">gate</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">gate_se</span> <span class="o">=</span> <span class="n">gate</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -754,7 +1486,7 @@ develop simple rules for targeting future treatments.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_group_means_for_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_group_means_for_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
     <span class="n">to_cat</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
@@ -773,20 +1505,23 @@ develop simple rules for targeting future treatments.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">group_means_ad</span> <span class="o">=</span> <span class="n">compute_group_means_for_results</span><span class="p">(</span><span class="n">results_ad</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_means_ad</span> <span class="o">=</span> <span class="n">compute_group_means_for_results</span><span class="p">(</span><span class="n">results_ad</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">group_means_ad</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">group_means_ad</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;plus2sd&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span> <span class="s2">&quot;minus2sd&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">add_legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/heterogeneity_24_0.png" src="../_images/heterogeneity_24_0.png" />
 </div>
 </div>
 <p>From this, we see that the group predicted to be most affected by treatment
@@ -819,18 +1554,18 @@ by statistician Andrew Gelman for more information.</p>
 </div>
 <div class="section" id="causal-trees-and-forests">
 <h2>Causal Trees and Forests<a class="headerlink" href="#causal-trees-and-forests" title="Permalink to this headline">¶</a></h2>
-<p><span id="id9">[<a class="reference internal" href="#id20"><span>hetAI16</span></a>]</span> develop the idea of “causal trees.” The purpose and
+<p><span id="id9">[<a class="reference internal" href="#id20">hetAI16</a>]</span> develop the idea of “causal trees.” The purpose and
 method are qualitatively similar to the grouped average treatment
-effects. The main difference is that the groups in <span id="id10">[<a class="reference internal" href="#id20"><span>hetAI16</span></a>]</span>
+effects. The main difference is that the groups in <span id="id10">[<a class="reference internal" href="#id20">hetAI16</a>]</span>
 are determined by a low-depth regression tree instead of by quantiles
 of a noisy estimate of the conditional average treatment effect. As
 above, sample-splitting is used to facilitate inference.</p>
 <p>Causal trees share many downsides of regression trees. In
 particular, the branches of the tree and subsequent results can be
-sensitive to small changes in the data.  <span id="id11">[<a class="reference internal" href="#id19"><span>hetWA18</span></a>]</span> develop a
+sensitive to small changes in the data.  <span id="id11">[<a class="reference internal" href="#id19">hetWA18</a>]</span> develop a
 causal forest estimator to address this concern. This causal forest
 estimates <span class="math notranslate nohighlight">\(E[y_i(1) - y_i(0) |X_i=x]\)</span> directly. Unlike most
-machine learning estimators, <span id="id12">[<a class="reference internal" href="#id19"><span>hetWA18</span></a>]</span> prove that causal
+machine learning estimators, <span id="id12">[<a class="reference internal" href="#id19">hetWA18</a>]</span> prove that causal
 forests are consistent and pointwise asymptotically normal, albeit
 with a slower than <span class="math notranslate nohighlight">\(\sqrt{n}\)</span> rate of convergence. In practice,
 this means that either the sample size must be very large (and/or <span class="math notranslate nohighlight">\(x\)</span>
@@ -1161,7 +1896,6 @@ relatively low dimension) to get precise estimates.</p>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
                     <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/heterogeneity.ipynb" download><i data-feather="download-cloud"></i></a></li>
-                    
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
                     <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/heterogeneity.md" download><i data-feather="github"></i></a></li>
@@ -1176,12 +1910,12 @@ relatively low dimension) to get precise estimates.</p>
                     <p>Lecture (PDF)</p>
                 </li>
                 <li class="download-pdf-file">
-                    <a href="" download><p style="color: white;">Book (PDF)</p></a>
+                    <a href="" download><p>Book (PDF)</p></a>
                 </li>
             </ul>
         </div>
         <div id="settingsModal" style="display: none;">
-            <p class="modal-title">QuantEcon Notebook Launcher</p>
+            <p class="modal-title"> Notebook Launcher </p>
             <div class="modal-desc">
             <p>
                 Choose public or private cloud service for "Launch" button.
@@ -1202,7 +1936,7 @@ relatively low dimension) to get precise estimates.</p>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="">
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="tree/lecture-datascience.notebooks/applications/heterogeneity.ipynb" data-branch=main>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
@@ -1236,14 +1970,18 @@ relatively low dimension) to get precise estimates.</p>
                 }
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "applications/heterogeneity";
+                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
+                const urlPath = "tree/lecture-datascience.notebooks/applications/heterogeneity.ipynb";
+                const branch = "main"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
                 // Highlight public server option if previous selection exists
                 if (typeof localStorage.launcherPublic !== 'undefined') {
                   launcherPublic.value = localStorage.launcherPublic;
                 }
                 // Update local storage upon public server selection
                 launcherPublic.addEventListener('change', (event) => {
-                  launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
-                  localStorage.launcherPublic = launcherPublicValue;
                   setLaunchServer();
                 });
                 // Populate private server input if previous entry exists
@@ -1252,25 +1990,32 @@ relatively low dimension) to get precise estimates.</p>
                 }
                 // Update local storage when a private server is entered
                 launcherPrivate.addEventListener('input', (event) => {
-                  launcherPrivateValue = launcherPrivate.value;
-                  localStorage.launcherPrivate = launcherPrivateValue;
                   setLaunchServer();
                 });
 
-                const pageName = "applications/heterogeneity";
-                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
-                const urlPath = "";
-                const launchNotebookLink = document.getElementById('advancedLaunchButton');
-
                 // Function to update the "Launch Notebook" link href
-                function setLaunchServer(){
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&urlpath=" + urlPath;
-                    launchNotebookLinkURL = localStorage.launcherPrivate.replace(/\/$/, "") + repoPrefix + pageName + ".ipynb";
-                  } else if ( localStorage.launcherType == 'launcher-public' ){
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
                     launchNotebookLinkURL = localStorage.launcherPublic;
                   }
-                  launchNotebookLink.href = launchNotebookLinkURL;
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
                 }
                 // Check if user has previously selected a server
                 if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
@@ -1281,5 +2026,6 @@ relatively low dimension) to get precise estimates.</p>
         </div>
 
     </div> <!-- .wrapper-->
+    
   </body>
 </html>
