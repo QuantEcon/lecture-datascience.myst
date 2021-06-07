@@ -67,9 +67,7 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 1. Open a terminal.
 1. Set the path to where you would like to download the lectures. The default one is your home directory.
 1. Run `git clone https://github.com/QuantEcon/lecture-datascience.myst.git` which will
-   download the repository with notebooks in your working directory. *Pro tip*: If you would rather
-   not type this command on your own, you can click "Copy clone command to clipboard" on the clone
-   button menu and paste it into the terminal.
+   download the repository with notebooks in your working directory.
 
 ## Package Management
 
