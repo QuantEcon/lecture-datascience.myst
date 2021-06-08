@@ -342,8 +342,10 @@ It can be used to move all of the "values" stored in your DataFrame to a
 single column with all other columns being used to contain identifying
 information.
 
-**Warning**: When you use `melt`, any index that you currently have
+```{warning}
+When you use `melt`, any index that you currently have
 will be deleted.
+```
 
 We saw used `melt` above when we constructed `bball_long`:
 
@@ -591,8 +593,9 @@ df_melted
 
 ### Exercise 1
 
-(*Warning*: This one is challenging):
-
+```{warning}
+This one is challenging
+```
 Recall the `bball_wide` DataFrame from above (repeated below to jog
 your memory).
 
