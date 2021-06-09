@@ -38,12 +38,12 @@ For Windows users, we recommend installing for "just me" instead of "all users".
 
 ## Downloading the QuantEcon Data Science Lectures
 
-To download the QuantEcon Data Science lectures, we use the `Clone` button on the toolbar
-as seen in the following image.
+To download the QuantEcon Data Science lectures, go to its [Github repo](https://github.com/QuantEcon/lecture-datascience.notebooks), click on the
+Code button. 
 
 <br>
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/clone_button.png
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/github_main.png
 
 ```
 
@@ -54,7 +54,8 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 **Github Desktop** (Mac/Windows only), recommended for most users.
 
 1. Install [Github Desktop](https://desktop.github.com/).
-1. Click the "Open in Github Desktop" option in the clone button menu. It should open a Github
+1. Go to the [Github repo](https://github.com/QuantEcon/lecture-datascience.notebooks).
+1. Click the "Open with Github Desktop" option in the Code button menu. It should open a Github
    Desktop popup that looks like this:
    ```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/download_lectures_github_desktop.png
    ```
@@ -66,10 +67,8 @@ You can download the lectures through either **Github Desktop** or **Terminal**:
 1. Make sure that `git` is installed on your computer. (`git` is not installed on Windows by default. You can download and install it from [here](https://git-scm.com/download/win)).
 1. Open a terminal.
 1. Set the path to where you would like to download the lectures. The default one is your home directory.
-1. Run `git clone https://github.com/QuantEcon/lecture-datascience.notebooks` which will
-   download the repository with notebooks in your working directory. *Pro tip*: If you would rather
-   not type this command on your own, you can click "Copy clone command to clipboard" on the clone
-   button menu and paste it into the terminal.
+1. Run `git clone https://github.com/QuantEcon/lecture-datascience.notebooks.git` which will
+   download the repository with notebooks in your working directory.
 
 ## Package Management
 
