@@ -134,6 +134,18 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binderhub">
+     BinderHub
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#launching-binderhub">
+       Launching BinderHub
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#google-colab">
      Google Colab
     </a>
@@ -146,18 +158,6 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#file-management-on-colab">
        File Management on Colab
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binderhub">
-     BinderHub
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#launching-binderhub">
-       Launching BinderHub
       </a>
      </li>
     </ul>
@@ -220,16 +220,30 @@ and run on the cloud.</p>
 any other required software on your own computer.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button opens a new tab in your browser where a Jupyter notebook version of the
 current lecture page will be opened with the selected cloud service.</p>
-<p>The settings icon allows you to change your cloud environment from the default.  To use
-click the over the settings icon on the bottom right of the page (see image).</p>
+<p>You can change your cloud environment by selecting another server from the drop down menu (see image):</p>
 <br>
 <div class="figure align-default">
 <img alt="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/cloud_launch.png" src="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/cloud_launch.png" />
 </div>
 <br>
-<p>Making a selection will open a new tab in your browser where a Jupyter notebook version of the
-current lecture page will be opened with the selected cloud service.</p>
 <p>We discuss each of the options below.</p>
+<div class="section" id="binderhub">
+<h3>BinderHub<a class="headerlink" href="#binderhub" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="launching-binderhub">
+<h4>Launching BinderHub<a class="headerlink" href="#launching-binderhub" title="Permalink to this headline">¶</a></h4>
+<p>To launch course material through BinderHub:</p>
+<p><strong>1.</strong> Choose the <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code> under <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">a</span> <span class="pre">server:</span> <span class="pre">public</span></code> on the launch bar to change the backend hub.</p>
+<p><strong>2.</strong> Click on the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
+<p><strong>3.</strong> Wait for <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code> to connect to the repo</p>
+<div class="figure align-default">
+<img alt="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/wait_binderhub.png" src="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/wait_binderhub.png" />
+</div>
+<p><strong>4.</strong> You can use the Jupyter Network interface with <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code></p>
+<div class="figure align-default">
+<img alt="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/binderhub_jupyter.png" src="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/binderhub_jupyter.png" />
+</div>
+</div>
+</div>
 <div class="section" id="google-colab">
 <h3>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://research.google.com/colaboratory/faq.html">Google Colab</a> is a cloud service hosted by
@@ -244,8 +258,7 @@ to underlying Jupyter software.</p>
 <div class="section" id="launching-colab">
 <h4>Launching Colab<a class="headerlink" href="#launching-colab" title="Permalink to this headline">¶</a></h4>
 <p>To launch course material through Google Colab:</p>
-<p><strong>1.</strong> Choose the settings icon on the launch bar to change the backend hub</p>
-<p>You will need to select choose <code class="docutils literal notranslate"><span class="pre">google</span> <span class="pre">colab</span></code> from the public options.</p>
+<p><strong>1.</strong> Choose the <code class="docutils literal notranslate"><span class="pre">colab</span></code> under <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">a</span> <span class="pre">server:</span> <span class="pre">public</span></code> on the launch bar to change the backend hub.</p>
 <p><strong>2.</strong> Click on the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
 <p><strong>3.</strong> You will be asked to sign in with your Google account and you will see something similar to
 the following picture.</p>
@@ -282,16 +295,6 @@ of the notebook.</p>
 <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">to</span> <span class="pre">Drive</span></code> button.</p>
 <p>You can create a new notebook by clicking <code class="docutils literal notranslate"><span class="pre">File</span></code> on the menubar and selecting
 <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">notebook</span></code>.</p>
-</div>
-</div>
-<div class="section" id="binderhub">
-<h3>BinderHub<a class="headerlink" href="#binderhub" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="launching-binderhub">
-<h4>Launching BinderHub<a class="headerlink" href="#launching-binderhub" title="Permalink to this headline">¶</a></h4>
-<p>To launch course material through BinderHub:</p>
-<p><strong>1.</strong> Choose the settings icon on the launch bar to change the backend hub</p>
-<p>You will need to select choose <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code> from the public options.</p>
-<p><strong>2.</strong> Click on the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
 </div>
 </div>
 </div>

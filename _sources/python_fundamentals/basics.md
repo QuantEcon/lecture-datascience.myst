@@ -395,8 +395,10 @@ print("a ^ b is", a^b)
 
 You likely could have guessed all except the last two.
 
-**Warning**: Python uses `**`, not `^`, for exponentiation (raising a number
+```{warning}
+Python uses `**`, not `^`, for exponentiation (raising a number
 to a power)!
+```
 
 Notice also that above `+`, `-` and `**` all returned an integer
 type, but `/` converted the result to a float.

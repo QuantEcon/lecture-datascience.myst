@@ -24,8 +24,7 @@ any other required software on your own computer.
 The `Launch Notebook` button opens a new tab in your browser where a Jupyter notebook version of the
 current lecture page will be opened with the selected cloud service.
 
-The settings icon allows you to change your cloud environment from the default.  To use
-click the over the settings icon on the bottom right of the page (see image).
+You can change your cloud environment by selecting another server from the drop down menu (see image):
 
 <br>
 
@@ -35,10 +34,30 @@ click the over the settings icon on the bottom right of the page (see image).
 
 <br>
 
-Making a selection will open a new tab in your browser where a Jupyter notebook version of the
-current lecture page will be opened with the selected cloud service.
-
 We discuss each of the options below.
+
+### BinderHub
+
+#### Launching BinderHub
+
+To launch course material through BinderHub:
+
+**1.** Choose the `BinderHub` under `select a server: public` on the launch bar to change the backend hub.
+
+**2.** Click on the `Launch Notebook` button.
+
+**3.** Wait for `BinderHub` to connect to the repo
+
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/wait_binderhub.png
+
+```
+
+**4.** You can use the Jupyter Network interface with `BinderHub`
+
+```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/binderhub_jupyter.png
+
+```
+
 ### Google Colab
 
 [Google Colab](https://research.google.com/colaboratory/faq.html) is a cloud service hosted by
@@ -58,9 +77,7 @@ to underlying Jupyter software.
 
 To launch course material through Google Colab:
 
-**1.** Choose the settings icon on the launch bar to change the backend hub
-
-You will need to select choose `google colab` from the public options.
+**1.** Choose the `colab` under `select a server: public` on the launch bar to change the backend hub.
 
 **2.** Click on the `Launch Notebook` button.
 
@@ -110,14 +127,3 @@ If you would like to store your work, you can save it onto your Google Drive by 
 You can create a new notebook by clicking `File` on the menubar and selecting
 `New Python 3 notebook`.
 
-### BinderHub
-
-#### Launching BinderHub
-
-To launch course material through BinderHub:
-
-**1.** Choose the settings icon on the launch bar to change the backend hub
-
-You will need to select choose `BinderHub` from the public options.
-
-**2.** Click on the `Launch Notebook` button.
