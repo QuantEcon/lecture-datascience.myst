@@ -71,19 +71,19 @@ jobs:
         with:
           name: build-publish
           path: _build
-      # - name: Prepare lecture-datascience.notebooks sync
-      #   shell: bash -l {0}
-      #   run: |
-      #     mkdir -p _build/lecture-datascience.notebooks
-      #     cp -a _build/jupyter/. _build/lecture-datascience.notebooks
-      #     ls -a _build/lecture-datascience.notebooks
-      # - name: Commit latest notebooks to lecture-datascience.notebooks
-      #   uses: cpina/github-action-push-to-another-repository@main
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      #   with:
-      #     source-directory: '_build/lecture-datascience.notebooks'
-      #     destination-github-username: 'QuantEcon'
-      #     destination-repository-name: 'lecture-datascience.notebooks'
-      #     user-email: services@quantecon.org
-      #     target-branch: 'main'
+      - name: Prepare lecture-datascience.notebooks sync
+        shell: bash -l {0}
+        run: |
+          mkdir -p _build/lecture-datascience.notebooks
+          cp -a _build/jupyter/. _build/lecture-datascience.notebooks
+          ls -a _build/lecture-datascience.notebooks
+      - name: Commit latest notebooks to lecture-datascience.notebooks
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: '_build/lecture-datascience.notebooks'
+          destination-github-username: 'QuantEcon'
+          destination-repository-name: 'lecture-datascience.notebooks'
+          user-email: services@quantecon.org
+          target-branch: 'main'
