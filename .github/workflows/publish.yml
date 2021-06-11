@@ -75,6 +75,7 @@ jobs:
         shell: bash -l {0}
         run: |
           mkdir -p _build/lecture-datascience.notebooks
+          cp -a _notebook_repo/. _build/lecture-datascience.notebooks
           cp -a _build/jupyter/. _build/lecture-datascience.notebooks
           ls -a _build/lecture-datascience.notebooks
       - name: Commit latest notebooks to lecture-datascience.notebooks
