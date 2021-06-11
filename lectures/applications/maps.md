@@ -307,7 +307,7 @@ You can download the `cb_2016_us_state_5m.zip` by hand, or simply allow `geopand
 the relevant information from the zip file online.
 
 ```{code-cell} python
-state_df = gpd.read_file("cb_2016_us_state_5m.zip")
+state_df = gpd.read_file("https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/applications/cb_2016_us_state_5m.zip")
 state_df.head()
 ```
 
@@ -333,7 +333,7 @@ site](https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html).
 Once again, we will use the 5m resolution.
 
 ```{code-cell} python
-county_df = gpd.read_file("cb_2016_us_county_5m.zip")
+county_df = gpd.read_file("https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/applications/cb_2016_us_county_5m.zip")
 county_df.head()
 ```
 
