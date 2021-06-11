@@ -670,7 +670,7 @@ def surface_scatter_plot(X,y,f, xlo=0., xhi=1., ngrid=50,
     return fig
 
 fig = surface_scatter_plot(Xsim, ysim, Ey_x)
-fig
+fig.show()
 ```
 
 We now fit a regression tree to this data and plot the predicted
