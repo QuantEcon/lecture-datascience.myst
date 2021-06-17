@@ -75,8 +75,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://datascience.quantecon.org/applications/heterogeneity.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -976,29 +976,29 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.484758</td>
-      <td>0.174463</td>
-      <td>-0.030628</td>
+      <td>0.339670</td>
+      <td>0.165437</td>
+      <td>-0.000437</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.484758</td>
+      <td>0.339670</td>
       <td>1.000000</td>
-      <td>0.461337</td>
-      <td>-0.070709</td>
+      <td>0.520099</td>
+      <td>-0.176036</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.174463</td>
-      <td>0.461337</td>
+      <td>0.165437</td>
+      <td>0.520099</td>
       <td>1.000000</td>
-      <td>-0.009128</td>
+      <td>-0.090534</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>-0.030628</td>
-      <td>-0.070709</td>
-      <td>-0.009128</td>
+      <td>-0.000437</td>
+      <td>-0.176036</td>
+      <td>-0.090534</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1035,32 +1035,32 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>-11.713822</td>
-      <td>-26.691518</td>
-      <td>-7.829095</td>
-      <td>-3.775147</td>
+      <td>-20.888745</td>
+      <td>-10.636828</td>
+      <td>-13.000466</td>
+      <td>3.134122</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.000000</td>
-      <td>0.038946</td>
-      <td>0.126052</td>
-      <td>-1239.803452</td>
+      <td>-0.069162</td>
+      <td>0.073177</td>
+      <td>-1815.918622</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>32.862108</td>
-      <td>32.060627</td>
-      <td>30.939688</td>
-      <td>33.048462</td>
+      <td>32.811291</td>
+      <td>32.477301</td>
+      <td>32.602904</td>
+      <td>32.270673</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.355660</td>
-      <td>0.284675</td>
-      <td>0.075512</td>
-      <td>2992.247604</td>
+      <td>0.888909</td>
+      <td>0.290020</td>
+      <td>0.081142</td>
+      <td>3145.086145</td>
     </tr>
   </tbody>
 </table>
@@ -1096,74 +1096,74 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>-2.433338</td>
-      <td>-9.797413</td>
-      <td>-43.267130</td>
-      <td>-10.691007</td>
+      <td>-23.511198</td>
+      <td>7.037751</td>
+      <td>-38.901161</td>
+      <td>17.097401</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000000</td>
-      <td>-26.274194</td>
-      <td>16.902541</td>
-      <td>25.766485</td>
+      <td>-11.787758</td>
+      <td>42.153520</td>
+      <td>-13.405420</td>
+      <td>24.602224</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000000</td>
-      <td>-34.617350</td>
-      <td>-7.192671</td>
-      <td>-1.624120</td>
+      <td>-17.238371</td>
+      <td>-8.856619</td>
+      <td>-33.607959</td>
+      <td>18.383176</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000000</td>
-      <td>-76.887373</td>
-      <td>-3.555188</td>
-      <td>12.455218</td>
+      <td>-19.607760</td>
+      <td>-26.032272</td>
+      <td>-33.509910</td>
+      <td>-47.919149</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-21.628838</td>
-      <td>21.295981</td>
-      <td>67.735210</td>
-      <td>-23.265571</td>
+      <td>-13.317782</td>
+      <td>0.250591</td>
+      <td>17.212103</td>
+      <td>-34.540913</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>65.168280</td>
-      <td>65.629127</td>
-      <td>67.607603</td>
-      <td>76.063905</td>
+      <td>65.178641</td>
+      <td>74.549693</td>
+      <td>66.675585</td>
+      <td>78.162886</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>63.141527</td>
-      <td>65.236286</td>
-      <td>69.316310</td>
-      <td>70.512399</td>
+      <td>69.682252</td>
+      <td>69.290065</td>
+      <td>68.719981</td>
+      <td>71.160237</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>54.447020</td>
-      <td>68.063811</td>
-      <td>64.574260</td>
-      <td>69.508449</td>
+      <td>64.161168</td>
+      <td>65.195470</td>
+      <td>70.823034</td>
+      <td>65.796011</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>59.953571</td>
-      <td>64.162236</td>
-      <td>70.929920</td>
-      <td>67.241620</td>
+      <td>66.779114</td>
+      <td>69.381604</td>
+      <td>64.734503</td>
+      <td>67.658231</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>58.383218</td>
-      <td>73.789484</td>
-      <td>67.380826</td>
-      <td>61.775153</td>
+      <td>67.361604</td>
+      <td>72.369989</td>
+      <td>73.748203</td>
+      <td>62.876703</td>
     </tr>
   </tbody>
 </table>
@@ -1228,29 +1228,29 @@ conditional average treatment effect.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.849284</td>
-      <td>0.520198</td>
-      <td>0.790445</td>
+      <td>0.857291</td>
+      <td>0.496875</td>
+      <td>0.886606</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.849284</td>
+      <td>0.857291</td>
       <td>1.000000</td>
-      <td>0.534004</td>
-      <td>0.708397</td>
+      <td>0.547912</td>
+      <td>0.715306</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.520198</td>
-      <td>0.534004</td>
+      <td>0.496875</td>
+      <td>0.547912</td>
       <td>1.000000</td>
-      <td>0.422157</td>
+      <td>0.426660</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>0.790445</td>
-      <td>0.708397</td>
-      <td>0.422157</td>
+      <td>0.886606</td>
+      <td>0.715306</td>
+      <td>0.426660</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1287,32 +1287,32 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>0.048252</td>
-      <td>0.049898</td>
-      <td>0.035391</td>
-      <td>0.039262</td>
+      <td>0.038985</td>
+      <td>0.040411</td>
+      <td>0.054476</td>
+      <td>0.048308</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.446222</td>
-      <td>0.488450</td>
-      <td>0.138692</td>
-      <td>0.425566</td>
+      <td>0.466316</td>
+      <td>0.517312</td>
+      <td>0.154665</td>
+      <td>0.379209</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>0.021622</td>
-      <td>0.021626</td>
-      <td>0.022440</td>
-      <td>0.021316</td>
+      <td>0.021228</td>
+      <td>0.022483</td>
+      <td>0.021682</td>
+      <td>0.020533</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.136390</td>
-      <td>0.141562</td>
-      <td>0.083553</td>
-      <td>0.135122</td>
+      <td>0.144876</td>
+      <td>0.146697</td>
+      <td>0.072714</td>
+      <td>0.123780</td>
     </tr>
   </tbody>
 </table>
@@ -1348,74 +1348,74 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>-0.028828</td>
-      <td>-0.069644</td>
-      <td>-0.005963</td>
-      <td>0.012211</td>
+      <td>-0.055236</td>
+      <td>-0.041447</td>
+      <td>0.020167</td>
+      <td>0.004948</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.023871</td>
-      <td>0.031109</td>
-      <td>0.031519</td>
-      <td>-0.011635</td>
+      <td>-0.023955</td>
+      <td>-0.015263</td>
+      <td>0.021991</td>
+      <td>0.020344</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000397</td>
-      <td>-0.008876</td>
-      <td>0.031408</td>
-      <td>0.001837</td>
+      <td>0.027388</td>
+      <td>-0.004781</td>
+      <td>0.041987</td>
+      <td>-0.027374</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.100600</td>
-      <td>0.063682</td>
-      <td>0.042419</td>
-      <td>0.064717</td>
+      <td>0.050827</td>
+      <td>0.044969</td>
+      <td>0.066786</td>
+      <td>0.080167</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.177322</td>
-      <td>0.183064</td>
-      <td>0.105315</td>
-      <td>0.190579</td>
+      <td>0.174061</td>
+      <td>0.221617</td>
+      <td>0.132469</td>
+      <td>0.192123</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>0.040657</td>
-      <td>0.050191</td>
-      <td>0.051361</td>
-      <td>0.030991</td>
+      <td>0.040718</td>
+      <td>0.047849</td>
+      <td>0.047704</td>
+      <td>0.027934</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.044035</td>
-      <td>0.041486</td>
-      <td>0.046472</td>
-      <td>0.043283</td>
+      <td>0.040323</td>
+      <td>0.043164</td>
+      <td>0.045058</td>
+      <td>0.045692</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.045292</td>
-      <td>0.042234</td>
-      <td>0.043683</td>
-      <td>0.048138</td>
+      <td>0.045052</td>
+      <td>0.043391</td>
+      <td>0.043582</td>
+      <td>0.047490</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.046354</td>
-      <td>0.044331</td>
-      <td>0.047034</td>
-      <td>0.049629</td>
+      <td>0.047782</td>
+      <td>0.046880</td>
+      <td>0.042991</td>
+      <td>0.047180</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.051762</td>
-      <td>0.049154</td>
-      <td>0.052908</td>
-      <td>0.054341</td>
+      <td>0.053554</td>
+      <td>0.050756</td>
+      <td>0.050157</td>
+      <td>0.053451</td>
     </tr>
   </tbody>
 </table>
