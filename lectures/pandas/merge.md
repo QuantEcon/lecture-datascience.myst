@@ -344,7 +344,7 @@ output.
 The 4 possible options for this argument are summarized in
 the image below.
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/merge_venns.png
+```{figure} ../_static/merge_venns.png
 :alt: merge\_venns.png
 ```
 
@@ -716,7 +716,7 @@ pd.concat([dfL, dfR], axis=0)
 
 Here's how we might visualize that.
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/concat_axis0.gif
+```{figure} ../_static/concat_axis0.gif
 :alt: concat\_axis0.gif
 ```
 
@@ -728,7 +728,7 @@ pd.concat([dfL, dfR], axis=1)
 
 Here's how we might visualize that.
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/concat_axis1.gif
+```{figure} ../_static/concat_axis1.gif
 :alt: concat\_axis1.gif
 ```
 
@@ -740,7 +740,7 @@ The animation below shows a visualization of what happens when we call
 pd.merge(dfL, dfR, on="Key")
 ```
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/left_merge.gif
+```{figure} ../_static/left_merge.gif
 :alt: left\_merge.gif
 ```
 
@@ -753,7 +753,7 @@ the key `A`.
 pd.merge(dfL, dfR, on="Key", how="right")
 ```
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/right_merge.gif
+```{figure} ../_static/right_merge.gif
 :alt: right\_merge.gif
 ```
 
