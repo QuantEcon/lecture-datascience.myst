@@ -552,7 +552,7 @@ We will use the [Hue Saturation Value](https://en.wikipedia.org/wiki/HSL_and_HSV
 
 The way in which HSV covers the color space is demonstrated in the following figure.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/HSV_color_solid_cylinder_saturation_gray.png
+```{figure} ../_static/HSV_color_solid_cylinder_saturation_gray.png
 :alt: HSL_cylinder.png
 ```
 
@@ -764,14 +764,14 @@ fig.tight_layout()
 
 And here is the same image converted to grayscale.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/bar_grayscale.png
+```{figure} ../_static/bar_grayscale.png
 :alt: bar_grayscale.png
 ```
 
 The image below, from [this flowingdata blog entry](https://flowingdata.com/2012/11/09/incredibly-divided-nation-in-a-map),
 shows what happens when you don't check your colors... Don't do this.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/Divided-nation.jpg
+```{figure} ../_static/Divided-nation.jpg
 :alt: Divided-nation.jpg
 ```
 

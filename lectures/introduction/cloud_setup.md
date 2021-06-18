@@ -28,7 +28,7 @@ You can change your cloud environment by selecting another server from the drop 
 
 <br>
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/cloud_launch.png
+```{figure} ../_static/cloud_launch.png
 
 ```
 
@@ -48,13 +48,13 @@ To launch course material through BinderHub:
 
 **3.** Wait for `BinderHub` to connect to the repo
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/wait_binderhub.png
+```{figure} ../_static/wait_binderhub.png
 
 ```
 
 **4.** You can use the Jupyter Network interface with `BinderHub`
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/binderhub_jupyter.png
+```{figure} ../_static/binderhub_jupyter.png
 
 ```
 
@@ -84,7 +84,7 @@ To launch course material through Google Colab:
 **3.** You will be asked to sign in with your Google account and you will see something similar to
 the following picture.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/colab_jupyter.png
+```{figure} ../_static/colab_jupyter.png
 
 ```
 
@@ -106,14 +106,14 @@ See the code below to see what we mean:
 **5.** To navigate sections within a Colab notebook, click on the little arrow at the top left corner
 of the page,
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/colab_table_of_contents_arrow.png
+```{figure} ../_static/colab_table_of_contents_arrow.png
 
 ```
 
 Then, "table of contents" will pop up. You can click on sections or subsections for different parts
 of the notebook.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/colab_table_of_contents.png
+```{figure} ../_static/colab_table_of_contents.png
 
 ```
 

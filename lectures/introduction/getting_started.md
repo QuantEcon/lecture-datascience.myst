@@ -145,7 +145,7 @@ There are two main types of cells:
 
 Below is an image that demonstrates what a Jupyter Notebook looks like:
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/jupyter_notebook.png
+```{figure} ../_static/jupyter_notebook.png
 
 ```
 
@@ -248,7 +248,7 @@ navigate and open particular Jupyter Notebooks (or other types of files!).
 
 The dashboard page is shown below.
 
-```{figure} https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/jupyter_lab_dashboard.png
+```{figure} ../_static/jupyter_lab_dashboard.png
 
 ```
 
