@@ -9,25 +9,7 @@
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-        MathJax = {
-          loader: {load: ['[tex]/boldsymbol']},
-          tex: {
-            packages: {'[+]': ['boldsymbol']},
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            processEscapes: true,
-            macros: {
-                "argmax" : "arg\\,max",
-                "argmin" : "arg\\,min"
-            }
-          },
-          svg: {
-            fontCache: 'global',
-            scale: 0.92,
-            displayAlign: "center",
-          },
-        };
-    </script>
+    
     
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -46,7 +28,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/quantecon-book-theme.b2c9c855ebbf206c0b4223812193cad1.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/quantecon-book-theme.21a671acb11207af5e29a25423bdddab.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -67,7 +49,7 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script src="../_static/quantecon-book-theme.a5462485f8dd312884626d20cc9f547c.js"></script>
+    <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -894,7 +876,7 @@ color black). If the color has value 1 then it has no black and is just the orig
 </ul>
 <p>The way in which HSV covers the color space is demonstrated in the following figure.</p>
 <div class="figure align-default">
-<img alt="HSL_cylinder.png" src="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/HSV_color_solid_cylinder_saturation_gray.png" />
+<img alt="HSL_cylinder.png" src="../_images/HSV_color_solid_cylinder_saturation_gray.png" />
 </div>
 <p>Image attribution: By <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=9801673">SharkD</a>.</p>
 <p>Below, we demonstrate how colors change as we move hue/saturation/value one at a time.</p>
@@ -1155,12 +1137,12 @@ from the matplotlib documentation.</p>
 </div>
 <p>And here is the same image converted to grayscale.</p>
 <div class="figure align-default">
-<img alt="bar_grayscale.png" src="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/bar_grayscale.png" />
+<img alt="bar_grayscale.png" src="../_images/bar_grayscale.png" />
 </div>
 <p>The image below, from <a class="reference external" href="https://flowingdata.com/2012/11/09/incredibly-divided-nation-in-a-map">this flowingdata blog entry</a>,
 shows what happens when you don’t check your colors… Don’t do this.</p>
 <div class="figure align-default">
-<img alt="Divided-nation.jpg" src="https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/_static/Divided-nation.jpg" />
+<img alt="Divided-nation.jpg" src="../_images/Divided-nation.jpg" />
 </div>
 <p>Warm colors (colors like red, yellow, and orange) often appear lighter than cool colors (colors
 like blue, green and purple) when converted to grayscale even when they have similar values.
@@ -1968,7 +1950,9 @@ whether these changes improved the figures.</p>
             </div> <!-- .page -->
 
             
-            <div class="sidebar bd-sidebar inactive" id="site-navigation">
+
+            
+            <div class="sidebar bd-sidebar inactive persistent" id="site-navigation">
 
                 <div class="sidebar__header">
 

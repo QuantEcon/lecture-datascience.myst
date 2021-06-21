@@ -542,7 +542,7 @@ df3.head()
 
 Below is an animation that shows how stacking works.
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/stack.gif
+```{figure} ../_static/stack.gif
 :alt: stack.gif
 ```
 
@@ -557,7 +557,7 @@ df2_stack
 
 And here is an animation that shows how unstacking works.
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/unstack_level0.gif
+```{figure} ../_static/unstack_level0.gif
 :alt: unstack\_level0.gif
 ```
 
@@ -575,7 +575,7 @@ As noted above, the `melt` method transforms data from wide to long in form.
 
 Here's a visualization of that operation.
 
-```{figure} https://github.com/QuantEcon/lecture-datascience.myst/raw/main/lectures/_static/melt.gif
+```{figure} ../_static/melt.gif
 :alt: melt.gif
 ```
 
