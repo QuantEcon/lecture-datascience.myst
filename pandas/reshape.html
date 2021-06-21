@@ -28,7 +28,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/quantecon-book-theme.21a671acb11207af5e29a25423bdddab.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/quantecon-book-theme.be44fe52b9d0849314fd6d8c1c98866c.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -50,6 +50,8 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -3046,42 +3048,42 @@ work, the index/column pairs must be <em>unique</em>!</p>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># the Orlando Magic to the Toronto Raptors</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">bball</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
 
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">pivot</span><span class="nt">(self, index, columns, values)</span>
+<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/frame.py</span> in <span class="ni">pivot</span><span class="nt">(self, index, columns, values)</span>
 <span class="g g-Whitespace">   </span><span class="mi">6877</span>         <span class="kn">from</span> <span class="nn">pandas.core.reshape.pivot</span> <span class="kn">import</span> <span class="n">pivot</span>
 <span class="g g-Whitespace">   </span><span class="mi">6878</span> 
 <span class="ne">-&gt; </span><span class="mi">6879</span>         <span class="k">return</span> <span class="n">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">6880</span> 
 <span class="g g-Whitespace">   </span><span class="mi">6881</span>     <span class="n">_shared_docs</span><span class="p">[</span>
 
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/pivot.py</span> in <span class="ni">pivot</span><span class="nt">(data, index, columns, values)</span>
+<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/pivot.py</span> in <span class="ni">pivot</span><span class="nt">(data, index, columns, values)</span>
 <span class="g g-Whitespace">    </span><span class="mi">459</span>         <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">460</span>             <span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_constructor_sliced</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">values</span><span class="p">]</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">461</span>     <span class="k">return</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">462</span> 
 <span class="g g-Whitespace">    </span><span class="mi">463</span> 
 
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/series.py</span> in <span class="ni">unstack</span><span class="nt">(self, level, fill_value)</span>
+<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/series.py</span> in <span class="ni">unstack</span><span class="nt">(self, level, fill_value)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3827</span>         <span class="kn">from</span> <span class="nn">pandas.core.reshape.reshape</span> <span class="kn">import</span> <span class="n">unstack</span>
 <span class="g g-Whitespace">   </span><span class="mi">3828</span> 
 <span class="ne">-&gt; </span><span class="mi">3829</span>         <span class="k">return</span> <span class="n">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3830</span> 
 <span class="g g-Whitespace">   </span><span class="mi">3831</span>     <span class="c1"># ----------------------------------------------------------------------</span>
 
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value)</span>
+<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value)</span>
 <span class="g g-Whitespace">    </span><span class="mi">428</span>         <span class="k">if</span> <span class="n">is_extension_array_dtype</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">429</span>             <span class="k">return</span> <span class="n">_unstack_extension_series</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">430</span>         <span class="n">unstacker</span> <span class="o">=</span> <span class="n">_Unstacker</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">431</span>             <span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">constructor</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">_constructor_expanddim</span>
 <span class="g g-Whitespace">    </span><span class="mi">432</span>         <span class="p">)</span>
 
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">__init__</span><span class="nt">(self, index, level, constructor)</span>
+<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">__init__</span><span class="nt">(self, index, level, constructor)</span>
 <span class="g g-Whitespace">    </span><span class="mi">116</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unstacked DataFrame is too big, causing int32 overflow&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">117</span> 
 <span class="ne">--&gt; </span><span class="mi">118</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_selectors</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">119</span> 
 <span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="nd">@cache_readonly</span>
 
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">_make_selectors</span><span class="nt">(self)</span>
+<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">_make_selectors</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">165</span> 
 <span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">167</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Index contains duplicate entries, cannot reshape&quot;</span><span class="p">)</span>
