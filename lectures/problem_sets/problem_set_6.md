@@ -33,7 +33,7 @@ Lets start with a relatively straightforward exercise before we get to the reall
 The following code loads a cleaned piece of census data from Statistics Canada.
 
 ```{code-cell} python
-df = pd.read_csv("https://datascience.quantecon.org/assets/data/canada_census.csv", header=0, index_col=False)
+df = pd.read_csv("https://datascience.quantecon.org/_data/canada_census.csv", header=0, index_col=False)
 df.head()
 ```
 
@@ -41,7 +41,7 @@ A *census division* is a geographical area, smaller than a Canadian province, th
 organize information at a slightly more granular level than by province or by city. The census
 divisions are shown below.
 
-```{figure} https://datascience.quantecon.org/assets/_static/pandas_files/canada_censusdivisions_map.png
+```{figure} _static/canada_censusdivisions_map.png
 :alt: canada_censusdivision_map.png
 ```
 
@@ -79,7 +79,7 @@ With this,
 For this particular example, you could have renamed the column using `replace`. This is a good check.
 
 ```{code-cell} python
-(pd.read_csv("https://datascience.quantecon.org/assets/data/canada_census.csv", header=0, index_col=False)
+(pd.read_csv("https://datascience.quantecon.org/_data/canada_census.csv", header=0, index_col=False)
 .replace({
     "Alberta": "AB", "British Columbia": "BC", "Manitoba": "MB", "New Brunswick": "NB",
     "Newfoundland and Labrador": "NL", "Northwest Territories": "NT", "Nova Scotia": "NS",
@@ -199,7 +199,7 @@ See below for advice on how to proceed.
 
 When you are finished, you should have something that looks like this:
 
-```{figure} https://datascience.quantecon.org/assets/_static/groupby_files/groupby_cohort_analysis_exercise_output.png
+```{figure} _static/groupby_cohort_analysis_exercise_output.png
 :alt: groupby\_cohort\_analysis\_exercise\_output.png
 ```
 

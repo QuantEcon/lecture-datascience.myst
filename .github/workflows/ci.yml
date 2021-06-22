@@ -44,6 +44,10 @@ jobs:
           jb build lectures --path-output ./ --builder=custom --custom-builder=jupyter
           mkdir -p _build/html/_notebooks
           rsync -r  _build/jupyter/ _build/html/_notebooks/
+      - name: Copy Data Assets for Deployment
+        shell: bash -l {0}
+        run: |
+          cp -a lectures/_data _build/html/
       - name: Preview Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:

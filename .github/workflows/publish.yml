@@ -54,6 +54,10 @@ jobs:
         shell: bash -l {0}
         run: |
           jb build lectures --path-output ./ -W --keep-going
+      - name: Copy Data Assets for Deployment
+        shell: bash -l {0}
+        run: |
+          cp -a lectures/_data _build/html/
       - name: Upload Execution Reports
         uses: actions/upload-artifact@v2
         if: failure()
