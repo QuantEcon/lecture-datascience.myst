@@ -47,7 +47,8 @@ jobs:
       - name: Copy Data Assets for Deployment
         shell: bash -l {0}
         run: |
-          cp -a lectures/_data _build/html/
+          mkdir -p _build/html/assets/data
+          cp -a lectures/_data/. _build/html/assets/data/
       - name: Preview Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:

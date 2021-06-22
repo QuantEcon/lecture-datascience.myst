@@ -33,7 +33,7 @@ Lets start with a relatively straightforward exercise before we get to the reall
 The following code loads a cleaned piece of census data from Statistics Canada.
 
 ```{code-cell} python
-df = pd.read_csv("https://datascience.quantecon.org/_data/canada_census.csv", header=0, index_col=False)
+df = pd.read_csv("https://datascience.quantecon.org/assets/data/canada_census.csv", header=0, index_col=False)
 df.head()
 ```
 
@@ -79,7 +79,7 @@ With this,
 For this particular example, you could have renamed the column using `replace`. This is a good check.
 
 ```{code-cell} python
-(pd.read_csv("https://datascience.quantecon.org/_data/canada_census.csv", header=0, index_col=False)
+(pd.read_csv("https://datascience.quantecon.org/assets/data/canada_census.csv", header=0, index_col=False)
 .replace({
     "Alberta": "AB", "British Columbia": "BC", "Manitoba": "MB", "New Brunswick": "NB",
     "Newfoundland and Labrador": "NL", "Northwest Territories": "NT", "Nova Scotia": "NS",

@@ -57,7 +57,8 @@ jobs:
       - name: Copy Data Assets for Deployment
         shell: bash -l {0}
         run: |
-          cp -a lectures/_data _build/html/
+          mkdir -p _build/html/assets/data
+          cp -a lectures/_data/. _build/html/assets/data/
       - name: Upload Execution Reports
         uses: actions/upload-artifact@v2
         if: failure()
