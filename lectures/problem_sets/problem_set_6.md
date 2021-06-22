@@ -293,7 +293,7 @@ above 65 divided by the number of people between 16 and 65 and measures how many
 individuals exist relative to the number of dependent (retired) individuals.
 
 ```{code-cell} python
-adr = pd.read_csv("https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv")
+adr = pd.read_csv("https://datascience.quantecon.org/_data/WorldBank_AgeDependencyRatio.csv")
 adr.head()
 ```
 

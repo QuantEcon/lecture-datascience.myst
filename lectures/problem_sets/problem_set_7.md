@@ -53,7 +53,7 @@ did rather than this way?
 
 ```{code-cell} python
 # Read in data
-df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
+df = pd.read_csv("https://datascience.quantecon.org/_data/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
