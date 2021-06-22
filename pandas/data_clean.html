@@ -28,7 +28,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/quantecon-book-theme.be44fe52b9d0849314fd6d8c1c98866c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/quantecon-book-theme.857ff391aaabaeb8c161d2309c375fe6.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -50,8 +50,6 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -360,7 +358,7 @@ will demonstrate using the following dataset.</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1536</span>         <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">1537</span>             <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1538</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
@@ -370,7 +368,7 @@ will demonstrate using the following dataset.</p>
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1540</span>             <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">1541</span>                 <span class="n">x</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1542</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -383,63 +381,63 @@ will demonstrate using the following dataset.</p>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">c62df3911a80</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
 <span class="g g-Whitespace">  </span><span class="mi">11116</span>         <span class="p">)</span>
 <span class="g g-Whitespace">  </span><span class="mi">11117</span>         <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">&gt; </span><span class="mi">11118</span>             <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">  </span><span class="mi">11119</span> 
 <span class="g g-Whitespace">  </span><span class="mi">11120</span>         <span class="c1"># pandas\core\generic.py:10924: error: Cannot assign to a method</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
 <span class="g g-Whitespace">  </span><span class="mi">10724</span> 
 <span class="g g-Whitespace">  </span><span class="mi">10725</span>     <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">&gt; </span><span class="mi">10726</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
 <span class="g g-Whitespace">  </span><span class="mi">10727</span>             <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">nanops</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="g g-Whitespace">  </span><span class="mi">10728</span>         <span class="p">)</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">_stat_function</span><span class="nt">(self, name, func, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">_stat_function</span><span class="nt">(self, name, func, axis, skipna, level, numeric_only, **kwargs)</span>
 <span class="g g-Whitespace">  </span><span class="mi">10709</span>         <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">  </span><span class="mi">10710</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_by_level</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">)</span>
 <span class="ne">&gt; </span><span class="mi">10711</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
 <span class="g g-Whitespace">  </span><span class="mi">10712</span>             <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
 <span class="g g-Whitespace">  </span><span class="mi">10713</span>         <span class="p">)</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/series.py</span> in <span class="ni">_reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/series.py</span> in <span class="ni">_reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4180</span>                 <span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4181</span>             <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">4182</span>                 <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">4183</span> 
 <span class="g g-Whitespace">   </span><span class="mi">4184</span>     <span class="k">def</span> <span class="nf">_reindex_indexer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_index</span><span class="p">,</span> <span class="n">indexer</span><span class="p">,</span> <span class="n">copy</span><span class="p">):</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_f</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">71</span>             <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">72</span>                 <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">73</span>                     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">74</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">75</span>                 <span class="c1"># we want to transform an object array</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">f</span><span class="nt">(values, axis, skipna, **kwds)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">f</span><span class="nt">(values, axis, skipna, **kwds)</span>
 <span class="g g-Whitespace">    </span><span class="mi">133</span>                     <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">134</span>             <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">135</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">136</span> 
 <span class="g g-Whitespace">    </span><span class="mi">137</span>             <span class="k">return</span> <span class="n">result</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">new_func</span><span class="nt">(values, axis, skipna, mask, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">new_func</span><span class="nt">(values, axis, skipna, mask, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">392</span>             <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">393</span> 
 <span class="ne">--&gt; </span><span class="mi">394</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">395</span> 
 <span class="g g-Whitespace">    </span><span class="mi">396</span>         <span class="k">if</span> <span class="n">datetimelike</span><span class="p">:</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">nanmean</span><span class="nt">(values, axis, skipna, mask)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">nanmean</span><span class="nt">(values, axis, skipna, mask)</span>
 <span class="g g-Whitespace">    </span><span class="mi">631</span> 
 <span class="g g-Whitespace">    </span><span class="mi">632</span>     <span class="n">count</span> <span class="o">=</span> <span class="n">_get_counts</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype_count</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">633</span>     <span class="n">the_sum</span> <span class="o">=</span> <span class="n">_ensure_numeric</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype_sum</span><span class="p">))</span>
 <span class="g g-Whitespace">    </span><span class="mi">634</span> 
 <span class="g g-Whitespace">    </span><span class="mi">635</span>     <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">the_sum</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1542</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1543</span>                 <span class="c1"># e.g. &quot;foo&quot;</span>
 <span class="ne">-&gt; </span><span class="mi">1544</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> to numeric&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
@@ -492,8 +490,8 @@ methods…</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.16 ms, sys: 96 µs, total: 2.25 ms
-Wall time: 2.2 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.1 ms, sys: 410 µs, total: 2.51 ms
+Wall time: 2.35 ms
 </pre></div>
 </div>
 </div>
@@ -521,8 +519,8 @@ Series in one shot!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 657 µs, sys: 29 µs, total: 686 µs
-Wall time: 676 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 779 µs, sys: 150 µs, total: 929 µs
+Wall time: 809 µs
 </pre></div>
 </div>
 </div>
@@ -1583,28 +1581,28 @@ a much larger dataset.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>44.88</td>
-      <td>44.88%</td>
+      <td>16.08</td>
+      <td>16.08%</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2.19</td>
-      <td>2.19%</td>
+      <td>35.32</td>
+      <td>35.32%</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>49.14</td>
-      <td>49.14%</td>
+      <td>55.16</td>
+      <td>55.16%</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>14.19</td>
-      <td>14.19%</td>
+      <td>18.65</td>
+      <td>18.65%</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>66.98</td>
-      <td>66.98%</td>
+      <td>20.66</td>
+      <td>20.66%</td>
     </tr>
   </tbody>
 </table>
@@ -1622,8 +1620,8 @@ a much larger dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.33 s, sys: 33 ms, total: 7.36 s
-Wall time: 7.38 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.59 s, sys: 7.74 ms, total: 7.59 s
+Wall time: 7.59 s
 </pre></div>
 </div>
 </div>
@@ -1636,8 +1634,8 @@ Wall time: 7.38 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 30 ms, sys: 1.81 ms, total: 31.8 ms
-Wall time: 31.6 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 30.3 ms, sys: 8.05 ms, total: 38.3 ms
+Wall time: 38.2 ms
 </pre></div>
 </div>
 </div>

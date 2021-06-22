@@ -28,7 +28,7 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/quantecon-book-theme.be44fe52b9d0849314fd6d8c1c98866c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/quantecon-book-theme.857ff391aaabaeb8c161d2309c375fe6.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -50,8 +50,6 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -411,7 +409,7 @@ an Amazon transaction report as</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2084</span>         <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">2085</span>             <span class="n">values</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">conversion</span><span class="o">.</span><span class="n">datetime_to_datetime64</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2086</span>             <span class="c1"># If tzaware, these values represent unix timestamps, so we</span>
@@ -426,28 +424,28 @@ an Amazon transaction report as</p>
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">35</span><span class="n">d0813ff50c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
 <span class="g g-Whitespace">    </span><span class="mi">830</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">831</span>     <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">832</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">833</span> 
 <span class="g g-Whitespace">    </span><span class="mi">834</span>     <span class="k">return</span> <span class="n">result</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
 <span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
 <span class="g g-Whitespace">    </span><span class="mi">464</span>         <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
 <span class="ne">--&gt; </span><span class="mi">465</span>         <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">466</span>             <span class="n">arg</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">467</span>             <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2088</span>             <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
 <span class="g g-Whitespace">   </span><span class="mi">2089</span>         <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">2090</span>             <span class="k">raise</span> <span class="n">e</span>
 <span class="g g-Whitespace">   </span><span class="mi">2091</span> 
 <span class="g g-Whitespace">   </span><span class="mi">2092</span>     <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
 <span class="g g-Whitespace">   </span><span class="mi">2073</span> 
 <span class="g g-Whitespace">   </span><span class="mi">2074</span>     <span class="k">try</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">2075</span>         <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
@@ -464,14 +462,14 @@ an Amazon transaction report as</p>
 
 <span class="nn">pandas/_libs/tslibs/parsing.pyx</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1372</span>         <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1373</span>     <span class="k">else</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">1374</span>         <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1375</span> 
 <span class="g g-Whitespace">   </span><span class="mi">1376</span> 
 
-<span class="nn">~/anaconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">647</span> 
 <span class="g g-Whitespace">    </span><span class="mi">648</span>         <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">649</span>             <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
@@ -587,19 +585,19 @@ so let’s load up some data and take a look.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-DatetimeIndex: 2589 entries, 2014-05-01 to 2021-06-10
+DatetimeIndex: 2599 entries, 2014-05-01 to 2021-06-20
 Data columns (total 7 columns):
  #   Column             Non-Null Count  Dtype  
 ---  ------             --------------  -----  
- 0   Open               2589 non-null   float64
- 1   High               2589 non-null   float64
- 2   Low                2589 non-null   float64
- 3   Close              2589 non-null   float64
- 4   Volume (BTC)       2589 non-null   float64
- 5   Volume (Currency)  2589 non-null   float64
- 6   Weighted Price     2589 non-null   float64
+ 0   Open               2599 non-null   float64
+ 1   High               2599 non-null   float64
+ 2   Low                2599 non-null   float64
+ 3   Close              2599 non-null   float64
+ 4   Volume (BTC)       2599 non-null   float64
+ 5   Volume (Currency)  2599 non-null   float64
+ 6   Weighted Price     2599 non-null   float64
 dtypes: float64(7)
-memory usage: 161.8 KB
+memory usage: 162.4 KB
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1799,7 +1797,7 @@ like to access.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014,
             ...
             2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2589)
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2599)
 </pre></div>
 </div>
 </div>
@@ -1813,8 +1811,8 @@ like to access.</p>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
             ...
-             1,  2,  3,  4,  5,  6,  7,  8,  9, 10],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2589)
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2599)
 </pre></div>
 </div>
 </div>
@@ -2510,37 +2508,37 @@ data.)</p>
   </thead>
   <tbody>
     <tr>
-      <th>2021-06-06</th>
-      <td>33567.51</td>
-      <td>34085.61</td>
-      <td>31025.00</td>
-      <td>33411.69</td>
-      <td>9044.648470</td>
-      <td>2.954111e+08</td>
-      <td>32661.425472</td>
+      <th>2021-06-16</th>
+      <td>38110.25</td>
+      <td>38208.68</td>
+      <td>35143.68</td>
+      <td>35840.00</td>
+      <td>4240.404867</td>
+      <td>1.560566e+08</td>
+      <td>36802.295855</td>
     </tr>
     <tr>
-      <th>2021-06-07</th>
-      <td>33413.19</td>
-      <td>37556.25</td>
-      <td>32423.72</td>
-      <td>37400.00</td>
-      <td>8539.587342</td>
-      <td>3.003795e+08</td>
-      <td>35174.946898</td>
+      <th>2021-06-17</th>
+      <td>35849.18</td>
+      <td>36440.00</td>
+      <td>34718.21</td>
+      <td>35507.06</td>
+      <td>3129.334722</td>
+      <td>1.118542e+08</td>
+      <td>35743.751401</td>
     </tr>
     <tr>
-      <th>2021-06-08</th>
-      <td>37414.64</td>
-      <td>38446.24</td>
-      <td>35824.69</td>
-      <td>36893.89</td>
-      <td>5667.253973</td>
-      <td>2.103699e+08</td>
-      <td>37120.247501</td>
+      <th>2021-06-18</th>
+      <td>35494.70</td>
+      <td>36125.00</td>
+      <td>33337.00</td>
+      <td>35675.47</td>
+      <td>3865.408811</td>
+      <td>1.344830e+08</td>
+      <td>34791.393581</td>
     </tr>
     <tr>
-      <th>2021-06-09</th>
+      <th>2021-06-19</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2550,7 +2548,7 @@ data.)</p>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>2021-06-10</th>
+      <th>2021-06-20</th>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -2814,7 +2812,7 @@ window for the whole dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x128357550&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe38da39400&gt;
 </pre></div>
 </div>
 <img alt="../_images/timeseries_54_1.png" src="../_images/timeseries_54_1.png" />
@@ -3291,13 +3289,13 @@ to compute the average <em>within</em> each calendar month.</p>
     </tr>
     <tr>
       <th>2021-06-30</th>
-      <td>49830.308310</td>
-      <td>51362.474507</td>
-      <td>47586.392535</td>
-      <td>49522.913239</td>
-      <td>5670.944381</td>
-      <td>2.675518e+08</td>
-      <td>49602.288691</td>
+      <td>48335.081235</td>
+      <td>49808.311235</td>
+      <td>46184.388025</td>
+      <td>48049.587407</td>
+      <td>5468.834803</td>
+      <td>2.532804e+08</td>
+      <td>48105.596908</td>
     </tr>
   </tbody>
 </table>
