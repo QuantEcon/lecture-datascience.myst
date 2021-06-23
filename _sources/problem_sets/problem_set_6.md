@@ -41,7 +41,7 @@ A *census division* is a geographical area, smaller than a Canadian province, th
 organize information at a slightly more granular level than by province or by city. The census
 divisions are shown below.
 
-```{figure} https://datascience.quantecon.org/assets/_static/pandas_files/canada_censusdivisions_map.png
+```{figure} ../_static/canada_censusdivisions_map.png
 :alt: canada_censusdivision_map.png
 ```
 
@@ -199,7 +199,7 @@ See below for advice on how to proceed.
 
 When you are finished, you should have something that looks like this:
 
-```{figure} https://datascience.quantecon.org/assets/_static/groupby_files/groupby_cohort_analysis_exercise_output.png
+```{figure} ../_static/groupby_cohort_analysis_exercise_output.png
 :alt: groupby\_cohort\_analysis\_exercise\_output.png
 ```
 

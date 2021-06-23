@@ -57,7 +57,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://datascience.quantecon.org/pandas/data_clean.html" />
+    <link rel="canonical" href="https://quantecon.github.io/lecture-datascience.myst/pandas/data_clean.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -80,7 +80,7 @@
 <!-- Opengraph tags -->
 <meta property="og:title" content="Cleaning Data" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://datascience.quantecon.org/pandas/data_clean.html" />
+<meta property="og:url" content="https://quantecon.github.io/lecture-datascience.myst/pandas/data_clean.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a series of lectures on programming, data science, and economics." />
 <meta property="og:site_name" content="QuantEcon DataScience" />
@@ -359,9 +359,9 @@ will demonstrate using the following dataset.</p>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1536</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1537</span>             <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1538</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1543</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1544</span>             <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1545</span>         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
 
 <span class="ne">ValueError</span>: could not convert string to float: &#39;#23#24#18#14#12#10#35&#39;
 
@@ -369,9 +369,9 @@ will demonstrate using the following dataset.</p>
 
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1540</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1541</span>                 <span class="n">x</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1542</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1547</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1548</span>                 <span class="n">x</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1549</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 
 <span class="ne">ValueError</span>: complex() arg is a malformed string
 
@@ -438,11 +438,11 @@ will demonstrate using the following dataset.</p>
 <span class="g g-Whitespace">    </span><span class="mi">635</span>     <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">the_sum</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
 <span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1542</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1543</span>                 <span class="c1"># e.g. &quot;foo&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1544</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> to numeric&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">1545</span>     <span class="k">return</span> <span class="n">x</span>
-<span class="g g-Whitespace">   </span><span class="mi">1546</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1549</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1550</span>                 <span class="c1"># e.g. &quot;foo&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1551</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> to numeric&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">1552</span>     <span class="k">return</span> <span class="n">x</span>
+<span class="g g-Whitespace">   </span><span class="mi">1553</span> 
 
 <span class="ne">TypeError</span>: Could not convert #23#24#18#14#12#10#35 to numeric
 </pre></div>
@@ -490,8 +490,8 @@ methods…</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.83 ms, sys: 0 ns, total: 2.83 ms
-Wall time: 2.71 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.6 ms, sys: 0 ns, total: 2.6 ms
+Wall time: 2.48 ms
 </pre></div>
 </div>
 </div>
@@ -519,8 +519,8 @@ Series in one shot!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 890 µs, sys: 224 µs, total: 1.11 ms
-Wall time: 973 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 997 µs, sys: 0 ns, total: 997 µs
+Wall time: 937 µs
 </pre></div>
 </div>
 </div>
@@ -1581,28 +1581,28 @@ a much larger dataset.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>23.07</td>
-      <td>23.07%</td>
+      <td>65.41</td>
+      <td>65.41%</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>67.69</td>
-      <td>67.69%</td>
+      <td>58.34</td>
+      <td>58.34%</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>4.50</td>
-      <td>4.5%</td>
+      <td>18.19</td>
+      <td>18.19%</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>61.62</td>
-      <td>61.62%</td>
+      <td>71.46</td>
+      <td>71.46%</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>80.47</td>
-      <td>80.47%</td>
+      <td>90.89</td>
+      <td>90.89%</td>
     </tr>
   </tbody>
 </table>
@@ -1620,8 +1620,8 @@ a much larger dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 8.72 s, sys: 0 ns, total: 8.72 s
-Wall time: 8.72 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.6 s, sys: 10 ms, total: 12.6 s
+Wall time: 12.6 s
 </pre></div>
 </div>
 </div>
@@ -1634,8 +1634,8 @@ Wall time: 8.72 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 40.6 ms, sys: 3.71 ms, total: 44.3 ms
-Wall time: 44.1 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 43.6 ms, sys: 0 ns, total: 43.6 ms
+Wall time: 43.4 ms
 </pre></div>
 </div>
 </div>
