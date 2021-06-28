@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://quantecon.github.io/lecture-datascience.myst/applications/recidivism.html" />
+    <link rel="canonical" href="https://datascience.quantecon.org/applications/recidivism.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -82,7 +82,7 @@
 <!-- Opengraph tags -->
 <meta property="og:title" content="Case Study: Recidivism" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://quantecon.github.io/lecture-datascience.myst/applications/recidivism.html" />
+<meta property="og:url" content="https://datascience.quantecon.org/applications/recidivism.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a series of lectures on programming, data science, and economics." />
 <meta property="og:site_name" content="QuantEcon DataScience" />
@@ -1872,11 +1872,13 @@ outcomes.</p>
   warnings.warn(msg, FutureWarning)
 /usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
   warnings.warn(msg, FutureWarning)
-/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
   warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_61_1.png" src="../_images/recidivism_61_1.png" />
+<img alt="../_images/recidivism_61_2.png" src="../_images/recidivism_61_2.png" />
 </div>
 </div>
 <p>This figure is somewhat useful, but not for depicting balance
@@ -2040,10 +2042,7 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear][LibLinear][LibLinear][LibLinear][LibLinear]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear][LibLinear]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
@@ -2067,7 +2066,7 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[LibLinear]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    8.7s finished
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    8.5s finished
 </pre></div>
 </div>
 </div>
@@ -2144,51 +2143,51 @@ consistent coefficient estimates.</p>
   <tbody>
     <tr>
       <th>Intercept</th>
-      <td>0.019111</td>
+      <td>0.003837</td>
     </tr>
     <tr>
       <th>sex[T.Male]</th>
-      <td>0.724257</td>
+      <td>0.724674</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.2]</th>
-      <td>0.325189</td>
+      <td>0.325196</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.3]</th>
-      <td>0.612223</td>
+      <td>0.612250</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.4]</th>
-      <td>0.749696</td>
+      <td>0.749698</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.5]</th>
-      <td>0.732780</td>
+      <td>0.732777</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.6]</th>
-      <td>0.792304</td>
+      <td>0.792311</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.7]</th>
-      <td>1.032677</td>
+      <td>1.032676</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.8]</th>
-      <td>1.322563</td>
+      <td>1.322561</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.9]</th>
-      <td>1.286932</td>
+      <td>1.286938</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.10]</th>
-      <td>1.318465</td>
+      <td>1.318421</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.11]</th>
-      <td>1.236905</td>
+      <td>1.236909</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.12]</th>
@@ -2196,67 +2195,67 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>C(priors_count)[T.13]</th>
-      <td>1.528299</td>
+      <td>1.528309</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.14]</th>
-      <td>0.406072</td>
+      <td>0.406009</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.15]</th>
-      <td>0.781439</td>
+      <td>0.781431</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.16]</th>
-      <td>0.599970</td>
+      <td>0.846047</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.17]</th>
-      <td>0.371098</td>
+      <td>0.370983</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.18]</th>
-      <td>1.524261</td>
+      <td>1.524264</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.19]</th>
-      <td>1.143301</td>
+      <td>1.143306</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.20]</th>
-      <td>0.116817</td>
+      <td>0.116833</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.21]</th>
-      <td>1.298547</td>
+      <td>1.298517</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.22]</th>
-      <td>1.676829</td>
+      <td>1.676814</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.23]</th>
-      <td>1.332194</td>
+      <td>1.332183</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.25]</th>
-      <td>0.481950</td>
+      <td>0.481928</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.26]</th>
-      <td>0.741517</td>
+      <td>0.419242</td>
     </tr>
     <tr>
       <th>c_charge_degree[T.M]</th>
-      <td>-0.228160</td>
+      <td>-0.228131</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
-      <td>-0.152875</td>
+      <td>-0.152871</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Assault W/dead Weap]</th>
-      <td>-0.457758</td>
+      <td>-0.457755</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Battery]</th>
@@ -2264,211 +2263,211 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>charge_cat[T.Battery]</th>
-      <td>-0.008883</td>
+      <td>-0.008879</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery on Law Enforc Officer]</th>
-      <td>0.312840</td>
+      <td>0.312828</td>
     </tr>
     <tr>
       <th>charge_cat[T.Burglary Unoccupied Dwelling]</th>
-      <td>-0.151940</td>
+      <td>-0.151930</td>
     </tr>
     <tr>
       <th>charge_cat[T.Criminal Mischief]</th>
-      <td>0.441653</td>
+      <td>0.441660</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Level 0.15 Or Minor In Veh]</th>
-      <td>-0.043793</td>
+      <td>-0.043812</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Property Damage/Injury]</th>
-      <td>-0.957459</td>
+      <td>-0.957467</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving License Suspended]</th>
-      <td>-0.062517</td>
+      <td>-0.062516</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.141164</td>
+      <td>-0.141262</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.182818</td>
+      <td>0.182814</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Petit Theft]</th>
-      <td>0.697407</td>
+      <td>0.697396</td>
     </tr>
     <tr>
       <th>charge_cat[T.Grand Theft (Motor Vehicle)]</th>
-      <td>0.134826</td>
+      <td>0.134829</td>
     </tr>
     <tr>
       <th>charge_cat[T.Operating W/O Valid License]</th>
-      <td>-0.084310</td>
+      <td>-0.084306</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft]</th>
-      <td>0.574944</td>
+      <td>0.574942</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft $100- $300]</th>
-      <td>0.019315</td>
+      <td>0.019317</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss Pyrrolidinovalerophenone]</th>
-      <td>2.135460</td>
+      <td>2.135477</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
-      <td>-0.186717</td>
+      <td>-0.186718</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.394888</td>
+      <td>-0.394887</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cocaine]</th>
-      <td>0.595599</td>
+      <td>0.595597</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.135642</td>
+      <td>0.135586</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Pretrial Release Dom Viol]</th>
-      <td>0.231002</td>
+      <td>0.231018</td>
     </tr>
     <tr>
       <th>charge_cat[T.arrest case no charge]</th>
-      <td>-0.181106</td>
+      <td>-0.181096</td>
     </tr>
     <tr>
       <th>charge_cat[T.other]</th>
-      <td>-0.196723</td>
+      <td>-0.196722</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.1]</th>
-      <td>0.034429</td>
+      <td>0.034420</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.3]</th>
-      <td>0.087811</td>
+      <td>0.087789</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.6]</th>
-      <td>0.036033</td>
+      <td>0.036030</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.10]</th>
-      <td>0.200287</td>
+      <td>0.200326</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.14]</th>
-      <td>0.709710</td>
+      <td>0.709782</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.16]</th>
-      <td>0.708329</td>
+      <td>0.462256</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.17]</th>
-      <td>1.115095</td>
+      <td>1.115212</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.26]</th>
-      <td>0.166137</td>
+      <td>0.488421</td>
     </tr>
     <tr>
       <th>sex[T.Male]:c_charge_degree[T.M]</th>
-      <td>0.163759</td>
+      <td>0.163729</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Aggravated Battery / Pregnant]</th>
-      <td>0.024309</td>
+      <td>0.024296</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Burglary Conveyance Unoccup]</th>
-      <td>0.516821</td>
+      <td>0.516811</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Corrupt Public Servant]</th>
-      <td>0.717896</td>
+      <td>0.717907</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Crimin Mischief Damage $1000+]</th>
-      <td>0.044232</td>
+      <td>0.044228</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving License Suspended]</th>
-      <td>-0.000952</td>
+      <td>-0.000940</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.035072</td>
+      <td>-0.034978</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving While License Revoked]</th>
-      <td>-0.094698</td>
+      <td>-0.094703</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.False Ownership Info/Pawn Item]</th>
-      <td>0.480690</td>
+      <td>0.480682</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Battery w/Prior Convict]</th>
-      <td>-0.096467</td>
+      <td>-0.096459</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.114935</td>
+      <td>0.114945</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Grand Theft in the 3rd Degree]</th>
-      <td>0.277292</td>
+      <td>0.277294</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Petit Theft]</th>
-      <td>0.199608</td>
+      <td>0.199609</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.051152</td>
+      <td>-0.051160</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Resist/Obstruct W/O Violence]</th>
-      <td>0.272846</td>
+      <td>0.272841</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.325805</td>
+      <td>0.325851</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>-0.024243</td>
+      <td>-0.024233</td>
     </tr>
     <tr>
       <th>sex[T.Male]:age</th>
-      <td>-0.014780</td>
+      <td>-0.014791</td>
     </tr>
     <tr>
       <th>juv_fel_count</th>
-      <td>0.302096</td>
+      <td>0.302097</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_misd_count</th>
-      <td>0.181023</td>
+      <td>0.181020</td>
     </tr>
     <tr>
       <th>juv_other_count</th>
-      <td>0.149139</td>
+      <td>0.149175</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_other_count</th>
-      <td>-0.019162</td>
+      <td>-0.019204</td>
     </tr>
   </tbody>
 </table>
@@ -2746,10 +2745,6 @@ some other criteria.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/sklearn/svm/_base.py:985: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
-  warnings.warn(&quot;Liblinear failed to converge, increase &quot;
 </pre></div>
 </div>
 </div>
@@ -3725,5 +3720,15 @@ calibration and balance.</p>
 
     </div> <!-- .wrapper-->
     
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54984338-5', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </body>
 </html>

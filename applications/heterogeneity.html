@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://quantecon.github.io/lecture-datascience.myst/applications/heterogeneity.html" />
+    <link rel="canonical" href="https://datascience.quantecon.org/applications/heterogeneity.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -81,7 +81,7 @@
 <!-- Opengraph tags -->
 <meta property="og:title" content="Heterogeneous Effects" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://quantecon.github.io/lecture-datascience.myst/applications/heterogeneity.html" />
+<meta property="og:url" content="https://datascience.quantecon.org/applications/heterogeneity.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a series of lectures on programming, data science, and economics." />
 <meta property="og:site_name" content="QuantEcon DataScience" />
@@ -919,6 +919,16 @@ asymptotically normal with the usual regression standard errors.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-5-bda3117bc9ed&gt;:7: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(np.diag(vcov))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-5-bda3117bc9ed&gt;:7: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(np.diag(vcov))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -958,29 +968,29 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.489689</td>
-      <td>0.143377</td>
-      <td>-0.164663</td>
+      <td>0.339689</td>
+      <td>0.134887</td>
+      <td>-0.053897</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.489689</td>
+      <td>0.339689</td>
       <td>1.000000</td>
-      <td>0.467891</td>
-      <td>-0.199794</td>
+      <td>0.502302</td>
+      <td>-0.074274</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.143377</td>
-      <td>0.467891</td>
+      <td>0.134887</td>
+      <td>0.502302</td>
       <td>1.000000</td>
-      <td>-0.058241</td>
+      <td>0.010412</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>-0.164663</td>
-      <td>-0.199794</td>
-      <td>-0.058241</td>
+      <td>-0.053897</td>
+      <td>-0.074274</td>
+      <td>0.010412</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1017,32 +1027,32 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>-25.084161</td>
-      <td>-34.117219</td>
-      <td>-13.965746</td>
-      <td>-20.370075</td>
+      <td>-10.735654</td>
+      <td>-17.750434</td>
+      <td>-10.339951</td>
+      <td>-12.513163</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.081395</td>
-      <td>-0.012004</td>
-      <td>0.122301</td>
-      <td>-3255.471896</td>
+      <td>0.000000</td>
+      <td>0.016839</td>
+      <td>0.152320</td>
+      <td>-1556.571669</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>33.131048</td>
-      <td>32.895214</td>
-      <td>31.591443</td>
-      <td>31.837303</td>
+      <td>31.493916</td>
+      <td>33.241410</td>
+      <td>31.733297</td>
+      <td>33.093983</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.774443</td>
-      <td>0.284246</td>
-      <td>0.081210</td>
-      <td>3745.387704</td>
+      <td>1.114453</td>
+      <td>0.285755</td>
+      <td>0.080956</td>
+      <td>3468.765197</td>
     </tr>
   </tbody>
 </table>
@@ -1078,74 +1088,74 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>-12.090414</td>
-      <td>-1.469059</td>
-      <td>-67.116108</td>
-      <td>8.782927</td>
+      <td>-13.954246</td>
+      <td>-1.604460</td>
+      <td>-56.888656</td>
+      <td>15.954591</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-37.155661</td>
-      <td>16.469512</td>
-      <td>-58.543006</td>
-      <td>38.467610</td>
+      <td>-1.203592</td>
+      <td>15.692340</td>
+      <td>-33.262675</td>
+      <td>10.757233</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1.845897</td>
-      <td>-33.194618</td>
-      <td>3.472257</td>
-      <td>-38.634773</td>
+      <td>0.000000</td>
+      <td>-47.561658</td>
+      <td>-29.653804</td>
+      <td>-53.877763</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-38.676559</td>
-      <td>-94.586400</td>
-      <td>-84.210215</td>
-      <td>-43.913972</td>
+      <td>-23.569001</td>
+      <td>5.473336</td>
+      <td>-12.197335</td>
+      <td>7.269695</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-29.358120</td>
-      <td>20.657422</td>
-      <td>68.498262</td>
-      <td>-50.127442</td>
+      <td>-14.905121</td>
+      <td>1.455625</td>
+      <td>73.914852</td>
+      <td>-47.740866</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>64.874474</td>
-      <td>71.395678</td>
-      <td>68.333087</td>
-      <td>74.693170</td>
+      <td>70.412054</td>
+      <td>72.034501</td>
+      <td>66.869117</td>
+      <td>82.244109</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>68.162157</td>
-      <td>63.926180</td>
-      <td>67.183879</td>
-      <td>74.280807</td>
+      <td>69.468670</td>
+      <td>65.879996</td>
+      <td>65.611905</td>
+      <td>71.089105</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>70.861849</td>
-      <td>67.774892</td>
-      <td>67.062660</td>
-      <td>70.470890</td>
+      <td>63.019159</td>
+      <td>66.320545</td>
+      <td>68.622704</td>
+      <td>68.501866</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>65.892988</td>
-      <td>64.313882</td>
-      <td>65.592217</td>
-      <td>65.308781</td>
+      <td>68.010536</td>
+      <td>73.905304</td>
+      <td>64.717744</td>
+      <td>68.165915</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>69.636479</td>
-      <td>73.565960</td>
-      <td>74.891986</td>
-      <td>60.478801</td>
+      <td>70.047450</td>
+      <td>73.987653</td>
+      <td>73.328477</td>
+      <td>59.832854</td>
     </tr>
   </tbody>
 </table>
@@ -1210,29 +1220,29 @@ conditional average treatment effect.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.842993</td>
-      <td>0.528831</td>
-      <td>0.846123</td>
+      <td>0.846956</td>
+      <td>0.515124</td>
+      <td>0.814788</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.842993</td>
+      <td>0.846956</td>
       <td>1.000000</td>
-      <td>0.554399</td>
-      <td>0.712998</td>
+      <td>0.543050</td>
+      <td>0.673416</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.528831</td>
-      <td>0.554399</td>
+      <td>0.515124</td>
+      <td>0.543050</td>
       <td>1.000000</td>
-      <td>0.439283</td>
+      <td>0.396580</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>0.846123</td>
-      <td>0.712998</td>
-      <td>0.439283</td>
+      <td>0.814788</td>
+      <td>0.673416</td>
+      <td>0.396580</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1269,32 +1279,32 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>0.049906</td>
-      <td>0.041790</td>
-      <td>0.055280</td>
-      <td>0.037112</td>
+      <td>0.041263</td>
+      <td>0.041364</td>
+      <td>0.045382</td>
+      <td>0.033875</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.470871</td>
-      <td>0.516002</td>
-      <td>0.140202</td>
-      <td>0.426379</td>
+      <td>0.386453</td>
+      <td>0.566654</td>
+      <td>0.152226</td>
+      <td>0.437952</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>0.021246</td>
-      <td>0.021297</td>
-      <td>0.021517</td>
-      <td>0.021170</td>
+      <td>0.021250</td>
+      <td>0.022009</td>
+      <td>0.022145</td>
+      <td>0.021558</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.136460</td>
-      <td>0.132671</td>
-      <td>0.074969</td>
-      <td>0.130804</td>
+      <td>0.138965</td>
+      <td>0.145674</td>
+      <td>0.077139</td>
+      <td>0.153007</td>
     </tr>
   </tbody>
 </table>
@@ -1330,74 +1340,74 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>-0.037178</td>
-      <td>-0.027007</td>
-      <td>-0.005653</td>
-      <td>-0.023422</td>
+      <td>-0.025539</td>
+      <td>-0.026510</td>
+      <td>0.010045</td>
+      <td>0.002605</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.006322</td>
-      <td>-0.001702</td>
-      <td>0.014868</td>
-      <td>-0.020532</td>
+      <td>-0.011303</td>
+      <td>-0.026435</td>
+      <td>0.019937</td>
+      <td>0.000696</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.021394</td>
-      <td>-0.005055</td>
-      <td>0.020683</td>
-      <td>-0.050260</td>
+      <td>0.022748</td>
+      <td>-0.000281</td>
+      <td>0.034623</td>
+      <td>0.017626</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.079659</td>
-      <td>0.076292</td>
-      <td>0.047886</td>
-      <td>0.074698</td>
+      <td>0.091990</td>
+      <td>0.064491</td>
+      <td>0.053689</td>
+      <td>0.027061</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.176824</td>
-      <td>0.209115</td>
-      <td>0.155855</td>
-      <td>0.160087</td>
+      <td>0.162099</td>
+      <td>0.198261</td>
+      <td>0.112167</td>
+      <td>0.129015</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>0.042390</td>
-      <td>0.050833</td>
-      <td>0.049444</td>
-      <td>0.031801</td>
+      <td>0.042582</td>
+      <td>0.048097</td>
+      <td>0.051012</td>
+      <td>0.030110</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.042569</td>
-      <td>0.042836</td>
-      <td>0.043910</td>
-      <td>0.042358</td>
+      <td>0.041837</td>
+      <td>0.043251</td>
+      <td>0.045639</td>
+      <td>0.040533</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.042837</td>
-      <td>0.044038</td>
-      <td>0.045079</td>
-      <td>0.052445</td>
+      <td>0.042914</td>
+      <td>0.044290</td>
+      <td>0.042922</td>
+      <td>0.043254</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.044398</td>
-      <td>0.043527</td>
-      <td>0.046275</td>
-      <td>0.049250</td>
+      <td>0.048326</td>
+      <td>0.045323</td>
+      <td>0.044637</td>
+      <td>0.048282</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.050258</td>
-      <td>0.050140</td>
-      <td>0.049820</td>
-      <td>0.054659</td>
+      <td>0.050736</td>
+      <td>0.052750</td>
+      <td>0.051338</td>
+      <td>0.053847</td>
     </tr>
   </tbody>
 </table>
@@ -2011,5 +2021,15 @@ relatively low dimension) to get precise estimates.</p>
 
     </div> <!-- .wrapper-->
     
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54984338-5', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </body>
 </html>
