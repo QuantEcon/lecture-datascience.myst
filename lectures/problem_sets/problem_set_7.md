@@ -87,8 +87,8 @@ that describes the cause for all US domestic flight delays
 in November 2016. We used the same data in the previous problem set.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/air_perf.csv"
-air_perf = pd.read_csv(url)
+url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip"
+air_perf = pd.read_csv(url)[["CRSDepTime", "Carrier", "CarrierDelay", "ArrDelay"]]
 air_perf.info()
 air_perf.head
 ```

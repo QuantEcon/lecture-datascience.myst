@@ -292,7 +292,7 @@ Let's apply our new split-apply-combine skills to the airline dataset we
 saw in the {doc}`merge <merge>` lecture.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/air_dec1.csv.zip"
+url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip"
 air_dec = pd.read_csv(url)
 ```
 
@@ -544,7 +544,7 @@ We'll first look at the data, and then describe the exercise
 random.seed(42)
 np.random.seed(42)
 
-url = "https://datascience.quantecon.org/assets/data/orders.csv"
+url = "https://datascience.quantecon.org/assets/data/shopify_orders.csv.zip"
 orders = pd.read_csv(url)
 orders.info()
 

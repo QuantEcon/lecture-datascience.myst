@@ -451,7 +451,7 @@ We accessed the data [here](https://github.com/zygmuntz/goodbooks-10k).
 Let's load it up.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/ratings.csv"
+url = "https://datascience.quantecon.org/assets/data/goodreads_ratings.csv.zip"
 ratings = pd.read_csv(url)
 display(ratings.head())
 ratings.info()
@@ -562,7 +562,7 @@ We hear you.
 Let's also load a dataset containing information on the actual books.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/books.csv"
+url = "https://datascience.quantecon.org/assets/data/goodreads_books.csv.zip"
 books = pd.read_csv(url)
 # we only need a few of the columns
 books = books[["book_id", "authors", "title"]]
@@ -636,8 +636,8 @@ that describes the cause of all US domestic flight delays
 in November 2016:
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/air_perf.csv"
-air_perf = pd.read_csv(url)
+url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip"
+air_perf = pd.read_csv(url)[["CRSDepTime", "Carrier", "CarrierDelay", "ArrDelay"]]
 air_perf.info()
 air_perf.head()
 ```
@@ -668,7 +668,7 @@ Thankfully, we have a second dataset that maps the two letter code
 into the full airline name.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/carrier_code.csv"
+url = "https://datascience.quantecon.org/assets/data/airline_carrier_codes.csv.zip"
 carrier_code = pd.read_csv(url)
 carrier_code.tail()
 ```
