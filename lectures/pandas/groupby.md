@@ -292,7 +292,8 @@ Let's apply our new split-apply-combine skills to the airline dataset we
 saw in the {doc}`merge <merge>` lecture.
 
 ```{code-cell} python
-air_dec = qeds.load("airline_performance_dec16")
+url = "https://datascience.quantecon.org/assets/data/air_dec1.csv.zip"
+air_dec = pd.read_csv(url)
 ```
 
 First, we compute the average delay in arrival time for all carriers
@@ -543,7 +544,8 @@ We'll first look at the data, and then describe the exercise
 random.seed(42)
 np.random.seed(42)
 
-orders = qeds.data.shopify.simulate_orders(500000)
+url = "https://datascience.quantecon.org/assets/data/orders.csv"
+orders = pd.read_csv(url)
 orders.info()
 
 orders.head()

@@ -168,8 +168,8 @@ We'll look at the data before describing the exercise.
 
 ```{code-cell} python
 np.random.seed(42)
-
-orders = qeds.data.shopify.simulate_orders(500000)
+url = "https://datascience.quantecon.org/assets/data/orders.csv"
+orders = pd.read_csv(url)
 orders.info()
 
 orders.head()
@@ -248,7 +248,8 @@ that describes the cause for all US domestic flight delays in November 2016:
 Loading this dataset the first time will take a minute or two because it is quite hefty... We recommend taking a break to view this [xkcd comic](https://xkcd.com/303/).
 
 ```{code-cell} python
-air_perf = qeds.load("airline_performance_dec16")[["CRSDepTime", "Carrier", "CarrierDelay", "ArrDelay"]]
+url = "https://datascience.quantecon.org/assets/data/air_perf.csv"
+air_perf = pd.read_csv(url)
 air_perf.info()
 air_perf.head()
 ```
@@ -273,7 +274,8 @@ Thankfully, we have a second dataset that maps two-letter codes
 to full airline names:
 
 ```{code-cell} python
-carrier_code = qeds.load("airline_carrier_codes")
+url = "https://datascience.quantecon.org/assets/data/carrier_code.csv"
+carrier_code = pd.read_csv(url)
 carrier_code.tail()
 ```
 
