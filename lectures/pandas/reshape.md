@@ -105,7 +105,7 @@ We will keep our discussion here as brief and simple as possible because
 these tools will reappear in subsequent lectures.
 
 ```{code-cell} python
-url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/bball.csv"
+url = "https://datascience.quantecon.org/assets/data/bball.csv"
 bball = pd.read_csv(url)
 bball.info()
 

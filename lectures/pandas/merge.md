@@ -59,7 +59,7 @@ from IPython.display import display
 
 ```{code-cell} python
 # from WDI. Units trillions of 2010 USD
-url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/wdi_data.csv"
+url = "https://datascience.quantecon.org/assets/data/wdi_data.csv"
 wdi = pd.read_csv(url).set_index(["country", "year"])
 wdi.info()
 
@@ -88,7 +88,7 @@ sq_miles
 
 ```{code-cell} python
 # from WDI. Units millions of people
-pop_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/wdi_population.csv"
+pop_url = "https://datascience.quantecon.org/assets/data/wdi_population.csv"
 pop = pd.read_csv(pop_url).set_index(["country", "year"])
 pop.info()
 pop.head(10)

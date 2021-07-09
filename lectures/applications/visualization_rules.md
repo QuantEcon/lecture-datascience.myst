@@ -188,7 +188,7 @@ Below, we create a draft of our plot.
 
 ```{code-cell} python
 # Read in data
-df = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv")
+df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
@@ -234,7 +234,7 @@ presenting the details.  However, the code we use to create the best version of 
 
 ```{code-cell} python
 # Read in data
-df = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv")
+df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
@@ -392,7 +392,7 @@ chose to remove them.
 from sklearn.linear_model import LinearRegression
 
 # Read in data
-df = pd.read_csv("https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv")
+df = pd.read_csv("https://datascience.quantecon.org/assets/data/density_wage_data.csv")
 df["year"] = df.year.astype(int)  # Convert year to int
 
 
@@ -1129,7 +1129,7 @@ A high age dependency ratio means that the government will have a smaller tax ba
 but have relatively higher health and pension expenditures to pay to the old.
 
 ```{code-cell} python
-download_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/WorldBank_AgeDependencyRatio.csv"
+download_url = "https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv"
 df = pd.read_csv(download_url, na_values="..")
 df = df[["Country Name", "1960", "1970", "1980", "1990", "2000", "2010", "2017"]]
 df = df.set_index("Country Name").T
@@ -1323,7 +1323,7 @@ Legends have several weaknesses:
 To demonstrate this, we revisit our age dependency ratio example from earlier.
 
 ```{code-cell} python
-download_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/WorldBank_AgeDependencyRatio.csv"
+download_url = "https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv"
 df = pd.read_csv(download_url, na_values="..")
 df = df[["Country Name", "1960", "1970", "1980", "1990", "2000", "2010", "2017"]]
 df = df.set_index("Country Name").T

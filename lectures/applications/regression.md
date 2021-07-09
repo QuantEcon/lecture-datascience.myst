@@ -74,7 +74,7 @@ from sklearn import (
     linear_model, metrics, neural_network, pipeline, model_selection
 )
 
-url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/kc_house_data.csv"
+url = "https://datascience.quantecon.org/assets/data/kc_house_data.csv"
 df = pd.read_csv(url)
 df.info()
 ```
