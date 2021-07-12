@@ -129,7 +129,7 @@ def get_incident_details(id):
     return(result)
 
 
-incidentsfile = "avalanche_incidents.csv"
+incidentsfile = "https://datascience.quantecon.org/assets/data/avalanche_incidents.csv"
 
 # To avoid loading the avalanche Canada servers, we save the incident details locally.
 if (not os.path.isfile(incidentsfile)):
