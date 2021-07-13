@@ -49,16 +49,16 @@ jobs:
         run: |
           mkdir -p _build/html/_notebooks
           rsync -r  _build/jupyter/ _build/html/_notebooks/
+      - name: Copy Data Assets for Deployment
+        shell: bash -l {0}
+        run: |
+          mkdir -p _build/html/assets/data
+          cp -a lectures/_data/. _build/html/assets/data/          
       # Build Website
       - name: Build HTML
         shell: bash -l {0}
         run: |
           jb build lectures --path-output ./ -W --keep-going
-      - name: Copy Data Assets for Deployment
-        shell: bash -l {0}
-        run: |
-          mkdir -p _build/html/assets/data
-          cp -a lectures/_data/. _build/html/assets/data/
       - name: Upload Execution Reports
         uses: actions/upload-artifact@v2
         if: failure()
