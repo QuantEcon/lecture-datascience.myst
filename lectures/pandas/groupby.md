@@ -292,7 +292,7 @@ Let's apply our new split-apply-combine skills to the airline dataset we
 saw in the {doc}`merge <merge>` lecture.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv"
+url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip"
 air_dec = pd.read_csv(url)
 air_dec.Date = pd.to_datetime(air_dec.Date)
 ```
