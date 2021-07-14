@@ -332,7 +332,7 @@ classification settings.</p>
 lighter on exposition and then build up to an application.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -343,7 +343,7 @@ lighter on exposition and then build up to an application.</p>
 <span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -370,11 +370,17 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 <p>To get some intuition for this function, let’s plot it below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f127e388340&gt;]
+</pre></div>
+</div>
+<img alt="../_images/classification_3_1.png" src="../_images/classification_3_1.png" />
 </div>
 </div>
 <p>Notice that for all values of <span class="math notranslate nohighlight">\(x\)</span>, the value of the logistic function is
@@ -384,7 +390,7 @@ output the probability of one of the two labels.</p>
 <p>Let’s load up the recidivism data and fit the logistic regression model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/propublica/compas-analysis&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/propublica/compas-analysis&quot;</span>
 <span class="n">data_url</span> <span class="o">+=</span> <span class="s2">&quot;/master/compas-scores-two-years.csv&quot;</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
@@ -401,6 +407,11 @@ output the probability of one of the two labels.</p>
 <span class="n">beta_1</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fit model: p(recid) = L(</span><span class="si">{</span><span class="n">beta_0</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">beta_1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> decile_score)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4260 + 0.2673 decile_score)
 </pre></div>
 </div>
 </div>
@@ -421,7 +432,7 @@ will always have this cutoff structure.</p>
 <p>Let’s add a second feature the model: the age of the individual.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">]]</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
 <span class="p">)</span>
@@ -436,6 +447,11 @@ will always have this cutoff structure.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-0.8505 + 0.2470 decile_score + -0.0130 age)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Here, we see that an increase in the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> still leads to an increase in
 the predicted probability of recidivism, while older individuals are slightly
@@ -443,7 +459,7 @@ less likely to commit crime again.</p>
 <p>We’ll build on an example from the <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html">scikit-learn documentation</a> to visualize the predictions of this model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot the decision boundaries for a classifier with 2 features x and y.</span>
 
@@ -490,6 +506,12 @@ less likely to commit crime again.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;decile_score&#39;, ylabel=&#39;age&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/classification_9_1.png" src="../_images/classification_9_1.png" />
+</div>
 </div>
 <p>In this plot, we can clearly see the relationships we identified from the
 coefficients.</p>
@@ -520,10 +542,15 @@ fraction of correct predictions.</p>
 <p>For a scikit-learn classifier, this can be computed using the <code class="docutils literal notranslate"><span class="pre">score</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">train_acc</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_acc</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">test_acc</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
 <span class="n">train_acc</span><span class="p">,</span> <span class="n">test_acc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6534195933456562, 0.667960088691796)
 </pre></div>
 </div>
 </div>
@@ -571,11 +598,23 @@ both precision and recall are exactly 1.</p>
 <p>Scikit-learn</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span>
     <span class="n">y_train</span><span class="p">,</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
     <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;no recid&quot;</span><span class="p">,</span> <span class="s2">&quot;recid&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+    no recid       0.67      0.73      0.69      2940
+       recid       0.64      0.57      0.60      2470
+
+    accuracy                           0.65      5410
+   macro avg       0.65      0.65      0.65      5410
+weighted avg       0.65      0.65      0.65      5410
 </pre></div>
 </div>
 </div>
@@ -614,7 +653,7 @@ rate and false positive rates. Then we plot these rates against
 each other.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="c1"># predicted_probs is an N x 2 array, where N is number of observations</span>
     <span class="c1"># and 2 is number of classes</span>
     <span class="n">predicted_probs</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -635,6 +674,9 @@ each other.</p>
 <span class="n">plot_roc</span><span class="p">(</span><span class="n">logistic_age_model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/classification_15_0.png" src="../_images/classification_15_0.png" />
 </div>
 </div>
 <p>We can use the ROC curve to determine the optimal threshold value.</p>
@@ -663,11 +705,16 @@ metric in cross-validation.</p>
 <p>Let’s see an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_prob1</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_prob1</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">auc</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">predicted_prob1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial AUC value is </span><span class="si">{</span><span class="n">auc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># help(linear_model.LogisticRegression)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial AUC value is 0.7057
 </pre></div>
 </div>
 </div>
@@ -757,7 +804,7 @@ visually inspect the hypothesis.</p>
 <p>Let’s first gather the data from FRED.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;1974-01-01&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;1974-01-01&quot;</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">pct_change_on_last_year</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -806,11 +853,96 @@ visually inspect the hypothesis.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>yield_curve</th>
+      <th>unemp</th>
+      <th>inventory</th>
+      <th>house_permits</th>
+      <th>pct_change_hpi</th>
+      <th>retail_sales</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1976-04-01</th>
+      <td>0.801364</td>
+      <td>7.566667</td>
+      <td>61.087</td>
+      <td>1171.333333</td>
+      <td>0.076746</td>
+      <td>0.056936</td>
+    </tr>
+    <tr>
+      <th>1976-07-01</th>
+      <td>1.099687</td>
+      <td>7.733333</td>
+      <td>55.190</td>
+      <td>1345.000000</td>
+      <td>0.087716</td>
+      <td>0.037207</td>
+    </tr>
+    <tr>
+      <th>1976-10-01</th>
+      <td>1.467377</td>
+      <td>7.766667</td>
+      <td>20.163</td>
+      <td>1489.000000</td>
+      <td>0.080938</td>
+      <td>0.047523</td>
+    </tr>
+    <tr>
+      <th>1977-01-01</th>
+      <td>1.332222</td>
+      <td>7.500000</td>
+      <td>34.343</td>
+      <td>1562.000000</td>
+      <td>0.104610</td>
+      <td>0.037939</td>
+    </tr>
+    <tr>
+      <th>1977-04-01</th>
+      <td>1.248254</td>
+      <td>7.133333</td>
+      <td>51.245</td>
+      <td>1693.333333</td>
+      <td>0.109432</td>
+      <td>0.032931</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now, we also need data on recessions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_recession_data</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_recession_data</span><span class="p">():</span>
     <span class="n">recession</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s2">&quot;USRECQ&quot;</span><span class="p">],</span> <span class="s2">&quot;fred&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
         <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">USRECQ</span><span class="o">=</span><span class="s2">&quot;recession&quot;</span><span class="p">))</span>
@@ -837,7 +969,7 @@ visually inspect the hypothesis.</p>
 <p>Now, let’s take a look at the data we have.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_recession_bands</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_recession_bands</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">start_dates</span><span class="p">,</span> <span class="n">end_dates</span><span class="p">):</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 
@@ -851,6 +983,9 @@ visually inspect the hypothesis.</p>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/classification_23_0.png" src="../_images/classification_23_0.png" />
 </div>
 </div>
 <p>For each of the chosen variables, you can see that the leading indicator
@@ -868,7 +1003,7 @@ to use leading values of the variables to predict current or future recessions.<
 <p>Let’s explore that question by looking at many different sets of leads.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">indicators</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">nlead</span><span class="p">))</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">fit_for_nlead</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
@@ -898,6 +1033,88 @@ to use leading values of the variables to predict current or future recessions.<
 
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cmats</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">The average confusion matrix for </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> lag(s) was:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 1 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 2 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 3 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 4 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 5 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 6 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 7 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 8 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 9 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 10 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
+ [[37.735  0.665]
+ [ 1.405  3.195]]
+
+
+The average confusion matrix for 2 lag(s) was:
+ [[37.79   0.895]
+ [ 2.635  2.325]]
+
+
+The average confusion matrix for 3 lag(s) was:
+ [[37.74   0.72 ]
+ [ 2.515  2.025]]
+
+
+The average confusion matrix for 4 lag(s) was:
+ [[37.98   0.395]
+ [ 2.8    1.825]]
+
+
+The average confusion matrix for 5 lag(s) was:
+ [[37.115  0.855]
+ [ 3.59   1.44 ]]
+
+
+The average confusion matrix for 6 lag(s) was:
+ [[36.89   1.13 ]
+ [ 3.735  1.245]]
+
+
+The average confusion matrix for 7 lag(s) was:
+ [[36.235  1.36 ]
+ [ 3.615  1.79 ]]
+
+
+The average confusion matrix for 8 lag(s) was:
+ [[36.155  1.295]
+ [ 3.585  1.965]]
+
+
+The average confusion matrix for 9 lag(s) was:
+ [[35.355  1.47 ]
+ [ 4.5    1.675]]
+
+
+The average confusion matrix for 10 lag(s) was:
+ [[34.615  1.745]
+ [ 4.955  1.315]]
 </pre></div>
 </div>
 </div>
@@ -964,7 +1181,7 @@ possible.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -988,7 +1205,7 @@ to <code class="docutils literal notranslate"><span class="pre">roc_auc</span></
 to use <code class="docutils literal notranslate"><span class="pre">model_selection.cross_val_score</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1011,7 +1228,7 @@ to estimate the model parameters. How do these compare to logistic
 regression?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1037,7 +1254,7 @@ could you try to avoid overfitting?</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">make_train_data_varying_leads</span></code> function below to construct your model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data_varying_leads</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data_varying_leads</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply per-indicator leads to each indicator and join with recession data</span>
 

@@ -320,10 +320,10 @@
 <code class="docutils literal notranslate"><span class="pre">pd</span></code>, which is conventional practice.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Don&#39;t worry about this line for now!</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -336,7 +336,12 @@ using is helpful.</p>
 <p>We can check this by running the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.3.0&#39;
 </pre></div>
 </div>
 </div>
@@ -355,7 +360,7 @@ observation.</p>
 other year starting in 1995.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.6</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.6</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">]</span>
 <span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 
 <span class="n">unemp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">years</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Unemployment&quot;</span><span class="p">)</span>
@@ -365,7 +370,23 @@ other year starting in 1995.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    5.6
+1997    5.3
+1999    4.3
+2001    4.2
+2003    5.8
+2005    5.3
+2007    4.6
+2009    7.8
+2011    9.1
+2013    8.0
+2015    5.7
+Name: Unemployment, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -373,14 +394,24 @@ other year starting in 1995.</p>
 <p>We can look at the index and values in our Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([1995, 1997, 1999, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015], dtype=&#39;int64&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.6, 5.3, 4.3, 4.2, 5.8, 5.3, 4.6, 7.8, 9.1, 8. , 5.7])
 </pre></div>
 </div>
 </div>
@@ -395,14 +426,34 @@ at once.</p>
 of our Series, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    5.6
+1997    5.3
+1999    4.3
+2001    4.2
+2003    5.8
+Name: Unemployment, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2007    4.6
+2009    7.8
+2011    9.1
+2013    8.0
+2015    5.7
+Name: Unemployment, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -413,9 +464,15 @@ of our Series, respectively.</p>
 <p>We can also plot data using the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/intro_14_1.png" src="../_images/intro_14_1.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -430,7 +487,12 @@ to display figures inside the notebook itself. Also, pandas has much greater vis
 unique values in a Series – which can be done with the <code class="docutils literal notranslate"><span class="pre">.unique</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.6, 5.3, 4.3, 4.2, 5.8, 4.6, 7.8, 9.1, 8. , 5.7])
 </pre></div>
 </div>
 </div>
@@ -445,14 +507,27 @@ an item from the index, or a list of items in the index.</p>
 demonstrate how to select one or multiple elements of the Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.6
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">2005</span><span class="p">,</span> <span class="mi">2015</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">2005</span><span class="p">,</span> <span class="mi">2015</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    5.6
+2005    5.3
+2015    5.7
+Name: Unemployment, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -480,7 +555,7 @@ database.</p>
 other year by region of the US starting in 1995.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;NorthEast&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.9</span><span class="p">,</span>  <span class="mf">5.6</span><span class="p">,</span>  <span class="mf">4.4</span><span class="p">,</span>  <span class="mf">3.8</span><span class="p">,</span>  <span class="mf">5.8</span><span class="p">,</span>  <span class="mf">4.9</span><span class="p">,</span>  <span class="mf">4.3</span><span class="p">,</span>  <span class="mf">7.1</span><span class="p">,</span>  <span class="mf">8.3</span><span class="p">,</span>  <span class="mf">7.9</span><span class="p">,</span>  <span class="mf">5.7</span><span class="p">],</span>
     <span class="s2">&quot;MidWest&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.5</span><span class="p">,</span>  <span class="mf">4.3</span><span class="p">,</span>  <span class="mf">3.6</span><span class="p">,</span>  <span class="mf">4.</span> <span class="p">,</span>  <span class="mf">5.7</span><span class="p">,</span>  <span class="mf">5.7</span><span class="p">,</span>  <span class="mf">4.9</span><span class="p">,</span>  <span class="mf">8.1</span><span class="p">,</span>  <span class="mf">8.7</span><span class="p">,</span>  <span class="mf">7.4</span><span class="p">,</span>  <span class="mf">5.1</span><span class="p">],</span>
     <span class="s2">&quot;South&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.3</span><span class="p">,</span>  <span class="mf">5.2</span><span class="p">,</span>  <span class="mf">4.2</span><span class="p">,</span>  <span class="mf">4.</span> <span class="p">,</span>  <span class="mf">5.7</span><span class="p">,</span>  <span class="mf">5.2</span><span class="p">,</span>  <span class="mf">4.3</span><span class="p">,</span>  <span class="mf">7.6</span><span class="p">,</span>  <span class="mf">9.1</span><span class="p">,</span>  <span class="mf">7.4</span><span class="p">,</span>  <span class="mf">5.5</span><span class="p">],</span>
@@ -493,19 +568,157 @@ other year by region of the US starting in 1995.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>4.9</td>
+      <td>5.7</td>
+      <td>5.2</td>
+      <td>5.5</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>4.3</td>
+      <td>4.9</td>
+      <td>4.3</td>
+      <td>4.5</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>7.1</td>
+      <td>8.1</td>
+      <td>7.6</td>
+      <td>8.6</td>
+      <td>7.8</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>8.3</td>
+      <td>8.7</td>
+      <td>9.1</td>
+      <td>10.7</td>
+      <td>9.1</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>7.9</td>
+      <td>7.4</td>
+      <td>7.4</td>
+      <td>8.5</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>5.7</td>
+      <td>5.1</td>
+      <td>5.5</td>
+      <td>6.1</td>
+      <td>5.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can retrieve the index and the DataFrame values as we
 did with a Series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([1995, 1997, 1999, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015], dtype=&#39;int64&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 5.9,  4.5,  5.3,  6.6,  5.6],
+       [ 5.6,  4.3,  5.2,  6. ,  5.3],
+       [ 4.4,  3.6,  4.2,  5.2,  4.3],
+       [ 3.8,  4. ,  4. ,  4.6,  4.2],
+       [ 5.8,  5.7,  5.7,  6.5,  5.8],
+       [ 4.9,  5.7,  5.2,  5.5,  5.3],
+       [ 4.3,  4.9,  4.3,  4.5,  4.6],
+       [ 7.1,  8.1,  7.6,  8.6,  7.8],
+       [ 8.3,  8.7,  9.1, 10.7,  9.1],
+       [ 7.9,  7.4,  7.4,  8.5,  8. ],
+       [ 5.7,  5.1,  5.5,  6.1,  5.7]])
 </pre></div>
 </div>
 </div>
@@ -519,17 +732,141 @@ did with a Series.</p>
 first or last <code class="docutils literal notranslate"><span class="pre">n</span></code> rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2011</th>
+      <td>8.3</td>
+      <td>8.7</td>
+      <td>9.1</td>
+      <td>10.7</td>
+      <td>9.1</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>7.9</td>
+      <td>7.4</td>
+      <td>7.4</td>
+      <td>8.5</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>5.7</td>
+      <td>5.1</td>
+      <td>5.5</td>
+      <td>6.1</td>
+      <td>5.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="plotting">
@@ -538,9 +875,15 @@ first or last <code class="docutils literal notranslate"><span class="pre">n</sp
 <p>Notice we now have a separate line for each column of data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/intro_29_1.png" src="../_images/intro_29_1.png" />
 </div>
 </div>
 </div>
@@ -551,36 +894,87 @@ first or last <code class="docutils literal notranslate"><span class="pre">n</sp
 subsets of both row and columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">,</span> <span class="s2">&quot;NorthEast&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">,</span> <span class="s2">&quot;NorthEast&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.9
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">2005</span><span class="p">],</span> <span class="s2">&quot;South&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">2005</span><span class="p">],</span> <span class="s2">&quot;South&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    5.3
+2005    5.2
+Name: South, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">,</span> <span class="s2">&quot;National&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">,</span> <span class="s2">&quot;National&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NorthEast    5.9
+National     5.6
+Name: 1995, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;NorthEast&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;NorthEast&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    5.9
+1997    5.6
+1999    4.4
+2001    3.8
+2003    5.8
+2005    4.9
+2007    4.3
+2009    7.1
+2011    8.3
+2013    7.9
+2015    5.7
+Name: NorthEast, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># `[string]` with no `.loc` extracts a whole column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># `[string]` with no `.loc` extracts a whole column</span>
 <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;MidWest&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    4.5
+1997    4.3
+1999    3.6
+2001    4.0
+2003    5.7
+2005    5.7
+2007    4.9
+2009    8.1
+2011    8.7
+2013    7.4
+2015    5.1
+Name: MidWest, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -594,45 +988,157 @@ columns.</p>
 <p>Let’s take a look at a few of them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Divide by 100 to move from percent units to a rate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Divide by 100 to move from percent units to a rate</span>
 <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;West&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find maximum</span>
-<span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;West&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    0.066
+1997    0.060
+1999    0.052
+2001    0.046
+2003    0.065
+2005    0.055
+2007    0.045
+2009    0.086
+2011    0.107
+2013    0.085
+2015    0.061
+Name: West, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the difference between two columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find maximum</span>
+<span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;West&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the difference between two columns</span>
 <span class="c1"># Notice that pandas applies `-` to _all rows_ at once</span>
 <span class="c1"># We&#39;ll see more of this throughout these materials</span>
 <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;West&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;MidWest&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1995    2.1
+1997    1.7
+1999    1.6
+2001    0.6
+2003    0.8
+2005   -0.2
+2007   -0.4
+2009    0.5
+2011    2.0
+2013    1.1
+2015    1.0
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find correlation between two columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find correlation between two columns</span>
 <span class="n">unemp_region</span><span class="o">.</span><span class="n">West</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;MidWest&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9006381255384481
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># find correlation between all column pairs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find correlation between all column pairs</span>
 <span class="n">unemp_region</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NorthEast</th>
+      <td>1.000000</td>
+      <td>0.875654</td>
+      <td>0.964415</td>
+      <td>0.967875</td>
+      <td>0.976016</td>
+    </tr>
+    <tr>
+      <th>MidWest</th>
+      <td>0.875654</td>
+      <td>1.000000</td>
+      <td>0.951379</td>
+      <td>0.900638</td>
+      <td>0.952389</td>
+    </tr>
+    <tr>
+      <th>South</th>
+      <td>0.964415</td>
+      <td>0.951379</td>
+      <td>1.000000</td>
+      <td>0.987259</td>
+      <td>0.995030</td>
+    </tr>
+    <tr>
+      <th>West</th>
+      <td>0.967875</td>
+      <td>0.900638</td>
+      <td>0.987259</td>
+      <td>1.000000</td>
+      <td>0.981308</td>
+    </tr>
+    <tr>
+      <th>National</th>
+      <td>0.976016</td>
+      <td>0.952389</td>
+      <td>0.995030</td>
+      <td>0.981308</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-int-dir2">
 <p class="admonition-title">Exercise</p>
@@ -650,14 +1156,29 @@ each column.</p>
 DataFrame when an operation isn’t behaving as expected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">dtype</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;float64&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">dtypes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NorthEast    float64
+MidWest      float64
+South        float64
+West         float64
+National     float64
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -679,9 +1200,19 @@ cause problems.</p>
 interpreted as a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">str_unemp</span> <span class="o">=</span> <span class="n">unemp_region</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_unemp</span> <span class="o">=</span> <span class="n">unemp_region</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">str_unemp</span><span class="p">[</span><span class="s2">&quot;South&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">str_unemp</span><span class="p">[</span><span class="s2">&quot;South&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 <span class="n">str_unemp</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NorthEast    float64
+MidWest      float64
+South         object
+West         float64
+National     float64
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -689,16 +1220,96 @@ interpreted as a string.</p>
 <p>Everything <em>looks</em> ok…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">str_unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>But if we try to do something like compute the sum of all the columns,
 we get unexpected results…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">str_unemp</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_unemp</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NorthEast                                 63.7
+MidWest                                   62.0
+South        5.35.24.24.05.75.24.37.69.17.45.5
+West                                      72.8
+National                                  65.7
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -734,7 +1345,7 @@ four regions of the US — notice that this differs from the national
 unemployment rate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;UnweightedMean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">]</span> <span class="o">+</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;UnweightedMean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">]</span> <span class="o">+</span>
                                   <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;MidWest&quot;</span><span class="p">]</span> <span class="o">+</span>
                                   <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;South&quot;</span><span class="p">]</span> <span class="o">+</span>
                                   <span class="n">unemp_region</span><span class="p">[</span><span class="s2">&quot;West&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">4</span>
@@ -744,10 +1355,86 @@ unemployment rate.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+      <th>UnweightedMean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+      <td>5.575</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+      <td>5.275</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+      <td>4.350</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+      <td>4.100</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+      <td>5.925</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="changing-values">
@@ -758,17 +1445,93 @@ DataFrame.</p>
 <p><code class="docutils literal notranslate"><span class="pre">df.loc[index,</span> <span class="pre">column]</span> <span class="pre">=</span> <span class="pre">value</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">,</span> <span class="s2">&quot;UnweightedMean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">,</span> <span class="s2">&quot;UnweightedMean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+      <th>UnweightedMean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+      <td>5.275</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+      <td>4.350</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+      <td>4.100</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+      <td>5.925</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="renaming-columns">
@@ -785,7 +1548,7 @@ values.</p>
 <p>See the example below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">:</span> <span class="s2">&quot;NE&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">:</span> <span class="s2">&quot;NE&quot;</span><span class="p">,</span>
          <span class="s2">&quot;MidWest&quot;</span><span class="p">:</span> <span class="s2">&quot;MW&quot;</span><span class="p">,</span>
          <span class="s2">&quot;South&quot;</span><span class="p">:</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span>
          <span class="s2">&quot;West&quot;</span><span class="p">:</span> <span class="s2">&quot;W&quot;</span><span class="p">}</span>
@@ -793,13 +1556,219 @@ values.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NE</th>
+      <th>MW</th>
+      <th>S</th>
+      <th>W</th>
+      <th>National</th>
+      <th>UnweightedMean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+      <td>5.275</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+      <td>4.350</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+      <td>4.100</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+      <td>5.925</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>4.9</td>
+      <td>5.7</td>
+      <td>5.2</td>
+      <td>5.5</td>
+      <td>5.3</td>
+      <td>5.325</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>4.3</td>
+      <td>4.9</td>
+      <td>4.3</td>
+      <td>4.5</td>
+      <td>4.6</td>
+      <td>4.500</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>7.1</td>
+      <td>8.1</td>
+      <td>7.6</td>
+      <td>8.6</td>
+      <td>7.8</td>
+      <td>7.850</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>8.3</td>
+      <td>8.7</td>
+      <td>9.1</td>
+      <td>10.7</td>
+      <td>9.1</td>
+      <td>9.200</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>7.9</td>
+      <td>7.4</td>
+      <td>7.4</td>
+      <td>8.5</td>
+      <td>8.0</td>
+      <td>7.800</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>5.7</td>
+      <td>5.1</td>
+      <td>5.5</td>
+      <td>6.1</td>
+      <td>5.7</td>
+      <td>5.600</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_region</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NorthEast</th>
+      <th>MidWest</th>
+      <th>South</th>
+      <th>West</th>
+      <th>National</th>
+      <th>UnweightedMean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+      <td>5.275</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+      <td>4.350</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+      <td>4.100</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+      <td>5.925</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We renamed our columns… Why does the DataFrame still show the old
 column names?</p>
@@ -821,7 +1790,7 @@ pandas because operations that don’t alter your data are (usually)
 safer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">:</span> <span class="s2">&quot;NE&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NorthEast&quot;</span><span class="p">:</span> <span class="s2">&quot;NE&quot;</span><span class="p">,</span>
          <span class="s2">&quot;MidWest&quot;</span><span class="p">:</span> <span class="s2">&quot;MW&quot;</span><span class="p">,</span>
          <span class="s2">&quot;South&quot;</span><span class="p">:</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span>
          <span class="s2">&quot;West&quot;</span><span class="p">:</span> <span class="s2">&quot;W&quot;</span><span class="p">}</span>
@@ -831,6 +1800,82 @@ safer.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NE</th>
+      <th>MW</th>
+      <th>S</th>
+      <th>W</th>
+      <th>National</th>
+      <th>UnweightedMean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1995</th>
+      <td>5.9</td>
+      <td>4.5</td>
+      <td>5.3</td>
+      <td>6.6</td>
+      <td>5.6</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>5.6</td>
+      <td>4.3</td>
+      <td>5.2</td>
+      <td>6.0</td>
+      <td>5.3</td>
+      <td>5.275</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>4.4</td>
+      <td>3.6</td>
+      <td>4.2</td>
+      <td>5.2</td>
+      <td>4.3</td>
+      <td>4.350</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>3.8</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.2</td>
+      <td>4.100</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>5.8</td>
+      <td>5.7</td>
+      <td>5.7</td>
+      <td>6.5</td>
+      <td>5.8</td>
+      <td>5.925</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>

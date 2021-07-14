@@ -299,7 +299,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -308,7 +308,7 @@
     <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">neural_network</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">model_selection</span>
 <span class="p">)</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -359,7 +359,7 @@ in Florida.</p>
 <p>We download the data below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/propublica/compas-analysis&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/propublica/compas-analysis&quot;</span>
 <span class="n">data_url</span> <span class="o">+=</span> <span class="s2">&quot;/master/compas-scores-two-years.csv&quot;</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
@@ -367,6 +367,173 @@ in Florida.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>name</th>
+      <th>first</th>
+      <th>last</th>
+      <th>compas_screening_date</th>
+      <th>sex</th>
+      <th>dob</th>
+      <th>age</th>
+      <th>age_cat</th>
+      <th>race</th>
+      <th>...</th>
+      <th>v_decile_score</th>
+      <th>v_score_text</th>
+      <th>v_screening_date</th>
+      <th>in_custody</th>
+      <th>out_custody</th>
+      <th>priors_count.1</th>
+      <th>start</th>
+      <th>end</th>
+      <th>event</th>
+      <th>two_year_recid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>miguel hernandez</td>
+      <td>miguel</td>
+      <td>hernandez</td>
+      <td>2013-08-14</td>
+      <td>Male</td>
+      <td>1947-04-18</td>
+      <td>69</td>
+      <td>Greater than 45</td>
+      <td>Other</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-08-14</td>
+      <td>2014-07-07</td>
+      <td>2014-07-14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>327</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>kevon dixon</td>
+      <td>kevon</td>
+      <td>dixon</td>
+      <td>2013-01-27</td>
+      <td>Male</td>
+      <td>1982-01-22</td>
+      <td>34</td>
+      <td>25 - 45</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-01-27</td>
+      <td>2013-01-26</td>
+      <td>2013-02-05</td>
+      <td>0</td>
+      <td>9</td>
+      <td>159</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>ed philo</td>
+      <td>ed</td>
+      <td>philo</td>
+      <td>2013-04-14</td>
+      <td>Male</td>
+      <td>1991-05-14</td>
+      <td>24</td>
+      <td>Less than 25</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>3</td>
+      <td>Low</td>
+      <td>2013-04-14</td>
+      <td>2013-06-16</td>
+      <td>2013-06-16</td>
+      <td>4</td>
+      <td>0</td>
+      <td>63</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>marcu brown</td>
+      <td>marcu</td>
+      <td>brown</td>
+      <td>2013-01-13</td>
+      <td>Male</td>
+      <td>1993-01-21</td>
+      <td>23</td>
+      <td>Less than 25</td>
+      <td>African-American</td>
+      <td>...</td>
+      <td>6</td>
+      <td>Medium</td>
+      <td>2013-01-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1174</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>bouthy pierrelouis</td>
+      <td>bouthy</td>
+      <td>pierrelouis</td>
+      <td>2013-03-26</td>
+      <td>Male</td>
+      <td>1973-01-22</td>
+      <td>43</td>
+      <td>25 - 45</td>
+      <td>Other</td>
+      <td>...</td>
+      <td>1</td>
+      <td>Low</td>
+      <td>2013-03-26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1102</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
 </div>
 <p>We summarize some of the variables that we will use.</p>
 <ul class="simple">
@@ -389,10 +556,15 @@ keep data on races with at least 500 observations in our data set.</p>
 <p>For example, Asians are a small minority, so they’re not really present in the data, and therefore they’re absent from the policy discussion — we have no inferential knowledge on how COMPAS scores work for them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">race_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;race&quot;</span><span class="p">])[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">race_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;race&quot;</span><span class="p">])[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">at_least_500</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">race_count</span><span class="p">[</span><span class="n">race_count</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following race have at least 500 observations:&quot;</span><span class="p">,</span> <span class="n">at_least_500</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;race&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">at_least_500</span><span class="p">),</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following race have at least 500 observations: [&#39;African-American&#39;, &#39;Caucasian&#39;, &#39;Hispanic&#39;]
 </pre></div>
 </div>
 </div>
@@ -403,7 +575,7 @@ keep data on races with at least 500 observations in our data set.</p>
 <p>Let’s look at how the dataset is broken down into age, sex, and race.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">group_col</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">group_col</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="s2">&quot;call df.groupby(group_col), then count number of records and plot&quot;</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">group_col</span><span class="p">)[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 
@@ -422,29 +594,44 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">age_cs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Less than 25&quot;</span><span class="p">,</span> <span class="s2">&quot;25 - 45&quot;</span><span class="p">,</span> <span class="s2">&quot;Greater than 45&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age_cs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Less than 25&quot;</span><span class="p">,</span> <span class="s2">&quot;25 - 45&quot;</span><span class="p">,</span> <span class="s2">&quot;Greater than 45&quot;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;age_cat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;age_cat&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">age_cs</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;age_cat&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;DarkBlue&quot;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/recidivism_8_0.png" src="../_images/recidivism_8_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sex_cs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sex_cs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;sex&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">sex_cs</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;DarkBlue&quot;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x576 with 1 Axes&gt;, &lt;AxesSubplot:&gt;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_9_1.png" src="../_images/recidivism_9_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">race_cs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">race_cs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;race&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;race&quot;</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="n">race_cs</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;DarkBlue&quot;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 864x576 with 1 Axes&gt;, &lt;AxesSubplot:&gt;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_10_1.png" src="../_images/recidivism_10_1.png" />
 </div>
 </div>
 <p>From this, we learn that our population is mostly between 25-45, male, and
@@ -455,11 +642,86 @@ is mostly African-American or Caucasian.</p>
 <p>We now look into how recidivism is split across groups.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">recid</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;age_cat&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="s2">&quot;race&quot;</span><span class="p">])[</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;race&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">recid</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;age_cat&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="s2">&quot;race&quot;</span><span class="p">])[</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;race&quot;</span><span class="p">)</span>
 <span class="n">recid</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>race</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+    </tr>
+    <tr>
+      <th>age_cat</th>
+      <th>sex</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Less than 25</th>
+      <th>Female</th>
+      <td>0.449704</td>
+      <td>0.310345</td>
+      <td>0.411765</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>0.645806</td>
+      <td>0.541254</td>
+      <td>0.536364</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">25 - 45</th>
+      <th>Female</th>
+      <td>0.382278</td>
+      <td>0.423948</td>
+      <td>0.333333</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>0.533074</td>
+      <td>0.433699</td>
+      <td>0.375000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Greater than 45</th>
+      <th>Female</th>
+      <td>0.227273</td>
+      <td>0.239766</td>
+      <td>0.217391</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>0.425101</td>
+      <td>0.289157</td>
+      <td>0.216667</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In the table, we see that the young have higher recidivism rates than the old, except for among
 Caucasian females.</p>
@@ -472,15 +734,21 @@ Caucasian females.</p>
 <p>We show a bar plot of all decile scores below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;DarkBlue&quot;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;DarkBlue&quot;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 864x576 with 1 Axes&gt;, &lt;AxesSubplot:&gt;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_14_1.png" src="../_images/recidivism_14_1.png" />
 </div>
 </div>
 <p>How do these scores differ by race?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dfgb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;race&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfgb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;race&quot;</span><span class="p">)</span>
 <span class="n">race_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;race&quot;</span><span class="p">)[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -502,6 +770,12 @@ Caucasian females.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Score Frequency by Race&#39;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_16_1.png" src="../_images/recidivism_16_1.png" />
+</div>
 </div>
 <p>While Caucasians and Hispanics both see the majority of their score distribution on low values,
 African-Americans are almost equally likely to receive any score.</p>
@@ -514,7 +788,23 @@ tell us what percentage of people assigned a particular risk score committed a n
 years of being released.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;decile_score&quot;</span><span class="p">)[</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;decile_score&quot;</span><span class="p">)[</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>decile_score
+1     0.220392
+2     0.309112
+3     0.375887
+4     0.426593
+5     0.478723
+6     0.564228
+7     0.590988
+8     0.681363
+9     0.698795
+10    0.770889
+Name: two_year_recid, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -522,10 +812,47 @@ years of being released.</p>
 <p>Let’s also look at the correlation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="s2">&quot;two_year_recid&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="s2">&quot;two_year_recid&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>decile_score</th>
+      <th>two_year_recid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>decile_score</th>
+      <td>1.000000</td>
+      <td>0.346797</td>
+    </tr>
+    <tr>
+      <th>two_year_recid</th>
+      <td>0.346797</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>As the risk score increases, the percentage of people committing a new crime does as well, with a
 positive correlation (~0.35).</p>
@@ -534,17 +861,111 @@ positive correlation (~0.35).</p>
 <p>Let’s now separate the correlations by race and see what happens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">recid_rates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">recid_rates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">)</span>
 
 <span class="n">recid_rates</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>race</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+    </tr>
+    <tr>
+      <th>decile_score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.228643</td>
+      <td>0.208517</td>
+      <td>0.244898</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.302799</td>
+      <td>0.313019</td>
+      <td>0.318584</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.419075</td>
+      <td>0.340659</td>
+      <td>0.313953</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.459740</td>
+      <td>0.396491</td>
+      <td>0.346154</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.482192</td>
+      <td>0.460581</td>
+      <td>0.538462</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.559896</td>
+      <td>0.572165</td>
+      <td>0.567568</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.592500</td>
+      <td>0.615385</td>
+      <td>0.470588</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.682451</td>
+      <td>0.719298</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.707895</td>
+      <td>0.693878</td>
+      <td>0.550000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.793706</td>
+      <td>0.703125</td>
+      <td>0.666667</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Or, in plotted form,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">_race</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">]):</span>
     <span class="n">_rr_vals</span> <span class="o">=</span> <span class="n">recid_rates</span><span class="p">[</span><span class="n">_race</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -562,6 +983,12 @@ positive correlation (~0.35).</p>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Recidivism Rates by Race&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Recidivism Rates by Race&#39;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_24_1.png" src="../_images/recidivism_24_1.png" />
 </div>
 </div>
 </div>
@@ -591,7 +1018,7 @@ column’s category, and set all other columns to 0.</p>
 <p>Imagine we have the array below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Male&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Male&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Female&quot;</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
@@ -599,7 +1026,7 @@ column’s category, and set all other columns to 0.</p>
 <p>The way to encode this would be to create the array below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sex_encoded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sex_encoded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
@@ -613,11 +1040,20 @@ column’s category, and set all other columns to 0.</p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> it would be:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ohe</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ohe</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">sex_ohe</span> <span class="o">=</span> <span class="n">ohe</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
 
 <span class="c1"># This should shows 0s!</span>
 <span class="n">sex_ohe</span> <span class="o">-</span> <span class="n">sex_encoded</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.],
+       [0., 0.]])
 </pre></div>
 </div>
 </div>
@@ -631,7 +1067,7 @@ column’s category, and set all other columns to 0.</p>
 <p>Finally, we split the data into training and validation (test) subsets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prep_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">continuous_variables</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">y_var</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prep_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">continuous_variables</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">y_var</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
 
     <span class="n">ohe</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
@@ -659,7 +1095,7 @@ scores.</p>
 <p>As we estimate these models, one of our metrics for success will be mean absolute error (MAE).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fit_and_report_maes</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_inv_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fit_and_report_maes</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_inv_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">y_transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -683,11 +1119,16 @@ scores.</p>
 <p>Let’s begin with a simple linear model which uses just prior arrests.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;priors_count&quot;</span><span class="p">],</span> <span class="p">[],</span> <span class="s2">&quot;decile_score&quot;</span>
 <span class="p">)</span>
 
 <span class="n">fit_and_report_maes</span><span class="p">(</span><span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(),</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mae_train&#39;: 2.162527833108664, &#39;mae_test&#39;: 2.191754484529134}
 </pre></div>
 </div>
 </div>
@@ -702,7 +1143,7 @@ take the difference between predicted value and actual value, so a positive valu
 overpredicted the COMPAS score and a negative value means we underpredicted it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lr_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lr_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
 <span class="n">lr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
 <span class="n">yhat_train</span> <span class="o">=</span> <span class="n">lr_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
@@ -717,6 +1158,12 @@ overpredicted the COMPAS score and a negative value means we underpredicted it.<
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Test Data&#39;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_38_1.png" src="../_images/recidivism_38_1.png" />
+</div>
 </div>
 <p>In both cases, the long left tails of errors suggest the existence of relevant features which would improve our model.</p>
 <p>The first thing we might consider investigating is whether there are non-linearities in how the
@@ -724,7 +1171,7 @@ number of priors enters the COMPAS score.</p>
 <p>First, we try using polynomial features in our exogenous variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;priors_count&quot;</span><span class="p">],</span> <span class="p">[],</span> <span class="s2">&quot;decile_score&quot;</span>
 <span class="p">)</span>
 
@@ -737,12 +1184,17 @@ number of priors enters the COMPAS score.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mae_train&#39;: 2.120405801755292, &#39;mae_test&#39;: 2.1179838134597335}
+</pre></div>
+</div>
+</div>
 </div>
 <p>We don’t see a very significant increase in performance, so we also try using log on the endogenous
 variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;priors_count&quot;</span><span class="p">],</span> <span class="p">[],</span> <span class="s2">&quot;decile_score&quot;</span>
 <span class="p">)</span>
 
@@ -753,15 +1205,25 @@ variables.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mae_train&#39;: 2.2550821558610115, &#39;mae_test&#39;: 2.3332184125647917}
+</pre></div>
+</div>
+</div>
 </div>
 <p>Still no improvement… The next natural thing is to add more features to our regression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;priors_count&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;age_cat&quot;</span><span class="p">,</span> <span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">],</span> <span class="s2">&quot;decile_score&quot;</span>
 <span class="p">)</span>
 
 <span class="n">fit_and_report_maes</span><span class="p">(</span><span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(),</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mae_train&#39;: 1.8076563650603423, &#39;mae_test&#39;: 1.8277010173497896}
 </pre></div>
 </div>
 </div>
@@ -770,7 +1232,7 @@ variables.</p>
 The errors also seem to have a less extreme tail.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prep_data</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;priors_count&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;age_cat&quot;</span><span class="p">,</span> <span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">],</span> <span class="s2">&quot;decile_score&quot;</span>
 <span class="p">)</span>
 
@@ -789,16 +1251,35 @@ The errors also seem to have a less extreme tail.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Test Data&#39;)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_46_1.png" src="../_images/recidivism_46_1.png" />
+</div>
 </div>
 <p>The coefficients are listed below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;priors_count&quot;</span><span class="p">,</span> <span class="s2">&quot;Less than 25&quot;</span><span class="p">,</span> <span class="s2">&quot;25-45&quot;</span><span class="p">,</span> <span class="s2">&quot;Greater than 45&quot;</span><span class="p">,</span> <span class="s2">&quot;African-American&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span>
 <span class="p">]</span>
 <span class="k">for</span> <span class="p">(</span><span class="n">_name</span><span class="p">,</span> <span class="n">_coef</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">lr_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">_name</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">_coef</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>priors_count :  0.2799923049684579
+Less than 25 :  -0.10262755807946589
+25-45 :  -1.7189018948181365
+Greater than 45 :  1.8215294528975996
+African-American :  0.6102522379830785
+Caucasian :  -0.10156939689442401
+Hispanic :  -0.5086828410886544
+Female :  0.04293582427466183
+Male :  -0.04293582427466186
 </pre></div>
 </div>
 </div>
@@ -833,14 +1314,102 @@ of what is computed.</p>
 <p>Let’s see what they have to say.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function confusion_matrix in module sklearn.metrics._classification:
+
+confusion_matrix(y_true, y_pred, *, labels=None, sample_weight=None, normalize=None)
+    Compute confusion matrix to evaluate the accuracy of a classification.
+    
+    By definition a confusion matrix :math:`C` is such that :math:`C_{i, j}`
+    is equal to the number of observations known to be in group :math:`i` and
+    predicted to be in group :math:`j`.
+    
+    Thus in binary classification, the count of true negatives is
+    :math:`C_{0,0}`, false negatives is :math:`C_{1,0}`, true positives is
+    :math:`C_{1,1}` and false positives is :math:`C_{0,1}`.
+    
+    Read more in the :ref:`User Guide &lt;confusion_matrix&gt;`.
+    
+    Parameters
+    ----------
+    y_true : array-like of shape (n_samples,)
+        Ground truth (correct) target values.
+    
+    y_pred : array-like of shape (n_samples,)
+        Estimated targets as returned by a classifier.
+    
+    labels : array-like of shape (n_classes), default=None
+        List of labels to index the matrix. This may be used to reorder
+        or select a subset of labels.
+        If ``None`` is given, those that appear at least once
+        in ``y_true`` or ``y_pred`` are used in sorted order.
+    
+    sample_weight : array-like of shape (n_samples,), default=None
+        Sample weights.
+    
+        .. versionadded:: 0.18
+    
+    normalize : {&#39;true&#39;, &#39;pred&#39;, &#39;all&#39;}, default=None
+        Normalizes confusion matrix over the true (rows), predicted (columns)
+        conditions or all the population. If None, confusion matrix will not be
+        normalized.
+    
+    Returns
+    -------
+    C : ndarray of shape (n_classes, n_classes)
+        Confusion matrix whose i-th row and j-th
+        column entry indicates the number of
+        samples with true label being i-th class
+        and predicted label being j-th class.
+    
+    See Also
+    --------
+    ConfusionMatrixDisplay.from_estimator : Plot the confusion matrix
+        given an estimator, the data, and the label.
+    ConfusionMatrixDisplay.from_predictions : Plot the confusion matrix
+        given the true and predicted labels.
+    ConfusionMatrixDisplay : Confusion Matrix visualization.
+    
+    References
+    ----------
+    .. [1] `Wikipedia entry for the Confusion matrix
+           &lt;https://en.wikipedia.org/wiki/Confusion_matrix&gt;`_
+           (Wikipedia and other references may use a different
+           convention for axes).
+    
+    Examples
+    --------
+    &gt;&gt;&gt; from sklearn.metrics import confusion_matrix
+    &gt;&gt;&gt; y_true = [2, 0, 2, 2, 0, 1]
+    &gt;&gt;&gt; y_pred = [0, 0, 2, 2, 0, 2]
+    &gt;&gt;&gt; confusion_matrix(y_true, y_pred)
+    array([[2, 0, 0],
+           [0, 0, 1],
+           [1, 0, 2]])
+    
+    &gt;&gt;&gt; y_true = [&quot;cat&quot;, &quot;ant&quot;, &quot;cat&quot;, &quot;cat&quot;, &quot;ant&quot;, &quot;bird&quot;]
+    &gt;&gt;&gt; y_pred = [&quot;ant&quot;, &quot;ant&quot;, &quot;cat&quot;, &quot;cat&quot;, &quot;ant&quot;, &quot;cat&quot;]
+    &gt;&gt;&gt; confusion_matrix(y_true, y_pred, labels=[&quot;ant&quot;, &quot;bird&quot;, &quot;cat&quot;])
+    array([[2, 0, 0],
+           [0, 0, 1],
+           [1, 0, 2]])
+    
+    In the binary case, we can extract true positives, etc as follows:
+    
+    &gt;&gt;&gt; tn, fp, fn, tp = confusion_matrix([0, 1, 0, 1], [1, 1, 1, 0]).ravel()
+    &gt;&gt;&gt; (tn, fp, fn, tp)
+    (0, 2, 1, 1)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">report_cm</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">report_cm</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
      <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
          <span class="n">cm_train</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)),</span>
          <span class="n">cm_test</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
@@ -854,7 +1423,7 @@ as a feature and then examine how the confusion matrices differ by
 race and sex.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
 <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;overall&quot;</span><span class="p">,</span> <span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span>
 <span class="p">]</span>
@@ -915,6 +1484,73 @@ race and sex.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Portion_of_NoRecid_and_LowRisk</th>
+      <td>0.361815</td>
+      <td>0.263270</td>
+      <td>0.475000</td>
+      <td>0.522581</td>
+      <td>0.438040</td>
+      <td>0.342222</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_LowRisk</th>
+      <td>0.191514</td>
+      <td>0.230361</td>
+      <td>0.136667</td>
+      <td>0.167742</td>
+      <td>0.207493</td>
+      <td>0.187407</td>
+    </tr>
+    <tr>
+      <th>Portion_of_NoRecid_and_HighRisk</th>
+      <td>0.152033</td>
+      <td>0.140127</td>
+      <td>0.168333</td>
+      <td>0.161290</td>
+      <td>0.141210</td>
+      <td>0.154815</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_HighRisk</th>
+      <td>0.294638</td>
+      <td>0.366242</td>
+      <td>0.220000</td>
+      <td>0.148387</td>
+      <td>0.213256</td>
+      <td>0.315556</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">output</span></code> contains information on the percent of true negatives, false negatives, false positives,
 and true positives.</p>
@@ -925,10 +1561,77 @@ above table are a bit hard to interpret.</p>
 <p>Let’s look at the probability of outcomes given the prediction as well as race or sex.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">given_pred</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">given_pred</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(NoRecid|LowRisk)</th>
+      <td>0.704128</td>
+      <td>0.652632</td>
+      <td>0.738342</td>
+      <td>0.764151</td>
+      <td>0.756219</td>
+      <td>0.688525</td>
+    </tr>
+    <tr>
+      <th>P(NoRecid|HighRisk)</th>
+      <td>0.393939</td>
+      <td>0.386121</td>
+      <td>0.383178</td>
+      <td>0.530612</td>
+      <td>0.493151</td>
+      <td>0.372607</td>
+    </tr>
+    <tr>
+      <th>P(Recid|LowRisk)</th>
+      <td>0.295872</td>
+      <td>0.347368</td>
+      <td>0.261658</td>
+      <td>0.235849</td>
+      <td>0.243781</td>
+      <td>0.311475</td>
+    </tr>
+    <tr>
+      <th>P(Recid|HighRisk)</th>
+      <td>0.606061</td>
+      <td>0.613879</td>
+      <td>0.616822</td>
+      <td>0.469388</td>
+      <td>0.506849</td>
+      <td>0.627393</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>As you can see, the distribution of outcomes conditional on predictions does
 not vary too much with race.</p>
@@ -959,10 +1662,77 @@ P(HighRisk | NoRecid).</p>
 positive rate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">given_outcome</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">given_outcome</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(LowRisk|NoRecid)</th>
+      <td>0.653887</td>
+      <td>0.533333</td>
+      <td>0.776567</td>
+      <td>0.757009</td>
+      <td>0.678571</td>
+      <td>0.646154</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|NoRecid)</th>
+      <td>0.346113</td>
+      <td>0.466667</td>
+      <td>0.223433</td>
+      <td>0.242991</td>
+      <td>0.321429</td>
+      <td>0.353846</td>
+    </tr>
+    <tr>
+      <th>P(LowRisk|Recid)</th>
+      <td>0.340369</td>
+      <td>0.276730</td>
+      <td>0.433476</td>
+      <td>0.520833</td>
+      <td>0.398374</td>
+      <td>0.329134</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|Recid)</th>
+      <td>0.659631</td>
+      <td>0.723270</td>
+      <td>0.566524</td>
+      <td>0.479167</td>
+      <td>0.601626</td>
+      <td>0.670866</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now we see some large disparities by race in the false positive rate
 (and false negative rate). This is one of the main findings of the Pro
@@ -990,7 +1760,7 @@ predicted probability.</p>
 <p>We can examine calibration graphically by plotting the P(recidivism | predicted probability)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
 
 <span class="k">def</span> <span class="nf">calibration_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1024,6 +1794,9 @@ predicted probability.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/recidivism_59_0.png" src="../_images/recidivism_59_0.png" />
+</div>
 </div>
 <p>This figure is one way to visualize how well-calibrated these
 predictions are.</p>
@@ -1047,7 +1820,7 @@ so we will plot histograms of predicted probabilities conditional on realized
 outcomes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="k">def</span> <span class="nf">balance_hist_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">group</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
@@ -1076,6 +1849,13 @@ outcomes.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+</pre></div>
+</div>
+<img alt="../_images/recidivism_61_1.png" src="../_images/recidivism_61_1.png" />
+</div>
 </div>
 <p>This figure is somewhat useful, but not for depicting balance
 especially clearly, so let’s try something else.</p>
@@ -1090,7 +1870,7 @@ the predicted probability exceeds this threshold.</p>
 positive rates, so let’s plot these rates as functions of the threshold.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">balance_threshold_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">balance_threshold_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                           <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">pred</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pred</span><span class="p">),</span> <span class="n">bins</span><span class="p">)</span>
@@ -1136,6 +1916,9 @@ positive rates, so let’s plot these rates as functions of the threshold.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/recidivism_63_0.png" src="../_images/recidivism_63_0.png" />
+</div>
 </div>
 <p>From this, we can more easily see the balance problem — regardless
 of which threshold we choose, African-Americans will have a higher
@@ -1159,7 +1942,7 @@ and indicator terms here.</p>
 regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> penalty.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">model_selection</span><span class="p">,</span> <span class="n">linear_model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">model_selection</span><span class="p">,</span> <span class="n">linear_model</span>
 <span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
 
 <span class="c1"># charge_desc has many values with one observations, we will</span>
@@ -1191,11 +1974,1756 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 260 features
+[LibLinear]iter   1  #CD cycles 1
+=========================
+optimization finished, #iter = 1
+Objective value = 0.282248
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+=========================
+optimization finished, #iter = 2
+Objective value = 2.163071
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 5
+iter   4  #CD cycles 3
+iter   5  #CD cycles 1
+iter   6  #CD cycles 6
+iter   7  #CD cycles 1
+iter   8  #CD cycles 7
+iter   9  #CD cycles 1
+iter  10  #CD cycles 9
+iter  11  #CD cycles 3
+iter  12  #CD cycles 1
+iter  13  #CD cycles 4
+iter  14  #CD cycles 4
+iter  15  #CD cycles 1
+iter  16  #CD cycles 5
+=========================
+optimization finished, #iter = 16
+Objective value = 16.656307
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 7
+iter   7  #CD cycles 1
+iter   8  #CD cycles 3
+iter   9  #CD cycles 2
+iter  10  #CD cycles 1
+iter  11  #CD cycles 5
+iter  12  #CD cycles 16
+iter  13  #CD cycles 6
+iter  14  #CD cycles 10
+iter  15  #CD cycles 2
+iter  16  #CD cycles 7
+iter  17  #CD cycles 3
+iter  18  #CD cycles 2
+iter  19  #CD cycles 4
+iter  20  #CD cycles 2
+iter  21  #CD cycles 8
+iter  22  #CD cycles 1
+iter  23  #CD cycles 23
+iter  24  #CD cycles 1
+iter  25  #CD cycles 10
+iter  26  #CD cycles 85
+iter  27  #CD cycles 122
+iter  28  #CD cycles 42
+iter  29  #CD cycles 2
+iter  30  #CD cycles 9
+iter  31  #CD cycles 24
+iter  32  #CD cycles 10
+iter  33  #CD cycles 4
+iter  34  #CD cycles 24
+iter  35  #CD cycles 11
+iter  36  #CD cycles 10
+iter  37  #CD cycles 9
+iter  38  #CD cycles 3
+iter  39  #CD cycles 9
+iter  40  #CD cycles 8
+iter  41  #CD cycles 1
+iter  42  #CD cycles 30
+iter  43  #CD cycles 11
+iter  44  #CD cycles 8
+iter  45  #CD cycles 113
+=========================
+optimization finished, #iter = 45
+Objective value = 125.461770
+#nonzeros/#features = 13/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 9
+iter   5  #CD cycles 1
+iter   6  #CD cycles 8
+iter   7  #CD cycles 5
+iter   8  #CD cycles 1
+iter   9  #CD cycles 5
+iter  10  #CD cycles 3
+iter  11  #CD cycles 1
+iter  12  #CD cycles 4
+iter  13  #CD cycles 4
+iter  14  #CD cycles 110
+iter  15  #CD cycles 1
+iter  16  #CD cycles 30
+iter  17  #CD cycles 8
+iter  18  #CD cycles 11
+iter  19  #CD cycles 3
+iter  20  #CD cycles 1
+iter  21  #CD cycles 29
+iter  22  #CD cycles 8
+iter  23  #CD cycles 5
+iter  24  #CD cycles 1
+iter  25  #CD cycles 28
+=========================
+optimization finished, #iter = 25
+Objective value = 918.402895
+#nonzeros/#features = 72/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 9
+iter   5  #CD cycles 1
+iter   6  #CD cycles 11
+iter   7  #CD cycles 5
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 5
+iter  11  #CD cycles 17
+iter  12  #CD cycles 4
+iter  13  #CD cycles 1
+iter  14  #CD cycles 25
+iter  15  #CD cycles 2
+iter  16  #CD cycles 3
+iter  17  #CD cycles 4
+iter  18  #CD cycles 1
+iter  19  #CD cycles 249
+iter  20  #CD cycles 2
+iter  21  #CD cycles 11
+iter  22  #CD cycles 4
+iter  23  #CD cycles 3
+iter  24  #CD cycles 1
+iter  25  #CD cycles 158
+iter  26  #CD cycles 55
+iter  27  #CD cycles 43
+iter  28  #CD cycles 27
+iter  29  #CD cycles 14
+iter  30  #CD cycles 4
+iter  31  #CD cycles 14
+iter  32  #CD cycles 3
+iter  33  #CD cycles 5
+iter  34  #CD cycles 15
+iter  35  #CD cycles 3
+iter  36  #CD cycles 12
+iter  37  #CD cycles 9
+iter  38  #CD cycles 4
+iter  39  #CD cycles 3
+iter  40  #CD cycles 22
+iter  41  #CD cycles 4
+iter  42  #CD cycles 5
+iter  43  #CD cycles 7
+iter  44  #CD cycles 2
+iter  45  #CD cycles 14
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  46  #CD cycles 5
+iter  47  #CD cycles 1
+iter  48  #CD cycles 32
+iter  49  #CD cycles 26
+iter  50  #CD cycles 5
+iter  51  #CD cycles 144
+=========================
+optimization finished, #iter = 51
+Objective value = 6675.623242
+#nonzeros/#features = 179/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 2
+iter   8  #CD cycles 1
+iter   9  #CD cycles 42
+iter  10  #CD cycles 1
+iter  11  #CD cycles 83
+iter  12  #CD cycles 52
+iter  13  #CD cycles 3
+iter  14  #CD cycles 1
+iter  15  #CD cycles 143
+iter  16  #CD cycles 14
+iter  17  #CD cycles 7
+iter  18  #CD cycles 2
+iter  19  #CD cycles 2
+iter  20  #CD cycles 5
+iter  21  #CD cycles 2
+iter  22  #CD cycles 1
+iter  23  #CD cycles 77
+iter  24  #CD cycles 16
+iter  25  #CD cycles 109
+iter  26  #CD cycles 15
+iter  27  #CD cycles 1
+iter  28  #CD cycles 8
+iter  29  #CD cycles 318
+=========================
+optimization finished, #iter = 29
+Objective value = 50324.804920
+#nonzeros/#features = 245/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 9
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 15
+iter  11  #CD cycles 7
+iter  12  #CD cycles 5
+iter  13  #CD cycles 3
+iter  14  #CD cycles 3
+iter  15  #CD cycles 1
+iter  16  #CD cycles 132
+iter  17  #CD cycles 23
+iter  18  #CD cycles 21
+iter  19  #CD cycles 6
+iter  20  #CD cycles 1
+iter  21  #CD cycles 287
+iter  22  #CD cycles 7
+iter  23  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  24  #CD cycles 1000
+iter  25  #CD cycles 573
+iter  26  #CD cycles 2
+iter  27  #CD cycles 6
+iter  28  #CD cycles 26
+iter  29  #CD cycles 8
+iter  30  #CD cycles 15
+iter  31  #CD cycles 4
+iter  32  #CD cycles 5
+iter  33  #CD cycles 218
+iter  34  #CD cycles 6
+iter  35  #CD cycles 2
+iter  36  #CD cycles 3
+iter  37  #CD cycles 9
+iter  38  #CD cycles 11
+iter  39  #CD cycles 16
+iter  40  #CD cycles 5
+iter  41  #CD cycles 3
+iter  42  #CD cycles 9
+=========================
+optimization finished, #iter = 42
+Objective value = 386596.170354
+#nonzeros/#features = 250/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 9
+iter   5  #CD cycles 1
+iter   6  #CD cycles 10
+iter   7  #CD cycles 4
+iter   8  #CD cycles 1
+iter   9  #CD cycles 5
+iter  10  #CD cycles 5
+iter  11  #CD cycles 2
+iter  12  #CD cycles 3
+iter  13  #CD cycles 5
+iter  14  #CD cycles 1
+iter  15  #CD cycles 69
+iter  16  #CD cycles 20
+iter  17  #CD cycles 11
+iter  18  #CD cycles 6
+iter  19  #CD cycles 5
+iter  20  #CD cycles 17
+iter  21  #CD cycles 1
+iter  22  #CD cycles 353
+iter  23  #CD cycles 43
+iter  24  #CD cycles 23
+iter  25  #CD cycles 2
+iter  26  #CD cycles 122
+iter  27  #CD cycles 5
+iter  28  #CD cycles 15
+iter  29  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  30  #CD cycles 1000
+iter  31  #CD cycles 683
+iter  32  #CD cycles 124
+iter  33  #CD cycles 31
+iter  34  #CD cycles 59
+iter  35  #CD cycles 52
+iter  36  #CD cycles 34
+iter  37  #CD cycles 321
+iter  38  #CD cycles 50
+iter  39  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  40  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  41  #CD cycles 1000
+iter  42  #CD cycles 540
+=========================
+optimization finished, #iter = 42
+Objective value = 2988383.296032
+#nonzeros/#features = 250/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 16
+iter   7  #CD cycles 1
+iter   8  #CD cycles 13
+iter   9  #CD cycles 12
+iter  10  #CD cycles 11
+iter  11  #CD cycles 1
+iter  12  #CD cycles 84
+iter  13  #CD cycles 1
+iter  14  #CD cycles 354
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  15  #CD cycles 26
+iter  16  #CD cycles 25
+iter  17  #CD cycles 14
+iter  18  #CD cycles 55
+iter  19  #CD cycles 10
+iter  20  #CD cycles 3
+iter  21  #CD cycles 3
+iter  22  #CD cycles 24
+iter  23  #CD cycles 11
+iter  24  #CD cycles 2
+iter  25  #CD cycles 5
+iter  26  #CD cycles 5
+iter  27  #CD cycles 23
+iter  28  #CD cycles 11
+iter  29  #CD cycles 10
+iter  30  #CD cycles 2
+iter  31  #CD cycles 16
+iter  32  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  33  #CD cycles 1000
+iter  34  #CD cycles 721
+iter  35  #CD cycles 30
+iter  36  #CD cycles 49
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  37  #CD cycles 54
+iter  38  #CD cycles 18
+iter  39  #CD cycles 117
+iter  40  #CD cycles 16
+iter  41  #CD cycles 11
+iter  42  #CD cycles 169
+iter  43  #CD cycles 5
+iter  44  #CD cycles 4
+iter  45  #CD cycles 17
+iter  46  #CD cycles 17
+iter  47  #CD cycles 68
+iter  48  #CD cycles 47
+iter  49  #CD cycles 21
+iter  50  #CD cycles 6
+iter  51  #CD cycles 48
+iter  52  #CD cycles 6
+iter  53  #CD cycles 10
+iter  54  #CD cycles 4
+iter  55  #CD cycles 3
+iter  56  #CD cycles 18
+iter  57  #CD cycles 5
+iter  58  #CD cycles 34
+iter  59  #CD cycles 13
+iter  60  #CD cycles 2
+iter  61  #CD cycles 7
+iter  62  #CD cycles 2
+iter  63  #CD cycles 2
+iter  64  #CD cycles 28
+iter  65  #CD cycles 2
+iter  66  #CD cycles 2
+iter  67  #CD cycles 9
+iter  68  #CD cycles 2
+iter  69  #CD cycles 8
+=========================
+optimization finished, #iter = 69
+Objective value = 23132269.041066
+#nonzeros/#features = 250/261
+[LibLinear]iter   1  #CD cycles 1
+=========================
+optimization finished, #iter = 1
+Objective value = 0.282249
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 1
+iter   4  #CD cycles 1
+iter   5  #CD cycles 1
+iter   6  #CD cycles 2
+iter   7  #CD cycles 3
+iter   8  #CD cycles 1
+iter   9  #CD cycles 5
+iter  10  #CD cycles 1
+iter  11  #CD cycles 8
+=========================
+optimization finished, #iter = 11
+Objective value = 2.163544
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 5
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 8
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 10
+iter  11  #CD cycles 1
+iter  12  #CD cycles 7
+iter  13  #CD cycles 1
+iter  14  #CD cycles 8
+iter  15  #CD cycles 2
+iter  16  #CD cycles 1
+iter  17  #CD cycles 5
+=========================
+optimization finished, #iter = 17
+Objective value = 16.642208
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 4
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 8
+iter   8  #CD cycles 1
+iter   9  #CD cycles 14
+iter  10  #CD cycles 2
+iter  11  #CD cycles 1
+iter  12  #CD cycles 16
+iter  13  #CD cycles 1
+iter  14  #CD cycles 62
+iter  15  #CD cycles 17
+iter  16  #CD cycles 1
+iter  17  #CD cycles 116
+iter  18  #CD cycles 98
+iter  19  #CD cycles 4
+iter  20  #CD cycles 11
+iter  21  #CD cycles 9
+iter  22  #CD cycles 8
+iter  23  #CD cycles 15
+iter  24  #CD cycles 2
+iter  25  #CD cycles 11
+iter  26  #CD cycles 14
+iter  27  #CD cycles 28
+iter  28  #CD cycles 6
+iter  29  #CD cycles 1
+iter  30  #CD cycles 23
+iter  31  #CD cycles 47
+=========================
+optimization finished, #iter = 31
+Objective value = 125.892096
+#nonzeros/#features = 12/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 1
+iter   6  #CD cycles 10
+iter   7  #CD cycles 1
+iter   8  #CD cycles 12
+iter   9  #CD cycles 8
+iter  10  #CD cycles 2
+iter  11  #CD cycles 1
+iter  12  #CD cycles 150
+iter  13  #CD cycles 9
+iter  14  #CD cycles 1
+iter  15  #CD cycles 97
+iter  16  #CD cycles 3
+iter  17  #CD cycles 2
+iter  18  #CD cycles 1
+iter  19  #CD cycles 24
+iter  20  #CD cycles 4
+iter  21  #CD cycles 3
+iter  22  #CD cycles 1
+iter  23  #CD cycles 24
+=========================
+optimization finished, #iter = 23
+Objective value = 924.400397
+#nonzeros/#features = 68/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 9
+iter   5  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 1
+iter   8  #CD cycles 14
+iter   9  #CD cycles 5
+iter  10  #CD cycles 1
+iter  11  #CD cycles 16
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  12  #CD cycles 5
+iter  13  #CD cycles 1
+iter  14  #CD cycles 78
+iter  15  #CD cycles 26
+iter  16  #CD cycles 1
+iter  17  #CD cycles 303
+iter  18  #CD cycles 119
+iter  19  #CD cycles 27
+iter  20  #CD cycles 9
+iter  21  #CD cycles 5
+iter  22  #CD cycles 6
+iter  23  #CD cycles 1
+iter  24  #CD cycles 109
+=========================
+optimization finished, #iter = 24
+Objective value = 6720.449166
+#nonzeros/#features = 188/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 4
+iter   6  #CD cycles 1
+iter   7  #CD cycles 9
+iter   8  #CD cycles 1
+iter   9  #CD cycles 33
+iter  10  #CD cycles 6
+iter  11  #CD cycles 3
+iter  12  #CD cycles 12
+iter  13  #CD cycles 1
+iter  14  #CD cycles 71
+iter  15  #CD cycles 33
+iter  16  #CD cycles 14
+iter  17  #CD cycles 1
+iter  18  #CD cycles 108
+iter  19  #CD cycles 78
+iter  20  #CD cycles 1
+iter  21  #CD cycles 142
+iter  22  #CD cycles 13
+iter  23  #CD cycles 1
+iter  24  #CD cycles 352
+=========================
+optimization finished, #iter = 24
+Objective value = 50693.757103
+#nonzeros/#features = 240/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 8
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 15
+iter  11  #CD cycles 3
+iter  12  #CD cycles 2
+iter  13  #CD cycles 1
+iter  14  #CD cycles 115
+iter  15  #CD cycles 20
+iter  16  #CD cycles 33
+iter  17  #CD cycles 11
+iter  18  #CD cycles 9
+iter  19  #CD cycles 3
+iter  20  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  21  #CD cycles 160
+iter  22  #CD cycles 52
+iter  23  #CD cycles 3
+iter  24  #CD cycles 17
+iter  25  #CD cycles 43
+iter  26  #CD cycles 1
+iter  27  #CD cycles 790
+iter  28  #CD cycles 10
+iter  29  #CD cycles 102
+iter  30  #CD cycles 2
+iter  31  #CD cycles 8
+=========================
+optimization finished, #iter = 31
+Objective value = 389828.609347
+#nonzeros/#features = 247/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 10
+iter   4  #CD cycles 3
+iter   5  #CD cycles 3
+iter   6  #CD cycles 1
+iter   7  #CD cycles 6
+iter   8  #CD cycles 1
+iter   9  #CD cycles 10
+iter  10  #CD cycles 7
+iter  11  #CD cycles 1
+iter  12  #CD cycles 103
+iter  13  #CD cycles 9
+iter  14  #CD cycles 9
+iter  15  #CD cycles 5
+iter  16  #CD cycles 27
+iter  17  #CD cycles 3
+iter  18  #CD cycles 6
+iter  19  #CD cycles 2
+iter  20  #CD cycles 5
+iter  21  #CD cycles 3
+iter  22  #CD cycles 4
+iter  23  #CD cycles 3
+iter  24  #CD cycles 11
+iter  25  #CD cycles 4
+iter  26  #CD cycles 1
+iter  27  #CD cycles 159
+iter  28  #CD cycles 58
+iter  29  #CD cycles 5
+iter  30  #CD cycles 4
+iter  31  #CD cycles 50
+iter  32  #CD cycles 5
+iter  33  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  34  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  35  #CD cycles 1000
+iter  36  #CD cycles 539
+iter  37  #CD cycles 8
+iter  38  #CD cycles 54
+iter  39  #CD cycles 29
+iter  40  #CD cycles 13
+iter  41  #CD cycles 8
+iter  42  #CD cycles 40
+iter  43  #CD cycles 35
+iter  44  #CD cycles 21
+iter  45  #CD cycles 78
+=========================
+optimization finished, #iter = 45
+Objective value = 3014272.890007
+#nonzeros/#features = 249/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 2
+iter   4  #CD cycles 1
+iter   5  #CD cycles 8
+iter   6  #CD cycles 1
+iter   7  #CD cycles 9
+iter   8  #CD cycles 1
+iter   9  #CD cycles 12
+iter  10  #CD cycles 9
+iter  11  #CD cycles 8
+iter  12  #CD cycles 8
+iter  13  #CD cycles 2
+iter  14  #CD cycles 4
+iter  15  #CD cycles 1
+iter  16  #CD cycles 31
+iter  17  #CD cycles 43
+iter  18  #CD cycles 8
+iter  19  #CD cycles 36
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  20  #CD cycles 7
+iter  21  #CD cycles 10
+iter  22  #CD cycles 1
+iter  23  #CD cycles 185
+iter  24  #CD cycles 63
+iter  25  #CD cycles 24
+iter  26  #CD cycles 5
+iter  27  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  28  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  29  #CD cycles 965
+iter  30  #CD cycles 229
+iter  31  #CD cycles 32
+iter  32  #CD cycles 113
+iter  33  #CD cycles 7
+iter  34  #CD cycles 115
+iter  35  #CD cycles 28
+iter  36  #CD cycles 32
+iter  37  #CD cycles 4
+iter  38  #CD cycles 15
+iter  39  #CD cycles 43
+iter  40  #CD cycles 12
+iter  41  #CD cycles 2
+iter  42  #CD cycles 35
+=========================
+optimization finished, #iter = 42
+Objective value = 23333659.935575
+#nonzeros/#features = 249/261
+[LibLinear]=========================
+optimization finished, #iter = 0
+[LibLinear]Objective value = 0.282250
+#nonzeros/#features = 0/261
+iter   1  #CD cycles 1
+iter   2  #CD cycles 5
+iter   3  #CD cycles 1
+=========================
+optimization finished, #iter = 3
+Objective value = 2.165028
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 11
+iter   4  #CD cycles 1
+iter   5  #CD cycles 11
+iter   6  #CD cycles 1
+iter   7  #CD cycles 5
+iter   8  #CD cycles 4
+iter   9  #CD cycles 1
+iter  10  #CD cycles 4
+iter  11  #CD cycles 4
+iter  12  #CD cycles 1
+iter  13  #CD cycles 3
+iter  14  #CD cycles 1
+iter  15  #CD cycles 12
+=========================
+optimization finished, #iter = 15
+Objective value = 16.659641
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 5
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 7
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 13
+iter  11  #CD cycles 5
+iter  12  #CD cycles 1
+iter  13  #CD cycles 31
+iter  14  #CD cycles 27
+iter  15  #CD cycles 9
+iter  16  #CD cycles 14
+iter  17  #CD cycles 2
+iter  18  #CD cycles 3
+iter  19  #CD cycles 1
+iter  20  #CD cycles 134
+iter  21  #CD cycles 1
+iter  22  #CD cycles 227
+iter  23  #CD cycles 6
+iter  24  #CD cycles 30
+iter  25  #CD cycles 20
+iter  26  #CD cycles 1
+iter  27  #CD cycles 62
+iter  28  #CD cycles 15
+iter  29  #CD cycles 45
+=========================
+optimization finished, #iter = 29
+Objective value = 126.264110
+#nonzeros/#features = 13/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 11
+iter   4  #CD cycles 4
+iter   5  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 1
+iter   8  #CD cycles 14
+iter   9  #CD cycles 1
+iter  10  #CD cycles 19
+iter  11  #CD cycles 1
+iter  12  #CD cycles 55
+iter  13  #CD cycles 9
+iter  14  #CD cycles 13
+iter  15  #CD cycles 16
+iter  16  #CD cycles 1
+iter  17  #CD cycles 115
+iter  18  #CD cycles 12
+iter  19  #CD cycles 70
+iter  20  #CD cycles 17
+iter  21  #CD cycles 11
+iter  22  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  23  #CD cycles 109
+[LibLinear]=========================
+optimization finished, #iter = 23
+Objective value = 928.734285
+#nonzeros/#features = 74/261
+iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 1
+iter   6  #CD cycles 10
+iter   7  #CD cycles 1
+iter   8  #CD cycles 47
+iter   9  #CD cycles 1
+iter  10  #CD cycles 114
+iter  11  #CD cycles 10
+iter  12  #CD cycles 7
+iter  13  #CD cycles 1
+iter  14  #CD cycles 64
+iter  15  #CD cycles 67
+iter  16  #CD cycles 3
+iter  17  #CD cycles 6
+iter  18  #CD cycles 1
+iter  19  #CD cycles 185
+iter  20  #CD cycles 121
+iter  21  #CD cycles 61
+iter  22  #CD cycles 2
+iter  23  #CD cycles 7
+iter  24  #CD cycles 1
+iter  25  #CD cycles 26
+iter  26  #CD cycles 108
+=========================
+optimization finished, #iter = 26
+Objective value = 6776.722763
+#nonzeros/#features = 187/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 6
+iter   5  #CD cycles 2
+iter   6  #CD cycles 2
+iter   7  #CD cycles 1
+iter   8  #CD cycles 8
+iter   9  #CD cycles 1
+iter  10  #CD cycles 105
+iter  11  #CD cycles 3
+iter  12  #CD cycles 2
+iter  13  #CD cycles 1
+iter  14  #CD cycles 158
+iter  15  #CD cycles 28
+iter  16  #CD cycles 17
+iter  17  #CD cycles 5
+iter  18  #CD cycles 2
+iter  19  #CD cycles 4
+iter  20  #CD cycles 1
+iter  21  #CD cycles 139
+iter  22  #CD cycles 46
+iter  23  #CD cycles 7
+iter  24  #CD cycles 8
+iter  25  #CD cycles 4
+iter  26  #CD cycles 4
+iter  27  #CD cycles 8
+iter  28  #CD cycles 1
+iter  29  #CD cycles 520
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  30  #CD cycles 15
+iter  31  #CD cycles 2
+iter  32  #CD cycles 16
+iter  33  #CD cycles 7
+iter  34  #CD cycles 4
+=========================
+optimization finished, #iter = 34
+Objective value = 51111.141214
+#nonzeros/#features = 244/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 1
+iter   6  #CD cycles 10
+iter   7  #CD cycles 1
+iter   8  #CD cycles 57
+iter   9  #CD cycles 3
+iter  10  #CD cycles 9
+iter  11  #CD cycles 6
+iter  12  #CD cycles 5
+iter  13  #CD cycles 11
+iter  14  #CD cycles 2
+iter  15  #CD cycles 1
+iter  16  #CD cycles 118
+iter  17  #CD cycles 7
+iter  18  #CD cycles 80
+iter  19  #CD cycles 4
+iter  20  #CD cycles 1
+iter  21  #CD cycles 130
+iter  22  #CD cycles 103
+iter  23  #CD cycles 39
+iter  24  #CD cycles 2
+iter  25  #CD cycles 3
+iter  26  #CD cycles 8
+iter  27  #CD cycles 8
+iter  28  #CD cycles 1
+iter  29  #CD cycles 728
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  30  #CD cycles 1000
+iter  31  #CD cycles 80
+iter  32  #CD cycles 26
+iter  33  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  34  #CD cycles 1000
+=========================
+optimization finished, #iter = 34
+Objective value = 392994.075592
+#nonzeros/#features = 249/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 6
+iter   5  #CD cycles 3
+iter   6  #CD cycles 1
+iter   7  #CD cycles 9
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 37
+iter  11  #CD cycles 28
+iter  12  #CD cycles 3
+iter  13  #CD cycles 4
+iter  14  #CD cycles 3
+iter  15  #CD cycles 11
+iter  16  #CD cycles 5
+iter  17  #CD cycles 1
+iter  18  #CD cycles 73
+iter  19  #CD cycles 6
+iter  20  #CD cycles 53
+iter  21  #CD cycles 19
+iter  22  #CD cycles 1
+iter  23  #CD cycles 203
+iter  24  #CD cycles 23
+iter  25  #CD cycles 24
+iter  26  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  27  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  28  #CD cycles 1000
+iter  29  #CD cycles 549
+iter  30  #CD cycles 8
+iter  31  #CD cycles 76
+iter  32  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  33  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  34  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  35  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  36  #CD cycles 1000
+iter  37  #CD cycles 482
+=========================
+optimization finished, #iter = 37
+Objective value = 3038567.059691
+#nonzeros/#features = 252/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 8
+iter   8  #CD cycles 1
+iter   9  #CD cycles 39
+iter  10  #CD cycles 15
+iter  11  #CD cycles 8
+iter  12  #CD cycles 10
+iter  13  #CD cycles 9
+iter  14  #CD cycles 1
+iter  15  #CD cycles 94
+iter  16  #CD cycles 14
+iter  17  #CD cycles 2
+iter  18  #CD cycles 30
+iter  19  #CD cycles 8
+iter  20  #CD cycles 5
+iter  21  #CD cycles 8
+iter  22  #CD cycles 8
+iter  23  #CD cycles 2
+iter  24  #CD cycles 2
+iter  25  #CD cycles 9
+iter  26  #CD cycles 1
+iter  27  #CD cycles 84
+iter  28  #CD cycles 17
+iter  29  #CD cycles 15
+iter  30  #CD cycles 22
+iter  31  #CD cycles 18
+iter  32  #CD cycles 26
+iter  33  #CD cycles 14
+iter  34  #CD cycles 39
+iter  35  #CD cycles 6
+iter  36  #CD cycles 9
+iter  37  #CD cycles 5
+iter  38  #CD cycles 4
+iter  39  #CD cycles 6
+iter  40  #CD cycles 7
+iter  41  #CD cycles 44
+iter  42  #CD cycles 15
+iter  43  #CD cycles 13
+iter  44  #CD cycles 4
+iter  45  #CD cycles 2
+iter  46  #CD cycles 7
+iter  47  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  48  #CD cycles 1000
+iter  49  #CD cycles 965
+iter  50  #CD cycles 19
+iter  51  #CD cycles 67
+iter  52  #CD cycles 36
+iter  53  #CD cycles 53
+iter  54  #CD cycles 147
+iter  55  #CD cycles 98
+iter  56  #CD cycles 179
+iter  57  #CD cycles 36
+iter  58  #CD cycles 31
+iter  59  #CD cycles 6
+iter  60  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  61  #CD cycles 1000
+=========================
+optimization finished, #iter = 61
+Objective value = 23521546.293411
+#nonzeros/#features = 251/261
+[LibLinear]iter   1  #CD cycles 1
+=========================
+optimization finished, #iter = 1
+Objective value = 0.282249
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 1
+iter   5  #CD cycles 1
+iter   6  #CD cycles 1
+iter   7  #CD cycles 1
+iter   8  #CD cycles 6
+iter   9  #CD cycles 2
+iter  10  #CD cycles 2
+iter  11  #CD cycles 1
+iter  12  #CD cycles 7
+=========================
+optimization finished, #iter = 12
+Objective value = 2.163670
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 7
+iter   4  #CD cycles 2
+iter   5  #CD cycles 1
+iter   6  #CD cycles 5
+iter   7  #CD cycles 1
+iter   8  #CD cycles 10
+iter   9  #CD cycles 1
+iter  10  #CD cycles 10
+iter  11  #CD cycles 1
+iter  12  #CD cycles 7
+iter  13  #CD cycles 2
+iter  14  #CD cycles 1
+iter  15  #CD cycles 7
+=========================
+optimization finished, #iter = 15
+Objective value = 16.644976
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 9
+iter   4  #CD cycles 2
+iter   5  #CD cycles 1
+iter   6  #CD cycles 3
+iter   7  #CD cycles 1
+iter   8  #CD cycles 7
+iter   9  #CD cycles 4
+iter  10  #CD cycles 3
+iter  11  #CD cycles 1
+iter  12  #CD cycles 10
+iter  13  #CD cycles 2
+iter  14  #CD cycles 2
+iter  15  #CD cycles 3
+iter  16  #CD cycles 2
+iter  17  #CD cycles 1
+iter  18  #CD cycles 21
+iter  19  #CD cycles 9
+iter  20  #CD cycles 4
+iter  21  #CD cycles 31
+iter  22  #CD cycles 9
+iter  23  #CD cycles 4
+iter  24  #CD cycles 31
+iter  25  #CD cycles 14
+iter  26  #CD cycles 12
+iter  27  #CD cycles 2
+iter  28  #CD cycles 9
+iter  29  #CD cycles 2
+iter  30  #CD cycles 2
+iter  31  #CD cycles 1
+iter  32  #CD cycles 92
+iter  33  #CD cycles 27
+iter  34  #CD cycles 21
+iter  35  #CD cycles 4
+iter  36  #CD cycles 6
+iter  37  #CD cycles 15
+iter  38  #CD cycles 9
+iter  39  #CD cycles 9
+iter  40  #CD cycles 1
+iter  41  #CD cycles 84
+iter  42  #CD cycles 64
+=========================
+optimization finished, #iter = 42
+Objective value = 125.655760
+#nonzeros/#features = 15/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 1
+iter   6  #CD cycles 10
+iter   7  #CD cycles 1
+iter   8  #CD cycles 12
+iter   9  #CD cycles 6
+iter  10  #CD cycles 1
+iter  11  #CD cycles 12
+iter  12  #CD cycles 1
+iter  13  #CD cycles 17
+iter  14  #CD cycles 97
+iter  15  #CD cycles 166
+iter  16  #CD cycles 3
+iter  17  #CD cycles 1
+iter  18  #CD cycles 14
+iter  19  #CD cycles 16
+iter  20  #CD cycles 11
+iter  21  #CD cycles 1
+iter  22  #CD cycles 37
+=========================
+optimization finished, #iter = 22
+Objective value = 921.272524
+#nonzeros/#features = 71/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 10
+iter   5  #CD cycles 3
+iter   6  #CD cycles 1
+iter   7  #CD cycles 10
+iter   8  #CD cycles 1
+iter   9  #CD cycles 21
+iter  10  #CD cycles 1
+iter  11  #CD cycles 37
+iter  12  #CD cycles 1
+iter  13  #CD cycles 307
+iter  14  #CD cycles 16
+iter  15  #CD cycles 23
+iter  16  #CD cycles 3
+iter  17  #CD cycles 1
+iter  18  #CD cycles 311
+iter  19  #CD cycles 2
+iter  20  #CD cycles 14
+iter  21  #CD cycles 5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  22  #CD cycles 1
+iter  23  #CD cycles 272
+=========================
+optimization finished, #iter = 23
+Objective value = 6693.204373
+#nonzeros/#features = 187/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 9
+iter   7  #CD cycles 3
+iter   8  #CD cycles 1
+iter   9  #CD cycles 40
+iter  10  #CD cycles 5
+iter  11  #CD cycles 3
+iter  12  #CD cycles 1
+iter  13  #CD cycles 22
+iter  14  #CD cycles 16
+iter  15  #CD cycles 4
+iter  16  #CD cycles 5
+iter  17  #CD cycles 38
+iter  18  #CD cycles 2
+iter  19  #CD cycles 1
+iter  20  #CD cycles 128
+iter  21  #CD cycles 9
+iter  22  #CD cycles 46
+iter  23  #CD cycles 3
+iter  24  #CD cycles 2
+iter  25  #CD cycles 5
+iter  26  #CD cycles 9
+iter  27  #CD cycles 2
+iter  28  #CD cycles 1
+iter  29  #CD cycles 141
+iter  30  #CD cycles 16
+iter  31  #CD cycles 33
+iter  32  #CD cycles 2
+iter  33  #CD cycles 5
+iter  34  #CD cycles 4
+iter  35  #CD cycles 15
+iter  36  #CD cycles 2
+iter  37  #CD cycles 2
+iter  38  #CD cycles 34
+iter  39  #CD cycles 11
+iter  40  #CD cycles 26
+iter  41  #CD cycles 1
+iter  42  #CD cycles 604
+=========================
+optimization finished, #iter = 42
+[LibLinear]Objective value = 50375.118840
+#nonzeros/#features = 247/261
+iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 7
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 12
+iter  11  #CD cycles 13
+iter  12  #CD cycles 6
+iter  13  #CD cycles 1
+iter  14  #CD cycles 65
+iter  15  #CD cycles 33
+iter  16  #CD cycles 15
+iter  17  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  18  #CD cycles 565
+iter  19  #CD cycles 41
+iter  20  #CD cycles 26
+iter  21  #CD cycles 3
+iter  22  #CD cycles 78
+iter  23  #CD cycles 43
+iter  24  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  25  #CD cycles 1000
+iter  26  #CD cycles 509
+iter  27  #CD cycles 44
+iter  28  #CD cycles 23
+iter  29  #CD cycles 22
+iter  30  #CD cycles 5
+iter  31  #CD cycles 26
+iter  32  #CD cycles 8
+iter  33  #CD cycles 46
+=========================
+optimization finished, #iter = 33
+Objective value = 387056.132433
+#nonzeros/#features = 253/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 9
+iter   5  #CD cycles 1
+iter   6  #CD cycles 8
+iter   7  #CD cycles 3
+iter   8  #CD cycles 1
+iter   9  #CD cycles 15
+iter  10  #CD cycles 14
+iter  11  #CD cycles 1
+iter  12  #CD cycles 56
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  13  #CD cycles 39
+iter  14  #CD cycles 27
+iter  15  #CD cycles 3
+iter  16  #CD cycles 4
+iter  17  #CD cycles 6
+iter  18  #CD cycles 1
+iter  19  #CD cycles 485
+iter  20  #CD cycles 12
+iter  21  #CD cycles 7
+iter  22  #CD cycles 138
+iter  23  #CD cycles 76
+iter  24  #CD cycles 110
+iter  25  #CD cycles 20
+iter  26  #CD cycles 3
+iter  27  #CD cycles 11
+iter  28  #CD cycles 2
+iter  29  #CD cycles 3
+iter  30  #CD cycles 3
+iter  31  #CD cycles 2
+iter  32  #CD cycles 78
+iter  33  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  34  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  35  #CD cycles 1000
+iter  36  #CD cycles 69
+iter  37  #CD cycles 21
+=========================
+optimization finished, #iter = 37
+Objective value = 2992213.933379
+#nonzeros/#features = 254/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 5
+iter   5  #CD cycles 4
+iter   6  #CD cycles 1
+iter   7  #CD cycles 9
+iter   8  #CD cycles 1
+iter   9  #CD cycles 14
+iter  10  #CD cycles 1
+iter  11  #CD cycles 84
+iter  12  #CD cycles 1
+iter  13  #CD cycles 421
+iter  14  #CD cycles 27
+iter  15  #CD cycles 28
+iter  16  #CD cycles 32
+iter  17  #CD cycles 25
+iter  18  #CD cycles 11
+iter  19  #CD cycles 46
+iter  20  #CD cycles 20
+iter  21  #CD cycles 8
+iter  22  #CD cycles 31
+iter  23  #CD cycles 51
+iter  24  #CD cycles 9
+iter  25  #CD cycles 41
+iter  26  #CD cycles 89
+iter  27  #CD cycles 28
+iter  28  #CD cycles 43
+iter  29  #CD cycles 20
+iter  30  #CD cycles 2
+iter  31  #CD cycles 11
+iter  32  #CD cycles 5
+iter  33  #CD cycles 6
+iter  34  #CD cycles 2
+iter  35  #CD cycles 25
+iter  36  #CD cycles 14
+iter  37  #CD cycles 7
+iter  38  #CD cycles 14
+iter  39  #CD cycles 4
+iter  40  #CD cycles 7
+iter  41  #CD cycles 8
+iter  42  #CD cycles 3
+iter  43  #CD cycles 10
+iter  44  #CD cycles 15
+iter  45  #CD cycles 5
+iter  46  #CD cycles 18
+iter  47  #CD cycles 6
+iter  48  #CD cycles 14
+iter  49  #CD cycles 5
+iter  50  #CD cycles 3
+iter  51  #CD cycles 33
+iter  52  #CD cycles 5
+iter  53  #CD cycles 17
+iter  54  #CD cycles 2
+iter  55  #CD cycles 3
+iter  56  #CD cycles 10
+iter  57  #CD cycles 20
+iter  58  #CD cycles 5
+iter  59  #CD cycles 3
+iter  60  #CD cycles 4
+iter  61  #CD cycles 10
+iter  62  #CD cycles 3
+iter  63  #CD cycles 6
+iter  64  #CD cycles 5
+iter  65  #CD cycles 7
+iter  66  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  67  #CD cycles 1000
+iter  68  #CD cycles 375
+iter  69  #CD cycles 24
+iter  70  #CD cycles 29
+iter  71  #CD cycles 186
+iter  72  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  73  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  74  #CD cycles 1000
+iter  75  #CD cycles 815
+=========================
+optimization finished, #iter = 75
+Objective value = 23161294.195359
+#nonzeros/#features = 252/261
+[LibLinear]iter   1  #CD cycles 1
+=========================
+optimization finished, #iter = 1
+Objective value = 0.282249
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 4
+iter   4  #CD cycles 1
+=========================
+optimization finished, #iter = 4
+Objective value = 2.163172
+#nonzeros/#features = 1/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 4
+iter   4  #CD cycles 2
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 5
+iter   8  #CD cycles 2
+iter   9  #CD cycles 2
+iter  10  #CD cycles 1
+iter  11  #CD cycles 7
+iter  12  #CD cycles 2
+iter  13  #CD cycles 2
+iter  14  #CD cycles 1
+iter  15  #CD cycles 5
+iter  16  #CD cycles 2
+iter  17  #CD cycles 2
+iter  18  #CD cycles 1
+iter  19  #CD cycles 4
+iter  20  #CD cycles 2
+iter  21  #CD cycles 1
+iter  22  #CD cycles 6
+=========================
+optimization finished, #iter = 22
+Objective value = 16.656407
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 11
+iter   4  #CD cycles 1
+iter   5  #CD cycles 10
+iter   6  #CD cycles 1
+iter   7  #CD cycles 3
+iter   8  #CD cycles 15
+iter   9  #CD cycles 4
+iter  10  #CD cycles 4
+iter  11  #CD cycles 2
+iter  12  #CD cycles 5
+iter  13  #CD cycles 6
+iter  14  #CD cycles 2
+iter  15  #CD cycles 3
+iter  16  #CD cycles 3
+iter  17  #CD cycles 1
+iter  18  #CD cycles 59
+iter  19  #CD cycles 30
+iter  20  #CD cycles 1
+iter  21  #CD cycles 14
+iter  22  #CD cycles 6
+iter  23  #CD cycles 15
+iter  24  #CD cycles 4
+iter  25  #CD cycles 4
+iter  26  #CD cycles 2
+iter  27  #CD cycles 11
+iter  28  #CD cycles 2
+iter  29  #CD cycles 3
+iter  30  #CD cycles 19
+iter  31  #CD cycles 10
+iter  32  #CD cycles 1
+iter  33  #CD cycles 119
+iter  34  #CD cycles 13
+iter  35  #CD cycles 26
+iter  36  #CD cycles 15
+iter  37  #CD cycles 6
+iter  38  #CD cycles 1
+iter  39  #CD cycles 28
+iter  40  #CD cycles 34
+iter  41  #CD cycles 32
+=========================
+optimization finished, #iter = 41
+Objective value = 125.373822
+#nonzeros/#features = 14/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 11
+iter   5  #CD cycles 1
+iter   6  #CD cycles 14
+iter   7  #CD cycles 1
+iter   8  #CD cycles 37
+iter   9  #CD cycles 1
+iter  10  #CD cycles 49
+iter  11  #CD cycles 45
+iter  12  #CD cycles 18
+iter  13  #CD cycles 9
+iter  14  #CD cycles 3
+iter  15  #CD cycles 11
+iter  16  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  17  #CD cycles 249
+iter  18  #CD cycles 28
+iter  19  #CD cycles 1
+iter  20  #CD cycles 116
+iter  21  #CD cycles 15
+iter  22  #CD cycles 10
+iter  23  #CD cycles 12
+iter  24  #CD cycles 7
+iter  25  #CD cycles 1
+iter  26  #CD cycles 230
+=========================
+optimization finished, #iter = 26
+Objective value = 913.979507
+#nonzeros/#features = 70/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 1
+iter   8  #CD cycles 104
+iter   9  #CD cycles 5
+iter  10  #CD cycles 1
+iter  11  #CD cycles 217
+iter  12  #CD cycles 5
+iter  13  #CD cycles 1
+iter  14  #CD cycles 279
+iter  15  #CD cycles 1
+iter  16  #CD cycles 142
+iter  17  #CD cycles 43
+iter  18  #CD cycles 69
+iter  19  #CD cycles 3
+iter  20  #CD cycles 19
+iter  21  #CD cycles 2
+iter  22  #CD cycles 1
+iter  23  #CD cycles 91
+iter  24  #CD cycles 26
+iter  25  #CD cycles 62
+iter  26  #CD cycles 8
+iter  27  #CD cycles 55
+=========================
+optimization finished, #iter = 27
+Objective value = 6632.705120
+#nonzeros/#features = 188/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 4
+iter   3  #CD cycles 1
+iter   4  #CD cycles 6
+iter   5  #CD cycles 1
+iter   6  #CD cycles 13
+iter   7  #CD cycles 1
+iter   8  #CD cycles 125
+iter   9  #CD cycles 28
+iter  10  #CD cycles 3
+iter  11  #CD cycles 2
+iter  12  #CD cycles 7
+iter  13  #CD cycles 7
+iter  14  #CD cycles 1
+iter  15  #CD cycles 233
+iter  16  #CD cycles 5
+iter  17  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  18  #CD cycles 534
+iter  19  #CD cycles 5
+iter  20  #CD cycles 1
+iter  21  #CD cycles 214
+iter  22  #CD cycles 6
+iter  23  #CD cycles 78
+iter  24  #CD cycles 50
+iter  25  #CD cycles 9
+iter  26  #CD cycles 4
+iter  27  #CD cycles 1
+iter  28  #CD cycles 661
+iter  29  #CD cycles 20
+=========================
+optimization finished, #iter = 29
+Objective value = 49991.029176
+#nonzeros/#features = 245/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 4
+iter   5  #CD cycles 5
+iter   6  #CD cycles 1
+iter   7  #CD cycles 6
+iter   8  #CD cycles 5
+iter   9  #CD cycles 1
+iter  10  #CD cycles 54
+iter  11  #CD cycles 3
+iter  12  #CD cycles 26
+iter  13  #CD cycles 12
+iter  14  #CD cycles 10
+iter  15  #CD cycles 3
+iter  16  #CD cycles 17
+iter  17  #CD cycles 5
+iter  18  #CD cycles 4
+iter  19  #CD cycles 4
+iter  20  #CD cycles 4
+iter  21  #CD cycles 5
+iter  22  #CD cycles 15
+iter  23  #CD cycles 3
+iter  24  #CD cycles 2
+iter  25  #CD cycles 8
+iter  26  #CD cycles 2
+iter  27  #CD cycles 2
+iter  28  #CD cycles 1
+iter  29  #CD cycles 195
+iter  30  #CD cycles 55
+iter  31  #CD cycles 1
+iter  32  #CD cycles 271
+iter  33  #CD cycles 142
+iter  34  #CD cycles 10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  35  #CD cycles 96
+iter  36  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  37  #CD cycles 1000
+iter  38  #CD cycles 242
+iter  39  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  40  #CD cycles 1000
+iter  41  #CD cycles 824
+=========================
+optimization finished, #iter = 41
+Objective value = 384337.646225
+#nonzeros/#features = 254/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 5
+iter   8  #CD cycles 5
+iter   9  #CD cycles 1
+iter  10  #CD cycles 14
+iter  11  #CD cycles 78
+iter  12  #CD cycles 5
+iter  13  #CD cycles 17
+iter  14  #CD cycles 1
+iter  15  #CD cycles 138
+iter  16  #CD cycles 17
+iter  17  #CD cycles 49
+iter  18  #CD cycles 40
+iter  19  #CD cycles 5
+iter  20  #CD cycles 6
+iter  21  #CD cycles 2
+iter  22  #CD cycles 4
+iter  23  #CD cycles 8
+iter  24  #CD cycles 4
+iter  25  #CD cycles 3
+iter  26  #CD cycles 4
+iter  27  #CD cycles 12
+iter  28  #CD cycles 3
+iter  29  #CD cycles 2
+iter  30  #CD cycles 3
+iter  31  #CD cycles 3
+iter  32  #CD cycles 3
+iter  33  #CD cycles 7
+iter  34  #CD cycles 4
+iter  35  #CD cycles 4
+iter  36  #CD cycles 2
+iter  37  #CD cycles 6
+iter  38  #CD cycles 1
+iter  39  #CD cycles 276
+iter  40  #CD cycles 155
+iter  41  #CD cycles 11
+iter  42  #CD cycles 70
+iter  43  #CD cycles 21
+iter  44  #CD cycles 13
+iter  45  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  46  #CD cycles 1000
+iter  47  #CD cycles 512
+iter  48  #CD cycles 5
+iter  49  #CD cycles 90
+iter  50  #CD cycles 472
+iter  51  #CD cycles 10
+iter  52  #CD cycles 5
+iter  53  #CD cycles 10
+iter  54  #CD cycles 13
+iter  55  #CD cycles 21
+iter  56  #CD cycles 53
+iter  57  #CD cycles 18
+iter  58  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  59  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  60  #CD cycles 1000
+=========================
+optimization finished, #iter = 60
+Objective value = 2971737.077257
+#nonzeros/#features = 256/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 8
+iter   5  #CD cycles 1
+iter   6  #CD cycles 10
+iter   7  #CD cycles 1
+iter   8  #CD cycles 115
+iter   9  #CD cycles 13
+iter  10  #CD cycles 12
+iter  11  #CD cycles 1
+iter  12  #CD cycles 141
+iter  13  #CD cycles 30
+iter  14  #CD cycles 16
+iter  15  #CD cycles 52
+iter  16  #CD cycles 1
+iter  17  #CD cycles 312
+iter  18  #CD cycles 50
+iter  19  #CD cycles 32
+iter  20  #CD cycles 61
+iter  21  #CD cycles 55
+iter  22  #CD cycles 18
+iter  23  #CD cycles 4
+iter  24  #CD cycles 3
+iter  25  #CD cycles 11
+iter  26  #CD cycles 2
+iter  27  #CD cycles 28
+iter  28  #CD cycles 8
+iter  29  #CD cycles 5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  30  #CD cycles 17
+iter  31  #CD cycles 5
+iter  32  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  33  #CD cycles 1000
+iter  34  #CD cycles 11
+iter  35  #CD cycles 15
+iter  36  #CD cycles 134
+iter  37  #CD cycles 31
+iter  38  #CD cycles 232
+iter  39  #CD cycles 238
+iter  40  #CD cycles 9
+iter  41  #CD cycles 34
+iter  42  #CD cycles 7
+iter  43  #CD cycles 10
+iter  44  #CD cycles 2
+iter  45  #CD cycles 10
+iter  46  #CD cycles 30
+iter  47  #CD cycles 9
+iter  48  #CD cycles 2
+iter  49  #CD cycles 3
+iter  50  #CD cycles 11
+iter  51  #CD cycles 57
+iter  52  #CD cycles 4
+iter  53  #CD cycles 13
+iter  54  #CD cycles 2
+=========================
+optimization finished, #iter = 54
+Objective value = 23004457.416821
+#nonzeros/#features = 255/261
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.5s finished
+</pre></div>
+</div>
+</div>
 </div>
 <p>Let’s look at the regularization parameter chosen and the non-zero coefficients.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plots illustrating regularization parameter choice</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plots illustrating regularization parameter choice</span>
 <span class="n">scores</span><span class="o">=</span><span class="n">lasso_mod</span><span class="o">.</span><span class="n">scores_</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">logpenalties</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lasso_mod</span><span class="o">.</span><span class="n">Cs_</span><span class="p">)</span>
 <span class="n">nnonzero</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lasso_mod</span><span class="o">.</span><span class="n">coefs_paths_</span><span class="p">[</span><span class="mf">1.0</span><span class="p">])</span><span class="o">&gt;</span><span class="mf">1e-6</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1213,6 +3741,9 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/recidivism_67_0.png" src="../_images/recidivism_67_0.png" />
+</div>
 </div>
 <p>Let’s also look at the nonzero coefficients. We should be careful
 about interpreting these, since relatively strong assumptions are
@@ -1224,7 +3755,7 @@ consistent coefficient estimates.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># table of nonzero coefficients</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># table of nonzero coefficients</span>
 <span class="n">coef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">design_info</span><span class="o">.</span><span class="n">column_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Value&quot;</span><span class="p">])</span>
 <span class="n">coef</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">lasso_mod</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">coef</span><span class="o">.</span><span class="n">Value</span><span class="p">)</span><span class="o">&gt;</span><span class="mf">1.0e-8</span><span class="p">))</span>
@@ -1233,12 +3764,369 @@ consistent coefficient estimates.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Intercept</th>
+      <td>0.024981</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]</th>
+      <td>0.724668</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.2]</th>
+      <td>0.325196</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.3]</th>
+      <td>0.612276</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.4]</th>
+      <td>0.749697</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.5]</th>
+      <td>0.732783</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.6]</th>
+      <td>0.792319</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.7]</th>
+      <td>1.032682</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.8]</th>
+      <td>1.322565</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.9]</th>
+      <td>1.286942</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.10]</th>
+      <td>1.318404</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.11]</th>
+      <td>1.236909</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.12]</th>
+      <td>0.985708</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.13]</th>
+      <td>1.528314</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.14]</th>
+      <td>0.406011</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.15]</th>
+      <td>0.781433</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.16]</th>
+      <td>0.992861</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.17]</th>
+      <td>0.370996</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.18]</th>
+      <td>1.524261</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.19]</th>
+      <td>1.143305</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.20]</th>
+      <td>0.116835</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.21]</th>
+      <td>1.298519</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.22]</th>
+      <td>1.676819</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.23]</th>
+      <td>1.332173</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.25]</th>
+      <td>0.481925</td>
+    </tr>
+    <tr>
+      <th>C(priors_count)[T.26]</th>
+      <td>0.553098</td>
+    </tr>
+    <tr>
+      <th>c_charge_degree[T.M]</th>
+      <td>-0.228143</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
+      <td>-0.152878</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Aggravated Assault W/dead Weap]</th>
+      <td>-0.457757</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Aggravated Battery]</th>
+      <td>-0.426231</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Battery]</th>
+      <td>-0.008879</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Battery on Law Enforc Officer]</th>
+      <td>0.312830</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Burglary Unoccupied Dwelling]</th>
+      <td>-0.151925</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Criminal Mischief]</th>
+      <td>0.441659</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.DUI Level 0.15 Or Minor In Veh]</th>
+      <td>-0.043814</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.DUI Property Damage/Injury]</th>
+      <td>-0.957463</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Driving License Suspended]</th>
+      <td>-0.062525</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Driving Under The Influence]</th>
+      <td>-0.141261</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Felony Driving While Lic Suspd]</th>
+      <td>0.182803</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Felony Petit Theft]</th>
+      <td>0.697393</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Grand Theft (Motor Vehicle)]</th>
+      <td>0.134828</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Operating W/O Valid License]</th>
+      <td>-0.084286</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Petit Theft]</th>
+      <td>0.574959</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Petit Theft $100- $300]</th>
+      <td>0.019328</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Poss Pyrrolidinovalerophenone]</th>
+      <td>2.135477</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
+      <td>-0.186708</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Possession of Cannabis]</th>
+      <td>-0.394860</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Possession of Cocaine]</th>
+      <td>0.595597</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Viol Injunct Domestic Violence]</th>
+      <td>0.135572</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.Viol Pretrial Release Dom Viol]</th>
+      <td>0.231028</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.arrest case no charge]</th>
+      <td>-0.181096</td>
+    </tr>
+    <tr>
+      <th>charge_cat[T.other]</th>
+      <td>-0.196714</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.1]</th>
+      <td>0.034417</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.3]</th>
+      <td>0.087763</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.6]</th>
+      <td>0.036019</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.10]</th>
+      <td>0.200344</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.14]</th>
+      <td>0.709775</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.16]</th>
+      <td>0.315448</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.17]</th>
+      <td>1.115198</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:C(priors_count)[T.26]</th>
+      <td>0.354574</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:c_charge_degree[T.M]</th>
+      <td>0.163734</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Aggravated Battery / Pregnant]</th>
+      <td>0.024306</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Burglary Conveyance Unoccup]</th>
+      <td>0.516824</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Corrupt Public Servant]</th>
+      <td>0.717908</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Crimin Mischief Damage $1000+]</th>
+      <td>0.044227</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Driving License Suspended]</th>
+      <td>-0.000932</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Driving Under The Influence]</th>
+      <td>-0.034971</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Driving While License Revoked]</th>
+      <td>-0.094698</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.False Ownership Info/Pawn Item]</th>
+      <td>0.480695</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Felony Battery w/Prior Convict]</th>
+      <td>-0.096454</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Felony Driving While Lic Suspd]</th>
+      <td>0.114961</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Grand Theft in the 3rd Degree]</th>
+      <td>0.277297</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Petit Theft]</th>
+      <td>0.199600</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Possession of Cannabis]</th>
+      <td>-0.051176</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Resist/Obstruct W/O Violence]</th>
+      <td>0.272850</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:charge_cat[T.Viol Injunct Domestic Violence]</th>
+      <td>0.325878</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>-0.024232</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:age</th>
+      <td>-0.014791</td>
+    </tr>
+    <tr>
+      <th>juv_fel_count</th>
+      <td>0.302093</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:juv_misd_count</th>
+      <td>0.181023</td>
+    </tr>
+    <tr>
+      <th>juv_other_count</th>
+      <td>0.149174</td>
+    </tr>
+    <tr>
+      <th>sex[T.Male]:juv_other_count</th>
+      <td>-0.019202</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now, let’s look at calibration and balance using similar tables and
 figures as we did above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="p">,</span> <span class="n">given_outcome</span><span class="p">,</span> <span class="n">given_pred</span> <span class="o">=</span><span class="n">cm_tables</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="p">,</span> <span class="n">given_outcome</span><span class="p">,</span> <span class="n">given_pred</span> <span class="o">=</span><span class="n">cm_tables</span><span class="p">(</span>
     <span class="n">lasso_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span>
     <span class="n">y_test</span><span class="p">,</span>
     <span class="n">df_test</span>
@@ -1251,6 +4139,205 @@ figures as we did above.</p>
 <span class="n">balance_threshold_plot</span><span class="p">(</span><span class="n">lasso_mod</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y_test</span><span class="p">,</span> <span class="n">df_test</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Portion_of_NoRecid_and_LowRisk</th>
+      <td>0.411903</td>
+      <td>0.332272</td>
+      <td>0.490000</td>
+      <td>0.593548</td>
+      <td>0.596542</td>
+      <td>0.364444</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_LowRisk</th>
+      <td>0.141426</td>
+      <td>0.161359</td>
+      <td>0.121667</td>
+      <td>0.096774</td>
+      <td>0.048991</td>
+      <td>0.165185</td>
+    </tr>
+    <tr>
+      <th>Portion_of_NoRecid_and_HighRisk</th>
+      <td>0.190925</td>
+      <td>0.182590</td>
+      <td>0.201667</td>
+      <td>0.200000</td>
+      <td>0.250720</td>
+      <td>0.175556</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_HighRisk</th>
+      <td>0.255745</td>
+      <td>0.323779</td>
+      <td>0.186667</td>
+      <td>0.109677</td>
+      <td>0.103746</td>
+      <td>0.294815</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(NoRecid|LowRisk)</th>
+      <td>0.683284</td>
+      <td>0.645361</td>
+      <td>0.708434</td>
+      <td>0.747967</td>
+      <td>0.704082</td>
+      <td>0.674897</td>
+    </tr>
+    <tr>
+      <th>P(NoRecid|HighRisk)</th>
+      <td>0.356083</td>
+      <td>0.332604</td>
+      <td>0.394595</td>
+      <td>0.468750</td>
+      <td>0.320755</td>
+      <td>0.359098</td>
+    </tr>
+    <tr>
+      <th>P(Recid|LowRisk)</th>
+      <td>0.316716</td>
+      <td>0.354639</td>
+      <td>0.291566</td>
+      <td>0.252033</td>
+      <td>0.295918</td>
+      <td>0.325103</td>
+    </tr>
+    <tr>
+      <th>P(Recid|HighRisk)</th>
+      <td>0.643917</td>
+      <td>0.667396</td>
+      <td>0.605405</td>
+      <td>0.531250</td>
+      <td>0.679245</td>
+      <td>0.640902</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(LowRisk|NoRecid)</th>
+      <td>0.744409</td>
+      <td>0.673118</td>
+      <td>0.801090</td>
+      <td>0.859813</td>
+      <td>0.924107</td>
+      <td>0.688112</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|NoRecid)</th>
+      <td>0.255591</td>
+      <td>0.326882</td>
+      <td>0.198910</td>
+      <td>0.140187</td>
+      <td>0.075893</td>
+      <td>0.311888</td>
+    </tr>
+    <tr>
+      <th>P(LowRisk|Recid)</th>
+      <td>0.427441</td>
+      <td>0.360587</td>
+      <td>0.519313</td>
+      <td>0.645833</td>
+      <td>0.707317</td>
+      <td>0.373228</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|Recid)</th>
+      <td>0.572559</td>
+      <td>0.639413</td>
+      <td>0.480687</td>
+      <td>0.354167</td>
+      <td>0.292683</td>
+      <td>0.626772</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/recidivism_71_3.png" src="../_images/recidivism_71_3.png" />
+<img alt="../_images/recidivism_71_4.png" src="../_images/recidivism_71_4.png" />
 </div>
 </div>
 <p>As with COMPAS score, our predictions are well-calibrated, but the
@@ -1272,7 +4359,7 @@ some other criteria.</p>
 <p>Let’s choose the regularization parameter for lasso to maximize balance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a custom CV criteria to maximize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a custom CV criteria to maximize</span>
 <span class="k">def</span> <span class="nf">balance_scorer</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">y_true</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
     <span class="n">df_cv</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y_true</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">,:]</span>
@@ -1305,10 +4392,15 @@ some other criteria.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plots illustrating regularization parameter choice</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plots illustrating regularization parameter choice</span>
 <span class="k">def</span> <span class="nf">grid_cv_plot</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
     <span class="n">scores</span><span class="o">=</span><span class="n">mod</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">[</span><span class="s2">&quot;mean_test_score&quot;</span><span class="p">]</span>
     <span class="n">Cdict</span><span class="o">=</span><span class="n">mod</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span>
@@ -1323,6 +4415,9 @@ some other criteria.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/recidivism_74_0.png" src="../_images/recidivism_74_0.png" />
+</div>
 </div>
 <p>We can be perfectly balanced by making the regularization parameter
 very large.</p>
@@ -1330,7 +4425,7 @@ very large.</p>
 are not so useful.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="p">,</span> <span class="n">given_outcome</span><span class="p">,</span> <span class="n">given_pred</span> <span class="o">=</span><span class="n">cm_tables</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span><span class="p">,</span> <span class="n">given_outcome</span><span class="p">,</span> <span class="n">given_pred</span> <span class="o">=</span><span class="n">cm_tables</span><span class="p">(</span>
     <span class="n">balance_mod</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span>
     <span class="n">y_test</span><span class="p">,</span>
     <span class="n">df_test</span>
@@ -1341,12 +4436,213 @@ are not so useful.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3255/1996610596.py:44: RuntimeWarning: invalid value encountered in true_divide
+  pcm = pcm/pcm.sum(axis=axis, keepdims=True)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Portion_of_NoRecid_and_LowRisk</th>
+      <td>0.553329</td>
+      <td>0.493631</td>
+      <td>0.611667</td>
+      <td>0.690323</td>
+      <td>0.645533</td>
+      <td>0.52963</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_LowRisk</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+    </tr>
+    <tr>
+      <th>Portion_of_NoRecid_and_HighRisk</th>
+      <td>0.446671</td>
+      <td>0.506369</td>
+      <td>0.388333</td>
+      <td>0.309677</td>
+      <td>0.354467</td>
+      <td>0.47037</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_HighRisk</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(NoRecid|LowRisk)</th>
+      <td>0.553329</td>
+      <td>0.493631</td>
+      <td>0.611667</td>
+      <td>0.690323</td>
+      <td>0.645533</td>
+      <td>0.52963</td>
+    </tr>
+    <tr>
+      <th>P(NoRecid|HighRisk)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>P(Recid|LowRisk)</th>
+      <td>0.446671</td>
+      <td>0.506369</td>
+      <td>0.388333</td>
+      <td>0.309677</td>
+      <td>0.354467</td>
+      <td>0.47037</td>
+    </tr>
+    <tr>
+      <th>P(Recid|HighRisk)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(LowRisk|NoRecid)</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|NoRecid)</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>P(LowRisk|Recid)</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|Recid)</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>What if we change our CV scoring function to care about both
 prediction and balance?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">score_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;df&quot;</span><span class="p">:</span> <span class="n">df_train</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;df&quot;</span><span class="p">:</span> <span class="n">df_train</span><span class="p">,</span> <span class="s2">&quot;weights&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]}</span>
 <span class="n">grid_cv</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">scoring</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">make_scorer</span><span class="p">(</span><span class="n">balance_scorer</span><span class="p">,</span> <span class="o">**</span><span class="n">score_params</span><span class="p">,</span> <span class="n">needs_proba</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 <span class="n">bf_mod</span><span class="o">=</span><span class="n">grid_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 <span class="n">grid_cv_plot</span><span class="p">(</span><span class="n">bf_mod</span><span class="p">,</span><span class="s2">&quot;CV balance &amp; fit&quot;</span><span class="p">)</span>
@@ -1363,6 +4659,209 @@ prediction and balance?</p>
 <span class="n">balance_threshold_plot</span><span class="p">(</span><span class="n">bf_mod</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">y_test</span><span class="p">,</span> <span class="n">df_test</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Portion_of_NoRecid_and_LowRisk</th>
+      <td>0.404243</td>
+      <td>0.325902</td>
+      <td>0.483333</td>
+      <td>0.574194</td>
+      <td>0.556196</td>
+      <td>0.365185</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_LowRisk</th>
+      <td>0.149087</td>
+      <td>0.167728</td>
+      <td>0.128333</td>
+      <td>0.116129</td>
+      <td>0.089337</td>
+      <td>0.164444</td>
+    </tr>
+    <tr>
+      <th>Portion_of_NoRecid_and_HighRisk</th>
+      <td>0.189747</td>
+      <td>0.181529</td>
+      <td>0.200000</td>
+      <td>0.200000</td>
+      <td>0.239193</td>
+      <td>0.177037</td>
+    </tr>
+    <tr>
+      <th>Portion_of_Recid_and_HighRisk</th>
+      <td>0.256924</td>
+      <td>0.324841</td>
+      <td>0.188333</td>
+      <td>0.109677</td>
+      <td>0.115274</td>
+      <td>0.293333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(NoRecid|LowRisk)</th>
+      <td>0.680556</td>
+      <td>0.642259</td>
+      <td>0.707317</td>
+      <td>0.741667</td>
+      <td>0.699275</td>
+      <td>0.673497</td>
+    </tr>
+    <tr>
+      <th>P(NoRecid|HighRisk)</th>
+      <td>0.367199</td>
+      <td>0.340517</td>
+      <td>0.405263</td>
+      <td>0.514286</td>
+      <td>0.436620</td>
+      <td>0.359223</td>
+    </tr>
+    <tr>
+      <th>P(Recid|LowRisk)</th>
+      <td>0.319444</td>
+      <td>0.357741</td>
+      <td>0.292683</td>
+      <td>0.258333</td>
+      <td>0.300725</td>
+      <td>0.326503</td>
+    </tr>
+    <tr>
+      <th>P(Recid|HighRisk)</th>
+      <td>0.632801</td>
+      <td>0.659483</td>
+      <td>0.594737</td>
+      <td>0.485714</td>
+      <td>0.563380</td>
+      <td>0.640777</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>overall</th>
+      <th>African-American</th>
+      <th>Caucasian</th>
+      <th>Hispanic</th>
+      <th>Female</th>
+      <th>Male</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>P(LowRisk|NoRecid)</th>
+      <td>0.730564</td>
+      <td>0.660215</td>
+      <td>0.790191</td>
+      <td>0.831776</td>
+      <td>0.861607</td>
+      <td>0.689510</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|NoRecid)</th>
+      <td>0.269436</td>
+      <td>0.339785</td>
+      <td>0.209809</td>
+      <td>0.168224</td>
+      <td>0.138393</td>
+      <td>0.310490</td>
+    </tr>
+    <tr>
+      <th>P(LowRisk|Recid)</th>
+      <td>0.424802</td>
+      <td>0.358491</td>
+      <td>0.515021</td>
+      <td>0.645833</td>
+      <td>0.674797</td>
+      <td>0.376378</td>
+    </tr>
+    <tr>
+      <th>P(HighRisk|Recid)</th>
+      <td>0.575198</td>
+      <td>0.641509</td>
+      <td>0.484979</td>
+      <td>0.354167</td>
+      <td>0.325203</td>
+      <td>0.623622</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/recidivism_78_4.png" src="../_images/recidivism_78_4.png" />
+<img alt="../_images/recidivism_78_5.png" src="../_images/recidivism_78_5.png" />
+<img alt="../_images/recidivism_78_6.png" src="../_images/recidivism_78_6.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="app-rcd-dir4">
@@ -1406,7 +4905,7 @@ do you think would happen if made the calibration plot using the
 training sample? Check and see.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create calibration plot using training data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create calibration plot using training data</span>
 </pre></div>
 </div>
 </div>
@@ -1419,7 +4918,7 @@ training sample? Check and see.</p>
 alternative prediction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit your prediction model and plot calibration and balance</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit your prediction model and plot calibration and balance</span>
 </pre></div>
 </div>
 </div>

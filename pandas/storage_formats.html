@@ -248,7 +248,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -396,7 +396,7 @@ documentation.</p>
 the <code class="docutils literal notranslate"><span class="pre">wanted_mb</span></code> variable below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># makes sure we get the same random numbers each time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># makes sure we get the same random numbers each time</span>
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
@@ -415,6 +415,12 @@ the <code class="docutils literal notranslate"><span class="pre">wanted_mb</span
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>df2.shape =  (100000, 13)
+df2 is approximately 9.9183349609375 MB
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="df-to-csv">
 <h3><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html">df.to_csv</a><a class="headerlink" href="#df-to-csv" title="Permalink to this headline">¶</a></h3>
@@ -423,8 +429,23 @@ the <code class="docutils literal notranslate"><span class="pre">wanted_mb</span
 a string containing the csv form of the DataFrame:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice the plain text format -- one row per line, columns separated by `&#39;`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice the plain text format -- one row per line, columns separated by `&#39;`</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>,a,b,c,d
+0,51,92,14,71
+1,60,20,82,86
+2,74,74,87,99
+3,23,2,21,52
+4,1,87,29,37
+5,1,63,59,20
+6,32,75,57,21
+7,88,48,90,58
+8,41,91,59,79
+9,14,61,61,46
 </pre></div>
 </div>
 </div>
@@ -432,7 +453,7 @@ a string containing the csv form of the DataFrame:</p>
 <p>If we do pass an argument, the first argument will be used as the file name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;df1.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;df1.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -440,8 +461,13 @@ a string containing the csv form of the DataFrame:</p>
 <p>Run the cell below to verify that the file was created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s2">&quot;df1.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -451,8 +477,14 @@ the top, Jupyter will report the total time to run all code in
 the cell)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;df2.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.77 s, sys: 75.3 ms, total: 1.85 s
+Wall time: 1.93 s
 </pre></div>
 </div>
 </div>
@@ -468,7 +500,7 @@ within the file where the DataFrame should be written.</p>
 sheet name as the second argument as follows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;df1&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;df1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -480,7 +512,7 @@ and then pass that as the first argument to <code class="docutils literal notran
 <p>Let’s see how this works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
     <span class="n">df1</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="s2">&quot;df1&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="n">df1</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="s2">&quot;df1 plus 10&quot;</span><span class="p">)</span>
 </pre></div>
@@ -524,7 +556,7 @@ below into a code cell and execute.</p>
 <p>Let’s try it out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyarrow.feather</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyarrow.feather</span>
 <span class="n">pyarrow</span><span class="o">.</span><span class="n">feather</span><span class="o">.</span><span class="n">write_feather</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="s2">&quot;df1.feather&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -532,8 +564,14 @@ below into a code cell and execute.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 <span class="n">pyarrow</span><span class="o">.</span><span class="n">feather</span><span class="o">.</span><span class="n">write_feather</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="s2">&quot;df2.feather&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 22.1 ms, sys: 16.7 ms, total: 38.8 ms
+Wall time: 29.5 ms
 </pre></div>
 </div>
 </div>
@@ -574,29 +612,221 @@ from each of the file formats.</p>
 match the data we began with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice that index was specified in the first (0th -- why?) column of the file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice that index was specified in the first (0th -- why?) column of the file</span>
 <span class="n">df1_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;df1.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">df1_csv</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51</td>
+      <td>92</td>
+      <td>14</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>60</td>
+      <td>20</td>
+      <td>82</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>74</td>
+      <td>74</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23</td>
+      <td>2</td>
+      <td>21</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>87</td>
+      <td>29</td>
+      <td>37</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1_xlsx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;df1&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1_xlsx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;df1&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">df1_xlsx</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51</td>
+      <td>92</td>
+      <td>14</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>60</td>
+      <td>20</td>
+      <td>82</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>74</td>
+      <td>74</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23</td>
+      <td>2</td>
+      <td>21</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>87</td>
+      <td>29</td>
+      <td>37</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice feather already knows what the index is</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice feather already knows what the index is</span>
 <span class="n">df1_feather</span> <span class="o">=</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">feather</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="s2">&quot;df1.feather&quot;</span><span class="p">)</span>
 <span class="n">df1_feather</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51</td>
+      <td>92</td>
+      <td>14</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>60</td>
+      <td>20</td>
+      <td>82</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>74</td>
+      <td>74</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23</td>
+      <td>2</td>
+      <td>21</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>87</td>
+      <td>29</td>
+      <td>37</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>With the <code class="docutils literal notranslate"><span class="pre">pd.read_FOO</span></code> family of functions, we can also read files
 from places on the internet.</p>
@@ -605,12 +835,76 @@ and posted it online.</p>
 <p>Below, we show an example of using <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> to read this file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df1_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/df1.csv&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/df1.csv&quot;</span>
 <span class="n">df1_web</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">df1_url</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">df1_web</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51</td>
+      <td>92</td>
+      <td>14</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>60</td>
+      <td>20</td>
+      <td>82</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>74</td>
+      <td>74</td>
+      <td>87</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23</td>
+      <td>2</td>
+      <td>21</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>87</td>
+      <td>29</td>
+      <td>37</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="practice">
@@ -640,7 +934,7 @@ defined as a team with a lower ELO winning the game.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/fivethirtyeight/nfl-elo-game/&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/fivethirtyeight/nfl-elo-game/&quot;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;3488b7d0b46c5f6583679bc40fb3a42d729abd39/data/nfl_games.csv&quot;</span>
 
 <span class="c1"># your code here --- create more cells if necessary</span>
@@ -653,7 +947,7 @@ defined as a team with a lower ELO winning the game.</p></li>
 <p>If you want to remove the files we just created, run the following cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">try_remove</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">try_remove</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 

@@ -232,12 +232,12 @@
 <p>See <a class="reference internal" href="../pandas/merge.html"><span class="doc">Merge</span></a>, <a class="reference internal" href="../pandas/reshape.html"><span class="doc">Reshape</span></a>, and <a class="reference internal" href="../pandas/groupby.html"><span class="doc">GroupBy</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -251,11 +251,87 @@
 <p>The following code loads a cleaned piece of census data from Statistics Canada.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/canada_census.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/canada_census.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CDcode</th>
+      <th>Pname</th>
+      <th>Population</th>
+      <th>CollegeEducated</th>
+      <th>PercentOwnHouse</th>
+      <th>Income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1001</td>
+      <td>Newfoundland and Labrador</td>
+      <td>270350</td>
+      <td>24.8</td>
+      <td>74.1</td>
+      <td>74676</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1002</td>
+      <td>Newfoundland and Labrador</td>
+      <td>20370</td>
+      <td>7.5</td>
+      <td>86.3</td>
+      <td>60912</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1003</td>
+      <td>Newfoundland and Labrador</td>
+      <td>15560</td>
+      <td>7.3</td>
+      <td>86.0</td>
+      <td>56224</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1004</td>
+      <td>Newfoundland and Labrador</td>
+      <td>20385</td>
+      <td>10.9</td>
+      <td>73.7</td>
+      <td>44282</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1005</td>
+      <td>Newfoundland and Labrador</td>
+      <td>42015</td>
+      <td>17.0</td>
+      <td>73.9</td>
+      <td>62565</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>A <em>census division</em> is a geographical area, smaller than a Canadian province, that is used to
 organize information at a slightly more granular level than by province or by city. The census
@@ -272,7 +348,7 @@ degree, percent of population who own their house/apartment, and the median afte
 <p>Assume that you have a separate data source with province codes and names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_provincecodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_provincecodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">&quot;Pname&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Newfoundland and Labrador&#39;</span><span class="p">,</span> <span class="s1">&#39;Prince Edward Island&#39;</span><span class="p">,</span> <span class="s1">&#39;Nova Scotia&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;New Brunswick&#39;</span><span class="p">,</span> <span class="s1">&#39;Quebec&#39;</span><span class="p">,</span> <span class="s1">&#39;Ontario&#39;</span><span class="p">,</span> <span class="s1">&#39;Manitoba&#39;</span><span class="p">,</span> <span class="s1">&#39;Saskatchewan&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;Alberta&#39;</span><span class="p">,</span> <span class="s1">&#39;British Columbia&#39;</span><span class="p">,</span> <span class="s1">&#39;Yukon&#39;</span><span class="p">,</span> <span class="s1">&#39;Northwest Territories&#39;</span><span class="p">,</span><span class="s1">&#39;Nunavut&#39;</span><span class="p">],</span>
@@ -282,6 +358,98 @@ degree, percent of population who own their house/apartment, and the median afte
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pname</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Newfoundland and Labrador</td>
+      <td>NL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Prince Edward Island</td>
+      <td>PE</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Nova Scotia</td>
+      <td>NS</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>New Brunswick</td>
+      <td>NB</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Quebec</td>
+      <td>QC</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Ontario</td>
+      <td>ON</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Manitoba</td>
+      <td>MB</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Saskatchewan</td>
+      <td>SK</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Alberta</td>
+      <td>AB</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>British Columbia</td>
+      <td>BC</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Yukon</td>
+      <td>YT</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Northwest Territories</td>
+      <td>NT</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Nunavut</td>
+      <td>NU</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>With this,</p>
 <ol class="simple">
@@ -292,7 +460,7 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -300,7 +468,7 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 <p>For this particular example, you could have renamed the column using <code class="docutils literal notranslate"><span class="pre">replace</span></code>. This is a good check.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/canada_census.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/canada_census.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="o">.</span><span class="n">replace</span><span class="p">({</span>
     <span class="s2">&quot;Alberta&quot;</span><span class="p">:</span> <span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="s2">&quot;British Columbia&quot;</span><span class="p">:</span> <span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="s2">&quot;Manitoba&quot;</span><span class="p">:</span> <span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="s2">&quot;New Brunswick&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Newfoundland and Labrador&quot;</span><span class="p">:</span> <span class="s2">&quot;NL&quot;</span><span class="p">,</span> <span class="s2">&quot;Northwest Territories&quot;</span><span class="p">:</span> <span class="s2">&quot;NT&quot;</span><span class="p">,</span> <span class="s2">&quot;Nova Scotia&quot;</span><span class="p">:</span> <span class="s2">&quot;NS&quot;</span><span class="p">,</span>
@@ -312,6 +480,82 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CDcode</th>
+      <th>Province</th>
+      <th>Population</th>
+      <th>CollegeEducated</th>
+      <th>PercentOwnHouse</th>
+      <th>Income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1001</td>
+      <td>NL</td>
+      <td>270350</td>
+      <td>24.8</td>
+      <td>74.1</td>
+      <td>74676</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1002</td>
+      <td>NL</td>
+      <td>20370</td>
+      <td>7.5</td>
+      <td>86.3</td>
+      <td>60912</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1003</td>
+      <td>NL</td>
+      <td>15560</td>
+      <td>7.3</td>
+      <td>86.0</td>
+      <td>56224</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1004</td>
+      <td>NL</td>
+      <td>20385</td>
+      <td>10.9</td>
+      <td>73.7</td>
+      <td>44282</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1005</td>
+      <td>NL</td>
+      <td>42015</td>
+      <td>17.0</td>
+      <td>73.9</td>
+      <td>62565</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="question-2">
@@ -319,7 +563,7 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 <p>Which province has the highest population? Which has the lowest?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -330,7 +574,7 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 <p>Show a bar plot and a pie plot of the province populations.  Hint: After the split-apply-combine, you can use <code class="docutils literal notranslate"><span class="pre">.plot.bar()</span></code> or <code class="docutils literal notranslate"><span class="pre">.plot.pie()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -343,7 +587,7 @@ lowest?</p>
 <p>Hint: Remember to weight this calculation by population!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -354,7 +598,7 @@ lowest?</p>
 <p>What is the census division with the highest median income in each province?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -365,7 +609,7 @@ lowest?</p>
 <p>By province, what is the total population of census areas where more than 80 percent of the population own houses ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -377,7 +621,7 @@ lowest?</p>
 where more than 80 percent of the population own houses?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -390,7 +634,7 @@ where “low” indicates that less than 10 percent of the area is college-educa
 <p>Based on that classification, find the average income. Weight this average income by population for each of the low, medium, high education groups.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -408,7 +652,7 @@ properties of a Shopify order-detail report.</p>
 <p>We’ll look at the data before describing the exercise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/shopify_orders.csv.zip&quot;</span>
 <span class="n">orders</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">orders</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -417,6 +661,160 @@ properties of a Shopify order-detail report.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 715449 entries, 0 to 715448
+Data columns (total 15 columns):
+ #   Column             Non-Null Count   Dtype  
+---  ------             --------------   -----  
+ 0   Unnamed: 0         715449 non-null  int64  
+ 1   Day                715449 non-null  object 
+ 2   customer_type      715449 non-null  object 
+ 3   Customer ID        715449 non-null  int64  
+ 4   orders             715449 non-null  int64  
+ 5   total_sales        715449 non-null  float64
+ 6   Returns            715449 non-null  float64
+ 7   Ordered quantity   715449 non-null  int64  
+ 8   Gross sales        715449 non-null  float64
+ 9   Net sales          715449 non-null  float64
+ 10  Shipping           715449 non-null  float64
+ 11  Tax                715449 non-null  float64
+ 12  Net quantity       715449 non-null  int64  
+ 13  Returned quantity  715449 non-null  int64  
+ 14  Discounts          715449 non-null  float64
+dtypes: float64(7), int64(6), object(2)
+memory usage: 81.9+ MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Day</th>
+      <th>customer_type</th>
+      <th>Customer ID</th>
+      <th>orders</th>
+      <th>total_sales</th>
+      <th>Returns</th>
+      <th>Ordered quantity</th>
+      <th>Gross sales</th>
+      <th>Net sales</th>
+      <th>Shipping</th>
+      <th>Tax</th>
+      <th>Net quantity</th>
+      <th>Returned quantity</th>
+      <th>Discounts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>2019-06-17</td>
+      <td>Returning</td>
+      <td>6535260</td>
+      <td>1</td>
+      <td>41.03</td>
+      <td>-0.0</td>
+      <td>1</td>
+      <td>41.03</td>
+      <td>41.03</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2015-01-31</td>
+      <td>First-time</td>
+      <td>4283889</td>
+      <td>1</td>
+      <td>37.96</td>
+      <td>-0.0</td>
+      <td>2</td>
+      <td>37.96</td>
+      <td>37.96</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>2017-09-14</td>
+      <td>Returning</td>
+      <td>5270434</td>
+      <td>1</td>
+      <td>-25.40</td>
+      <td>-30.5</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>-30.50</td>
+      <td>5.09</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>2017-10-29</td>
+      <td>Returning</td>
+      <td>4836086</td>
+      <td>1</td>
+      <td>12.70</td>
+      <td>-0.0</td>
+      <td>4</td>
+      <td>12.70</td>
+      <td>12.70</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2016-10-01</td>
+      <td>Returning</td>
+      <td>9541330</td>
+      <td>1</td>
+      <td>216.58</td>
+      <td>-0.0</td>
+      <td>3</td>
+      <td>208.59</td>
+      <td>208.59</td>
+      <td>7.99</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>-0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We define a customer’s cohort as the month in which a customer placed
 their first order and the customer type as an indicator of whether this
@@ -430,7 +828,7 @@ quantities, separated by customer cohort and customer type.</p>
 operator described above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -484,13 +882,90 @@ that describes the cause for all US domestic flight delays in November 2016:</p>
 <p>Loading this dataset the first time will take a minute or two because it is quite hefty… We recommend taking a break to view this <a class="reference external" href="https://xkcd.com/303/">xkcd comic</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
 <span class="n">air_perf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)[[</span><span class="s2">&quot;CRSDepTime&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="s2">&quot;ArrDelay&quot;</span><span class="p">]]</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 460949 entries, 0 to 460948
+Data columns (total 4 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   CRSDepTime    460949 non-null  object 
+ 1   Carrier       460949 non-null  object 
+ 2   CarrierDelay  460949 non-null  float64
+ 3   ArrDelay      452229 non-null  float64
+dtypes: float64(2), object(2)
+memory usage: 14.1+ MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CRSDepTime</th>
+      <th>Carrier</th>
+      <th>CarrierDelay</th>
+      <th>ArrDelay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-12-18 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016-12-19 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016-12-20 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016-12-21 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>-10.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-12-22 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>-8.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Carrier</span></code> column identifies the airline while the <code class="docutils literal notranslate"><span class="pre">CarrierDelay</span></code>
 reports the total delay, in minutes, that was the “carrier’s fault”.</p>
@@ -499,7 +974,7 @@ reports the total delay, in minutes, that was the “carrier’s fault”.</p>
 <p>Determine the 10 airlines which, on average, contribute most to delays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 <span class="c1"># avg_delays =</span>
 </pre></div>
 </div>
@@ -513,17 +988,69 @@ reports the total delay, in minutes, that was the “carrier’s fault”.</p>
 to full airline names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_carrier_codes.csv.zip&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_carrier_codes.csv.zip&quot;</span>
 <span class="n">carrier_code</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">carrier_code</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Code</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1884</th>
+      <td>ZW</td>
+      <td>Air Wisconsin Airlines Corp (1994 - )</td>
+    </tr>
+    <tr>
+      <th>1885</th>
+      <td>ZX</td>
+      <td>Airbc Ltd. (1990 - 2000)</td>
+    </tr>
+    <tr>
+      <th>1886</th>
+      <td>ZX</td>
+      <td>Air Georgian (2002 - )</td>
+    </tr>
+    <tr>
+      <th>1887</th>
+      <td>ZY</td>
+      <td>Atlantic Gulf Airlines (1985 - 1986)</td>
+    </tr>
+    <tr>
+      <th>1888</th>
+      <td>ZYZ</td>
+      <td>Skyway Aviation Inc. (1960 - 2002)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In this question, you should merge the carrier codes and the previously computed dataframe from Question 9 (the 10 airlines that contribute most to delays).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 <span class="c1"># avg_delays_w_name</span>
 </pre></div>
 </div>
@@ -539,11 +1066,117 @@ above 65 divided by the number of people between 16 and 65 and measures how many
 individuals exist relative to the number of dependent (retired) individuals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv&quot;</span><span class="p">)</span>
 <span class="n">adr</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Series Name</th>
+      <th>Series Code</th>
+      <th>Country Name</th>
+      <th>Country Code</th>
+      <th>1960</th>
+      <th>1970</th>
+      <th>1980</th>
+      <th>1990</th>
+      <th>2000</th>
+      <th>2010</th>
+      <th>2017</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Age dependency ratio, old (% of working-age po...</td>
+      <td>SP.POP.DPND.OL</td>
+      <td>Belgium</td>
+      <td>BEL</td>
+      <td>18.376221914997</td>
+      <td>21.3310651174022</td>
+      <td>22.0827795865161</td>
+      <td>22.3478876919412</td>
+      <td>25.7237772053865</td>
+      <td>26.3502220937405</td>
+      <td>28.8663095376732</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Age dependency ratio, old (% of working-age po...</td>
+      <td>SP.POP.DPND.OL</td>
+      <td>High income</td>
+      <td>HIC</td>
+      <td>13.7442735255142</td>
+      <td>15.5128071607608</td>
+      <td>17.2793259853973</td>
+      <td>18.1810594950547</td>
+      <td>20.238646358909</td>
+      <td>22.5821690792651</td>
+      <td>26.5545126329423</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Age dependency ratio, old (% of working-age po...</td>
+      <td>SP.POP.DPND.OL</td>
+      <td>Andorra</td>
+      <td>AND</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Age dependency ratio, old (% of working-age po...</td>
+      <td>SP.POP.DPND.OL</td>
+      <td>Austria</td>
+      <td>AUT</td>
+      <td>18.5196085788113</td>
+      <td>22.7370767160537</td>
+      <td>23.6381357233154</td>
+      <td>21.8956152694877</td>
+      <td>22.7046805297879</td>
+      <td>26.373860988558</td>
+      <td>28.7849528312483</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Age dependency ratio, old (% of working-age po...</td>
+      <td>SP.POP.DPND.OL</td>
+      <td>Bermuda</td>
+      <td>BMU</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+      <td>..</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>This data only has a single variable, so you can eliminate the <code class="docutils literal notranslate"><span class="pre">Series</span> <span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span> <span class="pre">Code</span></code>
 columns. You can also eliminate the <code class="docutils literal notranslate"><span class="pre">Country</span> <span class="pre">Code</span></code> or  <code class="docutils literal notranslate"><span class="pre">Country</span> <span class="pre">Name</span></code> column (but not both),
@@ -556,14 +1189,14 @@ have a single column. (If we had more variables, each variable could have its ow
 think a better organization method?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reshape to have years and countries on index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reshape to have years and countries on index</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reshape to have years on index and country identifiers as columns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reshape to have years on index and country identifiers as columns</span>
 </pre></div>
 </div>
 </div>
