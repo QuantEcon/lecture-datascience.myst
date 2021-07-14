@@ -562,7 +562,7 @@ We hear you.
 Let's also load a dataset containing information on the actual books.
 
 ```{code-cell} python
-url = "https://datascience.quantecon.org/assets/data/goodreads_books.csv.zip"
+url = "https://datascience.quantecon.org/assets/data/goodreads_books.csv"
 books = pd.read_csv(url)
 # we only need a few of the columns
 books = books[["book_id", "authors", "title"]]
