@@ -229,12 +229,12 @@ academic research</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1">#plt.style.use(&#39;tableau-colorblind10&#39;)</span>
 <span class="c1">#plt.style.use(&#39;Solarize_Light2&#39;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">)</span>
@@ -385,7 +385,7 @@ process and machine learning estimator, but we will not worry about them here. S
 <p>Here is code implementing the above idea.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_predict</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_predict</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
 <span class="kn">import</span> <span class="nn">statsmodels</span> <span class="k">as</span> <span class="nn">sm</span>
 
@@ -437,7 +437,7 @@ the US. In particular, we will use the version of the <a class="reference extern
 the NBER</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 <span class="kn">from</span> <span class="nn">statsmodels.iolib.summary2</span> <span class="kn">import</span> <span class="n">summary_col</span>
 <span class="c1"># Download CPS data</span>
 <span class="n">cpsall</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s2">&quot;https://www.nber.org/morg/annual/morg18.dta&quot;</span><span class="p">)</span>
@@ -449,6 +449,410 @@ the NBER</a>.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hhid</th>
+      <th>intmonth</th>
+      <th>hurespli</th>
+      <th>hrhtype</th>
+      <th>minsamp</th>
+      <th>hrlonglk</th>
+      <th>hrsample</th>
+      <th>hrhhid2</th>
+      <th>serial</th>
+      <th>hhnum</th>
+      <th>...</th>
+      <th>ym_file</th>
+      <th>ym</th>
+      <th>ch02</th>
+      <th>ch35</th>
+      <th>ch613</th>
+      <th>ch1417</th>
+      <th>ch05</th>
+      <th>ihigrdc</th>
+      <th>docc00</th>
+      <th>dind02</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>103153</th>
+      <td>150909100105603</td>
+      <td>May</td>
+      <td>1.0</td>
+      <td>Civilian male primary individual</td>
+      <td>MIS 4</td>
+      <td>MIS 2-4 Or MIS 6-8 (link To</td>
+      <td>0801</td>
+      <td>08011</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>700</td>
+      <td>697</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Business and financial operations occupations</td>
+      <td>Professional and Technical services</td>
+    </tr>
+    <tr>
+      <th>76648</th>
+      <td>505760912076673</td>
+      <td>March</td>
+      <td>1.0</td>
+      <td>Husband/wife primary fam (neither in Armed For...</td>
+      <td>MIS 4</td>
+      <td>MIS 2-4 Or MIS 6-8 (link To</td>
+      <td>0811</td>
+      <td>08111</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>698</td>
+      <td>695</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51433</th>
+      <td>481462012350753</td>
+      <td>February</td>
+      <td>1.0</td>
+      <td>Husband/wife primary fam (neither in Armed For...</td>
+      <td>MIS 4</td>
+      <td>MIS 2-4 Or MIS 6-8 (link To</td>
+      <td>0701</td>
+      <td>07011</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>697</td>
+      <td>694</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Management occupations</td>
+      <td>Agriculture</td>
+    </tr>
+    <tr>
+      <th>75550</th>
+      <td>106518879410166</td>
+      <td>March</td>
+      <td>2.0</td>
+      <td>Husband/wife primary fam (neither in Armed For...</td>
+      <td>MIS 8</td>
+      <td>MIS 2-4 Or MIS 6-8 (link To</td>
+      <td>0611</td>
+      <td>06111</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>698</td>
+      <td>683</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>284643</th>
+      <td>466023401171104</td>
+      <td>December</td>
+      <td>1.0</td>
+      <td>Husband/wife primary fam (neither in Armed For...</td>
+      <td>MIS 4</td>
+      <td>MIS 2-4 Or MIS 6-8 (link To</td>
+      <td>0901</td>
+      <td>09011</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>707</td>
+      <td>704</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>13.0</td>
+      <td>Management occupations</td>
+      <td>Membership associations and organizations</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 98 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hurespli</th>
+      <th>hhnum</th>
+      <th>cbsafips</th>
+      <th>county</th>
+      <th>centcity</th>
+      <th>smsastat</th>
+      <th>icntcity</th>
+      <th>smsa04</th>
+      <th>relref95</th>
+      <th>age</th>
+      <th>...</th>
+      <th>recnum</th>
+      <th>year</th>
+      <th>ym_file</th>
+      <th>ym</th>
+      <th>ch02</th>
+      <th>ch35</th>
+      <th>ch613</th>
+      <th>ch1417</th>
+      <th>ch05</th>
+      <th>ihigrdc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>29997.000000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>24701.000000</td>
+      <td>29689.000000</td>
+      <td>3845.000000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>...</td>
+      <td>30000.00000</td>
+      <td>30000.0</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>30000.00000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>30000.000000</td>
+      <td>21463.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.314898</td>
+      <td>1.052733</td>
+      <td>22812.328667</td>
+      <td>25.752033</td>
+      <td>1.926157</td>
+      <td>1.188150</td>
+      <td>1.377373</td>
+      <td>3.687667</td>
+      <td>3.200333</td>
+      <td>47.856967</td>
+      <td>...</td>
+      <td>217052.62500</td>
+      <td>2018.0</td>
+      <td>701.467433</td>
+      <td>692.357833</td>
+      <td>0.06040</td>
+      <td>0.065333</td>
+      <td>0.143033</td>
+      <td>0.086467</td>
+      <td>0.105033</td>
+      <td>12.355938</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.683163</td>
+      <td>0.245943</td>
+      <td>16494.302775</td>
+      <td>62.862911</td>
+      <td>0.721596</td>
+      <td>0.390839</td>
+      <td>0.946464</td>
+      <td>2.592477</td>
+      <td>3.291772</td>
+      <td>18.757968</td>
+      <td>...</td>
+      <td>125652.34375</td>
+      <td>0.0</td>
+      <td>3.467921</td>
+      <td>6.970577</td>
+      <td>0.23823</td>
+      <td>0.247117</td>
+      <td>0.350113</td>
+      <td>0.281057</td>
+      <td>0.306601</td>
+      <td>2.478719</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>16.000000</td>
+      <td>...</td>
+      <td>19.00000</td>
+      <td>2018.0</td>
+      <td>696.000000</td>
+      <td>681.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>32.000000</td>
+      <td>...</td>
+      <td>108185.25000</td>
+      <td>2018.0</td>
+      <td>698.000000</td>
+      <td>686.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>25420.000000</td>
+      <td>0.000000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>4.000000</td>
+      <td>2.000000</td>
+      <td>48.000000</td>
+      <td>...</td>
+      <td>217388.50000</td>
+      <td>2018.0</td>
+      <td>701.000000</td>
+      <td>692.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>37900.000000</td>
+      <td>29.000000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>6.000000</td>
+      <td>3.000000</td>
+      <td>63.000000</td>
+      <td>...</td>
+      <td>325915.00000</td>
+      <td>2018.0</td>
+      <td>704.000000</td>
+      <td>698.000000</td>
+      <td>0.00000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>11.000000</td>
+      <td>8.000000</td>
+      <td>49740.000000</td>
+      <td>810.000000</td>
+      <td>3.000000</td>
+      <td>2.000000</td>
+      <td>7.000000</td>
+      <td>7.000000</td>
+      <td>18.000000</td>
+      <td>85.000000</td>
+      <td>...</td>
+      <td>434279.00000</td>
+      <td>2018.0</td>
+      <td>707.000000</td>
+      <td>704.000000</td>
+      <td>1.00000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>18.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 62 columns</p>
+</div></div></div>
 </div>
 <p>The variable “earnwke” records weekly earnings. Two
 variables detail the hours of work. “uhours” is usual hours worked per
@@ -457,7 +861,7 @@ measure of hours to construct the wage.  Let’s estimate the
 unconditional gender earnings and wage gaps.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cps</span><span class="p">[</span><span class="s2">&quot;female&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">cps</span><span class="o">.</span><span class="n">sex</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cps</span><span class="p">[</span><span class="s2">&quot;female&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">cps</span><span class="o">.</span><span class="n">sex</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">cps</span><span class="p">[</span><span class="s2">&quot;log_earn&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">cps</span><span class="o">.</span><span class="n">earnwke</span><span class="p">)</span>
 <span class="n">cps</span><span class="p">[</span><span class="s2">&quot;log_earn&quot;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">cps</span><span class="o">.</span><span class="n">log_earn</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="n">cps</span><span class="p">[</span><span class="s2">&quot;log_uhours&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">cps</span><span class="o">.</span><span class="n">uhourse</span><span class="p">)</span>
@@ -480,13 +884,72 @@ unconditional gender earnings and wage gaps.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">summary_col</span><span class="p">(</span><span class="n">lm</span><span class="p">,</span> <span class="n">stars</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arraylike.py:364: RuntimeWarning: divide by zero encountered in log
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+/tmp/ipykernel_2893/3831816786.py:3: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  cps[&quot;log_earn&quot;][np.isinf(cps.log_earn)] = np.nan
+/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arraylike.py:364: RuntimeWarning: invalid value encountered in log
+  result = getattr(ufunc, method)(*inputs, **kwargs)
+/tmp/ipykernel_2893/3831816786.py:5: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  cps[&quot;log_uhours&quot;][np.isinf(cps.log_uhours)] = np.nan
+/tmp/ipykernel_2893/3831816786.py:7: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  cps[&quot;log_hourslw&quot;][np.isinf(cps.log_hourslw)] = np.nan
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_col</span><span class="p">(</span><span class="n">lm</span><span class="p">,</span> <span class="n">stars</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+         <td></td>        <th>log_earn I</th> <th>log_wageu I</th> <th>log_wagelw I</th> <th>log_earn II</th>
+</tr>
+<tr>
+  <th>Intercept</th>       <td>6.7473***</td>  <td>3.0970***</td>    <td>3.1056***</td>   <td>1.8014***</td> 
+</tr>
+<tr>
+  <th></th>                <td>(0.0088)</td>   <td>(0.0072)</td>     <td>(0.0078)</td>    <td>(0.0933)</td>  
+</tr>
+<tr>
+  <th>R-squared</th>        <td>0.0338</td>     <td>0.0179</td>       <td>0.0149</td>      <td>0.4139</td>   
+</tr>
+<tr>
+  <th>R-squared Adj.</th>   <td>0.0337</td>     <td>0.0179</td>       <td>0.0148</td>      <td>0.4137</td>   
+</tr>
+<tr>
+  <th>female[T.True]</th> <td>-0.3004***</td> <td>-0.1695***</td>   <td>-0.1707***</td>  <td>-0.1258***</td> 
+</tr>
+<tr>
+  <th></th>                <td>(0.0127)</td>   <td>(0.0102)</td>     <td>(0.0112)</td>    <td>(0.0105)</td>  
+</tr>
+<tr>
+  <th>log_hourslw</th>         <td></td>           <td></td>             <td></td>        <td>0.0907***</td> 
+</tr>
+<tr>
+  <th></th>                    <td></td>           <td></td>             <td></td>        <td>(0.0285)</td>  
+</tr>
+<tr>
+  <th>log_uhours</th>          <td></td>           <td></td>             <td></td>        <td>1.2631***</td> 
+</tr>
+<tr>
+  <th></th>                    <td></td>           <td></td>             <td></td>        <td>(0.0431)</td>  
+</tr>
+</table></div></div>
 </div>
 <p>The unconditional gender gap in log earnings is about -0.3. Women earn
 about 30% less than men. The unconditional gender wage gap is about
@@ -509,7 +972,7 @@ that we control for those characteristics as flexibly as
 possible, so we will use the partially linear model described above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
 <span class="c1"># Prepare data</span>
 <span class="n">fmla</span>  <span class="o">=</span> <span class="s2">&quot;log_earn + female ~ log_uhours + log_hourslw + age + I(age**2) + C(race) + C(cbsafips) + C(smsastat) + C(grade92) + C(unionmme) + C(unioncov) + C(ind02) + C(occ2012)&quot;</span>
 <span class="n">yd</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">dmatrices</span><span class="p">(</span><span class="n">fmla</span><span class="p">,</span><span class="n">cps</span><span class="p">)</span>
@@ -533,7 +996,7 @@ wage gap to be consistent and asymptotically normal. The R package,
 is known to be correct.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># select regularization parameter</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select regularization parameter</span>
 <span class="n">alphas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
 <span class="n">lassoy</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">alphas</span><span class="o">=</span><span class="n">alphas</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">logearn</span><span class="p">)</span>
 <span class="n">lassod</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">alphas</span><span class="o">=</span><span class="n">alphas</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">female</span><span class="p">)</span>
@@ -543,7 +1006,7 @@ is known to be correct.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">plotlassocv</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">alphas</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">alphas_</span>
@@ -578,10 +1041,13 @@ is known to be correct.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ml_in_economics_13_0.png" src="../_images/ml_in_economics_13_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># show results</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show results</span>
 <span class="n">pl_lasso</span> <span class="o">=</span> <span class="n">partial_linear</span><span class="p">(</span><span class="n">logearn</span><span class="p">,</span> <span class="n">female</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span>
                           <span class="n">linear_model</span><span class="o">.</span><span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">lassoy</span><span class="o">.</span><span class="n">alpha_</span><span class="p">),</span>
                           <span class="n">linear_model</span><span class="o">.</span><span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="n">lassod</span><span class="o">.</span><span class="n">alpha_</span><span class="p">))</span>
@@ -589,10 +1055,63 @@ is known to be correct.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared (uncentered):</th>      <td>   0.009</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared (uncentered):</th> <td>   0.009</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>          <td>   107.2</td> 
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 14 Jul 2021</td> <th>  Prob (F-statistic):</th>          <td>4.91e-25</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>22:03:31</td>     <th>  Log-Likelihood:    </th>          <td> -9718.3</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td> 13052</td>      <th>  AIC:               </th>          <td>1.944e+04</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td> 13051</td>      <th>  BIC:               </th>          <td>1.945e+04</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>              <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>         <td>HC0</td>       <th>                     </th>              <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+   <td></td>     <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>x1</th> <td>   -0.1160</td> <td>    0.011</td> <td>  -10.356</td> <td> 0.000</td> <td>   -0.138</td> <td>   -0.094</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>6939.182</td> <th>  Durbin-Watson:     </th>  <td>   1.959</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th>  <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>410073.398</td>
+</tr>
+<tr>
+  <th>Skew:</th>           <td>-1.777</td>  <th>  Prob(JB):          </th>  <td>    0.00</td> 
+</tr>
+<tr>
+  <th>Kurtosis:</th>       <td>30.229</td>  <th>  Cond. No.          </th>  <td>    1.00</td> 
+</tr>
+</table><br/><br/>Notes:<br/>[1] R² is computed without centering (uncentered) since the model does not contain a constant.<br/>[2] Standard Errors are heteroscedasticity robust (HC0)</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="c1"># Visualize predictions</span>
 <span class="k">def</span> <span class="nf">plotpredictions</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;logearn&quot;</span><span class="p">:</span><span class="n">logearn</span><span class="p">,</span>
@@ -618,6 +1137,17 @@ is known to be correct.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+</pre></div>
+</div>
+<img alt="../_images/ml_in_economics_15_1.png" src="../_images/ml_in_economics_15_1.png" />
+<img alt="../_images/ml_in_economics_15_2.png" src="../_images/ml_in_economics_15_2.png" />
+<img alt="../_images/ml_in_economics_15_3.png" src="../_images/ml_in_economics_15_3.png" />
+</div>
 </div>
 <p>We see that the gender earnings gap is
 12.4%, conditional on hours, age, race, location, education,
@@ -627,7 +1157,7 @@ Compared to the gap conditional on only hours, differences in other observable c
 in place of lasso. Let’s try it with neural networks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neural_network</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neural_network</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">model_selection</span>
 
 <span class="n">nnp</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
@@ -645,20 +1175,30 @@ in place of lasso. Let’s try it with neural networks.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nnycv</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">nnp</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span> <span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-                                     <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nn__alpha&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))},</span>
-                                     <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                     <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">logearn</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 4 folds for each of 10 candidates, totalling 40 fits
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nnycv</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">nnp</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span> <span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                                     <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nn__alpha&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))},</span>
+                                     <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                     <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">logearn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 4 folds for each of 10 candidates, totalling 40 fits
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">plotgridcv</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span> <span class="p">:</span>
     <span class="n">alphas</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">[</span><span class="s2">&quot;param_nn__alpha&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
@@ -695,10 +1235,13 @@ in place of lasso. Let’s try it with neural networks.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/ml_in_economics_19_0.png" src="../_images/ml_in_economics_19_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># show results</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show results</span>
 <span class="n">nny</span> <span class="o">=</span> <span class="n">nnp</span>
 <span class="n">nny</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="n">nn__alpha</span> <span class="o">=</span> <span class="n">alphaynn</span><span class="p">)</span>
 <span class="n">nnd</span> <span class="o">=</span> <span class="n">nnp</span>
@@ -709,20 +1252,102 @@ in place of lasso. Let’s try it with neural networks.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>            <td>y</td>        <th>  R-squared (uncentered):</th>      <td>   0.023</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared (uncentered):</th> <td>   0.023</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>          <td>   301.3</td> 
+</tr>
+<tr>
+  <th>Date:</th>             <td>Wed, 14 Jul 2021</td> <th>  Prob (F-statistic):</th>          <td>9.47e-67</td> 
+</tr>
+<tr>
+  <th>Time:</th>                 <td>22:14:29</td>     <th>  Log-Likelihood:    </th>          <td> -13667.</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td> 13052</td>      <th>  AIC:               </th>          <td>2.734e+04</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td> 13051</td>      <th>  BIC:               </th>          <td>2.734e+04</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>              <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>         <td>HC0</td>       <th>                     </th>              <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+   <td></td>     <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>x1</th> <td>   -0.2135</td> <td>    0.012</td> <td>  -17.359</td> <td> 0.000</td> <td>   -0.238</td> <td>   -0.189</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>4079.202</td> <th>  Durbin-Watson:     </th> <td>   1.736</td> 
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th>  <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td>44222.894</td>
+</tr>
+<tr>
+  <th>Skew:</th>           <td>-1.185</td>  <th>  Prob(JB):          </th> <td>    0.00</td> 
+</tr>
+<tr>
+  <th>Kurtosis:</th>       <td>11.700</td>  <th>  Cond. No.          </th> <td>    1.00</td> 
+</tr>
+</table><br/><br/>Notes:<br/>[1] R² is computed without centering (uncentered) since the model does not contain a constant.<br/>[2] Standard Errors are heteroscedasticity robust (HC0)</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plotpredictions</span><span class="p">(</span><span class="n">pl_nn</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotpredictions</span><span class="p">(</span><span class="n">pl_nn</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
+  warnings.warn(
+/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/seaborn/distributions.py:2557: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+</pre></div>
+</div>
+<img alt="../_images/ml_in_economics_21_1.png" src="../_images/ml_in_economics_21_1.png" />
+<img alt="../_images/ml_in_economics_21_2.png" src="../_images/ml_in_economics_21_2.png" />
+<img alt="../_images/ml_in_economics_21_3.png" src="../_images/ml_in_economics_21_3.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">summary_col</span><span class="p">([</span><span class="n">pl_lasso</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pl_nn</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">model_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Lasso&quot;</span><span class="p">,</span> <span class="s2">&quot;Neural Network&quot;</span><span class="p">]</span> <span class="p">,</span><span class="n">stars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_col</span><span class="p">([</span><span class="n">pl_lasso</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pl_nn</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">model_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Lasso&quot;</span><span class="p">,</span> <span class="s2">&quot;Neural Network&quot;</span><span class="p">]</span> <span class="p">,</span><span class="n">stars</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<tr>
+         <td></td>          <th>Lasso</th>  <th>Neural Network</th>
+</tr>
+<tr>
+  <th>x1</th>              <td>-0.1160</td>     <td>-0.2135</td>   
+</tr>
+<tr>
+  <th></th>               <td>(0.0112)</td>    <td>(0.0123)</td>   
+</tr>
+<tr>
+  <th>R-squared</th>       <td>0.0089</td>      <td>0.0227</td>    
+</tr>
+<tr>
+  <th>R-squared Adj.</th>  <td>0.0088</td>      <td>0.0226</td>    
+</tr>
+</table></div></div>
 </div>
 </div>
 </div>

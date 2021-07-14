@@ -408,9 +408,9 @@ product groups in a separate dataset, and want to compute aggregate
 statistics for each group.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -422,7 +422,7 @@ statistics for each group.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># from WDI. Units trillions of 2010 USD</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from WDI. Units trillions of 2010 USD</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/wdi_data.csv&quot;</span>
 <span class="n">wdi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">wdi</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -432,18 +432,214 @@ statistics for each group.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+MultiIndex: 72 entries, (&#39;Canada&#39;, 2017) to (&#39;United States&#39;, 2000)
+Data columns (total 5 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   GovExpend    72 non-null     float64
+ 1   Consumption  72 non-null     float64
+ 2   Exports      72 non-null     float64
+ 3   Imports      72 non-null     float64
+ 4   GDP          72 non-null     float64
+dtypes: float64(5)
+memory usage: 3.9+ KB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2016_17</span> <span class="o">=</span> <span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">]],:</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2016_17</span> <span class="o">=</span> <span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">]],:</span> <span class="p">]</span>
 <span class="n">wdi2016_17</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <th>2016</th>
+      <td>0.364899</td>
+      <td>1.058426</td>
+      <td>0.576394</td>
+      <td>0.575775</td>
+      <td>1.814016</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <th>2016</th>
+      <td>0.734014</td>
+      <td>2.075615</td>
+      <td>1.844949</td>
+      <td>1.589495</td>
+      <td>3.801859</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <th>2016</th>
+      <td>0.550596</td>
+      <td>1.772348</td>
+      <td>0.816792</td>
+      <td>0.901494</td>
+      <td>2.768241</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <th>2016</th>
+      <td>2.407981</td>
+      <td>11.722133</td>
+      <td>2.219937</td>
+      <td>2.936004</td>
+      <td>16.972348</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <th>2017</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <th>2017</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <th>2017</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <th>2017</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from https://www.nationmaster.com/country-info/stats/Geography/Land-area/Square-miles</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data from https://www.nationmaster.com/country-info/stats/Geography/Land-area/Square-miles</span>
 <span class="c1"># units -- millions of square miles</span>
 <span class="n">sq_miles</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
    <span class="s2">&quot;United States&quot;</span><span class="p">:</span> <span class="mf">3.8</span><span class="p">,</span>
@@ -457,10 +653,60 @@ statistics for each group.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United States</th>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># from WDI. Units millions of people</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from WDI. Units millions of people</span>
 <span class="n">pop_url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/wdi_population.csv&quot;</span>
 <span class="n">pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">pop_url</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">pop</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -468,6 +714,89 @@ statistics for each group.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+MultiIndex: 72 entries, (&#39;Canada&#39;, 2017) to (&#39;United States&#39;, 2000)
+Data columns (total 1 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   Population  72 non-null     float64
+dtypes: float64(1)
+memory usage: 1.7+ KB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Population</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="10" valign="top">Canada</th>
+      <th>2017</th>
+      <td>36.540268</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>36.109487</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>35.702908</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>35.437435</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>35.082954</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>34.714222</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>34.339328</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>34.004889</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>33.628895</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>33.247118</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Suppose that we were asked to compute a number of statistics with the data above:</p>
 <ul class="simple">
@@ -513,11 +842,132 @@ passed in the first argument will be stacked on top of one another.</p>
 <p>Let’s try it out here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># equivalent to pd.concat([wdi2017, sq_miles]) -- axis=0 is default</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># equivalent to pd.concat([wdi2017, sq_miles]) -- axis=0 is default</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Notice a few things:</p>
 <p>The number of rows in the output is the total number
@@ -536,10 +986,95 @@ side-by-side makes more sense.</p>
 <p>We accomplish this by passing <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Notice here that</p>
 <ul class="simple">
@@ -552,8 +1087,19 @@ is <code class="docutils literal notranslate"><span class="pre">NaN</span></code
 Consumption per square mile?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">temp</span><span class="p">[</span><span class="s2">&quot;Consumption&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">temp</span><span class="p">[</span><span class="s2">&quot;sq_miles&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country
+Canada             0.288283
+Germany           15.416124
+United Kingdom    19.328569
+United States      3.162965
+Russia                  NaN
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -569,10 +1115,86 @@ on one or more “key” columns.</p>
 examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The output here looks very similar to what we saw with <code class="docutils literal notranslate"><span class="pre">concat</span></code> and
 <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>, except that the row for <code class="docutils literal notranslate"><span class="pre">Russia</span></code> does not appear.</p>
@@ -580,10 +1202,122 @@ examples.</p>
 <p>For now, let’s look at a slightly more intriguing example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.364899</td>
+      <td>1.058426</td>
+      <td>0.576394</td>
+      <td>0.575775</td>
+      <td>1.814016</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.734014</td>
+      <td>2.075615</td>
+      <td>1.844949</td>
+      <td>1.589495</td>
+      <td>3.801859</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.550596</td>
+      <td>1.772348</td>
+      <td>0.816792</td>
+      <td>0.901494</td>
+      <td>2.768241</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.407981</td>
+      <td>11.722133</td>
+      <td>2.219937</td>
+      <td>2.936004</td>
+      <td>16.972348</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Here’s how we think about what happened:</p>
 <ul class="simple">
@@ -606,10 +1340,131 @@ rows where the <code class="docutils literal notranslate"><span class="pre">coun
 that in the first step when all columns are copied over, <code class="docutils literal notranslate"><span class="pre">year</span></code> is included.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Canada</td>
+      <td>2016</td>
+      <td>0.364899</td>
+      <td>1.058426</td>
+      <td>0.576394</td>
+      <td>0.575775</td>
+      <td>1.814016</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Canada</td>
+      <td>2017</td>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Germany</td>
+      <td>2016</td>
+      <td>0.734014</td>
+      <td>2.075615</td>
+      <td>1.844949</td>
+      <td>1.589495</td>
+      <td>3.801859</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Germany</td>
+      <td>2017</td>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>United Kingdom</td>
+      <td>2016</td>
+      <td>0.550596</td>
+      <td>1.772348</td>
+      <td>0.816792</td>
+      <td>0.901494</td>
+      <td>2.768241</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>United Kingdom</td>
+      <td>2017</td>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>United States</td>
+      <td>2016</td>
+      <td>2.407981</td>
+      <td>11.722133</td>
+      <td>2.219937</td>
+      <td>2.936004</td>
+      <td>16.972348</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>United States</td>
+      <td>2017</td>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="multiple-columns">
 <h3>Multiple Columns<a class="headerlink" href="#multiple-columns" title="Permalink to this headline">¶</a></h3>
@@ -621,24 +1476,174 @@ both country and year.</p>
 <p>We pass a list to the <code class="docutils literal notranslate"><span class="pre">on</span></code> argument to accomplish this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="p">,</span> <span class="n">pop</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="p">,</span> <span class="n">pop</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>Population</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <th>2016</th>
+      <td>0.364899</td>
+      <td>1.058426</td>
+      <td>0.576394</td>
+      <td>0.575775</td>
+      <td>1.814016</td>
+      <td>36.109487</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <th>2016</th>
+      <td>0.734014</td>
+      <td>2.075615</td>
+      <td>1.844949</td>
+      <td>1.589495</td>
+      <td>3.801859</td>
+      <td>82.348669</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <th>2016</th>
+      <td>0.550596</td>
+      <td>1.772348</td>
+      <td>0.816792</td>
+      <td>0.901494</td>
+      <td>2.768241</td>
+      <td>65.595565</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <th>2016</th>
+      <td>2.407981</td>
+      <td>11.722133</td>
+      <td>2.219937</td>
+      <td>2.936004</td>
+      <td>16.972348</td>
+      <td>323.071342</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <th>2017</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>36.540268</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <th>2017</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>82.657002</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <th>2017</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>66.058859</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <th>2017</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>325.147121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now, we can answer more of our questions from above: What is GDP per capita (per
 person) for each country in each year? How about Consumption per person?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi_pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="p">,</span> <span class="n">pop</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi_pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2016_17</span><span class="p">,</span> <span class="n">pop</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">wdi_pop</span><span class="p">[</span><span class="s2">&quot;GDP&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">wdi_pop</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country         year
+Canada          2016    0.050237
+Germany         2016    0.046168
+United Kingdom  2016    0.042202
+United States   2016    0.052534
+Canada          2017    0.051126
+Germany         2017    0.046988
+United Kingdom  2017    0.042670
+United States   2017    0.053356
+dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi_pop</span><span class="p">[</span><span class="s2">&quot;Consumption&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">wdi_pop</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi_pop</span><span class="p">[</span><span class="s2">&quot;Consumption&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">wdi_pop</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country         year
+Canada          2016    0.029312
+Germany         2016    0.025205
+United Kingdom  2016    0.027019
+United States   2016    0.036283
+Canada          2017    0.029980
+Germany         2017    0.025551
+United Kingdom  2017    0.027387
+United States   2017    0.036966
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -669,18 +1674,166 @@ DataFrames, so it is used for <code class="docutils literal notranslate"><span c
 <p>The following two are equivalent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># if we move index back to columns, the `on` is un-necessary</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if we move index back to columns, the `on` is un-necessary</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">sq_miles</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Canada</td>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Germany</td>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>United Kingdom</td>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>United States</td>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="left-on-right-on">
@@ -694,10 +1847,86 @@ the proper column name(s) to align the data.</p>
 DataFrames do both have the <code class="docutils literal notranslate"><span class="pre">country</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="left-index-right-index">
@@ -709,10 +1938,86 @@ index instead of one of the columns.</p>
 <p>Let’s practice with this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="how">
@@ -740,52 +2045,473 @@ or <code class="docutils literal notranslate"><span class="pre">right</span></co
 illustrate the <code class="docutils literal notranslate"><span class="pre">how</span></code> option.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017_no_US</span> <span class="o">=</span> <span class="n">wdi2017</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017_no_US</span> <span class="o">=</span> <span class="n">wdi2017</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">)</span>
 <span class="n">wdi2017_no_US</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sq_miles_no_germany</span> <span class="o">=</span> <span class="n">sq_miles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sq_miles_no_germany</span> <span class="o">=</span> <span class="n">sq_miles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">)</span>
 <span class="n">sq_miles_no_germany</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United States</th>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now, let’s see all the possible <code class="docutils literal notranslate"><span class="pre">how</span></code> options.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># default</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># default</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice ``Russia`` is included</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice ``Russia`` is included</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice no United States or Russia</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># notice no United States or Russia</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017_no_US</span><span class="p">,</span> <span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># includes all 5, even though they don&#39;t all appear in either DataFrame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># includes all 5, even though they don&#39;t all appear in either DataFrame</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wdi2017_no_US</span><span class="p">,</span> <span class="n">sq_miles_no_germany</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mrg-dir2">
 <p class="admonition-title">Exercise</p>
@@ -804,10 +2530,95 @@ DataFrame before the period as <code class="docutils literal notranslate"><span 
 <p>Thus <code class="docutils literal notranslate"><span class="pre">df.merge(other)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">pd.merge(df,</span> <span class="pre">other)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.6000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>
@@ -825,17 +2636,169 @@ but sets the <code class="docutils literal notranslate"><span class="pre">left_o
 are in the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sq_miles</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sq_miles</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2017</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sq_miles</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GovExpend</th>
+      <th>Consumption</th>
+      <th>Exports</th>
+      <th>Imports</th>
+      <th>GDP</th>
+      <th>sq_miles</th>
+    </tr>
+    <tr>
+      <th>country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canada</th>
+      <td>0.372665</td>
+      <td>1.095475</td>
+      <td>0.582831</td>
+      <td>0.600031</td>
+      <td>1.868164</td>
+      <td>3.8000</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>0.745579</td>
+      <td>2.112009</td>
+      <td>1.930563</td>
+      <td>1.666348</td>
+      <td>3.883870</td>
+      <td>0.1370</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>0.549538</td>
+      <td>1.809154</td>
+      <td>0.862629</td>
+      <td>0.933145</td>
+      <td>2.818704</td>
+      <td>0.0936</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2.405743</td>
+      <td>12.019266</td>
+      <td>2.287071</td>
+      <td>3.069954</td>
+      <td>17.348627</td>
+      <td>3.8000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="case-study">
@@ -847,10 +2810,87 @@ seeing how these functions can be applied.</p>
 <p>Let’s load it up.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/goodreads_ratings.csv.zip&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/goodreads_ratings.csv.zip&quot;</span>
 <span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">ratings</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 <span class="n">ratings</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>user_id</th>
+      <th>book_id</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>258</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>4081</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>2</td>
+      <td>260</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>2</td>
+      <td>9296</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2</td>
+      <td>2318</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 5976479 entries, 0 to 5976478
+Data columns (total 4 columns):
+ #   Column      Dtype
+---  ------      -----
+ 0   Unnamed: 0  int64
+ 1   user_id     int64
+ 2   book_id     int64
+ 3   rating      int64
+dtypes: int64(4)
+memory usage: 182.4 MB
 </pre></div>
 </div>
 </div>
@@ -859,9 +2899,12 @@ seeing how these functions can be applied.</p>
 <p>Let’s see how many ratings of each number are in our dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/merge_46_0.png" src="../_images/merge_46_0.png" />
 </div>
 </div>
 <p>Let’s also see how many users have rated <code class="docutils literal notranslate"><span class="pre">N</span></code> books, for all <code class="docutils literal notranslate"><span class="pre">N</span></code>
@@ -871,7 +2914,7 @@ possible.</p>
 a future lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">users_by_n</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">users_by_n</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">]</span>
     <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># Series. Index: user_id, value: n ratings by user</span>
     <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># Series. Index: n_ratings by user, value: N_users with this many ratings</span>
@@ -883,21 +2926,173 @@ a future lecture.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>N_ratings</th>
+      <th>N_users</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>19</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>22</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>23</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>24</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>25</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>26</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>27</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>28</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Let’s look at some statistics on that dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">users_by_n</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">users_by_n</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>N_ratings</th>
+      <th>N_users</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>181.00000</td>
+      <td>181.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>109.01105</td>
+      <td>295.160221</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>52.41342</td>
+      <td>309.461848</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>19.00000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>64.00000</td>
+      <td>40.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>109.00000</td>
+      <td>158.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>154.00000</td>
+      <td>538.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>200.00000</td>
+      <td>964.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can see the same data visually in a box plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">users_by_n</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">users_by_n</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N_ratings       AxesSubplot(0.125,0.125;0.352273x0.755)
+N_users      AxesSubplot(0.547727,0.125;0.352273x0.755)
+dtype: object
+</pre></div>
+</div>
+<img alt="../_images/merge_52_1.png" src="../_images/merge_52_1.png" />
 </div>
 </div>
 <p>Let’s practice applying the want operator…</p>
@@ -926,16 +3121,26 @@ start there.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 4</span>
 <span class="n">n_ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">n_ratings</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12874    200
+30944    200
+52036    199
+12381    199
+28158    199
+Name: user_id, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 3</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">most_prolific_users</span> <span class="o">=</span> <span class="n">n_ratings</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">least_prolific_users</span> <span class="o">=</span> <span class="n">n_ratings</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -945,7 +3150,7 @@ start there.</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 2</span>
 <span class="n">active_ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">most_prolific_users</span><span class="p">),</span> <span class="p">:]</span>
 <span class="n">inactive_ratings</span> <span class="o">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ratings</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">least_prolific_users</span><span class="p">),</span> <span class="p">:]</span>
 </pre></div>
@@ -954,21 +3159,33 @@ start there.</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 1 -- get the answer!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># step 1 -- get the answer!</span>
 <span class="n">active_ratings</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of ratings by most active users&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Distribution of ratings by most active users&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../_images/merge_57_1.png" src="../_images/merge_57_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inactive_ratings</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inactive_ratings</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of ratings by least active users&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Distribution of ratings by least active users&#39;}&gt;
+</pre></div>
+</div>
+<img alt="../_images/merge_58_1.png" src="../_images/merge_58_1.png" />
 </div>
 </div>
 <p>Nice! From the picture above, the new users look much more
@@ -981,7 +3198,7 @@ Why are we only using one dataset?”</p>
 <p>Let’s also load a dataset containing information on the actual books.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/goodreads_books.csv&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/goodreads_books.csv&quot;</span>
 <span class="n">books</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="c1"># we only need a few of the columns</span>
 <span class="n">books</span> <span class="o">=</span> <span class="n">books</span><span class="p">[[</span><span class="s2">&quot;book_id&quot;</span><span class="p">,</span> <span class="s2">&quot;authors&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">]]</span>
@@ -991,12 +3208,78 @@ Why are we only using one dataset?”</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shape:  (10000, 3)
+dtypes:
+book_id     int64
+authors    object
+title      object
+dtype: object
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book_id</th>
+      <th>authors</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Suzanne Collins</td>
+      <td>The Hunger Games (The Hunger Games, #1)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>J.K. Rowling, Mary GrandPré</td>
+      <td>Harry Potter and the Sorcerer's Stone (Harry P...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Stephenie Meyer</td>
+      <td>Twilight (Twilight, #1)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Harper Lee</td>
+      <td>To Kill a Mockingbird</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>F. Scott Fitzgerald</td>
+      <td>The Great Gatsby</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We could do similar interesting things with just the books dataset,
 but we will skip it for now and merge them together.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rated_books</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">books</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rated_books</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">ratings</span><span class="p">,</span> <span class="n">books</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1004,9 +3287,23 @@ but we will skip it for now and merge them together.</p>
 <p>Now, let’s see which books have been most often rated.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">most_rated_books_id</span> <span class="o">=</span> <span class="n">rated_books</span><span class="p">[</span><span class="s2">&quot;book_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_rated_books_id</span> <span class="o">=</span> <span class="n">rated_books</span><span class="p">[</span><span class="s2">&quot;book_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
 <span class="n">most_rated_books</span> <span class="o">=</span> <span class="n">rated_books</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">rated_books</span><span class="p">[</span><span class="s2">&quot;book_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">most_rated_books_id</span><span class="p">),</span> <span class="p">:]</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">most_rated_books</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)&#39;,
+ &quot;Harry Potter and the Sorcerer&#39;s Stone (Harry Potter, #1)&quot;,
+ &#39;Harry Potter and the Chamber of Secrets (Harry Potter, #2)&#39;,
+ &#39;The Great Gatsby&#39;,
+ &#39;To Kill a Mockingbird&#39;,
+ &#39;The Hobbit&#39;,
+ &#39;Twilight (Twilight, #1)&#39;,
+ &#39;The Hunger Games (The Hunger Games, #1)&#39;,
+ &#39;Catching Fire (The Hunger Games, #2)&#39;,
+ &#39;Mockingjay (The Hunger Games, #3)&#39;]
 </pre></div>
 </div>
 </div>
@@ -1015,10 +3312,80 @@ but we will skip it for now and merge them together.</p>
 for each of these books.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">most_rated_books</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_rated_books</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+    </tr>
+    <tr>
+      <th>title</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Catching Fire (The Hunger Games, #2)</th>
+      <td>4.133422</td>
+    </tr>
+    <tr>
+      <th>Harry Potter and the Chamber of Secrets (Harry Potter, #2)</th>
+      <td>4.229418</td>
+    </tr>
+    <tr>
+      <th>Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)</th>
+      <td>4.418732</td>
+    </tr>
+    <tr>
+      <th>Harry Potter and the Sorcerer's Stone (Harry Potter, #1)</th>
+      <td>4.351350</td>
+    </tr>
+    <tr>
+      <th>Mockingjay (The Hunger Games, #3)</th>
+      <td>3.853131</td>
+    </tr>
+    <tr>
+      <th>The Great Gatsby</th>
+      <td>3.772224</td>
+    </tr>
+    <tr>
+      <th>The Hobbit</th>
+      <td>4.148477</td>
+    </tr>
+    <tr>
+      <th>The Hunger Games (The Hunger Games, #1)</th>
+      <td>4.279707</td>
+    </tr>
+    <tr>
+      <th>To Kill a Mockingbird</th>
+      <td>4.329369</td>
+    </tr>
+    <tr>
+      <th>Twilight (Twilight, #1)</th>
+      <td>3.214341</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>These ratings seem surprisingly low, given that they are the most often
 rated books on Goodreads.</p>
@@ -1030,7 +3397,7 @@ rated books on Goodreads.</p>
 <p>Let’s compute the average number of ratings for each book in our sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">average_ratings</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">average_ratings</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">rated_books</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;rating&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1039,17 +3406,94 @@ rated books on Goodreads.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+    </tr>
+    <tr>
+      <th>title</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>The Complete Calvin and Hobbes</th>
+      <td>4.829876</td>
+    </tr>
+    <tr>
+      <th>ESV Study Bible</th>
+      <td>4.818182</td>
+    </tr>
+    <tr>
+      <th>Attack of the Deranged Mutant Killer Monster Snow Goons</th>
+      <td>4.768707</td>
+    </tr>
+    <tr>
+      <th>The Indispensable Calvin and Hobbes</th>
+      <td>4.766355</td>
+    </tr>
+    <tr>
+      <th>The Revenge of the Baby-Sat</th>
+      <td>4.761364</td>
+    </tr>
+    <tr>
+      <th>There's Treasure Everywhere: A Calvin and Hobbes Collection</th>
+      <td>4.760456</td>
+    </tr>
+    <tr>
+      <th>The Authoritative Calvin and Hobbes: A Calvin and Hobbes Treasury</th>
+      <td>4.757202</td>
+    </tr>
+    <tr>
+      <th>It's a Magical World: A Calvin and Hobbes Collection</th>
+      <td>4.747396</td>
+    </tr>
+    <tr>
+      <th>Harry Potter Boxed Set, Books 1-5 (Harry Potter, #1-5)</th>
+      <td>4.736842</td>
+    </tr>
+    <tr>
+      <th>The Calvin and Hobbes Tenth Anniversary Book</th>
+      <td>4.728528</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>What does the overall distribution of average ratings look like?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot a kernel density estimate of average ratings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot a kernel density estimate of average ratings</span>
 <span class="n">average_ratings</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># or a histogram</span>
 <span class="n">average_ratings</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/merge_70_1.png" src="../_images/merge_70_1.png" />
+<img alt="../_images/merge_70_2.png" src="../_images/merge_70_2.png" />
 </div>
 </div>
 <p>It looks like most books have an average rating of just below 4.</p>
@@ -1064,13 +3508,90 @@ that describes the cause of all US domestic flight delays
 in November 2016:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
 <span class="n">air_perf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)[[</span><span class="s2">&quot;CRSDepTime&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="s2">&quot;ArrDelay&quot;</span><span class="p">]]</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 460949 entries, 0 to 460948
+Data columns (total 4 columns):
+ #   Column        Non-Null Count   Dtype  
+---  ------        --------------   -----  
+ 0   CRSDepTime    460949 non-null  object 
+ 1   Carrier       460949 non-null  object 
+ 2   CarrierDelay  460949 non-null  float64
+ 3   ArrDelay      452229 non-null  float64
+dtypes: float64(2), object(2)
+memory usage: 14.1+ MB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CRSDepTime</th>
+      <th>Carrier</th>
+      <th>CarrierDelay</th>
+      <th>ArrDelay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-12-18 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016-12-19 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2016-12-20 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016-12-21 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>-10.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016-12-22 15:58:00</td>
+      <td>AA</td>
+      <td>0.0</td>
+      <td>-8.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Carrier</span></code> column identifies the airline and the <code class="docutils literal notranslate"><span class="pre">CarrierDelay</span></code>
 reports the number of minutes of the total delay assigned as the
@@ -1080,7 +3601,7 @@ delays.</p>
 <p>We can do this using <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avg_delays</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_delays</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">air_perf</span>
     <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;CarrierDelay&quot;</span><span class="p">)</span>
@@ -1090,6 +3611,76 @@ delays.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CarrierDelay</th>
+    </tr>
+    <tr>
+      <th>Carrier</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>F9</th>
+      <td>7.856566</td>
+    </tr>
+    <tr>
+      <th>EV</th>
+      <td>7.125663</td>
+    </tr>
+    <tr>
+      <th>OO</th>
+      <td>6.705469</td>
+    </tr>
+    <tr>
+      <th>B6</th>
+      <td>5.588006</td>
+    </tr>
+    <tr>
+      <th>DL</th>
+      <td>4.674957</td>
+    </tr>
+    <tr>
+      <th>HA</th>
+      <td>4.577753</td>
+    </tr>
+    <tr>
+      <th>UA</th>
+      <td>4.368148</td>
+    </tr>
+    <tr>
+      <th>NK</th>
+      <td>4.166264</td>
+    </tr>
+    <tr>
+      <th>AA</th>
+      <td>4.073358</td>
+    </tr>
+    <tr>
+      <th>VX</th>
+      <td>3.342923</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The one issue with this dataset is that we don’t know what all those two
 letter carrier codes are!</p>
@@ -1097,22 +3688,168 @@ letter carrier codes are!</p>
 into the full airline name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_carrier_codes.csv.zip&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_carrier_codes.csv.zip&quot;</span>
 <span class="n">carrier_code</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">carrier_code</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Code</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1884</th>
+      <td>ZW</td>
+      <td>Air Wisconsin Airlines Corp (1994 - )</td>
+    </tr>
+    <tr>
+      <th>1885</th>
+      <td>ZX</td>
+      <td>Airbc Ltd. (1990 - 2000)</td>
+    </tr>
+    <tr>
+      <th>1886</th>
+      <td>ZX</td>
+      <td>Air Georgian (2002 - )</td>
+    </tr>
+    <tr>
+      <th>1887</th>
+      <td>ZY</td>
+      <td>Atlantic Gulf Airlines (1985 - 1986)</td>
+    </tr>
+    <tr>
+      <th>1888</th>
+      <td>ZYZ</td>
+      <td>Skyway Aviation Inc. (1960 - 2002)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Let’s merge these names so we know which airlines we should avoid
 flying…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">avg_delays_w_code</span> <span class="o">=</span> <span class="n">avg_delays</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carrier_code</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_delays_w_code</span> <span class="o">=</span> <span class="n">avg_delays</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carrier_code</span><span class="p">)</span>
 <span class="n">avg_delays_w_code</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CarrierDelay</th>
+      <th>Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <th>Carrier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>F9</th>
+      <td>7.856566</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>EV</th>
+      <td>7.125663</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>OO</th>
+      <td>6.705469</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B6</th>
+      <td>5.588006</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>DL</th>
+      <td>4.674957</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>HA</th>
+      <td>4.577753</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>UA</th>
+      <td>4.368148</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>NK</th>
+      <td>4.166264</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>AA</th>
+      <td>4.073358</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>VX</th>
+      <td>3.342923</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Based on that information, which airlines would you avoid near
 the holidays?</p>
@@ -1124,7 +3861,7 @@ various merge operations using artificial DataFrames.</p>
 <p>First, we create some dummy DataFrames.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dfL</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfL</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;Key&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">],</span> <span class="s2">&quot;C1&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;C2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]},</span>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">,</span> <span class="s2">&quot;L2&quot;</span><span class="p">,</span> <span class="s2">&quot;L3&quot;</span><span class="p">,</span> <span class="s2">&quot;L4&quot;</span><span class="p">]</span>
 <span class="p">)[[</span><span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="s2">&quot;C2&quot;</span><span class="p">]]</span>
@@ -1142,6 +3879,109 @@ various merge operations using artificial DataFrames.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is dfL: 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Key</th>
+      <th>C1</th>
+      <th>C2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L1</th>
+      <td>A</td>
+      <td>1</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>L2</th>
+      <td>B</td>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>L3</th>
+      <td>A</td>
+      <td>3</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>L4</th>
+      <td>C</td>
+      <td>4</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is dfR:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Key</th>
+      <th>C3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>R1</th>
+      <td>A</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>R2</th>
+      <td>B</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>R3</th>
+      <td>C</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <th>R4</th>
+      <td>D</td>
+      <td>400</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="id1">
 <h3><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -1149,10 +3989,95 @@ various merge operations using artificial DataFrames.</p>
 one another:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Key</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L1</th>
+      <td>A</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L2</th>
+      <td>B</td>
+      <td>2.0</td>
+      <td>20.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L3</th>
+      <td>A</td>
+      <td>3.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L4</th>
+      <td>C</td>
+      <td>4.0</td>
+      <td>40.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>R1</th>
+      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>R2</th>
+      <td>B</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>R3</th>
+      <td>C</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <th>R4</th>
+      <td>D</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>400.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Here’s how we might visualize that.</p>
 <div class="figure align-default">
@@ -1161,10 +4086,104 @@ one another:</p>
 <p>We can also set <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to stack side by side.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Key</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>Key</th>
+      <th>C3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>L1</th>
+      <td>A</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L2</th>
+      <td>B</td>
+      <td>2.0</td>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L3</th>
+      <td>A</td>
+      <td>3.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>L4</th>
+      <td>C</td>
+      <td>4.0</td>
+      <td>40.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>R1</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>A</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>R2</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>R3</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>C</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <th>R4</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>D</td>
+      <td>400.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Here’s how we might visualize that.</p>
 <div class="figure align-default">
@@ -1176,10 +4195,67 @@ one another:</p>
 <p>The animation below shows a visualization of what happens when we call</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Key&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Key&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Key</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>1</td>
+      <td>10</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>3</td>
+      <td>30</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>2</td>
+      <td>20</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C</td>
+      <td>4</td>
+      <td>40</td>
+      <td>300</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="figure align-default">
 <img alt="left\_merge.gif" src="../_images/left_merge.gif" />
@@ -1189,10 +4265,74 @@ one another:</p>
 the key <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Key</th>
+      <th>C1</th>
+      <th>C2</th>
+      <th>C3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>3.0</td>
+      <td>30.0</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>2.0</td>
+      <td>20.0</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>C</td>
+      <td>4.0</td>
+      <td>40.0</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>D</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>400</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="figure align-default">
 <img alt="right\_merge.gif" src="../_images/right_merge.gif" />
@@ -1223,7 +4363,7 @@ is the population density of each country? How much does it change over
 time?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1241,7 +4381,7 @@ DataFrames <code class="docutils literal notranslate"><span class="pre">wdi2017_
 questions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1253,7 +4393,7 @@ questions.</p>
 <p>Can you pick the correct argument for <code class="docutils literal notranslate"><span class="pre">how</span></code> such that <code class="docutils literal notranslate"><span class="pre">pd.merge(wdi2017,</span> <span class="pre">sq_miles,</span> <span class="pre">how=&quot;left&quot;)</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">pd.merge(sq_miles,</span> <span class="pre">wdi2017,</span> <span class="pre">how=XXX)</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1269,7 +4409,7 @@ the most rated books?</p>
 <p>Did you recognize any of the books?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1288,7 +4428,7 @@ the most rated books?</p>
 </ul>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1301,7 +4441,7 @@ the most rated books?</p>
 <p>For each cell, answer the list of questions from the previous exercise.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First code cell for above exercise</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First code cell for above exercise</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfL</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1309,7 +4449,7 @@ the most rated books?</p>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Second code cell for above exercise</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Second code cell for above exercise</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfR</span><span class="p">,</span> <span class="n">dfR</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1323,7 +4463,7 @@ the most rated books?</p>
 <p>Run the cell below to see the output of that operation.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">dfL</span><span class="p">,</span> <span class="n">dfR</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

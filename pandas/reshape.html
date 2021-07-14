@@ -334,10 +334,10 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -400,7 +400,7 @@ on this subject for additional information.</p>
 these tools will reappear in subsequent lectures.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/bball.csv&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/bball.csv&quot;</span>
 <span class="n">bball</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">bball</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
@@ -408,6 +408,155 @@ these tools will reappear in subsequent lectures.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 9 entries, 0 to 8
+Data columns (total 8 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   Year      9 non-null      int64  
+ 1   Player    9 non-null      object 
+ 2   Team      9 non-null      object 
+ 3   TeamName  9 non-null      object 
+ 4   Games     9 non-null      int64  
+ 5   Pts       9 non-null      float64
+ 6   Assist    9 non-null      float64
+ 7   Rebound   9 non-null      float64
+dtypes: float64(3), int64(2), object(3)
+memory usage: 704.0+ bytes
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>TeamName</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Assist</th>
+      <th>Rebound</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>30.1</td>
+      <td>6.7</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>25.3</td>
+      <td>6.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>51</td>
+      <td>26.4</td>
+      <td>6.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>72</td>
+      <td>28.2</td>
+      <td>5.0</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>62</td>
+      <td>25.1</td>
+      <td>4.8</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>68</td>
+      <td>26.4</td>
+      <td>5.4</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>78</td>
+      <td>12.6</td>
+      <td>0.8</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>56</td>
+      <td>15.1</td>
+      <td>1.1</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>23</td>
+      <td>14.2</td>
+      <td>0.7</td>
+      <td>6.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="long-vs-wide">
@@ -417,18 +566,373 @@ these tools will reappear in subsequent lectures.</p>
 <p>Here is long possible long-form representation of our basketball data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t worry about what this command does -- We&#39;ll see it soon</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t worry about what this command does -- We&#39;ll see it soon</span>
 <span class="n">bball_long</span> <span class="o">=</span> <span class="n">bball</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">,</span> <span class="s2">&quot;TeamName&quot;</span><span class="p">])</span>
 
 <span class="n">bball_long</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>TeamName</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Games</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Games</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Games</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Games</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>30.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>25.3</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>26.4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Pts</td>
+      <td>28.2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>25.1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>26.4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Pts</td>
+      <td>12.6</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Pts</td>
+      <td>15.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Pts</td>
+      <td>14.2</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>6.6</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Assist</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Assist</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Assist</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Assist</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Rebound</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>And here is a wide-form version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Again, don&#39;t worry about this command... We&#39;ll see it soon too</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Again, don&#39;t worry about this command... We&#39;ll see it soon too</span>
 <span class="n">bball_wide</span> <span class="o">=</span> <span class="n">bball_long</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
     <span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span>
     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">],</span>
@@ -438,6 +942,175 @@ these tools will reappear in subsequent lectures.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th colspan="4" halign="left">Curry</th>
+      <th colspan="6" halign="left">Durant</th>
+      <th>...</th>
+      <th colspan="10" halign="left">Ibaka</th>
+    </tr>
+    <tr>
+      <th>variable</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+      <th colspan="2" halign="left">Assist</th>
+      <th colspan="2" halign="left">Games</th>
+      <th colspan="2" halign="left">Pts</th>
+      <th>...</th>
+      <th>Assist</th>
+      <th colspan="3" halign="left">Games</th>
+      <th colspan="3" halign="left">Pts</th>
+      <th colspan="3" halign="left">Rebound</th>
+    </tr>
+    <tr>
+      <th>Team</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>...</th>
+      <th>TOR</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>6.7</td>
+      <td>79.0</td>
+      <td>30.1</td>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>72.0</td>
+      <td>NaN</td>
+      <td>28.2</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>78.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>6.6</td>
+      <td>79.0</td>
+      <td>25.3</td>
+      <td>4.5</td>
+      <td>4.8</td>
+      <td>NaN</td>
+      <td>62.0</td>
+      <td>NaN</td>
+      <td>25.1</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>56.0</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>15.1</td>
+      <td>14.2</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>6.1</td>
+      <td>51.0</td>
+      <td>26.4</td>
+      <td>5.1</td>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>68.0</td>
+      <td>NaN</td>
+      <td>26.4</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 24 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="set-index-reset-index-and-transpose">
@@ -454,19 +1127,208 @@ them either columns or drop from DataFrame.</p></li>
 <p>Let’s review them briefly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball2</span> <span class="o">=</span> <span class="n">bball</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Year&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball2</span> <span class="o">=</span> <span class="n">bball</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Year&quot;</span><span class="p">])</span>
 <span class="n">bball2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Team</th>
+      <th>TeamName</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Assist</th>
+      <th>Rebound</th>
+    </tr>
+    <tr>
+      <th>Player</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Curry</th>
+      <th>2015</th>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>30.1</td>
+      <td>6.7</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>25.3</td>
+      <td>6.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>51</td>
+      <td>26.4</td>
+      <td>6.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Durant</th>
+      <th>2015</th>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>72</td>
+      <td>28.2</td>
+      <td>5.0</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>62</td>
+      <td>25.1</td>
+      <td>4.8</td>
+      <td>8.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball3</span> <span class="o">=</span> <span class="n">bball2</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball3</span> <span class="o">=</span> <span class="n">bball2</span><span class="o">.</span><span class="n">T</span>
 <span class="n">bball3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th colspan="3" halign="left">Curry</th>
+      <th colspan="3" halign="left">Durant</th>
+      <th colspan="3" halign="left">Ibaka</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>2017</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>2017</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>2016</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Team</th>
+      <td>GSW</td>
+      <td>GSW</td>
+      <td>GSW</td>
+      <td>OKC</td>
+      <td>GSW</td>
+      <td>GSW</td>
+      <td>OKC</td>
+      <td>ORL</td>
+      <td>TOR</td>
+    </tr>
+    <tr>
+      <th>TeamName</th>
+      <td>Warriors</td>
+      <td>Warriors</td>
+      <td>Warriors</td>
+      <td>Thunder</td>
+      <td>Warriors</td>
+      <td>Warriors</td>
+      <td>Thunder</td>
+      <td>Magic</td>
+      <td>Raptors</td>
+    </tr>
+    <tr>
+      <th>Games</th>
+      <td>79</td>
+      <td>79</td>
+      <td>51</td>
+      <td>72</td>
+      <td>62</td>
+      <td>68</td>
+      <td>78</td>
+      <td>56</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>Pts</th>
+      <td>30.1</td>
+      <td>25.3</td>
+      <td>26.4</td>
+      <td>28.2</td>
+      <td>25.1</td>
+      <td>26.4</td>
+      <td>12.6</td>
+      <td>15.1</td>
+      <td>14.2</td>
+    </tr>
+    <tr>
+      <th>Assist</th>
+      <td>6.7</td>
+      <td>6.6</td>
+      <td>6.1</td>
+      <td>5.0</td>
+      <td>4.8</td>
+      <td>5.4</td>
+      <td>0.8</td>
+      <td>1.1</td>
+      <td>0.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="stack-and-unstack">
@@ -480,10 +1342,179 @@ index (i.e. moving from wide to long)</p>
 <p>Let’s take <code class="docutils literal notranslate"><span class="pre">ball_wide</span></code> as an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th colspan="4" halign="left">Curry</th>
+      <th colspan="6" halign="left">Durant</th>
+      <th>...</th>
+      <th colspan="10" halign="left">Ibaka</th>
+    </tr>
+    <tr>
+      <th>variable</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+      <th colspan="2" halign="left">Assist</th>
+      <th colspan="2" halign="left">Games</th>
+      <th colspan="2" halign="left">Pts</th>
+      <th>...</th>
+      <th>Assist</th>
+      <th colspan="3" halign="left">Games</th>
+      <th colspan="3" halign="left">Pts</th>
+      <th colspan="3" halign="left">Rebound</th>
+    </tr>
+    <tr>
+      <th>Team</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>...</th>
+      <th>TOR</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>6.7</td>
+      <td>79.0</td>
+      <td>30.1</td>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>72.0</td>
+      <td>NaN</td>
+      <td>28.2</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>78.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>6.6</td>
+      <td>79.0</td>
+      <td>25.3</td>
+      <td>4.5</td>
+      <td>4.8</td>
+      <td>NaN</td>
+      <td>62.0</td>
+      <td>NaN</td>
+      <td>25.1</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>56.0</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>15.1</td>
+      <td>14.2</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>6.1</td>
+      <td>51.0</td>
+      <td>26.4</td>
+      <td>5.1</td>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>68.0</td>
+      <td>NaN</td>
+      <td>26.4</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 24 columns</p>
+</div></div></div>
 </div>
 <p>Suppose that we want to be able to use the <code class="docutils literal notranslate"><span class="pre">mean</span></code> method to compute the
 average value of each stat for each player, regardless of year or team.</p>
@@ -491,16 +1522,192 @@ average value of each stat for each player, regardless of year or team.</p>
 <p>We can achieve this using the <code class="docutils literal notranslate"><span class="pre">stack</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Player</th>
+      <th colspan="4" halign="left">Curry</th>
+      <th colspan="4" halign="left">Durant</th>
+      <th colspan="4" halign="left">Ibaka</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>variable</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th>Team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">2015</th>
+      <th>GSW</th>
+      <td>6.7</td>
+      <td>79.0</td>
+      <td>30.1</td>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>OKC</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>72.0</td>
+      <td>28.2</td>
+      <td>8.2</td>
+      <td>0.8</td>
+      <td>78.0</td>
+      <td>12.6</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">2016</th>
+      <th>GSW</th>
+      <td>6.6</td>
+      <td>79.0</td>
+      <td>25.3</td>
+      <td>4.5</td>
+      <td>4.8</td>
+      <td>62.0</td>
+      <td>25.1</td>
+      <td>8.3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ORL</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.1</td>
+      <td>56.0</td>
+      <td>15.1</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>TOR</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.7</td>
+      <td>23.0</td>
+      <td>14.2</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <th>GSW</th>
+      <td>6.1</td>
+      <td>51.0</td>
+      <td>26.4</td>
+      <td>5.1</td>
+      <td>5.4</td>
+      <td>68.0</td>
+      <td>26.4</td>
+      <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now, we can compute the statistic we are after.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span> <span class="o">=</span> <span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span> <span class="o">=</span> <span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">player_stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player  variable
+Curry   Assist       6.466667
+        Games       69.666667
+        Pts         27.266667
+        Rebound      5.000000
+Durant  Assist       5.066667
+        Games       67.333333
+        Pts         26.566667
+        Rebound      7.766667
+Ibaka   Assist       0.866667
+        Games       52.333333
+        Pts         13.966667
+        Rebound      6.800000
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -512,15 +1719,266 @@ left with column levels for Team and variable.</p>
 <p>We can ask pandas do this using the <code class="docutils literal notranslate"><span class="pre">level</span></code> keyword argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>variable</th>
+      <th colspan="4" halign="left">Assist</th>
+      <th colspan="4" halign="left">Games</th>
+      <th colspan="4" halign="left">Pts</th>
+      <th colspan="4" halign="left">Rebound</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Team</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th>Player</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">2015</th>
+      <th>Curry</th>
+      <td>6.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>30.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>72.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>28.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Ibaka</th>
+      <td>NaN</td>
+      <td>0.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>78.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">2016</th>
+      <th>Curry</th>
+      <td>6.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>25.3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <td>4.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>62.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>25.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Ibaka</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.1</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>56.0</td>
+      <td>23.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.1</td>
+      <td>14.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2017</th>
+      <th>Curry</th>
+      <td>6.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>51.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>26.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <td>5.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>68.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>26.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now we can compute the mean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>variable  Team
+Assist    GSW      5.92
+          OKC      2.90
+          ORL      1.10
+          TOR      0.70
+Games     GSW     67.80
+          OKC     75.00
+          ORL     56.00
+          TOR     23.00
+Pts       GSW     26.66
+          OKC     20.40
+          ORL     15.10
+          TOR     14.20
+Rebound   GSW      6.02
+          OKC      7.50
+          ORL      6.80
+          TOR      6.80
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -539,10 +1997,124 @@ relative position.</p></li>
 <p>Note that we can also move multiple levels at a time in one call to <code class="docutils literal notranslate"><span class="pre">stack</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>variable</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">2015</th>
+      <th>Curry</th>
+      <th>GSW</th>
+      <td>6.7</td>
+      <td>79.0</td>
+      <td>30.1</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <th>OKC</th>
+      <td>5.0</td>
+      <td>72.0</td>
+      <td>28.2</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>Ibaka</th>
+      <th>OKC</th>
+      <td>0.8</td>
+      <td>78.0</td>
+      <td>12.6</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2016</th>
+      <th>Curry</th>
+      <th>GSW</th>
+      <td>6.6</td>
+      <td>79.0</td>
+      <td>25.3</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <th>GSW</th>
+      <td>4.8</td>
+      <td>62.0</td>
+      <td>25.1</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Ibaka</th>
+      <th>ORL</th>
+      <td>1.1</td>
+      <td>56.0</td>
+      <td>15.1</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>TOR</th>
+      <td>0.7</td>
+      <td>23.0</td>
+      <td>14.2</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2017</th>
+      <th>Curry</th>
+      <th>GSW</th>
+      <td>6.1</td>
+      <td>51.0</td>
+      <td>26.4</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <th>GSW</th>
+      <td>5.4</td>
+      <td>68.0</td>
+      <td>26.4</td>
+      <td>6.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In the example above, we started with one level on the index (just the year) and
 stacked two levels to end up with a three-level index.</p>
@@ -565,7 +2137,25 @@ on the horizontal (x) axis and make a new line/bar/etc. for each column.</p>
 <p>Notice that we are close to that with the <code class="docutils literal notranslate"><span class="pre">player_stats</span></code> variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player  variable
+Curry   Assist       6.466667
+        Games       69.666667
+        Pts         27.266667
+        Rebound      5.000000
+Durant  Assist       5.066667
+        Games       67.333333
+        Pts         26.566667
+        Rebound      7.766667
+Ibaka   Assist       0.866667
+        Games       52.333333
+        Pts         13.966667
+        Rebound      6.800000
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -574,17 +2164,80 @@ on the horizontal (x) axis and make a new line/bar/etc. for each column.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">unstack</span></code> method for this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>variable</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+    </tr>
+    <tr>
+      <th>Player</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Curry</th>
+      <td>6.466667</td>
+      <td>69.666667</td>
+      <td>27.266667</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>Durant</th>
+      <td>5.066667</td>
+      <td>67.333333</td>
+      <td>26.566667</td>
+      <td>7.766667</td>
+    </tr>
+    <tr>
+      <th>Ibaka</th>
+      <td>0.866667</td>
+      <td>52.333333</td>
+      <td>13.966667</td>
+      <td>6.800000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>And we can make our plot!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Player&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/reshape_28_1.png" src="../_images/reshape_28_1.png" />
 </div>
 </div>
 <p>This particular visualization would be helpful if we wanted to see which stats
@@ -599,16 +2252,80 @@ name as column names.</p>
 <p>We can get this DataFrame by setting <code class="docutils literal notranslate"><span class="pre">level=&quot;Player&quot;</span></code> when calling <code class="docutils literal notranslate"><span class="pre">unstack</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+    </tr>
+    <tr>
+      <th>variable</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Assist</th>
+      <td>6.466667</td>
+      <td>5.066667</td>
+      <td>0.866667</td>
+    </tr>
+    <tr>
+      <th>Games</th>
+      <td>69.666667</td>
+      <td>67.333333</td>
+      <td>52.333333</td>
+    </tr>
+    <tr>
+      <th>Pts</th>
+      <td>27.266667</td>
+      <td>26.566667</td>
+      <td>13.966667</td>
+    </tr>
+    <tr>
+      <th>Rebound</th>
+      <td>5.000000</td>
+      <td>7.766667</td>
+      <td>6.800000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;variable&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/reshape_31_1.png" src="../_images/reshape_31_1.png" />
 </div>
 </div>
 <p>Now we can use the chart to make a number of statements about players:</p>
@@ -659,18 +2376,505 @@ will be deleted.</p>
 <p>We saw used <code class="docutils literal notranslate"><span class="pre">melt</span></code> above when we constructed <code class="docutils literal notranslate"><span class="pre">bball_long</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>TeamName</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Assist</th>
+      <th>Rebound</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>30.1</td>
+      <td>6.7</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>25.3</td>
+      <td>6.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>51</td>
+      <td>26.4</td>
+      <td>6.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>72</td>
+      <td>28.2</td>
+      <td>5.0</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>62</td>
+      <td>25.1</td>
+      <td>4.8</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>68</td>
+      <td>26.4</td>
+      <td>5.4</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>78</td>
+      <td>12.6</td>
+      <td>0.8</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>56</td>
+      <td>15.1</td>
+      <td>1.1</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>23</td>
+      <td>14.2</td>
+      <td>0.7</td>
+      <td>6.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is how we made ``bball_long``</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is how we made ``bball_long``</span>
 <span class="n">bball</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">,</span> <span class="s2">&quot;TeamName&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>TeamName</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>51.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Games</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Games</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Games</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Games</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Games</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>30.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>25.3</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>26.4</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Pts</td>
+      <td>28.2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>25.1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Pts</td>
+      <td>26.4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Pts</td>
+      <td>12.6</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Pts</td>
+      <td>15.1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Pts</td>
+      <td>14.2</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>6.6</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>6.1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Assist</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>4.8</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Assist</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Assist</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Assist</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Assist</td>
+      <td>0.7</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Rebound</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>Rebound</td>
+      <td>6.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Notice that the columns we specified as <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> remained columns, but all
 other columns were put into two new columns:</p>
@@ -708,11 +2912,58 @@ DataFrame values that correspond to that index/column pair.</p></li>
 <p>We’ll illustrate with an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># .head 8 excludes Ibaka -- will discuss why later</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># .head 8 excludes Ibaka -- will discuss why later</span>
 <span class="n">bball</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>28.2</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can replicate <code class="docutils literal notranslate"><span class="pre">pivot</span></code> using three of the fundamental operations
 from above:</p>
@@ -723,20 +2974,121 @@ from above:</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  1---------------------------------------  2---  3----------------------</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  1---------------------------------------  2---  3----------------------</span>
 <span class="n">bball</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Player&quot;</span><span class="p">])[</span><span class="s2">&quot;Pts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>28.2</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>One important thing to be aware of is that in order for <code class="docutils literal notranslate"><span class="pre">pivot</span></code> to
 work, the index/column pairs must be <em>unique</em>!</p>
 <p>Below, we demonstrate the error that occurs when they are not unique.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ibaka shows up twice in 2016 because he was traded mid-season from</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ibaka shows up twice in 2016 because he was traded mid-season from</span>
 <span class="c1"># the Orlando Magic to the Toronto Raptors</span>
 <span class="n">bball</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4436</span><span class="o">/</span><span class="mf">2579316439.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Ibaka shows up twice in 2016 because he was traded mid-season from</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># the Orlando Magic to the Toronto Raptors</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">bball</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">pivot</span><span class="nt">(self, index, columns, values)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7786</span>         <span class="kn">from</span> <span class="nn">pandas.core.reshape.pivot</span> <span class="kn">import</span> <span class="n">pivot</span>
+<span class="g g-Whitespace">   </span><span class="mi">7787</span> 
+<span class="ne">-&gt; </span><span class="mi">7788</span>         <span class="k">return</span> <span class="n">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7789</span> 
+<span class="g g-Whitespace">   </span><span class="mi">7790</span>     <span class="n">_shared_docs</span><span class="p">[</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/pivot.py</span> in <span class="ni">pivot</span><span class="nt">(data, index, columns, values)</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span>             <span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_constructor_sliced</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">values</span><span class="p">]</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">multiindex</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">517</span>     <span class="k">return</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">columns_listlike</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span> 
+<span class="g g-Whitespace">    </span><span class="mi">519</span> 
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/series.py</span> in <span class="ni">unstack</span><span class="nt">(self, level, fill_value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4078</span>         <span class="kn">from</span> <span class="nn">pandas.core.reshape.reshape</span> <span class="kn">import</span> <span class="n">unstack</span>
+<span class="g g-Whitespace">   </span><span class="mi">4079</span> 
+<span class="ne">-&gt; </span><span class="mi">4080</span>         <span class="k">return</span> <span class="n">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4081</span> 
+<span class="g g-Whitespace">   </span><span class="mi">4082</span>     <span class="c1"># ----------------------------------------------------------------------</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>         <span class="k">if</span> <span class="n">is_1d_only_ea_dtype</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>             <span class="k">return</span> <span class="n">_unstack_extension_series</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">459</span>         <span class="n">unstacker</span> <span class="o">=</span> <span class="n">_Unstacker</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span>             <span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">constructor</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">_constructor_expanddim</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>         <span class="p">)</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">__init__</span><span class="nt">(self, index, level, constructor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unstacked DataFrame is too big, causing int32 overflow&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> 
+<span class="ne">--&gt; </span><span class="mi">133</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_selectors</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> 
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="nd">@cache_readonly</span>
+
+<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/reshape/reshape.py</span> in <span class="ni">_make_selectors</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span> 
+<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">185</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Index contains duplicate entries, cannot reshape&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> 
+<span class="g g-Whitespace">    </span><span class="mi">187</span>         <span class="bp">self</span><span class="o">.</span><span class="n">group_index</span> <span class="o">=</span> <span class="n">comp_index</span>
+
+<span class="ne">ValueError</span>: Index contains duplicate entries, cannot reshape
 </pre></div>
 </div>
 </div>
@@ -753,40 +3105,371 @@ having you choose how to combine them.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>TeamName</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Assist</th>
+      <th>Rebound</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>30.1</td>
+      <td>6.7</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2016</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>79</td>
+      <td>25.3</td>
+      <td>6.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017</td>
+      <td>Curry</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>51</td>
+      <td>26.4</td>
+      <td>6.1</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>Durant</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>72</td>
+      <td>28.2</td>
+      <td>5.0</td>
+      <td>8.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2016</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>62</td>
+      <td>25.1</td>
+      <td>4.8</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2017</td>
+      <td>Durant</td>
+      <td>GSW</td>
+      <td>Warriors</td>
+      <td>68</td>
+      <td>26.4</td>
+      <td>5.4</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2015</td>
+      <td>Ibaka</td>
+      <td>OKC</td>
+      <td>Thunder</td>
+      <td>78</td>
+      <td>12.6</td>
+      <td>0.8</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>ORL</td>
+      <td>Magic</td>
+      <td>56</td>
+      <td>15.1</td>
+      <td>1.1</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2016</td>
+      <td>Ibaka</td>
+      <td>TOR</td>
+      <td>Raptors</td>
+      <td>23</td>
+      <td>14.2</td>
+      <td>0.7</td>
+      <td>6.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Notice that we can replicate the functionality of <code class="docutils literal notranslate"><span class="pre">pivot</span></code> if we pass
 the same arguments.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>28.2</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>But we can also choose multiple columns to be used in
 index/columns/values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th>Team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">2015</th>
+      <th>GSW</th>
+      <td>30.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>OKC</th>
+      <td>NaN</td>
+      <td>28.2</td>
+      <td>12.6</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">2016</th>
+      <th>GSW</th>
+      <td>25.3</td>
+      <td>25.1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ORL</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.1</td>
+    </tr>
+    <tr>
+      <th>TOR</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.2</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <th>GSW</th>
+      <td>26.4</td>
+      <td>26.4</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="s2">&quot;Team&quot;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Curry</th>
+      <th colspan="2" halign="left">Durant</th>
+      <th colspan="3" halign="left">Ibaka</th>
+    </tr>
+    <tr>
+      <th>Team</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>OKC</th>
+      <th>ORL</th>
+      <th>TOR</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>NaN</td>
+      <td>28.2</td>
+      <td>12.6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.1</td>
+      <td>14.2</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>AND we can deal with duplicated index/column pairs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This produced an error</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This produced an error</span>
 <span class="c1"># bball.pivot(index=&quot;Year&quot;, columns=&quot;Player&quot;, values=&quot;Pts&quot;)</span>
 
 <span class="c1"># This doesn&#39;t!</span>
@@ -795,6 +3478,58 @@ index/columns/values.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>28.2</td>
+      <td>12.60</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+      <td>14.65</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> handles duplicate index/column pairs using an aggregation.</p>
 <p>By default, the aggregation is the mean.</p>
@@ -805,26 +3540,206 @@ associated values of 2 and 5.</p>
 <p>For example, here’s how we would keep the max.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="nb">max</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="nb">max</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>28.2</td>
+      <td>12.6</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+      <td>15.1</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Maybe we wanted to count how many values there were.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We can even pass multiple aggregation functions!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="p">[</span><span class="nb">max</span><span class="p">,</span> <span class="nb">len</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="p">[</span><span class="nb">max</span><span class="p">,</span> <span class="nb">len</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">max</th>
+      <th colspan="3" halign="left">len</th>
+    </tr>
+    <tr>
+      <th>Player</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+      <th>Curry</th>
+      <th>Durant</th>
+      <th>Ibaka</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>30.1</td>
+      <td>28.2</td>
+      <td>12.6</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>25.3</td>
+      <td>25.1</td>
+      <td>15.1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>26.4</td>
+      <td>26.4</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-shp-dir3">
 <p class="admonition-title">Exercise</p>
@@ -840,7 +3755,7 @@ reshape operations do.</p>
 <p>The data we will use is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># made up</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># made up</span>
 <span class="c1"># columns A and B are &quot;identifiers&quot; while C, D, and E are variables.</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -855,22 +3770,215 @@ reshape operations do.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   A       4 non-null      int64 
+ 1   B       4 non-null      object
+ 2   C       4 non-null      int64 
+ 3   D       4 non-null      int64 
+ 4   E       4 non-null      int64 
+dtypes: int64(4), object(1)
+memory usage: 288.0+ bytes
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>x</td>
+      <td>1</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>y</td>
+      <td>2</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>x</td>
+      <td>1</td>
+      <td>30</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>z</td>
+      <td>4</td>
+      <td>20</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
 <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">0</th>
+      <th>x</th>
+      <td>1</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td>2</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1</th>
+      <th>x</th>
+      <td>1</td>
+      <td>30</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>z</th>
+      <td>4</td>
+      <td>20</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">T</span>
 <span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>A</th>
+      <th colspan="2" halign="left">0</th>
+      <th colspan="2" halign="left">1</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th>x</th>
+      <th>y</th>
+      <th>x</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C</th>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>10</td>
+      <td>20</td>
+      <td>30</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="id1">
 <h3><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -880,15 +3988,95 @@ reshape operations do.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">0</th>
+      <th>x</th>
+      <td>1</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td>2</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1</th>
+      <th>x</th>
+      <td>1</td>
+      <td>30</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>z</th>
+      <td>4</td>
+      <td>20</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2_stack</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2_stack</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
 <span class="n">df2_stack</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A  B   
+0  x  C     1
+      D    10
+      E     2
+   y  C     2
+      D    20
+      E     1
+1  x  C     1
+      D    30
+      E     5
+   z  C     4
+      D    20
+      E     4
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -899,17 +4087,159 @@ reshape operations do.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">0</th>
+      <th>x</th>
+      <td>1</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>y</th>
+      <td>2</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1</th>
+      <th>x</th>
+      <td>1</td>
+      <td>30</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>z</th>
+      <td>4</td>
+      <td>20</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">C</th>
+      <th colspan="3" halign="left">D</th>
+      <th colspan="3" halign="left">E</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>4.0</td>
+      <td>30.0</td>
+      <td>NaN</td>
+      <td>20.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="id2">
@@ -921,18 +4251,193 @@ reshape operations do.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>x</td>
+      <td>1</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>y</td>
+      <td>2</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>x</td>
+      <td>1</td>
+      <td>30</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>z</td>
+      <td>4</td>
+      <td>20</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_melted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
 <span class="n">df_melted</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>variable</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>x</td>
+      <td>C</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>y</td>
+      <td>C</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>x</td>
+      <td>C</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>z</td>
+      <td>C</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>x</td>
+      <td>D</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>y</td>
+      <td>D</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1</td>
+      <td>x</td>
+      <td>D</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>z</td>
+      <td>D</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0</td>
+      <td>x</td>
+      <td>E</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0</td>
+      <td>y</td>
+      <td>E</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>x</td>
+      <td>E</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1</td>
+      <td>z</td>
+      <td>E</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>
@@ -979,7 +4484,7 @@ level of column labels. This is ok.</p>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span>
 </pre></div>
 </div>
 </div>

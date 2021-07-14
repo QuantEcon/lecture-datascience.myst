@@ -293,7 +293,7 @@ of a Jupyter notebook</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -304,7 +304,7 @@ of a Jupyter notebook</p></li>
 <span class="n">quandl</span><span class="o">.</span><span class="n">ApiConfig</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;QUANDL_AUTH&quot;</span><span class="p">,</span> <span class="s2">&quot;Dn6BtVoBhzuKTuyo6hbp&quot;</span><span class="p">)</span>
 
 
-<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -355,7 +355,7 @@ announcement that appears in the FT original chart.</p>
 online anywhere, we will do this by hand.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">announcement_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">announcement_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;First iPhone&quot;</span><span class="p">,</span> <span class="s2">&quot;3G&quot;</span><span class="p">,</span> <span class="s2">&quot;3GS&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;4S&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;5S/5C&quot;</span><span class="p">,</span> <span class="s2">&quot;6/6 Plus&quot;</span><span class="p">,</span>
         <span class="s2">&quot;6S/6S Plus&quot;</span><span class="p">,</span> <span class="s2">&quot;7/7 Plus&quot;</span><span class="p">,</span> <span class="s2">&quot;8/8 Plus/X&quot;</span>
@@ -371,16 +371,159 @@ online anywhere, we will do this by hand.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2007-01-09    First iPhone
+2008-06-09              3G
+2009-06-08             3GS
+2011-01-11               4
+2011-10-04              4S
+2012-09-12               5
+2013-09-10           5S/5C
+2014-09-09        6/6 Plus
+2015-09-09      6S/6S Plus
+2016-09-07        7/7 Plus
+2017-09-12      8/8 Plus/X
+Name: Model, dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <p>Then, let’s grab Apple’s stock price data from quandl, starting a few
 weeks before the first announcement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;WIKI/AAPL&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2006-12-25&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;WIKI/AAPL&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2006-12-25&quot;</span><span class="p">)</span>
 <span class="n">aapl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+      <th>Ex-Dividend</th>
+      <th>Split Ratio</th>
+      <th>Adj. Open</th>
+      <th>Adj. High</th>
+      <th>Adj. Low</th>
+      <th>Adj. Close</th>
+      <th>Adj. Volume</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2006-12-26</th>
+      <td>82.15</td>
+      <td>82.57</td>
+      <td>80.89</td>
+      <td>81.51</td>
+      <td>17524600.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>10.557420</td>
+      <td>10.611396</td>
+      <td>10.395492</td>
+      <td>10.475171</td>
+      <td>122672200.0</td>
+    </tr>
+    <tr>
+      <th>2006-12-27</th>
+      <td>78.15</td>
+      <td>82.00</td>
+      <td>76.77</td>
+      <td>81.52</td>
+      <td>69134100.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>10.043364</td>
+      <td>10.538143</td>
+      <td>9.866015</td>
+      <td>10.476456</td>
+      <td>483938700.0</td>
+    </tr>
+    <tr>
+      <th>2006-12-28</th>
+      <td>80.22</td>
+      <td>81.25</td>
+      <td>79.65</td>
+      <td>80.87</td>
+      <td>39995600.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>10.309388</td>
+      <td>10.441757</td>
+      <td>10.236135</td>
+      <td>10.392922</td>
+      <td>279969200.0</td>
+    </tr>
+    <tr>
+      <th>2006-12-29</th>
+      <td>83.95</td>
+      <td>85.40</td>
+      <td>83.36</td>
+      <td>84.84</td>
+      <td>38443900.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>10.788745</td>
+      <td>10.975090</td>
+      <td>10.712922</td>
+      <td>10.903122</td>
+      <td>269107300.0</td>
+    </tr>
+    <tr>
+      <th>2007-01-03</th>
+      <td>86.29</td>
+      <td>86.58</td>
+      <td>81.90</td>
+      <td>83.80</td>
+      <td>44225700.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>11.089468</td>
+      <td>11.126737</td>
+      <td>10.525291</td>
+      <td>10.769468</td>
+      <td>309579900.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="warmup">
@@ -408,7 +551,7 @@ methods on an Axes.</p>
 <p>Let’s see some examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the Adjusted open to account for stock split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the Adjusted open to account for stock split</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">aapl</span><span class="p">[</span><span class="s2">&quot;Adj. Open&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
 <span class="c1"># get the figure so we can re-display the plot after making changes</span>
@@ -416,31 +559,43 @@ methods on an Axes.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_7_0.png" src="../_images/matplotlib_7_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the title</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the title</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;AAPL Adjusted opening price&quot;</span><span class="p">)</span>
 
 <span class="n">fig</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">fig</span>
-</pre></div>
-</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_8_0.png" src="../_images/matplotlib_8_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_9_0.png" src="../_images/matplotlib_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_10_0.png" src="../_images/matplotlib_10_0.png" />
 </div>
 </div>
 <p>We can also create a Figure and Axes beforehand and then tell pandas to
@@ -451,7 +606,7 @@ Axes.</p>
 6 inches tall and filled with a one by two grid of Axes objects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span><span class="p">,</span> <span class="n">axs2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span><span class="p">,</span> <span class="n">axs2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(fig2): &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">fig2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type(axs): &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">axs2</span><span class="p">))</span>
@@ -459,16 +614,27 @@ Axes.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type(fig2):  &lt;class &#39;matplotlib.figure.Figure&#39;&gt;
+type(axs):  &lt;class &#39;numpy.ndarray&#39;&gt;
+axs2.shape:  (2,)
+</pre></div>
+</div>
+<img alt="../_images/matplotlib_12_1.png" src="../_images/matplotlib_12_1.png" />
+</div>
 </div>
 <p>We can plot from our DataFrame directly on our Axes objects by setting
 the <code class="docutils literal notranslate"><span class="pre">ax</span></code> argument when calling <code class="docutils literal notranslate"><span class="pre">.plot</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;Adj. Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Adj. High&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;Adj. Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Adj. High&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">fig2</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_14_0.png" src="../_images/matplotlib_14_0.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir2">
@@ -491,7 +657,7 @@ after each announcement.</p>
 the announcement and scale the neighboring days accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
 <span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CustomBusinessDay</span>
 
 <span class="n">bday_us</span> <span class="o">=</span> <span class="n">CustomBusinessDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">USFederalHolidayCalendar</span><span class="p">())</span>
@@ -517,6 +683,133 @@ the announcement and scale the neighboring days accordingly.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+      <th>Ex-Dividend</th>
+      <th>Split Ratio</th>
+      <th>Adj. Open</th>
+      <th>Adj. High</th>
+      <th>Adj. Low</th>
+      <th>Adj. Close</th>
+      <th>Adj. Volume</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2007-01-04</th>
+      <td>84.05</td>
+      <td>85.95</td>
+      <td>83.82</td>
+      <td>85.66</td>
+      <td>30259300.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>10.801596</td>
+      <td>11.045773</td>
+      <td>10.772038</td>
+      <td>11.008504</td>
+      <td>211815100.0</td>
+    </tr>
+    <tr>
+      <th>2007-01-05</th>
+      <td>85.77</td>
+      <td>86.20</td>
+      <td>84.40</td>
+      <td>85.05</td>
+      <td>29812200.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>11.022640</td>
+      <td>11.077901</td>
+      <td>10.846576</td>
+      <td>10.930110</td>
+      <td>208685400.0</td>
+    </tr>
+    <tr>
+      <th>2007-01-08</th>
+      <td>85.96</td>
+      <td>86.53</td>
+      <td>85.28</td>
+      <td>85.47</td>
+      <td>28468100.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>11.047058</td>
+      <td>11.120311</td>
+      <td>10.959669</td>
+      <td>10.984086</td>
+      <td>199276700.0</td>
+    </tr>
+    <tr>
+      <th>2007-01-09</th>
+      <td>86.45</td>
+      <td>92.98</td>
+      <td>85.15</td>
+      <td>92.57</td>
+      <td>119617800.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>11.110030</td>
+      <td>11.949226</td>
+      <td>10.942962</td>
+      <td>11.896535</td>
+      <td>837324600.0</td>
+    </tr>
+    <tr>
+      <th>2007-01-10</th>
+      <td>94.75</td>
+      <td>97.80</td>
+      <td>93.45</td>
+      <td>97.00</td>
+      <td>105460000.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>12.176696</td>
+      <td>12.568663</td>
+      <td>12.009627</td>
+      <td>12.465852</td>
+      <td>738220000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We now want to bring information on iPhone models into the DataFrame.</p>
 <p>We do this by:</p>
@@ -534,27 +827,75 @@ announcement with the model name (no more <code class="docutils literal notransl
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">announcement_dates</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">announcement_dates</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 <span class="n">prices</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2007-01-04             NaN
+2007-01-05             NaN
+2007-01-08             NaN
+2007-01-09    First iPhone
+2007-01-10             NaN
+2007-01-11             NaN
+2007-01-12             NaN
+Name: Model, dtype: object
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 <span class="n">prices</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2007-01-04             NaN
+2007-01-05             NaN
+2007-01-08             NaN
+2007-01-09    First iPhone
+2007-01-10    First iPhone
+2007-01-11    First iPhone
+2007-01-12    First iPhone
+Name: Model, dtype: object
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 <span class="n">prices</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2007-01-04    First iPhone
+2007-01-05    First iPhone
+2007-01-08    First iPhone
+2007-01-09    First iPhone
+2007-01-10    First iPhone
+2007-01-11    First iPhone
+2007-01-12    First iPhone
+Name: Model, dtype: object
 </pre></div>
 </div>
 </div>
@@ -564,7 +905,7 @@ announcement with the model name (no more <code class="docutils literal notransl
 each announcement date to 100 and scale all neighbors accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scale_by_middle</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scale_by_middle</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># How many rows</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -587,20 +928,316 @@ each announcement date to 100 and scale all neighbors accordingly.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to_plot</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scale_by_middle</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_plot</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scale_by_middle</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="n">to_plot</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>3G</th>
+      <th>3GS</th>
+      <th>4</th>
+      <th>4S</th>
+      <th>5</th>
+      <th>5S/5C</th>
+      <th>6/6 Plus</th>
+      <th>6S/6S Plus</th>
+      <th>7/7 Plus</th>
+      <th>8/8 Plus/X</th>
+      <th>First iPhone</th>
+    </tr>
+    <tr>
+      <th>DeltaDays</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>-3</th>
+      <td>99.502488</td>
+      <td>97.343902</td>
+      <td>97.053874</td>
+      <td>107.301706</td>
+      <td>101.679538</td>
+      <td>98.824575</td>
+      <td>99.767864</td>
+      <td>98.883615</td>
+      <td>98.432718</td>
+      <td>99.680216</td>
+      <td>97.223829</td>
+    </tr>
+    <tr>
+      <th>-2</th>
+      <td>100.719230</td>
+      <td>97.434293</td>
+      <td>96.842380</td>
+      <td>103.350509</td>
+      <td>102.039439</td>
+      <td>98.467009</td>
+      <td>99.717400</td>
+      <td>95.789381</td>
+      <td>99.879440</td>
+      <td>98.923805</td>
+      <td>99.213418</td>
+    </tr>
+    <tr>
+      <th>-1</th>
+      <td>101.665585</td>
+      <td>101.036017</td>
+      <td>98.245767</td>
+      <td>101.548442</td>
+      <td>99.739072</td>
+      <td>99.762940</td>
+      <td>100.222043</td>
+      <td>98.145218</td>
+      <td>100.064917</td>
+      <td>98.702417</td>
+      <td>99.433198</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>97.517846</td>
+      <td>99.993047</td>
+      <td>99.527372</td>
+      <td>98.208613</td>
+      <td>101.577566</td>
+      <td>92.258021</td>
+      <td>98.920065</td>
+      <td>96.932138</td>
+      <td>99.462116</td>
+      <td>98.314987</td>
+      <td>109.600925</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>99.686351</td>
+      <td>98.929217</td>
+      <td>100.081188</td>
+      <td>99.668954</td>
+      <td>103.464797</td>
+      <td>92.552351</td>
+      <td>101.342350</td>
+      <td>98.268284</td>
+      <td>97.041640</td>
+      <td>97.773815</td>
+      <td>110.977444</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>98.123513</td>
+      <td>97.031011</td>
+      <td>100.292855</td>
+      <td>100.323037</td>
+      <td>104.873660</td>
+      <td>92.718333</td>
+      <td>102.149778</td>
+      <td>102.478903</td>
+      <td>95.196142</td>
+      <td>97.454031</td>
+      <td>109.415847</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Re-order the columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to_plot</span> <span class="o">=</span> <span class="n">to_plot</span><span class="p">[</span><span class="n">announcement_dates</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_plot</span> <span class="o">=</span> <span class="n">to_plot</span><span class="p">[</span><span class="n">announcement_dates</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
 <span class="n">to_plot</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>First iPhone</th>
+      <th>3G</th>
+      <th>3GS</th>
+      <th>4</th>
+      <th>4S</th>
+      <th>5</th>
+      <th>5S/5C</th>
+      <th>6/6 Plus</th>
+      <th>6S/6S Plus</th>
+      <th>7/7 Plus</th>
+      <th>8/8 Plus/X</th>
+    </tr>
+    <tr>
+      <th>DeltaDays</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>-3</th>
+      <td>97.223829</td>
+      <td>99.502488</td>
+      <td>97.343902</td>
+      <td>97.053874</td>
+      <td>107.301706</td>
+      <td>101.679538</td>
+      <td>98.824575</td>
+      <td>99.767864</td>
+      <td>98.883615</td>
+      <td>98.432718</td>
+      <td>99.680216</td>
+    </tr>
+    <tr>
+      <th>-2</th>
+      <td>99.213418</td>
+      <td>100.719230</td>
+      <td>97.434293</td>
+      <td>96.842380</td>
+      <td>103.350509</td>
+      <td>102.039439</td>
+      <td>98.467009</td>
+      <td>99.717400</td>
+      <td>95.789381</td>
+      <td>99.879440</td>
+      <td>98.923805</td>
+    </tr>
+    <tr>
+      <th>-1</th>
+      <td>99.433198</td>
+      <td>101.665585</td>
+      <td>101.036017</td>
+      <td>98.245767</td>
+      <td>101.548442</td>
+      <td>99.739072</td>
+      <td>99.762940</td>
+      <td>100.222043</td>
+      <td>98.145218</td>
+      <td>100.064917</td>
+      <td>98.702417</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>109.600925</td>
+      <td>97.517846</td>
+      <td>99.993047</td>
+      <td>99.527372</td>
+      <td>98.208613</td>
+      <td>101.577566</td>
+      <td>92.258021</td>
+      <td>98.920065</td>
+      <td>96.932138</td>
+      <td>99.462116</td>
+      <td>98.314987</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>110.977444</td>
+      <td>99.686351</td>
+      <td>98.929217</td>
+      <td>100.081188</td>
+      <td>99.668954</td>
+      <td>103.464797</td>
+      <td>92.552351</td>
+      <td>101.342350</td>
+      <td>98.268284</td>
+      <td>97.041640</td>
+      <td>97.773815</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>109.415847</td>
+      <td>98.123513</td>
+      <td>97.031011</td>
+      <td>100.292855</td>
+      <td>100.323037</td>
+      <td>104.873660</td>
+      <td>92.718333</td>
+      <td>102.149778</td>
+      <td>102.478903</td>
+      <td>95.196142</td>
+      <td>97.454031</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="constructing-the-plot">
@@ -614,7 +1251,7 @@ for what color each line should be, as well as where to draw the tick
 marks on the vertical axis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># colors</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># colors</span>
 <span class="n">background</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">253</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">222</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 <span class="n">blue</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">134</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 <span class="n">pink</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">232</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">126</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
@@ -638,7 +1275,7 @@ marks on the vertical axis.</p>
 function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># construct figure and Axes objects</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># construct figure and Axes objects</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># We can pass our array of Axes and `subplots=True`</span>
@@ -650,6 +1287,9 @@ function.</p>
 <span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_29_0.png" src="../_images/matplotlib_29_0.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir4">
@@ -670,11 +1310,14 @@ as most other subplot spacing issues.</p>
 subplots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add some spacing around subplots</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add some spacing around subplots</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_31_0.png" src="../_images/matplotlib_31_0.png" />
 </div>
 </div>
 </div>
@@ -685,11 +1328,14 @@ FT post.</p>
 <p>To do this, we will use the <code class="docutils literal notranslate"><span class="pre">fig.set_facecolor</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set background color</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set background color</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_33_0.png" src="../_images/matplotlib_33_0.png" />
 </div>
 </div>
 </div>
@@ -713,7 +1359,7 @@ Axes:</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each Axes... do the following</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each Axes... do the following</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">announcement_dates</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
@@ -751,6 +1397,9 @@ Axes:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_35_0.png" src="../_images/matplotlib_35_0.png" />
+</div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir5">
 <p class="admonition-title">Exercise</p>
@@ -760,19 +1409,22 @@ Axes:</p>
 Axes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add tick labels to right of iPhone 8/X announcement</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add tick labels to right of iPhone 8/X announcement</span>
 <span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelright</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">fig</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_37_0.png" src="../_images/matplotlib_37_0.png" />
+</div>
 </div>
 <p>We can also add tick labels for the x-axis ticks on the 1st and 6th
 plots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]:</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelbottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">&quot;3 days</span><span class="se">\n</span><span class="s2">before&quot;</span><span class="p">,</span> <span class="s2">&quot;3 days</span><span class="se">\n</span><span class="s2">after&quot;</span><span class="p">])</span>
 
@@ -784,6 +1436,9 @@ plots.</p>
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_39_0.png" src="../_images/matplotlib_39_0.png" />
 </div>
 </div>
 </div>
@@ -815,7 +1470,7 @@ lines at each of our <code class="docutils literal notranslate"><span class="pre
 system.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a transform that...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a transform that...</span>
 <span class="n">trans</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">blended_transform_factory</span><span class="p">(</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">,</span>  <span class="c1"># goes across whole figure in x direction</span>
     <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transData</span>  <span class="c1"># goes up with the y data in the first axis</span>
@@ -829,7 +1484,7 @@ from (0, 1) in the Figure coordinates and the <code class="docutils literal notr
 (90, 115) on the data coordinates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">yticks</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">yticks</span><span class="p">:</span>
     <span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Line2D</span><span class="p">(</span>
         <span class="c1"># x values found by trial and error</span>
         <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.985</span><span class="p">],</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span>
@@ -847,6 +1502,9 @@ from (0, 1) in the Figure coordinates and the <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_43_0.png" src="../_images/matplotlib_43_0.png" />
+</div>
 </div>
 <p>Now, we need to a add vertical line from the (0, 90) to (0, 100) on the
 first axis so we can label the center of each line as the announcement
@@ -857,7 +1515,7 @@ to be added soon.</p>
 Axes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mf">91.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">93</span><span class="p">,</span> <span class="mi">100</span><span class="p">]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">([</span><span class="mi">90</span><span class="p">,</span> <span class="mf">91.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">93</span><span class="p">,</span> <span class="mi">100</span><span class="p">]):</span>
     <span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Line2D</span><span class="p">(</span>
         <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span>
         <span class="n">transform</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transData</span><span class="p">,</span>
@@ -868,6 +1526,9 @@ Axes.</p>
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_45_0.png" src="../_images/matplotlib_45_0.png" />
 </div>
 </div>
 </div>
@@ -881,7 +1542,7 @@ associated with the announcement date.</p>
 by what is happening here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
     <span class="s2">&quot;Tim Cook&#39;s first iPhone</span><span class="se">\n</span><span class="s2">announcement as Apple&#39;s CEO&quot;</span><span class="p">,</span>
     <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">99.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">93</span><span class="p">),</span>
     <span class="n">annotation_clip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -898,10 +1559,13 @@ by what is happening here.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_47_0.png" src="../_images/matplotlib_47_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ann</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">texts</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ann</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">texts</span><span class="p">:</span>
     <span class="n">ann</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 
 <span class="n">axs</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
@@ -918,10 +1582,13 @@ by what is happening here.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_48_0.png" src="../_images/matplotlib_48_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
     <span class="s2">&quot;Announced&quot;</span><span class="p">,</span>
     <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">99.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">92</span><span class="p">),</span>
     <span class="n">annotation_clip</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -933,6 +1600,9 @@ by what is happening here.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_49_0.png" src="../_images/matplotlib_49_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -942,7 +1612,7 @@ by what is happening here.</p>
 a file on our computer using the <code class="docutils literal notranslate"><span class="pre">fig.savefig</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;aapl_iPhone_annoucements.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">background</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;aapl_iPhone_annoucements.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">background</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -959,7 +1629,7 @@ document, or presentation is is placed in).</p>
 <p>We could have chosen a different file format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;aapl_iPhone_annoucements.jpeg&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">background</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;aapl_iPhone_annoucements.jpeg&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">background</span><span class="p">)</span>
 
 <span class="c1"># dpi not needed as pdf is a &quot;vector&quot; format that effectively has an infinite dpi</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;aapl_iPhone_annoucements.pdf&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="n">background</span><span class="p">)</span>
