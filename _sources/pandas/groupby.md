@@ -293,7 +293,7 @@ saw in the {doc}`merge <merge>` lecture.
 
 ```{code-cell} python
 url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip"
-air_dec = pd.read_csv(url)
+air_dec = pd.read_csv(url, parse_dates = ['Date'])
 ```
 
 First, we compute the average delay in arrival time for all carriers

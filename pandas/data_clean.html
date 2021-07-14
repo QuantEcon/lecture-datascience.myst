@@ -243,7 +243,7 @@ Grubhub orders</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 </pre></div>
@@ -260,7 +260,7 @@ is spent collecting and cleaning the data — not performing the analysis.</p>
 will demonstrate using the following dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#23&quot;</span><span class="p">,</span> <span class="s2">&quot;#24&quot;</span><span class="p">,</span> <span class="s2">&quot;#18&quot;</span><span class="p">,</span> <span class="s2">&quot;#14&quot;</span><span class="p">,</span> <span class="s2">&quot;#12&quot;</span><span class="p">,</span> <span class="s2">&quot;#10&quot;</span><span class="p">,</span> <span class="s2">&quot;#35&quot;</span><span class="p">],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#23&quot;</span><span class="p">,</span> <span class="s2">&quot;#24&quot;</span><span class="p">,</span> <span class="s2">&quot;#18&quot;</span><span class="p">,</span> <span class="s2">&quot;#14&quot;</span><span class="p">,</span> <span class="s2">&quot;#12&quot;</span><span class="p">,</span> <span class="s2">&quot;#10&quot;</span><span class="p">,</span> <span class="s2">&quot;#35&quot;</span><span class="p">],</span>
                    <span class="s2">&quot;nums&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;23&quot;</span><span class="p">,</span> <span class="s2">&quot;24&quot;</span><span class="p">,</span> <span class="s2">&quot;18&quot;</span><span class="p">,</span> <span class="s2">&quot;14&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s2">&quot;XYZ&quot;</span><span class="p">,</span> <span class="s2">&quot;35&quot;</span><span class="p">],</span>
                    <span class="s2">&quot;colors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;pink&quot;</span><span class="p">],</span>
                    <span class="s2">&quot;other_column&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
@@ -268,183 +268,12 @@ will demonstrate using the following dataset.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#12</td>
-      <td>NaN</td>
-      <td>purple</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#10</td>
-      <td>XYZ</td>
-      <td>blue</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>#35</td>
-      <td>35</td>
-      <td>pink</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>What would happen if we wanted to try and compute the mean of
 <code class="docutils literal notranslate"><span class="pre">numbers</span></code>?</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1601</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1602</span>             <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1603</span>         <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
-
-<span class="ne">ValueError</span>: could not convert string to float: &#39;#23#24#18#14#12#10#35&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1605</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1606</span>                 <span class="n">x</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: complex() arg is a malformed string
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3687</span><span class="o">/</span><span class="mf">1396870102.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10740</span>         <span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10741</span>         <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">&gt; </span><span class="mi">10742</span>             <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10743</span> 
-<span class="g g-Whitespace">  </span><span class="mi">10744</span>         <span class="nb">setattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10358</span> 
-<span class="g g-Whitespace">  </span><span class="mi">10359</span>     <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">&gt; </span><span class="mi">10360</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10361</span>             <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">nanops</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-<span class="g g-Whitespace">  </span><span class="mi">10362</span>         <span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">_stat_function</span><span class="nt">(self, name, func, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10343</span>                 <span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">10344</span>             <span class="p">)</span>
-<span class="ne">&gt; </span><span class="mi">10345</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10346</span>             <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">10347</span>         <span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/series.py</span> in <span class="ni">_reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4389</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4390</span>             <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">4391</span>                 <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4392</span> 
-<span class="g g-Whitespace">   </span><span class="mi">4393</span>     <span class="k">def</span> <span class="nf">_reindex_indexer</span><span class="p">(</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_f</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>             <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>                 <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">93</span>                     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>                 <span class="c1"># we want to transform an object array</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">f</span><span class="nt">(values, axis, skipna, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span>                     <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">155</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span> 
-<span class="g g-Whitespace">    </span><span class="mi">157</span>             <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">new_func</span><span class="nt">(values, axis, skipna, mask, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>             <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span> 
-<span class="ne">--&gt; </span><span class="mi">410</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span> 
-<span class="g g-Whitespace">    </span><span class="mi">412</span>         <span class="k">if</span> <span class="n">datetimelike</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">nanmean</span><span class="nt">(values, axis, skipna, mask)</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span> 
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">count</span> <span class="o">=</span> <span class="n">_get_counts</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype_count</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">665</span>     <span class="n">the_sum</span> <span class="o">=</span> <span class="n">_ensure_numeric</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype_sum</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span> 
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">the_sum</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/nanops.py</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1608</span>                 <span class="c1"># e.g. &quot;foo&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1609</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> to numeric&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">1610</span>     <span class="k">return</span> <span class="n">x</span>
-<span class="g g-Whitespace">   </span><span class="mi">1611</span> 
-
-<span class="ne">TypeError</span>: Could not convert #23#24#18#14#12#10#35 to numeric
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -470,7 +299,7 @@ loop through all elements of the column and apply the desired string
 methods…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="c1"># Iterate over all rows</span>
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
@@ -489,12 +318,6 @@ methods…</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 0 ns, sys: 2.48 ms, total: 2.48 ms
-Wall time: 2.37 ms
-</pre></div>
-</div>
-</div>
 </div>
 <p>While this is fast for a small dataset like this, this method slows for larger datasets.</p>
 <p>One <em>significantly</em> faster (and easier) method is to apply a string
@@ -509,18 +332,12 @@ Series in one shot!</p>
 <p>Let’s redo our previous example using a pandas <code class="docutils literal notranslate"><span class="pre">.str</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="c1"># ~2x faster than loop... However, speed gain increases with size of DataFrame. The</span>
 <span class="c1"># speedup can be in the ballpark of ~100-500x faster for big DataFrames.</span>
 <span class="c1"># See appendix at the end of the lecture for an application on a larger DataFrame</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_str&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 849 µs, sys: 175 µs, total: 1.02 ms
-Wall time: 936 µs
 </pre></div>
 </div>
 </div>
@@ -531,38 +348,14 @@ documentation</a>
 for more information.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;colors&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
-1    False
-2    False
-3    False
-4     True
-5    False
-6     True
-Name: colors, dtype: bool
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;colors&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;colors&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Green
-1       Red
-2    Yellow
-3    Orange
-4    Purple
-5      Blue
-6      Pink
-Name: colors, dtype: object
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;colors&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -584,118 +377,24 @@ numeric values</p>
 <code class="docutils literal notranslate"><span class="pre">&quot;numbers&quot;</span></code> are ready to be converted to actual numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_numeric&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_str&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_numeric&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_str&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numbers             object
-nums                object
-colors              object
-other_column         int64
-numbers_loop       float64
-numbers_str         object
-numbers_numeric      int64
-dtype: object
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-      <td>23.0</td>
-      <td>23</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-      <td>18.0</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-      <td>14.0</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#12</td>
-      <td>NaN</td>
-      <td>purple</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>12</td>
-      <td>12</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can convert to other types well.</p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">astype</span></code> method, we can convert to any of the supported
@@ -703,38 +402,14 @@ pandas <code class="docutils literal notranslate"><span class="pre">dtypes</span
 <p>Below are some examples. (Pay attention to the reported <code class="docutils literal notranslate"><span class="pre">dtype</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_numeric&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    23
-1    24
-2    18
-3    14
-4    12
-5    10
-6    35
-Name: numbers_numeric, dtype: object
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_numeric&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_numeric&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    23.0
-1    24.0
-2    18.0
-3    14.0
-4    12.0
-5    10.0
-6    35.0
-Name: numbers_numeric, dtype: float64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers_numeric&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -750,222 +425,18 @@ Name: numbers_numeric, dtype: float64
 <p>In our example, we are missing an element from the <code class="docutils literal notranslate"><span class="pre">&quot;nums&quot;</span></code> column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-      <td>23.0</td>
-      <td>23</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-      <td>18.0</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-      <td>14.0</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#12</td>
-      <td>NaN</td>
-      <td>purple</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>12</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#10</td>
-      <td>XYZ</td>
-      <td>blue</td>
-      <td>0</td>
-      <td>10.0</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>#35</td>
-      <td>35</td>
-      <td>pink</td>
-      <td>2</td>
-      <td>35.0</td>
-      <td>35</td>
-      <td>35</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can find missing data by using the <code class="docutils literal notranslate"><span class="pre">isnull</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We might want to know whether particular rows or columns have any
 missing data.</p>
@@ -973,38 +444,14 @@ missing data.</p>
 <code class="docutils literal notranslate"><span class="pre">df.isnull()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numbers            False
-nums                True
-colors             False
-other_column       False
-numbers_loop       False
-numbers_str        False
-numbers_numeric    False
-dtype: bool
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
-1    False
-2    False
-3    False
-4     True
-5    False
-6    False
-dtype: bool
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1021,433 +468,35 @@ article</a>.</p>
 <p>For now, let’s see some examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop all rows containing a missing observation</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop all rows containing a missing observation</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-      <td>23.0</td>
-      <td>23</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-      <td>18.0</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-      <td>14.0</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#10</td>
-      <td>XYZ</td>
-      <td>blue</td>
-      <td>0</td>
-      <td>10.0</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>#35</td>
-      <td>35</td>
-      <td>pink</td>
-      <td>2</td>
-      <td>35.0</td>
-      <td>35</td>
-      <td>35</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fill the missing values with a specific value</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># fill the missing values with a specific value</span>
 <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-      <td>23.0</td>
-      <td>23</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-      <td>18.0</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-      <td>14.0</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#12</td>
-      <td>100</td>
-      <td>purple</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>12</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#10</td>
-      <td>XYZ</td>
-      <td>blue</td>
-      <td>0</td>
-      <td>10.0</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>#35</td>
-      <td>35</td>
-      <td>pink</td>
-      <td>2</td>
-      <td>35.0</td>
-      <td>35</td>
-      <td>35</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the _next_ valid observation to fill the missing data</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the _next_ valid observation to fill the missing data</span>
 <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;bfill&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-      <td>23.0</td>
-      <td>23</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-      <td>18.0</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-      <td>14.0</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#12</td>
-      <td>XYZ</td>
-      <td>purple</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>12</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#10</td>
-      <td>XYZ</td>
-      <td>blue</td>
-      <td>0</td>
-      <td>10.0</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>#35</td>
-      <td>35</td>
-      <td>pink</td>
-      <td>2</td>
-      <td>35.0</td>
-      <td>35</td>
-      <td>35</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the _previous_ valid observation to fill missing data</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the _previous_ valid observation to fill missing data</span>
 <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ffill&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>numbers</th>
-      <th>nums</th>
-      <th>colors</th>
-      <th>other_column</th>
-      <th>numbers_loop</th>
-      <th>numbers_str</th>
-      <th>numbers_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#23</td>
-      <td>23</td>
-      <td>green</td>
-      <td>0</td>
-      <td>23.0</td>
-      <td>23</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#24</td>
-      <td>24</td>
-      <td>red</td>
-      <td>1</td>
-      <td>24.0</td>
-      <td>24</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#18</td>
-      <td>18</td>
-      <td>yellow</td>
-      <td>0</td>
-      <td>18.0</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#14</td>
-      <td>14</td>
-      <td>orange</td>
-      <td>2</td>
-      <td>14.0</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#12</td>
-      <td>14</td>
-      <td>purple</td>
-      <td>1</td>
-      <td>12.0</td>
-      <td>12</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>#10</td>
-      <td>XYZ</td>
-      <td>blue</td>
-      <td>0</td>
-      <td>10.0</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>#35</td>
-      <td>35</td>
-      <td>pink</td>
-      <td>2</td>
-      <td>35.0</td>
-      <td>35</td>
-      <td>35</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We will see more examples of dealing with missing data in future
 chapters.</p>
@@ -1461,88 +510,12 @@ written by The Upshot at the NYTimes.</p>
 includes information on what was ordered and how much it cost.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/chipotle_raw.csv.zip&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/chipotle_raw.csv.zip&quot;</span>
 <span class="n">chipotle</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">chipotle</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>order_id</th>
-      <th>quantity</th>
-      <th>item_name</th>
-      <th>choice_description</th>
-      <th>item_price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Chips and Fresh Tomato Salsa</td>
-      <td>NaN</td>
-      <td>$2.39</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Izze</td>
-      <td>[Clementine]</td>
-      <td>$3.39</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Nantucket Nectar</td>
-      <td>[Apple]</td>
-      <td>$3.39</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>1</td>
-      <td>1</td>
-      <td>Chips and Tomatillo-Green Chili Salsa</td>
-      <td>NaN</td>
-      <td>$2.39</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2</td>
-      <td>2</td>
-      <td>Chicken Bowl</td>
-      <td>[Tomatillo-Red Chili Salsa (Hot), [Black Beans...</td>
-      <td>$16.98</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-cln-dir4">
 <p class="admonition-title">Exercise</p>
@@ -1555,69 +528,17 @@ includes information on what was ordered and how much it cost.</p>
 a much larger dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;floats&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span> <span class="mi">2</span><span class="p">)})</span>
 <span class="n">test</span><span class="p">[</span><span class="s2">&quot;strings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s2">&quot;floats&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span>
 <span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>floats</th>
-      <th>strings</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>58.91</td>
-      <td>58.91%</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>53.62</td>
-      <td>53.62%</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>19.52</td>
-      <td>19.52%</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>64.70</td>
-      <td>64.7%</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>21.31</td>
-      <td>21.31%</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">index_value</span><span class="p">,</span> <span class="n">column_values</span> <span class="o">=</span> <span class="n">row</span>
@@ -1626,35 +547,18 @@ a much larger dataset.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.71 s, sys: 15.4 ms, total: 4.72 s
-Wall time: 4.72 s
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">time</span>
 <span class="n">test</span><span class="p">[</span><span class="s2">&quot;numbers_str_method&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s2">&quot;strings&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 35.9 ms, sys: 3.99 ms, total: 39.9 ms
-Wall time: 40.1 ms
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;numbers_str_method&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;numbers_loop&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;numbers_str_method&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;numbers_loop&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1668,7 +572,7 @@ Wall time: 40.1 ms
 <p>Convert the string below into a number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2n</span> <span class="o">=</span> <span class="s2">&quot;#39&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c2n</span> <span class="o">=</span> <span class="s2">&quot;#39&quot;</span>
 </pre></div>
 </div>
 </div>

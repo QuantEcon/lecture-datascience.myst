@@ -260,9 +260,9 @@ numpy.random to numerically verify some of the facts associated with them.</p>
 <p>We import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as usual</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -310,12 +310,7 @@ between 0 and 1.</p>
 <p>Run the code below multiple times and see what numbers you get.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13689591509389765
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -323,50 +318,21 @@ between 0 and 1.</p>
 <p>We can also generate arrays of random numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.1623786 , 0.02918094, 0.93946479, 0.67244387, 0.14239528,
-       0.77030968, 0.70336787, 0.03124779, 0.690847  , 0.82144774,
-       0.25736396, 0.22248002, 0.78002094, 0.37414836, 0.06428866,
-       0.96168462, 0.23756193, 0.53139543, 0.36618024, 0.92152745,
-       0.03898851, 0.25048194, 0.18632104, 0.3858516 , 0.88017485])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.98731675, 0.93290542, 0.97186307, 0.3121802 , 0.85774293],
-       [0.0480272 , 0.66649162, 0.01149967, 0.01791179, 0.490799  ],
-       [0.61082465, 0.25450628, 0.93364759, 0.15007585, 0.98495937],
-       [0.65649642, 0.20028032, 0.94079781, 0.77710457, 0.7412088 ],
-       [0.09970332, 0.67074508, 0.28542401, 0.04634665, 0.56768845]])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.64143561, 0.01074899, 0.89975066, 0.14205431],
-        [0.01171461, 0.07380268, 0.37845694, 0.88788648],
-        [0.33552366, 0.10305566, 0.81896864, 0.99742112]],
-
-       [[0.40373866, 0.46173654, 0.5155456 , 0.16418346],
-        [0.57687159, 0.71209912, 0.64948408, 0.93421898],
-        [0.3906633 , 0.43609859, 0.284796  , 0.15471329]]])
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -389,7 +355,7 @@ Numbers</em>.</p>
 <p>We already know how the uniform distribution looks, so let’s demonstrate the Law of Large Numbers by approximating the uniform distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw various numbers of uniform[0, 1] random variables</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw various numbers of uniform[0, 1] random variables</span>
 <span class="n">draws_10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">draws_200</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">draws_10000</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>
@@ -409,9 +375,6 @@ Numbers</em>.</p>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/randomness_9_0.png" src="../_images/randomness_9_0.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-4-1">
@@ -440,7 +403,7 @@ probability.</p>
 <p>We can now verify by simulating the outcomes of many loans.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You&#39;ll see why we call it `_slow` soon :)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># You&#39;ll see why we call it `_slow` soon :)</span>
 <span class="k">def</span> <span class="nf">simulate_loan_repayments_slow</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
                                   <span class="n">repayment_part</span><span class="o">=</span><span class="mf">12_500.0</span><span class="p">):</span>
     <span class="n">repayment_sims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -463,11 +426,6 @@ probability.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20174.285714285714
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="aside-vectorized-computations">
 <h4>Aside: Vectorized Computations<a class="headerlink" href="#aside-vectorized-computations" title="Permalink to this headline">¶</a></h4>
@@ -477,7 +435,7 @@ necessary.</p>
 instead of only storing the values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_repayments</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_repayments</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
                              <span class="n">repayment_part</span><span class="o">=</span><span class="mf">12_500.0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Simulate present value of N loans given values for discount rate and</span>
@@ -503,33 +461,18 @@ instead of only storing the values.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20243.333333333332
-</pre></div>
-</div>
-</div>
 </div>
 <p>We’ll quickly demonstrate the time difference in running both function versions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> simulate_loan_repayments_slow(250_000)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>144 ms ± 765 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span> <span class="n">simulate_loan_repayments_slow</span><span class="p">(</span><span class="mi">250_000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> simulate_loan_repayments(250_000)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.82 ms ± 55.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span> <span class="n">simulate_loan_repayments</span><span class="p">(</span><span class="mi">250_000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -556,7 +499,7 @@ at the the 5th percentile of total repayment to find the loan size needed for 95
 being profitable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_year_of_loans</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_year_of_loans</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
 
     <span class="c1"># Create array where we store the values</span>
     <span class="n">avg_repayments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
@@ -576,12 +519,6 @@ being profitable.</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The largest loan size such that we were profitable 95</span><span class="si">% o</span><span class="s2">f time is&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lro_5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The largest loan size such that we were profitable 95% of time is
-19569.04761904762
 </pre></div>
 </div>
 </div>
@@ -610,7 +547,7 @@ this means people who experience delinquency won’t be required to repay their 
 <p>Let’s write the code required to perform this dynamic simulation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_lifetime</span><span class="p">(</span><span class="n">monthly_payment</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_lifetime</span><span class="p">(</span><span class="n">monthly_payment</span><span class="p">):</span>
 
     <span class="c1"># Create arrays to store outputs</span>
     <span class="n">payments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
@@ -678,7 +615,7 @@ some particular state).</p></li>
 <p>For the example above, we’ll define each of these three things in the Python code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. State description</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. State description</span>
 <span class="n">state_values</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;repaying&quot;</span><span class="p">,</span> <span class="s2">&quot;delinquency&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">]</span>
 
 <span class="c1"># 2. Transition probabilities: encoded in a matrix (2d-array) where element [i, j]</span>
@@ -695,7 +632,7 @@ some particular state).</p></li>
 <a class="reference external" href="https://github.com/QuantEcon/QuantEcon.py/">quantecon python library</a> to analyze this model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">markov</span><span class="o">.</span><span class="n">MarkovChain</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">state_values</span><span class="p">)</span>
 </pre></div>
@@ -706,14 +643,7 @@ some particular state).</p></li>
 <p>The <code class="docutils literal notranslate"><span class="pre">simulate</span></code> method will simulate the Markov chain for a specified number of steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;repaying&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
-       &#39;repaying&#39;, &#39;delinquency&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
-       &#39;repaying&#39;, &#39;repaying&#39;], dtype=&#39;&lt;U11&#39;)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mc</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;repaying&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -725,24 +655,10 @@ some particular state).</p></li>
 starting from a distribution where the debtor is repaying in the first step.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;At time </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2"> the distribution is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">P</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">x</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>At time 0 the distribution is [1 0 0]
-At time 1 the distribution is [0.85 0.1  0.05]
-At time 2 the distribution is [0.7475 0.145  0.1075]
-At time 3 the distribution is [0.671625 0.16175  0.166625]
-At time 4 the distribution is [0.61131875 0.1642125  0.22446875]
-At time 5 the distribution is [0.56067406 0.15965937 0.27966656]
-At time 6 the distribution is [0.5164878  0.15186303 0.33164917]
-At time 7 the distribution is [0.47698039 0.1427666  0.38025302]
-At time 8 the distribution is [0.44112498 0.133358   0.42551703]
-At time 9 the distribution is [0.40829573 0.1241273  0.46757697]
 </pre></div>
 </div>
 </div>
@@ -772,7 +688,7 @@ described by the mean and variance of that distribution.</p>
 <p>Let’s take a look at the normal distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scipy is an extension of numpy, and the stats</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># scipy is an extension of numpy, and the stats</span>
 <span class="c1"># subpackage has tools for working with various probability distributions</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
 
@@ -788,12 +704,6 @@ described by the mean and variance of that distribution.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f81bba428b0&gt;]
-</pre></div>
-</div>
-<img alt="../_images/randomness_30_1.png" src="../_images/randomness_30_1.png" />
-</div>
 </div>
 <p>Another common continuous distribution used in economics is the gamma distribution.</p>
 <p>A gamma distribution is defined for all positive numbers and described by both a shape
@@ -801,7 +711,7 @@ parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale pa
 <p>Let’s see what the distribution looks like for various choices of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
@@ -822,9 +732,6 @@ parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale pa
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/randomness_32_0.png" src="../_images/randomness_32_0.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-4-4">
@@ -855,7 +762,7 @@ determine the stationary distribution of our Markov chain.</p>
 probabilities must lead to this outcome.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -885,7 +792,7 @@ helper code below).</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define components here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define components here</span>
 
 <span class="c1"># construct Markov chain</span>
 
@@ -927,7 +834,7 @@ and express your preferences.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>

@@ -188,10 +188,10 @@
 <p>See <a class="reference internal" href="../scientific/optimization.html"><span class="doc">Optimization</span></a>, <a class="reference internal" href="../pandas/intro.html"><span class="doc">Introduction</span></a>, and <a class="reference internal" href="../pandas/basics.html"><span class="doc">Basic Functionality</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -204,7 +204,7 @@
 <p>Load data from the <a class="reference internal" href="../pandas/basics.html"><span class="doc">Basic Functionality</span></a> lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/state_unemployment.csv&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/state_unemployment.csv&quot;</span>
 <span class="n">unemp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -213,7 +213,7 @@
 <p>And do the same manipulation as in the pandas basics lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;Arizona&quot;</span><span class="p">,</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span> <span class="s2">&quot;Florida&quot;</span><span class="p">,</span> <span class="s2">&quot;Illinois&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Michigan&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Texas&quot;</span>
 <span class="p">]</span>
@@ -235,7 +235,7 @@
 in our sample?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -243,7 +243,7 @@ in our sample?</p>
 <p>What was the median unemployment rate in each state?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -257,7 +257,7 @@ achieved?</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -266,7 +266,7 @@ achieved?</p>
 variance of their unemployment is above or below 4.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -280,7 +280,7 @@ medium (4.5 &lt; x &lt;= 6.5), or low (&lt;= 4.5) for each state and each month.
 outputs a single string which notes whether that number is high, medium, or low.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -289,7 +289,7 @@ outputs a single string which notes whether that number is high, medium, or low.
 result in a new DataFrame called <code class="docutils literal notranslate"><span class="pre">unemp_bins</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -306,7 +306,7 @@ times each state had each of the three classifications.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -315,7 +315,7 @@ times each state had each of the three classifications.</p>
 Use one bar per state and classification for 21 total bars.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -329,7 +329,7 @@ with high unemployment? What about medium and low?</p>
 <p>Part 1: Write a Python function to classify unemployment levels</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -338,7 +338,7 @@ with high unemployment? What about medium and low?</p>
 <p>Part 3: Pass your function from part 1 to the method you determined in Part 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_bins</span> <span class="o">=</span> <span class="n">unemp</span><span class="c1">#replace this comment with your code!!</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_bins</span> <span class="o">=</span> <span class="n">unemp</span><span class="c1">#replace this comment with your code!!</span>
 </pre></div>
 </div>
 </div>
@@ -346,7 +346,7 @@ with high unemployment? What about medium and low?</p>
 <p>Part 4: Count the number of times each state had each classification.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## then make a horizontal bar chart here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## then make a horizontal bar chart here</span>
 </pre></div>
 </div>
 </div>
@@ -354,7 +354,7 @@ with high unemployment? What about medium and low?</p>
 <p>Part 5: Apply the same transformation from Part 4 to each date instead of to each state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -367,7 +367,7 @@ unemployment during “Low”, “Medium”, and “High” unemployment times.
 (recall your <code class="docutils literal notranslate"><span class="pre">unemp_bins</span></code> DataFrame from the exercise above)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -377,7 +377,7 @@ determine this, compute each state’s mean unemployment in
 months where the mean unemployment rate is greater than 7.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>

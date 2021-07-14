@@ -288,7 +288,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -315,7 +315,7 @@ example…</p>
 the World Bank’s World Development Indicators Dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/wdi_data.csv&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/wdi_data.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 
@@ -323,396 +323,40 @@ the World Bank’s World Development Indicators Dataset.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 72 entries, 0 to 71
-Data columns (total 7 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   country      72 non-null     object 
- 1   year         72 non-null     int64  
- 2   GovExpend    72 non-null     float64
- 3   Consumption  72 non-null     float64
- 4   Exports      72 non-null     float64
- 5   Imports      72 non-null     float64
- 6   GDP          72 non-null     float64
-dtypes: float64(5), int64(1), object(1)
-memory usage: 4.1+ KB
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>year</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Canada</td>
-      <td>2017</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Canada</td>
-      <td>2016</td>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Canada</td>
-      <td>2015</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Canada</td>
-      <td>2014</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Canada</td>
-      <td>2013</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We’ll also extract a couple smaller DataFrames we can use in examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_small</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_small</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">df_small</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>year</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Canada</td>
-      <td>2017</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Canada</td>
-      <td>2016</td>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Canada</td>
-      <td>2015</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Canada</td>
-      <td>2014</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Canada</td>
-      <td>2013</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tiny</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">:]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_tiny</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">:]</span>
 <span class="n">df_tiny</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>year</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Canada</td>
-      <td>2017</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Canada</td>
-      <td>2014</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Canada</td>
-      <td>2015</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Canada</td>
-      <td>2013</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_ex</span> <span class="o">=</span> <span class="n">df_small</span><span class="p">[[</span><span class="s2">&quot;Imports&quot;</span><span class="p">,</span> <span class="s2">&quot;Exports&quot;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">im_ex</span> <span class="o">=</span> <span class="n">df_small</span><span class="p">[[</span><span class="s2">&quot;Imports&quot;</span><span class="p">,</span> <span class="s2">&quot;Exports&quot;</span><span class="p">]]</span>
 <span class="n">im_ex_copy</span> <span class="o">=</span> <span class="n">im_ex</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">im_ex_copy</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Imports</th>
-      <th>Exports</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.600031</td>
-      <td>0.582831</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.575775</td>
-      <td>0.576394</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.575793</td>
-      <td>0.568859</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.572344</td>
-      <td>0.550323</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.558636</td>
-      <td>0.518040</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Observe what happens when we evaluate <code class="docutils literal notranslate"><span class="pre">im_ex</span> <span class="pre">+</span> <span class="pre">im_ex_copy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_ex</span> <span class="o">+</span> <span class="n">im_ex_copy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">im_ex</span> <span class="o">+</span> <span class="n">im_ex_copy</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Imports</th>
-      <th>Exports</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.200063</td>
-      <td>1.165661</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.151550</td>
-      <td>1.152787</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.151585</td>
-      <td>1.137718</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1.144688</td>
-      <td>1.100646</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1.117272</td>
-      <td>1.036081</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that this operated <em>elementwise</em>, meaning that the <code class="docutils literal notranslate"><span class="pre">+</span></code>
 operation was applied to each element of <code class="docutils literal notranslate"><span class="pre">im_ex</span></code> and the corresponding
@@ -720,82 +364,10 @@ element of <code class="docutils literal notranslate"><span class="pre">im_ex_co
 <p>Let’s take a closer look at <code class="docutils literal notranslate"><span class="pre">df_tiny</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tiny</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_tiny</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>year</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Canada</td>
-      <td>2017</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Canada</td>
-      <td>2014</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Canada</td>
-      <td>2015</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Canada</td>
-      <td>2013</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Relative to <code class="docutils literal notranslate"><span class="pre">im_ex</span></code> notice a few things:</p>
 <ul class="simple">
@@ -809,93 +381,11 @@ within each DataFrame.</p></li>
 <p>Now, let’s see what happens when we try <code class="docutils literal notranslate"><span class="pre">df_tiny</span> <span class="pre">+</span> <span class="pre">im_ex</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_ex_tiny</span> <span class="o">=</span> <span class="n">df_tiny</span> <span class="o">+</span> <span class="n">im_ex</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">im_ex_tiny</span> <span class="o">=</span> <span class="n">df_tiny</span> <span class="o">+</span> <span class="n">im_ex</span>
 <span class="n">im_ex_tiny</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>GDP</th>
-      <th>GovExpend</th>
-      <th>Imports</th>
-      <th>country</th>
-      <th>year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>1.165661</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.200063</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>1.137718</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.151585</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NaN</td>
-      <td>1.100646</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.144688</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NaN</td>
-      <td>1.036081</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.117272</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Whoa, a lot happened! Let’s break it down.</p>
 <div class="section" id="automatic-alignment">
@@ -944,204 +434,27 @@ that the result is missing (spelled <code class="docutils literal notranslate"><
 <p>Here’s an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, create the DataFrame</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, create the DataFrame</span>
 <span class="n">df_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">df_year</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2017</th>
-      <td>Canada</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>Canada</td>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>Canada</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>Canada</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>Canada</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Now that the year is on the index, we can use <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to extract all the
 data for a specific year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2010</th>
-      <td>Canada</td>
-      <td>0.347332</td>
-      <td>0.921952</td>
-      <td>0.469949</td>
-      <td>0.500341</td>
-      <td>1.613543</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>Germany</td>
-      <td>0.653386</td>
-      <td>1.915481</td>
-      <td>1.443735</td>
-      <td>1.266126</td>
-      <td>3.417095</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>United Kingdom</td>
-      <td>0.521146</td>
-      <td>1.598563</td>
-      <td>0.690824</td>
-      <td>0.745065</td>
-      <td>2.452900</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>United States</td>
-      <td>2.510143</td>
-      <td>10.185836</td>
-      <td>1.846280</td>
-      <td>2.360183</td>
-      <td>14.992053</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>This would be helpful, for example, if we wanted to compute the difference
 in the average of all our variables from one year to the next.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2008</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3905/2895671375.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
-  df_year.loc[2009].mean() - df_year.loc[2008].mean()
-/tmp/ipykernel_3905/2895671375.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
-  df_year.loc[2009].mean() - df_year.loc[2008].mean()
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GovExpend      0.033317
-Consumption   -0.042998
-Exports       -0.121425
-Imports       -0.140042
-GDP           -0.182610
-dtype: float64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2009</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2008</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1156,12 +469,7 @@ compute the difference.</p></li>
 <p>To compute that using <code class="docutils literal notranslate"><span class="pre">df_year</span></code> you might do something like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.992052727
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1172,15 +480,7 @@ compute the difference.</p></li>
 <p>To answer that question, you might write.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">]),</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
-2010    3.417095
-2010    2.452900
-Name: GDP, dtype: float64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">]),</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1194,86 +494,10 @@ that is what we listed first in the call to <code class="docutils literal notran
 <p>Let’s check.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2010</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2010</th>
-      <td>Canada</td>
-      <td>0.347332</td>
-      <td>0.921952</td>
-      <td>0.469949</td>
-      <td>0.500341</td>
-      <td>1.613543</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>Germany</td>
-      <td>0.653386</td>
-      <td>1.915481</td>
-      <td>1.443735</td>
-      <td>1.266126</td>
-      <td>3.417095</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>United Kingdom</td>
-      <td>0.521146</td>
-      <td>1.598563</td>
-      <td>0.690824</td>
-      <td>0.745065</td>
-      <td>2.452900</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>United States</td>
-      <td>2.510143</td>
-      <td>10.185836</td>
-      <td>1.846280</td>
-      <td>2.360183</td>
-      <td>14.992053</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Setting just the year as index has one more potential issue: we will
 get data alignment only on the year, which may not be sufficient.</p>
@@ -1294,33 +518,8 @@ Investment = GDP - Consumption - GovExpend - Net Exports
 <p>Note that we can compute NetExports as <code class="docutils literal notranslate"><span class="pre">Exports</span> <span class="pre">-</span> <span class="pre">Imports</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span> <span class="o">=</span> <span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;Exports&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;Imports&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span> <span class="o">=</span> <span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;Exports&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;Imports&quot;</span><span class="p">]</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
-2017   -0.017201
-2016    0.000619
-2015   -0.006934
-2014   -0.022021
-2013   -0.040596
-2012   -0.041787
-2011   -0.035878
-2010   -0.030393
-2009    0.000896
-2008    0.004068
-2007    0.032451
-2006    0.053530
-2005    0.072729
-2004    0.091902
-2003    0.097794
-2002    0.121850
-2001    0.122673
-2000    0.118702
-2017    0.264214
-dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1335,7 +534,7 @@ becomes increasingly likely.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca17</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ca17</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">]]</span>
 <span class="n">g17</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">18</span><span class="p">]]</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">g17</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">18</span><span class="p">]]</span> <span class="o">=</span> <span class="n">ca17</span>
@@ -1344,295 +543,17 @@ becomes increasingly likely.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
-2017    0.264214
-2016    0.000619
-2015   -0.006934
-2014   -0.022021
-2013   -0.040596
-2012   -0.041787
-2011   -0.035878
-2010   -0.030393
-2009    0.000896
-2008    0.004068
-2007    0.032451
-2006    0.053530
-2005    0.072729
-2004    0.091902
-2003    0.097794
-2002    0.121850
-2001    0.122673
-2000    0.118702
-2017   -0.017201
-dtype: float64
-</pre></div>
-</div>
-</div>
 </div>
 <p>Notice that if we now add <code class="docutils literal notranslate"><span class="pre">nx</span></code> to the DataFrame and compute investment
 pandas doesn’t complain.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;NetExports&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;NetExports&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span>
 <span class="n">df_year</span><span class="p">[</span><span class="s2">&quot;Investment&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_year</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;GDP - Consumption - GovExpend - NetExports&quot;</span><span class="p">)</span>
 <span class="n">df_year</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-      <th>NetExports</th>
-      <th>Investment</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2017</th>
-      <td>Canada</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-      <td>0.264214</td>
-      <td>0.135811</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>Canada</td>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-      <td>0.000619</td>
-      <td>0.390072</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>Canada</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-      <td>-0.006934</td>
-      <td>0.407692</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>Canada</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-      <td>-0.022021</td>
-      <td>0.438800</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>Canada</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-      <td>-0.040596</td>
-      <td>0.435369</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>Canada</td>
-      <td>0.354342</td>
-      <td>0.961226</td>
-      <td>0.505969</td>
-      <td>0.547756</td>
-      <td>1.693428</td>
-      <td>-0.041787</td>
-      <td>0.419647</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>Canada</td>
-      <td>0.351887</td>
-      <td>0.943145</td>
-      <td>0.492349</td>
-      <td>0.528227</td>
-      <td>1.664240</td>
-      <td>-0.035878</td>
-      <td>0.405086</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>Canada</td>
-      <td>0.347332</td>
-      <td>0.921952</td>
-      <td>0.469949</td>
-      <td>0.500341</td>
-      <td>1.613543</td>
-      <td>-0.030393</td>
-      <td>0.374652</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>Canada</td>
-      <td>0.339686</td>
-      <td>0.890078</td>
-      <td>0.440692</td>
-      <td>0.439796</td>
-      <td>1.565291</td>
-      <td>0.000896</td>
-      <td>0.334631</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>Canada</td>
-      <td>0.330766</td>
-      <td>0.889602</td>
-      <td>0.506350</td>
-      <td>0.502281</td>
-      <td>1.612862</td>
-      <td>0.004068</td>
-      <td>0.388425</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>Canada</td>
-      <td>0.318777</td>
-      <td>0.864012</td>
-      <td>0.530453</td>
-      <td>0.498002</td>
-      <td>1.596876</td>
-      <td>0.032451</td>
-      <td>0.381636</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>Canada</td>
-      <td>0.311382</td>
-      <td>0.827643</td>
-      <td>0.524461</td>
-      <td>0.470931</td>
-      <td>1.564608</td>
-      <td>0.053530</td>
-      <td>0.372053</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>Canada</td>
-      <td>0.303043</td>
-      <td>0.794390</td>
-      <td>0.519950</td>
-      <td>0.447222</td>
-      <td>1.524608</td>
-      <td>0.072729</td>
-      <td>0.354447</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>Canada</td>
-      <td>0.299854</td>
-      <td>0.764357</td>
-      <td>0.508657</td>
-      <td>0.416754</td>
-      <td>1.477317</td>
-      <td>0.091902</td>
-      <td>0.321203</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>Canada</td>
-      <td>0.294335</td>
-      <td>0.741796</td>
-      <td>0.481993</td>
-      <td>0.384199</td>
-      <td>1.433089</td>
-      <td>0.097794</td>
-      <td>0.299164</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>Canada</td>
-      <td>0.286094</td>
-      <td>0.721974</td>
-      <td>0.490465</td>
-      <td>0.368615</td>
-      <td>1.407725</td>
-      <td>0.121850</td>
-      <td>0.277806</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>Canada</td>
-      <td>0.279767</td>
-      <td>0.694230</td>
-      <td>0.484696</td>
-      <td>0.362023</td>
-      <td>1.366590</td>
-      <td>0.122673</td>
-      <td>0.269921</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>Canada</td>
-      <td>0.270553</td>
-      <td>0.677713</td>
-      <td>0.499526</td>
-      <td>0.380823</td>
-      <td>1.342805</td>
-      <td>0.118702</td>
-      <td>0.275837</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>Germany</td>
-      <td>0.745579</td>
-      <td>2.112009</td>
-      <td>1.930563</td>
-      <td>1.666348</td>
-      <td>3.883870</td>
-      <td>-0.017201</td>
-      <td>1.043482</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Because we didn’t also have data alignment on the country, we would have overstated Canada’s investment by 281 billion USD and understated Germany’s by the
 same amount.</p>
@@ -1651,213 +572,11 @@ observation (as in the Germany and UK GDP example above)</p></li>
 names to <code class="docutils literal notranslate"><span class="pre">set_index</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">])</span>
 <span class="n">wdi</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-    <tr>
-      <th>country</th>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="18" valign="top">Canada</th>
-      <th>2017</th>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.354342</td>
-      <td>0.961226</td>
-      <td>0.505969</td>
-      <td>0.547756</td>
-      <td>1.693428</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>0.351887</td>
-      <td>0.943145</td>
-      <td>0.492349</td>
-      <td>0.528227</td>
-      <td>1.664240</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>0.347332</td>
-      <td>0.921952</td>
-      <td>0.469949</td>
-      <td>0.500341</td>
-      <td>1.613543</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>0.339686</td>
-      <td>0.890078</td>
-      <td>0.440692</td>
-      <td>0.439796</td>
-      <td>1.565291</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>0.330766</td>
-      <td>0.889602</td>
-      <td>0.506350</td>
-      <td>0.502281</td>
-      <td>1.612862</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>0.318777</td>
-      <td>0.864012</td>
-      <td>0.530453</td>
-      <td>0.498002</td>
-      <td>1.596876</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>0.311382</td>
-      <td>0.827643</td>
-      <td>0.524461</td>
-      <td>0.470931</td>
-      <td>1.564608</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>0.303043</td>
-      <td>0.794390</td>
-      <td>0.519950</td>
-      <td>0.447222</td>
-      <td>1.524608</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>0.299854</td>
-      <td>0.764357</td>
-      <td>0.508657</td>
-      <td>0.416754</td>
-      <td>1.477317</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>0.294335</td>
-      <td>0.741796</td>
-      <td>0.481993</td>
-      <td>0.384199</td>
-      <td>1.433089</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>0.286094</td>
-      <td>0.721974</td>
-      <td>0.490465</td>
-      <td>0.368615</td>
-      <td>1.407725</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>0.279767</td>
-      <td>0.694230</td>
-      <td>0.484696</td>
-      <td>0.362023</td>
-      <td>1.366590</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>0.270553</td>
-      <td>0.677713</td>
-      <td>0.499526</td>
-      <td>0.380823</td>
-      <td>1.342805</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Germany</th>
-      <th>2017</th>
-      <td>0.745579</td>
-      <td>2.112009</td>
-      <td>1.930563</td>
-      <td>1.666348</td>
-      <td>3.883870</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>0.734014</td>
-      <td>2.075615</td>
-      <td>1.844949</td>
-      <td>1.589495</td>
-      <td>3.801859</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that in the display above, the row labels seem to have two
 <em>levels</em> now.</p>
@@ -1871,27 +590,14 @@ refer to the DataFrame as having a hierarchical index.</p>
 <p>Now, we can answer our friend’s questions in a much more straightforward way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">),</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.992052727
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">),</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[([</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">],</span> <span class="mi">2010</span><span class="p">),</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>country         year
-United Kingdom  2010    2.452900
-Germany         2010    3.417095
-Name: GDP, dtype: float64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[([</span><span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">],</span> <span class="mi">2010</span><span class="p">),</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1958,340 +664,10 @@ values for an inner index level, we can use the convenient
 Canada.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-    <tr>
-      <th>country</th>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="18" valign="top">United States</th>
-      <th>2017</th>
-      <td>2.405743</td>
-      <td>12.019266</td>
-      <td>2.287071</td>
-      <td>3.069954</td>
-      <td>17.348627</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>2.407981</td>
-      <td>11.722133</td>
-      <td>2.219937</td>
-      <td>2.936004</td>
-      <td>16.972348</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>2.373130</td>
-      <td>11.409800</td>
-      <td>2.222228</td>
-      <td>2.881337</td>
-      <td>16.710459</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>2.334071</td>
-      <td>11.000619</td>
-      <td>2.209555</td>
-      <td>2.732228</td>
-      <td>16.242526</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>2.353381</td>
-      <td>10.687214</td>
-      <td>2.118639</td>
-      <td>2.600198</td>
-      <td>15.853796</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>2.398873</td>
-      <td>10.534042</td>
-      <td>2.045509</td>
-      <td>2.560677</td>
-      <td>15.567038</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>2.434378</td>
-      <td>10.378060</td>
-      <td>1.978083</td>
-      <td>2.493194</td>
-      <td>15.224555</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>2.510143</td>
-      <td>10.185836</td>
-      <td>1.846280</td>
-      <td>2.360183</td>
-      <td>14.992053</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>2.507390</td>
-      <td>10.010687</td>
-      <td>1.646432</td>
-      <td>2.086299</td>
-      <td>14.617299</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>2.407771</td>
-      <td>10.137847</td>
-      <td>1.797347</td>
-      <td>2.400349</td>
-      <td>14.997756</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>2.351987</td>
-      <td>10.159387</td>
-      <td>1.701096</td>
-      <td>2.455016</td>
-      <td>15.018268</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>2.314957</td>
-      <td>9.938503</td>
-      <td>1.564920</td>
-      <td>2.395189</td>
-      <td>14.741688</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>2.287022</td>
-      <td>9.643098</td>
-      <td>1.431205</td>
-      <td>2.246246</td>
-      <td>14.332500</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>2.267999</td>
-      <td>9.311431</td>
-      <td>1.335978</td>
-      <td>2.108585</td>
-      <td>13.846058</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>2.233519</td>
-      <td>8.974708</td>
-      <td>1.218199</td>
-      <td>1.892825</td>
-      <td>13.339312</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>2.193188</td>
-      <td>8.698306</td>
-      <td>1.192180</td>
-      <td>1.804105</td>
-      <td>12.968263</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>2.112038</td>
-      <td>8.480461</td>
-      <td>1.213253</td>
-      <td>1.740797</td>
-      <td>12.746262</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>2.040500</td>
-      <td>8.272097</td>
-      <td>1.287739</td>
-      <td>1.790995</td>
-      <td>12.620268</td>
-    </tr>
-    <tr>
-      <th rowspan="18" valign="top">Canada</th>
-      <th>2017</th>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.354342</td>
-      <td>0.961226</td>
-      <td>0.505969</td>
-      <td>0.547756</td>
-      <td>1.693428</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>0.351887</td>
-      <td>0.943145</td>
-      <td>0.492349</td>
-      <td>0.528227</td>
-      <td>1.664240</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>0.347332</td>
-      <td>0.921952</td>
-      <td>0.469949</td>
-      <td>0.500341</td>
-      <td>1.613543</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>0.339686</td>
-      <td>0.890078</td>
-      <td>0.440692</td>
-      <td>0.439796</td>
-      <td>1.565291</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>0.330766</td>
-      <td>0.889602</td>
-      <td>0.506350</td>
-      <td>0.502281</td>
-      <td>1.612862</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>0.318777</td>
-      <td>0.864012</td>
-      <td>0.530453</td>
-      <td>0.498002</td>
-      <td>1.596876</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>0.311382</td>
-      <td>0.827643</td>
-      <td>0.524461</td>
-      <td>0.470931</td>
-      <td>1.564608</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>0.303043</td>
-      <td>0.794390</td>
-      <td>0.519950</td>
-      <td>0.447222</td>
-      <td>1.524608</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>0.299854</td>
-      <td>0.764357</td>
-      <td>0.508657</td>
-      <td>0.416754</td>
-      <td>1.477317</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>0.294335</td>
-      <td>0.741796</td>
-      <td>0.481993</td>
-      <td>0.384199</td>
-      <td>1.433089</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>0.286094</td>
-      <td>0.721974</td>
-      <td>0.490465</td>
-      <td>0.368615</td>
-      <td>1.407725</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>0.279767</td>
-      <td>0.694230</td>
-      <td>0.484696</td>
-      <td>0.362023</td>
-      <td>1.366590</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>0.270553</td>
-      <td>0.677713</td>
-      <td>0.499526</td>
-      <td>0.380823</td>
-      <td>1.342805</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>However, suppose we wanted to extract the data for all countries, but only the
 years 2005, 2007, and 2009.</p>
@@ -2301,158 +677,10 @@ not outer-most level of our index.</p>
 <p>Here’s an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2007</span><span class="p">,</span> <span class="mi">2009</span><span class="p">]],</span> <span class="p">:]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">IndexSlice</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2007</span><span class="p">,</span> <span class="mi">2009</span><span class="p">]],</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-    <tr>
-      <th>country</th>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Canada</th>
-      <th>2005</th>
-      <td>0.303043</td>
-      <td>0.794390</td>
-      <td>0.519950</td>
-      <td>0.447222</td>
-      <td>1.524608</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <th>2005</th>
-      <td>0.591184</td>
-      <td>1.866253</td>
-      <td>1.175200</td>
-      <td>1.028094</td>
-      <td>3.213777</td>
-    </tr>
-    <tr>
-      <th>United Kingdom</th>
-      <th>2005</th>
-      <td>0.490806</td>
-      <td>1.578914</td>
-      <td>0.640088</td>
-      <td>0.715951</td>
-      <td>2.403352</td>
-    </tr>
-    <tr>
-      <th>United States</th>
-      <th>2005</th>
-      <td>2.287022</td>
-      <td>9.643098</td>
-      <td>1.431205</td>
-      <td>2.246246</td>
-      <td>14.332500</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <th>2007</th>
-      <td>0.318777</td>
-      <td>0.864012</td>
-      <td>0.530453</td>
-      <td>0.498002</td>
-      <td>1.596876</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <th>2007</th>
-      <td>0.605624</td>
-      <td>1.894219</td>
-      <td>1.442436</td>
-      <td>1.213835</td>
-      <td>3.441356</td>
-    </tr>
-    <tr>
-      <th>United Kingdom</th>
-      <th>2007</th>
-      <td>0.504549</td>
-      <td>1.644789</td>
-      <td>0.710200</td>
-      <td>0.767699</td>
-      <td>2.527327</td>
-    </tr>
-    <tr>
-      <th>United States</th>
-      <th>2007</th>
-      <td>2.351987</td>
-      <td>10.159387</td>
-      <td>1.701096</td>
-      <td>2.455016</td>
-      <td>15.018268</td>
-    </tr>
-    <tr>
-      <th>Canada</th>
-      <th>2009</th>
-      <td>0.339686</td>
-      <td>0.890078</td>
-      <td>0.440692</td>
-      <td>0.439796</td>
-      <td>1.565291</td>
-    </tr>
-    <tr>
-      <th>Germany</th>
-      <th>2009</th>
-      <td>0.645023</td>
-      <td>1.908393</td>
-      <td>1.260525</td>
-      <td>1.121914</td>
-      <td>3.283144</td>
-    </tr>
-    <tr>
-      <th>United Kingdom</th>
-      <th>2009</th>
-      <td>0.519716</td>
-      <td>1.587152</td>
-      <td>0.653830</td>
-      <td>0.689011</td>
-      <td>2.411632</td>
-    </tr>
-    <tr>
-      <th>United States</th>
-      <th>2009</th>
-      <td>2.507390</td>
-      <td>10.010687</td>
-      <td>1.646432</td>
-      <td>2.086299</td>
-      <td>14.617299</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">:</span></code> in the first part of <code class="docutils literal notranslate"><span class="pre">[:,</span> <span class="pre">[&quot;A&quot;,</span> <span class="pre">&quot;D&quot;]]</span></code>
 instructed pandas to give us rows for all values of the outer most index
@@ -2468,586 +696,35 @@ level and that the <code class="docutils literal notranslate"><span class="pre">
 <p>Let’s see how it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span> <span class="o">=</span> <span class="n">wdi</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># .T means &quot;transpose&quot; or &quot;swap rows and columns&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span> <span class="o">=</span> <span class="n">wdi</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># .T means &quot;transpose&quot; or &quot;swap rows and columns&quot;</span>
 <span class="n">wdiT</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>country</th>
-      <th colspan="10" halign="left">Canada</th>
-      <th>...</th>
-      <th colspan="10" halign="left">United States</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th>2017</th>
-      <th>2016</th>
-      <th>2015</th>
-      <th>2014</th>
-      <th>2013</th>
-      <th>2012</th>
-      <th>2011</th>
-      <th>2010</th>
-      <th>2009</th>
-      <th>2008</th>
-      <th>...</th>
-      <th>2009</th>
-      <th>2008</th>
-      <th>2007</th>
-      <th>2006</th>
-      <th>2005</th>
-      <th>2004</th>
-      <th>2003</th>
-      <th>2002</th>
-      <th>2001</th>
-      <th>2000</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GovExpend</th>
-      <td>0.372665</td>
-      <td>0.364899</td>
-      <td>0.358303</td>
-      <td>0.353485</td>
-      <td>0.351541</td>
-      <td>0.354342</td>
-      <td>0.351887</td>
-      <td>0.347332</td>
-      <td>0.339686</td>
-      <td>0.330766</td>
-      <td>...</td>
-      <td>2.507390</td>
-      <td>2.407771</td>
-      <td>2.351987</td>
-      <td>2.314957</td>
-      <td>2.287022</td>
-      <td>2.267999</td>
-      <td>2.233519</td>
-      <td>2.193188</td>
-      <td>2.112038</td>
-      <td>2.040500</td>
-    </tr>
-    <tr>
-      <th>Consumption</th>
-      <td>1.095475</td>
-      <td>1.058426</td>
-      <td>1.035208</td>
-      <td>1.011988</td>
-      <td>0.986400</td>
-      <td>0.961226</td>
-      <td>0.943145</td>
-      <td>0.921952</td>
-      <td>0.890078</td>
-      <td>0.889602</td>
-      <td>...</td>
-      <td>10.010687</td>
-      <td>10.137847</td>
-      <td>10.159387</td>
-      <td>9.938503</td>
-      <td>9.643098</td>
-      <td>9.311431</td>
-      <td>8.974708</td>
-      <td>8.698306</td>
-      <td>8.480461</td>
-      <td>8.272097</td>
-    </tr>
-    <tr>
-      <th>Exports</th>
-      <td>0.582831</td>
-      <td>0.576394</td>
-      <td>0.568859</td>
-      <td>0.550323</td>
-      <td>0.518040</td>
-      <td>0.505969</td>
-      <td>0.492349</td>
-      <td>0.469949</td>
-      <td>0.440692</td>
-      <td>0.506350</td>
-      <td>...</td>
-      <td>1.646432</td>
-      <td>1.797347</td>
-      <td>1.701096</td>
-      <td>1.564920</td>
-      <td>1.431205</td>
-      <td>1.335978</td>
-      <td>1.218199</td>
-      <td>1.192180</td>
-      <td>1.213253</td>
-      <td>1.287739</td>
-    </tr>
-    <tr>
-      <th>Imports</th>
-      <td>0.600031</td>
-      <td>0.575775</td>
-      <td>0.575793</td>
-      <td>0.572344</td>
-      <td>0.558636</td>
-      <td>0.547756</td>
-      <td>0.528227</td>
-      <td>0.500341</td>
-      <td>0.439796</td>
-      <td>0.502281</td>
-      <td>...</td>
-      <td>2.086299</td>
-      <td>2.400349</td>
-      <td>2.455016</td>
-      <td>2.395189</td>
-      <td>2.246246</td>
-      <td>2.108585</td>
-      <td>1.892825</td>
-      <td>1.804105</td>
-      <td>1.740797</td>
-      <td>1.790995</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>1.868164</td>
-      <td>1.814016</td>
-      <td>1.794270</td>
-      <td>1.782252</td>
-      <td>1.732714</td>
-      <td>1.693428</td>
-      <td>1.664240</td>
-      <td>1.613543</td>
-      <td>1.565291</td>
-      <td>1.612862</td>
-      <td>...</td>
-      <td>14.617299</td>
-      <td>14.997756</td>
-      <td>15.018268</td>
-      <td>14.741688</td>
-      <td>14.332500</td>
-      <td>13.846058</td>
-      <td>13.339312</td>
-      <td>12.968263</td>
-      <td>12.746262</td>
-      <td>12.620268</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 72 columns</p>
-</div></div></div>
 </div>
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">wdiT</span></code> seems to have two levels of names for the columns.</p>
 <p>The same logic laid out in the above row slicing rules applies when we
 have a hierarchical index for column names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;United States&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;United States&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>year</th>
-      <th>2017</th>
-      <th>2016</th>
-      <th>2015</th>
-      <th>2014</th>
-      <th>2013</th>
-      <th>2012</th>
-      <th>2011</th>
-      <th>2010</th>
-      <th>2009</th>
-      <th>2008</th>
-      <th>2007</th>
-      <th>2006</th>
-      <th>2005</th>
-      <th>2004</th>
-      <th>2003</th>
-      <th>2002</th>
-      <th>2001</th>
-      <th>2000</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GovExpend</th>
-      <td>2.405743</td>
-      <td>2.407981</td>
-      <td>2.373130</td>
-      <td>2.334071</td>
-      <td>2.353381</td>
-      <td>2.398873</td>
-      <td>2.434378</td>
-      <td>2.510143</td>
-      <td>2.507390</td>
-      <td>2.407771</td>
-      <td>2.351987</td>
-      <td>2.314957</td>
-      <td>2.287022</td>
-      <td>2.267999</td>
-      <td>2.233519</td>
-      <td>2.193188</td>
-      <td>2.112038</td>
-      <td>2.040500</td>
-    </tr>
-    <tr>
-      <th>Consumption</th>
-      <td>12.019266</td>
-      <td>11.722133</td>
-      <td>11.409800</td>
-      <td>11.000619</td>
-      <td>10.687214</td>
-      <td>10.534042</td>
-      <td>10.378060</td>
-      <td>10.185836</td>
-      <td>10.010687</td>
-      <td>10.137847</td>
-      <td>10.159387</td>
-      <td>9.938503</td>
-      <td>9.643098</td>
-      <td>9.311431</td>
-      <td>8.974708</td>
-      <td>8.698306</td>
-      <td>8.480461</td>
-      <td>8.272097</td>
-    </tr>
-    <tr>
-      <th>Exports</th>
-      <td>2.287071</td>
-      <td>2.219937</td>
-      <td>2.222228</td>
-      <td>2.209555</td>
-      <td>2.118639</td>
-      <td>2.045509</td>
-      <td>1.978083</td>
-      <td>1.846280</td>
-      <td>1.646432</td>
-      <td>1.797347</td>
-      <td>1.701096</td>
-      <td>1.564920</td>
-      <td>1.431205</td>
-      <td>1.335978</td>
-      <td>1.218199</td>
-      <td>1.192180</td>
-      <td>1.213253</td>
-      <td>1.287739</td>
-    </tr>
-    <tr>
-      <th>Imports</th>
-      <td>3.069954</td>
-      <td>2.936004</td>
-      <td>2.881337</td>
-      <td>2.732228</td>
-      <td>2.600198</td>
-      <td>2.560677</td>
-      <td>2.493194</td>
-      <td>2.360183</td>
-      <td>2.086299</td>
-      <td>2.400349</td>
-      <td>2.455016</td>
-      <td>2.395189</td>
-      <td>2.246246</td>
-      <td>2.108585</td>
-      <td>1.892825</td>
-      <td>1.804105</td>
-      <td>1.740797</td>
-      <td>1.790995</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>17.348627</td>
-      <td>16.972348</td>
-      <td>16.710459</td>
-      <td>16.242526</td>
-      <td>15.853796</td>
-      <td>15.567038</td>
-      <td>15.224555</td>
-      <td>14.992053</td>
-      <td>14.617299</td>
-      <td>14.997756</td>
-      <td>15.018268</td>
-      <td>14.741688</td>
-      <td>14.332500</td>
-      <td>13.846058</td>
-      <td>13.339312</td>
-      <td>12.968263</td>
-      <td>12.746262</td>
-      <td>12.620268</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>country</th>
-      <th colspan="10" halign="left">United States</th>
-      <th>...</th>
-      <th colspan="10" halign="left">Canada</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th>2017</th>
-      <th>2016</th>
-      <th>2015</th>
-      <th>2014</th>
-      <th>2013</th>
-      <th>2012</th>
-      <th>2011</th>
-      <th>2010</th>
-      <th>2009</th>
-      <th>2008</th>
-      <th>...</th>
-      <th>2009</th>
-      <th>2008</th>
-      <th>2007</th>
-      <th>2006</th>
-      <th>2005</th>
-      <th>2004</th>
-      <th>2003</th>
-      <th>2002</th>
-      <th>2001</th>
-      <th>2000</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GovExpend</th>
-      <td>2.405743</td>
-      <td>2.407981</td>
-      <td>2.373130</td>
-      <td>2.334071</td>
-      <td>2.353381</td>
-      <td>2.398873</td>
-      <td>2.434378</td>
-      <td>2.510143</td>
-      <td>2.507390</td>
-      <td>2.407771</td>
-      <td>...</td>
-      <td>0.339686</td>
-      <td>0.330766</td>
-      <td>0.318777</td>
-      <td>0.311382</td>
-      <td>0.303043</td>
-      <td>0.299854</td>
-      <td>0.294335</td>
-      <td>0.286094</td>
-      <td>0.279767</td>
-      <td>0.270553</td>
-    </tr>
-    <tr>
-      <th>Consumption</th>
-      <td>12.019266</td>
-      <td>11.722133</td>
-      <td>11.409800</td>
-      <td>11.000619</td>
-      <td>10.687214</td>
-      <td>10.534042</td>
-      <td>10.378060</td>
-      <td>10.185836</td>
-      <td>10.010687</td>
-      <td>10.137847</td>
-      <td>...</td>
-      <td>0.890078</td>
-      <td>0.889602</td>
-      <td>0.864012</td>
-      <td>0.827643</td>
-      <td>0.794390</td>
-      <td>0.764357</td>
-      <td>0.741796</td>
-      <td>0.721974</td>
-      <td>0.694230</td>
-      <td>0.677713</td>
-    </tr>
-    <tr>
-      <th>Exports</th>
-      <td>2.287071</td>
-      <td>2.219937</td>
-      <td>2.222228</td>
-      <td>2.209555</td>
-      <td>2.118639</td>
-      <td>2.045509</td>
-      <td>1.978083</td>
-      <td>1.846280</td>
-      <td>1.646432</td>
-      <td>1.797347</td>
-      <td>...</td>
-      <td>0.440692</td>
-      <td>0.506350</td>
-      <td>0.530453</td>
-      <td>0.524461</td>
-      <td>0.519950</td>
-      <td>0.508657</td>
-      <td>0.481993</td>
-      <td>0.490465</td>
-      <td>0.484696</td>
-      <td>0.499526</td>
-    </tr>
-    <tr>
-      <th>Imports</th>
-      <td>3.069954</td>
-      <td>2.936004</td>
-      <td>2.881337</td>
-      <td>2.732228</td>
-      <td>2.600198</td>
-      <td>2.560677</td>
-      <td>2.493194</td>
-      <td>2.360183</td>
-      <td>2.086299</td>
-      <td>2.400349</td>
-      <td>...</td>
-      <td>0.439796</td>
-      <td>0.502281</td>
-      <td>0.498002</td>
-      <td>0.470931</td>
-      <td>0.447222</td>
-      <td>0.416754</td>
-      <td>0.384199</td>
-      <td>0.368615</td>
-      <td>0.362023</td>
-      <td>0.380823</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>17.348627</td>
-      <td>16.972348</td>
-      <td>16.710459</td>
-      <td>16.242526</td>
-      <td>15.853796</td>
-      <td>15.567038</td>
-      <td>15.224555</td>
-      <td>14.992053</td>
-      <td>14.617299</td>
-      <td>14.997756</td>
-      <td>...</td>
-      <td>1.565291</td>
-      <td>1.612862</td>
-      <td>1.596876</td>
-      <td>1.564608</td>
-      <td>1.524608</td>
-      <td>1.477317</td>
-      <td>1.433089</td>
-      <td>1.407725</td>
-      <td>1.366590</td>
-      <td>1.342805</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 36 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">([</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">],</span> <span class="mi">2010</span><span class="p">)]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdiT</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">([</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">],</span> <span class="mi">2010</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>country</th>
-      <th>United States</th>
-      <th>Canada</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th>2010</th>
-      <th>2010</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GovExpend</th>
-      <td>2.510143</td>
-      <td>0.347332</td>
-    </tr>
-    <tr>
-      <th>Consumption</th>
-      <td>10.185836</td>
-      <td>0.921952</td>
-    </tr>
-    <tr>
-      <th>Exports</th>
-      <td>1.846280</td>
-      <td>0.469949</td>
-    </tr>
-    <tr>
-      <th>Imports</th>
-      <td>2.360183</td>
-      <td>0.500341</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>14.992053</td>
-      <td>1.613543</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-idx-dir5">
 <p class="admonition-title">Exercise</p>
@@ -3064,153 +741,10 @@ sets the index of the returned DataFrame to the default of
 <code class="docutils literal notranslate"><span class="pre">range(df.shape[0])</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country</th>
-      <th>year</th>
-      <th>GovExpend</th>
-      <th>Consumption</th>
-      <th>Exports</th>
-      <th>Imports</th>
-      <th>GDP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Canada</td>
-      <td>2017</td>
-      <td>0.372665</td>
-      <td>1.095475</td>
-      <td>0.582831</td>
-      <td>0.600031</td>
-      <td>1.868164</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Canada</td>
-      <td>2016</td>
-      <td>0.364899</td>
-      <td>1.058426</td>
-      <td>0.576394</td>
-      <td>0.575775</td>
-      <td>1.814016</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Canada</td>
-      <td>2015</td>
-      <td>0.358303</td>
-      <td>1.035208</td>
-      <td>0.568859</td>
-      <td>0.575793</td>
-      <td>1.794270</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Canada</td>
-      <td>2014</td>
-      <td>0.353485</td>
-      <td>1.011988</td>
-      <td>0.550323</td>
-      <td>0.572344</td>
-      <td>1.782252</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Canada</td>
-      <td>2013</td>
-      <td>0.351541</td>
-      <td>0.986400</td>
-      <td>0.518040</td>
-      <td>0.558636</td>
-      <td>1.732714</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>United States</td>
-      <td>2004</td>
-      <td>2.267999</td>
-      <td>9.311431</td>
-      <td>1.335978</td>
-      <td>2.108585</td>
-      <td>13.846058</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>United States</td>
-      <td>2003</td>
-      <td>2.233519</td>
-      <td>8.974708</td>
-      <td>1.218199</td>
-      <td>1.892825</td>
-      <td>13.339312</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>United States</td>
-      <td>2002</td>
-      <td>2.193188</td>
-      <td>8.698306</td>
-      <td>1.192180</td>
-      <td>1.804105</td>
-      <td>12.968263</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>United States</td>
-      <td>2001</td>
-      <td>2.112038</td>
-      <td>8.480461</td>
-      <td>1.213253</td>
-      <td>1.740797</td>
-      <td>12.746262</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>United States</td>
-      <td>2000</td>
-      <td>2.040500</td>
-      <td>8.272097</td>
-      <td>1.287739</td>
-      <td>1.790995</td>
-      <td>12.620268</td>
-    </tr>
-  </tbody>
-</table>
-<p>72 rows × 7 columns</p>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-idx-dir6">
 <p class="admonition-title">Exercise</p>
@@ -3277,56 +811,56 @@ correct index.</p>
 <p>Write your answers.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[([</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">]),</span> <span class="p">:]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[([</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">],</span> <span class="p">[</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">]),</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;GDP&quot;</span><span class="p">,</span> <span class="s2">&quot;Exports&quot;</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;GDP&quot;</span><span class="p">,</span> <span class="s2">&quot;Exports&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="mi">2010</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="mi">2015</span><span class="p">)]]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">],</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">],</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -3357,28 +891,28 @@ within the <code class="docutils literal notranslate"><span class="pre">pd.Index
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wdi2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wdi.loc[&quot;United States&quot;]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># wdi.loc[&quot;United States&quot;]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wdi.loc[([&quot;United States&quot;, &quot;Canada&quot;], [2010, 2011, 2012]), :]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># wdi.loc[([&quot;United States&quot;, &quot;Canada&quot;], [2010, 2011, 2012]), :]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wdi.loc[[&quot;United States&quot;, &quot;Canada&quot;], &quot;GDP&quot;]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># wdi.loc[[&quot;United States&quot;, &quot;Canada&quot;], &quot;GDP&quot;]</span>
 </pre></div>
 </div>
 </div>
@@ -3402,21 +936,21 @@ learn how to do the following:</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove just year level and add as column</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove just year level and add as column</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># throw away all levels of index</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># throw away all levels of index</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove country from the index -- don&#39;t keep it as a column</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove country from the index -- don&#39;t keep it as a column</span>
 </pre></div>
 </div>
 </div>

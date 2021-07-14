@@ -269,13 +269,13 @@ Statistics</a></p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -303,7 +303,7 @@ to learn more about what is possible.</p>
 then work through extended example and exercises with real data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">C</span><span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
@@ -314,70 +314,6 @@ then work through extended example and exercises with real data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>2</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>1</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2</td>
-      <td>1</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="section" id="simple-example">
 <h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h3>
@@ -389,7 +325,7 @@ construct groups.</p>
 name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -398,12 +334,7 @@ name.</p>
 will sometimes refer to as GroupBy for short.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">gbA</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.groupby.generic.DataFrameGroupBy
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">gbA</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -413,109 +344,17 @@ understand what the GroupBy represents.</p>
 <p>We can do this with the <code class="docutils literal notranslate"><span class="pre">gb.get_group(group_name)</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>2</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>1</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2</td>
-      <td>1</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can <em>apply</em> some of our favorite aggregation functions directly on the
 <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object.</p>
@@ -532,122 +371,27 @@ unique combinations of values from all columns in the list.</p>
 <p>Let’s see an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">gbAB</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.groupby.generic.DataFrameGroupBy
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span><span class="o">.</span><span class="n">get_group</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that we still have a GroupBy object, so we can apply our favorite
 aggregations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbAB</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>C</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th>B</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">1</th>
-      <th>1</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2</th>
-      <th>1</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that the output is a DataFrame with two levels on the index
 and a single column <code class="docutils literal notranslate"><span class="pre">C</span></code>. (Quiz: how do we know it is a DataFrame with
@@ -671,7 +415,7 @@ steps:</p>
 <p>Let’s see an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="s2">&quot;Return the number of missing items in each column of df&quot;</span>
     <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
@@ -682,15 +426,7 @@ steps:</p>
 missing items in each column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A    0
-B    0
-C    2
-dtype: int64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -699,52 +435,10 @@ dtype: int64
 items in each column <em>for each group</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">num_missing</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">num_missing</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>The key to keep in mind is that the function we pass to <code class="docutils literal notranslate"><span class="pre">agg</span></code> should
 take in a DataFrame (or Series) and return a Series (or single value)
@@ -759,78 +453,14 @@ our function as a DataFrame (or Series).</p>
 <p>Let’s see an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>2</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>1</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2</td>
-      <td>1</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smallest_by_b</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smallest_by_b</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -838,72 +468,10 @@ our function as a DataFrame (or Series).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">smallest_by_b</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">smallest_by_b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">1</th>
-      <th>0</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2</th>
-      <th>4</th>
-      <td>2</td>
-      <td>1</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2</td>
-      <td>1</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that the return value from applying our series transform to <code class="docutils literal notranslate"><span class="pre">gbA</span></code>
 was the group key on the outer level (the <code class="docutils literal notranslate"><span class="pre">A</span></code> column) and the original
@@ -931,7 +499,7 @@ pandas more information than just a column name.</p>
 index and a <code class="docutils literal notranslate"><span class="pre">Date</span></code> column added.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
     <span class="n">start</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">),</span>
     <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;BQ&quot;</span><span class="p">,</span>
@@ -942,298 +510,39 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3723/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>B</th>
-      <th>C</th>
-      <th>Date</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1.0</td>
-      <td>2021-09-30</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>2.0</td>
-      <td>2021-12-31</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>3.0</td>
-      <td>2022-03-31</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>NaN</td>
-      <td>2022-06-30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>5.0</td>
-      <td>2022-09-30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>NaN</td>
-      <td>2022-12-30</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can group by year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2021-12-31</th>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2022-12-31</th>
-      <td>4</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can group by the <code class="docutils literal notranslate"><span class="pre">A</span></code> level of the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>B</th>
-      <th>C</th>
-      <th>Date</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can combine these to group by both.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>B</th>
-      <th>C</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th>A</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2021-12-31</th>
-      <th>1</th>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2022-12-31</th>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>And we can combine <code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code> with a string, where the string
 denotes a column name</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>C</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th>B</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2021-12-31</th>
-      <th>1</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2022-12-31</th>
-      <th>1</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 </div>
@@ -1243,8 +552,8 @@ denotes a column name</p>
 saw in the <a class="reference internal" href="merge.html"><span class="doc">merge</span></a> lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
-<span class="n">air_dec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
+<span class="n">air_dec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1253,7 +562,7 @@ saw in the <a class="reference internal" href="merge.html"><span class="doc">mer
 each week.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weekly_delays</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">weekly_delays</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">air_dec</span>
     <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;W&quot;</span><span class="p">),</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">])</span>
     <span class="p">[</span><span class="s2">&quot;ArrDelay&quot;</span><span class="p">]</span>               <span class="c1"># extract one column</span>
@@ -1264,67 +573,11 @@ each week.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3723</span><span class="o">/</span><span class="mf">3961394851.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">weekly_delays</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">air_dec</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;W&quot;</span><span class="p">),</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="p">[</span><span class="s2">&quot;ArrDelay&quot;</span><span class="p">]</span>               <span class="c1"># extract one column</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="o">.</span><span class="n">mean</span><span class="p">()</span>                    <span class="c1"># take average</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">groupby</span><span class="nt">(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)</span>
-<span class="g g-Whitespace">   </span><span class="mi">7624</span>         <span class="c1"># error: Argument &quot;squeeze&quot; to &quot;DataFrameGroupBy&quot; has incompatible type</span>
-<span class="g g-Whitespace">   </span><span class="mi">7625</span>         <span class="c1"># &quot;Union[bool, NoDefault]&quot;; expected &quot;bool&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">7626</span>         <span class="k">return</span> <span class="n">DataFrameGroupBy</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">7627</span>             <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">7628</span>             <span class="n">keys</span><span class="o">=</span><span class="n">by</span><span class="p">,</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/groupby/groupby.py</span> in <span class="ni">__init__</span><span class="nt">(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)</span>
-<span class="g g-Whitespace">    </span><span class="mi">886</span>             <span class="kn">from</span> <span class="nn">pandas.core.groupby.grouper</span> <span class="kn">import</span> <span class="n">get_grouper</span>
-<span class="g g-Whitespace">    </span><span class="mi">887</span> 
-<span class="ne">--&gt; </span><span class="mi">888</span>             <span class="n">grouper</span><span class="p">,</span> <span class="n">exclusions</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">get_grouper</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">889</span>                 <span class="n">obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">890</span>                 <span class="n">keys</span><span class="p">,</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ni">get_grouper</span><span class="nt">(obj, key, axis, level, sort, observed, mutated, validate, dropna)</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>         <span class="c1"># allow us to passing the actual Grouping as the gpr</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>         <span class="n">ping</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">877</span>             <span class="n">Grouping</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>                 <span class="n">group_axis</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>                 <span class="n">gpr</span><span class="p">,</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ni">__init__</span><span class="nt">(self, index, grouper, obj, level, sort, observed, in_axis, dropna)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span>             <span class="c1"># check again as we have by this point converted these</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>             <span class="c1"># to an actual value (rather than a pd.Grouper)</span>
-<span class="ne">--&gt; </span><span class="mi">502</span>             <span class="n">_</span><span class="p">,</span> <span class="n">newgrouper</span><span class="p">,</span> <span class="n">newobj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grouping_vector</span><span class="o">.</span><span class="n">_get_grouper</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>                 <span class="c1"># error: Value of type variable &quot;FrameOrSeries&quot; of &quot;_get_grouper&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>                 <span class="c1"># of &quot;Grouper&quot; cannot be &quot;Optional[FrameOrSeries]&quot;</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/resample.py</span> in <span class="ni">_get_grouper</span><span class="nt">(self, obj, validate)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1561</span>     <span class="k">def</span> <span class="nf">_get_grouper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">validate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1562</span>         <span class="c1"># create the resampler and return our binner</span>
-<span class="ne">-&gt; </span><span class="mi">1563</span>         <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_resampler</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1564</span>         <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">binner</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">grouper</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">obj</span>
-<span class="g g-Whitespace">   </span><span class="mi">1565</span> 
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/resample.py</span> in <span class="ni">_get_resampler</span><span class="nt">(self, obj, kind)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1553</span>             <span class="k">return</span> <span class="n">TimedeltaIndexResampler</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1554</span> 
-<span class="ne">-&gt; </span><span class="mi">1555</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1556</span>             <span class="s2">&quot;Only valid with DatetimeIndex, &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1557</span>             <span class="s2">&quot;TimedeltaIndex or PeriodIndex, &quot;</span>
-
-<span class="ne">TypeError</span>: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of &#39;Index&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s also plot this data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
 <span class="n">axs</span> <span class="o">=</span> <span class="n">weekly_delays</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">grid</span><span class="o">=</span><span class="kc">False</span>
@@ -1346,7 +599,7 @@ on Christmas week).</p>
 attributed to 5 different categories:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delay_cols</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">delay_cols</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;CarrierDelay&#39;</span><span class="p">,</span>
     <span class="s1">&#39;WeatherDelay&#39;</span><span class="p">,</span>
     <span class="s1">&#39;NASDelay&#39;</span><span class="p">,</span>
@@ -1360,7 +613,7 @@ attributed to 5 different categories:</p>
 <p>Let’s take a quick look at each of those delay categories for the week ending December 18, 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre_christmas</span> <span class="o">=</span> <span class="n">air_dec</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre_christmas</span> <span class="o">=</span> <span class="n">air_dec</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
     <span class="p">(</span><span class="n">air_dec</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;2016-12-12&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">air_dec</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;2016-12-18&quot;</span><span class="p">)</span>
 <span class="p">]</span>
 
@@ -1387,7 +640,7 @@ carrier</p>
 <p>We show one example below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reshaped_delays</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reshaped_delays</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">delay_totals</span>
     <span class="o">.</span><span class="n">stack</span><span class="p">()</span>             <span class="c1"># move aggregation method into index (with Carrier)</span>
     <span class="o">.</span><span class="n">T</span>                   <span class="c1"># put delay type in index and Carrier+agg in column</span>
@@ -1401,7 +654,7 @@ carrier</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">agg</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;positive&quot;</span><span class="p">]:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">agg</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;positive&quot;</span><span class="p">]:</span>
     <span class="n">axs</span> <span class="o">=</span> <span class="n">reshaped_delays</span><span class="p">[</span><span class="n">agg</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
         <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span>
@@ -1436,7 +689,7 @@ of occurrences of each type of delay.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_delay_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_delay_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Make a bar chart of average flight delays for each carrier at</span>
 <span class="sd">    a given frequency.</span>
@@ -1501,7 +754,7 @@ of occurrences of each type of delay.</p></li>
 figure to be a bit wider in order to see the dates.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_delay_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">));</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mean_delay_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -1516,7 +769,7 @@ delays on those two days.</p>
 the days together and separately without much effort.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># both days</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># both days</span>
 <span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-17-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1524,7 +777,7 @@ the days together and separately without much effort.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only the 17th</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># only the 17th</span>
 <span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-17-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-17-16&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1532,7 +785,7 @@ the days together and separately without much effort.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># only the 18th</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># only the 18th</span>
 <span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1558,7 +811,7 @@ properties of a order-detail report from Shopify</p>
 <p>We’ll first look at the data, and then describe the exercise</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the &quot;randomness&quot; seeds</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the &quot;randomness&quot; seeds</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
@@ -1656,14 +909,14 @@ happened to the <code class="docutils literal notranslate"><span class="pre">NaN
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1679,21 +932,21 @@ defined for GroupBy objects.</p>
 output of <code class="docutils literal notranslate"><span class="pre">gbA.sum()</span></code> from above? If not, what is different?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 1</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># method 3</span>
 </pre></div>
 </div>
 </div>
@@ -1725,7 +978,7 @@ new columns.</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write function here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># write function here</span>
 
 
 <span class="c1"># apply function here</span>
@@ -1735,7 +988,7 @@ new columns.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add output of function as new columns to df here...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add output of function as new columns to df here...</span>
 </pre></div>
 </div>
 </div>
@@ -1755,7 +1008,7 @@ new columns.</p>
 <p>Write your thoughts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here if needed</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here if needed</span>
 </pre></div>
 </div>
 </div>
@@ -1768,14 +1021,14 @@ new columns.</p>
 appropriate values to replicate the plots from above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call mean_delay_plot here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># call mean_delay_plot here</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># call delay_type_plot here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># call delay_type_plot here</span>
 </pre></div>
 </div>
 </div>

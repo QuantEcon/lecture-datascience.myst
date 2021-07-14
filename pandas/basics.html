@@ -306,9 +306,9 @@ own and apply them using <code class="docutils literal notranslate"><span class=
 frequency.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -317,16 +317,11 @@ frequency.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.3.0&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>First, we will download the data directly from a url and read it into a pandas DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load up the data -- this will take a couple seconds</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load up the data -- this will take a couple seconds</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/state_unemployment.csv&quot;</span>
 <span class="n">unemp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">])</span>
 </pre></div>
@@ -339,81 +334,17 @@ exception here is that we need to give pandas a hint so it can load up the <code
 the underlying CSV file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>state</th>
-      <th>LaborForce</th>
-      <th>UnemploymentRate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2000-01-01</td>
-      <td>Alabama</td>
-      <td>2142945.0</td>
-      <td>4.7</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2000-01-01</td>
-      <td>Alaska</td>
-      <td>319059.0</td>
-      <td>6.3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2000-01-01</td>
-      <td>Arizona</td>
-      <td>2499980.0</td>
-      <td>4.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2000-01-01</td>
-      <td>Arkansas</td>
-      <td>1264619.0</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2000-01-01</td>
-      <td>California</td>
-      <td>16680246.0</td>
-      <td>5.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Note that a row has a date, state, labor force size, and unemployment rate.</p>
 <p>For our analysis, we want to look at the unemployment rate across different states over time, which
 requires a transformation of the data similar to an Excel pivot-table.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t worry about the details here quite yet</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t worry about the details here quite yet</span>
 <span class="n">unemp_all</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">unemp_raw</span>
     <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -423,202 +354,11 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Alabama</th>
-      <th>Alaska</th>
-      <th>Arizona</th>
-      <th>Arkansas</th>
-      <th>California</th>
-      <th>Colorado</th>
-      <th>Connecticut</th>
-      <th>Delaware</th>
-      <th>Florida</th>
-      <th>Georgia</th>
-      <th>...</th>
-      <th>South Dakota</th>
-      <th>Tennessee</th>
-      <th>Texas</th>
-      <th>Utah</th>
-      <th>Vermont</th>
-      <th>Virginia</th>
-      <th>Washington</th>
-      <th>West Virginia</th>
-      <th>Wisconsin</th>
-      <th>Wyoming</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.7</td>
-      <td>6.3</td>
-      <td>4.1</td>
-      <td>4.4</td>
-      <td>5.0</td>
-      <td>2.8</td>
-      <td>2.8</td>
-      <td>3.5</td>
-      <td>3.7</td>
-      <td>3.7</td>
-      <td>...</td>
-      <td>2.4</td>
-      <td>3.7</td>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>2.7</td>
-      <td>2.6</td>
-      <td>4.9</td>
-      <td>5.8</td>
-      <td>3.2</td>
-      <td>4.1</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.7</td>
-      <td>6.3</td>
-      <td>4.1</td>
-      <td>4.3</td>
-      <td>5.0</td>
-      <td>2.8</td>
-      <td>2.7</td>
-      <td>3.6</td>
-      <td>3.7</td>
-      <td>3.6</td>
-      <td>...</td>
-      <td>2.4</td>
-      <td>3.7</td>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>2.6</td>
-      <td>2.5</td>
-      <td>4.9</td>
-      <td>5.6</td>
-      <td>3.2</td>
-      <td>3.9</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.6</td>
-      <td>6.3</td>
-      <td>4.0</td>
-      <td>4.3</td>
-      <td>5.0</td>
-      <td>2.7</td>
-      <td>2.6</td>
-      <td>3.6</td>
-      <td>3.7</td>
-      <td>3.6</td>
-      <td>...</td>
-      <td>2.4</td>
-      <td>3.8</td>
-      <td>4.5</td>
-      <td>3.1</td>
-      <td>2.6</td>
-      <td>2.4</td>
-      <td>5.0</td>
-      <td>5.5</td>
-      <td>3.3</td>
-      <td>3.9</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.6</td>
-      <td>6.3</td>
-      <td>4.0</td>
-      <td>4.3</td>
-      <td>5.1</td>
-      <td>2.7</td>
-      <td>2.5</td>
-      <td>3.7</td>
-      <td>3.7</td>
-      <td>3.7</td>
-      <td>...</td>
-      <td>2.4</td>
-      <td>3.8</td>
-      <td>4.4</td>
-      <td>3.1</td>
-      <td>2.7</td>
-      <td>2.4</td>
-      <td>5.0</td>
-      <td>5.4</td>
-      <td>3.4</td>
-      <td>3.8</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.5</td>
-      <td>6.3</td>
-      <td>4.0</td>
-      <td>4.2</td>
-      <td>5.1</td>
-      <td>2.7</td>
-      <td>2.4</td>
-      <td>3.7</td>
-      <td>3.7</td>
-      <td>3.7</td>
-      <td>...</td>
-      <td>2.4</td>
-      <td>3.9</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>2.7</td>
-      <td>2.3</td>
-      <td>5.1</td>
-      <td>5.4</td>
-      <td>3.5</td>
-      <td>3.8</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 50 columns</p>
-</div></div></div>
 </div>
 <p>Finally, we can filter it to look at a subset of the columns (i.e. “state” in this case).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;Arizona&quot;</span><span class="p">,</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span> <span class="s2">&quot;Florida&quot;</span><span class="p">,</span> <span class="s2">&quot;Illinois&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Michigan&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Texas&quot;</span>
 <span class="p">]</span>
@@ -627,111 +367,13 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>When plotting, a DataFrame knows the column and index names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Date&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/basics_11_1.png" src="../_images/basics_11_1.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-bas-dir1">
@@ -746,19 +388,7 @@ dates (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</
 <p>This is because the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the index is a variant of <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">index</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2000-01-01&#39;, &#39;2000-02-01&#39;, &#39;2000-03-01&#39;, &#39;2000-04-01&#39;,
-               &#39;2000-05-01&#39;, &#39;2000-06-01&#39;, &#39;2000-07-01&#39;, &#39;2000-08-01&#39;,
-               &#39;2000-09-01&#39;, &#39;2000-10-01&#39;,
-               ...
-               &#39;2017-03-01&#39;, &#39;2017-04-01&#39;, &#39;2017-05-01&#39;, &#39;2017-06-01&#39;,
-               &#39;2017-07-01&#39;, &#39;2017-08-01&#39;, &#39;2017-09-01&#39;, &#39;2017-10-01&#39;,
-               &#39;2017-11-01&#39;, &#39;2017-12-01&#39;],
-              dtype=&#39;datetime64[ns]&#39;, name=&#39;Date&#39;, length=216, freq=None)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
@@ -768,134 +398,19 @@ representations of dates.</p>
 <p>For example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data corresponding to a single date</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data corresponding to a single date</span>
 <span class="n">unemp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;01/01/2000&quot;</span><span class="p">,</span> <span class="p">:]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
-Arizona       4.1
-California    5.0
-Florida       3.7
-Illinois      4.2
-Michigan      3.3
-New York      4.7
-Texas         4.6
-Name: 2000-01-01 00:00:00, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data for all days between New Years Day and June first in the year 2000</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data for all days between New Years Day and June first in the year 2000</span>
 <span class="n">unemp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;01/01/2000&quot;</span><span class="p">:</span><span class="s2">&quot;06/01/2000&quot;</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-    <tr>
-      <th>2000-06-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.8</td>
-      <td>4.3</td>
-      <td>3.7</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We will learn more about what pandas can do with dates and times in an
 upcoming lecture on time series data.</p>
@@ -928,20 +443,7 @@ values into a single value.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
-Arizona       6.301389
-California    7.299074
-Florida       6.048611
-Illinois      6.822685
-Michigan      7.492593
-New York      6.102315
-Texas         5.695370
-dtype: float64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -951,18 +453,7 @@ dtype: float64
 row as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01    0.352381
-2000-02-01    0.384762
-2000-03-01    0.364762
-2000-04-01    0.353333
-2000-05-01    0.294762
-dtype: float64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -984,7 +475,7 @@ outputs a single value.</p></li>
 above or below 6.5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># Step 1: We write the (aggregation) function that we&#39;d like to use</span>
 <span class="c1">#</span>
 <span class="k">def</span> <span class="nf">high_or_low</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -1004,42 +495,18 @@ above or below 6.5.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># Step 2: Apply it via the agg method.</span>
 <span class="c1">#</span>
 <span class="n">unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">high_or_low</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
-Arizona        Low
-California    High
-Florida        Low
-Illinois      High
-Michigan      High
-New York       Low
-Texas          Low
-dtype: object
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How does this differ from unemp.agg(high_or_low)?</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># How does this differ from unemp.agg(high_or_low)?</span>
 <span class="n">unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">high_or_low</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01    Low
-2000-02-01    Low
-2000-03-01    Low
-2000-04-01    Low
-2000-05-01    Low
-dtype: object
 </pre></div>
 </div>
 </div>
@@ -1047,72 +514,10 @@ dtype: object
 <p>Notice that <code class="docutils literal notranslate"><span class="pre">agg</span></code> can also accept multiple functions at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">high_or_low</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">high_or_low</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>min</th>
-      <td>3.6</td>
-      <td>4.5</td>
-      <td>3.1</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.2</td>
-      <td>3.9</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>10.9</td>
-      <td>12.3</td>
-      <td>11.3</td>
-      <td>11.3</td>
-      <td>14.6</td>
-      <td>8.9</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th>high_or_low</th>
-      <td>Low</td>
-      <td>High</td>
-      <td>Low</td>
-      <td>High</td>
-      <td>High</td>
-      <td>Low</td>
-      <td>Low</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-bas-dir2">
 <p class="admonition-title">Exercise</p>
@@ -1144,300 +549,24 @@ Series.</p>
 <p>Again, tab completion is helpful when trying to find these functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="n">fill_method</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Skip calculation for missing data</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="n">fill_method</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Skip calculation for missing data</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>0.00000</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>-0.030303</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>-0.02439</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.02381</td>
-      <td>0.000000</td>
-      <td>-0.021277</td>
-      <td>-0.021739</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>0.00000</td>
-      <td>0.02</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>0.031250</td>
-      <td>0.000000</td>
-      <td>-0.022222</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>0.00000</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>0.060606</td>
-      <td>0.000000</td>
-      <td>-0.022727</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-0.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>-0.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.1</td>
-      <td>0.0</td>
-      <td>-0.1</td>
-      <td>-0.1</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>0.0</td>
-      <td>0.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.1</td>
-      <td>0.0</td>
-      <td>-0.1</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.2</td>
-      <td>0.0</td>
-      <td>-0.1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Transforms can be split into to several main categories:</p>
 <ol class="simple">
@@ -1459,7 +588,7 @@ and standard deviation 1.</p>
 unemployment rate is most different from “normal times” for each state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># Step 1: We write the Series transform function that we&#39;d like to use</span>
 <span class="c1">#</span>
 <span class="k">def</span> <span class="nf">standardize_data</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1476,7 +605,7 @@ unemployment rate is most different from “normal times” for each state.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># Step 2: Apply our function via the apply method.</span>
 <span class="c1">#</span>
 <span class="n">std_unemp</span> <span class="o">=</span> <span class="n">unemp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">standardize_data</span><span class="p">)</span>
@@ -1484,222 +613,25 @@ unemployment rate is most different from “normal times” for each state.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>-1.076861</td>
-      <td>-0.935545</td>
-      <td>-0.976846</td>
-      <td>-1.337203</td>
-      <td>-1.605740</td>
-      <td>-0.925962</td>
-      <td>-0.849345</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>-1.076861</td>
-      <td>-0.935545</td>
-      <td>-0.976846</td>
-      <td>-1.337203</td>
-      <td>-1.644039</td>
-      <td>-0.925962</td>
-      <td>-0.849345</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>-1.125778</td>
-      <td>-0.935545</td>
-      <td>-0.976846</td>
-      <td>-1.286217</td>
-      <td>-1.644039</td>
-      <td>-0.991993</td>
-      <td>-0.926885</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>-1.125778</td>
-      <td>-0.894853</td>
-      <td>-0.976846</td>
-      <td>-1.286217</td>
-      <td>-1.605740</td>
-      <td>-0.991993</td>
-      <td>-1.004424</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>-1.125778</td>
-      <td>-0.894853</td>
-      <td>-0.976846</td>
-      <td>-1.286217</td>
-      <td>-1.529141</td>
-      <td>-0.991993</td>
-      <td>-1.081964</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Takes the absolute value of all elements of a function</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Takes the absolute value of all elements of a function</span>
 <span class="n">abs_std_unemp</span> <span class="o">=</span> <span class="n">std_unemp</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
 
 <span class="n">abs_std_unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>1.076861</td>
-      <td>0.935545</td>
-      <td>0.976846</td>
-      <td>1.337203</td>
-      <td>1.605740</td>
-      <td>0.925962</td>
-      <td>0.849345</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>1.076861</td>
-      <td>0.935545</td>
-      <td>0.976846</td>
-      <td>1.337203</td>
-      <td>1.644039</td>
-      <td>0.925962</td>
-      <td>0.849345</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>1.125778</td>
-      <td>0.935545</td>
-      <td>0.976846</td>
-      <td>1.286217</td>
-      <td>1.644039</td>
-      <td>0.991993</td>
-      <td>0.926885</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>1.125778</td>
-      <td>0.894853</td>
-      <td>0.976846</td>
-      <td>1.286217</td>
-      <td>1.605740</td>
-      <td>0.991993</td>
-      <td>1.004424</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>1.125778</td>
-      <td>0.894853</td>
-      <td>0.976846</td>
-      <td>1.286217</td>
-      <td>1.529141</td>
-      <td>0.991993</td>
-      <td>1.081964</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the date when unemployment was &quot;most different from normal&quot; for each State</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the date when unemployment was &quot;most different from normal&quot; for each State</span>
 <span class="k">def</span> <span class="nf">idxmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># idxmax of Series will return index of maximal value</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 
 <span class="n">abs_std_unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">idxmax</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
-Arizona      2009-11-01
-California   2010-03-01
-Florida      2010-01-01
-Illinois     2009-12-01
-Michigan     2009-06-01
-New York     2009-11-01
-Texas        2009-08-01
-dtype: datetime64[ns]
 </pre></div>
 </div>
 </div>
@@ -1740,324 +672,36 @@ to index into a Series or DataFrame.</p>
 <p>Let’s look at some examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span> <span class="o">=</span> <span class="n">unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># Create smaller data so we can see what&#39;s happening</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span> <span class="o">=</span> <span class="n">unemp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># Create smaller data so we can see what&#39;s happening</span>
 <span class="n">unemp_small</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of booleans selects rows</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of booleans selects rows</span>
 <span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># second argument selects columns, the  ``:``  means &quot;all&quot;.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># second argument selects columns, the  ``:``  means &quot;all&quot;.</span>
 <span class="c1"># here we use it to select all columns</span>
 <span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># can use booleans to select both rows and columns</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># can use booleans to select both rows and columns</span>
 <span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="section" id="creating-boolean-dataframes-series">
 <h3>Creating Boolean DataFrames/Series<a class="headerlink" href="#creating-boolean-dataframes-series" title="Permalink to this headline">¶</a></h3>
@@ -2065,18 +709,7 @@ to index into a Series or DataFrame.</p>
 construct Series of booleans from our data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01    False
-2000-02-01    False
-2000-03-01    False
-2000-04-01     True
-2000-05-01     True
-Name: Texas, dtype: bool
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.5</span>
 </pre></div>
 </div>
 </div>
@@ -2085,190 +718,25 @@ Name: Texas, dtype: bool
 rows from our DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.5</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01    True
-2000-02-01    True
-2000-03-01    True
-2000-04-01    True
-2000-05-01    True
-dtype: bool
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">big_NY</span> <span class="o">=</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">big_NY</span> <span class="o">=</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span>
 <span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">big_NY</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="section" id="multiple-conditions">
 <h4>Multiple Conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this headline">¶</a></h4>
@@ -2295,101 +763,18 @@ a single bool.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">small_NYTX</span> <span class="o">=</span> <span class="p">(</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.7</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">small_NYTX</span> <span class="o">=</span> <span class="p">(</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.7</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.7</span><span class="p">)</span>
 <span class="n">small_NYTX</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01    False
-2000-02-01    False
-2000-03-01     True
-2000-04-01     True
-2000-05-01     True
-dtype: bool
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="n">small_NYTX</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="n">small_NYTX</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.5</td>
-      <td>4.6</td>
-      <td>4.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="isin">
@@ -2400,111 +785,18 @@ several fixed values.</p>
 (like we did above), but there is a better way: the <code class="docutils literal notranslate"><span class="pre">.isin</span></code> method</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Michigan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01     True
-2000-02-01     True
-2000-03-01     True
-2000-04-01     True
-2000-05-01    False
-Name: Michigan, dtype: bool
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Michigan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now select full rows where this Series is True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># now select full rows where this Series is True</span>
 <span class="n">unemp_small</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Michigan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">])]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.3</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>4.1</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.2</td>
-      <td>3.2</td>
-      <td>4.7</td>
-      <td>4.6</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>4.0</td>
-      <td>5.0</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.2</td>
-      <td>4.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>4.0</td>
-      <td>5.1</td>
-      <td>3.7</td>
-      <td>4.3</td>
-      <td>3.3</td>
-      <td>4.6</td>
-      <td>4.4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="any-and-all">
@@ -2546,136 +838,28 @@ comparison.</p></li>
 operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 3: construct the DataFrame of bools</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 3: construct the DataFrame of bools</span>
 <span class="n">high</span> <span class="o">=</span> <span class="n">unemp</span> <span class="o">&gt;</span> <span class="mf">6.5</span>
 <span class="n">high</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>state</th>
-      <th>Arizona</th>
-      <th>California</th>
-      <th>Florida</th>
-      <th>Illinois</th>
-      <th>Michigan</th>
-      <th>New York</th>
-      <th>Texas</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2000-01-01</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2000-02-01</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2000-03-01</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2000-04-01</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2000-05-01</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: use the .all method on axis=1 to get the dates where all states have a True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: use the .all method on axis=1 to get the dates where all states have a True</span>
 <span class="n">all_high</span> <span class="o">=</span> <span class="n">high</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">all_high</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
-2000-01-01    False
-2000-02-01    False
-2000-03-01    False
-2000-04-01    False
-2000-05-01    False
-dtype: bool
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Call .sum to add up the number of True values in `all_high`</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Call .sum to add up the number of True values in `all_high`</span>
 <span class="c1">#         (note that True == 1 and False == 0 in Python, so .sum will count Trues)</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Out of </span><span class="si">{}</span><span class="s2"> months, </span><span class="si">{}</span><span class="s2"> had high unemployment across all states&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_high</span><span class="p">),</span> <span class="n">all_high</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 216 months, 41 had high unemployment across all states
 </pre></div>
 </div>
 </div>
@@ -2695,7 +879,7 @@ dtype: bool
 <p>You can use the cell below to verify your visual intuition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -2730,28 +914,28 @@ variance of their unemployment is above or below 4.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># min unemployment rate by state</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># min unemployment rate by state</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># median unemployment rate by state</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># median unemployment rate by state</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># max unemployment rate across all states and Year</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># max unemployment rate across all states and Year</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># low or high volatility</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># low or high volatility</span>
 </pre></div>
 </div>
 </div>
@@ -2796,14 +980,14 @@ with high unemployment? What about medium and low?</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 1: Write a Python function to classify unemployment levels.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 1: Write a Python function to classify unemployment levels.</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 2: Pass your function from part 1 to applymap</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 2: Pass your function from part 1 to applymap</span>
 <span class="n">unemp_bins</span> <span class="o">=</span> <span class="n">unemp</span><span class="o">.</span><span class="n">applymap</span><span class="c1">#replace this comment with your code!!</span>
 </pre></div>
 </div>
@@ -2811,7 +995,7 @@ with high unemployment? What about medium and low?</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 3: Count the number of times each state had each classification.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 3: Count the number of times each state had each classification.</span>
 
 <span class="c1">## then make a horizontal bar chart here</span>
 </pre></div>
@@ -2820,7 +1004,7 @@ with high unemployment? What about medium and low?</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 4: Apply the same transform from part 4, but to each date instead of to each state.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 4: Apply the same transform from part 4, but to each date instead of to each state.</span>
 </pre></div>
 </div>
 </div>

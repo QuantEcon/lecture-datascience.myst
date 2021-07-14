@@ -189,7 +189,7 @@
 <h1>Problem Set 7<a class="headerlink" href="#problem-set-7" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -206,7 +206,7 @@ Use a non-red color for the years 2000 to 2008, red for
 2009, and the first color again for 2010 to 2018.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ca_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="mf">5.2</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span>
     <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">))</span>
 <span class="p">)</span>
@@ -217,9 +217,6 @@ Use a non-red color for the years 2000 to 2008, red for
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">side</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/problem_set_7_3_0.png" src="../_images/problem_set_7_3_0.png" />
 </div>
 </div>
 </div>
@@ -233,7 +230,7 @@ education level) and four groups of points (one for each year).</p>
 did rather than this way?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
@@ -261,9 +258,6 @@ did rather than this way?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/problem_set_7_5_0.png" src="../_images/problem_set_7_5_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="questions-3-5">
@@ -274,41 +268,10 @@ that describes the cause for all US domestic flight delays
 in November 2016. We used the same data in the previous problem set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
 <span class="n">air_perf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)[[</span><span class="s2">&quot;CRSDepTime&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="s2">&quot;ArrDelay&quot;</span><span class="p">]]</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">head</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 460949 entries, 0 to 460948
-Data columns (total 4 columns):
- #   Column        Non-Null Count   Dtype  
----  ------        --------------   -----  
- 0   CRSDepTime    460949 non-null  object 
- 1   Carrier       460949 non-null  object 
- 2   CarrierDelay  460949 non-null  float64
- 3   ArrDelay      452229 non-null  float64
-dtypes: float64(2), object(2)
-memory usage: 14.1+ MB
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method NDFrame.head of                  CRSDepTime Carrier  CarrierDelay  ArrDelay
-0       2016-12-18 15:58:00      AA           0.0      20.0
-1       2016-12-19 15:58:00      AA           0.0      20.0
-2       2016-12-20 15:58:00      AA           0.0      -3.0
-3       2016-12-21 15:58:00      AA           0.0     -10.0
-4       2016-12-22 15:58:00      AA           0.0      -8.0
-...                     ...     ...           ...       ...
-460944  2016-12-30 05:25:00      DL           0.0      -5.0
-460945  2016-12-30 13:42:00      DL           0.0       3.0
-460946  2016-12-30 15:28:00      DL           0.0     -29.0
-460947  2016-12-30 11:15:00      DL           0.0      -3.0
-460948  2016-12-30 13:45:00      DL           0.0     -10.0
-
-[460949 rows x 4 columns]&gt;
 </pre></div>
 </div>
 </div>
