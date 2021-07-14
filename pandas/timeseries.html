@@ -296,7 +296,7 @@ between the two</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">quandl</span>
@@ -306,7 +306,7 @@ between the two</p></li>
 <span class="n">quandl</span><span class="o">.</span><span class="n">ApiConfig</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;QUANDL_AUTH&quot;</span><span class="p">,</span> <span class="s2">&quot;Dn6BtVoBhzuKTuyo6hbp&quot;</span><span class="p">)</span>
 <span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;2014-05-01&quot;</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -345,7 +345,7 @@ month, and 2 for the day with each section separated by a <code class="docutils 
 <p>For example, we write Christmas day 2017 in this format as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">christmas_str</span> <span class="o">=</span> <span class="s2">&quot;2017-12-25&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">christmas_str</span> <span class="o">=</span> <span class="s2">&quot;2017-12-25&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -354,17 +354,9 @@ month, and 2 for the day with each section separated by a <code class="docutils 
 <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">christmas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_str</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">christmas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_str</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The type of christmas is&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">christmas</span><span class="p">))</span>
 <span class="n">christmas</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The type of christmas is &lt;class &#39;pandas._libs.tslibs.timestamps.Timestamp&#39;&gt;
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2017-12-25 00:00:00&#39;)
 </pre></div>
 </div>
 </div>
@@ -373,18 +365,9 @@ month, and 2 for the day with each section separated by a <code class="docutils 
 of the date…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;December 25, 2017&quot;</span><span class="p">,</span> <span class="s2">&quot;Dec. 25, 2017&quot;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;December 25, 2017&quot;</span><span class="p">,</span> <span class="s2">&quot;Dec. 25, 2017&quot;</span><span class="p">,</span>
              <span class="s2">&quot;Monday, Dec. 25, 2017&quot;</span><span class="p">,</span> <span class="s2">&quot;25 Dec. 2017&quot;</span><span class="p">,</span> <span class="s2">&quot;25th Dec. 2017&quot;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pandas interprets </span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas interprets December 25, 2017 as 2017-12-25 00:00:00
-pandas interprets Dec. 25, 2017 as 2017-12-25 00:00:00
-pandas interprets Monday, Dec. 25, 2017 as 2017-12-25 00:00:00
-pandas interprets 25 Dec. 2017 as 2017-12-25 00:00:00
-pandas interprets 25th Dec. 2017 as 2017-12-25 00:00:00
 </pre></div>
 </div>
 </div>
@@ -394,7 +377,7 @@ pandas interprets 25th Dec. 2017 as 2017-12-25 00:00:00
 an Amazon transaction report as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">christmas_amzn</span> <span class="o">=</span> <span class="s2">&quot;2017-12-25T00:00:00+ 00 :00&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">christmas_amzn</span> <span class="o">=</span> <span class="s2">&quot;2017-12-25T00:00:00+ 00 :00&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -402,81 +385,7 @@ an Amazon transaction report as</p>
 <p>If we try to pass this to <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>, it will fail.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2084</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2085</span>             <span class="n">values</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">conversion</span><span class="o">.</span><span class="n">datetime_to_datetime64</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2086</span>             <span class="c1"># If tzaware, these values represent unix timestamps, so we</span>
-
-<span class="nn">pandas/_libs/tslibs/conversion.pyx</span> in <span class="ni">pandas._libs.tslibs.conversion.datetime_to_datetime64</span><span class="nt">()</span>
-
-<span class="ne">TypeError</span>: Unrecognized value type: &lt;class &#39;str&#39;&gt;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">35</span><span class="n">d0813ff50c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">832</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">833</span> 
-<span class="g g-Whitespace">    </span><span class="mi">834</span>     <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>         <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">465</span>         <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>             <span class="n">arg</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>             <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2088</span>             <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2089</span>         <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2090</span>             <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">   </span><span class="mi">2091</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2092</span>     <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2073</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2074</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2075</span>         <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2076</span>             <span class="n">data</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2077</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-
-<span class="nn">pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib.array_to_datetime_object</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib.array_to_datetime_object</span><span class="nt">()</span>
-
-<span class="nn">pandas/_libs/tslibs/parsing.pyx</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1372</span>         <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1374</span>         <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1375</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1376</span> 
-
-<span class="nn">/usr/share/miniconda3/envs/lecture-datascience/lib/python3.8/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> 
-<span class="g g-Whitespace">    </span><span class="mi">648</span>         <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">649</span>             <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span> 
-<span class="g g-Whitespace">    </span><span class="mi">651</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-
-<span class="ne">ParserError</span>: Unknown string format: 2017-12-25T00:00:00+ 00 :00
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -485,13 +394,8 @@ an Amazon transaction report as</p>
 argument for <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amzn_strftime</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S+ 00 :00&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">amzn_strftime</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S+ 00 :00&quot;</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">amzn_strftime</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2017-12-25 00:00:00&#39;)
 </pre></div>
 </div>
 </div>
@@ -500,14 +404,8 @@ argument for <code class="docutils literal notranslate"><span class="pre">pd.to_
 <p>Let’s take a closer look at <code class="docutils literal notranslate"><span class="pre">amzn_strftime</span></code> and <code class="docutils literal notranslate"><span class="pre">christmas_amzn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">amzn_strftime</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">amzn_strftime</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%Y-%m-%dT%H:%M:%S+ 00 :00
-2017-12-25T00:00:00+ 00 :00
 </pre></div>
 </div>
 </div>
@@ -533,12 +431,7 @@ collection of dates back.</p>
 a single date.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s2">&quot;2017-12-25&quot;</span><span class="p">,</span> <span class="s2">&quot;2017-12-31&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2017-12-25&#39;, &#39;2017-12-31&#39;], dtype=&#39;datetime64[ns]&#39;, freq=None)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s2">&quot;2017-12-25&quot;</span><span class="p">,</span> <span class="s2">&quot;2017-12-31&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -553,12 +446,7 @@ format time) method.</p>
 <p>For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">christmas</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;We love %A %B </span><span class="si">%d</span><span class="s2"> (also written </span><span class="si">%c</span><span class="s2">)&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;We love Monday December 25 (also written Mon Dec 25 00:00:00 2017)&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">christmas</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;We love %A %B </span><span class="si">%d</span><span class="s2"> (also written </span><span class="si">%c</span><span class="s2">)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -577,120 +465,12 @@ convenient indexing features for extracting data.</p>
 so let’s load up some data and take a look.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BCHARTS/BITSTAMPUSD&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">start_date</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BCHARTS/BITSTAMPUSD&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="n">start_date</span><span class="p">)</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-DatetimeIndex: 2599 entries, 2014-05-01 to 2021-06-20
-Data columns (total 7 columns):
- #   Column             Non-Null Count  Dtype  
----  ------             --------------  -----  
- 0   Open               2599 non-null   float64
- 1   High               2599 non-null   float64
- 2   Low                2599 non-null   float64
- 3   Close              2599 non-null   float64
- 4   Volume (BTC)       2599 non-null   float64
- 5   Volume (Currency)  2599 non-null   float64
- 6   Weighted Price     2599 non-null   float64
-dtypes: float64(7)
-memory usage: 162.4 KB
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>449.00</td>
-      <td>465.88</td>
-      <td>447.97</td>
-      <td>460.97</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>460.97</td>
-      <td>462.99</td>
-      <td>444.51</td>
-      <td>454.50</td>
-      <td>8269.891417</td>
-      <td>3.731061e+06</td>
-      <td>451.162018</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>452.00</td>
-      <td>454.50</td>
-      <td>431.00</td>
-      <td>439.00</td>
-      <td>7431.626480</td>
-      <td>3.271086e+06</td>
-      <td>440.157544</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>439.00</td>
-      <td>442.83</td>
-      <td>429.55</td>
-      <td>438.04</td>
-      <td>5154.407794</td>
-      <td>2.245293e+06</td>
-      <td>435.606483</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>435.88</td>
-      <td>445.00</td>
-      <td>425.00</td>
-      <td>433.00</td>
-      <td>8188.082795</td>
-      <td>3.547855e+06</td>
-      <td>433.294968</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Here, we have the Bitcoin (BTC) to US dollar (USD) exchange rate from
 March 2014 until today.</p>
@@ -699,922 +479,41 @@ March 2014 until today.</p>
 <p>Extracting all data for the year 2015 by passing <code class="docutils literal notranslate"><span class="pre">&quot;2015&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;2015&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;2015&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015-01-01</th>
-      <td>321.00</td>
-      <td>321.00</td>
-      <td>312.60</td>
-      <td>313.81</td>
-      <td>3087.436554</td>
-      <td>9.745096e+05</td>
-      <td>315.637119</td>
-    </tr>
-    <tr>
-      <th>2015-01-02</th>
-      <td>313.82</td>
-      <td>317.01</td>
-      <td>311.96</td>
-      <td>315.42</td>
-      <td>3468.281375</td>
-      <td>1.092446e+06</td>
-      <td>314.981849</td>
-    </tr>
-    <tr>
-      <th>2015-01-03</th>
-      <td>315.42</td>
-      <td>316.58</td>
-      <td>280.00</td>
-      <td>282.00</td>
-      <td>21752.719146</td>
-      <td>6.475952e+06</td>
-      <td>297.707695</td>
-    </tr>
-    <tr>
-      <th>2015-01-04</th>
-      <td>280.00</td>
-      <td>289.39</td>
-      <td>255.00</td>
-      <td>264.00</td>
-      <td>41441.278553</td>
-      <td>1.126676e+07</td>
-      <td>271.872950</td>
-    </tr>
-    <tr>
-      <th>2015-01-05</th>
-      <td>264.55</td>
-      <td>280.00</td>
-      <td>264.07</td>
-      <td>276.80</td>
-      <td>9528.271002</td>
-      <td>2.596898e+06</td>
-      <td>272.546601</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2015-12-27</th>
-      <td>417.11</td>
-      <td>425.42</td>
-      <td>410.50</td>
-      <td>421.76</td>
-      <td>6968.573659</td>
-      <td>2.921475e+06</td>
-      <td>419.235752</td>
-    </tr>
-    <tr>
-      <th>2015-12-28</th>
-      <td>421.78</td>
-      <td>429.86</td>
-      <td>417.01</td>
-      <td>421.46</td>
-      <td>7560.562992</td>
-      <td>3.204102e+06</td>
-      <td>423.791428</td>
-    </tr>
-    <tr>
-      <th>2015-12-29</th>
-      <td>420.81</td>
-      <td>433.33</td>
-      <td>418.55</td>
-      <td>431.82</td>
-      <td>10419.585366</td>
-      <td>4.444308e+06</td>
-      <td>426.534057</td>
-    </tr>
-    <tr>
-      <th>2015-12-30</th>
-      <td>431.70</td>
-      <td>434.97</td>
-      <td>420.75</td>
-      <td>425.84</td>
-      <td>7717.510263</td>
-      <td>3.315825e+06</td>
-      <td>429.649630</td>
-    </tr>
-    <tr>
-      <th>2015-12-31</th>
-      <td>426.09</td>
-      <td>433.89</td>
-      <td>419.99</td>
-      <td>430.89</td>
-      <td>6634.863167</td>
-      <td>2.833320e+06</td>
-      <td>427.035137</td>
-    </tr>
-  </tbody>
-</table>
-<p>365 rows × 7 columns</p>
-</div></div></div>
 </div>
 <p>We can also narrow down to specific months.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># By month&#39;s name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># By month&#39;s name</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;August 2017&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2017-08-01</th>
-      <td>2855.81</td>
-      <td>2929.17</td>
-      <td>2615.00</td>
-      <td>2731.00</td>
-      <td>12525.076691</td>
-      <td>3.432280e+07</td>
-      <td>2740.326259</td>
-    </tr>
-    <tr>
-      <th>2017-08-02</th>
-      <td>2732.00</td>
-      <td>2760.00</td>
-      <td>2650.00</td>
-      <td>2703.51</td>
-      <td>9486.625526</td>
-      <td>2.570111e+07</td>
-      <td>2709.193699</td>
-    </tr>
-    <tr>
-      <th>2017-08-03</th>
-      <td>2703.51</td>
-      <td>2807.44</td>
-      <td>2698.83</td>
-      <td>2793.37</td>
-      <td>7963.697999</td>
-      <td>2.193830e+07</td>
-      <td>2754.788542</td>
-    </tr>
-    <tr>
-      <th>2017-08-04</th>
-      <td>2793.34</td>
-      <td>2877.52</td>
-      <td>2765.91</td>
-      <td>2855.00</td>
-      <td>7635.821672</td>
-      <td>2.165009e+07</td>
-      <td>2835.331752</td>
-    </tr>
-    <tr>
-      <th>2017-08-05</th>
-      <td>2851.01</td>
-      <td>3339.66</td>
-      <td>2848.32</td>
-      <td>3263.62</td>
-      <td>16996.273101</td>
-      <td>5.386193e+07</td>
-      <td>3169.043337</td>
-    </tr>
-    <tr>
-      <th>2017-08-06</th>
-      <td>3263.51</td>
-      <td>3296.51</td>
-      <td>3146.10</td>
-      <td>3222.75</td>
-      <td>5998.735789</td>
-      <td>1.941266e+07</td>
-      <td>3236.124519</td>
-    </tr>
-    <tr>
-      <th>2017-08-07</th>
-      <td>3216.78</td>
-      <td>3430.00</td>
-      <td>3186.00</td>
-      <td>3387.55</td>
-      <td>12046.117265</td>
-      <td>4.022585e+07</td>
-      <td>3339.320971</td>
-    </tr>
-    <tr>
-      <th>2017-08-08</th>
-      <td>3387.54</td>
-      <td>3490.00</td>
-      <td>3300.00</td>
-      <td>3412.41</td>
-      <td>15835.370208</td>
-      <td>5.405482e+07</td>
-      <td>3413.549765</td>
-    </tr>
-    <tr>
-      <th>2017-08-09</th>
-      <td>3408.46</td>
-      <td>3423.10</td>
-      <td>3178.72</td>
-      <td>3342.99</td>
-      <td>14286.844138</td>
-      <td>4.735646e+07</td>
-      <td>3314.690350</td>
-    </tr>
-    <tr>
-      <th>2017-08-10</th>
-      <td>3342.99</td>
-      <td>3448.00</td>
-      <td>3311.17</td>
-      <td>3413.03</td>
-      <td>9031.121280</td>
-      <td>3.065844e+07</td>
-      <td>3394.754600</td>
-    </tr>
-    <tr>
-      <th>2017-08-11</th>
-      <td>3410.00</td>
-      <td>3705.00</td>
-      <td>3390.67</td>
-      <td>3645.06</td>
-      <td>11927.373334</td>
-      <td>4.188802e+07</td>
-      <td>3511.923462</td>
-    </tr>
-    <tr>
-      <th>2017-08-12</th>
-      <td>3651.74</td>
-      <td>3934.00</td>
-      <td>3586.95</td>
-      <td>3855.10</td>
-      <td>12351.074661</td>
-      <td>4.679980e+07</td>
-      <td>3789.127641</td>
-    </tr>
-    <tr>
-      <th>2017-08-13</th>
-      <td>3855.04</td>
-      <td>4190.00</td>
-      <td>3841.71</td>
-      <td>4053.87</td>
-      <td>15889.829788</td>
-      <td>6.367210e+07</td>
-      <td>4007.097892</td>
-    </tr>
-    <tr>
-      <th>2017-08-14</th>
-      <td>4053.87</td>
-      <td>4329.43</td>
-      <td>3964.96</td>
-      <td>4306.23</td>
-      <td>14212.304207</td>
-      <td>5.983600e+07</td>
-      <td>4210.154943</td>
-    </tr>
-    <tr>
-      <th>2017-08-15</th>
-      <td>4320.95</td>
-      <td>4400.00</td>
-      <td>3800.00</td>
-      <td>4155.67</td>
-      <td>25515.718014</td>
-      <td>1.046514e+08</td>
-      <td>4101.447155</td>
-    </tr>
-    <tr>
-      <th>2017-08-16</th>
-      <td>4154.99</td>
-      <td>4379.78</td>
-      <td>3926.06</td>
-      <td>4378.84</td>
-      <td>12923.637280</td>
-      <td>5.419433e+07</td>
-      <td>4193.426713</td>
-    </tr>
-    <tr>
-      <th>2017-08-17</th>
-      <td>4361.99</td>
-      <td>4480.00</td>
-      <td>4167.21</td>
-      <td>4276.50</td>
-      <td>14573.185929</td>
-      <td>6.322860e+07</td>
-      <td>4338.694675</td>
-    </tr>
-    <tr>
-      <th>2017-08-18</th>
-      <td>4260.47</td>
-      <td>4368.00</td>
-      <td>3964.96</td>
-      <td>4100.00</td>
-      <td>17516.993361</td>
-      <td>7.322403e+07</td>
-      <td>4180.171091</td>
-    </tr>
-    <tr>
-      <th>2017-08-19</th>
-      <td>4100.00</td>
-      <td>4188.00</td>
-      <td>3900.00</td>
-      <td>4099.55</td>
-      <td>15036.184051</td>
-      <td>6.060491e+07</td>
-      <td>4030.604133</td>
-    </tr>
-    <tr>
-      <th>2017-08-20</th>
-      <td>4091.99</td>
-      <td>4125.95</td>
-      <td>4000.00</td>
-      <td>4058.68</td>
-      <td>6237.972896</td>
-      <td>2.528964e+07</td>
-      <td>4054.143713</td>
-    </tr>
-    <tr>
-      <th>2017-08-21</th>
-      <td>4058.64</td>
-      <td>4080.00</td>
-      <td>3949.78</td>
-      <td>3987.52</td>
-      <td>9782.056594</td>
-      <td>3.920391e+07</td>
-      <td>4007.736878</td>
-    </tr>
-    <tr>
-      <th>2017-08-22</th>
-      <td>3987.51</td>
-      <td>4139.31</td>
-      <td>3600.00</td>
-      <td>4085.00</td>
-      <td>23522.758166</td>
-      <td>9.160033e+07</td>
-      <td>3894.115013</td>
-    </tr>
-    <tr>
-      <th>2017-08-23</th>
-      <td>4078.00</td>
-      <td>4248.97</td>
-      <td>4051.94</td>
-      <td>4108.12</td>
-      <td>14979.403481</td>
-      <td>6.211729e+07</td>
-      <td>4146.846811</td>
-    </tr>
-    <tr>
-      <th>2017-08-24</th>
-      <td>4121.78</td>
-      <td>4350.00</td>
-      <td>4082.57</td>
-      <td>4300.34</td>
-      <td>10782.694367</td>
-      <td>4.517407e+07</td>
-      <td>4189.497275</td>
-    </tr>
-    <tr>
-      <th>2017-08-25</th>
-      <td>4308.80</td>
-      <td>4449.98</td>
-      <td>4270.00</td>
-      <td>4355.98</td>
-      <td>9699.610034</td>
-      <td>4.227406e+07</td>
-      <td>4358.326082</td>
-    </tr>
-    <tr>
-      <th>2017-08-26</th>
-      <td>4348.17</td>
-      <td>4369.78</td>
-      <td>4232.43</td>
-      <td>4333.38</td>
-      <td>6559.668604</td>
-      <td>2.822792e+07</td>
-      <td>4303.253256</td>
-    </tr>
-    <tr>
-      <th>2017-08-27</th>
-      <td>4333.38</td>
-      <td>4393.30</td>
-      <td>4290.32</td>
-      <td>4337.68</td>
-      <td>3979.124453</td>
-      <td>1.726397e+07</td>
-      <td>4338.634650</td>
-    </tr>
-    <tr>
-      <th>2017-08-28</th>
-      <td>4329.91</td>
-      <td>4399.72</td>
-      <td>4169.01</td>
-      <td>4379.99</td>
-      <td>8641.002446</td>
-      <td>3.707720e+07</td>
-      <td>4290.845145</td>
-    </tr>
-    <tr>
-      <th>2017-08-29</th>
-      <td>4385.00</td>
-      <td>4649.78</td>
-      <td>4336.26</td>
-      <td>4578.82</td>
-      <td>11879.642831</td>
-      <td>5.349117e+07</td>
-      <td>4502.758977</td>
-    </tr>
-    <tr>
-      <th>2017-08-30</th>
-      <td>4578.82</td>
-      <td>4642.22</td>
-      <td>4479.00</td>
-      <td>4573.20</td>
-      <td>8720.035040</td>
-      <td>3.980054e+07</td>
-      <td>4564.263673</td>
-    </tr>
-    <tr>
-      <th>2017-08-31</th>
-      <td>4573.15</td>
-      <td>4765.21</td>
-      <td>4566.66</td>
-      <td>4734.26</td>
-      <td>8911.412459</td>
-      <td>4.172621e+07</td>
-      <td>4682.334106</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># By month&#39;s number</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># By month&#39;s number</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;08/2017&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2017-08-01</th>
-      <td>2855.81</td>
-      <td>2929.17</td>
-      <td>2615.00</td>
-      <td>2731.00</td>
-      <td>12525.076691</td>
-      <td>3.432280e+07</td>
-      <td>2740.326259</td>
-    </tr>
-    <tr>
-      <th>2017-08-02</th>
-      <td>2732.00</td>
-      <td>2760.00</td>
-      <td>2650.00</td>
-      <td>2703.51</td>
-      <td>9486.625526</td>
-      <td>2.570111e+07</td>
-      <td>2709.193699</td>
-    </tr>
-    <tr>
-      <th>2017-08-03</th>
-      <td>2703.51</td>
-      <td>2807.44</td>
-      <td>2698.83</td>
-      <td>2793.37</td>
-      <td>7963.697999</td>
-      <td>2.193830e+07</td>
-      <td>2754.788542</td>
-    </tr>
-    <tr>
-      <th>2017-08-04</th>
-      <td>2793.34</td>
-      <td>2877.52</td>
-      <td>2765.91</td>
-      <td>2855.00</td>
-      <td>7635.821672</td>
-      <td>2.165009e+07</td>
-      <td>2835.331752</td>
-    </tr>
-    <tr>
-      <th>2017-08-05</th>
-      <td>2851.01</td>
-      <td>3339.66</td>
-      <td>2848.32</td>
-      <td>3263.62</td>
-      <td>16996.273101</td>
-      <td>5.386193e+07</td>
-      <td>3169.043337</td>
-    </tr>
-    <tr>
-      <th>2017-08-06</th>
-      <td>3263.51</td>
-      <td>3296.51</td>
-      <td>3146.10</td>
-      <td>3222.75</td>
-      <td>5998.735789</td>
-      <td>1.941266e+07</td>
-      <td>3236.124519</td>
-    </tr>
-    <tr>
-      <th>2017-08-07</th>
-      <td>3216.78</td>
-      <td>3430.00</td>
-      <td>3186.00</td>
-      <td>3387.55</td>
-      <td>12046.117265</td>
-      <td>4.022585e+07</td>
-      <td>3339.320971</td>
-    </tr>
-    <tr>
-      <th>2017-08-08</th>
-      <td>3387.54</td>
-      <td>3490.00</td>
-      <td>3300.00</td>
-      <td>3412.41</td>
-      <td>15835.370208</td>
-      <td>5.405482e+07</td>
-      <td>3413.549765</td>
-    </tr>
-    <tr>
-      <th>2017-08-09</th>
-      <td>3408.46</td>
-      <td>3423.10</td>
-      <td>3178.72</td>
-      <td>3342.99</td>
-      <td>14286.844138</td>
-      <td>4.735646e+07</td>
-      <td>3314.690350</td>
-    </tr>
-    <tr>
-      <th>2017-08-10</th>
-      <td>3342.99</td>
-      <td>3448.00</td>
-      <td>3311.17</td>
-      <td>3413.03</td>
-      <td>9031.121280</td>
-      <td>3.065844e+07</td>
-      <td>3394.754600</td>
-    </tr>
-    <tr>
-      <th>2017-08-11</th>
-      <td>3410.00</td>
-      <td>3705.00</td>
-      <td>3390.67</td>
-      <td>3645.06</td>
-      <td>11927.373334</td>
-      <td>4.188802e+07</td>
-      <td>3511.923462</td>
-    </tr>
-    <tr>
-      <th>2017-08-12</th>
-      <td>3651.74</td>
-      <td>3934.00</td>
-      <td>3586.95</td>
-      <td>3855.10</td>
-      <td>12351.074661</td>
-      <td>4.679980e+07</td>
-      <td>3789.127641</td>
-    </tr>
-    <tr>
-      <th>2017-08-13</th>
-      <td>3855.04</td>
-      <td>4190.00</td>
-      <td>3841.71</td>
-      <td>4053.87</td>
-      <td>15889.829788</td>
-      <td>6.367210e+07</td>
-      <td>4007.097892</td>
-    </tr>
-    <tr>
-      <th>2017-08-14</th>
-      <td>4053.87</td>
-      <td>4329.43</td>
-      <td>3964.96</td>
-      <td>4306.23</td>
-      <td>14212.304207</td>
-      <td>5.983600e+07</td>
-      <td>4210.154943</td>
-    </tr>
-    <tr>
-      <th>2017-08-15</th>
-      <td>4320.95</td>
-      <td>4400.00</td>
-      <td>3800.00</td>
-      <td>4155.67</td>
-      <td>25515.718014</td>
-      <td>1.046514e+08</td>
-      <td>4101.447155</td>
-    </tr>
-    <tr>
-      <th>2017-08-16</th>
-      <td>4154.99</td>
-      <td>4379.78</td>
-      <td>3926.06</td>
-      <td>4378.84</td>
-      <td>12923.637280</td>
-      <td>5.419433e+07</td>
-      <td>4193.426713</td>
-    </tr>
-    <tr>
-      <th>2017-08-17</th>
-      <td>4361.99</td>
-      <td>4480.00</td>
-      <td>4167.21</td>
-      <td>4276.50</td>
-      <td>14573.185929</td>
-      <td>6.322860e+07</td>
-      <td>4338.694675</td>
-    </tr>
-    <tr>
-      <th>2017-08-18</th>
-      <td>4260.47</td>
-      <td>4368.00</td>
-      <td>3964.96</td>
-      <td>4100.00</td>
-      <td>17516.993361</td>
-      <td>7.322403e+07</td>
-      <td>4180.171091</td>
-    </tr>
-    <tr>
-      <th>2017-08-19</th>
-      <td>4100.00</td>
-      <td>4188.00</td>
-      <td>3900.00</td>
-      <td>4099.55</td>
-      <td>15036.184051</td>
-      <td>6.060491e+07</td>
-      <td>4030.604133</td>
-    </tr>
-    <tr>
-      <th>2017-08-20</th>
-      <td>4091.99</td>
-      <td>4125.95</td>
-      <td>4000.00</td>
-      <td>4058.68</td>
-      <td>6237.972896</td>
-      <td>2.528964e+07</td>
-      <td>4054.143713</td>
-    </tr>
-    <tr>
-      <th>2017-08-21</th>
-      <td>4058.64</td>
-      <td>4080.00</td>
-      <td>3949.78</td>
-      <td>3987.52</td>
-      <td>9782.056594</td>
-      <td>3.920391e+07</td>
-      <td>4007.736878</td>
-    </tr>
-    <tr>
-      <th>2017-08-22</th>
-      <td>3987.51</td>
-      <td>4139.31</td>
-      <td>3600.00</td>
-      <td>4085.00</td>
-      <td>23522.758166</td>
-      <td>9.160033e+07</td>
-      <td>3894.115013</td>
-    </tr>
-    <tr>
-      <th>2017-08-23</th>
-      <td>4078.00</td>
-      <td>4248.97</td>
-      <td>4051.94</td>
-      <td>4108.12</td>
-      <td>14979.403481</td>
-      <td>6.211729e+07</td>
-      <td>4146.846811</td>
-    </tr>
-    <tr>
-      <th>2017-08-24</th>
-      <td>4121.78</td>
-      <td>4350.00</td>
-      <td>4082.57</td>
-      <td>4300.34</td>
-      <td>10782.694367</td>
-      <td>4.517407e+07</td>
-      <td>4189.497275</td>
-    </tr>
-    <tr>
-      <th>2017-08-25</th>
-      <td>4308.80</td>
-      <td>4449.98</td>
-      <td>4270.00</td>
-      <td>4355.98</td>
-      <td>9699.610034</td>
-      <td>4.227406e+07</td>
-      <td>4358.326082</td>
-    </tr>
-    <tr>
-      <th>2017-08-26</th>
-      <td>4348.17</td>
-      <td>4369.78</td>
-      <td>4232.43</td>
-      <td>4333.38</td>
-      <td>6559.668604</td>
-      <td>2.822792e+07</td>
-      <td>4303.253256</td>
-    </tr>
-    <tr>
-      <th>2017-08-27</th>
-      <td>4333.38</td>
-      <td>4393.30</td>
-      <td>4290.32</td>
-      <td>4337.68</td>
-      <td>3979.124453</td>
-      <td>1.726397e+07</td>
-      <td>4338.634650</td>
-    </tr>
-    <tr>
-      <th>2017-08-28</th>
-      <td>4329.91</td>
-      <td>4399.72</td>
-      <td>4169.01</td>
-      <td>4379.99</td>
-      <td>8641.002446</td>
-      <td>3.707720e+07</td>
-      <td>4290.845145</td>
-    </tr>
-    <tr>
-      <th>2017-08-29</th>
-      <td>4385.00</td>
-      <td>4649.78</td>
-      <td>4336.26</td>
-      <td>4578.82</td>
-      <td>11879.642831</td>
-      <td>5.349117e+07</td>
-      <td>4502.758977</td>
-    </tr>
-    <tr>
-      <th>2017-08-30</th>
-      <td>4578.82</td>
-      <td>4642.22</td>
-      <td>4479.00</td>
-      <td>4573.20</td>
-      <td>8720.035040</td>
-      <td>3.980054e+07</td>
-      <td>4564.263673</td>
-    </tr>
-    <tr>
-      <th>2017-08-31</th>
-      <td>4573.15</td>
-      <td>4765.21</td>
-      <td>4566.66</td>
-      <td>4734.26</td>
-      <td>8911.412459</td>
-      <td>4.172621e+07</td>
-      <td>4682.334106</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Or even a day…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># By date name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># By date name</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;August 1, 2017&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Open                 2.855810e+03
-High                 2.929170e+03
-Low                  2.615000e+03
-Close                2.731000e+03
-Volume (BTC)         1.252508e+04
-Volume (Currency)    3.432280e+07
-Weighted Price       2.740326e+03
-Name: 2017-08-01 00:00:00, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># By date number</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># By date number</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;08-01-2017&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Open                 2.855810e+03
-High                 2.929170e+03
-Low                  2.615000e+03
-Close                2.731000e+03
-Volume (BTC)         1.252508e+04
-Volume (Currency)    3.432280e+07
-Weighted Price       2.740326e+03
-Name: 2017-08-01 00:00:00, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1629,152 +528,10 @@ the index “belong” to that date or period.</p>
 date for selection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;April 1, 2015&quot;</span><span class="p">:</span><span class="s2">&quot;April 10, 2015&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;April 1, 2015&quot;</span><span class="p">:</span><span class="s2">&quot;April 10, 2015&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015-04-01</th>
-      <td>243.93</td>
-      <td>246.83</td>
-      <td>239.32</td>
-      <td>246.69</td>
-      <td>6226.016464</td>
-      <td>1.513601e+06</td>
-      <td>243.109050</td>
-    </tr>
-    <tr>
-      <th>2015-04-02</th>
-      <td>246.68</td>
-      <td>256.96</td>
-      <td>244.52</td>
-      <td>253.28</td>
-      <td>9806.822203</td>
-      <td>2.453664e+06</td>
-      <td>250.199655</td>
-    </tr>
-    <tr>
-      <th>2015-04-03</th>
-      <td>253.22</td>
-      <td>256.67</td>
-      <td>251.23</td>
-      <td>254.19</td>
-      <td>5048.577376</td>
-      <td>1.283171e+06</td>
-      <td>254.164902</td>
-    </tr>
-    <tr>
-      <th>2015-04-04</th>
-      <td>254.19</td>
-      <td>255.85</td>
-      <td>250.76</td>
-      <td>253.70</td>
-      <td>2769.281658</td>
-      <td>7.002845e+05</td>
-      <td>252.875870</td>
-    </tr>
-    <tr>
-      <th>2015-04-05</th>
-      <td>253.60</td>
-      <td>261.00</td>
-      <td>251.65</td>
-      <td>260.54</td>
-      <td>5759.360160</td>
-      <td>1.479483e+06</td>
-      <td>256.883285</td>
-    </tr>
-    <tr>
-      <th>2015-04-06</th>
-      <td>260.57</td>
-      <td>262.98</td>
-      <td>254.00</td>
-      <td>255.58</td>
-      <td>5960.677633</td>
-      <td>1.535495e+06</td>
-      <td>257.604180</td>
-    </tr>
-    <tr>
-      <th>2015-04-07</th>
-      <td>255.54</td>
-      <td>256.62</td>
-      <td>251.50</td>
-      <td>253.72</td>
-      <td>6010.267582</td>
-      <td>1.528034e+06</td>
-      <td>254.237260</td>
-    </tr>
-    <tr>
-      <th>2015-04-08</th>
-      <td>253.71</td>
-      <td>254.96</td>
-      <td>243.06</td>
-      <td>244.58</td>
-      <td>11663.656155</td>
-      <td>2.878712e+06</td>
-      <td>246.810407</td>
-    </tr>
-    <tr>
-      <th>2015-04-09</th>
-      <td>244.84</td>
-      <td>246.30</td>
-      <td>238.47</td>
-      <td>243.43</td>
-      <td>7943.710541</td>
-      <td>1.932558e+06</td>
-      <td>243.281478</td>
-    </tr>
-    <tr>
-      <th>2015-04-10</th>
-      <td>243.75</td>
-      <td>243.94</td>
-      <td>231.00</td>
-      <td>235.99</td>
-      <td>11549.630656</td>
-      <td>2.728444e+06</td>
-      <td>236.236497</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-tim-dir3">
 <p class="admonition-title">Exercise</p>
@@ -1789,30 +546,14 @@ where <code class="docutils literal notranslate"><span class="pre">XX</span></co
 like to access.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014, 2014,
-            ...
-            2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2599)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
-            ...
-            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-           dtype=&#39;int64&#39;, name=&#39;Date&#39;, length=2599)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">day</span>
 </pre></div>
 </div>
 </div>
@@ -1824,130 +565,22 @@ column, but we have to use a slightly different syntax.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_date_column</span> <span class="o">=</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_date_column</span> <span class="o">=</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">btc_date_column</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2014-05-01</td>
-      <td>449.00</td>
-      <td>465.88</td>
-      <td>447.97</td>
-      <td>460.97</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2014-05-02</td>
-      <td>460.97</td>
-      <td>462.99</td>
-      <td>444.51</td>
-      <td>454.50</td>
-      <td>8269.891417</td>
-      <td>3.731061e+06</td>
-      <td>451.162018</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2014-05-03</td>
-      <td>452.00</td>
-      <td>454.50</td>
-      <td>431.00</td>
-      <td>439.00</td>
-      <td>7431.626480</td>
-      <td>3.271086e+06</td>
-      <td>440.157544</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2014-05-04</td>
-      <td>439.00</td>
-      <td>442.83</td>
-      <td>429.55</td>
-      <td>438.04</td>
-      <td>5154.407794</td>
-      <td>2.245293e+06</td>
-      <td>435.606483</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2014-05-05</td>
-      <td>435.88</td>
-      <td>445.00</td>
-      <td>425.00</td>
-      <td>433.00</td>
-      <td>8188.082795</td>
-      <td>3.547855e+06</td>
-      <td>433.294968</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_date_column</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2014
-1    2014
-2    2014
-3    2014
-4    2014
-Name: Date, dtype: int64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_date_column</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_date_column</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    5
-1    5
-2    5
-3    5
-4    5
-Name: Date, dtype: int64
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_date_column</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1962,604 +595,52 @@ date against data at another date.</p>
 <em>forward</em> one period, filling the first row with missing data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># so we can see the result of shift clearly</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># so we can see the result of shift clearly</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>449.00</td>
-      <td>465.88</td>
-      <td>447.97</td>
-      <td>460.97</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>460.97</td>
-      <td>462.99</td>
-      <td>444.51</td>
-      <td>454.50</td>
-      <td>8269.891417</td>
-      <td>3.731061e+06</td>
-      <td>451.162018</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>452.00</td>
-      <td>454.50</td>
-      <td>431.00</td>
-      <td>439.00</td>
-      <td>7431.626480</td>
-      <td>3.271086e+06</td>
-      <td>440.157544</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>439.00</td>
-      <td>442.83</td>
-      <td>429.55</td>
-      <td>438.04</td>
-      <td>5154.407794</td>
-      <td>2.245293e+06</td>
-      <td>435.606483</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>435.88</td>
-      <td>445.00</td>
-      <td>425.00</td>
-      <td>433.00</td>
-      <td>8188.082795</td>
-      <td>3.547855e+06</td>
-      <td>433.294968</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>449.00</td>
-      <td>465.88</td>
-      <td>447.97</td>
-      <td>460.97</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>460.97</td>
-      <td>462.99</td>
-      <td>444.51</td>
-      <td>454.50</td>
-      <td>8269.891417</td>
-      <td>3.731061e+06</td>
-      <td>451.162018</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>452.00</td>
-      <td>454.50</td>
-      <td>431.00</td>
-      <td>439.00</td>
-      <td>7431.626480</td>
-      <td>3.271086e+06</td>
-      <td>440.157544</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>439.00</td>
-      <td>442.83</td>
-      <td>429.55</td>
-      <td>438.04</td>
-      <td>5154.407794</td>
-      <td>2.245293e+06</td>
-      <td>435.606483</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can use this to compute the percent change from one day to the next.
 (Quiz: Why does that work? Remember how pandas uses the index to <em>align</em>
 data.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="n">btc_usd</span> <span class="o">-</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">())</span> <span class="o">/</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="n">btc_usd</span> <span class="o">-</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">())</span> <span class="o">/</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>0.026659</td>
-      <td>-0.006203</td>
-      <td>-0.007724</td>
-      <td>-0.014036</td>
-      <td>-0.134590</td>
-      <td>-0.148542</td>
-      <td>-0.016122</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>-0.019459</td>
-      <td>-0.018337</td>
-      <td>-0.030393</td>
-      <td>-0.034103</td>
-      <td>-0.101363</td>
-      <td>-0.123282</td>
-      <td>-0.024391</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>-0.028761</td>
-      <td>-0.025677</td>
-      <td>-0.003364</td>
-      <td>-0.002187</td>
-      <td>-0.306423</td>
-      <td>-0.313594</td>
-      <td>-0.010340</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>-0.007107</td>
-      <td>0.004900</td>
-      <td>-0.010592</td>
-      <td>-0.011506</td>
-      <td>0.588559</td>
-      <td>0.580130</td>
-      <td>-0.005306</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Setting the first argument to <code class="docutils literal notranslate"><span class="pre">n</span></code> tells pandas to shift the data down
 <code class="docutils literal notranslate"><span class="pre">n</span></code> rows (apply an <code class="docutils literal notranslate"><span class="pre">n</span></code> period lag).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>449.00</td>
-      <td>465.88</td>
-      <td>447.97</td>
-      <td>460.97</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>460.97</td>
-      <td>462.99</td>
-      <td>444.51</td>
-      <td>454.50</td>
-      <td>8269.891417</td>
-      <td>3.731061e+06</td>
-      <td>451.162018</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>A negative value will shift the data <em>up</em> or apply a lead.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>452.00</td>
-      <td>454.50</td>
-      <td>431.00</td>
-      <td>439.00</td>
-      <td>7431.626480</td>
-      <td>3.271086e+06</td>
-      <td>440.157544</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>439.00</td>
-      <td>442.83</td>
-      <td>429.55</td>
-      <td>438.04</td>
-      <td>5154.407794</td>
-      <td>2.245293e+06</td>
-      <td>435.606483</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>435.88</td>
-      <td>445.00</td>
-      <td>425.00</td>
-      <td>433.00</td>
-      <td>8188.082795</td>
-      <td>3.547855e+06</td>
-      <td>433.294968</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>431.64</td>
-      <td>434.00</td>
-      <td>420.27</td>
-      <td>428.01</td>
-      <td>8041.198415</td>
-      <td>3.439331e+06</td>
-      <td>427.713734</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>429.00</td>
-      <td>452.00</td>
-      <td>425.67</td>
-      <td>440.00</td>
-      <td>13248.349023</td>
-      <td>5.842712e+06</td>
-      <td>441.014383</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_usd</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2021-06-16</th>
-      <td>38110.25</td>
-      <td>38208.68</td>
-      <td>35143.68</td>
-      <td>35840.00</td>
-      <td>4240.404867</td>
-      <td>1.560566e+08</td>
-      <td>36802.295855</td>
-    </tr>
-    <tr>
-      <th>2021-06-17</th>
-      <td>35849.18</td>
-      <td>36440.00</td>
-      <td>34718.21</td>
-      <td>35507.06</td>
-      <td>3129.334722</td>
-      <td>1.118542e+08</td>
-      <td>35743.751401</td>
-    </tr>
-    <tr>
-      <th>2021-06-18</th>
-      <td>35494.70</td>
-      <td>36125.00</td>
-      <td>33337.00</td>
-      <td>35675.47</td>
-      <td>3865.408811</td>
-      <td>1.344830e+08</td>
-      <td>34791.393581</td>
-    </tr>
-    <tr>
-      <th>2021-06-19</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2021-06-20</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-tim-dir4">
 <p class="admonition-title">Exercise</p>
@@ -2573,224 +654,20 @@ statistics</em>.</p>
 <p>These are best understood by example, so we will dive right in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first take only the first 6 rows so we can easily see what is going on</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># first take only the first 6 rows so we can easily see what is going on</span>
 <span class="n">btc_small</span> <span class="o">=</span> <span class="n">btc_usd</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">btc_small</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>449.00</td>
-      <td>465.88</td>
-      <td>447.97</td>
-      <td>460.97</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>460.97</td>
-      <td>462.99</td>
-      <td>444.51</td>
-      <td>454.50</td>
-      <td>8269.891417</td>
-      <td>3.731061e+06</td>
-      <td>451.162018</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>452.00</td>
-      <td>454.50</td>
-      <td>431.00</td>
-      <td>439.00</td>
-      <td>7431.626480</td>
-      <td>3.271086e+06</td>
-      <td>440.157544</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>439.00</td>
-      <td>442.83</td>
-      <td>429.55</td>
-      <td>438.04</td>
-      <td>5154.407794</td>
-      <td>2.245293e+06</td>
-      <td>435.606483</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>435.88</td>
-      <td>445.00</td>
-      <td>425.00</td>
-      <td>433.00</td>
-      <td>8188.082795</td>
-      <td>3.547855e+06</td>
-      <td>433.294968</td>
-    </tr>
-    <tr>
-      <th>2014-05-06</th>
-      <td>431.64</td>
-      <td>434.00</td>
-      <td>420.27</td>
-      <td>428.01</td>
-      <td>8041.198415</td>
-      <td>3.439331e+06</td>
-      <td>427.713734</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Below, we compute the 2 day moving average (for all columns).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_small</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_small</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>449.000</td>
-      <td>465.880</td>
-      <td>447.970</td>
-      <td>460.970</td>
-      <td>9556.037886</td>
-      <td>4.381969e+06</td>
-      <td>458.554960</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>454.985</td>
-      <td>464.435</td>
-      <td>446.240</td>
-      <td>457.735</td>
-      <td>8912.964652</td>
-      <td>4.056515e+06</td>
-      <td>454.858489</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>456.485</td>
-      <td>458.745</td>
-      <td>437.755</td>
-      <td>446.750</td>
-      <td>7850.758948</td>
-      <td>3.501074e+06</td>
-      <td>445.659781</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>445.500</td>
-      <td>448.665</td>
-      <td>430.275</td>
-      <td>438.520</td>
-      <td>6293.017137</td>
-      <td>2.758190e+06</td>
-      <td>437.882013</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>437.440</td>
-      <td>443.915</td>
-      <td>427.275</td>
-      <td>435.520</td>
-      <td>6671.245295</td>
-      <td>2.896574e+06</td>
-      <td>434.450725</td>
-    </tr>
-    <tr>
-      <th>2014-05-06</th>
-      <td>433.760</td>
-      <td>439.500</td>
-      <td>422.635</td>
-      <td>430.505</td>
-      <td>8114.640605</td>
-      <td>3.493593e+06</td>
-      <td>430.504351</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>To do this operation, pandas starts at each row (date) then looks
 <em>backwards</em> the specified number of periods (here 2 days) and then
@@ -2804,25 +681,19 @@ the same in both DataFrames.</p>
 window for the whole dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">btc_usd</span><span class="p">[</span><span class="s2">&quot;Open&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s2">&quot;21d&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()[</span><span class="s2">&quot;Open&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Original&quot;</span><span class="p">,</span> <span class="s2">&quot;21 day max&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2d2d8e34f0&gt;
-</pre></div>
-</div>
-<img alt="../_images/timeseries_54_1.png" src="../_images/timeseries_54_1.png" />
-</div>
 </div>
 <p>We can also ask pandas to <code class="docutils literal notranslate"><span class="pre">apply</span></code> custom functions, similar to what we
 saw when studying GroupBy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_volatile</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_volatile</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="s2">&quot;Returns a 1 if the variance is greater than 1, otherwise returns 0&quot;</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">var</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">1.0</span>
@@ -2834,112 +705,10 @@ saw when studying GroupBy.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_small</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">is_volatile</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">btc_small</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">is_volatile</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-05-01</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2014-05-02</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2014-05-03</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2014-05-04</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2014-05-05</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2014-05-06</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-tim-dir5">
 <p class="admonition-title">Exercise</p>
@@ -2963,343 +732,11 @@ to compute the average <em>within</em> each calendar month.</p>
 <p>Below are some examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># business quarter</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># business quarter</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;BQ&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume (BTC)</th>
-      <th>Volume (Currency)</th>
-      <th>Weighted Price</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-06-30</th>
-      <td>546.296557</td>
-      <td>560.478689</td>
-      <td>534.375574</td>
-      <td>549.274426</td>
-      <td>9692.850513</td>
-      <td>5.418439e+06</td>
-      <td>547.779109</td>
-    </tr>
-    <tr>
-      <th>2014-09-30</th>
-      <td>536.939130</td>
-      <td>544.464239</td>
-      <td>523.571087</td>
-      <td>533.646087</td>
-      <td>8921.203260</td>
-      <td>4.473120e+06</td>
-      <td>533.775317</td>
-    </tr>
-    <tr>
-      <th>2014-12-31</th>
-      <td>358.113261</td>
-      <td>367.361413</td>
-      <td>347.553261</td>
-      <td>357.277935</td>
-      <td>14487.630863</td>
-      <td>5.182557e+06</td>
-      <td>357.025437</td>
-    </tr>
-    <tr>
-      <th>2015-03-31</th>
-      <td>242.648111</td>
-      <td>250.373889</td>
-      <td>233.306667</td>
-      <td>241.823889</td>
-      <td>15871.493002</td>
-      <td>3.827028e+06</td>
-      <td>242.062305</td>
-    </tr>
-    <tr>
-      <th>2015-06-30</th>
-      <td>236.023956</td>
-      <td>239.404396</td>
-      <td>232.456593</td>
-      <td>236.209451</td>
-      <td>7568.650463</td>
-      <td>1.787362e+06</td>
-      <td>236.050265</td>
-    </tr>
-    <tr>
-      <th>2015-09-30</th>
-      <td>255.205435</td>
-      <td>259.369348</td>
-      <td>250.738478</td>
-      <td>254.964565</td>
-      <td>15057.220448</td>
-      <td>3.752239e+06</td>
-      <td>255.216907</td>
-    </tr>
-    <tr>
-      <th>2015-12-31</th>
-      <td>343.968043</td>
-      <td>354.843587</td>
-      <td>335.019783</td>
-      <td>346.029674</td>
-      <td>21987.668969</td>
-      <td>7.534306e+06</td>
-      <td>345.209689</td>
-    </tr>
-    <tr>
-      <th>2016-03-31</th>
-      <td>409.723956</td>
-      <td>415.345165</td>
-      <td>402.351319</td>
-      <td>409.552747</td>
-      <td>7276.401365</td>
-      <td>2.957477e+06</td>
-      <td>409.345434</td>
-    </tr>
-    <tr>
-      <th>2016-06-30</th>
-      <td>508.830549</td>
-      <td>519.757143</td>
-      <td>491.237582</td>
-      <td>511.820440</td>
-      <td>5981.137422</td>
-      <td>3.332013e+06</td>
-      <td>509.388134</td>
-    </tr>
-    <tr>
-      <th>2016-09-30</th>
-      <td>614.719891</td>
-      <td>621.399783</td>
-      <td>604.309022</td>
-      <td>614.092500</td>
-      <td>3888.241125</td>
-      <td>2.364365e+06</td>
-      <td>613.211596</td>
-    </tr>
-    <tr>
-      <th>2016-12-30</th>
-      <td>722.921538</td>
-      <td>732.714176</td>
-      <td>714.873846</td>
-      <td>726.758462</td>
-      <td>4658.746976</td>
-      <td>3.501319e+06</td>
-      <td>724.799640</td>
-    </tr>
-    <tr>
-      <th>2017-03-31</th>
-      <td>1031.095275</td>
-      <td>1058.529451</td>
-      <td>998.373077</td>
-      <td>1032.510000</td>
-      <td>9574.254814</td>
-      <td>9.767086e+06</td>
-      <td>1029.350854</td>
-    </tr>
-    <tr>
-      <th>2017-06-30</th>
-      <td>1886.373956</td>
-      <td>1961.381868</td>
-      <td>1823.321319</td>
-      <td>1902.486484</td>
-      <td>11808.708093</td>
-      <td>2.482040e+07</td>
-      <td>1897.089126</td>
-    </tr>
-    <tr>
-      <th>2017-09-29</th>
-      <td>3452.060000</td>
-      <td>3578.992637</td>
-      <td>3312.851758</td>
-      <td>3471.192088</td>
-      <td>14591.656328</td>
-      <td>5.001818e+07</td>
-      <td>3446.717092</td>
-    </tr>
-    <tr>
-      <th>2017-12-29</th>
-      <td>9132.594945</td>
-      <td>9602.524725</td>
-      <td>8655.917473</td>
-      <td>9245.341978</td>
-      <td>15339.474034</td>
-      <td>1.498917e+08</td>
-      <td>9150.932048</td>
-    </tr>
-    <tr>
-      <th>2018-03-30</th>
-      <td>10654.949560</td>
-      <td>11107.304725</td>
-      <td>9981.257363</td>
-      <td>10571.343077</td>
-      <td>16971.607663</td>
-      <td>1.711173e+08</td>
-      <td>10536.375918</td>
-    </tr>
-    <tr>
-      <th>2018-06-29</th>
-      <td>7760.852637</td>
-      <td>7950.978132</td>
-      <td>7543.325275</td>
-      <td>7754.252637</td>
-      <td>10412.011976</td>
-      <td>8.196025e+07</td>
-      <td>7744.048061</td>
-    </tr>
-    <tr>
-      <th>2018-09-28</th>
-      <td>6792.599011</td>
-      <td>6950.023956</td>
-      <td>6639.782857</td>
-      <td>6797.711209</td>
-      <td>7098.911451</td>
-      <td>4.863160e+07</td>
-      <td>6790.558832</td>
-    </tr>
-    <tr>
-      <th>2018-12-31</th>
-      <td>5199.605319</td>
-      <td>5297.541809</td>
-      <td>5063.396915</td>
-      <td>5169.268191</td>
-      <td>8805.848653</td>
-      <td>3.969870e+07</td>
-      <td>5178.241610</td>
-    </tr>
-    <tr>
-      <th>2019-03-29</th>
-      <td>3737.812500</td>
-      <td>3799.089886</td>
-      <td>3676.291136</td>
-      <td>3742.059432</td>
-      <td>6446.776373</td>
-      <td>2.414045e+07</td>
-      <td>3737.221237</td>
-    </tr>
-    <tr>
-      <th>2019-06-28</th>
-      <td>7026.032308</td>
-      <td>7308.565604</td>
-      <td>6829.843407</td>
-      <td>7117.250110</td>
-      <td>10796.082022</td>
-      <td>8.051510e+07</td>
-      <td>7077.940876</td>
-    </tr>
-    <tr>
-      <th>2019-09-30</th>
-      <td>10429.423617</td>
-      <td>10693.213511</td>
-      <td>10038.982872</td>
-      <td>10384.737660</td>
-      <td>9112.727636</td>
-      <td>9.513540e+07</td>
-      <td>10360.841564</td>
-    </tr>
-    <tr>
-      <th>2019-12-31</th>
-      <td>7997.030978</td>
-      <td>8178.661087</td>
-      <td>7803.425109</td>
-      <td>7983.524457</td>
-      <td>6393.955934</td>
-      <td>5.178886e+07</td>
-      <td>7981.938611</td>
-    </tr>
-    <tr>
-      <th>2020-03-31</th>
-      <td>8273.623956</td>
-      <td>8502.892637</td>
-      <td>8005.682418</td>
-      <td>8262.963297</td>
-      <td>9395.033509</td>
-      <td>6.978281e+07</td>
-      <td>8261.113739</td>
-    </tr>
-    <tr>
-      <th>2020-06-30</th>
-      <td>8631.383077</td>
-      <td>8850.968242</td>
-      <td>8409.878022</td>
-      <td>8660.272637</td>
-      <td>9782.113853</td>
-      <td>8.484144e+07</td>
-      <td>8638.033563</td>
-    </tr>
-    <tr>
-      <th>2020-09-30</th>
-      <td>10611.801087</td>
-      <td>10792.899239</td>
-      <td>10400.647391</td>
-      <td>10629.811196</td>
-      <td>6548.697693</td>
-      <td>7.025685e+07</td>
-      <td>10605.035045</td>
-    </tr>
-    <tr>
-      <th>2020-12-31</th>
-      <td>16399.218222</td>
-      <td>16885.984444</td>
-      <td>16024.660667</td>
-      <td>16580.653222</td>
-      <td>7732.499161</td>
-      <td>1.321875e+08</td>
-      <td>16479.764167</td>
-    </tr>
-    <tr>
-      <th>2021-03-31</th>
-      <td>46009.360843</td>
-      <td>47795.721928</td>
-      <td>44029.390000</td>
-      <td>46240.197349</td>
-      <td>8859.348156</td>
-      <td>3.778755e+08</td>
-      <td>46047.178937</td>
-    </tr>
-    <tr>
-      <th>2021-06-30</th>
-      <td>48335.081235</td>
-      <td>49808.311235</td>
-      <td>46184.388025</td>
-      <td>48049.587407</td>
-      <td>5468.834803</td>
-      <td>2.532804e+08</td>
-      <td>48105.596908</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Note that unlike with <code class="docutils literal notranslate"><span class="pre">rolling</span></code>, a single number is returned for
 each column for each quarter.</p>
@@ -3312,336 +749,11 @@ are the same as the input.</p>
 function at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># multiple functions at 2 start-of-quarter frequency</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># multiple functions at 2 start-of-quarter frequency</span>
 <span class="n">btc_usd</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;2BQS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="2" halign="left">Open</th>
-      <th colspan="2" halign="left">High</th>
-      <th colspan="2" halign="left">Low</th>
-      <th colspan="2" halign="left">Close</th>
-      <th colspan="2" halign="left">Volume (BTC)</th>
-      <th colspan="2" halign="left">Volume (Currency)</th>
-      <th colspan="2" halign="left">Weighted Price</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>min</th>
-      <th>max</th>
-      <th>min</th>
-      <th>max</th>
-      <th>min</th>
-      <th>max</th>
-      <th>min</th>
-      <th>max</th>
-      <th>min</th>
-      <th>max</th>
-      <th>min</th>
-      <th>max</th>
-      <th>min</th>
-      <th>max</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014-04-01</th>
-      <td>374.17</td>
-      <td>668.90</td>
-      <td>386.03</td>
-      <td>683.26</td>
-      <td>365.20</td>
-      <td>651.70</td>
-      <td>374.20</td>
-      <td>670.14</td>
-      <td>1467.591402</td>
-      <td>29732.720362</td>
-      <td>9.159133e+05</td>
-      <td>1.561239e+07</td>
-      <td>376.976877</td>
-      <td>667.690345</td>
-    </tr>
-    <tr>
-      <th>2014-10-01</th>
-      <td>0.00</td>
-      <td>426.64</td>
-      <td>0.00</td>
-      <td>453.92</td>
-      <td>0.00</td>
-      <td>390.48</td>
-      <td>0.00</td>
-      <td>426.63</td>
-      <td>0.000000</td>
-      <td>124188.885083</td>
-      <td>0.000000e+00</td>
-      <td>2.357627e+07</td>
-      <td>0.000000</td>
-      <td>420.127183</td>
-    </tr>
-    <tr>
-      <th>2015-04-01</th>
-      <td>209.76</td>
-      <td>310.55</td>
-      <td>222.88</td>
-      <td>317.99</td>
-      <td>198.12</td>
-      <td>292.19</td>
-      <td>209.72</td>
-      <td>310.55</td>
-      <td>1946.293030</td>
-      <td>42308.005630</td>
-      <td>4.732609e+05</td>
-      <td>9.091325e+06</td>
-      <td>214.884260</td>
-      <td>306.748292</td>
-    </tr>
-    <tr>
-      <th>2015-10-01</th>
-      <td>235.87</td>
-      <td>464.53</td>
-      <td>239.06</td>
-      <td>502.00</td>
-      <td>235.00</td>
-      <td>453.50</td>
-      <td>237.15</td>
-      <td>464.53</td>
-      <td>1253.006376</td>
-      <td>105959.259141</td>
-      <td>5.210775e+05</td>
-      <td>4.719959e+07</td>
-      <td>237.116083</td>
-      <td>461.494358</td>
-    </tr>
-    <tr>
-      <th>2016-04-01</th>
-      <td>414.66</td>
-      <td>767.37</td>
-      <td>416.99</td>
-      <td>778.85</td>
-      <td>1.50</td>
-      <td>740.11</td>
-      <td>416.31</td>
-      <td>766.62</td>
-      <td>719.159825</td>
-      <td>33056.289644</td>
-      <td>4.709121e+05</td>
-      <td>2.225764e+07</td>
-      <td>415.569853</td>
-      <td>754.723539</td>
-    </tr>
-    <tr>
-      <th>2016-10-03</th>
-      <td>607.19</td>
-      <td>1287.38</td>
-      <td>610.50</td>
-      <td>1350.00</td>
-      <td>604.99</td>
-      <td>1255.00</td>
-      <td>607.19</td>
-      <td>1285.33</td>
-      <td>888.660021</td>
-      <td>36018.861120</td>
-      <td>5.460154e+05</td>
-      <td>3.883046e+07</td>
-      <td>607.560859</td>
-      <td>1275.581651</td>
-    </tr>
-    <tr>
-      <th>2017-04-03</th>
-      <td>1076.59</td>
-      <td>4921.71</td>
-      <td>1145.00</td>
-      <td>4979.90</td>
-      <td>1076.19</td>
-      <td>4671.09</td>
-      <td>1134.58</td>
-      <td>4921.70</td>
-      <td>1804.450797</td>
-      <td>60278.946542</td>
-      <td>2.128068e+06</td>
-      <td>2.031684e+08</td>
-      <td>1127.151197</td>
-      <td>4808.168193</td>
-    </tr>
-    <tr>
-      <th>2017-10-02</th>
-      <td>4219.74</td>
-      <td>19187.78</td>
-      <td>4343.00</td>
-      <td>19666.00</td>
-      <td>4137.96</td>
-      <td>18465.00</td>
-      <td>4219.53</td>
-      <td>19187.78</td>
-      <td>4646.405621</td>
-      <td>70961.369658</td>
-      <td>2.032007e+07</td>
-      <td>7.721430e+08</td>
-      <td>4233.863791</td>
-      <td>19110.244062</td>
-    </tr>
-    <tr>
-      <th>2018-04-02</th>
-      <td>5845.20</td>
-      <td>9827.04</td>
-      <td>6165.49</td>
-      <td>9948.98</td>
-      <td>5774.72</td>
-      <td>9670.68</td>
-      <td>5848.33</td>
-      <td>9823.28</td>
-      <td>1098.628060</td>
-      <td>33035.904045</td>
-      <td>7.093171e+06</td>
-      <td>3.032200e+08</td>
-      <td>5936.398196</td>
-      <td>9827.536792</td>
-    </tr>
-    <tr>
-      <th>2018-10-01</th>
-      <td>3180.84</td>
-      <td>6604.76</td>
-      <td>3230.00</td>
-      <td>6756.00</td>
-      <td>3122.28</td>
-      <td>6553.13</td>
-      <td>3179.54</td>
-      <td>6604.75</td>
-      <td>839.297665</td>
-      <td>39775.389439</td>
-      <td>5.373482e+06</td>
-      <td>1.773528e+08</td>
-      <td>3171.722851</td>
-      <td>6593.879882</td>
-    </tr>
-    <tr>
-      <th>2019-04-01</th>
-      <td>4092.02</td>
-      <td>12927.44</td>
-      <td>4150.00</td>
-      <td>13880.00</td>
-      <td>4052.56</td>
-      <td>12030.43</td>
-      <td>4136.32</td>
-      <td>12920.54</td>
-      <td>1572.155427</td>
-      <td>37487.802426</td>
-      <td>1.506857e+07</td>
-      <td>4.769830e+08</td>
-      <td>4121.008519</td>
-      <td>12723.686028</td>
-    </tr>
-    <tr>
-      <th>2019-10-01</th>
-      <td>4841.67</td>
-      <td>10364.04</td>
-      <td>5353.04</td>
-      <td>10500.50</td>
-      <td>3850.00</td>
-      <td>10247.35</td>
-      <td>4841.67</td>
-      <td>10364.04</td>
-      <td>1119.109693</td>
-      <td>58513.389189</td>
-      <td>8.052271e+06</td>
-      <td>3.644311e+08</td>
-      <td>4876.575039</td>
-      <td>10345.096195</td>
-    </tr>
-    <tr>
-      <th>2020-04-01</th>
-      <td>6428.74</td>
-      <td>12301.27</td>
-      <td>6710.21</td>
-      <td>12473.00</td>
-      <td>6137.71</td>
-      <td>11823.00</td>
-      <td>6619.00</td>
-      <td>12298.38</td>
-      <td>1358.285320</td>
-      <td>34465.186572</td>
-      <td>1.244918e+07</td>
-      <td>2.992075e+08</td>
-      <td>6357.380528</td>
-      <td>12166.197291</td>
-    </tr>
-    <tr>
-      <th>2020-10-01</th>
-      <td>10543.17</td>
-      <td>61177.03</td>
-      <td>10605.79</td>
-      <td>61781.83</td>
-      <td>10380.00</td>
-      <td>58959.57</td>
-      <td>10553.66</td>
-      <td>61165.19</td>
-      <td>1.165644</td>
-      <td>40786.964254</td>
-      <td>3.152391e+04</td>
-      <td>1.369434e+09</td>
-      <td>10515.174869</td>
-      <td>60429.059780</td>
-    </tr>
-    <tr>
-      <th>2021-04-01</th>
-      <td>33413.19</td>
-      <td>63605.69</td>
-      <td>34085.61</td>
-      <td>64895.22</td>
-      <td>30066.00</td>
-      <td>61998.90</td>
-      <td>33411.69</td>
-      <td>63564.48</td>
-      <td>1440.631820</td>
-      <td>32468.863970</td>
-      <td>8.294065e+07</td>
-      <td>1.233364e+09</td>
-      <td>32661.425472</td>
-      <td>63314.685801</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>As with <code class="docutils literal notranslate"><span class="pre">groupby</span></code> and <code class="docutils literal notranslate"><span class="pre">rolling</span></code>, you can also provide custom
 functions to <code class="docutils literal notranslate"><span class="pre">.resample(...).agg</span></code> and <code class="docutils literal notranslate"><span class="pre">.resample(...).apply</span></code></p>
@@ -3678,21 +790,21 @@ pass as <code class="docutils literal notranslate"><span class="pre">format</spa
 <p>Test your work by passing your format string to <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">christmas_str2</span> <span class="o">=</span> <span class="s2">&quot;2017:12:25&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">christmas_str2</span> <span class="o">=</span> <span class="s2">&quot;2017:12:25&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbacks_win</span> <span class="o">=</span> <span class="s2">&quot;M:11 D:4 Y:2001 9:15 PM&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dbacks_win</span> <span class="o">=</span> <span class="s2">&quot;M:11 D:4 Y:2001 9:15 PM&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">america_bday</span> <span class="o">=</span> <span class="s2">&quot;America was born on July 4, 1776&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">america_bday</span> <span class="o">=</span> <span class="s2">&quot;America was born on July 4, 1776&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -3735,7 +847,7 @@ in the volume of trades (the <code class="docutils literal notranslate"><span cl
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
 </div>
@@ -3777,7 +889,7 @@ we have written out our answer.)</p>
 <p>How much money did you make? Compare with your neighbor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">daily_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">daily_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># DELETE `pass` below and replace it with your code</span>
     <span class="k">pass</span>
 
@@ -3826,7 +938,7 @@ our answer.)</p>
 <p>Was this strategy more profitable than the previous one? By how much?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">monthly_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">monthly_value</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># DELETE `pass` below and replace it with your code</span>
     <span class="k">pass</span>
 

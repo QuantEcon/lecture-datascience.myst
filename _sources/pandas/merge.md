@@ -59,7 +59,7 @@ from IPython.display import display
 
 ```{code-cell} python
 # from WDI. Units trillions of 2010 USD
-url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/wdi_data.csv"
+url = "https://datascience.quantecon.org/assets/data/wdi_data.csv"
 wdi = pd.read_csv(url).set_index(["country", "year"])
 wdi.info()
 
@@ -88,7 +88,7 @@ sq_miles
 
 ```{code-cell} python
 # from WDI. Units millions of people
-pop_url = "https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/pandas/wdi_population.csv"
+pop_url = "https://datascience.quantecon.org/assets/data/wdi_population.csv"
 pop = pd.read_csv(pop_url).set_index(["country", "year"])
 pop.info()
 pop.head(10)
@@ -451,7 +451,8 @@ We accessed the data [here](https://github.com/zygmuntz/goodbooks-10k).
 Let's load it up.
 
 ```{code-cell} python
-ratings = qeds.data.load("goodreads_ratings")
+url = "https://datascience.quantecon.org/assets/data/goodreads_ratings.csv.zip"
+ratings = pd.read_csv(url)
 display(ratings.head())
 ratings.info()
 ```
@@ -561,7 +562,8 @@ We hear you.
 Let's also load a dataset containing information on the actual books.
 
 ```{code-cell} python
-books = qeds.data.load("goodreads_books")
+url = "https://datascience.quantecon.org/assets/data/goodreads_books.csv.zip"
+books = pd.read_csv(url)
 # we only need a few of the columns
 books = books[["book_id", "authors", "title"]]
 print("shape: ", books.shape)
@@ -634,7 +636,8 @@ that describes the cause of all US domestic flight delays
 in November 2016:
 
 ```{code-cell} python
-air_perf = qeds.load("airline_performance_dec16")[["CRSDepTime", "Carrier", "CarrierDelay", "ArrDelay"]]
+url = "https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip"
+air_perf = pd.read_csv(url)[["CRSDepTime", "Carrier", "CarrierDelay", "ArrDelay"]]
 air_perf.info()
 air_perf.head()
 ```
@@ -665,7 +668,8 @@ Thankfully, we have a second dataset that maps the two letter code
 into the full airline name.
 
 ```{code-cell} python
-carrier_code = qeds.load("airline_carrier_codes")
+url = "https://datascience.quantecon.org/assets/data/airline_carrier_codes.csv.zip"
+carrier_code = pd.read_csv(url)
 carrier_code.tail()
 ```
 

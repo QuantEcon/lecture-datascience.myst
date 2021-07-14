@@ -189,7 +189,7 @@
 <h1>Problem Set 7<a class="headerlink" href="#problem-set-7" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -206,7 +206,7 @@ Use a non-red color for the years 2000 to 2008, red for
 2009, and the first color again for 2010 to 2018.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ca_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="mf">5.2</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span>
     <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">))</span>
 <span class="p">)</span>
@@ -217,9 +217,6 @@ Use a non-red color for the years 2000 to 2008, red for
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">side</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/problem_set_7_3_0.png" src="../_images/problem_set_7_3_0.png" />
 </div>
 </div>
 </div>
@@ -233,7 +230,7 @@ education level) and four groups of points (one for each year).</p>
 did rather than this way?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
@@ -261,9 +258,6 @@ did rather than this way?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/problem_set_7_5_0.png" src="../_images/problem_set_7_5_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="questions-3-5">
@@ -274,124 +268,10 @@ that describes the cause for all US domestic flight delays
 in November 2016. We used the same data in the previous problem set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">air_perf</span> <span class="o">=</span> <span class="n">qeds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;airline_performance_dec16&quot;</span><span class="p">)</span> <span class="c1">#[[&quot;CRSDepTime&quot;, &quot;Carrier&quot;, &quot;CarrierDelay&quot;, &quot;ArrDelay&quot;]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
+<span class="n">air_perf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)[[</span><span class="s2">&quot;CRSDepTime&quot;</span><span class="p">,</span> <span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="s2">&quot;ArrDelay&quot;</span><span class="p">]]</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">air_perf</span><span class="o">.</span><span class="n">head</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 460949 entries, 0 to 460948
-Data columns (total 36 columns):
- #   Column              Non-Null Count   Dtype         
----  ------              --------------   -----         
- 0   Carrier             460949 non-null  object        
- 1   TailNum             459689 non-null  object        
- 2   FlightNum           460949 non-null  int64         
- 3   OriginCityMarketID  460949 non-null  int64         
- 4   Origin              460949 non-null  object        
- 5   OriginCityName      460949 non-null  object        
- 6   OriginStateName     460949 non-null  object        
- 7   DestCityMarketID    460949 non-null  int64         
- 8   Dest                460949 non-null  object        
- 9   DestCityName        460949 non-null  object        
- 10  DestStateName       460949 non-null  object        
- 11  CRSDepTime          460949 non-null  datetime64[ns]
- 12  DepTime             453665 non-null  datetime64[ns]
- 13  DepDelay            453722 non-null  float64       
- 14  TaxiOut             453543 non-null  float64       
- 15  WheelsOff           453543 non-null  float64       
- 16  WheelsOn            453219 non-null  float64       
- 17  TaxiIn              453219 non-null  float64       
- 18  CRSArrTime          460949 non-null  datetime64[ns]
- 19  ArrTime             453010 non-null  datetime64[ns]
- 20  ArrDelay            452229 non-null  float64       
- 21  Cancelled           460949 non-null  float64       
- 22  CancellationCode    7464 non-null    object        
- 23  Diverted            460949 non-null  float64       
- 24  CRSElapsedTime      460948 non-null  float64       
- 25  ActualElapsedTime   452229 non-null  float64       
- 26  AirTime             452229 non-null  float64       
- 27  Distance            460949 non-null  float64       
- 28  CarrierDelay        460949 non-null  float64       
- 29  WeatherDelay        460949 non-null  float64       
- 30  NASDelay            460949 non-null  float64       
- 31  SecurityDelay       460949 non-null  float64       
- 32  LateAircraftDelay   460949 non-null  float64       
- 33  FirstDepTime        3039 non-null    float64       
- 34  TotalAddGTime       3039 non-null    float64       
- 35  Date                460949 non-null  datetime64[ns]
-dtypes: datetime64[ns](5), float64(19), int64(3), object(9)
-memory usage: 126.6+ MB
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method NDFrame.head of        Carrier TailNum  FlightNum  OriginCityMarketID Origin  \
-0           AA  N3JHAA         46               31650    MSP   
-1           AA  N3DPAA         46               31650    MSP   
-2           AA  N3KUAA         46               31650    MSP   
-3           AA  N3FBAA         46               31650    MSP   
-4           AA  N3BLAA         46               31650    MSP   
-...        ...     ...        ...                 ...    ...   
-460944      DL  N683DA       2034               32467    FLL   
-460945      DL  N977DL       2035               30397    ATL   
-460946      DL  N977DL       2035               33342    MKE   
-460947      DL  N953DN       2036               30397    ATL   
-460948      DL  N953DN       2036               31714    RSW   
-
-             OriginCityName OriginStateName  DestCityMarketID Dest  \
-0           Minneapolis, MN       Minnesota             30977  ORD   
-1           Minneapolis, MN       Minnesota             30977  ORD   
-2           Minneapolis, MN       Minnesota             30977  ORD   
-3           Minneapolis, MN       Minnesota             30977  ORD   
-4           Minneapolis, MN       Minnesota             30977  ORD   
-...                     ...             ...               ...  ...   
-460944  Fort Lauderdale, FL         Florida             30397  ATL   
-460945          Atlanta, GA         Georgia             33342  MKE   
-460946        Milwaukee, WI       Wisconsin             30397  ATL   
-460947          Atlanta, GA         Georgia             31714  RSW   
-460948       Fort Myers, FL         Florida             30397  ATL   
-
-          DestCityName  ... AirTime Distance CarrierDelay  WeatherDelay  \
-0          Chicago, IL  ...    58.0    334.0          0.0           0.0   
-1          Chicago, IL  ...    57.0    334.0          0.0           0.0   
-2          Chicago, IL  ...    49.0    334.0          0.0           0.0   
-3          Chicago, IL  ...    51.0    334.0          0.0           0.0   
-4          Chicago, IL  ...    51.0    334.0          0.0           0.0   
-...                ...  ...     ...      ...          ...           ...   
-460944     Atlanta, GA  ...    88.0    581.0          0.0           0.0   
-460945   Milwaukee, WI  ...   105.0    669.0          0.0           0.0   
-460946     Atlanta, GA  ...    89.0    669.0          0.0           0.0   
-460947  Fort Myers, FL  ...    71.0    515.0          0.0           0.0   
-460948     Atlanta, GA  ...    85.0    515.0          0.0           0.0   
-
-        NASDelay  SecurityDelay  LateAircraftDelay  FirstDepTime  \
-0           20.0            0.0                0.0           NaN   
-1           20.0            0.0                0.0           NaN   
-2            0.0            0.0                0.0           NaN   
-3            0.0            0.0                0.0           NaN   
-4            0.0            0.0                0.0           NaN   
-...          ...            ...                ...           ...   
-460944       0.0            0.0                0.0           NaN   
-460945       0.0            0.0                0.0           NaN   
-460946       0.0            0.0                0.0           NaN   
-460947       0.0            0.0                0.0           NaN   
-460948       0.0            0.0                0.0           NaN   
-
-       TotalAddGTime       Date  
-0                NaN 2016-12-18  
-1                NaN 2016-12-19  
-2                NaN 2016-12-20  
-3                NaN 2016-12-21  
-4                NaN 2016-12-22  
-...              ...        ...  
-460944           NaN 2016-12-30  
-460945           NaN 2016-12-30  
-460946           NaN 2016-12-30  
-460947           NaN 2016-12-30  
-460948           NaN 2016-12-30  
-
-[460949 rows x 36 columns]&gt;
 </pre></div>
 </div>
 </div>

@@ -370,7 +370,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -379,7 +379,7 @@
 
 <span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">DataReader</span>
 
-<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <span class="c1"># activate plot theme</span>
 <span class="kn">import</span> <span class="nn">qeds</span>
 <span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
@@ -491,8 +491,8 @@ settling on a draft we are happy with.</p>
 <p>Below, we create a draft of our plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
 
@@ -519,9 +519,6 @@ settling on a draft we are happy with.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_3_0.png" src="../_images/visualization_rules_3_0.png" />
-</div>
 </div>
 <div class="admonition-exercise admonition" id="app-vis-dir1">
 <p class="admonition-title">Exercise</p>
@@ -538,8 +535,8 @@ detract or distract from our message.</p>
 presenting the details.  However, the code we use to create the best version of this graphic is included below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
 
@@ -605,9 +602,6 @@ presenting the details.  However, the code we use to create the best version of 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_5_0.png" src="../_images/visualization_rules_5_0.png" />
-</div>
 </div>
 </div>
 </div>
@@ -633,7 +627,7 @@ variables.</p>
 <p>Below, we demonstrate how it can be used to compare.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> <span class="s2">&quot;Austin&quot;</span><span class="p">,</span> <span class="s2">&quot;Las Vegas&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Seattle&quot;</span><span class="p">,</span> <span class="s2">&quot;Pittsburgh&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Detroit&quot;</span><span class="p">,</span> <span class="s2">&quot;Fresno&quot;</span><span class="p">,</span> <span class="s2">&quot;Phoenix&quot;</span><span class="p">,</span> <span class="s2">&quot;Orlando&quot;</span><span class="p">,</span> <span class="s2">&quot;Atlanta&quot;</span><span class="p">,</span> <span class="s2">&quot;Madison&quot;</span>
 <span class="p">]</span>
@@ -675,9 +669,6 @@ variables.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_7_0.png" src="../_images/visualization_rules_7_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="line-plots">
@@ -695,10 +686,10 @@ our college/non-college urban wage premium plot.</p>
 chose to remove them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
 <span class="c1"># Read in data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/density_wage_data.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
 
@@ -773,9 +764,6 @@ chose to remove them.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_9_0.png" src="../_images/visualization_rules_9_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="bar-charts">
@@ -787,7 +775,7 @@ be used to show how a variable changes over time (which in some ways, is just sh
 in the United States.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> <span class="s2">&quot;Austin&quot;</span><span class="p">,</span> <span class="s2">&quot;Las Vegas&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;Seattle&quot;</span><span class="p">,</span> <span class="s2">&quot;Pittsburgh&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Detroit&quot;</span><span class="p">,</span> <span class="s2">&quot;Fresno&quot;</span><span class="p">,</span> <span class="s2">&quot;Phoenix&quot;</span><span class="p">,</span> <span class="s2">&quot;Orlando&quot;</span><span class="p">,</span> <span class="s2">&quot;Atlanta&quot;</span><span class="p">,</span> <span class="s2">&quot;Madison&quot;</span>
 <span class="p">]</span>
@@ -807,12 +795,6 @@ in the United States.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Unemployment Rate in US Cities&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_11_1.png" src="../_images/visualization_rules_11_1.png" />
-</div>
 </div>
 </div>
 <div class="section" id="histograms">
@@ -824,7 +806,7 @@ since we typically think of means and variances in terms of the normal distribut
 <p>Our histogram indicates this variable is approximately normally distributed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GDP quarterly growth</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># GDP quarterly growth</span>
 <span class="n">gdp</span> <span class="o">=</span> <span class="n">DataReader</span><span class="p">(</span><span class="s2">&quot;GDP&quot;</span><span class="p">,</span> <span class="s2">&quot;fred&quot;</span><span class="p">,</span> <span class="mi">1948</span><span class="p">,</span> <span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 <span class="n">gdp</span> <span class="o">=</span> <span class="n">gdp</span> <span class="o">*</span> <span class="mi">100</span>
 
@@ -840,12 +822,6 @@ since we typically think of means and variances in terms of the normal distribut
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;US GDP Growth from 1948-2019&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;US GDP Growth from 1948-2019&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_13_1.png" src="../_images/visualization_rules_13_1.png" />
 </div>
 </div>
 </div>
@@ -882,7 +858,7 @@ color black). If the color has value 1 then it has no black and is just the orig
 <p>Below, we demonstrate how colors change as we move hue/saturation/value one at a time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
 
     <span class="n">ncolors</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">ncolors</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -905,50 +881,32 @@ color black). If the color has value 1 then it has no black and is just the orig
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary hue</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary hue</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mplc</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="mi">360</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Varying Hue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Hue&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_16_1.png" src="../_images/visualization_rules_16_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary saturation</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary saturation</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mplc</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Varying Saturation&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Saturation&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_17_1.png" src="../_images/visualization_rules_17_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary value</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary value</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mplc</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Varying Value&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_18_1.png" src="../_images/visualization_rules_18_1.png" />
 </div>
 </div>
 </div>
@@ -968,12 +926,7 @@ themes is better than than creating your own.</p>
 with matplotlib by doing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">colormaps</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Accent&#39;, &#39;Accent_r&#39;, &#39;Blues&#39;, &#39;Blues_r&#39;, &#39;BrBG&#39;, &#39;BrBG_r&#39;, &#39;BuGn&#39;, &#39;BuGn_r&#39;, &#39;BuPu&#39;, &#39;BuPu_r&#39;, &#39;CMRmap&#39;, &#39;CMRmap_r&#39;, &#39;Dark2&#39;, &#39;Dark2_r&#39;, &#39;GnBu&#39;, &#39;GnBu_r&#39;, &#39;Greens&#39;, &#39;Greens_r&#39;, &#39;Greys&#39;, &#39;Greys_r&#39;, &#39;OrRd&#39;, &#39;OrRd_r&#39;, &#39;Oranges&#39;, &#39;Oranges_r&#39;, &#39;PRGn&#39;, &#39;PRGn_r&#39;, &#39;Paired&#39;, &#39;Paired_r&#39;, &#39;Pastel1&#39;, &#39;Pastel1_r&#39;, &#39;Pastel2&#39;, &#39;Pastel2_r&#39;, &#39;PiYG&#39;, &#39;PiYG_r&#39;, &#39;PuBu&#39;, &#39;PuBuGn&#39;, &#39;PuBuGn_r&#39;, &#39;PuBu_r&#39;, &#39;PuOr&#39;, &#39;PuOr_r&#39;, &#39;PuRd&#39;, &#39;PuRd_r&#39;, &#39;Purples&#39;, &#39;Purples_r&#39;, &#39;RdBu&#39;, &#39;RdBu_r&#39;, &#39;RdGy&#39;, &#39;RdGy_r&#39;, &#39;RdPu&#39;, &#39;RdPu_r&#39;, &#39;RdYlBu&#39;, &#39;RdYlBu_r&#39;, &#39;RdYlGn&#39;, &#39;RdYlGn_r&#39;, &#39;Reds&#39;, &#39;Reds_r&#39;, &#39;Set1&#39;, &#39;Set1_r&#39;, &#39;Set2&#39;, &#39;Set2_r&#39;, &#39;Set3&#39;, &#39;Set3_r&#39;, &#39;Spectral&#39;, &#39;Spectral_r&#39;, &#39;Wistia&#39;, &#39;Wistia_r&#39;, &#39;YlGn&#39;, &#39;YlGnBu&#39;, &#39;YlGnBu_r&#39;, &#39;YlGn_r&#39;, &#39;YlOrBr&#39;, &#39;YlOrBr_r&#39;, &#39;YlOrRd&#39;, &#39;YlOrRd_r&#39;, &#39;afmhot&#39;, &#39;afmhot_r&#39;, &#39;autumn&#39;, &#39;autumn_r&#39;, &#39;binary&#39;, &#39;binary_r&#39;, &#39;bone&#39;, &#39;bone_r&#39;, &#39;brg&#39;, &#39;brg_r&#39;, &#39;bwr&#39;, &#39;bwr_r&#39;, &#39;cividis&#39;, &#39;cividis_r&#39;, &#39;cool&#39;, &#39;cool_r&#39;, &#39;coolwarm&#39;, &#39;coolwarm_r&#39;, &#39;copper&#39;, &#39;copper_r&#39;, &#39;cubehelix&#39;, &#39;cubehelix_r&#39;, &#39;flag&#39;, &#39;flag_r&#39;, &#39;gist_earth&#39;, &#39;gist_earth_r&#39;, &#39;gist_gray&#39;, &#39;gist_gray_r&#39;, &#39;gist_heat&#39;, &#39;gist_heat_r&#39;, &#39;gist_ncar&#39;, &#39;gist_ncar_r&#39;, &#39;gist_rainbow&#39;, &#39;gist_rainbow_r&#39;, &#39;gist_stern&#39;, &#39;gist_stern_r&#39;, &#39;gist_yarg&#39;, &#39;gist_yarg_r&#39;, &#39;gnuplot&#39;, &#39;gnuplot2&#39;, &#39;gnuplot2_r&#39;, &#39;gnuplot_r&#39;, &#39;gray&#39;, &#39;gray_r&#39;, &#39;hot&#39;, &#39;hot_r&#39;, &#39;hsv&#39;, &#39;hsv_r&#39;, &#39;inferno&#39;, &#39;inferno_r&#39;, &#39;jet&#39;, &#39;jet_r&#39;, &#39;magma&#39;, &#39;magma_r&#39;, &#39;nipy_spectral&#39;, &#39;nipy_spectral_r&#39;, &#39;ocean&#39;, &#39;ocean_r&#39;, &#39;pink&#39;, &#39;pink_r&#39;, &#39;plasma&#39;, &#39;plasma_r&#39;, &#39;prism&#39;, &#39;prism_r&#39;, &#39;rainbow&#39;, &#39;rainbow_r&#39;, &#39;seismic&#39;, &#39;seismic_r&#39;, &#39;spring&#39;, &#39;spring_r&#39;, &#39;summer&#39;, &#39;summer_r&#39;, &#39;tab10&#39;, &#39;tab10_r&#39;, &#39;tab20&#39;, &#39;tab20_r&#39;, &#39;tab20b&#39;, &#39;tab20b_r&#39;, &#39;tab20c&#39;, &#39;tab20c_r&#39;, &#39;terrain&#39;, &#39;terrain_r&#39;, &#39;turbo&#39;, &#39;turbo_r&#39;, &#39;twilight&#39;, &#39;twilight_r&#39;, &#39;twilight_shifted&#39;, &#39;twilight_shifted_r&#39;, &#39;viridis&#39;, &#39;viridis_r&#39;, &#39;winter&#39;, &#39;winter_r&#39;]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">colormaps</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1017,7 +970,7 @@ discussing how we can use color effectively.</p>
 Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa.gov/graphics_page_design.php">graphics website</a> (the NASA one we linked above).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
 
     <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">colors</span>
 
@@ -1051,38 +1004,29 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All black</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># All black</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mplc</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_23_0.png" src="../_images/visualization_rules_23_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary the hues</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary the hues</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mplc</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.66</span><span class="p">]]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_24_0.png" src="../_images/visualization_rules_24_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary the values</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary the values</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mplc</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">]]</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_25_0.png" src="../_images/visualization_rules_25_0.png" />
 </div>
 </div>
 <p>In our opinion, the last one with no color is actually the most readable.</p>
@@ -1100,7 +1044,7 @@ values and become unidentifiable once converted to grayscale.</p>
 from the matplotlib documentation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_groups</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_groups</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="n">means_men</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
 <span class="n">means_women</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
@@ -1131,9 +1075,6 @@ from the matplotlib documentation.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_27_0.png" src="../_images/visualization_rules_27_0.png" />
-</div>
 </div>
 <p>And here is the same image converted to grayscale.</p>
 <div class="figure align-default">
@@ -1155,7 +1096,7 @@ group differs from the others, then you should choose several close-together hue
 important groups and a distinct color to display the group of interest.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">npts</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npts</span><span class="p">)</span>
@@ -1178,9 +1119,6 @@ important groups and a distinct color to display the group of interest.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_29_0.png" src="../_images/visualization_rules_29_0.png" />
-</div>
 </div>
 <div class="admonition-exercise admonition" id="app-vis-dir2">
 <p class="admonition-title">Exercise</p>
@@ -1194,7 +1132,7 @@ become too small, differentiating between colors, no matter how distinct, become
 <p>Below is the same plot as we had above, but we have made the scatter plot’s points smaller.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">npts</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npts</span><span class="p">)</span>
@@ -1217,9 +1155,6 @@ become too small, differentiating between colors, no matter how distinct, become
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_31_0.png" src="../_images/visualization_rules_31_0.png" />
-</div>
 </div>
 <p>It becomes harder to read, but because the red is so much darker than some of the other colors,
 finding the group of interest is still possible (a lesson to be learned here!).</p>
@@ -1232,7 +1167,7 @@ finding the group of interest is still possible (a lesson to be learned here!).<
 a poor color choice because red is often associated with losses and black is associated with profits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;profits&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]},</span>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">2006</span><span class="p">,</span> <span class="mi">2007</span><span class="p">,</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2010</span><span class="p">]</span>
 <span class="p">)</span>
@@ -1242,7 +1177,7 @@ a poor color choice because red is often associated with losses and black is ass
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;k&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;r&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;profits&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
 <span class="n">bars</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)),</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;profits&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
@@ -1260,18 +1195,11 @@ a poor color choice because red is often associated with losses and black is ass
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-21-cf5efa549276&gt;:6: UserWarning: FixedFormatter should only be used together with FixedLocator
-  ax.set_xticklabels(df.index)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_34_1.png" src="../_images/visualization_rules_34_1.png" />
-</div>
 </div>
 <p>This plot becomes much more intuitive by using red for negative values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;r&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;k&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;profits&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
 <span class="n">bars</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)),</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;profits&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
@@ -1288,13 +1216,6 @@ a poor color choice because red is often associated with losses and black is ass
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">_spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-22-2493a0e0d23e&gt;:6: UserWarning: FixedFormatter should only be used together with FixedLocator
-  ax.set_xticklabels(df.index)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_36_1.png" src="../_images/visualization_rules_36_1.png" />
 </div>
 </div>
 </div>
@@ -1360,7 +1281,7 @@ few concise rules worth reviewing.</p></li>
 <p>In Dona Wong’s book, she advises against using <em>zebra patterns</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
         <span class="s2">&quot;Unemployment Rate&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.20</span><span class="p">,</span> <span class="mf">5.67</span><span class="p">,</span> <span class="mf">9.20</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">,</span> <span class="mf">3.80</span><span class="p">],</span>
         <span class="s2">&quot;Pension Expenditure (</span><span class="si">% o</span><span class="s2">f GDP)&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.18</span><span class="p">,</span> <span class="mf">4.70</span><span class="p">,</span> <span class="mf">13.90</span><span class="p">,</span> <span class="mf">6.24</span><span class="p">,</span> <span class="mf">7.06</span><span class="p">],</span>
@@ -1386,7 +1307,7 @@ few concise rules worth reviewing.</p></li>
 <p>Instead, she proposes using different shades of the same color (ordered from lightest to darkest!).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="mf">0.902</span><span class="p">,</span> <span class="mf">0.902</span><span class="p">,</span> <span class="mf">0.997</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.695</span><span class="p">,</span> <span class="mf">0.695</span><span class="p">,</span> <span class="mf">0.993</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.488</span><span class="p">,</span> <span class="mf">0.488</span><span class="p">,</span> <span class="mf">0.989</span><span class="p">),</span>
     <span class="p">(</span><span class="mf">0.282</span><span class="p">,</span> <span class="mf">0.282</span><span class="p">,</span> <span class="mf">0.985</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.078</span><span class="p">,</span> <span class="mf">0.078</span><span class="p">,</span> <span class="mf">0.980</span><span class="p">)</span>
 <span class="p">]</span>
@@ -1394,9 +1315,6 @@ few concise rules worth reviewing.</p></li>
 <span class="n">create_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">colors</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_40_0.png" src="../_images/visualization_rules_40_0.png" />
 </div>
 </div>
 <p>Notice that we put a legend at the top and maintain the same order as kept in the bars.</p>
@@ -1408,7 +1326,7 @@ misrepresentation of the data.</p>
 <p>First, we look at a reproduction of the originally displayed image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mf">39.6</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 
@@ -1426,12 +1344,6 @@ misrepresentation of the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_42_1.png" src="../_images/visualization_rules_42_1.png" />
-</div>
 </div>
 <p>This looks like a big difference!</p>
 <p>In fact, your eyes are telling you that taxes will increase by a factor of 5 if the tax cuts expire.</p>
@@ -1439,7 +1351,7 @@ misrepresentation of the data.</p>
 increase in the top tax rate is only 5-10 percent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mf">39.6</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 
@@ -1457,12 +1369,6 @@ increase in the top tax rate is only 5-10 percent.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_44_1.png" src="../_images/visualization_rules_44_1.png" />
-</div>
 </div>
 <p>We also have opinions about what type of person uses all caps, but we’ll keep that to ourselves for
 now.</p>
@@ -1475,7 +1381,7 @@ bar graph than determine the size of the angles in a pie chart.</p>
 <p>Let’s look at an example of this below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">4.75</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]},</span>
     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Susan&quot;</span><span class="p">,</span> <span class="s2">&quot;Jessie&quot;</span><span class="p">]</span>
 <span class="p">)</span>
@@ -1495,12 +1401,6 @@ bar graph than determine the size of the angles in a pie chart.</p>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;How many pieces of pie eaten&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;How many pieces of pie eaten&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_46_1.png" src="../_images/visualization_rules_46_1.png" />
 </div>
 </div>
 <p>Using the pie chart, can you tell who ate more pie Alice or Susan? How about with the bar chart?</p>
@@ -1525,7 +1425,7 @@ than that of many other economically successful countries.</p>
 but have relatively higher health and pension expenditures to pay to the old.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/WorldBank_AgeDependencyRatio.csv&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">download_url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="s2">&quot;1960&quot;</span><span class="p">,</span> <span class="s2">&quot;1970&quot;</span><span class="p">,</span> <span class="s2">&quot;1980&quot;</span><span class="p">,</span> <span class="s2">&quot;1990&quot;</span><span class="p">,</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;2010&quot;</span><span class="p">,</span> <span class="s2">&quot;2017&quot;</span><span class="p">]]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Country Name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
@@ -1537,7 +1437,7 @@ but have relatively higher health and pension expenditures to pay to the old.</p
 <p>Let’s visualize these variables for a collection of many developed countries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
@@ -1549,19 +1449,13 @@ but have relatively higher health and pension expenditures to pay to the old.</p
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_50_1.png" src="../_images/visualization_rules_50_1.png" />
-</div>
 </div>
 <p>Notice that with so many lines, the message about Japan is hidden or polluted by noise.</p>
 <p>If we did want to demonstrate that Japan is significantly different than many other developed countries,
 we might try a plot like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">not_japan</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 <span class="n">not_japan</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
@@ -1579,12 +1473,6 @@ we might try a plot like this:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_52_1.png" src="../_images/visualization_rules_52_1.png" />
-</div>
 </div>
 <p>However, placing this many lines on a single plot is definitely an exception, and we encourage you
 to do so sparingly.</p>
@@ -1593,7 +1481,7 @@ to do so sparingly.</p>
 <p>To do so, the plot below uses many different line styles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Japan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
@@ -1613,12 +1501,6 @@ to do so sparingly.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_54_1.png" src="../_images/visualization_rules_54_1.png" />
-</div>
 </div>
 <p>There are some good-use cases for using line styles to distinguish between different pieces
 of data, but not many.</p>
@@ -1627,7 +1509,7 @@ of data, but not many.</p>
 information, as seen below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">emph_color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sec_color</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="o">+</span><span class="mf">0.075</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
@@ -1649,12 +1531,6 @@ information, as seen below.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_56_1.png" src="../_images/visualization_rules_56_1.png" />
-</div>
 </div>
 </div>
 <div class="section" id="tick-steps">
@@ -1664,7 +1540,7 @@ information, as seen below.</p>
 determine what the values between the lines are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
@@ -1678,17 +1554,6 @@ determine what the values between the lines are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0, 0, &#39;0&#39;),
- Text(5, 0, &#39;5&#39;),
- Text(10, 0, &#39;10&#39;),
- Text(15, 0, &#39;15&#39;),
- Text(20, 0, &#39;20&#39;),
- Text(25, 0, &#39;25&#39;)]
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_58_1.png" src="../_images/visualization_rules_58_1.png" />
-</div>
 </div>
 </div>
 <div class="section" id="no-background-colors">
@@ -1698,7 +1563,7 @@ determine what the values between the lines are:</p>
 <p>Compare the following graphs and think about which feels better.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mf">39.6</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 
@@ -1719,17 +1584,11 @@ determine what the values between the lines are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_60_1.png" src="../_images/visualization_rules_60_1.png" />
-</div>
 </div>
 <p>versus</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mf">39.6</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 
@@ -1750,12 +1609,6 @@ determine what the values between the lines are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_62_1.png" src="../_images/visualization_rules_62_1.png" />
-</div>
 </div>
 </div>
 <div class="section" id="legends">
@@ -1775,7 +1628,7 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 <p>To demonstrate this, we revisit our age dependency ratio example from earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/QuantEcon/lecture-datascience.myst/main/lectures/applications/WorldBank_AgeDependencyRatio.csv&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">download_url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/WorldBank_AgeDependencyRatio.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="s2">&quot;1960&quot;</span><span class="p">,</span> <span class="s2">&quot;1970&quot;</span><span class="p">,</span> <span class="s2">&quot;1980&quot;</span><span class="p">,</span> <span class="s2">&quot;1990&quot;</span><span class="p">,</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;2010&quot;</span><span class="p">,</span> <span class="s2">&quot;2017&quot;</span><span class="p">]]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Country Name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
@@ -1787,7 +1640,7 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 <p>With a legend:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">emph_color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sec_color</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="o">+</span><span class="mf">0.075</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
@@ -1804,17 +1657,11 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_66_1.png" src="../_images/visualization_rules_66_1.png" />
-</div>
 </div>
 <p>With labels:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="n">emph_color</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sec_color</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="o">+</span><span class="mf">0.075</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
@@ -1835,12 +1682,6 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Age Dependency Ratio&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_68_1.png" src="../_images/visualization_rules_68_1.png" />
 </div>
 </div>
 <p>Most people find the example with labels to be a more readable graph.</p>
@@ -1869,7 +1710,7 @@ we are emphasizing it again!</p>
 <p>Why do you think they chose to organize the information as they did rather than this way?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
 </pre></div>
 </div>
 </div>
@@ -1882,7 +1723,7 @@ we are emphasizing it again!</p>
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ca_gdp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
     <span class="p">[</span><span class="mf">5.2</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.9</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span>
     <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2018</span><span class="p">))</span>
 <span class="p">)</span>

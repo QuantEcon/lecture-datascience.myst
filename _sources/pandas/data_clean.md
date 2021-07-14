@@ -276,7 +276,8 @@ This data has order information from almost 2,000 Chipotle orders and
 includes information on what was ordered and how much it cost.
 
 ```{code-cell} python
-chipotle = qeds.data.load("chipotle_raw")
+url = "https://datascience.quantecon.org/assets/data/chipotle_raw.csv.zip"
+chipotle = pd.read_csv(url)
 chipotle.head()
 ```
 
