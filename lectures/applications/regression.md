@@ -60,12 +60,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-%matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
-plotly_template = qeds.themes.plotly_template()
-colors = qeds.themes.COLOR_CYCLE
+colors = ['#165aa7', '#cb495c', '#fec630', '#bb60d5', '#f47915', '#06ab54', '#002070', '#b27d12', '#007030']
 
 # We will import all these here to ensure that they are loaded, but
 # will usually re-import close to where they are used to make clear
@@ -408,7 +403,6 @@ alphas, coefs_lasso, _ = linear_model.lasso_path(X, y, alphas=alphas, fit_interc
 
 # plotting
 fig, ax = plt.subplots(figsize=(12, 8))
-colors = cycle(qeds.themes.COLOR_CYCLE)
 log_alphas = -np.log10(alphas)
 for coef_l, c, name in zip(coefs_lasso, colors, list(X)):
    ax.plot(log_alphas, coef_l, c=c)
@@ -491,7 +485,6 @@ mse = pd.DataFrame([fit_and_report_mses(linear_model.Lasso(alpha=alpha, max_iter
                     for alpha in alphas])
 mse["log_alpha"] = -np.log10(alphas)
 fig, ax = plt.subplots(figsize=(10,6))
-colors = qeds.themes.COLOR_CYCLE
 mse.plot(x="log_alpha", y="mse_test", c=colors[0], ax=ax)
 mse.plot(x="log_alpha", y="mse_train", c=colors[1], ax=ax)
 ax.set_xlabel(r"$-\log(\alpha)$")
@@ -664,7 +657,6 @@ def surface_scatter_plot(X,y,f, xlo=0., xhi=1., ngrid=50,
             ),
             width=width,
             height=height,
-            template=plotly_template,
         )
     )
     return fig

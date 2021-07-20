@@ -48,11 +48,7 @@ statistics for each group.
 
 ```{code-cell} python
 import pandas as pd
-import qeds
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 
 from IPython.display import display
 ```

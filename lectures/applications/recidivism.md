@@ -41,9 +41,6 @@ from sklearn import (
 )
 
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## Introduction to Recidivism

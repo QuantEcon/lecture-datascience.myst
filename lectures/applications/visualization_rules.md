@@ -39,9 +39,6 @@ import statsmodels.formula.api as sm
 from pandas_datareader import DataReader
 
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## Introduction

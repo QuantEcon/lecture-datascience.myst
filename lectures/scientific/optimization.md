@@ -30,9 +30,6 @@ kernelspec:
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## What is Optimization?
