@@ -87,9 +87,6 @@ from sklearn import (
 
 import matplotlib.pyplot as plt
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## Warmup Example: Logistic Regression

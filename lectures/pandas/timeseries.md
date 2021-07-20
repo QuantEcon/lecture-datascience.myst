@@ -39,16 +39,12 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import quandl
-import qeds
 
 # see section on API keys at end of lecture!
 quandl.ApiConfig.api_key = os.environ.get("QUANDL_AUTH", "Dn6BtVoBhzuKTuyo6hbp")
 start_date = "2014-05-01"
 
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## Intro
