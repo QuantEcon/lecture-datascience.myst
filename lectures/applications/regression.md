@@ -60,13 +60,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-%matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
-plotly_template = qeds.themes.plotly_template()
-colors = qeds.themes.COLOR_CYCLE
-
 # We will import all these here to ensure that they are loaded, but
 # will usually re-import close to where they are used to make clear
 # where the functions come from
@@ -263,15 +256,15 @@ one more time -- this time including the prediction from both of our linear mode
 ```{code-cell} python
 ax = var_scatter(df)
 
-def scatter_model(mod, X, ax=None, color=colors[1], x="sqft_living"):
+def scatter_model(mod, X, ax=None, color='r', x="sqft_living"):
     if ax is None:
         _, ax = plt.subplots()
 
     ax.scatter(X[x], mod.predict(X), c=color, alpha=0.25, s=1)
     return ax
 
-scatter_model(lr_model, X, ax, color=colors[1])
-scatter_model(sqft_lr_model, X[["sqft_living"]], ax, color=colors[2])
+scatter_model(lr_model, X, ax, color='r')
+scatter_model(sqft_lr_model, X[["sqft_living"]], ax, color='y')
 ax.legend(["data", "full model", "sqft model"])
 ```
 
@@ -408,10 +401,9 @@ alphas, coefs_lasso, _ = linear_model.lasso_path(X, y, alphas=alphas, fit_interc
 
 # plotting
 fig, ax = plt.subplots(figsize=(12, 8))
-colors = cycle(qeds.themes.COLOR_CYCLE)
 log_alphas = -np.log10(alphas)
-for coef_l, c, name in zip(coefs_lasso, colors, list(X)):
-   ax.plot(log_alphas, coef_l, c=c)
+for coef_l, name in zip(coefs_lasso, list(X)):
+   ax.plot(log_alphas, coef_l)
    ax.set_xlabel('-Log(alpha)')
    ax.set_ylabel('lasso coefficients')
    ax.set_title('Lasso Path')
@@ -420,7 +412,7 @@ for coef_l, c, name in zip(coefs_lasso, colors, list(X)):
    i = [idx for idx in range(len(coef_l)) if abs(coef_l[idx]) >= (0.9*maxabs)][0]
    xnote = log_alphas[i]
    ynote = coef_l[i]
-   ax.annotate(name, (xnote, ynote), color=c)
+   ax.annotate(name, (xnote, ynote))
 ```
 
 ### Overfitting and Regularization
@@ -491,14 +483,13 @@ mse = pd.DataFrame([fit_and_report_mses(linear_model.Lasso(alpha=alpha, max_iter
                     for alpha in alphas])
 mse["log_alpha"] = -np.log10(alphas)
 fig, ax = plt.subplots(figsize=(10,6))
-colors = qeds.themes.COLOR_CYCLE
-mse.plot(x="log_alpha", y="mse_test", c=colors[0], ax=ax)
-mse.plot(x="log_alpha", y="mse_train", c=colors[1], ax=ax)
+mse.plot(x="log_alpha", y="mse_test", c='b', ax=ax)
+mse.plot(x="log_alpha", y="mse_train", c='r', ax=ax)
 ax.set_xlabel(r"$-\log(\alpha)$")
 ax.set_ylabel("MSE")
 ax.get_legend().remove()
-ax.annotate("test",(mse.log_alpha[15], mse.mse_test[15]),color=colors[0])
-ax.annotate("train",(mse.log_alpha[30], mse.mse_train[30]),color=colors[1])
+ax.annotate("test",(mse.log_alpha[15], mse.mse_test[15]),color='b')
+ax.annotate("train",(mse.log_alpha[30], mse.mse_train[30]),color='r')
 ```
 
 ### Cross-validation of Regularization Parameter
@@ -532,8 +523,8 @@ from sklearn.model_selection import cross_val_score
 mse["cv"] = [-np.mean(cross_val_score(linear_model.Lasso(alpha=alpha, max_iter=50000),
                                   X_train, y_train, cv=5, scoring='neg_mean_squared_error'))
           for alpha in alphas]
-mse.plot(x="log_alpha", y="cv", c=colors[2], ax=ax)
-ax.annotate("5 fold cross-validation", (mse.log_alpha[40], mse.cv[40]), color=colors[2])
+mse.plot(x="log_alpha", y="cv", c='y', ax=ax)
+ax.annotate("5 fold cross-validation", (mse.log_alpha[40], mse.cv[40]), color='y')
 ax.get_legend().remove()
 ax.set_xlabel(r"$-\log(\alpha)$")
 ax.set_ylabel("MSE")
@@ -642,7 +633,7 @@ def surface_scatter_plot(X,y,f, xlo=0., xhi=1., ngrid=50,
     xgrid = np.linspace(xlo,xhi,ngrid)
     ey = np.zeros((len(xgrid),len(xgrid)))
     ey0 = np.zeros((len(xgrid),len(xgrid)))
-    colorscale = [[0, colors[0]], [1, colors[2]]]
+    colorscale = [[0, 'blue'], [1, 'yellow']]
     for i in range(len(xgrid)):
         for j in range(len(xgrid)):
             ey[j,i] = f([xgrid[i],xgrid[j]])
@@ -663,8 +654,7 @@ def surface_scatter_plot(X,y,f, xlo=0., xhi=1., ngrid=50,
                 zaxis_title='Y'
             ),
             width=width,
-            height=height,
-            template=plotly_template,
+            height=height
         )
     )
     return fig
