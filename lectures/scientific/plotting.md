@@ -79,9 +79,6 @@ This is done by
 
 ```{code-cell} python
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 The commands with `%` before them are called [Magics](https://ipython.readthedocs.io/en/stable/interactive/magics.html).
