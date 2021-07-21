@@ -17,7 +17,6 @@ import matplotlib.colors as mplc
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 import pandas as pd
-import qeds
 ```
 
 ## Question 1

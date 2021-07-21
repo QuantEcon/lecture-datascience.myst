@@ -263,9 +263,6 @@ numpy.random to numerically verify some of the facts associated with them.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="c1"># activate plot theme</span>
-<span class="kn">import</span> <span class="nn">qeds</span>
-<span class="n">qeds</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">mpl_style</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -315,7 +312,7 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3390153609618536
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6210342099664203
 </pre></div>
 </div>
 </div>
@@ -328,11 +325,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.20102237, 0.00962813, 0.16800113, 0.06251917, 0.92721596,
-       0.69562324, 0.60662477, 0.39572416, 0.71709773, 0.23385881,
-       0.14939113, 0.26961542, 0.9242082 , 0.45171821, 0.47749064,
-       0.76378414, 0.8397265 , 0.60137627, 0.25242306, 0.06997379,
-       0.53294118, 0.87292899, 0.86971154, 0.18838646, 0.13884501])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.60236525, 0.72919629, 0.37839427, 0.72771771, 0.4967876 ,
+       0.65846333, 0.03507479, 0.1964416 , 0.1245876 , 0.81200333,
+       0.01535602, 0.95416989, 0.20329526, 0.67954117, 0.97682274,
+       0.27415225, 0.11633443, 0.30355415, 0.93606008, 0.83762358,
+       0.95221042, 0.73556609, 0.96563338, 0.86597194, 0.21113239])
 </pre></div>
 </div>
 </div>
@@ -344,11 +341,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.64608308, 0.62376646, 0.62820576, 0.38754488, 0.52388029],
-       [0.95804901, 0.797305  , 0.82715785, 0.70638077, 0.74149945],
-       [0.9650874 , 0.58006944, 0.81173325, 0.25962992, 0.56510298],
-       [0.5278536 , 0.37608483, 0.00674652, 0.1296642 , 0.76518031],
-       [0.16047621, 0.16312118, 0.16682025, 0.72242175, 0.12202302]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.91690976, 0.06932897, 0.89339027, 0.4371778 , 0.75544058],
+       [0.77468862, 0.73593646, 0.54214153, 0.86101819, 0.95543678],
+       [0.15752241, 0.26044523, 0.48467641, 0.31217075, 0.10701631],
+       [0.28019708, 0.98463707, 0.61725165, 0.90988742, 0.5405933 ],
+       [0.24103649, 0.32073895, 0.1939218 , 0.32782358, 0.26156422]])
 </pre></div>
 </div>
 </div>
@@ -360,13 +357,13 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.8250665 , 0.17855131, 0.59188996, 0.27317551],
-        [0.07724194, 0.57990497, 0.65372905, 0.50311925],
-        [0.29080727, 0.22301884, 0.18588393, 0.95807878]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.10638092, 0.7964428 , 0.76877163, 0.7823855 ],
+        [0.95888239, 0.24362998, 0.30713814, 0.21439314],
+        [0.58848519, 0.81586176, 0.97075447, 0.07383597]],
 
-       [[0.0867108 , 0.08824864, 0.70349956, 0.29009138],
-        [0.92886316, 0.65485413, 0.30729403, 0.99999833],
-        [0.58797638, 0.86622938, 0.37919289, 0.74660845]]])
+       [[0.92225062, 0.82591469, 0.17528479, 0.12861612],
+        [0.81025854, 0.9423213 , 0.92887156, 0.63128001],
+        [0.81225136, 0.85039638, 0.58124779, 0.94131941]]])
 </pre></div>
 </div>
 </div>
@@ -464,7 +461,7 @@ probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20235.23809523809
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20149.04761904762
 </pre></div>
 </div>
 </div>
@@ -504,7 +501,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20208.095238095237
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20196.666666666664
 </pre></div>
 </div>
 </div>
@@ -517,7 +514,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>168 ms ± 2.22 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130 ms ± 792 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -529,7 +526,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.13 ms ± 204 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.97 ms ± 48.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -581,7 +578,7 @@ being profitable.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The largest loan size such that we were profitable 95% of time is
-19523.809523809523
+19571.428571428572
 </pre></div>
 </div>
 </div>
@@ -711,9 +708,9 @@ some particular state).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;,
-       &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;],
-      dtype=&#39;&lt;U11&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
+       &#39;delinquency&#39;, &#39;delinquency&#39;, &#39;delinquency&#39;, &#39;delinquency&#39;,
+       &#39;delinquency&#39;, &#39;repaying&#39;, &#39;repaying&#39;], dtype=&#39;&lt;U11&#39;)
 </pre></div>
 </div>
 </div>
@@ -789,7 +786,7 @@ described by the mean and variance of that distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f03c7352e50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d11916c40&gt;]
 </pre></div>
 </div>
 <img alt="../_images/randomness_30_1.png" src="../_images/randomness_30_1.png" />

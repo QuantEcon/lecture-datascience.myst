@@ -35,9 +35,6 @@ import pandas as pd
 from shapely.geometry import Point
 
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## Mapping in Python

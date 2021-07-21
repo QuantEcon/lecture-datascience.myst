@@ -94,7 +94,7 @@ computer's operating system.
   # Install Python packages
   conda install python-graphviz
   conda install -c conda-forge "nodejs>=10.0" xgboost
-  pip install qeds fiona geopandas pyLDAvis gensim folium descartes pyarrow --upgrade
+  pip install fiona geopandas pyLDAvis gensim folium descartes pyarrow --upgrade
   
   # Activate jlab extensions
   jupyter labextension install @jupyterlab/toc  --no-build
@@ -116,7 +116,7 @@ computer's operating system.
   # Install Python packages
   conda install geopandas python-graphviz
   conda install -c conda-forge nodejs
-  pip install qeds pyLDAvis gensim folium xgboost descartes pyarrow graphviz --upgrade
+  pip install pyLDAvis gensim folium xgboost descartes pyarrow graphviz --upgrade
   
   # Activate jlab extensions
   jupyter labextension install @jupyterlab/toc  --no-build

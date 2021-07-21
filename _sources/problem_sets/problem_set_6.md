@@ -18,12 +18,8 @@ See {doc}`Merge <../pandas/merge>`, {doc}`Reshape <../pandas/reshape>`, and {doc
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import qeds
 
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 ## Questions 1-7

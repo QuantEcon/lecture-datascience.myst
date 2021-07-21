@@ -42,9 +42,6 @@ import pandas as pd
 
 # Don't worry about this line for now!
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 Sometimes, knowing which pandas version we are

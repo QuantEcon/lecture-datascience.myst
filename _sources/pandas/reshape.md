@@ -31,9 +31,6 @@ import numpy as np
 import pandas as pd
 
 %matplotlib inline
-# activate plot theme
-import qeds
-qeds.themes.mpl_style();
 ```
 
 
