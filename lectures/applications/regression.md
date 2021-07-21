@@ -403,8 +403,9 @@ alphas, coefs_lasso, _ = linear_model.lasso_path(X, y, alphas=alphas, fit_interc
 
 # plotting
 fig, ax = plt.subplots(figsize=(12, 8))
+color_cycle = cycle(colors)
 log_alphas = -np.log10(alphas)
-for coef_l, c, name in zip(coefs_lasso, colors, list(X)):
+for coef_l, c, name in zip(coefs_lasso, color_cycle, list(X)):
    ax.plot(log_alphas, coef_l, c=c)
    ax.set_xlabel('-Log(alpha)')
    ax.set_ylabel('lasso coefficients')
