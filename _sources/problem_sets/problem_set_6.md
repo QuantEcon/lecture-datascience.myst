@@ -149,91 +149,7 @@ Based on that classification, find the average income. Weight this average incom
 # Your code here
 ```
 
-## Questions 8
-
-The `qeds` library includes routines to simulate datasets in the
-format of common sources.
-
-One of these sources is [Shopify](https://www.shopify.com/) -- an
-ecommerce platform used by many retail companies.
-
-The code below will simulate a fairly large dataset that has the
-properties of a Shopify order-detail report.
-
-We'll look at the data before describing the exercise.
-
-```{code-cell} python
-np.random.seed(42)
-url = "https://datascience.quantecon.org/assets/data/shopify_orders.csv.zip"
-orders = pd.read_csv(url)
-orders.info()
-
-orders.head()
-```
-
-We define a customer's cohort as the month in which a customer placed
-their first order and the customer type as an indicator of whether this
-was their first order or a returning order.
-
-Here's what we want you to do:
-
-**Want**: Compute each month's total orders, sales, and
-quantities, separated by customer cohort and customer type.
-
-Read that carefully one more time...
-
-This exercise is a challenging one.
-
-Using the `reshape` and `groupby` tools you have learned, apply the want
-operator described above.
-
-```{code-cell} python
-# Your code here
-```
-
-See below for advice on how to proceed.
-
-When you are finished, you should have something that looks like this:
-
-```{figure} ../_static/groupby_cohort_analysis_exercise_output.png
-:alt: groupby\_cohort\_analysis\_exercise\_output.png
-```
-
-Two notes on the table above:
-
-The numbers you produce should actually be identical to those
-: included in this table... Index into your answer and compare your answers
-  with this table to verify your progress.
-
-1. Your actual output will be much bigger -- this just shows you what it might look like.
-
-Now, how to do it?
-
-There is more than one way to code this, but here are some suggested
-steps:
-
-1. Convert the `Day` column to have a `datetime` `dtype` instead
-   of object (Hint: use the `pd.to_datetime` function).
-1. Add a new column that specifies the date associated with each
-   customer's `"First-time"` order.
-    - Hint 1: You can do this with a combination of `groupby` and
-      `join`.
-    - Hint 2: `customer_type` is always either `Returning` or
-      `First-time`.
-    - Hint 3: Some customers don't have a
-      `customer_type == "First-time"` entry. For these customers, you need to set their
-      values to some date that precedes the
-      sample's dates. After adding valid data back into `orders` DataFrame,
-      you can identify the customers who don't have a `"First-Time"`
-      entry by checking the new column for missing data.
-1. You need to group by three things.
-1. You can apply one of the built-in aggregation functions to the GroupBy.
-1. After the aggregation, you need to use your reshaping skills to
-   move things to the proper rows and columns.
-
-Good luck!
-
-## Questions 9-10
+## Questions 8-9
 
 Let's look at another example.
 
@@ -253,7 +169,7 @@ air_perf.head()
 The `Carrier` column identifies the airline while the `CarrierDelay`
 reports the total delay, in minutes, that was the "carrier's fault".
 
-### Question 9
+### Question 8
 
 Determine the 10 airlines which, on average, contribute most to delays.
 
@@ -262,7 +178,7 @@ Determine the 10 airlines which, on average, contribute most to delays.
 # avg_delays =
 ```
 
-### Question 10
+### Question 9
 
 One issue with this dataset is that we might not know what all those two letter carrier codes are!
 
@@ -282,7 +198,7 @@ In this question, you should merge the carrier codes and the previously computed
 # avg_delays_w_name
 ```
 
-## Question 11
+## Question 10
 
 In this question, we will load data from the World Bank. World Bank data is often stored in formats containing vestigial columns because of their data format standardization.
 

@@ -524,14 +524,8 @@ Keep that in mind as we work through the rest of the materials.
 
 ## Exercise: Cohort Analysis using Shopify Data
 
-The `qeds` library includes routines to simulate data sets in the
-format of common sources
-
-One of these sources is [Shopify](https://www.shopify.com/) — an
-e-commerce platform used by many retail companies for online sales
-
-The code below will simulate a fairly large data set that has the
-properties of a order-detail report from Shopify
+The code below will employ a fairly large simulated data set that has the
+properties of a order-detail report from [Shopify](https://www.shopify.com/).
 
 We'll first look at the data, and then describe the exercise
 
