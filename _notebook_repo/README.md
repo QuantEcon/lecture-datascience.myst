@@ -4,4 +4,5 @@
 
 Notebooks for https://datascience.quantecon.org
 
-**Note:** This README should be edited [here](https://github.com/quantecon/lecture-datascience.myst/_notebook_repo)
+- [Lecture source](https://github.com/QuantEcon/lecture-datascience.myst)
+- [README source code](https://github.com/QuantEcon/lecture-datascience.myst/blob/main/_notebook_repo/README.md) 
