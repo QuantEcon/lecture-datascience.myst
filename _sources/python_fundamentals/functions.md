@@ -746,7 +746,7 @@ defined earlier.
 
 ```{hint}
 
-$\text{variance} = \sum_i (x_i - \text{mean}(x))^2$
+$\text{variance} = \frac{1}{N-1} \sum_i (x_i - \text{mean}(x))^2$
 
 ```
 
