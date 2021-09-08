@@ -1,13 +1,13 @@
 mdfiles := $(wildcard problem_set*.md)
-targets := $(mdfiles:.md=)
+targets := $(mdfiles:.md=.out)
 
 all:
 	echo $(targets)
 
-$(targets): % : %/student/%.ipynb
+$(targets): %.out : %/student/%.ipynb
 
 %.ipynb : %.md
 	jupytext $< --to notebook --execute
 
 %/student/%.ipynb : %.ipynb
-	otter assign $< % --v1
+	otter assign $< $* --v1
