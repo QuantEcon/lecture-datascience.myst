@@ -92,7 +92,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 - [How Well do FIFA Ratings Predict Match Results?](https://notes.quantecon.org/submission/5cd8a7fab955b800107296ca)
   - Shahzoor Safdar
 
-- [Firm Level Innovation and CEO Compensation](https://notes.quantecon.org/submission/5cc8e7dd4174bb001a39a8ff)
+- [Firm Level Innovation and CEO Compensation](https://notes.quantecon.org/submission/5cdb1a58b955b800107296cc)
   - Robin Li
 
 - [Forecasting Inflation Using VAR: Traditional vs ML Approaches](https://notes.quantecon.org/submission/5cc8e7dd4174bb001a39a8ff)
