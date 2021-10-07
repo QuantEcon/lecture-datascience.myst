@@ -50,15 +50,15 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://datascience.quantecon.org/scientific/randomness.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -216,7 +216,7 @@
 
                     <div class="page__header-copy">
 
-                        <p class="page__header-heading"><a href="index.html">QuantEcon DataScience</a></p>
+                        <p class="page__header-heading"><a href="../index.html">QuantEcon DataScience</a></p>
 
                         <p class="page__header-subheading">Randomness</p>
 
@@ -312,7 +312,7 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0677288301711827
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9478063732931248
 </pre></div>
 </div>
 </div>
@@ -325,11 +325,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.78869668, 0.71560257, 0.92596039, 0.73451398, 0.47090317,
-       0.61845305, 0.06475287, 0.79568509, 0.38149122, 0.17827881,
-       0.33016149, 0.99632699, 0.98626887, 0.23859856, 0.85795321,
-       0.26949811, 0.27811415, 0.58702112, 0.71781583, 0.0568159 ,
-       0.44052944, 0.68523243, 0.59527145, 0.99217244, 0.14052444])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.3567424 , 0.33902364, 0.1847995 , 0.35586984, 0.80788549,
+       0.47929538, 0.04022642, 0.68529021, 0.37568368, 0.33574113,
+       0.44326282, 0.33944238, 0.86205663, 0.10335006, 0.5075376 ,
+       0.47442853, 0.21434937, 0.16481258, 0.71664752, 0.96608389,
+       0.42774813, 0.57193629, 0.28483507, 0.70190939, 0.77598756])
 </pre></div>
 </div>
 </div>
@@ -341,11 +341,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.85995391, 0.51600145, 0.48411511, 0.98179628, 0.52470665],
-       [0.28640381, 0.02972002, 0.54535365, 0.79627345, 0.19316234],
-       [0.12164132, 0.01856788, 0.60954878, 0.82106313, 0.81090874],
-       [0.55886662, 0.54251742, 0.55285672, 0.13287497, 0.55695082],
-       [0.08963577, 0.40750164, 0.62664335, 0.3358099 , 0.17651642]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.00126517, 0.18027548, 0.078585  , 0.36415937, 0.33091174],
+       [0.1735804 , 0.86216705, 0.11224122, 0.05913824, 0.590329  ],
+       [0.96262324, 0.54618183, 0.25100084, 0.82372482, 0.30260185],
+       [0.86489403, 0.51568531, 0.50513985, 0.3917989 , 0.48989918],
+       [0.74039992, 0.07967097, 0.09485288, 0.03649487, 0.30173135]])
 </pre></div>
 </div>
 </div>
@@ -357,13 +357,13 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.08445653, 0.7149342 , 0.30431599, 0.19867903],
-        [0.49433498, 0.9908539 , 0.43501516, 0.48417688],
-        [0.6084771 , 0.59294541, 0.72095343, 0.0436836 ]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.38584115, 0.26292759, 0.50194034, 0.45130526],
+        [0.11401756, 0.45593874, 0.29994076, 0.64609311],
+        [0.20386003, 0.47240283, 0.05789513, 0.33918692]],
 
-       [[0.32489473, 0.40785941, 0.69722104, 0.65772346],
-        [0.33536235, 0.48892019, 0.21850145, 0.63652175],
-        [0.02728947, 0.54697967, 0.87566465, 0.09122205]]])
+       [[0.11869439, 0.77967974, 0.18233718, 0.80117501],
+        [0.81026367, 0.79993433, 0.77096369, 0.41172067],
+        [0.79606342, 0.90745896, 0.06294183, 0.3444371 ]]])
 </pre></div>
 </div>
 </div>
@@ -461,7 +461,7 @@ probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20234.28571428571
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20302.38095238095
 </pre></div>
 </div>
 </div>
@@ -501,7 +501,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20228.095238095233
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20255.238095238095
 </pre></div>
 </div>
 </div>
@@ -514,7 +514,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>127 ms ± 2.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>187 ms ± 2.68 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -526,7 +526,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.93 ms ± 87.9 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.21 ms ± 135 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -578,7 +578,7 @@ being profitable.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The largest loan size such that we were profitable 95% of time is
-19619.04761904762
+19571.428571428576
 </pre></div>
 </div>
 </div>
@@ -708,9 +708,9 @@ some particular state).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
-       &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
-       &#39;repaying&#39;, &#39;repaying&#39;], dtype=&#39;&lt;U11&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;delinquency&#39;, &#39;default&#39;, &#39;default&#39;,
+       &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;,
+       &#39;default&#39;], dtype=&#39;&lt;U11&#39;)
 </pre></div>
 </div>
 </div>
@@ -786,7 +786,7 @@ described by the mean and variance of that distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fddeff94910&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f78e6fac370&gt;]
 </pre></div>
 </div>
 <img alt="../_images/randomness_30_1.png" src="../_images/randomness_30_1.png" />
@@ -1237,7 +1237,7 @@ and express your preferences.</p>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
                     <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
-                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/scientific/randomness.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li data-tippy-content="Download Notebook"><a href="_notebooks/scientific/randomness.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
                     <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/scientific/randomness.md" download><i data-feather="github"></i></a></li>

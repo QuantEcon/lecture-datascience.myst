@@ -50,7 +50,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -224,7 +224,7 @@
 
                     <div class="page__header-copy">
 
-                        <p class="page__header-heading"><a href="index.html">QuantEcon DataScience</a></p>
+                        <p class="page__header-heading"><a href="../index.html">QuantEcon DataScience</a></p>
 
                         <p class="page__header-subheading">GroupBy</p>
 
@@ -939,7 +939,7 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4709/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4163/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
   start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
 </pre></div>
 </div>
@@ -977,37 +977,37 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
       <th>1</th>
       <td>1</td>
       <td>1.0</td>
-      <td>2021-09-30</td>
+      <td>2021-12-31</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>2.0</td>
-      <td>2021-12-31</td>
+      <td>2022-03-31</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>3.0</td>
-      <td>2022-03-31</td>
+      <td>2022-06-30</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
       <td>NaN</td>
-      <td>2022-06-30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>5.0</td>
       <td>2022-09-30</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
-      <td>NaN</td>
+      <td>5.0</td>
       <td>2022-12-30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2023-03-31</td>
     </tr>
   </tbody>
 </table>
@@ -1051,13 +1051,18 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
   <tbody>
     <tr>
       <th>2021-12-31</th>
-      <td>2</td>
-      <td>2</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2022-12-31</th>
       <td>4</td>
-      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2023-12-31</th>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1158,19 +1163,25 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
     <tr>
       <th>2021-12-31</th>
       <th>1</th>
-      <td>2</td>
-      <td>2</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">2022-12-31</th>
       <th>1</th>
-      <td>1</td>
-      <td>1</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
+      <td>2</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>2023-12-31</th>
+      <th>2</th>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1216,16 +1227,21 @@ denotes a column name</p>
     <tr>
       <th>2021-12-31</th>
       <th>1</th>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">2022-12-31</th>
       <th>1</th>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>2023-12-31</th>
+      <th>1</th>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -2790,7 +2806,7 @@ appropriate values to replicate the plots from above.</p>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
                     <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
-                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/pandas/groupby.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li data-tippy-content="Download Notebook"><a href="_notebooks/pandas/groupby.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
                     <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/pandas/groupby.md" download><i data-feather="github"></i></a></li>

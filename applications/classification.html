@@ -50,15 +50,15 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="../_static/quantecon-book-theme.76bf49d7bbc59738cdb03766fad654af.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"extensions": ["autobold.js"], "Macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "tex2jax": {"inlineMath": [["$", "$"], ["\\\\(", "\\\\)"]], "processEscapes": true}, "SVG": {"scale": "0.92,", "useGlobalCache": true}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://datascience.quantecon.org/applications/classification.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -255,7 +255,7 @@
 
                     <div class="page__header-copy">
 
-                        <p class="page__header-heading"><a href="index.html">QuantEcon DataScience</a></p>
+                        <p class="page__header-heading"><a href="../index.html">QuantEcon DataScience</a></p>
 
                         <p class="page__header-subheading">Classification</p>
 
@@ -374,7 +374,7 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7040007a90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f46d95f9d90&gt;]
 </pre></div>
 </div>
 <img alt="../_images/classification_3_1.png" src="../_images/classification_3_1.png" />
@@ -408,7 +408,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4283 + 0.2679 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4249 + 0.2710 decile_score)
 </pre></div>
 </div>
 </div>
@@ -893,7 +893,7 @@ visually inspect the hypothesis.</p>
       <td>7.566667</td>
       <td>61.087</td>
       <td>1171.333333</td>
-      <td>0.076746</td>
+      <td>0.074475</td>
       <td>0.056936</td>
     </tr>
     <tr>
@@ -902,7 +902,7 @@ visually inspect the hypothesis.</p>
       <td>7.733333</td>
       <td>55.190</td>
       <td>1345.000000</td>
-      <td>0.087716</td>
+      <td>0.088635</td>
       <td>0.037207</td>
     </tr>
     <tr>
@@ -911,7 +911,7 @@ visually inspect the hypothesis.</p>
       <td>7.766667</td>
       <td>20.163</td>
       <td>1489.000000</td>
-      <td>0.080938</td>
+      <td>0.080829</td>
       <td>0.047523</td>
     </tr>
     <tr>
@@ -920,7 +920,7 @@ visually inspect the hypothesis.</p>
       <td>7.500000</td>
       <td>34.343</td>
       <td>1562.000000</td>
-      <td>0.104610</td>
+      <td>0.106756</td>
       <td>0.037939</td>
     </tr>
     <tr>
@@ -929,7 +929,7 @@ visually inspect the hypothesis.</p>
       <td>7.133333</td>
       <td>51.245</td>
       <td>1693.333333</td>
-      <td>0.109432</td>
+      <td>0.110229</td>
       <td>0.032931</td>
     </tr>
   </tbody>
@@ -1065,53 +1065,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.675  0.835]
- [ 1.725  3.41 ]]
+ [[37.75   0.685]
+ [ 1.345  3.22 ]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.78  0.72]
- [ 2.26  2.24]]
+ [[37.555  0.62 ]
+ [ 2.605  2.22 ]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.89  0.55]
- [ 2.54  2.02]]
+ [[37.975  0.9  ]
+ [ 2.56   2.21 ]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[37.94   0.435]
- [ 2.625  2.   ]]
+ [[38.105  0.475]
+ [ 2.54   1.88 ]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.315  0.94 ]
- [ 3.73   1.66 ]]
+ [[37.485  0.75 ]
+ [ 3.385  1.38 ]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.845  1.395]
- [ 3.865  1.54 ]]
+ [[36.58   1.27 ]
+ [ 3.805  1.345]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.5    1.255]
- [ 3.63   1.615]]
+ [[36.2    1.415]
+ [ 3.66   1.725]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[36.14  1.22]
- [ 3.68  1.96]]
+ [[36.09   1.4  ]
+ [ 3.535  1.975]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.64   1.54 ]
- [ 4.305  1.515]]
+ [[35.41  1.58]
+ [ 4.36  1.65]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.505  1.61 ]
- [ 4.9    0.985]]
+ [[34.795  1.66 ]
+ [ 4.45   1.095]]
 </pre></div>
 </div>
 </div>
@@ -1624,7 +1624,7 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
                     <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
-                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/classification.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li data-tippy-content="Download Notebook"><a href="_notebooks/applications/classification.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
                     <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/classification.md" download><i data-feather="github"></i></a></li>
