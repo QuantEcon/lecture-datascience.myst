@@ -101,12 +101,12 @@ When treatment is randomly assigned, we can estimate average treatment
 effects because
 
 $$
-\begin{align*}
+\begin{aligned}
 E[y_i(1) - y_i(0) ] = & E[y_i(1)] - E[y_i(0)] \\
 & \text{random assignment } \\
 = & E[y_i(1) | d_i = 1] - E[y_i(0) | d_i = 0] \\
 = & E[y_i | d_i = 1] - E[y_i | d_i = 0 ]
-\end{align*}
+\end{aligned}
 $$
 
 ### Average Treatment Effects
@@ -164,12 +164,12 @@ logic that lets us estimate unconditional average treatment effects
 also suggests that we can estimate conditional average treatment effects.
 
 $$
-\begin{align*}
+\begin{aligned}
 E[y_i(1) - y_i(0) |X_i=x] = & E[y_i(1)|X_i = x] - E[y_i(0)|X_i=x] \\
 & \text{random assignment } \\
 = & E[y_i(1) | d_i = 1, X_i=x] - E[y_i(0) | d_i = 0, X_i=x] \\
 = & E[y_i | d_i = 1, X_i = x] - E[y_i | d_i = 0, X_i=x ]
-\end{align*}
+\end{aligned}
 $$
 
 Conditional average treatment effects tell us whether there are
@@ -209,7 +209,6 @@ $S(x)$ approximates $s_0(x)$ is to look at the best linear
 projection of $s_0(x)$ on $S(x)$.
 
 $$
-\DeclareMathOperator*{\argmin}{arg\,min}
 \beta_0, \beta_1 = \argmin_{b_0,b_1} E[(s_0(x) -
 b_0 - b_1 (S(x)-E[S(x)]))^2]
 $$
