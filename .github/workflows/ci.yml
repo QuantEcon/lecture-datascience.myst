@@ -47,6 +47,13 @@ jobs:
           jb build lectures --builder pdflatex --path-output ./ -n --keep-going
           mkdir -p _build/html/_pdf
           cp -u _build/latex/*.pdf _build/html/_pdf
+      - name: Upload Execution Reports
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: execution-reports
+          path: _build
+          # path: _build/html/reports
       - name: Build Download Notebooks (sphinx-tojupyter)
         shell: bash -l {0}
         run: |
@@ -58,18 +65,6 @@ jobs:
         shell: bash -l {0}
         run: |
           jb build lectures --path-output ./ -W --keep-going
-      - name: Upload Execution Reports
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: execution-reports
-          path: _build/html/reports
-      - name: Build Download Notebooks (sphinx-tojupyter)
-        shell: bash -l {0}
-        run: |
-          jb build lectures --path-output ./ --builder=custom --custom-builder=jupyter
-          mkdir -p _build/html/_notebooks
-          rsync -r  _build/jupyter/ _build/html/_notebooks/
       - name: Copy Data Assets for Deployment
         shell: bash -l {0}
         run: |
