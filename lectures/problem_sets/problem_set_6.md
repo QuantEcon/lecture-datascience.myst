@@ -131,7 +131,7 @@ By province, what is the total population of census divisions where more than 80
 
 ### Question 6
 
-By province, what is the median income and average proportion of college-educated individuals in census divisions
+By province, what is the average proportion of college-educated individuals in census divisions
 where more than 80 percent of the population own houses?
 
 ```{code-cell} python
