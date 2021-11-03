@@ -143,7 +143,7 @@ where more than 80 percent of the population own houses?
 Classify the census divisions as low, medium, and highly-educated by using the college-educated proportions,
 where "low" indicates that less than 10 percent of the area is college-educated, "medium" indicates between 10 and 20 percent is college-educated, and "high" indicates more than 20 percent.
 
-Based on that classification, find the average income. Weight this average income by population for each of the low, medium, high education groups.
+Based on that classification, find the average median income across census divisions for each category.
 
 ```{code-cell} python
 # Your code here
