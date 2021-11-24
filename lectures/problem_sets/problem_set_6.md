@@ -123,7 +123,7 @@ What is the census division with the highest median income in each province?
 
 ### Question 5
 
-By province, what is the total population of census areas where more than 80 percent of the population own houses ?
+By province, what is the total population of census divisions where more than 80 percent of the population own houses ?
 
 ```{code-cell} python
 # Your code here
@@ -131,7 +131,7 @@ By province, what is the total population of census areas where more than 80 per
 
 ### Question 6
 
-By province, what is the median income and average proportion of college-educated individuals in census areas
+By province, what is the average proportion of college-educated individuals in census divisions
 where more than 80 percent of the population own houses?
 
 ```{code-cell} python
@@ -140,10 +140,10 @@ where more than 80 percent of the population own houses?
 
 ### Question 7
 
-Classify the census areas as low, medium, and highly-educated by using the college-educated proportions,
+Classify the census divisions as low, medium, and highly-educated by using the college-educated proportions,
 where "low" indicates that less than 10 percent of the area is college-educated, "medium" indicates between 10 and 20 percent is college-educated, and "high" indicates more than 20 percent.
 
-Based on that classification, find the average income. Weight this average income by population for each of the low, medium, high education groups.
+Based on that classification, find the average median income across census divisions for each category.
 
 ```{code-cell} python
 # Your code here

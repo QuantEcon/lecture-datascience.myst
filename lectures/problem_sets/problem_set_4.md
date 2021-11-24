@@ -43,7 +43,7 @@ $\phi = 12\%$ of unemployed workers find jobs.
 Define the vector $x_0 = \begin{bmatrix} 600,000 & 200,000 \end{bmatrix}$ as the number of
 employed and unemployed workers (respectively) at time $0$ in the economy.
 
-Adapting the code from the lecture notes, plot the unemployment rate over time in this economy for $t = 0, \ldots 20$ (i.e. number of employed over total number of workers).
+Adapting the code from the lecture notes, plot the unemployment rate over time in this economy for $t = 0, \ldots 20$ (i.e. number of unemployed over total number of workers).
 
 ```{code-cell} python
 # your code here
