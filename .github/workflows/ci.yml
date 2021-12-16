@@ -39,6 +39,13 @@ jobs:
       - name: Display Pip Versions
         shell: bash -l {0}
         run: pip list
+      # Build Assets (Download Notebooks and PDF via LaTeX)
+      - name: Build PDF from LaTeX
+        shell: bash -l {0}
+        run: |
+          jb build lectures --builder pdflatex --path-output ./ -n --keep-going
+          mkdir -p _build/html/_pdf
+          cp -u _build/latex/*.pdf _build/html/_pdf
       - name: Download "build" folder (cache)
         uses: dawidd6/action-download-artifact@v2
         with:
