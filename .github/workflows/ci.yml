@@ -56,7 +56,7 @@ jobs:
       - name: Build HTML
         shell: bash -l {0}
         run: |
-          jb build lectures --path-output ./ --keep-going
+          jb build lectures --path-output ./ -W --keep-going
       - name: Upload Execution Reports
         uses: actions/upload-artifact@v2
         if: failure()
