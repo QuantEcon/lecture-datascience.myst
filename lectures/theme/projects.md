@@ -29,6 +29,9 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 - [Factors affecting bike share in San Francisco](https://nbviewer.jupyter.org/github/patkarns/econ-323-final-project/blob/main/final_draft.ipynb)
   - Napat Karnsakultorn
 
+- [Determinants of Heart Failure and Their Social Awareness](https://nbviewer.jupyter.org/github/linearabbit/ECON-323-Final-Project/blob/main/ECON%20323%20Final%20Project.ipynb)
+  - Matthew Ladd
+
 - [Evolution of NBA Player Salary Determinants](https://nbviewer.jupyter.org/github/silaslm/NBA-Player-Salary-Determinants/blob/main/NBA_Player_Salary_Determinants-2.ipynb)
   - Silas Lee-McNamee
 
