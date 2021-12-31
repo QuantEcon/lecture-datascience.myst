@@ -20,6 +20,9 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 
 ## 2021
 
+- [NBA 2K Rating and On-court Performance in Real Life](https://nbviewer.jupyter.org/github/huichengying/NBA2K-Rating/blob/main/Final%20Project.ipynb)
+  - Chengying Hui
+
 - [Centrists Win: Evidence from US House Elections](https:/nbviewer.jupyter.org/github/HJIzt/Predicting-Election-Wins-in-the-2018-US-Congressional-Midterms---ECON-323-Project/blob/main/ECON%20323%20Final%20Project%20-%20Harry%20Izatt%20Reduced%20Copy.ipynb)
   - Harry Izatt
 
