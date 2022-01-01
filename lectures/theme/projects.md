@@ -20,6 +20,10 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 
 ## 2021
 
+- [Go Pokemon! What does the data talk about?](https://nbviewer.jupyter.org/github/arhamnewaz/PokemonDataScienceProject/blob/master/PokemonEcon.ipynb)
+  - Chia-lin Chiu
+  - Arham Newaz
+
 - [NBA 2K Rating and On-court Performance in Real Life](https://nbviewer.jupyter.org/github/huichengying/NBA2K-Rating/blob/main/Final%20Project.ipynb)
   - Chengying Hui
 
