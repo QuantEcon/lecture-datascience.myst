@@ -35,6 +35,9 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 - [Evolution of NBA Player Salary Determinants](https://nbviewer.jupyter.org/github/silaslm/NBA-Player-Salary-Determinants/blob/main/NBA_Player_Salary_Determinants-2.ipynb)
   - Silas Lee-McNamee
 
+- [ProCyclingStats Analytics](https://github.com/MiguelMaertens/ProCyclingStats/blob/main/Project_Miguel_Maertens.ipynb)
+  - Miguel Maertens
+
 - [Visualization of Circum-Pacific Belt Earthquakes](https://nbviewer.jupyter.org/github/jessicashi98/ECON323/blob/main/final323.ipynb)
   - Jessica Shi
 
