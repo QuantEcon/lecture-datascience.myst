@@ -660,7 +660,7 @@ avg_delays
 The one issue with this dataset is that we don't know what all those two
 letter carrier codes are!
 
-Thankfully, we have a second dataset that maps the two letter code
+Thankfully, we have a second dataset that maps the two-letter code
 into the full airline name.
 
 ```{code-cell} python
@@ -673,7 +673,7 @@ Let's merge these names so we know which airlines we should avoid
 flying...
 
 ```{code-cell} python
-avg_delays_w_code = avg_delays.join(carrier_code)
+avg_delays_w_code = avg_delays.join(carrier_code.set_index("Code"))
 avg_delays_w_code.sort_values("CarrierDelay", ascending=False)
 ```
 
