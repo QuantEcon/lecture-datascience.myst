@@ -343,11 +343,11 @@ $\begin{bmatrix} 1 & 2 \\ 3 & 1 \end{bmatrix}$ then we can multiply both sides b
 to get
 
 $$
-\begin{align*}
+\begin{aligned}
 \begin{bmatrix} 1 & 2 \\ 3 & 1 \end{bmatrix}^{-1}\begin{bmatrix} 1 & 2 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} &= \begin{bmatrix} 1 & 2 \\ 3 & 1 \end{bmatrix}^{-1}\begin{bmatrix} 3 \\ 4 \end{bmatrix} \\
 I \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} &= \begin{bmatrix} 1 & 2 \\ 3 & 1 \end{bmatrix}^{-1} \begin{bmatrix} 3 \\ 4 \end{bmatrix} \\
  \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} &= \begin{bmatrix} 1 & 2 \\ 3 & 1 \end{bmatrix}^{-1} \begin{bmatrix} 3 \\ 4 \end{bmatrix}
-\end{align*}
+ \end{aligned}
 $$
 
 Computing the inverse requires that a matrix be square and satisfy some other conditions

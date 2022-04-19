@@ -10,6 +10,10 @@ execute:
 html:
   baseurl: https://datascience.quantecon.org/
 
+latex:
+   latex_documents:
+      targetname: datascience-book.tex
+
 sphinx:
   extra_extensions: [sphinx_multitoc_numbering, sphinx_exercise, sphinx_tojupyter]
   config:
@@ -32,9 +36,9 @@ sphinx:
         binderhub_url: https://mybinder.org
       google_analytics_id: UA-54984338-5
       persistent_sidebar: true
-    mathjax2_config:
+    mathjax_config:
       TeX:
-        extensions: ["autobold.js"]
+        extensions: ["autobold.js", "text-macros.js"]
         Macros:
           "argmax" : "arg\\,max"
           "argmin" : "arg\\,min"
@@ -45,7 +49,7 @@ sphinx:
         SVG:
           scale: 0.92,
           useGlobalCache: true
-    mathjax_path: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-MML-AM_CHTML
     tojupyter_static_file_path: ["_static"]
     tojupyter_target_html: true
     tojupyter_urlpath: "https://datascience.quantecon.org/"

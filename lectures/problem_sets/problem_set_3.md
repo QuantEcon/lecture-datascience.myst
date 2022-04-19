@@ -197,10 +197,10 @@ face value $M$, yield to maturity $i$, and periods to maturity
 $N$ is
 
 $$
-\begin{align*}
+\begin{aligned}
     P &= \left(\sum_{n=1}^N \frac{C}{(i+1)^n}\right) + \frac{M}{(1+i)^N} \\
         &= C \left(\frac{1 - (1+i)^{-N}}{i} \right) + M(1+i)^{-N}
-\end{align*}
+\end{aligned}
 $$
 
 In the code cell below, we have defined variables for `i`, `M` and `C`.

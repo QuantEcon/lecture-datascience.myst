@@ -633,10 +633,10 @@ that can be interchanged.
 That is, the following are identical.
 
 $$
-\begin{eqnarray}
+\begin{aligned}
     f(K, L) &= z\, K^{\alpha} L^{1-\alpha}\\
     f(K_2, L_2) &= z\, K_2^{\alpha} L_2^{1-\alpha}
-\end{eqnarray}
+\end{aligned}
 $$
 
 The same concept applies to Python functions, where the arguments are just
