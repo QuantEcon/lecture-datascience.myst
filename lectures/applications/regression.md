@@ -399,7 +399,7 @@ additional ones to be thrown out).
 # Compute lasso for many alphas (the lasso path)
 from itertools import cycle
 alphas = np.exp(np.linspace(10, -2, 50))
-alphas, coefs_lasso, _ = linear_model.lasso_path(X, y, alphas=alphas, max_iter=10000)
+alphas, coefs_lasso, _ = linear_model.lasso_path(X, y, alphas=alphas, fit_intercept=True, max_iter=10000)
 
 # plotting
 fig, ax = plt.subplots(figsize=(12, 8))
