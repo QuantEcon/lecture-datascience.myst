@@ -77,8 +77,6 @@ The findings of the article include:
 
 - Black defendants were often predicted to be at a higher risk of recidivism than they actually were.
 - White defendants were often predicted to be less risky than they were.
-- When controlling for prior crimes, future recidivism, age, and gender, black defendants were 45
-  percent more likely to be assigned higher risk scores than white defendants.
 - Black defendants were twice as likely as white defendants to be misclassified as being a higher
   risk of violent recidivism.
 - Even when controlling for prior crimes, future recidivism, age, and gender, black defendants were

@@ -530,6 +530,7 @@ In preprocessing, we will:
 from bs4 import BeautifulSoup
 import nltk
 import string
+nltk.download('omw-1.4')
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
