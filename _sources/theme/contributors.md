@@ -29,6 +29,9 @@ their contributions.
 ## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Paul Schrimpf](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
   - UBC
 
+## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Philip Solimine](https://psolimine.net)
+  - UBC
+
 ## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Arnav Sood](https://arnavsood.com)
   - UBC
 
