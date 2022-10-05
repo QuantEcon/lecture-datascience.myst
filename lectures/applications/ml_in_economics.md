@@ -390,7 +390,7 @@ def plotpredictions(pl) :
     plt.title("Observed and predicted log(earnings)")
 
     plt.figure()
-    sns.scatterplot(df.predicted, df.logearn-df.predicted, hue=df.female)
+    sns.scatterplot(x = df.predicted, y = df.logearn-df.predicted, hue=df.female)
     plt.title("Prediction Errors")
 
     plt.figure()
