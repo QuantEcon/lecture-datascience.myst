@@ -704,8 +704,8 @@ plot_simulation(x0, A, 5000)
 
 The convergence of this system is a property determined by the matrix $A$.
 
-The long-run distribution of employed and unemployed workers is equal to the [left-eigenvector](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors)
-of $A'$, corresponding to the eigenvalue equal to 1.
+The long-run distribution of employed and unemployed workers is equal to the largest [eigenvector](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors)
+of $A'$, corresponding to the eigenvalue equal to 1. An eigenvalue of $A'$ is also known as a "left-eigenvector" of A.
 
 Let's have numpy compute the eigenvalues and eigenvectors and compare the results to our simulated results above:
 

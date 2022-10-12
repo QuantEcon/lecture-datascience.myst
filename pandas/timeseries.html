@@ -442,83 +442,84 @@ an Amazon transaction report as</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:606,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:321,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1368</span>     <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:643,</span> in <span class="ni">parser.parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">643</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="ne">ParserError</span>: Unknown string format: 2017-12-25T00:00:00+ 00 :00
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2236,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2235</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2236</span>     <span class="n">values</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">conversion</span><span class="o">.</span><span class="n">datetime_to_datetime64</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2237</span>     <span class="c1"># If tzaware, these values represent unix timestamps, so we</span>
-<span class="g g-Whitespace">   </span><span class="mi">2238</span>     <span class="c1">#  return them as i8 to distinguish from wall times</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:617,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/conversion.pyx:360,</span> in <span class="ni">pandas._libs.tslibs.conversion.datetime_to_datetime64</span><span class="nt">()</span>
-
-<span class="ne">TypeError</span>: Unrecognized value type: &lt;class &#39;str&#39;&gt;
+<span class="ne">TypeError</span>: invalid string coercion to datetime for &quot;2017-12-25T00:00:00+ 00 :00&quot; at position 0
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1078,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1076</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1077</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1078</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1080</span> <span class="c1">#  error: Incompatible return value type (got &quot;Union[Timestamp, NaTType,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1081</span> <span class="c1"># Series, Index]&quot;, expected &quot;Union[DatetimeIndex, Series, float, str,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1082</span> <span class="c1"># NaTType, None]&quot;)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1083</span> <span class="k">return</span> <span class="n">result</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1103,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1103</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>         <span class="n">result</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># TODO: avoid this kludge.</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:402,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span> <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">402</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>     <span class="n">arg</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">408</span>     <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span>     <span class="c1"># is in UTC</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>     <span class="n">dta</span> <span class="o">=</span> <span class="n">DatetimeArray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tz_to_dtype</span><span class="p">(</span><span class="n">tz_parsed</span><span class="p">))</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:439,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">439</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">arg</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># is in UTC</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>     <span class="n">dta</span> <span class="o">=</span> <span class="n">DatetimeArray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tz_to_dtype</span><span class="p">(</span><span class="n">tz_parsed</span><span class="p">))</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2242,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2240</span>         <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2241</span>     <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2242</span>         <span class="k">raise</span> <span class="n">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">2244</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2245</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
-<span class="g g-Whitespace">   </span><span class="mi">2246</span>     <span class="c1">#  is in UTC</span>
-<span class="g g-Whitespace">   </span><span class="mi">2247</span>     <span class="c1"># Return i8 values to denote unix timestamps</span>
-<span class="g g-Whitespace">   </span><span class="mi">2248</span>     <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2178,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2176</span> <span class="n">order</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span> <span class="k">if</span> <span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2177</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2178</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2179</span>         <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">2180</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2181</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2182</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2183</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2184</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2185</span>         <span class="n">allow_mixed</span><span class="o">=</span><span class="n">allow_mixed</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2186</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2187</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2188</span> <span class="k">except</span> <span class="ne">OverflowError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2189</span>     <span class="c1"># Exception is raised when a part of date is greater than 32 bit signed int</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2224,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2222</span> <span class="n">order</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span> <span class="k">if</span> <span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2223</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2224</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2225</span>         <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2226</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2227</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2228</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2229</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2230</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2231</span>         <span class="n">allow_mixed</span><span class="o">=</span><span class="n">allow_mixed</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2232</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2233</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2234</span> <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:428,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:381,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:684,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:613,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:830,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:751,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:820,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:742,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:281,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:321,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
 
 <span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -532,7 +533,7 @@ an Amazon transaction report as</p>
 <span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;String does not contain a date: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
 
-<span class="ne">ParserError</span>: Unknown string format: 2017-12-25T00:00:00+ 00 :00
+<span class="ne">ParserError</span>: Unknown string format: 2017-12-25T00:00:00+ 00 :00 present at position 0
 </pre></div>
 </div>
 </div>
@@ -2868,7 +2869,7 @@ window for the whole dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4d6afd9940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd5929f8220&gt;
 </pre></div>
 </div>
 <img alt="../_images/timeseries_54_1.png" src="../_images/timeseries_54_1.png" />
