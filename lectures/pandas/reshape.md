@@ -394,7 +394,7 @@ The `pivot` method:
 We'll illustrate with an example.
 
 ```{code-cell} python
-# .head 8 excludes Ibaka -- will discuss why later
+# .head 6 excludes Ibaka -- will discuss why later
 bball.head(6).pivot(index="Year", columns="Player", values="Pts")
 ```
 
@@ -439,11 +439,11 @@ It overcomes two limitations of `pivot`:
 bball
 ```
 
-Notice that we can replicate the functionality of `pivot` if we pass
+Notice that we can replicate the functionality of `pivot` using `pivot_table` if we pass
 the same arguments.
 
 ```{code-cell} python
-bball.head(6).pivot(index="Year", columns="Player", values="Pts")
+bball.head(6).pivot_table(index="Year", columns="Player", values="Pts")
 ```
 
 But we can also choose multiple columns to be used in
