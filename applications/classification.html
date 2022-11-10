@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Classification &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -310,8 +309,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="classification">
-<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="classification">
+<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h1>
 <p><strong>Co-authors</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -334,8 +333,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1">#! pip install fiona geopandas xgboost gensim folium pyLDAvis descartes</span>
 </pre></div>
 </div>
-<div class="section" id="introduction-to-classification">
-<h2>Introduction to Classification<a class="headerlink" href="#introduction-to-classification" title="Permalink to this headline">¶</a></h2>
+<section id="introduction-to-classification">
+<h2>Introduction to Classification<a class="headerlink" href="#introduction-to-classification" title="Permalink to this headline">#</a></h2>
 <p>We now move from regression to the second main branch of machine learning:
 classification.</p>
 <p>Recall that the regression problem mapped a set of
@@ -386,9 +385,9 @@ lighter on exposition and then build up to an application.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="warmup-example-logistic-regression">
-<h2>Warmup Example: Logistic Regression<a class="headerlink" href="#warmup-example-logistic-regression" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="warmup-example-logistic-regression">
+<h2>Warmup Example: Logistic Regression<a class="headerlink" href="#warmup-example-logistic-regression" title="Permalink to this headline">#</a></h2>
 <p>We have actually already encountered a classification algorithm.</p>
 <p>In the <a class="reference internal" href="recidivism.html"><span class="doc">recidivism</span></a> example, we attempted to predict whether
 or not an individual would commit another crime by using a combination of the
@@ -412,7 +411,7 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1c9bdcedf0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f44c22110a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/classification_3_1.png" src="../_images/classification_3_1.png" />
@@ -446,7 +445,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4120 + 0.2650 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3652 + 0.2591 decile_score)
 </pre></div>
 </div>
 </div>
@@ -460,8 +459,8 @@ recidivism”.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="visualization-decision-boundaries">
-<h3>Visualization: Decision Boundaries<a class="headerlink" href="#visualization-decision-boundaries" title="Permalink to this headline">¶</a></h3>
+<section id="visualization-decision-boundaries">
+<h3>Visualization: Decision Boundaries<a class="headerlink" href="#visualization-decision-boundaries" title="Permalink to this headline">#</a></h3>
 <p>With just one feature that has a positive coefficient, the model’s predictions
 will always have this cutoff structure.</p>
 <p>Let’s add a second feature the model: the age of the individual.</p>
@@ -567,15 +566,15 @@ true observations from the false is impossible.</p></li>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="model-evaluation">
-<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="model-evaluation">
+<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this headline">#</a></h2>
 <p>Before we get too far into additional classification algorithms, let’s take a
 step back and think about how to evaluate the performance of a classification
 model.</p>
-<div class="section" id="accuracy">
-<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h3>
+<section id="accuracy">
+<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">#</a></h3>
 <p>Perhaps the most intuitive classification metric is <em>accuracy</em>, which is the
 fraction of correct predictions.</p>
 <p>For a scikit-learn classifier, this can be computed using the <code class="docutils literal notranslate"><span class="pre">score</span></code> method.</p>
@@ -605,9 +604,9 @@ likelihood of someone having a rare, but serious health condition.</p>
 <p>If the condition is very rare (say it appears in 0.01% of the population), then
 a model that always predicts false would have 99.99% accuracy, but the false
 negatives could have large consequences.</p>
-</div>
-<div class="section" id="precision-and-recall">
-<h3>Precision and Recall<a class="headerlink" href="#precision-and-recall" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="precision-and-recall">
+<h3>Precision and Recall<a class="headerlink" href="#precision-and-recall" title="Permalink to this headline">#</a></h3>
 <p>In order to capture situations like that, data scientists often use two other
 very common metrics:</p>
 <ul class="simple">
@@ -658,9 +657,9 @@ weighted avg       0.65      0.65      0.65      5410
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="roc-and-auc">
-<h3>ROC and AUC<a class="headerlink" href="#roc-and-auc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="roc-and-auc">
+<h3>ROC and AUC<a class="headerlink" href="#roc-and-auc" title="Permalink to this headline">#</a></h3>
 <p>For classification algorithms, there is a tradeoff between precision and recall.</p>
 <p>Let’s illustrate this point in the context of the logistic regression model.</p>
 <p>The output of a logistic regression is a probability of an event or label.</p>
@@ -762,10 +761,10 @@ metric in cross-validation.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="neural-network-classifiers">
-<h2>Neural Network Classifiers<a class="headerlink" href="#neural-network-classifiers" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="neural-network-classifiers">
+<h2>Neural Network Classifiers<a class="headerlink" href="#neural-network-classifiers" title="Permalink to this headline">#</a></h2>
 <p>The final classifier we will visit today is a neural-network classifier, using
 the multi-layer perceptron network architecture.</p>
 <p>Recall from the <a class="reference internal" href="regression.html"><span class="doc">regression</span></a> chapter that a multi-layer
@@ -809,8 +808,8 @@ interpretability.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 5 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="aside-neural-network-toolboxes">
-<h3>Aside: Neural Network Toolboxes<a class="headerlink" href="#aside-neural-network-toolboxes" title="Permalink to this headline">¶</a></h3>
+<section id="aside-neural-network-toolboxes">
+<h3>Aside: Neural Network Toolboxes<a class="headerlink" href="#aside-neural-network-toolboxes" title="Permalink to this headline">#</a></h3>
 <p>Thus far, we have been using the routines in scikit-learn’s <code class="docutils literal notranslate"><span class="pre">neural_network</span></code> package.</p>
 <p>These are great for learning and exploratory analysis, as we have been doing,
 but are rarely used in production or real-world settings.</p>
@@ -825,10 +824,10 @@ Facebook’s <a class="reference external" href="https://pytorch.org/">pytorch</
 seen tensorflow and pytorch used the most.</p>
 <p>Thankfully, they all support Python as either the only or the primary point of
 access, so you will be well-prepared to start using them.</p>
-</div>
-</div>
-<div class="section" id="application-predicting-us-recessions">
-<h2>Application: Predicting US Recessions<a class="headerlink" href="#application-predicting-us-recessions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="application-predicting-us-recessions">
+<h2>Application: Predicting US Recessions<a class="headerlink" href="#application-predicting-us-recessions" title="Permalink to this headline">#</a></h2>
 <p>Let’s apply our new classification algorithm knowledge and use
 <a class="reference external" href="https://www.investopedia.com/terms/l/leadingindicator.asp">leading indicators</a>
 to predict recessions in the US economy.</p>
@@ -838,8 +837,8 @@ of the economy.</p>
 <p>We won’t explicitly prove that these variables are actually leading indicators,
 but will show a plot of each variables that lets us
 visually inspect the hypothesis.</p>
-<div class="section" id="data-prep">
-<h3>Data Prep<a class="headerlink" href="#data-prep" title="Permalink to this headline">¶</a></h3>
+<section id="data-prep">
+<h3>Data Prep<a class="headerlink" href="#data-prep" title="Permalink to this headline">#</a></h3>
 <p>Let’s first gather the data from FRED.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1033,9 +1032,9 @@ has a distinct move in periods leading up to a recession (noted by the grey band
 <p class="admonition-title">Exercise</p>
 <p>See exercise 6 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="how-many-leads">
-<h3>How Many leads?<a class="headerlink" href="#how-many-leads" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="how-many-leads">
+<h3>How Many leads?<a class="headerlink" href="#how-many-leads" title="Permalink to this headline">#</a></h3>
 <p>If the variables we have chosen truly are leading indicators, we should be able
 to use leading values of the variables to predict current or future recessions.</p>
 <p>A natural question is: how many leads should we include?</p>
@@ -1107,53 +1106,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.545  0.665]
- [ 1.725  3.065]]
+ [[37.82   0.7  ]
+ [ 1.435  3.045]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.605  0.695]
- [ 2.405  2.295]]
+ [[37.76   0.755]
+ [ 2.265  2.22 ]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.63   0.735]
- [ 2.69   1.945]]
+ [[37.65   0.625]
+ [ 2.82   1.905]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[38.055  0.44 ]
- [ 2.67   1.835]]
+ [[37.765  0.47 ]
+ [ 2.8    1.965]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.44   0.815]
- [ 3.38   1.365]]
+ [[37.24   0.78 ]
+ [ 3.465  1.515]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.695  1.17 ]
- [ 3.81   1.325]]
+ [[36.7    1.42 ]
+ [ 4.02   1.505]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.48   1.31 ]
- [ 3.335  1.875]]
+ [[36.365  1.37 ]
+ [ 3.56   1.705]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[36.13   1.1  ]
- [ 3.715  2.055]]
+ [[36.    1.48]
+ [ 3.49  2.03]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.695  1.375]
- [ 4.285  1.645]]
+ [[35.835  1.51 ]
+ [ 4.175  1.48 ]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.5    1.69 ]
- [ 4.815  0.995]]
+ [[34.505  1.695]
+ [ 4.625  1.175]]
 </pre></div>
 </div>
 </div>
@@ -1175,28 +1174,28 @@ different number of periods before the recession hits.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 8 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="app-cls-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="app-cls-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Determine the level of this cutoff value. Recall that the COMPAS
 score takes on integer values between 1 and 10, inclusive.</p>
 <p>What happens to the cutoff level of the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> when you change
 the classification threshold from 0.5 to 0.7? What about 0.3? Remember this
 idea – we’ll come back to it soon.</p>
 <p>(<a class="reference internal" href="#app-cls-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Experiment with different pairs of features to see which ones show the
 clearest decision boundaries.</p>
 <p>Feed different <code class="docutils literal notranslate"><span class="pre">X</span></code> DataFrames into the <code class="docutils literal notranslate"><span class="pre">fit_and_plot_decision_boundary</span></code> function above.</p>
 <p>(<a class="reference internal" href="#app-cls-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">metrics.roc_curve</span></code> function to determine an appropriate value
 for the probability threshold, keeping in mind our preference for
 high precision over high recall.</p>
@@ -1226,9 +1225,9 @@ possible.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-cls-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> class with default arguments implements the
 regression including <code class="docutils literal notranslate"><span class="pre">l2</span></code> regularization (it penalizes coefficient
 vectors with an l2-norm).</p>
@@ -1250,9 +1249,9 @@ to use <code class="docutils literal notranslate"><span class="pre">model_select
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-cls-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Use a multi-layer perceptron in our recidivism example via the <code class="docutils literal notranslate"><span class="pre">neural_network.MLPClassifier</span></code> class.</p>
 <p>Experiment with different inputs such as:</p>
 <ul class="simple">
@@ -1273,9 +1272,9 @@ regression?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-cls-dir5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
 <p>Let’s pause here to take a few minutes and digest.</p>
 <p>If the task is to use these leading indicators to predict a recession,
 would high recall or high precision be more important for our model?</p>
@@ -1283,9 +1282,9 @@ would high recall or high precision be more important for our model?</p>
 <p>What if you worked at a news company such as the Economist or the New York
 Times?</p>
 <p>(<a class="reference internal" href="#app-cls-dir6"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
 <p>Extend the logic from the previous example and allow a different number
 of leading periods for each variable.</p>
 <p>How would you find the “optimal” number of leads for each variable? How
@@ -1345,9 +1344,9 @@ could you try to avoid overfitting?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-cls-dir7"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
 <p>Experiment with different classifiers. Which ones perform better or worse?</p>
 <p>How accurate can you become for each accuracy metric (accuracy, precision, and recall)?</p>
 <p>(<a class="reference internal" href="#app-cls-dir8"><span class="std std-ref">back to text</span></a>)</p>
@@ -1359,9 +1358,9 @@ during World War II, engineers used ROC curves to measure how well a radar signa
 could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

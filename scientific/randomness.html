@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Randomness &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -271,8 +270,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="randomness">
-<h1>Randomness<a class="headerlink" href="#randomness" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="randomness">
+<h1>Randomness<a class="headerlink" href="#randomness" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
@@ -290,8 +289,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1">#! pip install </span>
 </pre></div>
 </div>
-<div class="section" id="id1">
-<h2>Randomness<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>Randomness<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>We will use the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> package to simulate randomness in Python.</p>
 <p>This lecture will present various probability distributions and then use
 numpy.random to numerically verify some of the facts associated with them.</p>
@@ -305,8 +304,8 @@ numpy.random to numerically verify some of the facts associated with them.</p>
 </div>
 </div>
 </div>
-<div class="section" id="probability">
-<h3>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h3>
+<section id="probability">
+<h3>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">#</a></h3>
 <p>Before we learn how to use Python to generate randomness, we should make sure
 that we all agree on some basic concepts of probability.</p>
 <p>To think about the probability of some event occurring, we must understand what possible
@@ -335,9 +334,9 @@ the sum of the probabilities that each event occurs (known as independence).</p>
 </ol>
 <p>We won’t rely on these for much of what we learn in this class, but occasionally, these facts will
 help us reason through what is happening.</p>
-</div>
-<div class="section" id="simulating-randomness-in-python">
-<h3>Simulating Randomness in Python<a class="headerlink" href="#simulating-randomness-in-python" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="simulating-randomness-in-python">
+<h3>Simulating Randomness in Python<a class="headerlink" href="#simulating-randomness-in-python" title="Permalink to this headline">#</a></h3>
 <p>One of the most basic random numbers is a variable that has equal probability of being any value
 between 0 and 1.</p>
 <p>You may have previously learned about this probability distribution as the Uniform(0, 1).</p>
@@ -350,7 +349,7 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.574513364351035
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9416706862845468
 </pre></div>
 </div>
 </div>
@@ -363,11 +362,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.60038062, 0.14798623, 0.41466038, 0.78774073, 0.05872512,
-       0.85173677, 0.40502311, 0.48374822, 0.74820837, 0.80543913,
-       0.12045298, 0.52010713, 0.35587713, 0.23904869, 0.62241614,
-       0.2054087 , 0.89880042, 0.6702152 , 0.31093827, 0.98439971,
-       0.58982758, 0.87024385, 0.20827763, 0.62008902, 0.39262026])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.5085077 , 0.57615995, 0.67251122, 0.67042778, 0.69273649,
+       0.20025101, 0.81828306, 0.27794137, 0.7159844 , 0.08823568,
+       0.39412502, 0.58009532, 0.87056468, 0.63476087, 0.96682166,
+       0.73367374, 0.38232399, 0.0995875 , 0.84561441, 0.36706937,
+       0.2709639 , 0.01907257, 0.35361005, 0.29944844, 0.22282931])
 </pre></div>
 </div>
 </div>
@@ -379,11 +378,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.69857762, 0.56410091, 0.80056154, 0.12197242, 0.8401554 ],
-       [0.91453421, 0.3145263 , 0.33384484, 0.54703025, 0.06713596],
-       [0.69990203, 0.89705749, 0.75871268, 0.61349032, 0.11991672],
-       [0.66533742, 0.13961894, 0.24924384, 0.24639182, 0.61151537],
-       [0.29251336, 0.62588219, 0.31028592, 0.16139464, 0.5318758 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.62315304, 0.57705995, 0.64919421, 0.71146353, 0.23756013],
+       [0.6213365 , 0.89378882, 0.62285099, 0.60689138, 0.89335285],
+       [0.8774485 , 0.09045771, 0.06216637, 0.49509116, 0.24162472],
+       [0.77029832, 0.58786046, 0.15899615, 0.73118689, 0.72687838],
+       [0.33690597, 0.67838698, 0.57626848, 0.99109171, 0.55554839]])
 </pre></div>
 </div>
 </div>
@@ -395,20 +394,20 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.81693278, 0.63878844, 0.74616964, 0.47970554],
-        [0.4442008 , 0.03766615, 0.96839721, 0.94413204],
-        [0.99473477, 0.60706847, 0.62697157, 0.75208817]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.78126943, 0.79868709, 0.43537288, 0.30794828],
+        [0.37447654, 0.86576529, 0.51151335, 0.11305292],
+        [0.91741282, 0.41851313, 0.24844858, 0.20954215]],
 
-       [[0.36262193, 0.6831693 , 0.16236368, 0.64026767],
-        [0.04810815, 0.32516172, 0.01386268, 0.20284234],
-        [0.73521122, 0.00676187, 0.18436562, 0.78656114]]])
+       [[0.34187683, 0.09547462, 0.81240988, 0.20667764],
+        [0.47678564, 0.961681  , 0.57107582, 0.27103329],
+        [0.60071505, 0.4448433 , 0.27551173, 0.41382942]]])
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="why-do-we-need-randomness">
-<h3>Why Do We Need Randomness?<a class="headerlink" href="#why-do-we-need-randomness" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="why-do-we-need-randomness">
+<h3>Why Do We Need Randomness?<a class="headerlink" href="#why-do-we-need-randomness" title="Permalink to this headline">#</a></h3>
 <p>As economists and data scientists, we study complex systems.</p>
 <p>These systems have inherent randomness, but they do not readily reveal their underlying distribution
 to us.</p>
@@ -453,9 +452,9 @@ Numbers</em>.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="discrete-distributions">
-<h3>Discrete Distributions<a class="headerlink" href="#discrete-distributions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="discrete-distributions">
+<h3>Discrete Distributions<a class="headerlink" href="#discrete-distributions" title="Permalink to this headline">#</a></h3>
 <p>Sometimes we will encounter variables that can only take one of a
 few possible values.</p>
 <p>We refer to this type of random variable as a discrete distribution.</p>
@@ -499,13 +498,13 @@ probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20301.42857142857
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20196.666666666664
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="aside-vectorized-computations">
-<h4>Aside: Vectorized Computations<a class="headerlink" href="#aside-vectorized-computations" title="Permalink to this headline">¶</a></h4>
+<section id="aside-vectorized-computations">
+<h4>Aside: Vectorized Computations<a class="headerlink" href="#aside-vectorized-computations" title="Permalink to this headline">#</a></h4>
 <p>The code above illustrates the concepts we were discussing but is much slower than
 necessary.</p>
 <p>Below is a version of our function that uses numpy arrays to perform computations
@@ -539,7 +538,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20174.285714285714
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20246.666666666664
 </pre></div>
 </div>
 </div>
@@ -552,7 +551,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 ms ± 3.27 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>150 ms ± 1.24 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -564,7 +563,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.34 ms ± 291 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.74 ms ± 5.38 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -579,9 +578,9 @@ operate on an entire array at a time.</p>
 element at a time.</p>
 <p>For more information see the
 <a class="reference external" href="https://python-programming.quantecon.org/numba.html">QuantEcon lecture on performance Python</a> code.</p>
-</div>
-<div class="section" id="profitability-threshold">
-<h4>Profitability Threshold<a class="headerlink" href="#profitability-threshold" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="profitability-threshold">
+<h4>Profitability Threshold<a class="headerlink" href="#profitability-threshold" title="Permalink to this headline">#</a></h4>
 <p>Rather than looking for the break even point, we might be interested in the largest loan size that
 ensures we still have a 95% probability of profitability in a year we make 250 loans.</p>
 <p>This is something that could be computed by hand, but it is much easier to answer through
@@ -616,16 +615,16 @@ being profitable.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The largest loan size such that we were profitable 95% of time is
-19571.42857142857
+19571.428571428572
 </pre></div>
 </div>
 </div>
 </div>
 <p>Now let’s consider what we could learn if our loan company had even more detailed information about
 how the life of their loans progressed.</p>
-</div>
-<div class="section" id="loan-states">
-<h4>Loan States<a class="headerlink" href="#loan-states" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="loan-states">
+<h4>Loan States<a class="headerlink" href="#loan-states" title="Permalink to this headline">#</a></h4>
 <p>Loans can have 3 potential statuses (or states):</p>
 <ol class="simple">
 <li><p>Repaying: Payments are being made on loan.</p></li>
@@ -747,8 +746,8 @@ some particular state).</p></li>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
-       &#39;delinquency&#39;, &#39;delinquency&#39;, &#39;delinquency&#39;, &#39;delinquency&#39;,
-       &#39;delinquency&#39;, &#39;delinquency&#39;, &#39;default&#39;], dtype=&#39;&lt;U11&#39;)
+       &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
+       &#39;repaying&#39;, &#39;repaying&#39;], dtype=&#39;&lt;U11&#39;)
 </pre></div>
 </div>
 </div>
@@ -790,10 +789,10 @@ At time 9 the distribution is [0.40829573 0.1241273  0.46757697]
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="continuous-distributions">
-<h3>Continuous Distributions<a class="headerlink" href="#continuous-distributions" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="continuous-distributions">
+<h3>Continuous Distributions<a class="headerlink" href="#continuous-distributions" title="Permalink to this headline">#</a></h3>
 <p>Recall that a continuous distribution is one where the value can take on an uncountable number of values.</p>
 <p>It differs from a discrete distribution in that the events are not
 countable.</p>
@@ -824,7 +823,7 @@ described by the mean and variance of that distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0bb4e01340&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f07f4a6b250&gt;]
 </pre></div>
 </div>
 <img alt="../_images/randomness_30_1.png" src="../_images/randomness_30_1.png" />
@@ -866,20 +865,20 @@ parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale pa
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#ex3-4"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="ex3-4"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="ex3-4"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Wikipedia and other credible statistics sources tell us that the mean and
 variance of the Uniform(0, 1) distribution are (1/2, 1/12) respectively.</p>
 <p>How could we check whether the numpy random numbers approximate these
 values?</p>
 <p>(<a class="reference internal" href="#dir3-4-1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>In this exercise, we explore the long-run, or stationary, distribution of the Markov chain.</p>
 <p>The stationary distribution of a Markov chain is the probability distribution that would
 result after an infinite number of steps <em>for any initial distribution</em>.</p>
@@ -896,9 +895,9 @@ probabilities must lead to this outcome.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3-4-2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Let’s revisit the unemployment example from the <a class="reference internal" href="applied_linalg.html"><span class="doc">linear algebra lecture</span></a>.</p>
 <p>We’ll repeat necessary details here.</p>
 <p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 5\%\)</span> of workers lose their jobs, and
@@ -937,9 +936,9 @@ helper code below).</p></li>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3-4-3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Assume you have been given the opportunity to choose between one of three financial assets:</p>
 <p>You will be given the asset for free, allowed to hold it indefinitely, and keeping all payoffs.</p>
 <p>Also assume the assets’ payoffs are distributed as follows:</p>
@@ -968,9 +967,9 @@ and express your preferences.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3-4-4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

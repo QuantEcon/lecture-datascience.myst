@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to Numpy &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -278,8 +277,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-numpy">
-<h1>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numpy">
+<h1>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../python_fundamentals/index.html"><span class="doc">Python Fundamentals</span></a></p></li>
@@ -290,8 +289,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Index into multi-dimensional arrays</p></li>
 <li><p>Use universal functions/broadcasting to do element-wise operations on arrays</p></li>
 </ul>
-<div class="section" id="numpy-arrays">
-<h2>Numpy Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h2>
+<section id="numpy-arrays">
+<h2>Numpy Arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">#</a></h2>
 <p>Now that we have learned the fundamentals of programming in Python, we will learn how we can use Python
 to perform the computations required in data science and economics. We call these the “scientific Python tools”.</p>
 <p>The foundational library that helps us perform these computations is known as <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (numerical
@@ -312,8 +311,8 @@ nickname <code class="docutils literal notranslate"><span class="pre">np</span><
 </div>
 </div>
 </div>
-<div class="section" id="what-is-an-array">
-<h3>What is an Array?<a class="headerlink" href="#what-is-an-array" title="Permalink to this headline">¶</a></h3>
+<section id="what-is-an-array">
+<h3>What is an Array?<a class="headerlink" href="#what-is-an-array" title="Permalink to this headline">#</a></h3>
 <p>An array is a multi-dimensional grid of values.</p>
 <p>What does this mean? It is easier to demonstrate than to explain.</p>
 <p>In this block of code, we build a 1-dimensional array.</p>
@@ -460,8 +459,8 @@ example, if we wanted to access the <code class="docutils literal notranslate"><
 </div>
 </div>
 </div>
-<div class="section" id="array-indexing">
-<h4>Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h4>
+<section id="array-indexing">
+<h4>Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">#</a></h4>
 <p>Now that there are multiple dimensions, indexing might feel somewhat non-obvious.</p>
 <p>Do the rows or columns come first? In higher dimensions, what is the order of
 the index?</p>
@@ -613,12 +612,12 @@ slice out subsets of the elements by doing <code class="docutils literal notrans
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#ex3-1"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="array-functionality">
-<h3>Array Functionality<a class="headerlink" href="#array-functionality" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="array-properties">
-<h4>Array Properties<a class="headerlink" href="#array-properties" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="array-functionality">
+<h3>Array Functionality<a class="headerlink" href="#array-functionality" title="Permalink to this headline">#</a></h3>
+<section id="array-properties">
+<h4>Array Properties<a class="headerlink" href="#array-properties" title="Permalink to this headline">#</a></h4>
 <p>All numpy arrays have various useful properties.</p>
 <p>Properties are similar to methods in that they’re accessed through
 the “dot notation.” However, they aren’t a function so we don’t need parentheses.</p>
@@ -689,9 +688,9 @@ float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-arrays">
-<h4>Creating Arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="creating-arrays">
+<h4>Creating Arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">#</a></h4>
 <p>It’s usually impractical to define arrays by hand as we have done so far.</p>
 <p>We’ll often need to create an array with default values and then fill it
 with other values.</p>
@@ -731,9 +730,9 @@ array filled with 0s or 1s respectively.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="broadcasting-operations">
-<h4>Broadcasting Operations<a class="headerlink" href="#broadcasting-operations" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="broadcasting-operations">
+<h4>Broadcasting Operations<a class="headerlink" href="#broadcasting-operations" title="Permalink to this headline">#</a></h4>
 <p>Two types of operations that will be useful for arrays of any dimension are:</p>
 <ol class="simple">
 <li><p>Operations between an array and a single number.</p></li>
@@ -803,10 +802,10 @@ x - y [[0. 1.]
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="universal-functions">
-<h3>Universal Functions<a class="headerlink" href="#universal-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="universal-functions">
+<h3>Universal Functions<a class="headerlink" href="#universal-functions" title="Permalink to this headline">#</a></h3>
 <p>We will often need to transform data by applying a function to every element of an array.</p>
 <p>Numpy has good support for these operations, called <em>universal functions</em> or ufuncs for short.</p>
 <p>The
@@ -891,9 +890,9 @@ the code would be both less readable and less efficient.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 5 in the <a class="reference internal" href="#ex3-1"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="other-useful-array-operations">
-<h3>Other Useful Array Operations<a class="headerlink" href="#other-useful-array-operations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other-useful-array-operations">
+<h3>Other Useful Array Operations<a class="headerlink" href="#other-useful-array-operations" title="Permalink to this headline">#</a></h3>
 <p>We have barely scratched the surface of what is possible using numpy arrays.</p>
 <p>We hope you will experiment with other functions from numpy and see how they
 work.</p>
@@ -1030,39 +1029,39 @@ low
 <p>Caution: <code class="docutils literal notranslate"><span class="pre">np.vectorize</span></code> is convenient for numpy broadcasting with any function
 but is not intended to be high performance.</p>
 <p>When speed matters, directly write a <code class="docutils literal notranslate"><span class="pre">f</span></code> function to work on arrays.</p>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="ex3-1"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="ex3-1"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Try indexing into another element of your choice from the
 3-dimensional array.</p>
 <p>Building an understanding of indexing means working through this
 type of operation several times – without skipping steps!</p>
 <p>(<a class="reference internal" href="#dir3-1-1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Look at the 2-dimensional array <code class="docutils literal notranslate"><span class="pre">x_2d</span></code>.</p>
 <p>Does the inner-most index correspond to rows or columns? What does the
 outer-most index correspond to?</p>
 <p>Write your thoughts.</p>
 <p>(<a class="reference internal" href="#dir3-1-2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>What would you do to extract the array <code class="docutils literal notranslate"><span class="pre">[[5,</span> <span class="pre">6],</span> <span class="pre">[50,</span> <span class="pre">60]]</span></code>?</p>
 <p>(<a class="reference internal" href="#dir3-1-3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Do you recall what multiplication by an integer did for lists?</p>
 <p>How does this differ?</p>
 <p>(<a class="reference internal" href="#dir3-1-4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Let’s revisit a bond pricing example we saw in <a class="reference internal" href="../python_fundamentals/control_flow.html"><span class="doc">Control flow</span></a>.</p>
 <p>Recall that the equation for pricing a bond with coupon payment <span class="math notranslate nohighlight">\(C\)</span>,
 face value <span class="math notranslate nohighlight">\(M\)</span>, yield to maturity <span class="math notranslate nohighlight">\(i\)</span>, and periods to maturity
@@ -1099,9 +1098,9 @@ face value <span class="math notranslate nohighlight">\(M\)</span>, yield to mat
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3-1-5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

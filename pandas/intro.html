@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -330,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../python_fundamentals/index.html"><span class="doc">Python Fundamentals</span></a></p></li>
@@ -351,8 +350,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1">#! pip install </span>
 </pre></div>
 </div>
-<div class="section" id="pandas">
-<h2>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<section id="pandas">
+<h2>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h2>
 <p>This lecture begins the material on <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <p>To start, we will import the pandas package and give it the alias
 <code class="docutils literal notranslate"><span class="pre">pd</span></code>, which is conventional practice.</p>
@@ -376,21 +375,21 @@ using is helpful.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.5.0&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.5.1&#39;
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="series">
-<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h2>
 <p>The first main pandas type we will introduce is called Series.</p>
 <p>A Series is a single column of data, with row labels for each
 observation.</p>
 <p>pandas refers to the row labels as the <em>index</em> of the Series.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="PandasSeries.png" src="../_images/PandasSeries.png" />
-</div>
+</figure>
 <p>Below, we create a Series which contains the US unemployment rate every
 other year starting in 1995.</p>
 <div class="cell docutils container">
@@ -451,10 +450,10 @@ Name: Unemployment, dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="what-can-we-do-with-a-series-object">
-<h3>What Can We Do with a Series object?<a class="headerlink" href="#what-can-we-do-with-a-series-object" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="head-and-tail">
-<h4><code class="docutils literal notranslate"><span class="pre">.head</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code><a class="headerlink" href="#head-and-tail" title="Permalink to this headline">¶</a></h4>
+<section id="what-can-we-do-with-a-series-object">
+<h3>What Can We Do with a Series object?<a class="headerlink" href="#what-can-we-do-with-a-series-object" title="Permalink to this headline">#</a></h3>
+<section id="head-and-tail">
+<h4><code class="docutils literal notranslate"><span class="pre">.head</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code><a class="headerlink" href="#head-and-tail" title="Permalink to this headline">#</a></h4>
 <p>Often, our data will have many rows, and we won’t want to display it all
 at once.</p>
 <p>The methods <code class="docutils literal notranslate"><span class="pre">.head</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code> show rows at the beginning and end
@@ -493,9 +492,9 @@ Name: Unemployment, dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="basic-plotting">
-<h4>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="basic-plotting">
+<h4>Basic Plotting<a class="headerlink" href="#basic-plotting" title="Permalink to this headline">#</a></h4>
 <p>We can also plot data using the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -515,9 +514,9 @@ Name: Unemployment, dtype: float64
 <p>This is why we needed the <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> — it tells the notebook
 to display figures inside the notebook itself. Also, pandas has much greater visualization functionality than this, but we will study that later on.</p>
 </div>
-</div>
-<div class="section" id="unique-values">
-<h4>Unique Values<a class="headerlink" href="#unique-values" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="unique-values">
+<h4>Unique Values<a class="headerlink" href="#unique-values" title="Permalink to this headline">#</a></h4>
 <p>Though it doesn’t make sense in this data set, we may want to find the
 unique values in a Series – which can be done with the <code class="docutils literal notranslate"><span class="pre">.unique</span></code> method.</p>
 <div class="cell docutils container">
@@ -532,9 +531,9 @@ unique values in a Series – which can be done with the <code class="docutils l
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexing">
-<h4>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="indexing">
+<h4>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h4>
 <p>Sometimes, we will want to select particular elements from a Series.</p>
 <p>We can do this using <code class="docutils literal notranslate"><span class="pre">.loc[index_items]</span></code>; where <code class="docutils literal notranslate"><span class="pre">index_items</span></code> is
 an item from the index, or a list of items in the index.</p>
@@ -571,11 +570,11 @@ Name: Unemployment, dtype: float64
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-int-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="dataframe">
-<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="dataframe">
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h2>
 <p>A DataFrame is how pandas stores one or more columns of data.</p>
 <p>We can think a DataFrames a multiple Series stacked side by side as
 columns.</p>
@@ -583,9 +582,9 @@ columns.</p>
 database.</p>
 <p>In addition to row labels (an index), DataFrames also have column labels.</p>
 <p>We refer to these column labels as the columns or column names.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="PandasDataFrame.png" src="../_images/PandasDataFrame.png" />
-</div>
+</figure>
 <p>Below, we create a DataFrame that contains the unemployment rate every
 other year by region of the US starting in 1995.</p>
 <div class="cell docutils container">
@@ -758,11 +757,11 @@ did with a Series.</p>
 </div>
 </div>
 </div>
-<div class="section" id="what-can-we-do-with-a-dataframe">
-<h3>What Can We Do with a DataFrame?<a class="headerlink" href="#what-can-we-do-with-a-dataframe" title="Permalink to this headline">¶</a></h3>
+<section id="what-can-we-do-with-a-dataframe">
+<h3>What Can We Do with a DataFrame?<a class="headerlink" href="#what-can-we-do-with-a-dataframe" title="Permalink to this headline">#</a></h3>
 <p>Pretty much everything we can do with a Series.</p>
-<div class="section" id="id1">
-<h4><code class="docutils literal notranslate"><span class="pre">.head</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<section id="id1">
+<h4><code class="docutils literal notranslate"><span class="pre">.head</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>As with Series, we can use <code class="docutils literal notranslate"><span class="pre">.head</span></code> and <code class="docutils literal notranslate"><span class="pre">.tail</span></code> to show only the
 first or last <code class="docutils literal notranslate"><span class="pre">n</span></code> rows.</p>
 <div class="cell docutils container">
@@ -903,9 +902,9 @@ first or last <code class="docutils literal notranslate"><span class="pre">n</sp
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="plotting">
-<h4>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="plotting">
+<h4>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h4>
 <p>We can generate plots with the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method.</p>
 <p>Notice we now have a separate line for each column of data.</p>
 <div class="cell docutils container">
@@ -921,9 +920,9 @@ first or last <code class="docutils literal notranslate"><span class="pre">n</sp
 <img alt="../_images/intro_29_1.png" src="../_images/intro_29_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h4>Indexing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id2">
+<h4>Indexing<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <p>We can also do indexing using <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
 <p>This is slightly more advanced than before because we can choose
 subsets of both row and columns.</p>
@@ -1014,10 +1013,10 @@ Name: MidWest, dtype: float64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="computations-with-columns">
-<h3>Computations with Columns<a class="headerlink" href="#computations-with-columns" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="computations-with-columns">
+<h3>Computations with Columns<a class="headerlink" href="#computations-with-columns" title="Permalink to this headline">#</a></h3>
 <p>pandas can do various computations and mathematical operations on
 columns.</p>
 <p>Let’s take a look at a few of them.</p>
@@ -1179,10 +1178,10 @@ dtype: float64
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#pd-int-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="data-types">
-<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
 <p>We asked you to run the commands <code class="docutils literal notranslate"><span class="pre">unemp.dtype</span></code> and
 <code class="docutils literal notranslate"><span class="pre">unemp_region.dtypes</span></code> and think about the outputs.</p>
 <p>You might have guessed that they return the type of the values inside
@@ -1355,9 +1354,9 @@ each column.</p>
 strings concatenated.</p>
 <p>So, in this case, we saw that the entries in all rows of the South
 column were stitched together into one long string.</p>
-</div>
-<div class="section" id="changing-dataframes">
-<h2>Changing DataFrames<a class="headerlink" href="#changing-dataframes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="changing-dataframes">
+<h2>Changing DataFrames<a class="headerlink" href="#changing-dataframes" title="Permalink to this headline">#</a></h2>
 <p>We can change the data inside of a DataFrame in various ways:</p>
 <ul class="simple">
 <li><p>Adding new columns</p></li>
@@ -1367,8 +1366,8 @@ of strings lowercase)</p></li>
 </ul>
 <p>Some of these “mutations” will be topics of future lectures, so we will
 only briefly discuss a few of the things we can do below.</p>
-<div class="section" id="creating-new-columns">
-<h3>Creating New Columns<a class="headerlink" href="#creating-new-columns" title="Permalink to this headline">¶</a></h3>
+<section id="creating-new-columns">
+<h3>Creating New Columns<a class="headerlink" href="#creating-new-columns" title="Permalink to this headline">#</a></h3>
 <p>We can create new data by assigning values to a column similar to how
 we assign values to a variable.</p>
 <p>In pandas, we create a new column of a DataFrame by writing:</p>
@@ -1471,9 +1470,9 @@ unemployment rate.</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="changing-values">
-<h3>Changing Values<a class="headerlink" href="#changing-values" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="changing-values">
+<h3>Changing Values<a class="headerlink" href="#changing-values" title="Permalink to this headline">#</a></h3>
 <p>Changing the values inside of a DataFrame should be done sparingly.</p>
 <p>However, it can be done by assigning a value to a location in the
 DataFrame.</p>
@@ -1568,9 +1567,9 @@ DataFrame.</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="renaming-columns">
-<h3>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="renaming-columns">
+<h3>Renaming Columns<a class="headerlink" href="#renaming-columns" title="Permalink to this headline">#</a></h3>
 <p>We can also rename the columns of a DataFrame, which is helpful because the names that sometimes come with datasets are
 unbearable…</p>
 <p>For example, the original name for the North East unemployment rate
@@ -1912,12 +1911,12 @@ safer.</p>
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="pd-int-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="pd-int-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>For each of the following exercises, we recommend reading the documentation
 for help.</p>
 <ul class="simple">
@@ -1927,9 +1926,9 @@ for help.</p>
 <li><p>Run the code <code class="docutils literal notranslate"><span class="pre">unemp.dtype</span></code> below. What does it give you? Where do you think it comes from?</p></li>
 </ul>
 <p>(<a class="reference internal" href="#pd-int-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>For each of the following, we recommend reading the documentation for help.</p>
 <ul class="simple">
 <li><p>Use introspection (or google-fu) to find a way to obtain a list with
@@ -1942,9 +1941,9 @@ now?</p></li>
 How does this compare with <code class="docutils literal notranslate"><span class="pre">unemp.dtype</span></code>?</p></li>
 </ul>
 <p>(<a class="reference internal" href="#pd-int-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

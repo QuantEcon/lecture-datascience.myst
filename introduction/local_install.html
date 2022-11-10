@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Local Installation &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -232,34 +231,34 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="local-installation">
-<h1>Local Installation<a class="headerlink" href="#local-installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="local-installation">
+<h1>Local Installation<a class="headerlink" href="#local-installation" title="Permalink to this headline">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>Visit <a class="reference external" href="https://www.anaconda.com/download">continuum.io</a> and download the
 Anaconda Python distribution for your operating system (Windows/Mac OS/Linux).</p>
 <p>Be sure to download the Python 3.X (where X is some number greater than or equal to 8) version, not
 the 2.7 version.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/install_python.png" src="../_images/install_python.png" />
-</div>
+</figure>
 <br>
 <p>Make sure that during the installation <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a>
 is added to your environment/path.</p>
 <p>On Mac OS and Linux, this should happen by default.</p>
 <p>For Windows users, we recommend installing for “just me” instead of “all users”. Windows users will need to <strong>check the upper box</strong> when the page shown below appears (disregard the “not recommended” warning from Anaconda).</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/install_python_path.png" src="../_images/install_python_path.png" />
-</div>
-</div>
-<div class="section" id="downloading-the-quantecon-data-science-lectures">
-<h2>Downloading the QuantEcon Data Science Lectures<a class="headerlink" href="#downloading-the-quantecon-data-science-lectures" title="Permalink to this headline">¶</a></h2>
+</figure>
+</section>
+<section id="downloading-the-quantecon-data-science-lectures">
+<h2>Downloading the QuantEcon Data Science Lectures<a class="headerlink" href="#downloading-the-quantecon-data-science-lectures" title="Permalink to this headline">#</a></h2>
 <p>To download the QuantEcon Data Science lectures, go to its <a class="reference external" href="https://github.com/QuantEcon/lecture-datascience.notebooks">Github repo</a>, click on the
 Code button.</p>
 <br>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/github_main.png" src="../_images/github_main.png" />
-</div>
+</figure>
 <br>
 <p>You can download the lectures through either <strong>Github Desktop</strong> or <strong>Terminal</strong>:</p>
 <p><strong>Github Desktop</strong> (Mac/Windows only), recommended for most users.</p>
@@ -268,9 +267,9 @@ Code button.</p>
 <li><p>Go to the <a class="reference external" href="https://github.com/QuantEcon/lecture-datascience.notebooks">Github repo</a>.</p></li>
 <li><p>Click the “Open with Github Desktop” option in the Code button menu. It should open a Github
 Desktop popup that looks like this:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/download_lectures_github_desktop.png" src="../_images/download_lectures_github_desktop.png" />
-</div>
+</figure>
 <p>You should choose the path (folder) where you would like to download the repository. The default path on
 Windows should be <code class="docutils literal notranslate"><span class="pre">C:/Users/YOUR_USERNAME/Documents/GitHub</span></code>.</p>
 </li>
@@ -283,9 +282,9 @@ Windows should be <code class="docutils literal notranslate"><span class="pre">C
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/QuantEcon/lecture-datascience.notebooks.git</span></code> which will
 download the repository with notebooks in your working directory.</p></li>
 </ol>
-</div>
-<div class="section" id="package-management">
-<h2>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="package-management">
+<h2>Package Management<a class="headerlink" href="#package-management" title="Permalink to this headline">#</a></h2>
 <p>In addition to Jupyter, the Anaconda Python distribution comes with two package management tools <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 <p>These will help you ensure that you have the right packages (think of these as “add-ons” to Python
 that give you additional functionality… We will discuss these more in depth later!) and help you
@@ -351,9 +350,9 @@ the package with <code class="docutils literal notranslate"><span class="pre">co
 Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value &quot;$((Get-ItemProperty -path HKCU:\Environment\ -Name Path).Path);$($pp)\Library\bin\graphviz&quot;
 </pre></div>
 </div>
-</div>
-<div class="section" id="starting-jupyter">
-<h2>Starting Jupyter<a class="headerlink" href="#starting-jupyter" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="starting-jupyter">
+<h2>Starting Jupyter<a class="headerlink" href="#starting-jupyter" title="Permalink to this headline">#</a></h2>
 <p>Start JupyterLab by following these steps:</p>
 <ol class="simple">
 <li><p>Open a new terminal (for Windows, you should use the Powershell: press Win + R and type
@@ -372,18 +371,18 @@ to login with a token:
 <p class="admonition-title">Note</p>
 <p>The terminal you opened must stay open while you are editing the notebooks.</p>
 </div>
-<div class="section" id="opening-a-jupyter-notebook">
-<h3>Opening a Jupyter Notebook<a class="headerlink" href="#opening-a-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<section id="opening-a-jupyter-notebook">
+<h3>Opening a Jupyter Notebook<a class="headerlink" href="#opening-a-jupyter-notebook" title="Permalink to this headline">#</a></h3>
 <p>Once the web browser is open, you should see the JupyterLab dashboard. You can open a new Jupyter
 notebook by clicking Python 3 when you see something like the following image in your browser:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/jupyter_lab.png" src="../_images/jupyter_lab.png" />
-</div>
+</figure>
 <br>
 <p>Once the notebook is open, you should something similar to the following image:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/jupyter_lab_notebook.png" src="../_images/jupyter_lab_notebook.png" />
-</div>
+</figure>
 <br>
 <p>Note that:</p>
 <ul class="simple">
@@ -394,18 +393,18 @@ notebook by clicking Python 3 when you see something like the following image in
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#ex1-2"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="ex1-2"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="ex1-2"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Open this file in Jupyter by navigating to the QuantEcon Data Science folder that we downloaded
 earlier, then click on the <code class="docutils literal notranslate"><span class="pre">introduction</span></code> folder, and select the <code class="docutils literal notranslate"><span class="pre">getting_started.ipynb</span></code> file.</p>
 <p>(<a class="reference internal" href="#dir1-2-1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

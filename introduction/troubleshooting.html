@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Troubleshooting &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -210,15 +209,15 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="troubleshooting">
-<span id="id1"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
+<span id="id1"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h1>
 <p>This troubleshooting page is to help ensure your environment is setup correctly
 to run this lecture. You can follow <a class="reference internal" href="cloud_setup.html"><span class="doc">cloud setup instructions</span></a> or <a class="reference internal" href="local_install.html"><span class="doc">local setup instructions</span></a> to set up a standard environment.</p>
-<div class="section" id="resetting-lectures">
-<h2>Resetting Lectures<a class="headerlink" href="#resetting-lectures" title="Permalink to this headline">¶</a></h2>
+<section id="resetting-lectures">
+<h2>Resetting Lectures<a class="headerlink" href="#resetting-lectures" title="Permalink to this headline">#</a></h2>
 <p>Here are instructions to restore some or all lectures to their original states.</p>
-<div class="section" id="local-machines">
-<h3>Local Machines<a class="headerlink" href="#local-machines" title="Permalink to this headline">¶</a></h3>
+<section id="local-machines">
+<h3>Local Machines<a class="headerlink" href="#local-machines" title="Permalink to this headline">#</a></h3>
 <p>The workflow is a bit different on a local machine. We are assuming that you have followed the <a class="reference internal" href="local_install.html"><span class="doc">local setup instructions</span></a>, and have installed GitHub desktop.</p>
 <ol class="simple">
 <li><p>Open GitHub desktop, and navigate to the repository (you can click “find” under “edit” in the top menu bar, and then type <code class="docutils literal notranslate"><span class="pre">lecture-datascience.myst</span></code>, if you are having trouble.)</p></li>
@@ -226,17 +225,17 @@ to run this lecture. You can follow <a class="reference internal" href="cloud_se
 <li><p>To <strong>reset a specific notebook</strong>, right-click the specific file in the changes side tab, and then click “discard changes.”</p></li>
 <li><p>To <strong>pull the latest from the server</strong>, first make sure you don’t have any conflicting changes (i.e., do step (2) above), and then click “pull” under “repository” in the top menu bar.</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="reporting-an-issue">
-<h2>Reporting an Issue<a class="headerlink" href="#reporting-an-issue" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="reporting-an-issue">
+<h2>Reporting an Issue<a class="headerlink" href="#reporting-an-issue" title="Permalink to this headline">#</a></h2>
 <p>One way to give feedback is to raise an issue through our <a class="reference external" href="https://github.com/QuantEcon/lecture-datascience.myst/issues">issue tracker</a>.</p>
 <p>Please be as specific as possible. Tell us where the problem is and as much
 detail about your local set up as you can provide.</p>
 <p>Another feedback option is to use our <a class="reference external" href="https://discourse.quantecon.org/">discourse forum</a>.</p>
 <p>Finally, you can provide direct feedback to <a class="reference external" href="mailto:contact&#37;&#52;&#48;quantecon&#46;org">contact<span>&#64;</span>quantecon<span>&#46;</span>org</a></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

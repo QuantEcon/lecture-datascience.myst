@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Functions &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -286,8 +285,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../introduction/getting_started.html"><span class="doc">Getting Started</span></a></p></li>
@@ -311,15 +310,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<div class="section" id="application-production-functions">
-<span id="production-functions"></span><h2>Application: Production Functions<a class="headerlink" href="#application-production-functions" title="Permalink to this headline">¶</a></h2>
+<section id="application-production-functions">
+<span id="production-functions"></span><h2>Application: Production Functions<a class="headerlink" href="#application-production-functions" title="Permalink to this headline">#</a></h2>
 <p>Production functions are useful when modeling the economics of firms producing
 goods or the aggregate output in an economy.</p>
 <p>Though the term “function” is used in a mathematical sense here, we will be making
 tight connections between the programming of mathematical functions and Python
 functions.</p>
-<div class="section" id="factors-of-production">
-<h3>Factors of Production<a class="headerlink" href="#factors-of-production" title="Permalink to this headline">¶</a></h3>
+<section id="factors-of-production">
+<h3>Factors of Production<a class="headerlink" href="#factors-of-production" title="Permalink to this headline">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Factors_of_production">factors of production</a>
 are the inputs used in the production of some sort of output.</p>
 <p>Some example factors of production include</p>
@@ -343,9 +342,9 @@ form:</p>
 \[
 Y = F(K, L)
 \]</div>
-</div>
-<div class="section" id="an-example-production-function">
-<span id="cobb-douglas-example"></span><h3>An Example Production Function<a class="headerlink" href="#an-example-production-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="an-example-production-function">
+<span id="cobb-douglas-example"></span><h3>An Example Production Function<a class="headerlink" href="#an-example-production-function" title="Permalink to this headline">#</a></h3>
 <p>Throughout this lecture, we will use the
 <a class="reference external" href="https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function">Cobb-Douglas</a>
 production function to help us understand how to create Python
@@ -362,10 +361,10 @@ Y = z K^{\alpha} L^{1-\alpha}
 capital”.</p></li>
 <li><p>A value <span class="math notranslate nohighlight">\(z\)</span> called the <a class="reference external" href="https://en.wikipedia.org/wiki/Total_factor_productivity">Total Factor Productivity</a> (TFP).</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="what-are-python-functions">
-<h2>What are (Python) Functions?<a class="headerlink" href="#what-are-python-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="what-are-python-functions">
+<h2>What are (Python) Functions?<a class="headerlink" href="#what-are-python-functions" title="Permalink to this headline">#</a></h2>
 <p>In this class, we will often talk about <code class="docutils literal notranslate"><span class="pre">function</span></code>s.</p>
 <p>So what is a function?</p>
 <p>We like to think of a function as a production line in a
@@ -380,9 +379,9 @@ organized.</p></li>
 <li><p><strong>Sharing/collaboration</strong>: Sharing code across multiple projects or
 sharing pieces of code with collaborators.</p></li>
 </ul>
-</div>
-<div class="section" id="how-to-define-python-functions">
-<h2>How to Define (Python) Functions?<a class="headerlink" href="#how-to-define-python-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-to-define-python-functions">
+<h2>How to Define (Python) Functions?<a class="headerlink" href="#how-to-define-python-functions" title="Permalink to this headline">#</a></h2>
 <p>The basic syntax to create our own function is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">inputs</span><span class="p">):</span>
     <span class="c1"># step 1</span>
@@ -464,8 +463,8 @@ controls blocks of code (along with the <a class="reference internal" href="#sco
 </div>
 </div>
 </div>
-<div class="section" id="scope">
-<span id="id1"></span><h3>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h3>
+<section id="scope">
+<span id="id1"></span><h3>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">#</a></h3>
 <p>Notice that we named the input to the function <code class="docutils literal notranslate"><span class="pre">x</span></code> and we called the output
 <code class="docutils literal notranslate"><span class="pre">the_mean</span></code>.</p>
 <p>When we defined the function, the input was called <code class="docutils literal notranslate"><span class="pre">numbers</span></code> and the output
@@ -566,9 +565,9 @@ from a Cobb-Douglas production function with parameters <span class="math notran
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="re-using-functions">
-<span id="returns-to-scale"></span><h3>Re-using Functions<a class="headerlink" href="#re-using-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="re-using-functions">
+<span id="returns-to-scale"></span><h3>Re-using Functions<a class="headerlink" href="#re-using-functions" title="Permalink to this headline">#</a></h3>
 <p>Economists are often interested in this question: how much does output
 change if we modify our inputs?</p>
 <p>For example, take a production function <span class="math notranslate nohighlight">\(Y_1 = F(K_1,L_1)\)</span> which produces
@@ -685,9 +684,9 @@ production function.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#ex2-4"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="multiple-returns">
-<span id="marginal-products"></span><h3>Multiple Returns<a class="headerlink" href="#multiple-returns" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiple-returns">
+<span id="marginal-products"></span><h3>Multiple Returns<a class="headerlink" href="#multiple-returns" title="Permalink to this headline">#</a></h3>
 <p>Another valuable element to analyze on production functions is how
 output changes as we change only one of the inputs. We will call this the
 marginal product.</p>
@@ -781,9 +780,9 @@ using a comprehension.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h3>
 <p>In a previous exercise, we asked you to find help for the <code class="docutils literal notranslate"><span class="pre">cobb_douglas</span></code> and
 <code class="docutils literal notranslate"><span class="pre">returns_to_scale</span></code> functions using <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
 <p>It didn’t provide any useful information.</p>
@@ -836,9 +835,9 @@ for future readers/users (including yourself) to understand what the code does.<
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#ex2-4"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="default-and-keyword-arguments">
-<h3>Default and Keyword Arguments<a class="headerlink" href="#default-and-keyword-arguments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="default-and-keyword-arguments">
+<h3>Default and Keyword Arguments<a class="headerlink" href="#default-and-keyword-arguments" title="Permalink to this headline">#</a></h3>
 <p>Functions can have optional arguments.</p>
 <p>To accomplish this, we must these arguments a <em>default value</em> by saying
 <code class="docutils literal notranslate"><span class="pre">name=default_value</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">name</span></code> as we list the arguments.</p>
@@ -942,9 +941,9 @@ different from any other <code class="docutils literal notranslate"><span class=
 <p>In that example, the <code class="docutils literal notranslate"><span class="pre">z</span></code> on the left hand side of <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">z</span></code> refers
 to the local variable name in the function whereas the <code class="docutils literal notranslate"><span class="pre">z</span></code> on the
 right hand side refers to the <code class="docutils literal notranslate"><span class="pre">z</span></code> in the outer scope.</p>
-</div>
-<div class="section" id="aside-methods">
-<h3>Aside: Methods<a class="headerlink" href="#aside-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="aside-methods">
+<h3>Aside: Methods<a class="headerlink" href="#aside-methods" title="Permalink to this headline">#</a></h3>
 <p>As we learned earlier, all variables in Python have a type associated
 with them.</p>
 <p>Different types of variables have different functions or operations
@@ -997,10 +996,10 @@ described above.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="more-on-scope-optional">
-<h2>More on Scope (Optional)<a class="headerlink" href="#more-on-scope-optional" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="more-on-scope-optional">
+<h2>More on Scope (Optional)<a class="headerlink" href="#more-on-scope-optional" title="Permalink to this headline">#</a></h2>
 <p>Keep in mind that with mathematical functions, the arguments are just dummy names
 that can be interchanged.</p>
 <p>That is, the following are identical.</p>
@@ -1124,11 +1123,11 @@ inside of another function.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercises">
-<span id="ex2-4"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercises">
+<span id="ex2-4"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>What happens if we try different inputs in our Cobb-Douglas production
 function?</p>
 <div class="cell docutils container">
@@ -1139,9 +1138,9 @@ function?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-4-1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Define a function named <code class="docutils literal notranslate"><span class="pre">var</span></code> that takes a list (call it <code class="docutils literal notranslate"><span class="pre">x</span></code>) and
 computes the variance. This function should use the mean function that we
 defined earlier.</p>
@@ -1157,9 +1156,9 @@ defined earlier.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-4-2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Redefine the <code class="docutils literal notranslate"><span class="pre">returns_to_scale</span></code> function and add a docstring.</p>
 <p>Confirm that it works by running the cell containing <code class="docutils literal notranslate"><span class="pre">returns_to_scale?</span></code> below.</p>
 <p><em>Note</em>: You do not need to change the actual code in the function — just
@@ -1181,9 +1180,9 @@ returns_to_scale<span class="o">?</span>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-4-3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Experiment with the <code class="docutils literal notranslate"><span class="pre">sep</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> arguments to the <code class="docutils literal notranslate"><span class="pre">print</span></code> function.</p>
 <p>These can <em>only</em> be set by name.</p>
 <div class="cell docutils container">
@@ -1194,9 +1193,9 @@ returns_to_scale<span class="o">?</span>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-4-4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

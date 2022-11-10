@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Data Visualization: Rules and Guidelines &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -384,8 +383,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-visualization-rules-and-guidelines">
-<h1>Data Visualization: Rules and Guidelines<a class="headerlink" href="#data-visualization-rules-and-guidelines" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-visualization-rules-and-guidelines">
+<h1>Data Visualization: Rules and Guidelines<a class="headerlink" href="#data-visualization-rules-and-guidelines" title="Permalink to this headline">#</a></h1>
 <p><strong>Co-author</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -422,8 +421,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>An economist’s (or data scientist’s) job goes beyond simply learning new things using data and
 theory.</p>
 <p>Learning these new things is meant to help economists or data scientists communicate these ideas to others,
@@ -444,9 +443,9 @@ successfully communication, and some general design guidelines.</p>
 introductory lecture.</p>
 <p>We won’t discuss most of these features, but we encourage you to read more in the
 <a class="reference external" href="https://matplotlib.org/contents.html">online documentation</a> if you have questions.</p>
-</div>
-<div class="section" id="steps-to-creating-effective-charts">
-<h2>Steps to Creating Effective Charts<a class="headerlink" href="#steps-to-creating-effective-charts" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="steps-to-creating-effective-charts">
+<h2>Steps to Creating Effective Charts<a class="headerlink" href="#steps-to-creating-effective-charts" title="Permalink to this headline">#</a></h2>
 <p>Before we begin discussions of specific recommendations, it is helpful to agree on
 the goal of a data visualization and a process that can be used to accomplish the goal.</p>
 <p>As mentioned in the introduction, the purpose of a visualization is to facilitate the communication
@@ -473,8 +472,8 @@ the 75th percentile tip for cash payers is 0!</p>
 is a reporting issue in the data collection.</p>
 <p>The steps and guidelines that follow may be helpful in the research process, but refining each of your exploratory visualizations to a publishable version is not practical.
 Some of these recommendations will be specific to creating a visualization after you understand the story you’re telling.</p>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <p>The output of this example will be a reproduction of a visualization from
 <a class="reference external" href="https://www.nytimes.com/2019/01/11/upshot/big-cities-low-skilled-workers-wages.html">this NYT article</a>.</p>
 <p>This NYT article is based on research done by David Autor <a class="footnote-reference brackets" href="#ely" id="id1">1</a> , an
@@ -486,17 +485,17 @@ to find higher-paying jobs by working in urban areas in the 20th century.</p>
 <p>More recently, this <em>city wage premium</em> is still apparent for those
 with college educations. However, for those without a college education, it has
 disappeared.</p>
-<div class="section" id="identify-the-message">
-<h4>Identify the Message<a class="headerlink" href="#identify-the-message" title="Permalink to this headline">¶</a></h4>
+<section id="identify-the-message">
+<h4>Identify the Message<a class="headerlink" href="#identify-the-message" title="Permalink to this headline">#</a></h4>
 <p>The first step to creating a visualization might feel a little obvious, but is
 the most important step.</p>
 <p>If you fail to choose a concise message, then you won’t be able to clearly communicate the idea.</p>
 <p>In this example, we want people to be able to answer the question, “What happened to the
 rural/urban wage gap for non-college-educated workers since the 1950s?”.</p>
 <p>Part of what makes the answer interesting is that the wage gap changes are unique to non-college-educated workers; we will want to display changes in the wage gap for college-educated workers as well.</p>
-</div>
-<div class="section" id="visualize">
-<h4>Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="visualize">
+<h4>Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">#</a></h4>
 <p>Choosing the type of visualization that best illustrates your point is an important
 skill to develop.</p>
 <p>Using the wrong type of visualization can inhibit the flow of information from the
@@ -513,9 +512,9 @@ variables.</p>
 different subplots.</p>
 <p>In the original article, they chose to highlight differences in college
 education using color and time using subplots.</p>
-</div>
-<div class="section" id="visualization-draft">
-<h4>Visualization Draft<a class="headerlink" href="#visualization-draft" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="visualization-draft">
+<h4>Visualization Draft<a class="headerlink" href="#visualization-draft" title="Permalink to this headline">#</a></h4>
 <p>Drafting an early version of your visualization without concerning yourself about its aesthetics allows you to think about whether it is able to answer the proposed question.</p>
 <p>Sometimes you’ll get to this step and realize that you need to go back to one of the previous
 steps…</p>
@@ -562,9 +561,9 @@ settling on a draft we are happy with.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#app-vis-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="fine-tune">
-<h4>Fine-tune<a class="headerlink" href="#fine-tune" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="fine-tune">
+<h4>Fine-tune<a class="headerlink" href="#fine-tune" title="Permalink to this headline">#</a></h4>
 <p>Great! We have now confirmed that our decisions up until this point have made sense and that a
 version of this graphic can successfully convey our message.</p>
 <p>The last step is to clean the graph. We want to ensure that no features
@@ -644,17 +643,17 @@ presenting the details.  However, the code we use to create the best version of 
 <img alt="../_images/visualization_rules_5_0.png" src="../_images/visualization_rules_5_0.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="visualization-types">
-<h2>Visualization Types<a class="headerlink" href="#visualization-types" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="visualization-types">
+<h2>Visualization Types<a class="headerlink" href="#visualization-types" title="Permalink to this headline">#</a></h2>
 <p>You have seen many kinds of visualizations throughout your life.</p>
 <p>We discuss a few of the most frequently used visualization types and how they describe data below.</p>
 <p>For a more complete list of visualization types, see the Duke library’s
 <a class="reference external" href="https://guides.library.duke.edu/datavis/vis_types">data visualization guide</a>.</p>
-<div class="section" id="scatter-plots">
-<h3>Scatter Plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h3>
+<section id="scatter-plots">
+<h3>Scatter Plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">#</a></h3>
 <p>Scatter plots can be used in various ways.</p>
 <p>They are frequently used to show how two variables are related to one another or compare
 various observations based on two variables.</p>
@@ -714,9 +713,9 @@ variables.</p>
 <img alt="../_images/visualization_rules_7_0.png" src="../_images/visualization_rules_7_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="line-plots">
-<h3>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="line-plots">
+<h3>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this headline">#</a></h3>
 <p>Line plots are best used to either show how a variable evolves over time or to demonstrate the
 relationship between variables.</p>
 <p>Note: it differs from scatter plots in the way it displays relationships between variables.</p>
@@ -812,9 +811,9 @@ chose to remove them.</p>
 <img alt="../_images/visualization_rules_9_0.png" src="../_images/visualization_rules_9_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="bar-charts">
-<h3>Bar Charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bar-charts">
+<h3>Bar Charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">#</a></h3>
 <p>Bar charts are mostly used to display differences for a variable between groups though they can also
 be used to show how a variable changes over time (which in some ways, is just showing a difference as grouped by time…).</p>
 <p>Bar charts show the differences between these groups using the length of each bar, so that comparing the different groups is straightforward.</p>
@@ -849,9 +848,9 @@ in the United States.</p>
 <img alt="../_images/visualization_rules_11_1.png" src="../_images/visualization_rules_11_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="histograms">
-<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="histograms">
+<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h3>
 <p>Histograms display the approximate distribution of a single variable.</p>
 <p>They can be particularly important when your variables are not distributed normally
 since we typically think of means and variances in terms of the normal distribution.</p>
@@ -883,18 +882,18 @@ since we typically think of means and variances in terms of the normal distribut
 <img alt="../_images/visualization_rules_13_1.png" src="../_images/visualization_rules_13_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="color-in-plots">
-<h2>Color in Plots<a class="headerlink" href="#color-in-plots" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="color-in-plots">
+<h2>Color in Plots<a class="headerlink" href="#color-in-plots" title="Permalink to this headline">#</a></h2>
 <p>Choosing colors for your plots is not always a straightforward task.</p>
 <p>Visualization expert Edward Tufte <a class="reference external" href="https://www.edwardtufte.com/tufte/">https://www.edwardtufte.com/tufte/</a> wrote,</p>
 <blockquote>
 <div><p>… Avoiding catastrophe becomes the first principle in bringing color to information: Above all, do no harm (<a class="reference external" href="https://www.edwardtufte.com/tufte/books_ei"><em>Envisioning Information</em></a> by Edward Tufte)</p>
 </div></blockquote>
 <p>So how do we “do no harm”?</p>
-<div class="section" id="hue-saturation-lightness">
-<h3>Hue Saturation Lightness<a class="headerlink" href="#hue-saturation-lightness" title="Permalink to this headline">¶</a></h3>
+<section id="hue-saturation-lightness">
+<h3>Hue Saturation Lightness<a class="headerlink" href="#hue-saturation-lightness" title="Permalink to this headline">#</a></h3>
 <p>We will use the <a class="reference external" href="https://en.wikipedia.org/wiki/HSL_and_HSV">Hue Saturation Value</a> (HSV) paradigm as a way to formalize our discussion of colors.</p>
 <ul class="simple">
 <li><p><strong>Hue</strong>: This represents the share of each of the primary colors (red, green, blue)
@@ -910,9 +909,9 @@ has been added to a color. If a color has value 0, then it is as dark as possibl
 color black). If the color has value 1 then it has no black and is just the original color.</p></li>
 </ul>
 <p>The way in which HSV covers the color space is demonstrated in the following figure.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="HSL_cylinder.png" src="../_images/HSV_color_solid_cylinder_saturation_gray.png" />
-</div>
+</figure>
 <p>Image attribution: By <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=9801673">SharkD</a>.</p>
 <p>Below, we demonstrate how colors change as we move hue/saturation/value one at a time.</p>
 <div class="cell docutils container">
@@ -986,9 +985,9 @@ color black). If the color has value 1 then it has no black and is just the orig
 <img alt="../_images/visualization_rules_18_1.png" src="../_images/visualization_rules_18_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="color-palettes">
-<h3>Color Palettes<a class="headerlink" href="#color-palettes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="color-palettes">
+<h3>Color Palettes<a class="headerlink" href="#color-palettes" title="Permalink to this headline">#</a></h3>
 <p>A good color palette will exploit aspects of hue, saturation, and value to emphasize the information
 in the data visualization.</p>
 <p>For example, for qualitatively different groups (where we just want to identify separate groups
@@ -1040,13 +1039,13 @@ Nathaniel Smith.</p></li>
 <li><p>A <a class="reference external" href="https://colorusage.arc.nasa.gov/graphics_page_design.php">website</a> literally put together by
 “rocket scientists” at NASA.</p></li>
 </ul>
-</div>
-<div class="section" id="do-no-harm">
-<h3>Do No Harm<a class="headerlink" href="#do-no-harm" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="do-no-harm">
+<h3>Do No Harm<a class="headerlink" href="#do-no-harm" title="Permalink to this headline">#</a></h3>
 <p>Now that we have a little background that we can use as a common language, we can proceed with
 discussing how we can use color effectively.</p>
-<div class="section" id="sometimes-value-is-more-effective-than-hue">
-<h4>Sometimes Value is More Effective than Hue<a class="headerlink" href="#sometimes-value-is-more-effective-than-hue" title="Permalink to this headline">¶</a></h4>
+<section id="sometimes-value-is-more-effective-than-hue">
+<h4>Sometimes Value is More Effective than Hue<a class="headerlink" href="#sometimes-value-is-more-effective-than-hue" title="Permalink to this headline">#</a></h4>
 <p>Sometimes, in a graph with many lines, using the same color with different values is a more effective way to highlight differences than using different colors.</p>
 <p>Compare the following example, which is a modification of an example by Larry Arend, Alex Logan, and
 Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa.gov/graphics_page_design.php">graphics website</a> (the NASA one we linked above).</p>
@@ -1124,9 +1123,9 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 <p>The point of this exercise is <strong>not</strong> to not use color in your plots, but rather to
 encourage you to think about whether hue or value will be more effective in
 communicating your message.</p>
-</div>
-<div class="section" id="carelessness-with-value-can-make-grayscale-impossible-to-read">
-<h4>Carelessness with Value Can Make Grayscale Impossible to Read<a class="headerlink" href="#carelessness-with-value-can-make-grayscale-impossible-to-read" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="carelessness-with-value-can-make-grayscale-impossible-to-read">
+<h4>Carelessness with Value Can Make Grayscale Impossible to Read<a class="headerlink" href="#carelessness-with-value-can-make-grayscale-impossible-to-read" title="Permalink to this headline">#</a></h4>
 <p>Recall that driving the saturation to 0 is approximately equivalent to projecting the colors
 onto grayscale.</p>
 <p>Well, if you aren’t careful in choosing your colors, then they may have the same projected
@@ -1171,20 +1170,20 @@ from the matplotlib documentation.</p>
 </div>
 </div>
 <p>And here is the same image converted to grayscale.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="bar_grayscale.png" src="../_images/bar_grayscale.png" />
-</div>
+</figure>
 <p>The image below, from <a class="reference external" href="https://flowingdata.com/2012/11/09/incredibly-divided-nation-in-a-map">this flowingdata blog entry</a>,
 shows what happens when you don’t check your colors… Don’t do this.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="Divided-nation.jpg" src="../_images/Divided-nation.jpg" />
-</div>
+</figure>
 <p>Warm colors (colors like red, yellow, and orange) often appear lighter than cool colors (colors
 like blue, green and purple) when converted to grayscale even when they have similar values.
 Sometimes to know whether colors are different enough, you just have to test it out.</p>
-</div>
-<div class="section" id="use-color-to-draw-attention">
-<h4>Use Color to Draw Attention<a class="headerlink" href="#use-color-to-draw-attention" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="use-color-to-draw-attention">
+<h4>Use Color to Draw Attention<a class="headerlink" href="#use-color-to-draw-attention" title="Permalink to this headline">#</a></h4>
 <p>If you are displaying information about various groups but are really only interested in how one
 group differs from the others, then you should choose several close-together hues to represent the less
 important groups and a distinct color to display the group of interest.</p>
@@ -1221,9 +1220,9 @@ important groups and a distinct color to display the group of interest.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#app-vis-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="don-t-use-color-to-differentiate-small-objects">
-<h4>Don’t Use Color to Differentiate Small Objects<a class="headerlink" href="#don-t-use-color-to-differentiate-small-objects" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="don-t-use-color-to-differentiate-small-objects">
+<h4>Don’t Use Color to Differentiate Small Objects<a class="headerlink" href="#don-t-use-color-to-differentiate-small-objects" title="Permalink to this headline">#</a></h4>
 <p>Color is a great differentiator when there is enough of the colored object to see… However, when the objects
 become too small, differentiating between colors, no matter how distinct, becomes quite difficult.</p>
 <p>Below is the same plot as we had above, but we have made the scatter plot’s points smaller.</p>
@@ -1258,9 +1257,9 @@ become too small, differentiating between colors, no matter how distinct, become
 </div>
 <p>It becomes harder to read, but because the red is so much darker than some of the other colors,
 finding the group of interest is still possible (a lesson to be learned here!).</p>
-</div>
-<div class="section" id="colors-connotations">
-<h4>Colors’ Connotations<a class="headerlink" href="#colors-connotations" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="colors-connotations">
+<h4>Colors’ Connotations<a class="headerlink" href="#colors-connotations" title="Permalink to this headline">#</a></h4>
 <p>Some colors have connotations.</p>
 <p>Using colors to mean the opposite of what they’re usually used for can be confusing.</p>
 <p>For example, using red to denote positive profits and black to denote negative profits would be
@@ -1296,7 +1295,7 @@ a poor color choice because red is often associated with losses and black is ass
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3933/472303190.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3589/472303190.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
   ax.set_xticklabels(df.index)
 </pre></div>
 </div>
@@ -1325,16 +1324,16 @@ a poor color choice because red is often associated with losses and black is ass
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3933/1446163677.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3589/1446163677.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
   ax.set_xticklabels(df.index)
 </pre></div>
 </div>
 <img alt="../_images/visualization_rules_36_1.png" src="../_images/visualization_rules_36_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="accounting-for-color-blindness">
-<h4>Accounting for Color Blindness<a class="headerlink" href="#accounting-for-color-blindness" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="accounting-for-color-blindness">
+<h4>Accounting for Color Blindness<a class="headerlink" href="#accounting-for-color-blindness" title="Permalink to this headline">#</a></h4>
 <p>Nearly 1 in 10 men have some form of color blindness.</p>
 <p>The most prevalent form makes differentiating between red
 and green difficult.</p>
@@ -1344,11 +1343,11 @@ sensible defaults for colors.</p>
 <p>We recommend viewing the documentation for
 <a class="reference external" href="https://colorspacious.readthedocs.io/en/latest/tutorial.html#simulating-colorblindness">colorspacious</a>
 and <a class="reference external" href="https://github.com/matplotlib/viscm">viscm</a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="visualization-rules">
-<h2>Visualization Rules<a class="headerlink" href="#visualization-rules" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="visualization-rules">
+<h2>Visualization Rules<a class="headerlink" href="#visualization-rules" title="Permalink to this headline">#</a></h2>
 <p>We have already discussed some guidelines for color.</p>
 <p>We will now discuss some guidelines for which elements to include and how to structure your graphs.</p>
 <p>Violating each of these may make sense in particular situations, but please have a
@@ -1390,8 +1389,8 @@ does an exceptional job at redesigning graphics that were originally poorly done
 <li><p><a class="reference external" href="https://guides.library.duke.edu/datavis/topten">Duke library data visualization guide</a> has a
 few concise rules worth reviewing.</p></li>
 </ul>
-<div class="section" id="bar-plot-recommendations">
-<h3>Bar Plot Recommendations<a class="headerlink" href="#bar-plot-recommendations" title="Permalink to this headline">¶</a></h3>
+<section id="bar-plot-recommendations">
+<h3>Bar Plot Recommendations<a class="headerlink" href="#bar-plot-recommendations" title="Permalink to this headline">#</a></h3>
 <p>In Dona Wong’s book, she advises against using <em>zebra patterns</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1501,9 +1500,9 @@ increase in the top tax rate is only 5-10 percent.</p>
 </div>
 <p>We also have opinions about what type of person uses all caps, but we’ll keep that to ourselves for
 now.</p>
-</div>
-<div class="section" id="pie-plots">
-<h3>Pie Plots<a class="headerlink" href="#pie-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pie-plots">
+<h3>Pie Plots<a class="headerlink" href="#pie-plots" title="Permalink to this headline">#</a></h3>
 <p>As a general rule, you should avoid pie plots.</p>
 <p>When comparing groups, your reader can more easily measure the heights on a
 bar graph than determine the size of the angles in a pie chart.</p>
@@ -1544,9 +1543,9 @@ others.</p>
 <p>If you were making a case that Charlie ate too much of the pie and should pay more than an equal split,
 then a pie chart works (though a bar plot also works…).</p>
 <p>If you wanted to make a more precise point, then you might consider going with a bar plot instead.</p>
-</div>
-<div class="section" id="simplify-line-plots">
-<h3>Simplify Line Plots<a class="headerlink" href="#simplify-line-plots" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="simplify-line-plots">
+<h3>Simplify Line Plots<a class="headerlink" href="#simplify-line-plots" title="Permalink to this headline">#</a></h3>
 <p>We’ve tried to emphasize repeatedly that simplifying your visualizations is essential to being able
 to communicate your message.</p>
 <p>We do it again here and will do it a few more times after this…</p>
@@ -1691,9 +1690,9 @@ information, as seen below.</p>
 <img alt="../_images/visualization_rules_56_1.png" src="../_images/visualization_rules_56_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="tick-steps">
-<h3>Tick Steps<a class="headerlink" href="#tick-steps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tick-steps">
+<h3>Tick Steps<a class="headerlink" href="#tick-steps" title="Permalink to this headline">#</a></h3>
 <p>Use easy to interpret increments such as multiples of 2, 5, 10, 25 etc…</p>
 <p>Using increments like <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9,</span> <span class="pre">12,</span> <span class="pre">...</span></code> make it more difficult for your reader to do mentally
 determine what the values between the lines are:</p>
@@ -1725,9 +1724,9 @@ determine what the values between the lines are:</p>
 <img alt="../_images/visualization_rules_58_1.png" src="../_images/visualization_rules_58_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="no-background-colors">
-<h3>No Background Colors<a class="headerlink" href="#no-background-colors" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="no-background-colors">
+<h3>No Background Colors<a class="headerlink" href="#no-background-colors" title="Permalink to this headline">#</a></h3>
 <p>There are no reasons to use background colors in your visualizations.</p>
 <p>Research has shown that white or very light grays provide the best contrast as a background.</p>
 <p>Compare the following graphs and think about which feels better.</p>
@@ -1792,9 +1791,9 @@ determine what the values between the lines are:</p>
 <img alt="../_images/visualization_rules_62_1.png" src="../_images/visualization_rules_62_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="legends">
-<h3>Legends<a class="headerlink" href="#legends" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="legends">
+<h3>Legends<a class="headerlink" href="#legends" title="Permalink to this headline">#</a></h3>
 <p>Legends are quite common in charts, but many visualization experts advise against using them.</p>
 <p>Legends have several weaknesses:</p>
 <ol class="simple">
@@ -1879,27 +1878,27 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 </div>
 </div>
 <p>Most people find the example with labels to be a more readable graph.</p>
-</div>
-<div class="section" id="limit-the-information-in-a-single-plot">
-<h3>Limit the Information in a Single Plot<a class="headerlink" href="#limit-the-information-in-a-single-plot" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="limit-the-information-in-a-single-plot">
+<h3>Limit the Information in a Single Plot<a class="headerlink" href="#limit-the-information-in-a-single-plot" title="Permalink to this headline">#</a></h3>
 <p>Don’t try to put too much information in a single plot!</p>
 <p>We have tried to emphasize this point throughout this lecture, but it is so important that
 we are emphasizing it again!</p>
 <p>Don’t information overload your audience!</p>
-</div>
-<div class="section" id="talk-to-other-people">
-<h3>Talk to Other People<a class="headerlink" href="#talk-to-other-people" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="talk-to-other-people">
+<h3>Talk to Other People<a class="headerlink" href="#talk-to-other-people" title="Permalink to this headline">#</a></h3>
 <p>Our last guideline: talk with others about your visualization.</p>
 <p>The best way to determine whether other people understand your message is to show it to them.</p>
-</div>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="exercises">
-<span id="app-vis-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercises">
+<span id="app-vis-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Create a draft of the alternative way to organize time and education – that is, have two subplots (one for each education level) and four groups of points (one for each year).</p>
 <p>Why do you think they chose to organize the information as they did rather than this way?</p>
 <div class="cell docutils container">
@@ -1910,9 +1909,9 @@ we are emphasizing it again!</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-vis-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise  2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise  2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.</p>
 <div class="cell tag_remove-output docutils container">
@@ -1944,9 +1943,9 @@ the ways that the NYT modified Autor’s figures and think about
 whether these changes improved the figures.</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

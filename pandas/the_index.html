@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>The Index &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -307,8 +306,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-index">
-<h1>The Index<a class="headerlink" href="#the-index" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-index">
+<h1>The Index<a class="headerlink" href="#the-index" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="intro.html"><span class="doc">Introduction to pandas</span></a></p></li>
@@ -332,8 +331,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="so-what-is-this-index">
-<h2>So What is this Index?<a class="headerlink" href="#so-what-is-this-index" title="Permalink to this headline">¶</a></h2>
+<section id="so-what-is-this-index">
+<h2>So What is this Index?<a class="headerlink" href="#so-what-is-this-index" title="Permalink to this headline">#</a></h2>
 <p>Every Series or DataFrame has an index.</p>
 <p>We told you that the index was the “row labels” for the data.</p>
 <p>This is true, but an index in pandas does much more than label the rows.</p>
@@ -936,8 +935,8 @@ within each DataFrame.</p></li>
 </div></div></div>
 </div>
 <p>Whoa, a lot happened! Let’s break it down.</p>
-<div class="section" id="automatic-alignment">
-<h3>Automatic Alignment<a class="headerlink" href="#automatic-alignment" title="Permalink to this headline">¶</a></h3>
+<section id="automatic-alignment">
+<h3>Automatic Alignment<a class="headerlink" href="#automatic-alignment" title="Permalink to this headline">#</a></h3>
 <p>For all (row, column) combinations that appear in both DataFrames (e.g.
 rows <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3]</span></code> and columns <code class="docutils literal notranslate"><span class="pre">[Imports,</span> <span class="pre">Exports]</span></code>), the value of <code class="docutils literal notranslate"><span class="pre">im_ex_tiny</span></code>
 is equal to <code class="docutils literal notranslate"><span class="pre">df_tiny.loc[row,</span> <span class="pre">col]</span> <span class="pre">+</span> <span class="pre">im_ex.loc[row,</span> <span class="pre">col]</span></code>.</p>
@@ -958,9 +957,9 @@ extract the value.</p></li>
 </ul>
 <p>In pandas, this happens automatically, behind the scenes, and <em>very
 quickly</em>.</p>
-</div>
-<div class="section" id="handling-missing-data">
-<h3>Handling Missing Data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="handling-missing-data">
+<h3>Handling Missing Data<a class="headerlink" href="#handling-missing-data" title="Permalink to this headline">#</a></h3>
 <p>For all elements in row <code class="docutils literal notranslate"><span class="pre">1</span></code> or columns
 <code class="docutils literal notranslate"><span class="pre">[&quot;country&quot;,</span> <span class="pre">&quot;year&quot;,</span> <span class="pre">&quot;GovExpend&quot;,</span> <span class="pre">&quot;Consumption&quot;,</span> <span class="pre">&quot;GDP&quot;]</span></code>,
 the value in <code class="docutils literal notranslate"><span class="pre">im_ex_tiny</span></code> is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
@@ -973,10 +972,10 @@ that the result is missing (spelled <code class="docutils literal notranslate"><
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-idx-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="setting-the-index">
-<h2>Setting the Index<a class="headerlink" href="#setting-the-index" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="setting-the-index">
+<h2>Setting the Index<a class="headerlink" href="#setting-the-index" title="Permalink to this headline">#</a></h2>
 <p>For a DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code>, the <code class="docutils literal notranslate"><span class="pre">df.set_index</span></code> method allows us to use one
 (or more) of the DataFrame’s columns as the index.</p>
 <p>Here’s an example.</p>
@@ -1168,7 +1167,7 @@ in the average of all our variables from one year to the next.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4648/2895671375.py:1: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying &#39;numeric_only=None&#39; is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4524/2895671375.py:1: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying &#39;numeric_only=None&#39; is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
   df_year.loc[2009].mean() - df_year.loc[2008].mean()
 </pre></div>
 </div>
@@ -1674,8 +1673,8 @@ pandas doesn’t complain.</p>
 same amount.</p>
 <p>To make these types operation easier, we need to include both the year
 and country in the index…</p>
-<div class="section" id="setting-a-hierarchical-index">
-<h3>Setting a Hierarchical Index<a class="headerlink" href="#setting-a-hierarchical-index" title="Permalink to this headline">¶</a></h3>
+<section id="setting-a-hierarchical-index">
+<h3>Setting a Hierarchical Index<a class="headerlink" href="#setting-a-hierarchical-index" title="Permalink to this headline">#</a></h3>
 <p>Include multiple columns in the index is advantageous in some situations.</p>
 <p>These situations might include:</p>
 <ul class="simple">
@@ -1901,9 +1900,9 @@ names to <code class="docutils literal notranslate"><span class="pre">set_index<
 right-most) level is named <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
 <p>When a DataFrame’s index has multiple levels, we (and the pandas documentation)
 refer to the DataFrame as having a hierarchical index.</p>
-</div>
-<div class="section" id="slicing-a-hierarchical-index">
-<h3>Slicing a Hierarchical Index<a class="headerlink" href="#slicing-a-hierarchical-index" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="slicing-a-hierarchical-index">
+<h3>Slicing a Hierarchical Index<a class="headerlink" href="#slicing-a-hierarchical-index" title="Permalink to this headline">#</a></h3>
 <p>Now, we can answer our friend’s questions in a much more straightforward way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1974,9 +1973,9 @@ Series)</p></li>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#pd-idx-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="alignment-with-multiindex">
-<h3>Alignment with <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code><a class="headerlink" href="#alignment-with-multiindex" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="alignment-with-multiindex">
+<h3>Alignment with <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code><a class="headerlink" href="#alignment-with-multiindex" title="Permalink to this headline">#</a></h3>
 <p>The data alignment features we talked about above also apply to a
 <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code> DataFrame.</p>
 <p>The exercise below gives you a chance to experiment with this.</p>
@@ -1984,9 +1983,9 @@ Series)</p></li>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#pd-idx-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="pd-indexslice">
-<h3><code class="docutils literal notranslate"><span class="pre">pd.IndexSlice</span></code><a class="headerlink" href="#pd-indexslice" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pd-indexslice">
+<h3><code class="docutils literal notranslate"><span class="pre">pd.IndexSlice</span></code><a class="headerlink" href="#pd-indexslice" title="Permalink to this headline">#</a></h3>
 <p>When we want to extract rows for a few values of the outer index and all
 values for an inner index level, we can use the convenient
 <code class="docutils literal notranslate"><span class="pre">df.loc[[id11,</span> <span class="pre">id22]]</span></code> shorthand.</p>
@@ -2497,9 +2496,9 @@ level and that the <code class="docutils literal notranslate"><span class="pre">
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#pd-idx-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="multi-index-columns">
-<h3>Multi-index Columns<a class="headerlink" href="#multi-index-columns" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multi-index-columns">
+<h3>Multi-index Columns<a class="headerlink" href="#multi-index-columns" title="Permalink to this headline">#</a></h3>
 <p>The functionality of <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code> also applies to the column names.</p>
 <p>Let’s see how it works.</p>
 <div class="cell docutils container">
@@ -3089,10 +3088,10 @@ have a hierarchical index for column names.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 5 in the <a class="reference internal" href="#pd-idx-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="re-setting-the-index">
-<h2>Re-setting the Index<a class="headerlink" href="#re-setting-the-index" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="re-setting-the-index">
+<h2>Re-setting the Index<a class="headerlink" href="#re-setting-the-index" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">df.reset_index</span></code> method will move one or more level of the index
 back into the DataFrame as a normal column.</p>
 <p>With no additional arguments, it moves all levels out of the index and
@@ -3252,9 +3251,9 @@ sets the index of the returned DataFrame to the default of
 <p class="admonition-title">Exercise</p>
 <p>See exercise 6 in the <a class="reference internal" href="#pd-idx-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="choose-the-index-carefully">
-<h2>Choose the Index Carefully<a class="headerlink" href="#choose-the-index-carefully" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="choose-the-index-carefully">
+<h2>Choose the Index Carefully<a class="headerlink" href="#choose-the-index-carefully" title="Permalink to this headline">#</a></h2>
 <p>So, now that we know that we use index and column names for
 aligning data, “how should we pick the index?” is a natural question to ask.</p>
 <p>To guide us to the right answer, we will list the first two components
@@ -3276,8 +3275,8 @@ of data</p></li>
 represent the date.</p>
 <p>Using hierarchical row and column indices allows us to store higher
 dimensional data in our (inherently) two dimensional DataFrame.</p>
-<div class="section" id="know-your-goal">
-<h3>Know Your Goal<a class="headerlink" href="#know-your-goal" title="Permalink to this headline">¶</a></h3>
+<section id="know-your-goal">
+<h3>Know Your Goal<a class="headerlink" href="#know-your-goal" title="Permalink to this headline">#</a></h3>
 <p>The correct column(s) to choose for the index often depends on the context of
 your analysis.</p>
 <p>For example, if I were studying how GDP and consumption evolved over time for
@@ -3288,12 +3287,12 @@ variable on the index and have years be columns.</p>
 <p>Following the tidy data rules above and thinking about how you intend to <em>use</em>
 the data – and a little practice – will enable you to consistently select the
 correct index.</p>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="pd-idx-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="pd-idx-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>What happens when you apply the <code class="docutils literal notranslate"><span class="pre">mean</span></code> method to <code class="docutils literal notranslate"><span class="pre">im_ex_tiny</span></code>?</p>
 <p>In particular, what happens to columns that have missing data?</p>
 <div class="admonition hint">
@@ -3301,9 +3300,9 @@ correct index.</p>
 <p>Also looking at the output of the <code class="docutils literal notranslate"><span class="pre">sum</span></code> method might help.</p>
 </div>
 <p>(<a class="reference internal" href="#pd-idx-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>For each of the examples below do the following:</p>
 <ul class="simple">
 <li><p>Determine which of the rules above applies.</p></li>
@@ -3368,18 +3367,18 @@ correct index.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-idx-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Try setting <code class="docutils literal notranslate"><span class="pre">my_df</span></code> to some subset of the rows in <code class="docutils literal notranslate"><span class="pre">wdi</span></code> (use one of the
 <code class="docutils literal notranslate"><span class="pre">.loc</span></code> variations above).</p>
 <p>Then see what happens when you do <code class="docutils literal notranslate"><span class="pre">wdi</span> <span class="pre">/</span> <span class="pre">my_df</span></code> or <code class="docutils literal notranslate"><span class="pre">my_df</span> <span class="pre">**</span> <span class="pre">wdi</span></code>.</p>
 <p>Try changing the subset of rows in <code class="docutils literal notranslate"><span class="pre">my_df</span></code> and repeat until you
 understand what is happening.</p>
 <p>(<a class="reference internal" href="#pd-idx-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Below, we create <code class="docutils literal notranslate"><span class="pre">wdi2</span></code>, which is the same as <code class="docutils literal notranslate"><span class="pre">df4</span></code> except that the
 levels of the index are swapped.</p>
 <p>In the cells after <code class="docutils literal notranslate"><span class="pre">df6</span></code> is defined, we have commented out
@@ -3420,15 +3419,15 @@ within the <code class="docutils literal notranslate"><span class="pre">pd.Index
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-idx-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">pd.IndexSlice</span></code> to extract all data from <code class="docutils literal notranslate"><span class="pre">wdiT</span></code> where the <code class="docutils literal notranslate"><span class="pre">year</span></code>
 level of the column names (the second level) is one of 2010, 2012, and 2014</p>
 <p>(<a class="reference internal" href="#pd-idx-dir5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
 <p>Look up the documentation for the <code class="docutils literal notranslate"><span class="pre">reset_index</span></code> method and study it to
 learn how to do the following:</p>
 <ul class="simple">
@@ -3458,9 +3457,9 @@ learn how to do the following:</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-idx-dir6"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

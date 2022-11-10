@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cleaning Data &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -256,8 +255,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="cleaning-data">
-<h1>Cleaning Data<a class="headerlink" href="#cleaning-data" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cleaning-data">
+<h1>Cleaning Data<a class="headerlink" href="#cleaning-data" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="intro.html"><span class="doc">Intro</span></a></p></li>
@@ -287,8 +286,8 @@ Grubhub orders</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Cleaning Data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>Cleaning Data<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>For many data projects, a <a class="reference external" href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#74d447456f63">significant proportion of
 time</a>
 is spent collecting and cleaning the data — not performing the analysis.</p>
@@ -420,46 +419,46 @@ will demonstrate using the following dataset.</p>
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;numbers&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py:11856,</span> in <span class="ni">NDFrame._add_numeric_operations.&lt;locals&gt;.mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11838</span> <span class="nd">@doc</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11839</span>     <span class="n">_num_doc</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11840</span>     <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Return the mean of the values over the requested axis.&quot;</span><span class="p">,</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py:11847,</span> in <span class="ni">NDFrame._add_numeric_operations.&lt;locals&gt;.mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11829</span> <span class="nd">@doc</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11830</span>     <span class="n">_num_doc</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">11831</span>     <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Return the mean of the values over the requested axis.&quot;</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11854</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11855</span> <span class="p">):</span>
-<span class="ne">&gt; </span><span class="mi">11856</span>     <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11845</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">11846</span> <span class="p">):</span>
+<span class="ne">&gt; </span><span class="mi">11847</span>     <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py:11408,</span> in <span class="ni">NDFrame.mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11400</span> <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11401</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11402</span>     <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">lib</span><span class="o">.</span><span class="n">NoDefault</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">no_default</span><span class="p">,</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py:11401,</span> in <span class="ni">NDFrame.mean</span><span class="nt">(self, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11393</span> <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11394</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">11395</span>     <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">|</span> <span class="n">lib</span><span class="o">.</span><span class="n">NoDefault</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">no_default</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11406</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11407</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span> <span class="o">|</span> <span class="nb">float</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">11408</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11409</span>         <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">nanops</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-<span class="g g-Whitespace">  </span><span class="mi">11410</span>     <span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11399</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">  </span><span class="mi">11400</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span> <span class="o">|</span> <span class="nb">float</span><span class="p">:</span>
+<span class="ne">&gt; </span><span class="mi">11401</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11402</span>         <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">nanops</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">  </span><span class="mi">11403</span>     <span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py:11360,</span> in <span class="ni">NDFrame._stat_function</span><span class="nt">(self, name, func, axis, skipna, level, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11350</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11351</span>         <span class="s2">&quot;Using the level keyword in DataFrame and Series aggregations is &quot;</span>
-<span class="g g-Whitespace">  </span><span class="mi">11352</span>         <span class="s2">&quot;deprecated and will be removed in a future version. Use groupby &quot;</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/generic.py:11353,</span> in <span class="ni">NDFrame._stat_function</span><span class="nt">(self, name, func, axis, skipna, level, numeric_only, **kwargs)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11343</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11344</span>         <span class="s2">&quot;Using the level keyword in DataFrame and Series aggregations is &quot;</span>
+<span class="g g-Whitespace">  </span><span class="mi">11345</span>         <span class="s2">&quot;deprecated and will be removed in a future version. Use groupby &quot;</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11355</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()),</span>
-<span class="g g-Whitespace">  </span><span class="mi">11356</span>     <span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11357</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_by_level</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11358</span>         <span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">11359</span>     <span class="p">)</span>
-<span class="ne">&gt; </span><span class="mi">11360</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11361</span>     <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">11362</span> <span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11348</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">  </span><span class="mi">11349</span>     <span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11350</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_by_level</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11351</span>         <span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
+<span class="g g-Whitespace">  </span><span class="mi">11352</span>     <span class="p">)</span>
+<span class="ne">&gt; </span><span class="mi">11353</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">11354</span>     <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
+<span class="g g-Whitespace">  </span><span class="mi">11355</span> <span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/series.py:4819,</span> in <span class="ni">Series._reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4815</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">4816</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not implement </span><span class="si">{</span><span class="n">kwd_name</span><span class="si">}</span><span class="s2">.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4817</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4818</span> <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">4819</span>     <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/series.py:4816,</span> in <span class="ni">Series._reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4812</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4813</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not implement </span><span class="si">{</span><span class="n">kwd_name</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4814</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4815</span> <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">4816</span>     <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
 
 <span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/nanops.py:93,</span> in <span class="ni">disallow.__call__.&lt;locals&gt;._f</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">91</span> <span class="k">try</span><span class="p">:</span>
@@ -515,9 +514,9 @@ will demonstrate using the following dataset.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-cln-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="string-methods">
-<h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="string-methods">
+<h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">#</a></h2>
 <p>Our solution to the previous exercise was to remove the <code class="docutils literal notranslate"><span class="pre">#</span></code> by using
 the <code class="docutils literal notranslate"><span class="pre">replace</span></code> string method: <code class="docutils literal notranslate"><span class="pre">int(c2n.replace(&quot;#&quot;,</span> <span class="pre">&quot;&quot;))</span></code>.</p>
 <p>One way to make this change to every element of a column would be to
@@ -545,8 +544,8 @@ methods…</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.71 ms, sys: 0 ns, total: 3.71 ms
-Wall time: 3.65 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.04 ms, sys: 0 ns, total: 2.04 ms
+Wall time: 2.01 ms
 </pre></div>
 </div>
 </div>
@@ -574,8 +573,8 @@ Series in one shot!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.59 ms, sys: 0 ns, total: 1.59 ms
-Wall time: 1.51 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 703 µs, sys: 10 µs, total: 713 µs
+Wall time: 691 µs
 </pre></div>
 </div>
 </div>
@@ -626,9 +625,9 @@ Name: colors, dtype: object
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 <pd-cln-ex2> in the <a class="reference internal" href="#pd-cln-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="type-conversions">
-<h2>Type Conversions<a class="headerlink" href="#type-conversions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="type-conversions">
+<h2>Type Conversions<a class="headerlink" href="#type-conversions" title="Permalink to this headline">#</a></h2>
 <p>In our example above, the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the <code class="docutils literal notranslate"><span class="pre">numbers_str</span></code> column shows that pandas still treats
 it as a string even after we have removed the <code class="docutils literal notranslate"><span class="pre">&quot;#&quot;</span></code>.</p>
 <p>We need to convert this column to numbers.</p>
@@ -798,9 +797,9 @@ Name: numbers_numeric, dtype: float64
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#pd-cln-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="missing-data">
-<h2>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="missing-data">
+<h2>Missing Data<a class="headerlink" href="#missing-data" title="Permalink to this headline">#</a></h2>
 <p>Many datasets have missing data.</p>
 <p>In our example, we are missing an element from the <code class="docutils literal notranslate"><span class="pre">&quot;nums&quot;</span></code> column.</p>
 <div class="cell docutils container">
@@ -1506,9 +1505,9 @@ article</a>.</p>
 </div>
 <p>We will see more examples of dealing with missing data in future
 chapters.</p>
-</div>
-<div class="section" id="case-study">
-<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="case-study">
+<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this headline">#</a></h2>
 <p>We will now use data from an
 <a class="reference external" href="https://www.nytimes.com/interactive/2015/02/17/upshot/what-do-people-actually-order-at-chipotle.html">article</a>
 written by The Upshot at the NYTimes.</p>
@@ -1603,9 +1602,9 @@ includes information on what was ordered and how much it cost.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#pd-cln-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="appendix-performance-of-str-methods">
-<h2>Appendix: Performance of <code class="docutils literal notranslate"><span class="pre">.str</span></code> Methods<a class="headerlink" href="#appendix-performance-of-str-methods" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="appendix-performance-of-str-methods">
+<h2>Appendix: Performance of <code class="docutils literal notranslate"><span class="pre">.str</span></code> Methods<a class="headerlink" href="#appendix-performance-of-str-methods" title="Permalink to this headline">#</a></h2>
 <p>Let’s repeat the “remove the <code class="docutils literal notranslate"><span class="pre">#</span></code>” example from above, but this time on
 a much larger dataset.</p>
 <div class="cell docutils container">
@@ -1643,28 +1642,28 @@ a much larger dataset.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>71.28</td>
-      <td>71.28%</td>
+      <td>11.49</td>
+      <td>11.49%</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>53.07</td>
-      <td>53.07%</td>
+      <td>80.20</td>
+      <td>80.2%</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>31.51</td>
-      <td>31.51%</td>
+      <td>76.76</td>
+      <td>76.76%</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>62.68</td>
-      <td>62.68%</td>
+      <td>25.81</td>
+      <td>25.81%</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>38.73</td>
-      <td>38.73%</td>
+      <td>58.61</td>
+      <td>58.61%</td>
     </tr>
   </tbody>
 </table>
@@ -1682,8 +1681,8 @@ a much larger dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 14.4 s, sys: 15.2 ms, total: 14.4 s
-Wall time: 14.4 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.72 s, sys: 10.7 ms, total: 7.73 s
+Wall time: 7.73 s
 </pre></div>
 </div>
 </div>
@@ -1696,8 +1695,8 @@ Wall time: 14.4 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 40.4 ms, sys: 3.88 ms, total: 44.3 ms
-Wall time: 43.6 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 30 ms, sys: 0 ns, total: 30 ms
+Wall time: 29.8 ms
 </pre></div>
 </div>
 </div>
@@ -1715,11 +1714,11 @@ Wall time: 43.6 ms
 </div>
 </div>
 <p>We got the exact same result in a fraction of the time!</p>
-</div>
-<div class="section" id="exercises">
-<span id="pd-cln-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercises">
+<span id="pd-cln-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Convert the string below into a number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1729,15 +1728,15 @@ Wall time: 43.6 ms
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-cln-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Make a new column called <code class="docutils literal notranslate"><span class="pre">colors_upper</span></code> that contains the elements of
 <code class="docutils literal notranslate"><span class="pre">colors</span></code> with all uppercase letters.</p>
 <p>(<a class="reference internal" href="#pd-cln-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Convert the column <code class="docutils literal notranslate"><span class="pre">&quot;nums&quot;</span></code> to a numeric type using <code class="docutils literal notranslate"><span class="pre">pd.to_numeric</span></code> and
 save it to the DataFrame as <code class="docutils literal notranslate"><span class="pre">&quot;nums_tonumeric&quot;</span></code>.</p>
 <p>Notice that there is a missing value, and a value that is not a number.</p>
@@ -1747,9 +1746,9 @@ overcome this.</p>
 knowing what your data looks like. (Think about what happens when you
 apply it to the <code class="docutils literal notranslate"><span class="pre">&quot;numbers&quot;</span></code> column before replacing the <code class="docutils literal notranslate"><span class="pre">&quot;#&quot;</span></code>.)</p>
 <p>(<a class="reference internal" href="#pd-cln-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>We’d like you to use this data to answer the following questions.</p>
 <ul class="simple">
 <li><p>What is the average price of an item with chicken?</p></li>
@@ -1765,9 +1764,9 @@ make sure the <code class="docutils literal notranslate"><span class="pre">item_
 float).</p>
 </div>
 <p>(<a class="reference internal" href="#pd-cln-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

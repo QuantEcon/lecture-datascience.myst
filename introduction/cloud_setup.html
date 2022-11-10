@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cloud Setup &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -229,10 +228,10 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="cloud-setup">
-<h1>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="launch-environments">
-<h2>Launch Environments<a class="headerlink" href="#launch-environments" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="cloud-setup">
+<h1>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Permalink to this headline">#</a></h1>
+<section id="launch-environments">
+<h2>Launch Environments<a class="headerlink" href="#launch-environments" title="Permalink to this headline">#</a></h2>
 <p>Various cloud-based Jupyter server environments have been configured to work with <a class="reference internal" href="../index.html"><span class="doc">QuantEcon Data Science</span></a>.</p>
 <p>These environments provide a Jupyter interface which displays in your browser, but the code is hosted
 and run on the cloud.</p>
@@ -242,30 +241,30 @@ any other required software on your own computer.</p>
 current lecture page will be opened with the selected cloud service.</p>
 <p>You can change your cloud environment by selecting another server from the drop down menu (see image):</p>
 <br>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/cloud_launch.png" src="../_images/cloud_launch.png" />
-</div>
+</figure>
 <br>
 <p>We discuss each of the options below.</p>
-<div class="section" id="binderhub">
-<h3>BinderHub<a class="headerlink" href="#binderhub" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="launching-binderhub">
-<h4>Launching BinderHub<a class="headerlink" href="#launching-binderhub" title="Permalink to this headline">¶</a></h4>
+<section id="binderhub">
+<h3>BinderHub<a class="headerlink" href="#binderhub" title="Permalink to this headline">#</a></h3>
+<section id="launching-binderhub">
+<h4>Launching BinderHub<a class="headerlink" href="#launching-binderhub" title="Permalink to this headline">#</a></h4>
 <p>To launch course material through BinderHub:</p>
 <p><strong>1.</strong> Choose the <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code> under <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">a</span> <span class="pre">server:</span> <span class="pre">public</span></code> on the launch bar to change the backend hub.</p>
 <p><strong>2.</strong> Click on the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
 <p><strong>3.</strong> Wait for <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code> to connect to the repo</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/wait_binderhub.png" src="../_images/wait_binderhub.png" />
-</div>
+</figure>
 <p><strong>4.</strong> You can use the Jupyter Network interface with <code class="docutils literal notranslate"><span class="pre">BinderHub</span></code></p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/binderhub_jupyter.png" src="../_images/binderhub_jupyter.png" />
-</div>
-</div>
-</div>
-<div class="section" id="google-colab">
-<h3>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">¶</a></h3>
+</figure>
+</section>
+</section>
+<section id="google-colab">
+<h3>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://research.google.com/colaboratory/faq.html">Google Colab</a> is a cloud service hosted by
 Google.</p>
 <p>With this environment, you can potentially use GPUs and other specialized
@@ -275,16 +274,16 @@ GPU or TPU could improve performance.</p>
 <p>We recommend starting with the other cloud options because the environment provided isn’t
 quite the same as what you would get on your computer because Google has made their own modifications
 to underlying Jupyter software.</p>
-<div class="section" id="launching-colab">
-<h4>Launching Colab<a class="headerlink" href="#launching-colab" title="Permalink to this headline">¶</a></h4>
+<section id="launching-colab">
+<h4>Launching Colab<a class="headerlink" href="#launching-colab" title="Permalink to this headline">#</a></h4>
 <p>To launch course material through Google Colab:</p>
 <p><strong>1.</strong> Choose the <code class="docutils literal notranslate"><span class="pre">colab</span></code> under <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">a</span> <span class="pre">server:</span> <span class="pre">public</span></code> on the launch bar to change the backend hub.</p>
 <p><strong>2.</strong> Click on the <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Notebook</span></code> button.</p>
 <p><strong>3.</strong> You will be asked to sign in with your Google account and you will see something similar to
 the following picture.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/colab_jupyter.png" src="../_images/colab_jupyter.png" />
-</div>
+</figure>
 <p><strong>4.</strong> Once you have launched a Colab notebook, you will need to make sure that any software missing
 from Colab gets installed — this step isn’t required for all notebooks.</p>
 <p>For lectures where this step is required, we have provided a script that automatically configures missing
@@ -299,26 +298,26 @@ code that follows.</p>
 </div>
 <p><strong>5.</strong> To navigate sections within a Colab notebook, click on the little arrow at the top left corner
 of the page,</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/colab_table_of_contents_arrow.png" src="../_images/colab_table_of_contents_arrow.png" />
-</div>
+</figure>
 <p>Then, “table of contents” will pop up. You can click on sections or subsections for different parts
 of the notebook.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../_images/colab_table_of_contents.png" src="../_images/colab_table_of_contents.png" />
-</div>
-</div>
-<div class="section" id="file-management-on-colab">
-<h4>File Management on Colab<a class="headerlink" href="#file-management-on-colab" title="Permalink to this headline">¶</a></h4>
+</figure>
+</section>
+<section id="file-management-on-colab">
+<h4>File Management on Colab<a class="headerlink" href="#file-management-on-colab" title="Permalink to this headline">#</a></h4>
 <p>By default, Colab will erase any work that you have done after you have exited a notebook.</p>
 <p>If you would like to store your work, you can save it onto your Google Drive by clicking the
 <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">to</span> <span class="pre">Drive</span></code> button.</p>
 <p>You can create a new notebook by clicking <code class="docutils literal notranslate"><span class="pre">File</span></code> on the menubar and selecting
 <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Python</span> <span class="pre">3</span> <span class="pre">notebook</span></code>.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Collections &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -345,8 +344,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="collections">
-<h1>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="collections">
+<h1>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="basics.html"><span class="doc">Core data types</span></a></p></li>
@@ -378,10 +377,10 @@ and <code class="docutils literal notranslate"><span class="pre">reverse</span><
 </ul>
 </li>
 </ul>
-<div class="section" id="ordered-collections">
-<h2>Ordered Collections<a class="headerlink" href="#ordered-collections" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<section id="ordered-collections">
+<h2>Ordered Collections<a class="headerlink" href="#ordered-collections" title="Permalink to this headline">#</a></h2>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
 <p>A Python list is an ordered collection of items.</p>
 <p>We can create lists using the following syntax</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span>  <span class="n">itemN</span><span class="p">]</span>
@@ -421,8 +420,8 @@ and <code class="docutils literal notranslate"><span class="pre">reverse</span><
 </div>
 </div>
 </div>
-<div class="section" id="what-can-we-do-with-lists">
-<h4>What Can We Do with Lists?<a class="headerlink" href="#what-can-we-do-with-lists" title="Permalink to this headline">¶</a></h4>
+<section id="what-can-we-do-with-lists">
+<h4>What Can We Do with Lists?<a class="headerlink" href="#what-can-we-do-with-lists" title="Permalink to this headline">#</a></h4>
 <p>We can access items in a list called <code class="docutils literal notranslate"><span class="pre">mylist</span></code> using <code class="docutils literal notranslate"><span class="pre">mylist[N]</span></code>
 where <code class="docutils literal notranslate"><span class="pre">N</span></code> is an integer.</p>
 <p>Note: Anytime that we use the syntax <code class="docutils literal notranslate"><span class="pre">x[i]</span></code> we are doing what is
@@ -611,10 +610,10 @@ rather than the numbers in that list.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#ex2-2"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="lists-of-different-types">
-<span id="inhomogenous-lists"></span><h3>Lists of Different Types<a class="headerlink" href="#lists-of-different-types" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="lists-of-different-types">
+<span id="inhomogenous-lists"></span><h3>Lists of Different Types<a class="headerlink" href="#lists-of-different-types" title="Permalink to this headline">#</a></h3>
 <p>While most examples above have all used a <code class="docutils literal notranslate"><span class="pre">list</span></code> with
 a single type of variable, this is not required.</p>
 <p>Let’s carefully make a small change to the first example: replace <code class="docutils literal notranslate"><span class="pre">2.0</span></code> with <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
@@ -656,10 +655,7 @@ inside of a list.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x has type
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &lt;class &#39;list&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x has type &lt;class &#39;list&#39;&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, &#39;hello&#39;, 3.0]
@@ -699,9 +695,9 @@ with different numeric and non-numeric types in the same list.</p>
 <li><p>When working with lists and data, you may want to represent missing
 values with a different type than the existing values.</p></li>
 </ul>
-</div>
-<div class="section" id="the-range-function">
-<h3>The <code class="docutils literal notranslate"><span class="pre">range</span></code> Function<a class="headerlink" href="#the-range-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-range-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">range</span></code> Function<a class="headerlink" href="#the-range-function" title="Permalink to this headline">#</a></h3>
 <p>One function you will see often in Python is the <code class="docutils literal notranslate"><span class="pre">range</span></code> function.</p>
 <p>It has three versions:</p>
 <ol class="simple">
@@ -740,9 +736,9 @@ values with a different type than the existing values.</p></li>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#ex2-2"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="what-are-tuples">
-<h3>What are Tuples?<a class="headerlink" href="#what-are-tuples" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="what-are-tuples">
+<h3>What are Tuples?<a class="headerlink" href="#what-are-tuples" title="Permalink to this headline">#</a></h3>
 <p>Tuples are very similar to lists and hold ordered collections of items.</p>
 <p>However, tuples and lists have three main differences:</p>
 <ol class="simple">
@@ -849,9 +845,9 @@ tuple(x) is a &lt;class &#39;tuple&#39;&gt;
 </div>
 <p>This will be a convenient way to work with functions returning
 multiple values, as well as within <a class="reference internal" href="control_flow.html"><span class="doc">comprehensions and loops</span></a>.</p>
-</div>
-<div class="section" id="list-vs-tuple-which-to-use">
-<h3>List vs Tuple: Which to Use?<a class="headerlink" href="#list-vs-tuple-which-to-use" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="list-vs-tuple-which-to-use">
+<h3>List vs Tuple: Which to Use?<a class="headerlink" href="#list-vs-tuple-which-to-use" title="Permalink to this headline">#</a></h3>
 <p>Should you use a list or tuple?</p>
 <p>This depends on what you are storing, whether you might need to reorder the elements,
 or whether you’d add
@@ -920,9 +916,9 @@ change</p></li>
 <li><p>use the collection as a key in a dict (we will learn what this
 means <a class="reference internal" href="#dictionaries"><span class="std std-ref">soon</span></a>)</p></li>
 </ul>
-</div>
-<div class="section" id="zip-and-enumerate">
-<h3><code class="docutils literal notranslate"><span class="pre">zip</span></code> and <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#zip-and-enumerate" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="zip-and-enumerate">
+<h3><code class="docutils literal notranslate"><span class="pre">zip</span></code> and <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#zip-and-enumerate" title="Permalink to this headline">#</a></h3>
 <p>Two functions that can be extremely useful are <code class="docutils literal notranslate"><span class="pre">zip</span></code> and <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
 <p>Both of these functions are best understood by example, so let’s see
 them in action and then talk about what they do.</p>
@@ -990,7 +986,7 @@ tuple directly into variables.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type(e) &lt;class &#39;enumerate&#39;&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f8810136d80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate at 0x7f2f84a9d700&gt;
 </pre></div>
 </div>
 </div>
@@ -1037,17 +1033,19 @@ generator a second time, it will not have any elements to iterate over anymore.<
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2013, 9.607), (2014, 10.48), (2015, 11.06)]
-[]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="associative-collections">
-<h2>Associative Collections<a class="headerlink" href="#associative-collections" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dictionaries">
-<span id="id1"></span><h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="associative-collections">
+<h2>Associative Collections<a class="headerlink" href="#associative-collections" title="Permalink to this headline">#</a></h2>
+<section id="dictionaries">
+<span id="id1"></span><h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h3>
 <p>A dictionary (or dict) associates <code class="docutils literal notranslate"><span class="pre">key</span></code>s with <code class="docutils literal notranslate"><span class="pre">value</span></code>s.</p>
 <p>It will feel similar to a dictionary for words, where the keys are words and
 the values are the associated definitions.</p>
@@ -1118,8 +1116,8 @@ will be strings, but we could also use numbers (<code class="docutils literal no
 </div>
 </div>
 </div>
-<div class="section" id="getting-setting-and-updating-dict-items">
-<h4>Getting, Setting, and Updating dict Items<a class="headerlink" href="#getting-setting-and-updating-dict-items" title="Permalink to this headline">¶</a></h4>
+<section id="getting-setting-and-updating-dict-items">
+<h4>Getting, Setting, and Updating dict Items<a class="headerlink" href="#getting-setting-and-updating-dict-items" title="Permalink to this headline">#</a></h4>
 <p>We can now ask Python to tell us the value for a particular key by using
 the syntax <code class="docutils literal notranslate"><span class="pre">d[k]</span></code>,  where <code class="docutils literal notranslate"><span class="pre">d</span></code> is our <code class="docutils literal notranslate"><span class="pre">dict</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> is the key for which we want to
 find the value.</p>
@@ -1201,9 +1199,9 @@ create the key and value as required).</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 6 in the <a class="reference internal" href="#ex2-2"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="common-dict-functionality">
-<h4>Common <code class="docutils literal notranslate"><span class="pre">dict</span></code> Functionality<a class="headerlink" href="#common-dict-functionality" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="common-dict-functionality">
+<h4>Common <code class="docutils literal notranslate"><span class="pre">dict</span></code> Functionality<a class="headerlink" href="#common-dict-functionality" title="Permalink to this headline">#</a></h4>
 <p>We can do some common things with dicts.</p>
 <p>We will demonstrate them with examples below.</p>
 <div class="cell docutils container">
@@ -1304,10 +1302,10 @@ create the key and value as required).</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 8 in the <a class="reference internal" href="#ex2-2"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="sets-optional">
-<h3>Sets (Optional)<a class="headerlink" href="#sets-optional" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sets-optional">
+<h3>Sets (Optional)<a class="headerlink" href="#sets-optional" title="Permalink to this headline">#</a></h3>
 <p>Python has an additional way to represent collections of items: sets.</p>
 <p>Sets come up infrequently, but you should be aware of them.</p>
 <p>If you are familiar with the mathematical concept of sets, then you will
@@ -1468,12 +1466,12 @@ collections to sets.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="ex2-2"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="ex2-2"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>In the first cell, try <code class="docutils literal notranslate"><span class="pre">y.append(z)</span></code>.</p>
 <p>In the second cell try <code class="docutils literal notranslate"><span class="pre">y.extend(z)</span></code>.</p>
 <p>Explain the behavior.</p>
@@ -1503,9 +1501,9 @@ see a description of what these methods are supposed to do.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Experiment with the other two versions of the <code class="docutils literal notranslate"><span class="pre">range</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1522,9 +1520,9 @@ see a description of what these methods are supposed to do.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Verify that tuples are indeed immutable by attempting the following:</p>
 <ul class="simple">
 <li><p>Changing the first element of <code class="docutils literal notranslate"><span class="pre">t</span></code> to be <code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
@@ -1562,9 +1560,9 @@ list <code class="docutils literal notranslate"><span class="pre">x</span></code
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p><strong>Challenging</strong> For the tuple <code class="docutils literal notranslate"><span class="pre">foo</span></code> below, use a combination of <code class="docutils literal notranslate"><span class="pre">zip</span></code>,
 <code class="docutils literal notranslate"><span class="pre">range</span></code>, and <code class="docutils literal notranslate"><span class="pre">len</span></code> to mimic <code class="docutils literal notranslate"><span class="pre">enumerate(foo)</span></code>.</p>
 <p>Verify that your proposed solution is correct by converting each to a list
@@ -1582,9 +1580,9 @@ and checking equality with <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Create a new dict which associates stock tickers with its stock price.</p>
 <p>Here are some tickers and a price.</p>
 <ul class="simple">
@@ -1600,9 +1598,9 @@ and checking equality with <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
 <p>Look at the <a class="reference external" href="https://www.cia.gov/the-world-factbook/countries/australia">World Factbook for Australia</a>
 and create a dictionary with data containing the following types:
 float, string, integer, list, and dict.  Choose any data you wish.</p>
@@ -1615,9 +1613,9 @@ float, string, integer, list, and dict.  Choose any data you wish.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-6"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
 <p>Use Jupyter’s help facilities to learn how to use the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method to
 remove the key <code class="docutils literal notranslate"><span class="pre">&quot;irrigated_land&quot;</span></code> (and its value) from the dict.</p>
 <div class="cell docutils container">
@@ -1629,9 +1627,9 @@ remove the key <code class="docutils literal notranslate"><span class="pre">&quo
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-7"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
 <p>Explain what happens to the value you popped.</p>
 <p>Experiment with calling <code class="docutils literal notranslate"><span class="pre">pop</span></code> twice.</p>
 <div class="cell docutils container">
@@ -1642,9 +1640,9 @@ remove the key <code class="docutils literal notranslate"><span class="pre">&quo
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-8"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-9">
-<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h3>
 <p>Try creating a set with repeated elements (e.g. <code class="docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">2}</span></code>).</p>
 <p>What happens?</p>
 <p>Why?</p>
@@ -1656,9 +1654,9 @@ remove the key <code class="docutils literal notranslate"><span class="pre">&quo
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-9"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-10">
-<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h3>
 <p>Test out two of the operations described above using the original set we
 created, <code class="docutils literal notranslate"><span class="pre">s</span></code>, and the set created below <code class="docutils literal notranslate"><span class="pre">s2</span></code>.</p>
 <div class="cell docutils container">
@@ -1683,9 +1681,9 @@ created, <code class="docutils literal notranslate"><span class="pre">s</span></
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-2-10"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>GroupBy &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -279,8 +278,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="groupby">
-<h1>GroupBy<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="groupby">
+<h1>GroupBy<a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../python_fundamentals/functions.html"><span class="doc">Functions</span></a></p></li>
@@ -317,8 +316,8 @@ Statistics</a></p></li>
 </div>
 </div>
 </div>
-<div class="section" id="split-apply-combine">
-<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h2>
+<section id="split-apply-combine">
+<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">#</a></h2>
 <p>One powerful paradigm for analyzing data is the “Split-Apply-Combine”
 strategy.</p>
 <p>This strategy has three steps:</p>
@@ -413,8 +412,8 @@ then work through extended example and exercises with real data.</p>
 </table>
 </div></div></div>
 </div>
-<div class="section" id="simple-example">
-<h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h3>
+<section id="simple-example">
+<h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline">#</a></h3>
 <p>To perform the <em>Split</em> step, we call the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> method on our
 DataFrame.</p>
 <p>The first argument to <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is a description of how we want to
@@ -692,9 +691,9 @@ the strategy:</p>
 <div><p>The index of the combined DataFrame will be the group identifiers,
 with one index level per group key.</p>
 </div></blockquote>
-</div>
-<div class="section" id="custom-aggregate-functions">
-<h3>Custom Aggregate Functions<a class="headerlink" href="#custom-aggregate-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="custom-aggregate-functions">
+<h3>Custom Aggregate Functions<a class="headerlink" href="#custom-aggregate-functions" title="Permalink to this headline">#</a></h3>
 <p>So far, we have been applying built-in aggregations to our GroupBy object.</p>
 <p>We can also apply custom aggregations to each group of a GroupBy in two
 steps:</p>
@@ -785,9 +784,9 @@ take in a DataFrame (or Series) and return a Series (or single value)
 with one item per column in the original DataFrame.</p>
 <p>When the function is called, the data for each group will be passed to
 our function as a DataFrame (or Series).</p>
-</div>
-<div class="section" id="transforms-the-apply-method">
-<h3>Transforms: The <code class="docutils literal notranslate"><span class="pre">apply</span></code> Method<a class="headerlink" href="#transforms-the-apply-method" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="transforms-the-apply-method">
+<h3>Transforms: The <code class="docutils literal notranslate"><span class="pre">apply</span></code> Method<a class="headerlink" href="#transforms-the-apply-method" title="Permalink to this headline">#</a></h3>
 <p>As we saw in the <a class="reference internal" href="basics.html"><span class="doc">basics lecture</span></a>, we can apply transforms to DataFrames.</p>
 <p>We can do the same with GroupBy objects using the <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method.</p>
 <p>Let’s see an example.</p>
@@ -950,9 +949,9 @@ that would appear in the result of the call to <code class="docutils literal not
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#pd-grp-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="pd-grouper">
-<h3><code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code><a class="headerlink" href="#pd-grouper" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pd-grouper">
+<h3><code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code><a class="headerlink" href="#pd-grouper" title="Permalink to this headline">#</a></h3>
 <p>Sometimes, in order to construct the groups you want, you need to give
 pandas more information than just a column name.</p>
 <p>Some examples are:</p>
@@ -977,7 +976,7 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4449/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4335/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
   start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
 </pre></div>
 </div>
@@ -1285,10 +1284,10 @@ denotes a column name</p>
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="case-study-airline-delays">
-<h2>Case Study: Airline Delays<a class="headerlink" href="#case-study-airline-delays" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="case-study-airline-delays">
+<h2>Case Study: Airline Delays<a class="headerlink" href="#case-study-airline-delays" title="Permalink to this headline">#</a></h2>
 <p>Let’s apply our new split-apply-combine skills to the airline dataset we
 saw in the <a class="reference internal" href="merge.html"><span class="doc">merge</span></a> lecture.</p>
 <div class="cell docutils container">
@@ -2152,9 +2151,9 @@ different datasets entirely (e.g. we could do the same analysis on
 November 2016 data, with two lines of code).</p>
 <p>These principles can be applied in many settings.</p>
 <p>Keep that in mind as we work through the rest of the materials.</p>
-</div>
-<div class="section" id="exercise-cohort-analysis-using-shopify-data">
-<h2>Exercise: Cohort Analysis using Shopify Data<a class="headerlink" href="#exercise-cohort-analysis-using-shopify-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exercise-cohort-analysis-using-shopify-data">
+<h2>Exercise: Cohort Analysis using Shopify Data<a class="headerlink" href="#exercise-cohort-analysis-using-shopify-data" title="Permalink to this headline">#</a></h2>
 <p>The code below will employ a fairly large simulated data set that has the
 properties of a order-detail report from <a class="reference external" href="https://www.shopify.com/">Shopify</a>.</p>
 <p>We’ll first look at the data, and then describe the exercise</p>
@@ -2335,15 +2334,15 @@ complete.</p>
 <p><strong>Want</strong>: Compute the monthly total number of orders, total sales, and
 total quantity separated by customer cohort and customer type.</p>
 <p>Read that carefully one more time…</p>
-<div class="section" id="extended-exercise">
-<h3>Extended Exercise<a class="headerlink" href="#extended-exercise" title="Permalink to this headline">¶</a></h3>
+<section id="extended-exercise">
+<h3>Extended Exercise<a class="headerlink" href="#extended-exercise" title="Permalink to this headline">#</a></h3>
 <p>Using the reshape and <code class="docutils literal notranslate"><span class="pre">groupby</span></code> tools you have learned, apply the want
 operator described above.</p>
 <p>See below for advice on how to proceed.</p>
 <p>When you are finished, you should have something that looks like this:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="groupby\_cohort\_analysis\_exercise\_output.png" src="../_images/groupby_cohort_analysis_exercise_output.png" />
-</div>
+</figure>
 <p>Two notes on the table above:</p>
 <p>Your actual output will be much bigger. This is just to give you an
 : idea of what it might look like.</p>
@@ -2395,12 +2394,12 @@ entry by checking for missing data in the new column.</p>
 move things to the right place in rows and columns.</p></li>
 </ol>
 <p>Good luck!</p>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="pd-grp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="pd-grp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Look closely at the output of the cells below.</p>
 <p>How did pandas compute the sum of <code class="docutils literal notranslate"><span class="pre">gbA</span></code>? What happened to the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
 entries in column <code class="docutils literal notranslate"><span class="pre">C</span></code>?</p>
@@ -2425,9 +2424,9 @@ happened to the <code class="docutils literal notranslate"><span class="pre">NaN
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-grp-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Use introspection (tab completion) to see what other aggregations are
 defined for GroupBy objects.</p>
 <p>Pick three and evaluate them in the cells below.</p>
@@ -2455,9 +2454,9 @@ output of <code class="docutils literal notranslate"><span class="pre">gbA.sum()
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-grp-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This exercise has a few steps:</p>
@@ -2498,9 +2497,9 @@ new columns.</p>
 </div>
 <p>Note that if the group keys remained in the index as the <code class="docutils literal notranslate"><span class="pre">.apply</span></code>’s output, the merge/join step would have been complicated.</p>
 <p>(<a class="reference internal" href="#pd-grp-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Think about what is shown in the the plots above.</p>
 <p>Answer questions like:</p>
 <ul class="simple">
@@ -2517,9 +2516,9 @@ new columns.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-grp-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Verify that we wrote the functions properly by setting the arguments to
 appropriate values to replicate the plots from above.</p>
 <div class="cell docutils container">
@@ -2537,9 +2536,9 @@ appropriate values to replicate the plots from above.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-grp-dir5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

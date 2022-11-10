@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Time series &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -307,8 +306,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="time-series">
-<h1>Time series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="time-series">
+<h1>Time series<a class="headerlink" href="#time-series" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../python_fundamentals/functions.html"><span class="doc">Python functions</span></a></p></li>
@@ -348,8 +347,8 @@ between the two</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<section id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">#</a></h2>
 <p>pandas has extensive support for handling dates and times.</p>
 <p>We will loosely refer to data with date or time information as time
 series data.</p>
@@ -368,9 +367,9 @@ the index</p></li>
 functionality pandas offers, and we urge you to refer to the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/timeseries.html">official
 documentation</a>
 for more information.</p>
-</div>
-<div class="section" id="parsing-strings-as-dates">
-<h2>Parsing Strings as Dates<a class="headerlink" href="#parsing-strings-as-dates" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="parsing-strings-as-dates">
+<h2>Parsing Strings as Dates<a class="headerlink" href="#parsing-strings-as-dates" title="Permalink to this headline">#</a></h2>
 <p>When working with time series data, we almost always receive the data
 with dates encoded as strings.</p>
 <p>Hopefully, the date strings follow a structured format or pattern.</p>
@@ -443,9 +442,9 @@ an Amazon transaction report as</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:606,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:605,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:321,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:320,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
 
 <span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="k">else</span><span class="p">:</span>
@@ -461,7 +460,7 @@ an Amazon transaction report as</p>
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:617,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:616,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
 <span class="ne">TypeError</span>: invalid string coercion to datetime for &quot;2017-12-25T00:00:00+ 00 :00&quot; at position 0
 
@@ -471,55 +470,55 @@ an Amazon transaction report as</p>
 <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1103,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1102</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1103</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span>         <span class="n">result</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># TODO: avoid this kludge.</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1102,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1102</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="n">result</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># TODO: avoid this kludge.</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:439,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">439</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">arg</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># is in UTC</span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span>     <span class="n">dta</span> <span class="o">=</span> <span class="n">DatetimeArray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tz_to_dtype</span><span class="p">(</span><span class="n">tz_parsed</span><span class="p">))</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:438,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">438</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="n">arg</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="c1"># is in UTC</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="n">dta</span> <span class="o">=</span> <span class="n">DatetimeArray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tz_to_dtype</span><span class="p">(</span><span class="n">tz_parsed</span><span class="p">))</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2178,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2176</span> <span class="n">order</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span> <span class="k">if</span> <span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2177</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2178</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2179</span>         <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2180</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2181</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2182</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2183</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2184</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2185</span>         <span class="n">allow_mixed</span><span class="o">=</span><span class="n">allow_mixed</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2186</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2187</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2188</span> <span class="k">except</span> <span class="ne">OverflowError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2189</span>     <span class="c1"># Exception is raised when a part of date is greater than 32 bit signed int</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2177,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2175</span> <span class="n">order</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span> <span class="k">if</span> <span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2176</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2177</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2178</span>         <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">2179</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2180</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2181</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2182</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2183</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2184</span>         <span class="n">allow_mixed</span><span class="o">=</span><span class="n">allow_mixed</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2185</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2186</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2187</span> <span class="k">except</span> <span class="ne">OverflowError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2188</span>     <span class="c1"># Exception is raised when a part of date is greater than 32 bit signed int</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:428,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:427,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:684,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:683,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:830,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:829,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:820,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:819,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:321,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:320,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
 
 <span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -581,8 +580,8 @@ in the <code class="docutils literal notranslate"><span class="pre">format</span
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-tim-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="multiple-dates">
-<h3>Multiple Dates<a class="headerlink" href="#multiple-dates" title="Permalink to this headline">¶</a></h3>
+<section id="multiple-dates">
+<h3>Multiple Dates<a class="headerlink" href="#multiple-dates" title="Permalink to this headline">#</a></h3>
 <p>If we have dates in a Series (e.g. column of DataFrame) or a list, we
 can pass the entire collection to <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code> and get a
 collection of dates back.</p>
@@ -600,10 +599,10 @@ a single date.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="date-formatting">
-<h2>Date Formatting<a class="headerlink" href="#date-formatting" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="date-formatting">
+<h2>Date Formatting<a class="headerlink" href="#date-formatting" title="Permalink to this headline">#</a></h2>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">%</span></code>pattern format to have pandas write <code class="docutils literal notranslate"><span class="pre">datetime</span></code>
 objects as specially formatted strings using the <code class="docutils literal notranslate"><span class="pre">strftime</span></code> (string
 format time) method.</p>
@@ -624,9 +623,9 @@ format time) method.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#pd-tim-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="extracting-data">
-<h2>Extracting Data<a class="headerlink" href="#extracting-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="extracting-data">
+<h2>Extracting Data<a class="headerlink" href="#extracting-data" title="Permalink to this headline">#</a></h2>
 <p>When the index of a DataFrame has date information and pandas
 recognizes the values as <code class="docutils literal notranslate"><span class="pre">datetime</span></code> values, we can leverage some
 convenient indexing features for extracting data.</p>
@@ -1837,9 +1836,9 @@ date for selection.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#pd-tim-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="accessing-date-properties">
-<h2>Accessing Date Properties<a class="headerlink" href="#accessing-date-properties" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-date-properties">
+<h2>Accessing Date Properties<a class="headerlink" href="#accessing-date-properties" title="Permalink to this headline">#</a></h2>
 <p>Sometimes, we would like to directly access a part of the date/time.</p>
 <p>If our date/time information is in the index, we can to <code class="docutils literal notranslate"><span class="pre">df.index.XX</span></code>
 where <code class="docutils literal notranslate"><span class="pre">XX</span></code> is replaced by <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, or whatever we would
@@ -2009,9 +2008,9 @@ Name: Date, dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="leads-and-lags-df-shift">
-<h2>Leads and Lags: <code class="docutils literal notranslate"><span class="pre">df.shift</span></code><a class="headerlink" href="#leads-and-lags-df-shift" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="leads-and-lags-df-shift">
+<h2>Leads and Lags: <code class="docutils literal notranslate"><span class="pre">df.shift</span></code><a class="headerlink" href="#leads-and-lags-df-shift" title="Permalink to this headline">#</a></h2>
 <p>When doing time series analysis, we often want to compare data at one
 date against data at another date.</p>
 <p>pandas can help us with this if we leverage the <code class="docutils literal notranslate"><span class="pre">shift</span></code> method.</p>
@@ -2622,9 +2621,9 @@ data.)</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#pd-tim-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="rolling-computations-rolling">
-<h2>Rolling Computations: <code class="docutils literal notranslate"><span class="pre">.rolling</span></code><a class="headerlink" href="#rolling-computations-rolling" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="rolling-computations-rolling">
+<h2>Rolling Computations: <code class="docutils literal notranslate"><span class="pre">.rolling</span></code><a class="headerlink" href="#rolling-computations-rolling" title="Permalink to this headline">#</a></h2>
 <p>pandas has facilities that enable easy computation of <em>rolling
 statistics</em>.</p>
 <p>These are best understood by example, so we will dive right in.</p>
@@ -2869,7 +2868,7 @@ window for the whole dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd5929f8220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f06ba811940&gt;
 </pre></div>
 </div>
 <img alt="../_images/timeseries_54_1.png" src="../_images/timeseries_54_1.png" />
@@ -3009,9 +3008,9 @@ price at the start of the window.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 6 in the <a class="reference internal" href="#pd-tim-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="changing-frequencies-resample">
-<h2>Changing Frequencies: <code class="docutils literal notranslate"><span class="pre">.resample</span></code><a class="headerlink" href="#changing-frequencies-resample" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="changing-frequencies-resample">
+<h2>Changing Frequencies: <code class="docutils literal notranslate"><span class="pre">.resample</span></code><a class="headerlink" href="#changing-frequencies-resample" title="Permalink to this headline">#</a></h2>
 <p>In addition to computing rolling statistics, we can also change the
 frequency of the data.</p>
 <p>For example, instead of a monthly moving average, suppose that we wanted
@@ -3713,9 +3712,9 @@ price on the first day of the month.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 8 in the <a class="reference internal" href="#pd-tim-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="optional-api-keys">
-<h2>Optional: API keys<a class="headerlink" href="#optional-api-keys" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="optional-api-keys">
+<h2>Optional: API keys<a class="headerlink" href="#optional-api-keys" title="Permalink to this headline">#</a></h2>
 <p>Recall above that we had the line of code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quandl</span><span class="o">.</span><span class="n">ApiConfig</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;Dn6BtVoBhzuKTuyo6hbp&quot;</span>
 </pre></div>
@@ -3725,11 +3724,11 @@ price on the first day of the month.</p>
 <p>Using this password, we were able to make a request to Quandl to obtain data directly from them.</p>
 <p>The API key used here is one that we requested on behalf of this course.</p>
 <p>If you plan to use Quandl more extensively, you should obtain your own personal API key from <a class="reference external" href="https://docs.quandl.com/docs#section-authentication">their website</a> and re-run the <code class="docutils literal notranslate"><span class="pre">quandl.ApiConfig.api_key...</span></code> line of code with your new API key on the right-hand side.</p>
-</div>
-<div class="section" id="exercises">
-<span id="pd-tim-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercises">
+<span id="pd-tim-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>By referring to table found at the link above, figure out the correct argument to
 pass as <code class="docutils literal notranslate"><span class="pre">format</span></code> in order to parse the dates in the next three cells below.</p>
 <p>Test your work by passing your format string to <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>.</p>
@@ -3755,9 +3754,9 @@ pass as <code class="docutils literal notranslate"><span class="pre">format</spa
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-tim-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code> to express the birthday of one of your friends
 or family members as a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object.</p>
 <p>Then use the <code class="docutils literal notranslate"><span class="pre">strftime</span></code> method to write a message of the format:</p>
@@ -3766,9 +3765,9 @@ or family members as a <code class="docutils literal notranslate"><span class="p
 </div>
 <p>(where the name and date are replaced by the appropriate values)</p>
 <p>(<a class="reference internal" href="#pd-tim-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>For each item in the list, extract the specified data from <code class="docutils literal notranslate"><span class="pre">btc_usd</span></code>:</p>
 <ul class="simple">
 <li><p>July 2017 through August 2017 (inclusive)</p></li>
@@ -3776,9 +3775,9 @@ or family members as a <code class="docutils literal notranslate"><span class="p
 <li><p>October 31, 2017</p></li>
 </ul>
 <p>(<a class="reference internal" href="#pd-tim-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">shift</span></code> function, determine the week with the largest percent change
 in the volume of trades (the <code class="docutils literal notranslate"><span class="pre">&quot;Volume</span> <span class="pre">(BTC)&quot;</span></code> column).</p>
 <p>Repeat the analysis at the bi-weekly and monthly frequencies.</p>
@@ -3798,9 +3797,9 @@ in the volume of trades (the <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-tim-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Imagine that you have access to the <a class="reference external" href="https://en.wikipedia.org/wiki/DeLorean_time_machine">DeLorean time machine</a>
 from “Back to the Future”.</p>
 <p>You are allowed to use the DeLorean only once, subject to the following
@@ -3821,9 +3820,9 @@ we have written out our answer.)</p>
 <p>To make this decision, we want to know …</p>
 <p><strong>Your answer here</strong></p>
 <p>(<a class="reference internal" href="#pd-tim-dir5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
 <p>Do the following:</p>
 <ol class="simple">
 <li><p>Write a pandas function that implements your strategy.</p></li>
@@ -3846,9 +3845,9 @@ we have written out our answer.)</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-tim-dir6"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
 <p>Now suppose you still have access to the DeLorean, but the conditions are
 slightly different.</p>
 <p>You may now:</p>
@@ -3869,9 +3868,9 @@ our answer.)</p>
 <p>To make the optimal decision we need …</p>
 <p><strong>Your answer here</strong></p>
 <p>(<a class="reference internal" href="#pd-tim-dir7"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
 <p>Do the following:</p>
 <ol class="simple">
 <li><p>Write a pandas function that implements your strategy.</p></li>
@@ -3895,9 +3894,9 @@ our answer.)</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-tim-dir8"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

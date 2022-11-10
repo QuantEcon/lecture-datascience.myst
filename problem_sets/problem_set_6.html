@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Problem Set 6 &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -260,8 +259,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="problem-set-6">
-<h1>Problem Set 6<a class="headerlink" href="#problem-set-6" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-6">
+<h1>Problem Set 6<a class="headerlink" href="#problem-set-6" title="Permalink to this headline">#</a></h1>
 <p>See <a class="reference internal" href="../pandas/merge.html"><span class="doc">Merge</span></a>, <a class="reference internal" href="../pandas/reshape.html"><span class="doc">Reshape</span></a>, and <a class="reference internal" href="../pandas/groupby.html"><span class="doc">GroupBy</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -274,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="questions-1-7">
-<h2>Questions 1-7<a class="headerlink" href="#questions-1-7" title="Permalink to this headline">¶</a></h2>
+<section id="questions-1-7">
+<h2>Questions 1-7<a class="headerlink" href="#questions-1-7" title="Permalink to this headline">#</a></h2>
 <p>Lets start with a relatively straightforward exercise before we get to the really fun stuff.</p>
 <p>The following code loads a cleaned piece of census data from Statistics Canada.</p>
 <div class="cell docutils container">
@@ -365,15 +364,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>A <em>census division</em> is a geographical area, smaller than a Canadian province, that is used to
 organize information at a slightly more granular level than by province or by city. The census
 divisions are shown below.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="canada_censusdivision_map.png" src="../_images/canada_censusdivisions_map.png" />
-</div>
+</figure>
 <p>The data above contains information on the population, percent of population with a college
 degree, percent of population who own their house/apartment, and the median after-tax income at the
 <em>census division</em> level.</p>
 <p>Hint: The <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is the key here.  You will need to practice different split, apply, and combine options.</p>
-<div class="section" id="question-1">
-<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h3>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h3>
 <p>Assume that you have a separate data source with province codes and names.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -586,9 +585,9 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="question-2">
-<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h3>
 <p>Which province has the highest population? Which has the lowest?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,9 +596,9 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-3">
-<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h3>
 <p>Show a bar plot and a pie plot of the province populations.  Hint: After the split-apply-combine, you can use <code class="docutils literal notranslate"><span class="pre">.plot.bar()</span></code> or <code class="docutils literal notranslate"><span class="pre">.plot.pie()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,9 +607,9 @@ name. Hint: You need to figure out which “key” matches in the merge, and don
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3>Question 3<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Question 3<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Which province has the highest percent of individuals with a college education? Which has the
 lowest?</p>
 <p>Hint: Remember to weight this calculation by population!</p>
@@ -621,9 +620,9 @@ lowest?</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-4">
-<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">#</a></h3>
 <p>What is the census division with the highest median income in each province?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -632,9 +631,9 @@ lowest?</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-5">
-<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">#</a></h3>
 <p>By province, what is the total population of census divisions where more than 80 percent of the population own houses ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,9 +642,9 @@ lowest?</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-6">
-<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">#</a></h3>
 <p>By province, what is the average proportion of college-educated individuals in census divisions
 where more than 80 percent of the population own houses?</p>
 <div class="cell docutils container">
@@ -655,9 +654,9 @@ where more than 80 percent of the population own houses?</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-7">
-<h3>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-7">
+<h3>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">#</a></h3>
 <p>Classify the census divisions as low, medium, and highly-educated by using the college-educated proportions,
 where “low” indicates that less than 10 percent of the area is college-educated, “medium” indicates between 10 and 20 percent is college-educated, and “high” indicates more than 20 percent.</p>
 <p>Based on that classification, find the average median income across census divisions for each category.</p>
@@ -668,10 +667,10 @@ where “low” indicates that less than 10 percent of the area is college-educa
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="questions-8-9">
-<h2>Questions 8-9<a class="headerlink" href="#questions-8-9" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="questions-8-9">
+<h2>Questions 8-9<a class="headerlink" href="#questions-8-9" title="Permalink to this headline">#</a></h2>
 <p>Let’s look at another example.</p>
 <p>This time, we will use a dataset from the <a class="reference external" href="https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp">Bureau of Transportation
 Statistics</a>
@@ -766,8 +765,8 @@ memory usage: 14.1+ MB
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Carrier</span></code> column identifies the airline while the <code class="docutils literal notranslate"><span class="pre">CarrierDelay</span></code>
 reports the total delay, in minutes, that was the “carrier’s fault”.</p>
-<div class="section" id="question-8">
-<h3>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">¶</a></h3>
+<section id="question-8">
+<h3>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">#</a></h3>
 <p>Determine the 10 airlines which, on average, contribute most to delays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -777,9 +776,9 @@ reports the total delay, in minutes, that was the “carrier’s fault”.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-9">
-<h3>Question 9<a class="headerlink" href="#question-9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="question-9">
+<h3>Question 9<a class="headerlink" href="#question-9" title="Permalink to this headline">#</a></h3>
 <p>One issue with this dataset is that we might not know what all those two letter carrier codes are!</p>
 <p>Thankfully, we have a second dataset that maps two-letter codes
 to full airline names:</p>
@@ -853,10 +852,10 @@ to full airline names:</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="question-10">
-<h2>Question 10<a class="headerlink" href="#question-10" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="question-10">
+<h2>Question 10<a class="headerlink" href="#question-10" title="Permalink to this headline">#</a></h2>
 <p>In this question, we will load data from the World Bank. World Bank data is often stored in formats containing vestigial columns because of their data format standardization.</p>
 <p>This particular data contains the world’s age dependency ratios (old) across countries. The ratio is the number of people who are
 above 65 divided by the number of people between 16 and 65 and measures how many working
@@ -998,8 +997,8 @@ think a better organization method?</p>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

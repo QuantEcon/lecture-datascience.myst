@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Merge &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -410,8 +409,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="merge">
-<h1>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="merge">
+<h1>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="reshape.html"><span class="doc">Reshape</span></a></p></li>
@@ -435,8 +434,8 @@ Statistics</a></p></li>
 <span class="c1">#! pip install </span>
 </pre></div>
 </div>
-<div class="section" id="combining-datasets">
-<h2>Combining Datasets<a class="headerlink" href="#combining-datasets" title="Permalink to this headline">¶</a></h2>
+<section id="combining-datasets">
+<h2>Combining Datasets<a class="headerlink" href="#combining-datasets" title="Permalink to this headline">#</a></h2>
 <p>Often, we will want perform joint analysis on data from different sources.</p>
 <p>For example, when analyzing the regional sales for a company, we might
 want to include industry aggregates or demographic information for each
@@ -851,9 +850,9 @@ aligned.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">df1.join(df2)</span></code></p></li>
 </ol>
 <p>We’ll look at each one.</p>
-</div>
-<div class="section" id="pd-concat">
-<h2><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code><a class="headerlink" href="#pd-concat" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pd-concat">
+<h2><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code><a class="headerlink" href="#pd-concat" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> function is used to stack two or more DataFrames
 together.</p>
 <p>An example of when you might want to do this is if you have monthly data
@@ -869,8 +868,8 @@ that specifies whether a particular operation should happen down rows
 will stack DataFrames on top of one another while <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> stacks them
 side by side.</p>
 <p>We’ll look at each case separately.</p>
-<div class="section" id="axis-0">
-<h3><code class="docutils literal notranslate"><span class="pre">axis=0</span></code><a class="headerlink" href="#axis-0" title="Permalink to this headline">¶</a></h3>
+<section id="axis-0">
+<h3><code class="docutils literal notranslate"><span class="pre">axis=0</span></code><a class="headerlink" href="#axis-0" title="Permalink to this headline">#</a></h3>
 <p>When we call <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> and set <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>, the list of DataFrames
 passed in the first argument will be stacked on top of one another.</p>
 <p>Let’s try it out here.</p>
@@ -1012,9 +1011,9 @@ DataFrames.</p>
 <li><p>For columns that appeared only in one input, the value for all row labels
 originating from a different input is equal to <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (marked as missing).</p></li>
 </ul>
-</div>
-<div class="section" id="axis-1">
-<h3><code class="docutils literal notranslate"><span class="pre">axis=1</span></code><a class="headerlink" href="#axis-1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="axis-1">
+<h3><code class="docutils literal notranslate"><span class="pre">axis=1</span></code><a class="headerlink" href="#axis-1" title="Permalink to this headline">#</a></h3>
 <p>In this example, concatenating by stacking
 side-by-side makes more sense.</p>
 <p>We accomplish this by passing <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code>:</p>
@@ -1138,10 +1137,10 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="pd-merge">
-<h2><code class="docutils literal notranslate"><span class="pre">pd.merge</span></code><a class="headerlink" href="#pd-merge" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="pd-merge">
+<h2><code class="docutils literal notranslate"><span class="pre">pd.merge</span></code><a class="headerlink" href="#pd-merge" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pd.merge</span></code> operates on two DataFrames at a time and is primarily used
 to bring columns from one DataFrame into another, <em>aligning</em> data based
 on one or more “key” columns.</p>
@@ -1500,8 +1499,8 @@ that in the first step when all columns are copied over, <code class="docutils l
 </table>
 </div></div></div>
 </div>
-<div class="section" id="multiple-columns">
-<h3>Multiple Columns<a class="headerlink" href="#multiple-columns" title="Permalink to this headline">¶</a></h3>
+<section id="multiple-columns">
+<h3>Multiple Columns<a class="headerlink" href="#multiple-columns" title="Permalink to this headline">#</a></h3>
 <p>Sometimes, we need to merge multiple columns.</p>
 <p>For example our <code class="docutils literal notranslate"><span class="pre">pop</span></code> and <code class="docutils literal notranslate"><span class="pre">wdi2016_17</span></code> DataFrames both have observations
 organized by country and year.</p>
@@ -1686,10 +1685,10 @@ dtype: float64
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-mrg-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="arguments-to-merge">
-<h2>Arguments to <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#arguments-to-merge" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="arguments-to-merge">
+<h2>Arguments to <code class="docutils literal notranslate"><span class="pre">merge</span></code><a class="headerlink" href="#arguments-to-merge" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">pd.merge</span></code> function can take many optional arguments.</p>
 <p>We’ll talk about a few of the most commonly-used ones here and refer you
 to the
@@ -1697,8 +1696,8 @@ to the
 for more details.</p>
 <p>We’ll follow the pandas convention and refer to the first argument to
 <code class="docutils literal notranslate"><span class="pre">pd.merge</span></code> as <code class="docutils literal notranslate"><span class="pre">left</span></code> and call the second <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p>
-<div class="section" id="on">
-<h3><code class="docutils literal notranslate"><span class="pre">on</span></code><a class="headerlink" href="#on" title="Permalink to this headline">¶</a></h3>
+<section id="on">
+<h3><code class="docutils literal notranslate"><span class="pre">on</span></code><a class="headerlink" href="#on" title="Permalink to this headline">#</a></h3>
 <p>We have already seen this one used before, but we want to point out that on
 is optional.</p>
 <p>If nothing is given for this argument, pandas will use <strong>all</strong> columns
@@ -1869,9 +1868,9 @@ DataFrames, so it is used for <code class="docutils literal notranslate"><span c
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="left-on-right-on">
-<h3><code class="docutils literal notranslate"><span class="pre">left_on</span></code>, <code class="docutils literal notranslate"><span class="pre">right_on</span></code><a class="headerlink" href="#left-on-right-on" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="left-on-right-on">
+<h3><code class="docutils literal notranslate"><span class="pre">left_on</span></code>, <code class="docutils literal notranslate"><span class="pre">right_on</span></code><a class="headerlink" href="#left-on-right-on" title="Permalink to this headline">#</a></h3>
 <p>Above, we used the <code class="docutils literal notranslate"><span class="pre">on</span></code> argument to identify a column in both <code class="docutils literal notranslate"><span class="pre">left</span></code>
 and <code class="docutils literal notranslate"><span class="pre">right</span></code> that was used to align data.</p>
 <p>Sometimes, both DataFrames don’t have the same name for this column.</p>
@@ -1962,9 +1961,9 @@ DataFrames do both have the <code class="docutils literal notranslate"><span cla
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="left-index-right-index">
-<h3><code class="docutils literal notranslate"><span class="pre">left_index</span></code>, <code class="docutils literal notranslate"><span class="pre">right_index</span></code><a class="headerlink" href="#left-index-right-index" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="left-index-right-index">
+<h3><code class="docutils literal notranslate"><span class="pre">left_index</span></code>, <code class="docutils literal notranslate"><span class="pre">right_index</span></code><a class="headerlink" href="#left-index-right-index" title="Permalink to this headline">#</a></h3>
 <p>Sometimes, as in our example, the key used to align data is actually in the
 index instead of one of the columns.</p>
 <p>In this case, we can use the <code class="docutils literal notranslate"><span class="pre">left_index</span></code> or <code class="docutils literal notranslate"><span class="pre">right_index</span></code> arguments.</p>
@@ -2053,18 +2052,18 @@ index instead of one of the columns.</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="how">
-<h3><code class="docutils literal notranslate"><span class="pre">how</span></code><a class="headerlink" href="#how" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="how">
+<h3><code class="docutils literal notranslate"><span class="pre">how</span></code><a class="headerlink" href="#how" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">how</span></code> is perhaps the most powerful, but most conceptually
 difficult of the arguments we will cover.</p>
 <p>This argument controls which values from the key column(s) appear in the
 output.</p>
 <p>The 4 possible options for this argument are summarized in
 the image below.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="merge\_venns.png" src="../_images/merge_venns.png" />
-</div>
+</figure>
 <p>In words, we have:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">left</span></code>: Default and what we described above. It uses
@@ -2555,9 +2554,9 @@ illustrate the <code class="docutils literal notranslate"><span class="pre">how<
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#pd-mrg-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="df-merge-df2">
-<h3><code class="docutils literal notranslate"><span class="pre">df.merge(df2)</span></code><a class="headerlink" href="#df-merge-df2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="df-merge-df2">
+<h3><code class="docutils literal notranslate"><span class="pre">df.merge(df2)</span></code><a class="headerlink" href="#df-merge-df2" title="Permalink to this headline">#</a></h3>
 <p>Note that the DataFrame type has a <code class="docutils literal notranslate"><span class="pre">merge</span></code> <em>method</em>.</p>
 <p>It is the same as the function we have been working with, but passes the
 DataFrame before the period as <code class="docutils literal notranslate"><span class="pre">left</span></code>.</p>
@@ -2654,10 +2653,10 @@ DataFrame before the period as <code class="docutils literal notranslate"><span 
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="df-join">
-<h2><code class="docutils literal notranslate"><span class="pre">df.join</span></code><a class="headerlink" href="#df-join" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="df-join">
+<h2><code class="docutils literal notranslate"><span class="pre">df.join</span></code><a class="headerlink" href="#df-join" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">join</span></code> method for a DataFrame is very similar to the <code class="docutils literal notranslate"><span class="pre">merge</span></code>
 method described above, but only allows you to use the index of the
 <code class="docutils literal notranslate"><span class="pre">right</span></code> DataFrame as the join key.</p>
@@ -2834,9 +2833,9 @@ are in the index.</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="case-study">
-<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="case-study">
+<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this headline">#</a></h2>
 <p>Let’s put these tools to practice by loading some real datasets and
 seeing how these functions can be applied.</p>
 <p>We’ll analyze ratings of books from the website <a class="reference external" href="https://www.goodreads.com/">Goodreads</a>.</p>
@@ -3224,8 +3223,8 @@ Name: user_id, dtype: int64
 </div>
 <p>Nice! From the picture above, the new users look much more
 likely to leave 5 star ratings than more experienced users.</p>
-<div class="section" id="book-data">
-<h3>Book Data<a class="headerlink" href="#book-data" title="Permalink to this headline">¶</a></h3>
+<section id="book-data">
+<h3>Book Data<a class="headerlink" href="#book-data" title="Permalink to this headline">#</a></h3>
 <p>We know what you are probably thinking: “Isn’t this a lecture on merging?
 Why are we only using one dataset?”</p>
 <p>We hear you.</p>
@@ -3531,10 +3530,10 @@ rated books on Goodreads.</p>
 </div>
 </div>
 <p>It looks like most books have an average rating of just below 4.</p>
-</div>
-</div>
-<div class="section" id="extra-example-airline-delays">
-<h2>Extra Example: Airline Delays<a class="headerlink" href="#extra-example-airline-delays" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="extra-example-airline-delays">
+<h2>Extra Example: Airline Delays<a class="headerlink" href="#extra-example-airline-delays" title="Permalink to this headline">#</a></h2>
 <p>Let’s look at one more example.</p>
 <p>This time, we will use a dataset from the <a class="reference external" href="https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp">Bureau of Transportation
 Statistics</a>
@@ -3887,9 +3886,9 @@ flying…</p>
 </div>
 <p>Based on that information, which airlines would you avoid near
 the holidays?</p>
-</div>
-<div class="section" id="visualizing-merge-operations">
-<h2>Visualizing Merge Operations<a class="headerlink" href="#visualizing-merge-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="visualizing-merge-operations">
+<h2>Visualizing Merge Operations<a class="headerlink" href="#visualizing-merge-operations" title="Permalink to this headline">#</a></h2>
 <p>As we did in the <a class="reference internal" href="reshape.html"><span class="doc">reshape lecture</span></a>, we will visualize the
 various merge operations using artificial DataFrames.</p>
 <p>First, we create some dummy DataFrames.</p>
@@ -4017,8 +4016,8 @@ various merge operations using artificial DataFrames.</p>
 </table>
 </div></div></div>
 </div>
-<div class="section" id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">pd.concat</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Recall that calling <code class="docutils literal notranslate"><span class="pre">pd.concat(...,</span> <span class="pre">axis=0)</span></code> will stack DataFrames on top of
 one another:</p>
 <div class="cell docutils container">
@@ -4114,9 +4113,9 @@ one another:</p>
 </div></div></div>
 </div>
 <p>Here’s how we might visualize that.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="concat\_axis0.gif" src="../_images/concat_axis0.gif" />
-</div>
+</figure>
 <p>We can also set <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to stack side by side.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4220,12 +4219,12 @@ one another:</p>
 </div></div></div>
 </div>
 <p>Here’s how we might visualize that.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="concat\_axis1.gif" src="../_images/concat_axis1.gif" />
-</div>
-</div>
-<div class="section" id="id2">
-<h3><code class="docutils literal notranslate"><span class="pre">pd.merge</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</figure>
+</section>
+<section id="id2">
+<h3><code class="docutils literal notranslate"><span class="pre">pd.merge</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>The animation below shows a visualization of what happens when we call</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4291,9 +4290,9 @@ one another:</p>
 </table>
 </div></div></div>
 </div>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="left\_merge.gif" src="../_images/left_merge.gif" />
-</div>
+</figure>
 <p>Now, let’s focus on what happens when we set <code class="docutils literal notranslate"><span class="pre">how=&quot;right&quot;</span></code>.</p>
 <p>Pay special attention to what happens when filling the output value for
 the key <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
@@ -4368,12 +4367,12 @@ the key <code class="docutils literal notranslate"><span class="pre">A</span></c
 </table>
 </div></div></div>
 </div>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="right\_merge.gif" src="../_images/right_merge.gif" />
-</div>
-</div>
-<div class="section" id="exercises-with-artificial-data">
-<h3>Exercises With Artificial Data<a class="headerlink" href="#exercises-with-artificial-data" title="Permalink to this headline">¶</a></h3>
+</figure>
+</section>
+<section id="exercises-with-artificial-data">
+<h3>Exercises With Artificial Data<a class="headerlink" href="#exercises-with-artificial-data" title="Permalink to this headline">#</a></h3>
 <div class="admonition-exercise admonition" id="pd-mrg-dir5">
 <p class="admonition-title">Exercise</p>
 <p>See exercise 5 in the <a class="reference internal" href="#pd-mrg-ex"><span class="std std-ref">exercise list</span></a>.</p>
@@ -4386,12 +4385,12 @@ the key <code class="docutils literal notranslate"><span class="pre">A</span></c
 <p class="admonition-title">Exercise</p>
 <p>See exercise 7 in the <a class="reference internal" href="#pd-mrg-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="pd-mrg-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="pd-mrg-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Use your new <code class="docutils literal notranslate"><span class="pre">merge</span></code> skills to answer the final question from above: What
 is the population density of each country? How much does it change over
 time?</p>
@@ -4403,9 +4402,9 @@ time?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Compare the <code class="docutils literal notranslate"><span class="pre">how=&quot;left&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">how=&quot;inner&quot;</span></code> options using the
 DataFrames <code class="docutils literal notranslate"><span class="pre">wdi2017_no_US</span></code> and <code class="docutils literal notranslate"><span class="pre">sq_miles_no_germany</span></code>.</p>
 <p>Are the different? How?</p>
@@ -4421,9 +4420,9 @@ questions.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Can you pick the correct argument for <code class="docutils literal notranslate"><span class="pre">how</span></code> such that <code class="docutils literal notranslate"><span class="pre">pd.merge(wdi2017,</span> <span class="pre">sq_miles,</span> <span class="pre">how=&quot;left&quot;)</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">pd.merge(sq_miles,</span> <span class="pre">wdi2017,</span> <span class="pre">how=XXX)</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4433,9 +4432,9 @@ questions.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Repeat the analysis above to determine the average rating for the books with the
 <em>least</em> number ratings.</p>
 <p>Is there a distinguishable difference in the average rating compared to
@@ -4449,9 +4448,9 @@ the most rated books?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>In writing, describe what the output looks like when you do
 <code class="docutils literal notranslate"><span class="pre">pd.concat([dfL,</span> <span class="pre">dfR],</span> <span class="pre">axis=1)</span></code> (see above and/or run the cell below).</p>
 <p>Be sure to describe things like:</p>
@@ -4468,9 +4467,9 @@ the most rated books?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
 <p>Determine what happens when you run each of the two cells below.</p>
 <p>For each cell, answer the list of questions from the previous exercise.</p>
 <div class="cell tag_remove-output docutils container">
@@ -4490,9 +4489,9 @@ the most rated books?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir6"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
 <p>Describe in words why the output of <code class="docutils literal notranslate"><span class="pre">pd.merge(dfL,</span> <span class="pre">dfR,</span> <span class="pre">how=&quot;right&quot;)</span></code> has more rows than either <code class="docutils literal notranslate"><span class="pre">dfL</span></code> or <code class="docutils literal notranslate"><span class="pre">dfR</span></code>.</p>
 <p>Run the cell below to see the output of that operation.</p>
 <div class="cell tag_remove-output docutils container">
@@ -4503,9 +4502,9 @@ the most rated books?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-mrg-dir7"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

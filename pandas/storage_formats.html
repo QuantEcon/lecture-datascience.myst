@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Storage Formats &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -264,8 +263,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="storage-formats">
-<h1>Storage Formats<a class="headerlink" href="#storage-formats" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="storage-formats">
+<h1>Storage Formats<a class="headerlink" href="#storage-formats" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="intro.html"><span class="doc">Intro to DataFrames and Series</span></a></p></li>
@@ -292,8 +291,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="file-formats">
-<h2>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
+<section id="file-formats">
+<h2>File Formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">#</a></h2>
 <p>Data can be saved in a variety of formats.</p>
 <p>pandas understands how to write and read DataFrames to and from many of
 these formats.</p>
@@ -301,8 +300,8 @@ these formats.</p>
 documentation</a>
 for a full description of how to interact with all the file formats, but
 will briefly discuss a few of them here.</p>
-<div class="section" id="csv">
-<h3>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h3>
+<section id="csv">
+<h3>CSV<a class="headerlink" href="#csv" title="Permalink to this headline">#</a></h3>
 <p><strong>What is it?</strong> CSVs store data as plain text (strings) where each row is a
 line and columns are separated by <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 <p><strong>Pros</strong></p>
@@ -322,9 +321,9 @@ a comma)</p></li>
 <ul class="simple">
 <li><p>A great default option for most use cases</p></li>
 </ul>
-</div>
-<div class="section" id="xlsx">
-<h3>xlsx<a class="headerlink" href="#xlsx" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="xlsx">
+<h3>xlsx<a class="headerlink" href="#xlsx" title="Permalink to this headline">#</a></h3>
 <p><strong>What is it?</strong> xlsx is a binary file format used as Excel’s default.</p>
 <p><strong>Pros</strong>:</p>
 <ul class="simple">
@@ -344,9 +343,9 @@ or programs.</p></li>
 <li><p>When you would like special formatting to be applied to the
 spreadsheet when viewed in Excel</p></li>
 </ul>
-</div>
-<div class="section" id="parquet">
-<h3>Parquet<a class="headerlink" href="#parquet" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="parquet">
+<h3>Parquet<a class="headerlink" href="#parquet" title="Permalink to this headline">#</a></h3>
 <p><strong>What is it?</strong> Parquet is a custom binary format designed for efficient reading and
 writing of data stored in columns.</p>
 <p><strong>Pros</strong>:</p>
@@ -368,9 +367,9 @@ you want to read quickly</p></li>
 <li><p>If you want to store data in an size-and-time-efficient way that may
 be accessed by external systems</p></li>
 </ul>
-</div>
-<div class="section" id="feather">
-<h3>Feather<a class="headerlink" href="#feather" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="feather">
+<h3>Feather<a class="headerlink" href="#feather" title="Permalink to this headline">#</a></h3>
 <p><strong>What is it?</strong> Feather is a custom binary format designed for efficient reading and
 writing of data stored in columns.</p>
 <p><strong>Pros</strong>:</p>
@@ -394,9 +393,9 @@ speeds for unchanging datasets</p></li>
 <li><p>Only use when you will not need to access the data in a programming language
 or software outside of Python, R, and Julia</p></li>
 </ul>
-</div>
-<div class="section" id="sql">
-<h3>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="sql">
+<h3>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">#</a></h3>
 <p><strong>What is it?</strong> SQL is a language used to interact with relational
 databases… <a class="reference external" href="https://en.wikipedia.org/wiki/SQL">more info</a></p>
 <p><strong>Pros</strong>:</p>
@@ -415,10 +414,10 @@ databases… <a class="reference external" href="https://en.wikipedia.org/wiki/S
 </ul>
 <p><strong>NOTE</strong>: We can cover interacting with SQL databases in a dedicated
 lecture – contact us for more information.</p>
-</div>
-</div>
-<div class="section" id="writing-dataframes">
-<h2>Writing DataFrames<a class="headerlink" href="#writing-dataframes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="writing-dataframes">
+<h2>Writing DataFrames<a class="headerlink" href="#writing-dataframes" title="Permalink to this headline">#</a></h2>
 <p>Let’s now talk about saving a DataFrame to a file.</p>
 <p>As a general rule of thumb, if we have a DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> and we would
 like to save to save it as a file of type <code class="docutils literal notranslate"><span class="pre">FOO</span></code>, then we would call
@@ -460,8 +459,8 @@ df2 is approximately 9.9183349609375 MB
 </div>
 </div>
 </div>
-<div class="section" id="df-to-csv">
-<h3><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html">df.to_csv</a><a class="headerlink" href="#df-to-csv" title="Permalink to this headline">¶</a></h3>
+<section id="df-to-csv">
+<h3><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html">df.to_csv</a><a class="headerlink" href="#df-to-csv" title="Permalink to this headline">#</a></h3>
 <p>Let’s start with <code class="docutils literal notranslate"><span class="pre">df.to_csv</span></code>.</p>
 <p>Without any additional arguments, the <code class="docutils literal notranslate"><span class="pre">df.to_csv</span></code> function will return
 a string containing the csv form of the DataFrame:</p>
@@ -521,16 +520,16 @@ the cell)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.07 s, sys: 132 ms, total: 2.2 s
-Wall time: 2.22 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.66 s, sys: 84.7 ms, total: 1.75 s
+Wall time: 1.77 s
 </pre></div>
 </div>
 </div>
 </div>
 <p>As we will see below, this isn’t as fastest file format we could choose.</p>
-</div>
-<div class="section" id="df-to-excel">
-<h3><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_excel.html">df.to_excel</a><a class="headerlink" href="#df-to-excel" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="df-to-excel">
+<h3><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_excel.html">df.to_excel</a><a class="headerlink" href="#df-to-excel" title="Permalink to this headline">#</a></h3>
 <p>When saving a DataFrame to an Excel workbook, we can
 choose both the name of the workbook (file) and the name of the sheet
 within the file where the DataFrame should be written.</p>
@@ -579,9 +578,9 @@ we saw when we ran the code.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="pyarrow-feather-write-feather">
-<h3><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html#pyarrow.feather.write_feather">pyarrow.feather.write_feather</a><a class="headerlink" href="#pyarrow-feather-write-feather" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pyarrow-feather-write-feather">
+<h3><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html#pyarrow.feather.write_feather">pyarrow.feather.write_feather</a><a class="headerlink" href="#pyarrow-feather-write-feather" title="Permalink to this headline">#</a></h3>
 <p>As noted above, the feather file format was developed for very efficient
 reading and writing between Python and your computer.</p>
 <p>Support for this format is provided by a separate Python package called <code class="docutils literal notranslate"><span class="pre">pyarrow</span></code>.</p>
@@ -608,8 +607,8 @@ below into a code cell and execute.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 24.7 ms, sys: 20.1 ms, total: 44.8 ms
-Wall time: 32.7 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5.2 ms, sys: 28.1 ms, total: 33.3 ms
+Wall time: 25 ms
 </pre></div>
 </div>
 </div>
@@ -635,10 +634,10 @@ Wall time: 32.7 ms
 </table>
 <p>As you can see, saving this DataFrame in the feather format was far
 faster than either CSV or Excel.</p>
-</div>
-</div>
-<div class="section" id="reading-files-into-dataframes">
-<h2>Reading Files into DataFrames<a class="headerlink" href="#reading-files-into-dataframes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="reading-files-into-dataframes">
+<h2>Reading Files into DataFrames<a class="headerlink" href="#reading-files-into-dataframes" title="Permalink to this headline">#</a></h2>
 <p>As with the <code class="docutils literal notranslate"><span class="pre">df.to_FOO</span></code> family of methods, there are similar
 <code class="docutils literal notranslate"><span class="pre">pd.read_FOO</span></code> functions. (Note: they are in defined pandas, not as
 methods on a DataFrame.)</p>
@@ -944,9 +943,9 @@ and posted it online.</p>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="practice">
-<h2>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="practice">
+<h2>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">#</a></h2>
 <p>Now it’s your turn…</p>
 <p>In the cell below, the variable <code class="docutils literal notranslate"><span class="pre">url</span></code> contains a web address to a csv
 file containing the result of all NFL games from September 1920 to
@@ -980,8 +979,8 @@ defined as a team with a lower ELO winning the game.</p></li>
 </div>
 </div>
 </div>
-<div class="section" id="cleanup">
-<h3>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h3>
+<section id="cleanup">
+<h3>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">#</a></h3>
 <p>If you want to remove the files we just created, run the following cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -997,9 +996,9 @@ defined as a team with a lower ELO winning the game.</p></li>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

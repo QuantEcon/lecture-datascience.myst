@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Applied Linear Algebra &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -278,8 +277,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="applied-linear-algebra">
-<h1><span class="target" id="index-0"></span>Applied Linear Algebra<a class="headerlink" href="#applied-linear-algebra" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="applied-linear-algebra">
+<h1><span class="target" id="index-0"></span>Applied Linear Algebra<a class="headerlink" href="#applied-linear-algebra" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
@@ -305,19 +304,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="vectors-and-matrices">
-<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="vectors">
-<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h3>
+<section id="vectors-and-matrices">
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">#</a></h2>
+<section id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h3>
 <p>A (N-element) vector is <span class="math notranslate nohighlight">\(N\)</span> numbers stored together.</p>
 <p>We typically write a vector as <span class="math notranslate nohighlight">\(x = \begin{bmatrix} x_1 \\ x_2 \\ \dots \\ x_N \end{bmatrix}\)</span>.</p>
 <p>In numpy terms, a vector is a 1-dimensional array.</p>
 <p>We often think of 2-element vectors as directional lines in the XY axes.</p>
 <p>This image, from the <a class="reference external" href="https://python.quantecon.org/linear_algebra.html">QuantEcon Python lecture</a>
 is an example of what this might look like for the vectors <code class="docutils literal notranslate"><span class="pre">(-4,</span> <span class="pre">3.5)</span></code>, <code class="docutils literal notranslate"><span class="pre">(-3,</span> <span class="pre">3)</span></code>, and <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">4)</span></code>.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="vector.png" src="../_images/vector.png" />
-</div>
+</figure>
 <p>In a previous lecture, we saw some types of operations that can be done on
 vectors, such as</p>
 <div class="cell docutils container">
@@ -426,9 +425,9 @@ equal to <span class="math notranslate nohighlight">\(\sum_{i=1}^N x_i y_i\)</sp
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="matrices">
-<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="matrices">
+<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h3>
 <p>An <span class="math notranslate nohighlight">\(N \times M\)</span> matrix can be thought of as a collection of M
 N-element vectors stacked side-by-side as columns.</p>
 <p>We write a matrix as</p>
@@ -504,9 +503,9 @@ multiplication</em>.</p>
 element found in the ith row and jth column of the matrix <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The image below from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Matrix_multiplication_diagram.svg">Wikipedia</a>,
 by Bilou, shows how matrix multiplication simplifies to a series of dot products:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="matmult.png" src="../_images/mat_mult_wiki_bilou.png" />
-</div>
+</figure>
 <p>After looking at the math and image above, you might have realized that matrix
 multiplication requires very specific matrix shapes!</p>
 <p>For two matrices <span class="math notranslate nohighlight">\(x, y\)</span> to be multiplied, <span class="math notranslate nohighlight">\(x\)</span>
@@ -587,11 +586,11 @@ it is simplest to read and write.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#ex3-3"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="other-linear-algebra-concepts">
-<h3>Other Linear Algebra Concepts<a class="headerlink" href="#other-linear-algebra-concepts" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="transpose">
-<h4>Transpose<a class="headerlink" href="#transpose" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="other-linear-algebra-concepts">
+<h3>Other Linear Algebra Concepts<a class="headerlink" href="#other-linear-algebra-concepts" title="Permalink to this headline">#</a></h3>
+<section id="transpose">
+<h4>Transpose<a class="headerlink" href="#transpose" title="Permalink to this headline">#</a></h4>
 <p>A matrix transpose is an operation that flips all elements of a matrix along the diagonal.</p>
 <p>More formally, the <span class="math notranslate nohighlight">\((i, j)\)</span> element of <span class="math notranslate nohighlight">\(x\)</span> becomes the <span class="math notranslate nohighlight">\((j, i)\)</span> element of
 <span class="math notranslate nohighlight">\(x^T\)</span>.</p>
@@ -630,9 +629,9 @@ x = \begin{bmatrix} 1 &amp; 4 &amp; 7 \\
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="identity-matrix">
-<h4>Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="identity-matrix">
+<h4>Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">#</a></h4>
 <p>In linear algebra, one particular matrix acts very similarly to how 1 behaves for scalar numbers.</p>
 <p>This matrix is known as the <em>identity matrix</em> and is given by</p>
 <div class="math notranslate nohighlight">
@@ -677,9 +676,9 @@ y @ I
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="inverse">
-<h4>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="inverse">
+<h4>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">#</a></h4>
 <p>If you recall, you learned in your primary education about solving equations for certain variables.</p>
 <p>For example, you might have been given the equation</p>
 <div class="math notranslate nohighlight">
@@ -744,18 +743,18 @@ Check that A @ A inverse is I
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="portfolios">
-<h2>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="portfolios">
+<h2>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this headline">#</a></h2>
 <p>In <a class="reference internal" href="../python_fundamentals/control_flow.html"><span class="doc">control flow</span></a>, we learned to value a stream of payoffs from a single
 asset.</p>
 <p>In this section, we generalize this to value a portfolio of multiple assets, or an asset
 that has easily separable components.</p>
 <p>Vectors and inner products give us a convenient way to organize and calculate these payoffs.</p>
-<div class="section" id="static-payoffs">
-<h3>Static Payoffs<a class="headerlink" href="#static-payoffs" title="Permalink to this headline">¶</a></h3>
+<section id="static-payoffs">
+<h3>Static Payoffs<a class="headerlink" href="#static-payoffs" title="Permalink to this headline">#</a></h3>
 <p>As an example, consider a portfolio with 4 units of asset A, 2.5 units of asset B, and 8 units of
 asset C.</p>
 <p>At a particular point in time, the assets pay <span class="math notranslate nohighlight">\(3\)</span>/unit of asset A, <span class="math notranslate nohighlight">\(5\)</span>/unit of B, and
@@ -844,9 +843,9 @@ Calculating with matrices
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="npv-of-a-portfolio">
-<h3>NPV of a Portfolio<a class="headerlink" href="#npv-of-a-portfolio" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="npv-of-a-portfolio">
+<h3>NPV of a Portfolio<a class="headerlink" href="#npv-of-a-portfolio" title="Permalink to this headline">#</a></h3>
 <p>If a set of assets has payoffs over time, we can calculate the NPV of that portfolio in a similar way to the calculation in
 <a class="reference internal" href="../python_fundamentals/control_flow.html#npv"><span class="std std-ref">npv</span></a>.</p>
 <p>First, consider an example with an asset with claims to multiple streams of payoffs which are easily
@@ -985,7 +984,7 @@ V = G \sum_{t=0}^{\infty} \left(\frac{1}{1 + r}\right)^t A^t x_0
 <p>Without proof, and given important assumptions on <span class="math notranslate nohighlight">\(\frac{1}{1 + r}\)</span> and <span class="math notranslate nohighlight">\(A\)</span>, this
 equation reduces to</p>
 <div class="math notranslate nohighlight" id="equation-eq-deterministic-asset-pricing">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-deterministic-asset-pricing" title="Permalink to this equation">¶</a></span>\[V = G \left(I - \frac{1}{1+r} A\right)^{-1} x_0\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-deterministic-asset-pricing" title="Permalink to this equation">#</a></span>\[V = G \left(I - \frac{1}{1+r} A\right)^{-1} x_0\]</div>
 <p>Using the matrix inverse, where <code class="docutils literal notranslate"><span class="pre">I</span></code> is the identity matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1019,9 +1018,9 @@ equation reduces to</p>
 complicated <code class="docutils literal notranslate"><span class="pre">A</span></code> matrices as long as we can write <span class="math notranslate nohighlight">\(x_t\)</span> using <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(x_0\)</span> as
 <span class="math notranslate nohighlight">\(x_t = A^t x_0\)</span> (For an advanced description of this topic, adding randomness, read about
 linear state-space models with Python <a class="reference external" href="https://python.quantecon.org/linear_models.html">https://python.quantecon.org/linear_models.html</a>).</p>
-</div>
-<div class="section" id="unemployment-dynamics">
-<h3>Unemployment Dynamics<a class="headerlink" href="#unemployment-dynamics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unemployment-dynamics">
+<h3>Unemployment Dynamics<a class="headerlink" href="#unemployment-dynamics" title="Permalink to this headline">#</a></h3>
 <p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 5\%\)</span> of workers lose their jobs and
 <span class="math notranslate nohighlight">\(\phi = 10\%\)</span> of unemployed workers find jobs.</p>
 <p>Define the vector <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix} 900,000 &amp; 100,000 \end{bmatrix}\)</span> as the number of
@@ -1113,8 +1112,8 @@ number.</p>
 </div>
 </div>
 <p>The convergence of this system is a property determined by the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
-<p>The long-run distribution of employed and unemployed workers is equal to the largest <a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvector</a>
-of <span class="math notranslate nohighlight">\(A'\)</span>, corresponding to the eigenvalue equal to 1. An eigenvalue of <span class="math notranslate nohighlight">\(A'\)</span> is also known as a “left-eigenvector” of A.</p>
+<p>The long-run distribution of employed and unemployed workers is equal to the <a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvector</a>
+of <span class="math notranslate nohighlight">\(A'\)</span> that corresponds with the eigenvalue equal to 1. (An eigenvector of <span class="math notranslate nohighlight">\(A'\)</span> is also known as a “left-eigenvector” of <span class="math notranslate nohighlight">\(A\)</span>.)</p>
 <p>Let’s have numpy compute the eigenvalues and eigenvectors and compare the results to our simulated results above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1156,12 +1155,12 @@ of <span class="math notranslate nohighlight">\(A'\)</span>, corresponding to th
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#ex3-3"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="ex3-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="ex3-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
 Each of the A assets have a remaining duration of 6 years and pay
@@ -1170,9 +1169,9 @@ of 4 years and pay $500 each year. Alice would like to retire if she
 can sell her assets for more than $500,000. Use vector addition, scalar
 multiplication, and dot products to determine whether she can retire.</p>
 <p>(<a class="reference internal" href="#dir3-3-1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Which of the following operations will work and which will
 create errors because of size issues?</p>
 <p>Test out your intuitions in the code cell below</p>
@@ -1195,9 +1194,9 @@ create errors because of size issues?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3-3-2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Compare the distribution above to the final values of a long simulation.</p>
 <p>If you multiply the distribution by 1,000,000 (the number of workers), do you get (roughly) the same number as the simulation?</p>
 <div class="cell docutils container">
@@ -1208,9 +1207,9 @@ create errors because of size issues?</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3-3-3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

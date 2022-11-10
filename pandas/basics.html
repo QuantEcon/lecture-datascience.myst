@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Basic Functionality &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -312,8 +311,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="basic-functionality">
-<h1>Basic Functionality<a class="headerlink" href="#basic-functionality" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-functionality">
+<h1>Basic Functionality<a class="headerlink" href="#basic-functionality" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="intro.html"><span class="doc">pandas Intro</span></a></p></li>
@@ -338,8 +337,8 @@ own and apply them using <code class="docutils literal notranslate"><span class=
 <span class="c1">#! pip install </span>
 </pre></div>
 </div>
-<div class="section" id="state-unemployment-data">
-<h2>State Unemployment Data<a class="headerlink" href="#state-unemployment-data" title="Permalink to this headline">¶</a></h2>
+<section id="state-unemployment-data">
+<h2>State Unemployment Data<a class="headerlink" href="#state-unemployment-data" title="Permalink to this headline">#</a></h2>
 <p>In this lecture, we will use unemployment data by state at a monthly
 frequency.</p>
 <div class="cell docutils container">
@@ -353,7 +352,7 @@ frequency.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.5.0&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.5.1&#39;
 </pre></div>
 </div>
 </div>
@@ -773,9 +772,9 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-bas-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="dates-in-pandas">
-<h2>Dates in pandas<a class="headerlink" href="#dates-in-pandas" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dates-in-pandas">
+<h2>Dates in pandas<a class="headerlink" href="#dates-in-pandas" title="Permalink to this headline">#</a></h2>
 <p>You might have noticed that our index now has a nice format for the
 dates (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>) rather than just a year.</p>
 <p>This is because the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the index is a variant of <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
@@ -934,9 +933,9 @@ Name: 2000-01-01 00:00:00, dtype: float64
 </div>
 <p>We will learn more about what pandas can do with dates and times in an
 upcoming lecture on time series data.</p>
-</div>
-<div class="section" id="dataframe-aggregations">
-<h2>DataFrame Aggregations<a class="headerlink" href="#dataframe-aggregations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dataframe-aggregations">
+<h2>DataFrame Aggregations<a class="headerlink" href="#dataframe-aggregations" title="Permalink to this headline">#</a></h2>
 <p>Let’s talk about <em>aggregations</em>.</p>
 <p>Loosely speaking, an aggregation is an operation that combines multiple
 values into a single value.</p>
@@ -944,8 +943,8 @@ values into a single value.</p>
 <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2]</span></code>) returns a single number (1).</p>
 <p>We will use aggregations extensively as we analyze and manipulate our data.</p>
 <p>Thankfully, pandas makes this easy!</p>
-<div class="section" id="built-in-aggregations">
-<h3>Built-in Aggregations<a class="headerlink" href="#built-in-aggregations" title="Permalink to this headline">¶</a></h3>
+<section id="built-in-aggregations">
+<h3>Built-in Aggregations<a class="headerlink" href="#built-in-aggregations" title="Permalink to this headline">#</a></h3>
 <p>pandas already has some of the most frequently used aggregations.</p>
 <p>For example:</p>
 <ul class="simple">
@@ -1002,9 +1001,9 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="writing-your-own-aggregation">
-<h3>Writing Your Own Aggregation<a class="headerlink" href="#writing-your-own-aggregation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="writing-your-own-aggregation">
+<h3>Writing Your Own Aggregation<a class="headerlink" href="#writing-your-own-aggregation" title="Permalink to this headline">#</a></h3>
 <p>The built-in aggregations will get us pretty far in our analysis, but
 sometimes we need more flexibility.</p>
 <p>We can have pandas perform custom aggregations by following these two
@@ -1153,10 +1152,10 @@ dtype: object
 <p class="admonition-title">Exercise</p>
 <p>See exercise 2 in the <a class="reference internal" href="#pd-bas-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="transforms">
-<h2>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="transforms">
+<h2>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline">#</a></h2>
 <p>Many analytical operations do not necessarily involve an aggregation.</p>
 <p>The output of a function applied to a Series might need to be a new
 Series.</p>
@@ -1165,8 +1164,8 @@ Series.</p>
 <li><p>Compute the percentage change in unemployment from month to month.</p></li>
 <li><p>Calculate the cumulative sum of elements in each column.</p></li>
 </ul>
-<div class="section" id="built-in-transforms">
-<h3>Built-in Transforms<a class="headerlink" href="#built-in-transforms" title="Permalink to this headline">¶</a></h3>
+<section id="built-in-transforms">
+<h3>Built-in Transforms<a class="headerlink" href="#built-in-transforms" title="Permalink to this headline">#</a></h3>
 <p>pandas comes with many transform functions including:</p>
 <ul class="simple">
 <li><p>Cumulative sum/max/min/product (<code class="docutils literal notranslate"><span class="pre">cum(sum|min|max|prod)</span></code>)</p></li>
@@ -1479,9 +1478,9 @@ Series.</p>
 <li><p><em>Series transforms</em>: functions that take in one Series and produce another Series. The index of the input and output does not need to be the same.</p></li>
 <li><p><em>Scalar transforms</em>: functions that take a single value and produce a single value. An example is the <code class="docutils literal notranslate"><span class="pre">abs</span></code> method, or adding a constant to each value of a Series.</p></li>
 </ol>
-</div>
-<div class="section" id="custom-series-transforms">
-<h3>Custom Series Transforms<a class="headerlink" href="#custom-series-transforms" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="custom-series-transforms">
+<h3>Custom Series Transforms<a class="headerlink" href="#custom-series-transforms" title="Permalink to this headline">#</a></h3>
 <p>pandas also simplifies applying custom Series transforms to a Series or the
 columns of a DataFrame. The steps are:</p>
 <ol class="simple">
@@ -1739,9 +1738,9 @@ dtype: datetime64[ns]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="custom-scalar-transforms">
-<h3>Custom Scalar Transforms<a class="headerlink" href="#custom-scalar-transforms" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="custom-scalar-transforms">
+<h3>Custom Scalar Transforms<a class="headerlink" href="#custom-scalar-transforms" title="Permalink to this headline">#</a></h3>
 <p>As you may have predicted, we can also apply custom scalar transforms to our
 pandas data.</p>
 <p>To do this, we use the following pattern:</p>
@@ -1755,10 +1754,10 @@ transforms.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#pd-bas-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="boolean-selection">
-<h2>Boolean Selection<a class="headerlink" href="#boolean-selection" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="boolean-selection">
+<h2>Boolean Selection<a class="headerlink" href="#boolean-selection" title="Permalink to this headline">#</a></h2>
 <p>We have seen how we can select subsets of data by referring to the index
 or column names.</p>
 <p>However, we often want to select based on conditions met by
@@ -2094,8 +2093,8 @@ to index into a Series or DataFrame.</p>
 </table>
 </div></div></div>
 </div>
-<div class="section" id="creating-boolean-dataframes-series">
-<h3>Creating Boolean DataFrames/Series<a class="headerlink" href="#creating-boolean-dataframes-series" title="Permalink to this headline">¶</a></h3>
+<section id="creating-boolean-dataframes-series">
+<h3>Creating Boolean DataFrames/Series<a class="headerlink" href="#creating-boolean-dataframes-series" title="Permalink to this headline">#</a></h3>
 <p>We can use <a class="reference internal" href="../python_fundamentals/control_flow.html"><span class="doc">conditional statements</span></a> to
 construct Series of booleans from our data.</p>
 <div class="cell docutils container">
@@ -2305,8 +2304,8 @@ dtype: bool
 </table>
 </div></div></div>
 </div>
-<div class="section" id="multiple-conditions">
-<h4>Multiple Conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this headline">¶</a></h4>
+<section id="multiple-conditions">
+<h4>Multiple Conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this headline">#</a></h4>
 <p>In the boolean section of the <a class="reference internal" href="../python_fundamentals/basics.html"><span class="doc">basics lecture</span></a>, we saw
 that we can use the words <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> to combine multiple booleans into
 a single bool.</p>
@@ -2426,9 +2425,9 @@ dtype: bool
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="isin">
-<h4><code class="docutils literal notranslate"><span class="pre">isin</span></code><a class="headerlink" href="#isin" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="isin">
+<h4><code class="docutils literal notranslate"><span class="pre">isin</span></code><a class="headerlink" href="#isin" title="Permalink to this headline">#</a></h4>
 <p>Sometimes, we will want to check whether a data point takes on one of a
 several fixed values.</p>
 <p>We could do this by writing <code class="docutils literal notranslate"><span class="pre">(df[&quot;x&quot;]</span> <span class="pre">==</span> <span class="pre">val_1)</span> <span class="pre">|</span> <span class="pre">(df[&quot;x&quot;]</span> <span class="pre">==</span> <span class="pre">val_2)</span></code>
@@ -2541,9 +2540,9 @@ Name: Michigan, dtype: bool
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="any-and-all">
-<h4><code class="docutils literal notranslate"><span class="pre">.any</span></code> and <code class="docutils literal notranslate"><span class="pre">.all</span></code><a class="headerlink" href="#any-and-all" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="any-and-all">
+<h4><code class="docutils literal notranslate"><span class="pre">.any</span></code> and <code class="docutils literal notranslate"><span class="pre">.all</span></code><a class="headerlink" href="#any-and-all" title="Permalink to this headline">#</a></h4>
 <p>Recall from the boolean section of the <a class="reference internal" href="../python_fundamentals/basics.html"><span class="doc">basics lecture</span></a>
 that the Python functions <code class="docutils literal notranslate"><span class="pre">any</span></code> and <code class="docutils literal notranslate"><span class="pre">all</span></code> are aggregation functions that
 take a collection of booleans and return a single boolean.</p>
@@ -2719,13 +2718,13 @@ dtype: bool
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#pd-bas-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="pd-bas-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="exercises">
+<span id="pd-bas-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Looking at the displayed DataFrame above, can you identify the index? The columns?</p>
 <p>You can use the cell below to verify your visual intuition.</p>
 <div class="cell docutils container">
@@ -2736,9 +2735,9 @@ dtype: bool
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-bas-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Do the following exercises in separate code cells below:</p>
 <ul>
 <li><p>At each date, what is the minimum unemployment rate across all states
@@ -2792,9 +2791,9 @@ variance of their unemployment is above or below 4.</p></li>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-bas-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Imagine that we want to determine whether unemployment was high (&gt; 6.5),
 medium (4.5 &lt; x &lt;= 6.5), or low (&lt;= 4.5) for each state and each month.</p>
 <ol>
@@ -2861,9 +2860,9 @@ with high unemployment? What about medium and low?</p></li>
 </div>
 </div>
 <p>(<a class="reference internal" href="#pd-bas-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>For a single state of your choice, determine what the mean
 unemployment is during “Low”, “Medium”, and “High” unemployment times
@@ -2881,9 +2880,9 @@ months in which the mean unemployment rate in our sample is greater
 than 7.</p></li>
 </ul>
 <p>(<a class="reference internal" href="#pd-bas-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

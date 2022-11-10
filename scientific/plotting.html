@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Plotting &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -224,8 +223,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="plotting">
-<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting">
+<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
@@ -239,8 +238,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="c1">#! pip install </span>
 </pre></div>
 </div>
-<div class="section" id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
 <p>One of the most important outputs of your analysis will be the visualizations that you choose to
 communicate what you’ve discovered.</p>
 <p>Here are what some people – whom we think have earned the right to an opinion on this
@@ -262,9 +261,9 @@ more about what makes a useful visualization.</p>
 <li><p><a class="reference external" href="https://www.amazon.com/Street-Journal-Guide-Information-Graphics/dp/0393347281">The Wall Street Journal Guide to Information Graphics: The Dos and Don’ts of Presenting Data, Facts, and Figures</a> by Dona M Wong</p></li>
 <li><p><a class="reference external" href="http://paldhous.github.io/ucb/2016/dataviz/index.html">Introduction to Data Visualization</a></p></li>
 </ul>
-</div>
-<div class="section" id="matplotlib">
-<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="matplotlib">
+<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
 <p>The most widely used plotting package in Python is matplotlib.</p>
 <p>The standard import alias is</p>
 <div class="cell docutils container">
@@ -288,8 +287,8 @@ inside of the notebook itself instead of creating new windows with the image.</p
 </div>
 </div>
 <p>The commands with <code class="docutils literal notranslate"><span class="pre">%</span></code> before them are called <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">Magics</a>.</p>
-<div class="section" id="first-plot">
-<h3>First Plot<a class="headerlink" href="#first-plot" title="Permalink to this headline">¶</a></h3>
+<section id="first-plot">
+<h3>First Plot<a class="headerlink" href="#first-plot" title="Permalink to this headline">#</a></h3>
 <p>Let’s create our first plot!</p>
 <p>After creating it, we will walk through the steps one-by-one to understand what they do.</p>
 <div class="cell docutils container">
@@ -307,7 +306,7 @@ inside of the notebook itself instead of creating new windows with the image.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f91a8324f40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb7b4df9910&gt;]
 </pre></div>
 </div>
 <img alt="../_images/plotting_5_1.png" src="../_images/plotting_5_1.png" />
@@ -318,9 +317,9 @@ inside of the notebook itself instead of creating new windows with the image.</p
 <li><p>Generate data that we will plot.</p></li>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> data, and make a line plot on our axis, <code class="docutils literal notranslate"><span class="pre">ax</span></code>, by calling the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method.</p></li>
 </ol>
-</div>
-<div class="section" id="difference-between-figure-and-axis">
-<h3>Difference between Figure and Axis<a class="headerlink" href="#difference-between-figure-and-axis" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="difference-between-figure-and-axis">
+<h3>Difference between Figure and Axis<a class="headerlink" href="#difference-between-figure-and-axis" title="Permalink to this headline">#</a></h3>
 <p>We’ve found that the easiest way for us to distinguish between the figure and axis objects is to
 think about them as a framed painting.</p>
 <p>The axis is the canvas; it is where we “draw” our plots.</p>
@@ -363,9 +362,9 @@ think about them as a framed painting.</p>
 <img alt="../_images/plotting_9_0.png" src="../_images/plotting_9_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="functionality">
-<h3>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="functionality">
+<h3>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">#</a></h3>
 <p>The matplotlib library is versatile and very flexible.</p>
 <p>You can see various examples of what it can do on the
 <a class="reference external" href="https://matplotlib.org/gallery.html">matplotlib example gallery</a>.</p>
@@ -438,15 +437,15 @@ think about them as a framed painting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.patches.Polygon at 0x7f91a1e01310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.patches.Polygon at 0x7fb7b49db2b0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/plotting_15_1.png" src="../_images/plotting_15_1.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

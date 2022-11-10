@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Basics &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -416,8 +415,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../introduction/getting_started.html"><span class="doc">Getting Started</span></a></p></li>
@@ -453,13 +452,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<div class="section" id="first-steps">
-<h2>First Steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
+<section id="first-steps">
+<h2>First Steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">#</a></h2>
 <p>We are ready to begin writing code!</p>
 <p>In this section, we will teach you some basic concepts of programming
 and where to search for help.</p>
-<div class="section" id="variable-assignment">
-<h3>Variable Assignment<a class="headerlink" href="#variable-assignment" title="Permalink to this headline">¶</a></h3>
+<section id="variable-assignment">
+<h3>Variable Assignment<a class="headerlink" href="#variable-assignment" title="Permalink to this headline">#</a></h3>
 <p>The first thing we will learn is the idea of <em>variable assignment</em>.</p>
 <p>Variable assignment associates a value to a variable.</p>
 <p>Below, we assign the value “Hello World” to the variable <code class="docutils literal notranslate"><span class="pre">x</span></code></p>
@@ -522,9 +521,9 @@ something else
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="code-comments">
-<h3>Code Comments<a class="headerlink" href="#code-comments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="code-comments">
+<h3>Code Comments<a class="headerlink" href="#code-comments" title="Permalink to this headline">#</a></h3>
 <p>Comments are short notes that you leave for yourself and for others who read your
 code.</p>
 <p>They should be used to explain what the code does.</p>
@@ -546,10 +545,10 @@ code.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <p>Functions are processes that take an input (or inputs) and produce an output.</p>
 <p>If we had a function called <code class="docutils literal notranslate"><span class="pre">f</span></code> that took two arguments <code class="docutils literal notranslate"><span class="pre">x</span></code> and
 <code class="docutils literal notranslate"><span class="pre">y</span></code>, we would write <code class="docutils literal notranslate"><span class="pre">f(x,</span> <span class="pre">y)</span></code> to use the function.</p>
@@ -567,8 +566,8 @@ Recall the variable we created called <code class="docutils literal notranslate"
 </div>
 </div>
 </div>
-<div class="section" id="getting-help">
-<h3>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h3>
+<section id="getting-help">
+<h3>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h3>
 <p>We can figure out what a function does by asking for help.</p>
 <p>In Jupyter notebooks, this is done by placing a <code class="docutils literal notranslate"><span class="pre">?</span></code> after the function
 name (without using parenthesis) and evaluating the cell.</p>
@@ -608,10 +607,10 @@ into a cell and see the help.</p></li>
 </div>
 <p>We will learn much more about functions, including how to write our own, in a
 future lecture.</p>
-</div>
-</div>
-<div class="section" id="objects-and-types">
-<h2>Objects and Types<a class="headerlink" href="#objects-and-types" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="objects-and-types">
+<h2>Objects and Types<a class="headerlink" href="#objects-and-types" title="Permalink to this headline">#</a></h2>
 <p>Everything in Python is an <em>object</em>.</p>
 <p>Objects are “things” that contain 1) data and 2) functions that can operate on
 the data.</p>
@@ -621,9 +620,9 @@ it supports by typing <code class="docutils literal notranslate"><span class="pr
 hitting <code class="docutils literal notranslate"><span class="pre">TAB</span></code>.</p>
 <p>It should then list data and method names to the right of the
 variable name like this:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="introspection.png" src="../_images/introspection.png" />
-</div>
+</figure>
 <p>You can scroll through this list by using the up and down arrows.</p>
 <p>We often refer to this as “tab completion” or “introspection”.</p>
 <p>Let’s do this together below. Keep going down until you find the method
@@ -709,9 +708,9 @@ that argument.</p>
 </div>
 <p>We will learn more about each of these types (and others!) and how to use them
 soon, so stay tuned!</p>
-</div>
-<div class="section" id="modules">
-<span id="id1"></span><h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="modules">
+<span id="id1"></span><h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h2>
 <p>Python takes a modular approach to tools.</p>
 <p>By this we mean that sets of related tools are bundled together into <em>packages</em>.
 (You may also hear the term modules to describe the same thing.)</p>
@@ -741,7 +740,7 @@ be accessed by using <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.9.13 (main, Aug 25 2022, 23:26:10) \n[GCC 11.2.0]&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.9.13 (main, Oct 13 2022, 21:15:33) \n[GCC 11.2.0]&#39;
 </pre></div>
 </div>
 </div>
@@ -750,8 +749,8 @@ be accessed by using <code class="docutils literal notranslate"><span class="pre
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="module-aliases">
-<h3>Module Aliases<a class="headerlink" href="#module-aliases" title="Permalink to this headline">¶</a></h3>
+<section id="module-aliases">
+<h3>Module Aliases<a class="headerlink" href="#module-aliases" title="Permalink to this headline">#</a></h3>
 <p>Some packages have long names (see <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, for example) which
 makes accessing the package functionality somewhat inconvenient.</p>
 <p>To ease this burden, Python allows us to give aliases or “nicknames” to packages.</p>
@@ -775,10 +774,10 @@ to the common ones.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="good-code-habits">
-<h2>Good Code Habits<a class="headerlink" href="#good-code-habits" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="good-code-habits">
+<h2>Good Code Habits<a class="headerlink" href="#good-code-habits" title="Permalink to this headline">#</a></h2>
 <p>A common saying in the software engineering world is:</p>
 <blockquote>
 <div><p>Always code as if the guy who ends up maintaining your code will be
@@ -799,9 +798,9 @@ blank lines to break it up.</p></li>
 be on a laptop, so you want to ensure that they don’t need to scroll horizontally
 and right to read your code. We recommend no more than 80 characters per line.</p></li>
 </ul>
-</div>
-<div class="section" id="numbers">
-<h2>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numbers">
+<h2>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">#</a></h2>
 <p>Python has two types of numbers.</p>
 <ol class="simple">
 <li><p>Integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>): These can only take the values of the integers
@@ -829,8 +828,8 @@ floating point numbers to the variables <code class="docutils literal notranslat
 <p class="admonition-title">Exercise</p>
 <p>See exercise 5 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="python-as-a-calculator">
-<h3>Python as a Calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this headline">¶</a></h3>
+<section id="python-as-a-calculator">
+<h3>Python as a Calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this headline">#</a></h3>
 <p>You can use Python to perform mathematical calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,9 +909,9 @@ multiplication and division, followed by addition and subtraction.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 6 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="other-math-functions">
-<h3>Other Math Functions<a class="headerlink" href="#other-math-functions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other-math-functions">
+<h3>Other Math Functions<a class="headerlink" href="#other-math-functions" title="Permalink to this headline">#</a></h3>
 <p>We often want to use other math functions on our numbers. Let’s try to
 calculate sin(2.5).</p>
 <div class="cell tag_raises-exception docutils container">
@@ -969,8 +968,8 @@ standard math functions – are contained in the <code class="docutils literal n
 <p class="admonition-title">Exercise</p>
 <p>See exercise 7 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="floor-modulus-division-operators">
-<h4>Floor/Modulus Division Operators<a class="headerlink" href="#floor-modulus-division-operators" title="Permalink to this headline">¶</a></h4>
+<section id="floor-modulus-division-operators">
+<h4>Floor/Modulus Division Operators<a class="headerlink" href="#floor-modulus-division-operators" title="Permalink to this headline">#</a></h4>
 <p>You are less likely to run into the following operators, but understanding
 that they exist is useful.</p>
 <p>For two numbers assigned to the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p>
@@ -1013,11 +1012,11 @@ and modulus division returns the remainder.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
 <p>Textual information is stored in a data type called a string.</p>
 <p>To denote that you would like something to be stored as a string, you place it
 inside of quotation marks.</p>
@@ -1047,8 +1046,8 @@ its answer to <code class="docutils literal notranslate"><span class="pre">str</
 <p class="admonition-title">Exercise</p>
 <p>See exercise 8 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-<div class="section" id="string-operations">
-<h3>String Operations<a class="headerlink" href="#string-operations" title="Permalink to this headline">¶</a></h3>
+<section id="string-operations">
+<h3>String Operations<a class="headerlink" href="#string-operations" title="Permalink to this headline">#</a></h3>
 <p>Some of the arithmetic operators we saw in the numbers lecture also work
 on strings:</p>
 <ul class="simple">
@@ -1131,9 +1130,9 @@ on strings:</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 9 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="string-methods">
-<h3>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="string-methods">
+<h3>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">#</a></h3>
 <p>We can use many <em>methods</em> to manipulate strings.</p>
 <p>We will not be able to cover all of them here, but let’s take a look at
 some of the most useful ones.</p>
@@ -1205,9 +1204,9 @@ some of the most useful ones.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 11 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="string-formatting">
-<h3>String Formatting<a class="headerlink" href="#string-formatting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="string-formatting">
+<h3>String Formatting<a class="headerlink" href="#string-formatting" title="Permalink to this headline">#</a></h3>
 <p>Sometimes we’d like to reuse some portion of a string repeatedly, but
 still make some relatively small changes at each usage.</p>
 <p>We can do this with <em>string formatting</em>, which done by using <code class="docutils literal notranslate"><span class="pre">{}</span></code> as a
@@ -1289,10 +1288,10 @@ any valid expression within the <code class="docutils literal notranslate"><span
 </div>
 <p>For more information on what you can do with string formatting (there is <em>a lot</em>
 that can be done…), see the <a class="reference external" href="https://docs.python.org/3.6/library/string.html">official Python documentation</a> on the subject.</p>
-</div>
-</div>
-<div class="section" id="booleans">
-<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="booleans">
+<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">#</a></h2>
 <p>A boolean is a type that denotes true or false.</p>
 <p>As you will soon see in the <a class="reference internal" href="control_flow.html"><span class="doc">control flow chapter</span></a>, using
 boolean values allows you to perform or skip operations depending on whether or
@@ -1337,8 +1336,8 @@ not a condition is met.</p>
 </div>
 </div>
 </div>
-<div class="section" id="comparison-operators">
-<h3>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h3>
+<section id="comparison-operators">
+<h3>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">#</a></h3>
 <p>Rather than directly write <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, you will usually
 create booleans by making a comparison.</p>
 <p>For example, you might want to evaluate whether the price of a particular asset
@@ -1375,9 +1374,9 @@ a &lt;= b is False
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="negation">
-<h3>Negation<a class="headerlink" href="#negation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="negation">
+<h3>Negation<a class="headerlink" href="#negation" title="Permalink to this headline">#</a></h3>
 <p>Occasionally, determining whether a statement is
 “not true” or “not false” is more convenient than simply “true” or “false”.</p>
 <p>This is known as <em>negating</em> a statement.</p>
@@ -1406,9 +1405,9 @@ a &lt;= b is False
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="multiple-comparisons-and-or">
-<h3>Multiple Comparisons (and/or)<a class="headerlink" href="#multiple-comparisons-and-or" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiple-comparisons-and-or">
+<h3>Multiple Comparisons (and/or)<a class="headerlink" href="#multiple-comparisons-and-or" title="Permalink to this headline">#</a></h3>
 <p>Sometimes we need to evaluate multiple comparisons at once.</p>
 <p>This is done by using the words <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
 <p>However, these are the “mathematical” <em>and</em>s and <em>or</em>s – so they
@@ -1494,9 +1493,9 @@ I receive more vacation days” means that you would accept the job if
 <p class="admonition-title">Exercise</p>
 <p>See exercise 15 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="all-and-any">
-<h3><code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">any</span></code><a class="headerlink" href="#all-and-any" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="all-and-any">
+<h3><code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">any</span></code><a class="headerlink" href="#all-and-any" title="Permalink to this headline">#</a></h3>
 <p>We have seen how we can use the words <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> to process two booleans
 at a time.</p>
 <p>The functions <code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">any</span></code> allow us to process an unlimited number of
@@ -1509,12 +1508,12 @@ is <code class="docutils literal notranslate"><span class="pre">True</span></cod
 <p class="admonition-title">Exercise</p>
 <p>See exercise 16 in the <a class="reference internal" href="#ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="exercises">
-<span id="ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="exercises">
+<span id="ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>What do you think the value of <code class="docutils literal notranslate"><span class="pre">z</span></code> is after running the code below?</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
@@ -1526,16 +1525,16 @@ is <code class="docutils literal notranslate"><span class="pre">True</span></cod
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Read about out what the <code class="docutils literal notranslate"><span class="pre">len</span></code> function does (by writing len?).</p>
 <p>What will it produce if we give it the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>?</p>
 <p>Check whether you were right by running the code <code class="docutils literal notranslate"><span class="pre">len(x)</span></code>.</p>
 <p>(<a class="reference internal" href="#dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>We can use our introspection skills to investigate a package’s contents.</p>
 <p>In the cell below, use tab completion to find a function from the <code class="docutils literal notranslate"><span class="pre">time</span></code>
 module that will display the <strong>local</strong> time.</p>
@@ -1555,16 +1554,16 @@ then call the function.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Try running <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">time</span> <span class="pre">as</span> <span class="pre">t</span></code> in the cell below, then see if you can
 call the function you identified above.</p>
 <p>Does it work?</p>
 <p>(<a class="reference internal" href="#dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <p>Create the following variables:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">D</span></code>: A floating point number with the value 10,000</p></li>
@@ -1580,9 +1579,9 @@ call the function you identified above.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir5"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
 <p>Remember the variables we created earlier?</p>
 <p>Let’s compute the present discounted value of a payment (<span class="math notranslate nohighlight">\(D\)</span>) made
 in <span class="math notranslate nohighlight">\(T\)</span> years assuming an interest rate of 2.5%. Save this value to
@@ -1603,9 +1602,9 @@ a new variable called <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir6"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
 <p>Verify the “trick” where the percent difference (<span class="math notranslate nohighlight">\(\frac{x - y}{x}\)</span>)
 between two numbers close to 1 can be well approximated by the difference
 between the log of the two numbers (<span class="math notranslate nohighlight">\(\log(x) - \log(y)\)</span>).</p>
@@ -1624,9 +1623,9 @@ between the log of the two numbers (<span class="math notranslate nohighlight">\
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir7"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
 <p>The code below is invalid Python code</p>
 <div class="cell tag_remove-output tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -1642,9 +1641,9 @@ between the log of the two numbers (<span class="math notranslate nohighlight">\
 find a solution.</p>
 </div>
 <p>(<a class="reference internal" href="#dir8"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-9">
-<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h3>
 <p>Using the variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, how could you create the sentence
 <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code>?</p>
 <div class="admonition hint">
@@ -1652,9 +1651,9 @@ find a solution.</p>
 <p>Think about how to represent a space as a string.</p>
 </div>
 <p>(<a class="reference internal" href="#dir9"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-10">
-<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h3>
 <p>One of our favorite (and most frequently used) string methods is
 <code class="docutils literal notranslate"><span class="pre">replace</span></code>.</p>
 <p>It substitutes all occurrences of a particular pattern with a different pattern.</p>
@@ -1673,9 +1672,9 @@ replace.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir10"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-11">
-<h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-11">
+<h3>Exercise 11<a class="headerlink" href="#exercise-11" title="Permalink to this headline">#</a></h3>
 <p>Suppose you are working with price data and encounter the value
 <code class="docutils literal notranslate"><span class="pre">&quot;$6.50&quot;</span></code>.</p>
 <p>We recognize this as being a number representing the quantity “six dollars and fifty cents.”</p>
@@ -1696,21 +1695,21 @@ into a number.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir11"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-12">
-<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-12">
+<h3>Exercise 12<a class="headerlink" href="#exercise-12" title="Permalink to this headline">#</a></h3>
 <p>Lookup a country in <a class="reference external" href="https://data.worldbank.org">World Bank database</a>, and
 format a string showing the growth rate of GDP over the last 2 years.</p>
 <p>(<a class="reference internal" href="#dir12"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-13">
-<h3>Exercise 13<a class="headerlink" href="#exercise-13" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-13">
+<h3>Exercise 13<a class="headerlink" href="#exercise-13" title="Permalink to this headline">#</a></h3>
 <p>Instead of hard-coding the values above, try to use the <code class="docutils literal notranslate"><span class="pre">country</span></code>, <code class="docutils literal notranslate"><span class="pre">GDP</span></code> and
 <code class="docutils literal notranslate"><span class="pre">year</span></code> variables you previously defined.</p>
 <p>(<a class="reference internal" href="#dir13"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-14">
-<h3>Exercise 14<a class="headerlink" href="#exercise-14" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-14">
+<h3>Exercise 14<a class="headerlink" href="#exercise-14" title="Permalink to this headline">#</a></h3>
 <p>Create a new string and use formatting to produce each of the following
 statements</p>
 <ul class="simple">
@@ -1720,9 +1719,9 @@ statements</p>
 <li><p>“The 4th quarter revenue was 130M”</p></li>
 </ul>
 <p>(<a class="reference internal" href="#dir14"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-15">
-<h3>Exercise 15<a class="headerlink" href="#exercise-15" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-15">
+<h3>Exercise 15<a class="headerlink" href="#exercise-15" title="Permalink to this headline">#</a></h3>
 <p>Without typing the commands, determine whether the following statements are
 true or false.</p>
 <p>Once you have evaluated whether the command is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, run the
@@ -1762,9 +1761,9 @@ code in Python.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir15"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-16">
-<h3>Exercise 16<a class="headerlink" href="#exercise-16" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-16">
+<h3>Exercise 16<a class="headerlink" href="#exercise-16" title="Permalink to this headline">#</a></h3>
 <p>For each of the code cells below, think carefully about what you expect to
 be returned <em>before</em> evaluating the cell.</p>
 <p>Then evaluate the cell to check your intuitions.</p>
@@ -1813,9 +1812,9 @@ allow us to create lists which we will learn about in an upcoming lecture.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir16"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

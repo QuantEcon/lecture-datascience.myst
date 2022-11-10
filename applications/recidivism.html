@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Case Study: Recidivism &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
@@ -48,8 +49,9 @@
     
     
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -59,10 +61,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -70,10 +68,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -82,12 +80,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -311,8 +310,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <div class="tex2jax_ignore mathjax_ignore section" id="case-study-recidivism">
-<h1>Case Study: Recidivism<a class="headerlink" href="#case-study-recidivism" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="case-study-recidivism">
+<h1>Case Study: Recidivism<a class="headerlink" href="#case-study-recidivism" title="Permalink to this headline">#</a></h1>
 <p><strong>Co-authors</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -351,8 +350,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="introduction-to-recidivism">
-<h2>Introduction to Recidivism<a class="headerlink" href="#introduction-to-recidivism" title="Permalink to this headline">¶</a></h2>
+<section id="introduction-to-recidivism">
+<h2>Introduction to Recidivism<a class="headerlink" href="#introduction-to-recidivism" title="Permalink to this headline">#</a></h2>
 <p>Recidivism is the tendency for an individual who has previously committed a crime to commit another crime
 in the future.</p>
 <p>One key input to a judge’s sentencing decision is how likely a given convict is to re-offend, or recidivate.</p>
@@ -382,9 +381,9 @@ risk of violent recidivism.</p></li>
 <li><p>Even when controlling for prior crimes, future recidivism, age, and gender, black defendants were
 77 percent more likely to be assigned higher risk scores than white defendants.</p></li>
 </ul>
-</div>
-<div class="section" id="data-description">
-<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="data-description">
+<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h2>
 <p>The authors of this article filed a public records request with the Broward County Sheriff’s office
 in Florida.</p>
 <p>Luckily for us, they did a significant amount of the legwork which is described in this
@@ -579,9 +578,9 @@ in Florida.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">decile_score</span></code>: The COMPAS risk score</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">two_year_recid</span></code>: Whether the individual had been jailed for a new crime in next two years</p></li>
 </ul>
-</div>
-<div class="section" id="descriptive-statistics">
-<h2>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="descriptive-statistics">
+<h2>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">#</a></h2>
 <p>The first thing we do with our data is to drop any classes without “enough” observations.</p>
 <p>One of our focuses will be on inter-race differences in scores and recidivism, so we only
 keep data on races with at least 500 observations in our data set.</p>
@@ -603,8 +602,8 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 </div>
 <p>Next, we explore the remaining data using plots and tables.</p>
-<div class="section" id="age-sex-and-race">
-<h3>Age, Sex, and Race<a class="headerlink" href="#age-sex-and-race" title="Permalink to this headline">¶</a></h3>
+<section id="age-sex-and-race">
+<h3>Age, Sex, and Race<a class="headerlink" href="#age-sex-and-race" title="Permalink to this headline">#</a></h3>
 <p>Let’s look at how the dataset is broken down into age, sex, and race.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,9 +668,9 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 <p>From this, we learn that our population is mostly between 25-45, male, and
 is mostly African-American or Caucasian.</p>
-</div>
-<div class="section" id="recidivism">
-<h3>Recidivism<a class="headerlink" href="#recidivism" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="recidivism">
+<h3>Recidivism<a class="headerlink" href="#recidivism" title="Permalink to this headline">#</a></h3>
 <p>We now look into how recidivism is split across groups.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -759,9 +758,9 @@ is mostly African-American or Caucasian.</p>
 <p>In the table, we see that the young have higher recidivism rates than the old, except for among
 Caucasian females.</p>
 <p>Also, African-American males are at a particularly high risk of recidivism even as they get older.</p>
-</div>
-<div class="section" id="risk-scores">
-<h3>Risk Scores<a class="headerlink" href="#risk-scores" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="risk-scores">
+<h3>Risk Scores<a class="headerlink" href="#risk-scores" title="Permalink to this headline">#</a></h3>
 <p>Each individual in the dataset was assigned a <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> ranging from 1 to 10.</p>
 <p>This score represents the perceived risk of recidivism with 1 being the lowest risk and 10 being the highest.</p>
 <p>We show a bar plot of all decile scores below.</p>
@@ -812,9 +811,9 @@ Caucasian females.</p>
 </div>
 <p>While Caucasians and Hispanics both see the majority of their score distribution on low values,
 African-Americans are almost equally likely to receive any score.</p>
-</div>
-<div class="section" id="risk-scores-and-recidivism">
-<h3>Risk Scores and Recidivism<a class="headerlink" href="#risk-scores-and-recidivism" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="risk-scores-and-recidivism">
+<h3>Risk Scores and Recidivism<a class="headerlink" href="#risk-scores-and-recidivism" title="Permalink to this headline">#</a></h3>
 <p>Now we can explore the relationship between the risk score and actual two year recidivism.</p>
 <p>The first measure we look at is the frequency of recidivism by decile score – these numbers
 tell us what percentage of people assigned a particular risk score committed a new crime within two
@@ -1024,10 +1023,10 @@ positive correlation (~0.35).</p>
 <img alt="../_images/recidivism_24_1.png" src="../_images/recidivism_24_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="regression">
-<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="regression">
+<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h2>
 <p>In what follows, we will be doing something slightly different than what was done in the Pro Publica
 article.</p>
 <p>First, we will explore what happens when we try to predict the COMPAS risk scores using the
@@ -1036,8 +1035,8 @@ observable data that we have.</p>
 recidivism.</p>
 <p>We will do this first using the COMPAS risk scores, and then afterwards we will try to write our own
 model based on raw observables, like age, race and sex.</p>
-<div class="section" id="preprocessing">
-<h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h3>
+<section id="preprocessing">
+<h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">#</a></h3>
 <p>We would like to use some features that are inherently non-numerical such as sex, age group, and
 race in our model.</p>
 <p>Before we can do that, we need to encode these string values as numerical values
@@ -1092,9 +1091,9 @@ column’s category, and set all other columns to 0.</p>
 </div>
 </div>
 <p>We will use this encoding trick below as we create our data.</p>
-</div>
-<div class="section" id="predicting-compas-scores">
-<h3>Predicting COMPAS Scores<a class="headerlink" href="#predicting-compas-scores" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="predicting-compas-scores">
+<h3>Predicting COMPAS Scores<a class="headerlink" href="#predicting-compas-scores" title="Permalink to this headline">#</a></h3>
 <p>First, we proceed by creating the <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> inputs into a manageable format.</p>
 <p>We encode the categorical variables using the <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> described above, and then merge that with the non-categorical data.</p>
 <p>Finally, we split the data into training and validation (test) subsets.</p>
@@ -1256,7 +1255,7 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mae_train&#39;: 1.8076563650603423, &#39;mae_test&#39;: 1.8277010173497896}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mae_train&#39;: 1.8076563650603426, &#39;mae_test&#39;: 1.8277010173497898}
 </pre></div>
 </div>
 </div>
@@ -1304,15 +1303,15 @@ The errors also seem to have a less extreme tail.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>priors_count :  0.2799923049684579
-Less than 25 :  -0.10262755807946589
-25-45 :  -1.7189018948181365
-Greater than 45 :  1.8215294528975996
-African-American :  0.6102522379830785
-Caucasian :  -0.10156939689442401
-Hispanic :  -0.5086828410886544
-Female :  0.04293582427466183
-Male :  -0.04293582427466186
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>priors_count :  0.27999230496845784
+Less than 25 :  -0.10262755807946655
+25-45 :  -1.7189018948181352
+Greater than 45 :  1.8215294528975976
+African-American :  0.6102522379830796
+Caucasian :  -0.10156939689442249
+Hispanic :  -0.5086828410886558
+Female :  0.042935824274662374
+Male :  -0.04293582427466229
 </pre></div>
 </div>
 </div>
@@ -1322,9 +1321,9 @@ Male :  -0.04293582427466186
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#app-rcd-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="binary-probability-models">
-<h3>Binary Probability Models<a class="headerlink" href="#binary-probability-models" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="binary-probability-models">
+<h3>Binary Probability Models<a class="headerlink" href="#binary-probability-models" title="Permalink to this headline">#</a></h3>
 <p>Binary probability models are used to model “all or nothing” outcomes,
 like the occurrence of an event.</p>
 <p>Their output is the probability that an event of interest occurs.</p>
@@ -1518,17 +1517,17 @@ race and sex.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
 </pre></div>
 </div>
@@ -1690,9 +1689,9 @@ to men.</p>
 when fairness is looked at in another way, women are favored over men,
 and (2) the company that produces COMPAS also produces a separate
 questionnaire and risk score designed only for women.</p>
-</div>
-<div class="section" id="false-positive-and-negative-rates">
-<h3>False Positive and Negative Rates<a class="headerlink" href="#false-positive-and-negative-rates" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="false-positive-and-negative-rates">
+<h3>False Positive and Negative Rates<a class="headerlink" href="#false-positive-and-negative-rates" title="Permalink to this headline">#</a></h3>
 <p>What if we flip this around and look at the distributions of
 predictions conditional on outcomes?</p>
 <p>Why look at these probabilities?</p>
@@ -1796,9 +1795,9 @@ probability of predicted categories conditional on true outcomes
 should be equal across groups (i.e. P(HighRisk|NoRecid) should be
 equal across races).</p>
 <p><span id="id3">[<a class="reference internal" href="#id6" title="Jon Kleinberg, Himabindu Lakkaraju, Jure Leskovec, Jens Ludwig, and Sendhil Mullainathan. Human Decisions and Machine Predictions*. The Quarterly Journal of Economics, 133(1):237-293, 08 2017. URL: https://dx.doi.org/10.1093/qje/qjx032, arXiv:http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf, doi:10.1093/qje/qjx032.">recidKLL+17</a>]</span> calls a prediction algorithm with this property balanced.</p>
-</div>
-<div class="section" id="visualizing-calibration-and-balance">
-<h3>Visualizing Calibration and Balance<a class="headerlink" href="#visualizing-calibration-and-balance" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="visualizing-calibration-and-balance">
+<h3>Visualizing Calibration and Balance<a class="headerlink" href="#visualizing-calibration-and-balance" title="Permalink to this headline">#</a></h3>
 <p>We can get a slightly more detailed look at calibration and balance by
 recognizing that prediction algorithms typically compute a predicted
 probability, not just a discrete predicted outcome.</p>
@@ -1897,7 +1896,7 @@ outcomes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3844/1257276985.py:14: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1257276985.py:14: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1908,7 +1907,7 @@ For a guide to updating your code to use the new functions, please see
 https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 
   sns.distplot(pred_sub[y_sub==0], hist=True, bins=bins, kde=False, ax=_ax,
-/tmp/ipykernel_3844/1257276985.py:16: UserWarning: 
+/tmp/ipykernel_3500/1257276985.py:16: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1993,9 +1992,9 @@ false positive rate than Caucasians.</p>
 <p>We have seen that COMPAS scores are well-calibrated conditional on
 race, but not balanced.</p>
 <p>Can we create an alternative prediction that is both well-calibrated and balanced?</p>
-</div>
-<div class="section" id="creating-an-alternative-prediction">
-<h3>Creating an Alternative Prediction<a class="headerlink" href="#creating-an-alternative-prediction" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="creating-an-alternative-prediction">
+<h3>Creating an Alternative Prediction<a class="headerlink" href="#creating-an-alternative-prediction" title="Permalink to this headline">#</a></h3>
 <p>As a starting exercise, let’s predict recidivism using the variables
 in this dataset other than race and COMPAS score.</p>
 <p>Almost all variables in this data are categorical.</p>
@@ -2049,344 +2048,381 @@ optimization finished, #iter = 1
 Objective value = 0.282248
 #nonzeros/#features = 1/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 5
+iter   4  #CD cycles 1
 =========================
-optimization finished, #iter = 3
+optimization finished, #iter = 4
 Objective value = 2.163071
 #nonzeros/#features = 1/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 1
-iter   3  #CD cycles 7
-iter   4  #CD cycles 1
-iter   5  #CD cycles 4
-iter   6  #CD cycles 2
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 6
-iter  10  #CD cycles 2
-iter  11  #CD cycles 1
-iter  12  #CD cycles 6
-iter  13  #CD cycles 2
-iter  14  #CD cycles 1
-iter  15  #CD cycles 8
-iter  16  #CD cycles 1
-iter  17  #CD cycles 9
+iter   3  #CD cycles 5
+iter   4  #CD cycles 2
+iter   5  #CD cycles 1
+iter   6  #CD cycles 5
+iter   7  #CD cycles 1
+iter   8  #CD cycles 9
+iter   9  #CD cycles 1
+iter  10  #CD cycles 10
+iter  11  #CD cycles 2
+iter  12  #CD cycles 2
+iter  13  #CD cycles 1
+iter  14  #CD cycles 8
+iter  15  #CD cycles 1
+iter  16  #CD cycles 4
+iter  17  #CD cycles 1
 =========================
 optimization finished, #iter = 17
 Objective value = 16.656307
 #nonzeros/#features = 2/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 9
-iter   4  #CD cycles 3
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
 iter   5  #CD cycles 2
 iter   6  #CD cycles 1
-iter   7  #CD cycles 8
-iter   8  #CD cycles 1
-iter   9  #CD cycles 6
-iter  10  #CD cycles 3
-iter  11  #CD cycles 3
-iter  12  #CD cycles 1
-iter  13  #CD cycles 18
-iter  14  #CD cycles 5
-iter  15  #CD cycles 11
-iter  16  #CD cycles 62
-iter  17  #CD cycles 1
+iter   7  #CD cycles 2
+iter   8  #CD cycles 4
+iter   9  #CD cycles 1
+iter  10  #CD cycles 11
+iter  11  #CD cycles 5
+iter  12  #CD cycles 2
+iter  13  #CD cycles 2
+iter  14  #CD cycles 3
+iter  15  #CD cycles 4
+iter  16  #CD cycles 1
+iter  17  #CD cycles 17
 iter  18  #CD cycles 29
-iter  19  #CD cycles 32
-iter  20  #CD cycles 24
-iter  21  #CD cycles 20
-iter  22  #CD cycles 8
-iter  23  #CD cycles 2
-iter  24  #CD cycles 4
-iter  25  #CD cycles 10
-iter  26  #CD cycles 7
-iter  27  #CD cycles 16
-iter  28  #CD cycles 15
-iter  29  #CD cycles 8
-iter  30  #CD cycles 2
+iter  19  #CD cycles 147
+iter  20  #CD cycles 4
+iter  21  #CD cycles 1
+iter  22  #CD cycles 35
+iter  23  #CD cycles 6
+iter  24  #CD cycles 22
+iter  25  #CD cycles 30
+iter  26  #CD cycles 3
+iter  27  #CD cycles 2
+iter  28  #CD cycles 12
+iter  29  #CD cycles 3
+iter  30  #CD cycles 4
 iter  31  #CD cycles 3
 iter  32  #CD cycles 6
 iter  33  #CD cycles 5
-iter  34  #CD cycles 1
-iter  35  #CD cycles 102
-iter  36  #CD cycles 10
-iter  37  #CD cycles 9
-iter  38  #CD cycles 20
-iter  39  #CD cycles 9
-iter  40  #CD cycles 1
-iter  41  #CD cycles 126
-iter  42  #CD cycles 32
-iter  43  #CD cycles 30
+iter  34  #CD cycles 14
+iter  35  #CD cycles 35
+iter  36  #CD cycles 15
+iter  37  #CD cycles 3
+iter  38  #CD cycles 6
+iter  39  #CD cycles 1
+iter  40  #CD cycles 5
+iter  41  #CD cycles 5
+iter  42  #CD cycles 13
+iter  43  #CD cycles 9
+iter  44  #CD cycles 14
+iter  45  #CD cycles 11
+iter  46  #CD cycles 19
+iter  47  #CD cycles 31
+iter  48  #CD cycles 4
+iter  49  #CD cycles 13
+iter  50  #CD cycles 2
+iter  51  #CD cycles 6
+iter  52  #CD cycles 8
+iter  53  #CD cycles 1
+iter  54  #CD cycles 53
+iter  55  #CD cycles 246
 =========================
-optimization finished, #iter = 43
-Objective value = 125.461770
-#nonzeros/#features = 14/261
+optimization finished, #iter = 55
+Objective value = 125.461769
+#nonzeros/#features = 13/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 4
+iter   4  #CD cycles 9
 iter   5  #CD cycles 3
 iter   6  #CD cycles 1
-iter   7  #CD cycles 12
+iter   7  #CD cycles 7
 iter   8  #CD cycles 1
-iter   9  #CD cycles 8
-iter  10  #CD cycles 6
-iter  11  #CD cycles 3
-iter  12  #CD cycles 7
-iter  13  #CD cycles 1
-iter  14  #CD cycles 12
-iter  15  #CD cycles 128
-iter  16  #CD cycles 4
-iter  17  #CD cycles 1
-iter  18  #CD cycles 46
-iter  19  #CD cycles 8
-iter  20  #CD cycles 1
-iter  21  #CD cycles 26
-iter  22  #CD cycles 12
-iter  23  #CD cycles 5
-iter  24  #CD cycles 1
-iter  25  #CD cycles 46
+iter   9  #CD cycles 10
+iter  10  #CD cycles 3
+iter  11  #CD cycles 1
+iter  12  #CD cycles 137
+iter  13  #CD cycles 11
+iter  14  #CD cycles 1
+iter  15  #CD cycles 30
+iter  16  #CD cycles 5
+iter  17  #CD cycles 6
+iter  18  #CD cycles 3
+iter  19  #CD cycles 2
+iter  20  #CD cycles 3
+iter  21  #CD cycles 2
+iter  22  #CD cycles 1
+iter  23  #CD cycles 6
+iter  24  #CD cycles 21
+iter  25  #CD cycles 10
+iter  26  #CD cycles 2
+iter  27  #CD cycles 2
+iter  28  #CD cycles 1
 =========================
-optimization finished, #iter = 25
-Objective value = 918.402894
+optimization finished, #iter = 28
+Objective value = 918.402898
 #nonzeros/#features = 72/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 9
+iter   2  #CD cycles 1
+iter   3  #CD cycles 10
+iter   4  #CD cycles 3
 iter   5  #CD cycles 1
-iter   6  #CD cycles 13
-iter   7  #CD cycles 1
-iter   8  #CD cycles 16
-iter   9  #CD cycles 1
-iter  10  #CD cycles 34
-iter  11  #CD cycles 4
-iter  12  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 5
+iter   8  #CD cycles 1
+iter   9  #CD cycles 5
+iter  10  #CD cycles 1
+iter  11  #CD cycles 163
+iter  12  #CD cycles 25
+iter  13  #CD cycles 15
+iter  14  #CD cycles 6
+iter  15  #CD cycles 1
+iter  16  #CD cycles 155
+iter  17  #CD cycles 64
+iter  18  #CD cycles 10
+iter  19  #CD cycles 7
+iter  20  #CD cycles 10
+iter  21  #CD cycles 5
+iter  22  #CD cycles 2
+iter  23  #CD cycles 16
+iter  24  #CD cycles 2
+iter  25  #CD cycles 5
+iter  26  #CD cycles 2
+iter  27  #CD cycles 11
+iter  28  #CD cycles 6
+iter  29  #CD cycles 2
+iter  30  #CD cycles 1
+iter  31  #CD cycles 48
+iter  32  #CD cycles 27
+iter  33  #CD cycles 57
+iter  34  #CD cycles 6
+iter  35  #CD cycles 39
+iter  36  #CD cycles 1
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  13  #CD cycles 278
-iter  14  #CD cycles 2
-iter  15  #CD cycles 2
-iter  16  #CD cycles 2
-iter  17  #CD cycles 4
-iter  18  #CD cycles 1
-iter  19  #CD cycles 23
-iter  20  #CD cycles 99
-iter  21  #CD cycles 80
-iter  22  #CD cycles 12
-iter  23  #CD cycles 1
-iter  24  #CD cycles 168
-iter  25  #CD cycles 8
-iter  26  #CD cycles 16
-iter  27  #CD cycles 53
-iter  28  #CD cycles 87
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  37  #CD cycles 107
+iter  38  #CD cycles 212
+iter  39  #CD cycles 3
+iter  40  #CD cycles 13
+iter  41  #CD cycles 53
 =========================
-optimization finished, #iter = 28
-Objective value = 6675.623288
+optimization finished, #iter = 41
+Objective value = 6675.623224
 #nonzeros/#features = 179/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
+iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 4
+iter   4  #CD cycles 6
 iter   5  #CD cycles 2
 iter   6  #CD cycles 1
-iter   7  #CD cycles 12
-iter   8  #CD cycles 1
-iter   9  #CD cycles 25
-iter  10  #CD cycles 21
-iter  11  #CD cycles 13
-iter  12  #CD cycles 2
-iter  13  #CD cycles 7
-iter  14  #CD cycles 1
-iter  15  #CD cycles 63
-iter  16  #CD cycles 27
-iter  17  #CD cycles 13
-iter  18  #CD cycles 3
-iter  19  #CD cycles 25
-iter  20  #CD cycles 1
-iter  21  #CD cycles 84
-iter  22  #CD cycles 1
-iter  23  #CD cycles 141
-iter  24  #CD cycles 58
+iter   7  #CD cycles 7
+iter   8  #CD cycles 4
+iter   9  #CD cycles 1
+iter  10  #CD cycles 16
+iter  11  #CD cycles 9
+iter  12  #CD cycles 5
+iter  13  #CD cycles 1
+iter  14  #CD cycles 70
+iter  15  #CD cycles 40
+iter  16  #CD cycles 9
+iter  17  #CD cycles 3
+iter  18  #CD cycles 4
+iter  19  #CD cycles 1
+iter  20  #CD cycles 93
+iter  21  #CD cycles 1
+iter  22  #CD cycles 135
+iter  23  #CD cycles 84
+iter  24  #CD cycles 9
+iter  25  #CD cycles 1
+iter  26  #CD cycles 108
 =========================
-optimization finished, #iter = 24
-Objective value = 50324.821748
-#nonzeros/#features = 244/261
+optimization finished, #iter = 26
+Objective value = 50324.821170
+#nonzeros/#features = 245/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 3
 iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 3
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 12
+iter   7  #CD cycles 1
+iter   8  #CD cycles 17
+iter   9  #CD cycles 7
+iter  10  #CD cycles 2
+iter  11  #CD cycles 1
+iter  12  #CD cycles 154
+iter  13  #CD cycles 3
+iter  14  #CD cycles 7
+iter  15  #CD cycles 1
+iter  16  #CD cycles 309
+iter  17  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  18  #CD cycles 1000
+iter  19  #CD cycles 21
+iter  20  #CD cycles 82
+iter  21  #CD cycles 8
+iter  22  #CD cycles 2
+iter  23  #CD cycles 123
+iter  24  #CD cycles 82
+iter  25  #CD cycles 48
+iter  26  #CD cycles 10
+iter  27  #CD cycles 21
+iter  28  #CD cycles 12
+iter  29  #CD cycles 28
+iter  30  #CD cycles 458
+iter  31  #CD cycles 5
+iter  32  #CD cycles 8
+iter  33  #CD cycles 16
+iter  34  #CD cycles 18
+iter  35  #CD cycles 3
+iter  36  #CD cycles 14
+iter  37  #CD cycles 3
+iter  38  #CD cycles 11
+iter  39  #CD cycles 2
+iter  40  #CD cycles 3
+=========================
+optimization finished, #iter = 40
+Objective value = 386596.564946
+#nonzeros/#features = 250/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 2
+iter   4  #CD cycles 1
+iter   5  #CD cycles 7
 iter   6  #CD cycles 1
-iter   7  #CD cycles 8
+iter   7  #CD cycles 9
 iter   8  #CD cycles 2
 iter   9  #CD cycles 1
-iter  10  #CD cycles 9
-iter  11  #CD cycles 2
-iter  12  #CD cycles 3
-iter  13  #CD cycles 8
-iter  14  #CD cycles 6
-iter  15  #CD cycles 1
-iter  16  #CD cycles 150
-iter  17  #CD cycles 10
-iter  18  #CD cycles 1
+iter  10  #CD cycles 12
+iter  11  #CD cycles 6
+iter  12  #CD cycles 2
+iter  13  #CD cycles 2
+iter  14  #CD cycles 2
+iter  15  #CD cycles 2
+iter  16  #CD cycles 6
+iter  17  #CD cycles 2
+iter  18  #CD cycles 4
+iter  19  #CD cycles 2
+iter  20  #CD cycles 1
+iter  21  #CD cycles 33
+iter  22  #CD cycles 34
+iter  23  #CD cycles 17
+iter  24  #CD cycles 9
+iter  25  #CD cycles 2
+iter  26  #CD cycles 11
+iter  27  #CD cycles 4
+iter  28  #CD cycles 7
+iter  29  #CD cycles 14
+iter  30  #CD cycles 2
+iter  31  #CD cycles 4
+iter  32  #CD cycles 9
+iter  33  #CD cycles 3
+iter  34  #CD cycles 4
+iter  35  #CD cycles 9
+iter  36  #CD cycles 4
+iter  37  #CD cycles 1
+iter  38  #CD cycles 227
+iter  39  #CD cycles 33
+iter  40  #CD cycles 13
+iter  41  #CD cycles 15
+iter  42  #CD cycles 32
+iter  43  #CD cycles 2
+iter  44  #CD cycles 44
+iter  45  #CD cycles 17
+iter  46  #CD cycles 3
+iter  47  #CD cycles 2
+iter  48  #CD cycles 2
+iter  49  #CD cycles 3
+iter  50  #CD cycles 19
+iter  51  #CD cycles 8
+iter  52  #CD cycles 19
+iter  53  #CD cycles 15
+iter  54  #CD cycles 24
+iter  55  #CD cycles 17
+iter  56  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  19  #CD cycles 275
-iter  20  #CD cycles 44
-iter  21  #CD cycles 4
-iter  22  #CD cycles 90
-iter  23  #CD cycles 7
-iter  24  #CD cycles 4
-iter  25  #CD cycles 32
-iter  26  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  27  #CD cycles 1000
-iter  28  #CD cycles 471
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  57  #CD cycles 1000
+iter  58  #CD cycles 898
+iter  59  #CD cycles 70
+iter  60  #CD cycles 12
+iter  61  #CD cycles 152
+iter  62  #CD cycles 17
+iter  63  #CD cycles 3
+iter  64  #CD cycles 9
+iter  65  #CD cycles 37
+iter  66  #CD cycles 7
+iter  67  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  29  #CD cycles 43
-iter  30  #CD cycles 16
-iter  31  #CD cycles 21
-iter  32  #CD cycles 10
-iter  33  #CD cycles 8
-iter  34  #CD cycles 111
-iter  35  #CD cycles 109
-iter  36  #CD cycles 16
-iter  37  #CD cycles 17
-iter  38  #CD cycles 41
-iter  39  #CD cycles 8
-iter  40  #CD cycles 2
-iter  41  #CD cycles 8
-iter  42  #CD cycles 5
-iter  43  #CD cycles 3
-iter  44  #CD cycles 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  68  #CD cycles 1000
 WARNING: reaching max number of inner iterations
-iter  45  #CD cycles 1000
-iter  46  #CD cycles 41
-iter  47  #CD cycles 146
-iter  48  #CD cycles 7
+iter  69  #CD cycles 1000
 =========================
-optimization finished, #iter = 48
-Objective value = 386592.269027
+optimization finished, #iter = 69
+Objective value = 2988389.279969
 #nonzeros/#features = 250/261
-[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 3
-iter   5  #CD cycles 5
-iter   6  #CD cycles 1
-iter   7  #CD cycles 4
-iter   8  #CD cycles 6
-iter   9  #CD cycles 3
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 2
+iter   4  #CD cycles 1
+iter   5  #CD cycles 8
+iter   6  #CD cycles 2
+iter   7  #CD cycles 1
+iter   8  #CD cycles 3
+iter   9  #CD cycles 7
 iter  10  #CD cycles 1
-iter  11  #CD cycles 3
-iter  12  #CD cycles 9
+iter  11  #CD cycles 10
+iter  12  #CD cycles 4
 iter  13  #CD cycles 2
 iter  14  #CD cycles 1
-iter  15  #CD cycles 61
-iter  16  #CD cycles 16
-iter  17  #CD cycles 33
-iter  18  #CD cycles 6
-iter  19  #CD cycles 25
-iter  20  #CD cycles 2
-iter  21  #CD cycles 4
-iter  22  #CD cycles 2
-iter  23  #CD cycles 10
-iter  24  #CD cycles 8
-iter  25  #CD cycles 3
-iter  26  #CD cycles 5
-iter  27  #CD cycles 1
-iter  28  #CD cycles 362
-iter  29  #CD cycles 31
-iter  30  #CD cycles 101
-iter  31  #CD cycles 3
+iter  15  #CD cycles 93
+iter  16  #CD cycles 17
+iter  17  #CD cycles 14
+iter  18  #CD cycles 32
+iter  19  #CD cycles 4
+iter  20  #CD cycles 1
+iter  21  #CD cycles 154
+iter  22  #CD cycles 52
+iter  23  #CD cycles 99
+iter  24  #CD cycles 9
+iter  25  #CD cycles 9
+iter  26  #CD cycles 3
+iter  27  #CD cycles 19
+iter  28  #CD cycles 15
+iter  29  #CD cycles 5
+iter  30  #CD cycles 23
+iter  31  #CD cycles 14
 iter  32  #CD cycles 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
 iter  33  #CD cycles 1000
-iter  34  #CD cycles 228
-WARNING: reaching max number of inner iterations
-iter  35  #CD cycles 1000
-iter  36  #CD cycles 9
-iter  37  #CD cycles 83
-iter  38  #CD cycles 2
-=========================
-optimization finished, #iter = 38
-Objective value = 2988445.829386
-#nonzeros/#features = 250/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 9
-iter   7  #CD cycles 4
-iter   8  #CD cycles 1
-iter   9  #CD cycles 18
-iter  10  #CD cycles 3
-iter  11  #CD cycles 3
-iter  12  #CD cycles 5
-iter  13  #CD cycles 3
-iter  14  #CD cycles 4
-iter  15  #CD cycles 3
-iter  16  #CD cycles 4
-iter  17  #CD cycles 2
-iter  18  #CD cycles 1
-iter  19  #CD cycles 49
-iter  20  #CD cycles 2
-iter  21  #CD cycles 9
-iter  22  #CD cycles 29
-iter  23  #CD cycles 8
-iter  24  #CD cycles 2
-iter  25  #CD cycles 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  26  #CD cycles 2
-iter  27  #CD cycles 2
-iter  28  #CD cycles 1
-iter  29  #CD cycles 196
-iter  30  #CD cycles 48
-iter  31  #CD cycles 20
-iter  32  #CD cycles 10
-iter  33  #CD cycles 57
-iter  34  #CD cycles 5
-iter  35  #CD cycles 13
-iter  36  #CD cycles 28
-iter  37  #CD cycles 3
-iter  38  #CD cycles 21
+iter  34  #CD cycles 938
+iter  35  #CD cycles 2
+iter  36  #CD cycles 18
+iter  37  #CD cycles 125
+iter  38  #CD cycles 68
 iter  39  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  40  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  41  #CD cycles 698
-iter  42  #CD cycles 72
-iter  43  #CD cycles 39
-iter  44  #CD cycles 92
-iter  45  #CD cycles 234
-iter  46  #CD cycles 26
-iter  47  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  48  #CD cycles 1000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  49  #CD cycles 1000
-WARNING: reaching max number of inner iterations
-iter  50  #CD cycles 1000
+iter  40  #CD cycles 1000
 =========================
-optimization finished, #iter = 50
-Objective value = 23131729.514700
+optimization finished, #iter = 40
+Objective value = 23132070.495163
 #nonzeros/#features = 250/261
 [LibLinear]iter   1  #CD cycles 1
 =========================
@@ -2398,345 +2434,298 @@ iter   2  #CD cycles 1
 iter   3  #CD cycles 1
 iter   4  #CD cycles 1
 iter   5  #CD cycles 1
-iter   6  #CD cycles 2
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
+iter   6  #CD cycles 7
+iter   7  #CD cycles 1
+iter   8  #CD cycles 8
+iter   9  #CD cycles 1
+iter  10  #CD cycles 11
+=========================
+optimization finished, #iter = 10
+Objective value = 2.163544
+#nonzeros/#features = 2/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 9
+iter   4  #CD cycles 1
+iter   5  #CD cycles 9
+iter   6  #CD cycles 3
+iter   7  #CD cycles 1
+iter   8  #CD cycles 5
 iter   9  #CD cycles 4
 iter  10  #CD cycles 1
 iter  11  #CD cycles 7
 iter  12  #CD cycles 1
-=========================
-optimization finished, #iter = 12
-Objective value = 2.163544
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 3
-iter   5  #CD cycles 3
-iter   6  #CD cycles 1
-iter   7  #CD cycles 4
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 11
-iter  11  #CD cycles 1
-iter  12  #CD cycles 8
-iter  13  #CD cycles 2
+iter  13  #CD cycles 4
 iter  14  #CD cycles 1
-iter  15  #CD cycles 9
-iter  16  #CD cycles 1
-iter  17  #CD cycles 5
+iter  15  #CD cycles 10
 =========================
-optimization finished, #iter = 17
+optimization finished, #iter = 15
 Objective value = 16.642208
 #nonzeros/#features = 2/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 3
-iter   6  #CD cycles 1
-iter   7  #CD cycles 4
-iter   8  #CD cycles 1
-iter   9  #CD cycles 13
-iter  10  #CD cycles 2
-iter  11  #CD cycles 1
-iter  12  #CD cycles 6
-iter  13  #CD cycles 2
-iter  14  #CD cycles 5
+iter   2  #CD cycles 1
+iter   3  #CD cycles 9
+iter   4  #CD cycles 1
+iter   5  #CD cycles 8
+iter   6  #CD cycles 5
+iter   7  #CD cycles 1
+iter   8  #CD cycles 6
+iter   9  #CD cycles 2
+iter  10  #CD cycles 1
+iter  11  #CD cycles 11
+iter  12  #CD cycles 1
+iter  13  #CD cycles 10
+iter  14  #CD cycles 2
 iter  15  #CD cycles 1
-iter  16  #CD cycles 56
-iter  17  #CD cycles 13
-iter  18  #CD cycles 27
-iter  19  #CD cycles 30
-iter  20  #CD cycles 7
+iter  16  #CD cycles 15
+iter  17  #CD cycles 7
+iter  18  #CD cycles 2
+iter  19  #CD cycles 5
+iter  20  #CD cycles 6
 iter  21  #CD cycles 2
-iter  22  #CD cycles 17
-iter  23  #CD cycles 7
-iter  24  #CD cycles 8
-iter  25  #CD cycles 7
-iter  26  #CD cycles 7
-iter  27  #CD cycles 1
-iter  28  #CD cycles 85
-iter  29  #CD cycles 10
-iter  30  #CD cycles 3
-iter  31  #CD cycles 10
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  32  #CD cycles 12
-iter  33  #CD cycles 14
-iter  34  #CD cycles 5
-iter  35  #CD cycles 4
-iter  36  #CD cycles 6
-iter  37  #CD cycles 5
-iter  38  #CD cycles 3
-iter  39  #CD cycles 2
-iter  40  #CD cycles 3
-iter  41  #CD cycles 4
-iter  42  #CD cycles 5
-iter  43  #CD cycles 1
-iter  44  #CD cycles 97
+iter  22  #CD cycles 3
+iter  23  #CD cycles 1
+iter  24  #CD cycles 24
 =========================
-optimization finished, #iter = 44
+optimization finished, #iter = 24
 Objective value = 125.892095
 #nonzeros/#features = 12/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
+iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 9
+iter   4  #CD cycles 7
 iter   5  #CD cycles 1
-iter   6  #CD cycles 13
+iter   6  #CD cycles 16
 iter   7  #CD cycles 1
-iter   8  #CD cycles 15
+iter   8  #CD cycles 16
 iter   9  #CD cycles 1
-iter  10  #CD cycles 13
-iter  11  #CD cycles 10
-iter  12  #CD cycles 12
-iter  13  #CD cycles 2
-iter  14  #CD cycles 19
-iter  15  #CD cycles 6
-iter  16  #CD cycles 3
-iter  17  #CD cycles 7
-iter  18  #CD cycles 3
-iter  19  #CD cycles 5
-iter  20  #CD cycles 17
-iter  21  #CD cycles 4
-iter  22  #CD cycles 14
-iter  23  #CD cycles 1
-iter  24  #CD cycles 91
-iter  25  #CD cycles 1
-iter  26  #CD cycles 29
+iter  10  #CD cycles 96
+iter  11  #CD cycles 7
+iter  12  #CD cycles 2
+iter  13  #CD cycles 1
+iter  14  #CD cycles 87
+iter  15  #CD cycles 2
+iter  16  #CD cycles 1
+iter  17  #CD cycles 23
+iter  18  #CD cycles 4
+iter  19  #CD cycles 1
+iter  20  #CD cycles 9
 =========================
-optimization finished, #iter = 26
+optimization finished, #iter = 20
 Objective value = 924.400399
 #nonzeros/#features = 68/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
+iter   2  #CD cycles 2
 iter   3  #CD cycles 1
-iter   4  #CD cycles 10
+iter   4  #CD cycles 9
 iter   5  #CD cycles 1
-iter   6  #CD cycles 10
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 18
-iter  10  #CD cycles 1
-iter  11  #CD cycles 17
-iter  12  #CD cycles 7
-iter  13  #CD cycles 5
-iter  14  #CD cycles 3
-iter  15  #CD cycles 2
-iter  16  #CD cycles 2
-iter  17  #CD cycles 3
-iter  18  #CD cycles 2
-iter  19  #CD cycles 2
-iter  20  #CD cycles 1
-iter  21  #CD cycles 173
-iter  22  #CD cycles 4
-iter  23  #CD cycles 16
+iter   6  #CD cycles 15
+iter   7  #CD cycles 1
+iter   8  #CD cycles 18
+iter   9  #CD cycles 1
+iter  10  #CD cycles 26
+iter  11  #CD cycles 14
+iter  12  #CD cycles 3
+iter  13  #CD cycles 1
+iter  14  #CD cycles 156
+iter  15  #CD cycles 5
+iter  16  #CD cycles 3
+iter  17  #CD cycles 5
+iter  18  #CD cycles 8
+iter  19  #CD cycles 4
+iter  20  #CD cycles 3
+iter  21  #CD cycles 3
+iter  22  #CD cycles 2
+iter  23  #CD cycles 5
 iter  24  #CD cycles 4
-iter  25  #CD cycles 1
-iter  26  #CD cycles 80
-iter  27  #CD cycles 26
-iter  28  #CD cycles 87
-iter  29  #CD cycles 70
-iter  30  #CD cycles 26
-iter  31  #CD cycles 12
-iter  32  #CD cycles 3
+iter  25  #CD cycles 10
+iter  26  #CD cycles 4
+iter  27  #CD cycles 1
+iter  28  #CD cycles 130
+iter  29  #CD cycles 18
+iter  30  #CD cycles 38
+iter  31  #CD cycles 23
+iter  32  #CD cycles 8
 iter  33  #CD cycles 8
-iter  34  #CD cycles 6
-iter  35  #CD cycles 2
-iter  36  #CD cycles 3
-iter  37  #CD cycles 5
-iter  38  #CD cycles 3
-iter  39  #CD cycles 3
-iter  40  #CD cycles 1
-iter  41  #CD cycles 158
+iter  34  #CD cycles 49
+iter  35  #CD cycles 1
+iter  36  #CD cycles 200
 =========================
-optimization finished, #iter = 41
-Objective value = 6720.449138
+optimization finished, #iter = 36
+Objective value = 6720.449113
 #nonzeros/#features = 188/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
+iter   2  #CD cycles 4
 iter   3  #CD cycles 1
 iter   4  #CD cycles 8
 iter   5  #CD cycles 1
 iter   6  #CD cycles 14
 iter   7  #CD cycles 1
-iter   8  #CD cycles 31
-iter   9  #CD cycles 5
-iter  10  #CD cycles 1
-iter  11  #CD cycles 107
-iter  12  #CD cycles 3
-iter  13  #CD cycles 6
-iter  14  #CD cycles 1
-iter  15  #CD cycles 83
+iter   8  #CD cycles 25
+iter   9  #CD cycles 15
+iter  10  #CD cycles 5
+iter  11  #CD cycles 1
+iter  12  #CD cycles 104
+iter  13  #CD cycles 1
+iter  14  #CD cycles 122
+iter  15  #CD cycles 32
+iter  16  #CD cycles 4
+iter  17  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  16  #CD cycles 71
-iter  17  #CD cycles 4
-iter  18  #CD cycles 2
-iter  19  #CD cycles 3
-iter  20  #CD cycles 8
-iter  21  #CD cycles 10
-iter  22  #CD cycles 5
-iter  23  #CD cycles 4
-iter  24  #CD cycles 1
-iter  25  #CD cycles 124
-iter  26  #CD cycles 14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  18  #CD cycles 104
+iter  19  #CD cycles 39
+iter  20  #CD cycles 71
+iter  21  #CD cycles 6
+iter  22  #CD cycles 31
+iter  23  #CD cycles 1
+iter  24  #CD cycles 271
 =========================
-optimization finished, #iter = 26
-Objective value = 50693.804454
+optimization finished, #iter = 24
+Objective value = 50693.755967
 #nonzeros/#features = 241/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
+iter   2  #CD cycles 3
+iter   3  #CD cycles 2
+iter   4  #CD cycles 1
+iter   5  #CD cycles 5
+iter   6  #CD cycles 1
+iter   7  #CD cycles 15
+iter   8  #CD cycles 1
+iter   9  #CD cycles 5
+iter  10  #CD cycles 19
+iter  11  #CD cycles 6
+iter  12  #CD cycles 3
+iter  13  #CD cycles 3
+iter  14  #CD cycles 2
+iter  15  #CD cycles 10
+iter  16  #CD cycles 1
+iter  17  #CD cycles 122
+iter  18  #CD cycles 34
+iter  19  #CD cycles 3
+iter  20  #CD cycles 2
+iter  21  #CD cycles 1
+iter  22  #CD cycles 205
+iter  23  #CD cycles 11
+iter  24  #CD cycles 14
+iter  25  #CD cycles 13
+iter  26  #CD cycles 2
+iter  27  #CD cycles 9
+iter  28  #CD cycles 12
+iter  29  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  30  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  31  #CD cycles 299
+iter  32  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  33  #CD cycles 1000
+=========================
+optimization finished, #iter = 33
+Objective value = 389821.984242
+#nonzeros/#features = 246/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
 iter   3  #CD cycles 1
-iter   4  #CD cycles 5
-iter   5  #CD cycles 2
+iter   4  #CD cycles 6
+iter   5  #CD cycles 3
 iter   6  #CD cycles 1
 iter   7  #CD cycles 10
 iter   8  #CD cycles 2
 iter   9  #CD cycles 1
-iter  10  #CD cycles 18
-iter  11  #CD cycles 1
-iter  12  #CD cycles 129
-iter  13  #CD cycles 27
+iter  10  #CD cycles 21
+iter  11  #CD cycles 19
+iter  12  #CD cycles 2
+iter  13  #CD cycles 5
 iter  14  #CD cycles 1
-iter  15  #CD cycles 269
-iter  16  #CD cycles 41
-iter  17  #CD cycles 6
+iter  15  #CD cycles 75
+iter  16  #CD cycles 38
+iter  17  #CD cycles 12
 iter  18  #CD cycles 3
-iter  19  #CD cycles 11
-iter  20  #CD cycles 1
-iter  21  #CD cycles 455
-iter  22  #CD cycles 357
+iter  19  #CD cycles 2
+iter  20  #CD cycles 4
+iter  21  #CD cycles 2
+iter  22  #CD cycles 2
+iter  23  #CD cycles 1
+iter  24  #CD cycles 249
+iter  25  #CD cycles 2
+iter  26  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  23  #CD cycles 111
-iter  24  #CD cycles 49
-iter  25  #CD cycles 17
-iter  26  #CD cycles 85
-iter  27  #CD cycles 19
-iter  28  #CD cycles 2
-iter  29  #CD cycles 18
-iter  30  #CD cycles 5
-iter  31  #CD cycles 209
-iter  32  #CD cycles 55
-iter  33  #CD cycles 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  27  #CD cycles 1000
+iter  28  #CD cycles 917
+iter  29  #CD cycles 125
+iter  30  #CD cycles 461
+iter  31  #CD cycles 14
+iter  32  #CD cycles 40
+iter  33  #CD cycles 3
 =========================
 optimization finished, #iter = 33
-Objective value = 389824.110599
+Objective value = 3014289.646332
 #nonzeros/#features = 249/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 3
-iter   4  #CD cycles 1
-iter   5  #CD cycles 5
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 9
-iter   9  #CD cycles 1
-iter  10  #CD cycles 8
-iter  11  #CD cycles 5
-iter  12  #CD cycles 4
-iter  13  #CD cycles 7
-iter  14  #CD cycles 1
-iter  15  #CD cycles 65
-iter  16  #CD cycles 7
-iter  17  #CD cycles 17
-iter  18  #CD cycles 1
-iter  19  #CD cycles 225
-iter  20  #CD cycles 47
-iter  21  #CD cycles 34
-iter  22  #CD cycles 29
-iter  23  #CD cycles 2
-iter  24  #CD cycles 9
-iter  25  #CD cycles 17
-iter  26  #CD cycles 37
-iter  27  #CD cycles 2
-iter  28  #CD cycles 3
-iter  29  #CD cycles 2
-iter  30  #CD cycles 9
-iter  31  #CD cycles 5
-iter  32  #CD cycles 24
-iter  33  #CD cycles 3
-iter  34  #CD cycles 4
-iter  35  #CD cycles 4
-iter  36  #CD cycles 18
-iter  37  #CD cycles 6
-iter  38  #CD cycles 6
-iter  39  #CD cycles 2
-iter  40  #CD cycles 2
-iter  41  #CD cycles 7
-iter  42  #CD cycles 5
-iter  43  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  44  #CD cycles 1000
-iter  45  #CD cycles 466
-iter  46  #CD cycles 92
-iter  47  #CD cycles 638
-iter  48  #CD cycles 35
-iter  49  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  50  #CD cycles 1000
-WARNING: reaching max number of inner iterations
-iter  51  #CD cycles 1000
-=========================
-optimization finished, #iter = 51
-Objective value = 3014238.238077
-#nonzeros/#features = 248/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
+iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 3
-iter   7  #CD cycles 11
-iter   8  #CD cycles 1
-iter   9  #CD cycles 18
-iter  10  #CD cycles 1
-iter  11  #CD cycles 98
-iter  12  #CD cycles 2
-iter  13  #CD cycles 31
-iter  14  #CD cycles 5
-iter  15  #CD cycles 4
-iter  16  #CD cycles 6
-iter  17  #CD cycles 5
-iter  18  #CD cycles 4
-iter  19  #CD cycles 1
-iter  20  #CD cycles 160
-iter  21  #CD cycles 18
-iter  22  #CD cycles 1
+iter   4  #CD cycles 4
+iter   5  #CD cycles 4
+iter   6  #CD cycles 1
+iter   7  #CD cycles 10
+iter   8  #CD cycles 4
+iter   9  #CD cycles 1
+iter  10  #CD cycles 28
+iter  11  #CD cycles 1
+iter  12  #CD cycles 102
+iter  13  #CD cycles 27
+iter  14  #CD cycles 10
+iter  15  #CD cycles 7
+iter  16  #CD cycles 1
+iter  17  #CD cycles 213
+iter  18  #CD cycles 21
+iter  19  #CD cycles 6
+iter  20  #CD cycles 2
+iter  21  #CD cycles 28
+iter  22  #CD cycles 14
+iter  23  #CD cycles 4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  23  #CD cycles 1000
-iter  24  #CD cycles 452
-iter  25  #CD cycles 55
-iter  26  #CD cycles 232
-iter  27  #CD cycles 389
-iter  28  #CD cycles 274
-iter  29  #CD cycles 103
-iter  30  #CD cycles 11
-iter  31  #CD cycles 33
-iter  32  #CD cycles 56
-iter  33  #CD cycles 15
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  34  #CD cycles 118
-iter  35  #CD cycles 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  24  #CD cycles 13
+iter  25  #CD cycles 3
+iter  26  #CD cycles 10
+iter  27  #CD cycles 1
 WARNING: reaching max number of inner iterations
-iter  36  #CD cycles 1000
+iter  28  #CD cycles 1000
+iter  29  #CD cycles 750
+iter  30  #CD cycles 24
+iter  31  #CD cycles 22
+iter  32  #CD cycles 8
+iter  33  #CD cycles 134
+iter  34  #CD cycles 4
+iter  35  #CD cycles 26
+iter  36  #CD cycles 145
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  37  #CD cycles 97
+iter  38  #CD cycles 3
+iter  39  #CD cycles 6
+iter  40  #CD cycles 23
+iter  41  #CD cycles 2
+iter  42  #CD cycles 25
+iter  43  #CD cycles 141
+iter  44  #CD cycles 6
+iter  45  #CD cycles 14
+iter  46  #CD cycles 3
+iter  47  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  48  #CD cycles 1000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  37  #CD cycles 1000
+iter  49  #CD cycles 1000
 =========================
-optimization finished, #iter = 37
-Objective value = 23333027.194592
+optimization finished, #iter = 49
+Objective value = 23333030.914639
 #nonzeros/#features = 249/261
 [LibLinear]=========================
 optimization finished, #iter = 0
@@ -2750,306 +2739,307 @@ Objective value = 2.165028
 #nonzeros/#features = 1/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 1
-iter   3  #CD cycles 5
+iter   3  #CD cycles 6
 iter   4  #CD cycles 1
 iter   5  #CD cycles 11
 iter   6  #CD cycles 1
-iter   7  #CD cycles 8
-iter   8  #CD cycles 3
-iter   9  #CD cycles 2
-iter  10  #CD cycles 1
-iter  11  #CD cycles 4
-iter  12  #CD cycles 1
-iter  13  #CD cycles 8
-iter  14  #CD cycles 4
+iter   7  #CD cycles 4
+iter   8  #CD cycles 4
+iter   9  #CD cycles 1
+iter  10  #CD cycles 3
+iter  11  #CD cycles 2
+iter  12  #CD cycles 3
+iter  13  #CD cycles 1
+iter  14  #CD cycles 7
 iter  15  #CD cycles 1
-iter  16  #CD cycles 5
+iter  16  #CD cycles 4
+iter  17  #CD cycles 1
+iter  18  #CD cycles 9
 =========================
-optimization finished, #iter = 16
+optimization finished, #iter = 18
 Objective value = 16.659641
 #nonzeros/#features = 2/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 3
 iter   3  #CD cycles 1
 iter   4  #CD cycles 6
-iter   5  #CD cycles 1
-iter   6  #CD cycles 12
-iter   7  #CD cycles 1
-iter   8  #CD cycles 16
-iter   9  #CD cycles 1
-iter  10  #CD cycles 31
+iter   5  #CD cycles 2
+iter   6  #CD cycles 1
+iter   7  #CD cycles 8
+iter   8  #CD cycles 1
+iter   9  #CD cycles 32
+iter  10  #CD cycles 1
 iter  11  #CD cycles 4
-iter  12  #CD cycles 1
-iter  13  #CD cycles 161
-iter  14  #CD cycles 36
-iter  15  #CD cycles 16
-iter  16  #CD cycles 44
-iter  17  #CD cycles 4
-iter  18  #CD cycles 5
-iter  19  #CD cycles 2
-iter  20  #CD cycles 13
-iter  21  #CD cycles 2
-iter  22  #CD cycles 3
-iter  23  #CD cycles 23
-iter  24  #CD cycles 5
-iter  25  #CD cycles 3
-iter  26  #CD cycles 5
-iter  27  #CD cycles 3
-iter  28  #CD cycles 2
-iter  29  #CD cycles 1
-iter  30  #CD cycles 9
-iter  31  #CD cycles 60
-iter  32  #CD cycles 50
-iter  33  #CD cycles 12
-iter  34  #CD cycles 2
-iter  35  #CD cycles 1
-iter  36  #CD cycles 7
-iter  37  #CD cycles 165
+iter  12  #CD cycles 26
+iter  13  #CD cycles 4
+iter  14  #CD cycles 23
+iter  15  #CD cycles 13
+iter  16  #CD cycles 10
+iter  17  #CD cycles 8
+iter  18  #CD cycles 8
+iter  19  #CD cycles 9
+iter  20  #CD cycles 5
+iter  21  #CD cycles 1
+iter  22  #CD cycles 69
+iter  23  #CD cycles 14
+iter  24  #CD cycles 31
+iter  25  #CD cycles 18
+iter  26  #CD cycles 6
+iter  27  #CD cycles 21
+iter  28  #CD cycles 5
+iter  29  #CD cycles 16
+iter  30  #CD cycles 7
+iter  31  #CD cycles 1
+iter  32  #CD cycles 155
+iter  33  #CD cycles 21
+iter  34  #CD cycles 17
+iter  35  #CD cycles 19
+iter  36  #CD cycles 1
+iter  37  #CD cycles 109
 =========================
 optimization finished, #iter = 37
-Objective value = 126.264109
+Objective value = 126.264111
 #nonzeros/#features = 13/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 7
+iter   4  #CD cycles 6
 iter   5  #CD cycles 1
-iter   6  #CD cycles 15
-iter   7  #CD cycles 1
-iter   8  #CD cycles 10
-iter   9  #CD cycles 1
-iter  10  #CD cycles 17
+iter   6  #CD cycles 13
+iter   7  #CD cycles 6
+iter   8  #CD cycles 1
+iter   9  #CD cycles 5
+iter  10  #CD cycles 5
 iter  11  #CD cycles 1
-iter  12  #CD cycles 17
-iter  13  #CD cycles 3
-iter  14  #CD cycles 8
-iter  15  #CD cycles 5
-iter  16  #CD cycles 1
-iter  17  #CD cycles 43
-iter  18  #CD cycles 22
-iter  19  #CD cycles 9
-iter  20  #CD cycles 3
-iter  21  #CD cycles 1
-iter  22  #CD cycles 144
+iter  12  #CD cycles 42
+iter  13  #CD cycles 1
+iter  14  #CD cycles 42
+iter  15  #CD cycles 6
+iter  16  #CD cycles 12
+iter  17  #CD cycles 14
+iter  18  #CD cycles 31
+iter  19  #CD cycles 24
+iter  20  #CD cycles 9
+iter  21  #CD cycles 4
+iter  22  #CD cycles 1
+iter  23  #CD cycles 57
+iter  24  #CD cycles 41
+iter  25  #CD cycles 25
+iter  26  #CD cycles 21
+iter  27  #CD cycles 3
+iter  28  #CD cycles 24
+iter  29  #CD cycles 7
+iter  30  #CD cycles 5
+iter  31  #CD cycles 8
+iter  32  #CD cycles 4
+iter  33  #CD cycles 9
+iter  34  #CD cycles 9
+iter  35  #CD cycles 4
+iter  36  #CD cycles 1
+iter  37  #CD cycles 84
 =========================
-optimization finished, #iter = 22
+optimization finished, #iter = 37
 Objective value = 928.734289
 #nonzeros/#features = 74/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 3
 iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 3
+iter   6  #CD cycles 1
+iter   7  #CD cycles 10
+iter   8  #CD cycles 5
+iter   9  #CD cycles 1
+iter  10  #CD cycles 64
+iter  11  #CD cycles 3
+iter  12  #CD cycles 7
+iter  13  #CD cycles 1
+iter  14  #CD cycles 117
+iter  15  #CD cycles 1
+iter  16  #CD cycles 175
+iter  17  #CD cycles 3
+iter  18  #CD cycles 4
+iter  19  #CD cycles 14
+iter  20  #CD cycles 2
+iter  21  #CD cycles 2
+iter  22  #CD cycles 4
+iter  23  #CD cycles 9
+iter  24  #CD cycles 8
+iter  25  #CD cycles 11
+iter  26  #CD cycles 12
+iter  27  #CD cycles 4
+iter  28  #CD cycles 2
+iter  29  #CD cycles 1
+iter  30  #CD cycles 259
+iter  31  #CD cycles 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  32  #CD cycles 231
+=========================
+optimization finished, #iter = 32
+Objective value = 6776.722726
+#nonzeros/#features = 187/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
 iter   4  #CD cycles 6
 iter   5  #CD cycles 3
 iter   6  #CD cycles 1
-iter   7  #CD cycles 9
-iter   8  #CD cycles 3
-iter   9  #CD cycles 1
-iter  10  #CD cycles 9
-iter  11  #CD cycles 29
-iter  12  #CD cycles 8
-iter  13  #CD cycles 1
-iter  14  #CD cycles 96
-iter  15  #CD cycles 36
-iter  16  #CD cycles 11
+iter   7  #CD cycles 12
+iter   8  #CD cycles 1
+iter   9  #CD cycles 54
+iter  10  #CD cycles 24
+iter  11  #CD cycles 3
+iter  12  #CD cycles 20
+iter  13  #CD cycles 2
+iter  14  #CD cycles 2
+iter  15  #CD cycles 1
+iter  16  #CD cycles 158
+iter  17  #CD cycles 42
+iter  18  #CD cycles 1
+iter  19  #CD cycles 166
+iter  20  #CD cycles 10
+iter  21  #CD cycles 5
+iter  22  #CD cycles 7
+iter  23  #CD cycles 2
+iter  24  #CD cycles 1
+iter  25  #CD cycles 538
+=========================
+optimization finished, #iter = 25
+Objective value = 51111.156061
+#nonzeros/#features = 243/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 11
+iter   7  #CD cycles 1
+iter   8  #CD cycles 41
+iter   9  #CD cycles 23
+iter  10  #CD cycles 5
+iter  11  #CD cycles 2
+iter  12  #CD cycles 17
+iter  13  #CD cycles 2
+iter  14  #CD cycles 1
+iter  15  #CD cycles 168
+iter  16  #CD cycles 47
 iter  17  #CD cycles 3
 iter  18  #CD cycles 1
-iter  19  #CD cycles 62
-iter  20  #CD cycles 21
+iter  19  #CD cycles 115
+iter  20  #CD cycles 97
+iter  21  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  21  #CD cycles 68
-iter  22  #CD cycles 3
-iter  23  #CD cycles 6
-iter  24  #CD cycles 8
-iter  25  #CD cycles 24
-iter  26  #CD cycles 6
-iter  27  #CD cycles 1
-iter  28  #CD cycles 242
-iter  29  #CD cycles 52
-iter  30  #CD cycles 5
-iter  31  #CD cycles 1
-iter  32  #CD cycles 178
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  22  #CD cycles 999
+iter  23  #CD cycles 578
+iter  24  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  25  #CD cycles 1000
 =========================
-optimization finished, #iter = 32
-Objective value = 6776.722745
-#nonzeros/#features = 187/261
+optimization finished, #iter = 25
+Objective value = 392995.249961
+#nonzeros/#features = 251/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 1
+iter   3  #CD cycles 10
+iter   4  #CD cycles 2
+iter   5  #CD cycles 1
+iter   6  #CD cycles 11
+iter   7  #CD cycles 1
+iter   8  #CD cycles 21
+iter   9  #CD cycles 15
+iter  10  #CD cycles 12
+iter  11  #CD cycles 4
+iter  12  #CD cycles 7
+iter  13  #CD cycles 5
+iter  14  #CD cycles 4
+iter  15  #CD cycles 1
+iter  16  #CD cycles 62
+iter  17  #CD cycles 69
+iter  18  #CD cycles 25
+iter  19  #CD cycles 4
+iter  20  #CD cycles 4
+iter  21  #CD cycles 13
+iter  22  #CD cycles 10
+iter  23  #CD cycles 8
+iter  24  #CD cycles 2
+iter  25  #CD cycles 6
+iter  26  #CD cycles 1
+iter  27  #CD cycles 119
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  28  #CD cycles 139
+iter  29  #CD cycles 96
+iter  30  #CD cycles 4
+iter  31  #CD cycles 2
+iter  32  #CD cycles 25
+iter  33  #CD cycles 7
+iter  34  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  35  #CD cycles 1000
+WARNING: reaching max number of inner iterations
+iter  36  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  37  #CD cycles 462
+iter  38  #CD cycles 8
+=========================
+optimization finished, #iter = 38
+Objective value = 3038678.631199
+#nonzeros/#features = 251/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 3
 iter   3  #CD cycles 1
-iter   4  #CD cycles 8
+iter   4  #CD cycles 9
 iter   5  #CD cycles 1
 iter   6  #CD cycles 9
-iter   7  #CD cycles 1
-iter   8  #CD cycles 80
-iter   9  #CD cycles 10
-iter  10  #CD cycles 1
-iter  11  #CD cycles 213
-iter  12  #CD cycles 12
-iter  13  #CD cycles 7
-iter  14  #CD cycles 1
-iter  15  #CD cycles 119
-iter  16  #CD cycles 71
-iter  17  #CD cycles 1
-iter  18  #CD cycles 534
-iter  19  #CD cycles 8
-iter  20  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  21  #CD cycles 565
-=========================
-optimization finished, #iter = 21
-Objective value = 51111.077555
-#nonzeros/#features = 245/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 2
-iter   6  #CD cycles 1
-iter   7  #CD cycles 13
-iter   8  #CD cycles 4
-iter   9  #CD cycles 1
-iter  10  #CD cycles 22
-iter  11  #CD cycles 5
-iter  12  #CD cycles 32
-iter  13  #CD cycles 1
-iter  14  #CD cycles 24
-iter  15  #CD cycles 170
-iter  16  #CD cycles 65
-iter  17  #CD cycles 1
-iter  18  #CD cycles 180
-iter  19  #CD cycles 3
-iter  20  #CD cycles 111
-iter  21  #CD cycles 1
-iter  22  #CD cycles 740
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  23  #CD cycles 476
-iter  24  #CD cycles 79
-iter  25  #CD cycles 107
-iter  26  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  27  #CD cycles 1000
-=========================
-optimization finished, #iter = 27
-Objective value = 392995.224612
-#nonzeros/#features = 251/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 11
-iter   7  #CD cycles 1
-iter   8  #CD cycles 24
-iter   9  #CD cycles 40
-iter  10  #CD cycles 4
-iter  11  #CD cycles 5
-iter  12  #CD cycles 3
-iter  13  #CD cycles 20
-iter  14  #CD cycles 2
-iter  15  #CD cycles 3
-iter  16  #CD cycles 1
-iter  17  #CD cycles 34
-iter  18  #CD cycles 95
-iter  19  #CD cycles 4
-iter  20  #CD cycles 3
-iter  21  #CD cycles 6
-iter  22  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  23  #CD cycles 179
-iter  24  #CD cycles 5
-iter  25  #CD cycles 4
-iter  26  #CD cycles 14
-iter  27  #CD cycles 40
-iter  28  #CD cycles 29
-iter  29  #CD cycles 17
-iter  30  #CD cycles 48
-iter  31  #CD cycles 42
-iter  32  #CD cycles 2
-iter  33  #CD cycles 13
-iter  34  #CD cycles 9
-iter  35  #CD cycles 2
-iter  36  #CD cycles 13
-iter  37  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  38  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  39  #CD cycles 904
-iter  40  #CD cycles 369
-iter  41  #CD cycles 177
-iter  42  #CD cycles 115
-iter  43  #CD cycles 21
-iter  44  #CD cycles 3
-iter  45  #CD cycles 28
-iter  46  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  47  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  48  #CD cycles 1000
-=========================
-optimization finished, #iter = 48
-Objective value = 3038602.246815
-#nonzeros/#features = 251/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 1
-iter   6  #CD cycles 11
-iter   7  #CD cycles 3
+iter   7  #CD cycles 4
 iter   8  #CD cycles 1
-iter   9  #CD cycles 4
-iter  10  #CD cycles 17
-iter  11  #CD cycles 10
-iter  12  #CD cycles 12
-iter  13  #CD cycles 1
-iter  14  #CD cycles 144
-iter  15  #CD cycles 12
+iter   9  #CD cycles 40
+iter  10  #CD cycles 11
+iter  11  #CD cycles 1
+iter  12  #CD cycles 47
+iter  13  #CD cycles 21
+iter  14  #CD cycles 38
+iter  15  #CD cycles 29
 iter  16  #CD cycles 7
-iter  17  #CD cycles 16
-iter  18  #CD cycles 17
-iter  19  #CD cycles 10
-iter  20  #CD cycles 9
-iter  21  #CD cycles 2
-iter  22  #CD cycles 14
-iter  23  #CD cycles 1
-iter  24  #CD cycles 119
-iter  25  #CD cycles 5
-iter  26  #CD cycles 13
-iter  27  #CD cycles 11
-iter  28  #CD cycles 2
-iter  29  #CD cycles 42
-iter  30  #CD cycles 3
-iter  31  #CD cycles 22
-iter  32  #CD cycles 42
-iter  33  #CD cycles 31
-iter  34  #CD cycles 13
-iter  35  #CD cycles 6
-iter  36  #CD cycles 17
-iter  37  #CD cycles 18
-iter  38  #CD cycles 8
-iter  39  #CD cycles 2
-iter  40  #CD cycles 33
-iter  41  #CD cycles 3
-iter  42  #CD cycles 12
-iter  43  #CD cycles 8
-iter  44  #CD cycles 1
+iter  17  #CD cycles 1
+iter  18  #CD cycles 239
+iter  19  #CD cycles 19
+iter  20  #CD cycles 43
+iter  21  #CD cycles 15
+iter  22  #CD cycles 8
+iter  23  #CD cycles 6
+iter  24  #CD cycles 16
+iter  25  #CD cycles 3
+iter  26  #CD cycles 11
+iter  27  #CD cycles 3
+iter  28  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  29  #CD cycles 1000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  45  #CD cycles 1000
-iter  46  #CD cycles 642
-iter  47  #CD cycles 490
-iter  48  #CD cycles 74
-iter  49  #CD cycles 5
+iter  30  #CD cycles 1000
+iter  31  #CD cycles 172
+iter  32  #CD cycles 28
+iter  33  #CD cycles 14
+iter  34  #CD cycles 156
+iter  35  #CD cycles 150
+iter  36  #CD cycles 24
+iter  37  #CD cycles 201
+iter  38  #CD cycles 46
+iter  39  #CD cycles 88
+iter  40  #CD cycles 16
+iter  41  #CD cycles 47
+iter  42  #CD cycles 2
+iter  43  #CD cycles 7
+iter  44  #CD cycles 53
+iter  45  #CD cycles 40
 =========================
-optimization finished, #iter = 49
-Objective value = 23522354.126845
+optimization finished, #iter = 45
+Objective value = 23521867.660847
 #nonzeros/#features = 252/261
 [LibLinear]iter   1  #CD cycles 1
 =========================
@@ -3057,83 +3047,95 @@ optimization finished, #iter = 1
 Objective value = 0.282249
 #nonzeros/#features = 1/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
+iter   2  #CD cycles 3
 iter   3  #CD cycles 1
 iter   4  #CD cycles 1
 iter   5  #CD cycles 1
 iter   6  #CD cycles 1
-iter   7  #CD cycles 9
+iter   7  #CD cycles 2
 iter   8  #CD cycles 1
-iter   9  #CD cycles 4
+iter   9  #CD cycles 3
+iter  10  #CD cycles 2
+iter  11  #CD cycles 2
+iter  12  #CD cycles 1
+iter  13  #CD cycles 7
 =========================
-optimization finished, #iter = 9
+optimization finished, #iter = 13
 Objective value = 2.163670
 #nonzeros/#features = 2/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 6
+iter   2  #CD cycles 3
+iter   3  #CD cycles 2
 iter   4  #CD cycles 1
-iter   5  #CD cycles 8
-iter   6  #CD cycles 1
-iter   7  #CD cycles 11
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 4
-iter  11  #CD cycles 2
-iter  12  #CD cycles 2
+iter   5  #CD cycles 3
+iter   6  #CD cycles 3
+iter   7  #CD cycles 1
+iter   8  #CD cycles 6
+iter   9  #CD cycles 3
+iter  10  #CD cycles 1
+iter  11  #CD cycles 6
+iter  12  #CD cycles 3
 iter  13  #CD cycles 1
-iter  14  #CD cycles 5
-iter  15  #CD cycles 4
-iter  16  #CD cycles 1
-iter  17  #CD cycles 2
-iter  18  #CD cycles 2
+iter  14  #CD cycles 6
+iter  15  #CD cycles 1
+iter  16  #CD cycles 4
+iter  17  #CD cycles 1
+iter  18  #CD cycles 10
 =========================
 optimization finished, #iter = 18
 Objective value = 16.644976
 #nonzeros/#features = 2/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
+iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 9
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter   5  #CD cycles 1
+iter   4  #CD cycles 10
+iter   5  #CD cycles 1
 iter   6  #CD cycles 4
-iter   7  #CD cycles 4
+iter   7  #CD cycles 2
 iter   8  #CD cycles 1
-iter   9  #CD cycles 8
-iter  10  #CD cycles 4
-iter  11  #CD cycles 1
-iter  12  #CD cycles 9
-iter  13  #CD cycles 3
-iter  14  #CD cycles 3
-iter  15  #CD cycles 7
-iter  16  #CD cycles 32
-iter  17  #CD cycles 1
-iter  18  #CD cycles 91
-iter  19  #CD cycles 14
-iter  20  #CD cycles 45
-iter  21  #CD cycles 8
-iter  22  #CD cycles 21
-iter  23  #CD cycles 13
-iter  24  #CD cycles 3
-iter  25  #CD cycles 17
-iter  26  #CD cycles 2
+iter   9  #CD cycles 10
+iter  10  #CD cycles 1
+iter  11  #CD cycles 20
+iter  12  #CD cycles 6
+iter  13  #CD cycles 19
+iter  14  #CD cycles 21
+iter  15  #CD cycles 5
+iter  16  #CD cycles 6
+iter  17  #CD cycles 4
+iter  18  #CD cycles 1
+iter  19  #CD cycles 89
+iter  20  #CD cycles 10
+iter  21  #CD cycles 19
+iter  22  #CD cycles 2
+iter  23  #CD cycles 2
+iter  24  #CD cycles 4
+iter  25  #CD cycles 4
+iter  26  #CD cycles 18
 iter  27  #CD cycles 8
-iter  28  #CD cycles 2
-iter  29  #CD cycles 6
-iter  30  #CD cycles 3
-iter  31  #CD cycles 3
-iter  32  #CD cycles 1
-iter  33  #CD cycles 83
-iter  34  #CD cycles 4
-iter  35  #CD cycles 67
-iter  36  #CD cycles 13
-iter  37  #CD cycles 1
-iter  38  #CD cycles 27
-iter  39  #CD cycles 138
+iter  28  #CD cycles 3
+iter  29  #CD cycles 1
+iter  30  #CD cycles 58
+iter  31  #CD cycles 29
+iter  32  #CD cycles 75
+iter  33  #CD cycles 9
+iter  34  #CD cycles 14
+iter  35  #CD cycles 8
+iter  36  #CD cycles 8
+iter  37  #CD cycles 13
+iter  38  #CD cycles 6
+iter  39  #CD cycles 17
+iter  40  #CD cycles 13
+iter  41  #CD cycles 9
+iter  42  #CD cycles 4
+iter  43  #CD cycles 7
+iter  44  #CD cycles 3
+iter  45  #CD cycles 3
+iter  46  #CD cycles 3
+iter  47  #CD cycles 2
+iter  48  #CD cycles 1
+iter  49  #CD cycles 62
 =========================
-optimization finished, #iter = 39
+optimization finished, #iter = 49
 Objective value = 125.655760
 #nonzeros/#features = 15/261
 [LibLinear]iter   1  #CD cycles 1
@@ -3141,639 +3143,689 @@ iter   2  #CD cycles 4
 iter   3  #CD cycles 1
 iter   4  #CD cycles 7
 iter   5  #CD cycles 1
-iter   6  #CD cycles 8
+iter   6  #CD cycles 18
 iter   7  #CD cycles 1
-iter   8  #CD cycles 13
-iter   9  #CD cycles 2
-iter  10  #CD cycles 1
-iter  11  #CD cycles 213
-iter  12  #CD cycles 5
-iter  13  #CD cycles 3
-iter  14  #CD cycles 2
-iter  15  #CD cycles 3
-iter  16  #CD cycles 4
-iter  17  #CD cycles 5
-iter  18  #CD cycles 1
-iter  19  #CD cycles 164
-iter  20  #CD cycles 2
-iter  21  #CD cycles 1
-iter  22  #CD cycles 3
-iter  23  #CD cycles 31
-iter  24  #CD cycles 1
-iter  25  #CD cycles 39
+iter   8  #CD cycles 17
+iter   9  #CD cycles 1
+iter  10  #CD cycles 17
+iter  11  #CD cycles 4
+iter  12  #CD cycles 2
+iter  13  #CD cycles 1
+iter  14  #CD cycles 57
+iter  15  #CD cycles 12
+iter  16  #CD cycles 10
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  17  #CD cycles 77
+iter  18  #CD cycles 4
+iter  19  #CD cycles 1
+iter  20  #CD cycles 38
+iter  21  #CD cycles 3
+iter  22  #CD cycles 2
+iter  23  #CD cycles 2
 =========================
-optimization finished, #iter = 25
-Objective value = 921.272524
+optimization finished, #iter = 23
+Objective value = 921.272527
 #nonzeros/#features = 71/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
+iter   2  #CD cycles 3
 iter   3  #CD cycles 1
 iter   4  #CD cycles 9
 iter   5  #CD cycles 1
-iter   6  #CD cycles 10
-iter   7  #CD cycles 6
-iter   8  #CD cycles 1
-iter   9  #CD cycles 31
-iter  10  #CD cycles 9
-iter  11  #CD cycles 1
-iter  12  #CD cycles 24
-iter  13  #CD cycles 5
-iter  14  #CD cycles 6
-iter  15  #CD cycles 3
+iter   6  #CD cycles 11
+iter   7  #CD cycles 1
+iter   8  #CD cycles 24
+iter   9  #CD cycles 5
+iter  10  #CD cycles 1
+iter  11  #CD cycles 50
+iter  12  #CD cycles 1
+iter  13  #CD cycles 15
+iter  14  #CD cycles 268
+iter  15  #CD cycles 4
 iter  16  #CD cycles 1
-iter  17  #CD cycles 19
-iter  18  #CD cycles 120
-iter  19  #CD cycles 9
-iter  20  #CD cycles 12
-iter  21  #CD cycles 113
-iter  22  #CD cycles 3
-iter  23  #CD cycles 3
-iter  24  #CD cycles 2
-iter  25  #CD cycles 5
-iter  26  #CD cycles 1
-iter  27  #CD cycles 256
-iter  28  #CD cycles 1
+iter  17  #CD cycles 87
+iter  18  #CD cycles 10
+iter  19  #CD cycles 290
+iter  20  #CD cycles 6
+iter  21  #CD cycles 2
+iter  22  #CD cycles 6
+iter  23  #CD cycles 2
+iter  24  #CD cycles 3
+iter  25  #CD cycles 1
+iter  26  #CD cycles 46
+iter  27  #CD cycles 70
+=========================
+optimization finished, #iter = 27
+Objective value = 6693.204688
+#nonzeros/#features = 187/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 9
+iter   5  #CD cycles 1
+iter   6  #CD cycles 15
+iter   7  #CD cycles 2
+iter   8  #CD cycles 1
+iter   9  #CD cycles 11
+iter  10  #CD cycles 14
+iter  11  #CD cycles 1
+iter  12  #CD cycles 86
+iter  13  #CD cycles 5
+iter  14  #CD cycles 5
+iter  15  #CD cycles 22
+iter  16  #CD cycles 1
+iter  17  #CD cycles 190
+iter  18  #CD cycles 58
+iter  19  #CD cycles 4
+iter  20  #CD cycles 2
+iter  21  #CD cycles 1
+iter  22  #CD cycles 404
+iter  23  #CD cycles 20
+iter  24  #CD cycles 6
+iter  25  #CD cycles 41
+iter  26  #CD cycles 3
+=========================
+optimization finished, #iter = 26
+Objective value = 50375.272686
+#nonzeros/#features = 248/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 11
+iter   7  #CD cycles 1
+iter   8  #CD cycles 13
+iter   9  #CD cycles 3
+iter  10  #CD cycles 4
+iter  11  #CD cycles 1
+iter  12  #CD cycles 66
+iter  13  #CD cycles 8
+iter  14  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  29  #CD cycles 154
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  15  #CD cycles 515
+iter  16  #CD cycles 66
+iter  17  #CD cycles 48
+iter  18  #CD cycles 16
+iter  19  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  20  #CD cycles 1000
+iter  21  #CD cycles 697
+iter  22  #CD cycles 22
+iter  23  #CD cycles 219
 =========================
-optimization finished, #iter = 29
-Objective value = 6693.204504
-#nonzeros/#features = 188/261
+optimization finished, #iter = 23
+Objective value = 387056.000942
+#nonzeros/#features = 253/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 6
+iter   5  #CD cycles 4
+iter   6  #CD cycles 1
+iter   7  #CD cycles 5
+iter   8  #CD cycles 6
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter   9  #CD cycles 1
+iter  10  #CD cycles 23
+iter  11  #CD cycles 10
+iter  12  #CD cycles 7
+iter  13  #CD cycles 3
+iter  14  #CD cycles 4
+iter  15  #CD cycles 2
+iter  16  #CD cycles 1
+iter  17  #CD cycles 44
+iter  18  #CD cycles 32
+iter  19  #CD cycles 5
+iter  20  #CD cycles 6
+iter  21  #CD cycles 11
+iter  22  #CD cycles 1
+iter  23  #CD cycles 414
+iter  24  #CD cycles 3
+iter  25  #CD cycles 25
+iter  26  #CD cycles 188
+iter  27  #CD cycles 4
+iter  28  #CD cycles 31
+iter  29  #CD cycles 4
+iter  30  #CD cycles 26
+iter  31  #CD cycles 25
+iter  32  #CD cycles 37
+iter  33  #CD cycles 15
+iter  34  #CD cycles 6
+iter  35  #CD cycles 2
+iter  36  #CD cycles 16
+iter  37  #CD cycles 5
+iter  38  #CD cycles 14
+iter  39  #CD cycles 2
+iter  40  #CD cycles 23
+iter  41  #CD cycles 4
+iter  42  #CD cycles 26
+iter  43  #CD cycles 12
+iter  44  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  45  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  46  #CD cycles 680
+iter  47  #CD cycles 364
+iter  48  #CD cycles 38
+iter  49  #CD cycles 4
+iter  50  #CD cycles 171
+iter  51  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  52  #CD cycles 1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  53  #CD cycles 1000
+iter  54  #CD cycles 519
+=========================
+optimization finished, #iter = 54
+Objective value = 2992158.259103
+#nonzeros/#features = 253/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 2
 iter   3  #CD cycles 2
 iter   4  #CD cycles 1
 iter   5  #CD cycles 7
 iter   6  #CD cycles 2
-iter   7  #CD cycles 2
-iter   8  #CD cycles 1
-iter   9  #CD cycles 7
-iter  10  #CD cycles 1
-iter  11  #CD cycles 47
-iter  12  #CD cycles 5
-iter  13  #CD cycles 2
-iter  14  #CD cycles 1
-iter  15  #CD cycles 33
-iter  16  #CD cycles 91
-iter  17  #CD cycles 3
-iter  18  #CD cycles 1
-iter  19  #CD cycles 190
-iter  20  #CD cycles 18
-iter  21  #CD cycles 8
-iter  22  #CD cycles 3
-iter  23  #CD cycles 13
-iter  24  #CD cycles 17
-iter  25  #CD cycles 1
-iter  26  #CD cycles 201
-iter  27  #CD cycles 2
-iter  28  #CD cycles 60
-iter  29  #CD cycles 30
-iter  30  #CD cycles 277
-iter  31  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  32  #CD cycles 887
-=========================
-optimization finished, #iter = 32
-Objective value = 50375.112386
-#nonzeros/#features = 246/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 3
-iter   6  #CD cycles 2
 iter   7  #CD cycles 1
-iter   8  #CD cycles 8
-iter   9  #CD cycles 3
-iter  10  #CD cycles 1
-iter  11  #CD cycles 6
-iter  12  #CD cycles 10
-iter  13  #CD cycles 1
-iter  14  #CD cycles 67
-iter  15  #CD cycles 19
-iter  16  #CD cycles 3
-iter  17  #CD cycles 2
-iter  18  #CD cycles 15
-iter  19  #CD cycles 3
-iter  20  #CD cycles 4
-iter  21  #CD cycles 1
-iter  22  #CD cycles 474
-iter  23  #CD cycles 100
-iter  24  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  25  #CD cycles 1000
-iter  26  #CD cycles 996
-iter  27  #CD cycles 39
-iter  28  #CD cycles 30
-iter  29  #CD cycles 8
-iter  30  #CD cycles 5
-=========================
-optimization finished, #iter = 30
-Objective value = 387056.227066
-#nonzeros/#features = 253/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 4
-iter   5  #CD cycles 4
-iter   6  #CD cycles 1
-iter   7  #CD cycles 11
-iter   8  #CD cycles 2
+iter   8  #CD cycles 10
 iter   9  #CD cycles 1
-iter  10  #CD cycles 11
+iter  10  #CD cycles 6
 iter  11  #CD cycles 3
-iter  12  #CD cycles 7
+iter  12  #CD cycles 6
 iter  13  #CD cycles 2
-iter  14  #CD cycles 1
-iter  15  #CD cycles 32
-iter  16  #CD cycles 2
-iter  17  #CD cycles 4
-iter  18  #CD cycles 14
-iter  19  #CD cycles 7
-iter  20  #CD cycles 9
-iter  21  #CD cycles 3
-iter  22  #CD cycles 9
-iter  23  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  24  #CD cycles 573
-iter  25  #CD cycles 113
-iter  26  #CD cycles 37
-iter  27  #CD cycles 107
-iter  28  #CD cycles 2
-iter  29  #CD cycles 32
-iter  30  #CD cycles 2
-iter  31  #CD cycles 44
-iter  32  #CD cycles 51
-iter  33  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  34  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  35  #CD cycles 859
-iter  36  #CD cycles 10
-iter  37  #CD cycles 122
-iter  38  #CD cycles 179
-iter  39  #CD cycles 1
-=========================
-optimization finished, #iter = 39
-Objective value = 2992213.318861
-#nonzeros/#features = 254/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 9
-iter   5  #CD cycles 1
-iter   6  #CD cycles 9
-iter   7  #CD cycles 1
-iter   8  #CD cycles 23
-iter   9  #CD cycles 1
-iter  10  #CD cycles 68
-iter  11  #CD cycles 12
-iter  12  #CD cycles 27
-iter  13  #CD cycles 26
-iter  14  #CD cycles 16
-iter  15  #CD cycles 13
-iter  16  #CD cycles 9
-iter  17  #CD cycles 1
-iter  18  #CD cycles 228
-iter  19  #CD cycles 34
-iter  20  #CD cycles 50
-iter  21  #CD cycles 162
-iter  22  #CD cycles 18
-iter  23  #CD cycles 14
-iter  24  #CD cycles 51
-iter  25  #CD cycles 12
-iter  26  #CD cycles 21
-iter  27  #CD cycles 2
-iter  28  #CD cycles 8
-iter  29  #CD cycles 14
-iter  30  #CD cycles 3
-iter  31  #CD cycles 16
-iter  32  #CD cycles 20
-iter  33  #CD cycles 1
+iter  14  #CD cycles 2
+iter  15  #CD cycles 6
+iter  16  #CD cycles 1
+iter  17  #CD cycles 40
+iter  18  #CD cycles 11
+iter  19  #CD cycles 27
+iter  20  #CD cycles 7
+iter  21  #CD cycles 2
+iter  22  #CD cycles 4
+iter  23  #CD cycles 6
+iter  24  #CD cycles 1
+iter  25  #CD cycles 280
+iter  26  #CD cycles 13
+iter  27  #CD cycles 49
+iter  28  #CD cycles 27
+iter  29  #CD cycles 57
+iter  30  #CD cycles 13
+iter  31  #CD cycles 2
+iter  32  #CD cycles 4
+iter  33  #CD cycles 90
+iter  34  #CD cycles 43
+iter  35  #CD cycles 27
+iter  36  #CD cycles 12
+iter  37  #CD cycles 32
+iter  38  #CD cycles 24
+iter  39  #CD cycles 33
+iter  40  #CD cycles 27
+iter  41  #CD cycles 38
+iter  42  #CD cycles 22
+iter  43  #CD cycles 17
+iter  44  #CD cycles 7
+iter  45  #CD cycles 8
+iter  46  #CD cycles 3
+iter  47  #CD cycles 6
+iter  48  #CD cycles 16
+iter  49  #CD cycles 10
+iter  50  #CD cycles 23
+iter  51  #CD cycles 12
+iter  52  #CD cycles 8
+iter  53  #CD cycles 12
+iter  54  #CD cycles 14
+iter  55  #CD cycles 19
+iter  56  #CD cycles 9
+iter  57  #CD cycles 4
+iter  58  #CD cycles 19
+iter  59  #CD cycles 2
+iter  60  #CD cycles 4
+iter  61  #CD cycles 4
+iter  62  #CD cycles 3
+iter  63  #CD cycles 5
+iter  64  #CD cycles 2
+iter  65  #CD cycles 3
+iter  66  #CD cycles 6
+iter  67  #CD cycles 21
+iter  68  #CD cycles 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  34  #CD cycles 1000
-iter  35  #CD cycles 954
-iter  36  #CD cycles 151
-iter  37  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  38  #CD cycles 1000
+iter  69  #CD cycles 1000
+iter  70  #CD cycles 556
+iter  71  #CD cycles 89
+iter  72  #CD cycles 12
+iter  73  #CD cycles 158
+iter  74  #CD cycles 151
+iter  75  #CD cycles 18
+iter  76  #CD cycles 53
+iter  77  #CD cycles 27
+iter  78  #CD cycles 10
+iter  79  #CD cycles 20
+iter  80  #CD cycles 32
 =========================
-optimization finished, #iter = 38
-Objective value = 23161518.587932
-#nonzeros/#features = 251/261
+optimization finished, #iter = 80
+Objective value = 23161777.901993
+#nonzeros/#features = 252/261
 [LibLinear]iter   1  #CD cycles 1
 =========================
 optimization finished, #iter = 1
 Objective value = 0.282249
 #nonzeros/#features = 1/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 1
+iter   4  #CD cycles 1
 =========================
-optimization finished, #iter = 2
+optimization finished, #iter = 4
 Objective value = 2.163172
 #nonzeros/#features = 1/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 1
 iter   3  #CD cycles 8
 iter   4  #CD cycles 1
-iter   5  #CD cycles 8
-iter   6  #CD cycles 3
+iter   5  #CD cycles 7
+iter   6  #CD cycles 2
 iter   7  #CD cycles 1
-iter   8  #CD cycles 6
-iter   9  #CD cycles 3
-iter  10  #CD cycles 1
-iter  11  #CD cycles 7
-iter  12  #CD cycles 2
+iter   8  #CD cycles 9
+iter   9  #CD cycles 2
+iter  10  #CD cycles 2
+iter  11  #CD cycles 1
+iter  12  #CD cycles 8
 iter  13  #CD cycles 1
 iter  14  #CD cycles 6
 iter  15  #CD cycles 1
-iter  16  #CD cycles 5
+iter  16  #CD cycles 9
+iter  17  #CD cycles 2
 =========================
-optimization finished, #iter = 16
+optimization finished, #iter = 17
 Objective value = 16.656407
 #nonzeros/#features = 2/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 8
-iter   4  #CD cycles 2
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 6
 iter   5  #CD cycles 1
-iter   6  #CD cycles 10
+iter   6  #CD cycles 13
 iter   7  #CD cycles 1
-iter   8  #CD cycles 14
-iter   9  #CD cycles 6
+iter   8  #CD cycles 12
+iter   9  #CD cycles 13
 iter  10  #CD cycles 1
-iter  11  #CD cycles 121
-iter  12  #CD cycles 1
-iter  13  #CD cycles 81
-iter  14  #CD cycles 20
-iter  15  #CD cycles 12
-iter  16  #CD cycles 12
-iter  17  #CD cycles 5
-iter  18  #CD cycles 2
+iter  11  #CD cycles 27
+iter  12  #CD cycles 27
+iter  13  #CD cycles 57
+iter  14  #CD cycles 9
+iter  15  #CD cycles 3
+iter  16  #CD cycles 4
+iter  17  #CD cycles 1
+iter  18  #CD cycles 44
 iter  19  #CD cycles 7
-iter  20  #CD cycles 3
-iter  21  #CD cycles 2
-iter  22  #CD cycles 2
-iter  23  #CD cycles 2
-iter  24  #CD cycles 5
-iter  25  #CD cycles 5
-iter  26  #CD cycles 6
-iter  27  #CD cycles 2
-iter  28  #CD cycles 4
+iter  20  #CD cycles 12
+iter  21  #CD cycles 15
+iter  22  #CD cycles 3
+iter  23  #CD cycles 6
+iter  24  #CD cycles 7
+iter  25  #CD cycles 2
+iter  26  #CD cycles 5
+iter  27  #CD cycles 7
+iter  28  #CD cycles 2
 iter  29  #CD cycles 8
-iter  30  #CD cycles 1
-iter  31  #CD cycles 13
-iter  32  #CD cycles 37
-iter  33  #CD cycles 8
-iter  34  #CD cycles 4
-iter  35  #CD cycles 3
-iter  36  #CD cycles 16
-iter  37  #CD cycles 17
-iter  38  #CD cycles 5
-iter  39  #CD cycles 5
-iter  40  #CD cycles 29
-iter  41  #CD cycles 6
-iter  42  #CD cycles 2
-iter  43  #CD cycles 4
-iter  44  #CD cycles 7
-iter  45  #CD cycles 1
-iter  46  #CD cycles 45
-iter  47  #CD cycles 37
+iter  30  #CD cycles 8
+iter  31  #CD cycles 1
+iter  32  #CD cycles 106
+iter  33  #CD cycles 5
+iter  34  #CD cycles 5
+iter  35  #CD cycles 2
+iter  36  #CD cycles 6
+iter  37  #CD cycles 12
+iter  38  #CD cycles 19
+iter  39  #CD cycles 3
+iter  40  #CD cycles 21
+iter  41  #CD cycles 4
+iter  42  #CD cycles 7
+iter  43  #CD cycles 9
+iter  44  #CD cycles 2
+iter  45  #CD cycles 7
+iter  46  #CD cycles 2
+iter  47  #CD cycles 8
+iter  48  #CD cycles 1
+iter  49  #CD cycles 3
+iter  50  #CD cycles 19
+iter  51  #CD cycles 38
 =========================
-optimization finished, #iter = 47
+optimization finished, #iter = 51
 Objective value = 125.373822
 #nonzeros/#features = 14/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 5
+iter   2  #CD cycles 4
 iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 12
-iter   7  #CD cycles 5
-iter   8  #CD cycles 1
-iter   9  #CD cycles 23
-iter  10  #CD cycles 7
-iter  11  #CD cycles 6
-iter  12  #CD cycles 1
-iter  13  #CD cycles 62
-iter  14  #CD cycles 4
-iter  15  #CD cycles 37
-iter  16  #CD cycles 12
-iter  17  #CD cycles 1
-iter  18  #CD cycles 306
+iter   4  #CD cycles 1
+iter   5  #CD cycles 24
+iter   6  #CD cycles 3
+iter   7  #CD cycles 1
+iter   8  #CD cycles 37
+iter   9  #CD cycles 1
+iter  10  #CD cycles 29
+iter  11  #CD cycles 30
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  12  #CD cycles 21
+iter  13  #CD cycles 11
+iter  14  #CD cycles 19
+iter  15  #CD cycles 2
+iter  16  #CD cycles 6
+iter  17  #CD cycles 2
+iter  18  #CD cycles 3
 iter  19  #CD cycles 16
-iter  20  #CD cycles 1
-iter  21  #CD cycles 133
-iter  22  #CD cycles 13
-iter  23  #CD cycles 16
+iter  20  #CD cycles 4
+iter  21  #CD cycles 5
+iter  22  #CD cycles 7
+iter  23  #CD cycles 10
 iter  24  #CD cycles 1
-iter  25  #CD cycles 163
+iter  25  #CD cycles 200
+iter  26  #CD cycles 20
+iter  27  #CD cycles 9
+iter  28  #CD cycles 3
+iter  29  #CD cycles 1
+iter  30  #CD cycles 82
+iter  31  #CD cycles 16
+iter  32  #CD cycles 10
+iter  33  #CD cycles 11
+iter  34  #CD cycles 1
+iter  35  #CD cycles 194
 =========================
-optimization finished, #iter = 25
-Objective value = 913.979514
+optimization finished, #iter = 35
+Objective value = 913.979519
 #nonzeros/#features = 70/261
 [LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 3
 iter   3  #CD cycles 1
 iter   4  #CD cycles 10
 iter   5  #CD cycles 1
-iter   6  #CD cycles 16
-iter   7  #CD cycles 6
-iter   8  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter   9  #CD cycles 45
-iter  10  #CD cycles 45
-iter  11  #CD cycles 4
-iter  12  #CD cycles 1
-iter  13  #CD cycles 211
-iter  14  #CD cycles 12
-iter  15  #CD cycles 5
-iter  16  #CD cycles 3
-iter  17  #CD cycles 3
-iter  18  #CD cycles 7
-iter  19  #CD cycles 4
-iter  20  #CD cycles 7
-iter  21  #CD cycles 1
-iter  22  #CD cycles 214
-iter  23  #CD cycles 32
-iter  24  #CD cycles 4
-iter  25  #CD cycles 9
-iter  26  #CD cycles 11
-iter  27  #CD cycles 2
-iter  28  #CD cycles 6
-iter  29  #CD cycles 9
-iter  30  #CD cycles 10
-iter  31  #CD cycles 9
-iter  32  #CD cycles 6
-iter  33  #CD cycles 6
-iter  34  #CD cycles 1
-iter  35  #CD cycles 150
-iter  36  #CD cycles 2
-iter  37  #CD cycles 19
-iter  38  #CD cycles 11
-iter  39  #CD cycles 22
-iter  40  #CD cycles 1
-iter  41  #CD cycles 272
-=========================
-optimization finished, #iter = 41
-Objective value = 6632.705123
-#nonzeros/#features = 188/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 1
-iter   4  #CD cycles 5
-iter   5  #CD cycles 1
 iter   6  #CD cycles 11
 iter   7  #CD cycles 2
 iter   8  #CD cycles 1
-iter   9  #CD cycles 134
+iter   9  #CD cycles 78
 iter  10  #CD cycles 13
 iter  11  #CD cycles 1
-iter  12  #CD cycles 218
-iter  13  #CD cycles 6
-iter  14  #CD cycles 1
+iter  12  #CD cycles 118
+iter  13  #CD cycles 5
+iter  14  #CD cycles 33
+iter  15  #CD cycles 1
+iter  16  #CD cycles 267
+iter  17  #CD cycles 22
+iter  18  #CD cycles 23
+iter  19  #CD cycles 13
+iter  20  #CD cycles 11
+iter  21  #CD cycles 2
+iter  22  #CD cycles 11
+iter  23  #CD cycles 1
+iter  24  #CD cycles 183
+iter  25  #CD cycles 25
+iter  26  #CD cycles 5
+iter  27  #CD cycles 24
+iter  28  #CD cycles 13
+iter  29  #CD cycles 2
+iter  30  #CD cycles 7
+iter  31  #CD cycles 3
+iter  32  #CD cycles 51
+iter  33  #CD cycles 8
+iter  34  #CD cycles 5
+iter  35  #CD cycles 3
+iter  36  #CD cycles 4
+iter  37  #CD cycles 13
+iter  38  #CD cycles 5
+iter  39  #CD cycles 2
+iter  40  #CD cycles 7
+iter  41  #CD cycles 3
+iter  42  #CD cycles 2
+iter  43  #CD cycles 1
+iter  44  #CD cycles 90
+iter  45  #CD cycles 65
+=========================
+optimization finished, #iter = 45
+Objective value = 6632.705109
+#nonzeros/#features = 188/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 7
+iter   5  #CD cycles 1
+iter   6  #CD cycles 13
+iter   7  #CD cycles 1
+iter   8  #CD cycles 166
+iter   9  #CD cycles 13
+iter  10  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  15  #CD cycles 534
-iter  16  #CD cycles 25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  11  #CD cycles 152
+iter  12  #CD cycles 60
+iter  13  #CD cycles 15
+iter  14  #CD cycles 2
+iter  15  #CD cycles 3
+iter  16  #CD cycles 6
 iter  17  #CD cycles 1
-iter  18  #CD cycles 52
-iter  19  #CD cycles 114
-iter  20  #CD cycles 113
-iter  21  #CD cycles 18
-iter  22  #CD cycles 14
-iter  23  #CD cycles 15
-iter  24  #CD cycles 14
-iter  25  #CD cycles 6
-iter  26  #CD cycles 10
-iter  27  #CD cycles 2
-iter  28  #CD cycles 6
-iter  29  #CD cycles 8
-iter  30  #CD cycles 20
-iter  31  #CD cycles 18
-iter  32  #CD cycles 6
-iter  33  #CD cycles 12
-iter  34  #CD cycles 7
-iter  35  #CD cycles 7
-iter  36  #CD cycles 4
-iter  37  #CD cycles 16
-iter  38  #CD cycles 1
-iter  39  #CD cycles 646
+iter  18  #CD cycles 336
+iter  19  #CD cycles 3
+iter  20  #CD cycles 50
+iter  21  #CD cycles 2
+iter  22  #CD cycles 40
+iter  23  #CD cycles 2
+iter  24  #CD cycles 26
+iter  25  #CD cycles 1
+iter  26  #CD cycles 413
+iter  27  #CD cycles 22
+iter  28  #CD cycles 33
+iter  29  #CD cycles 9
+iter  30  #CD cycles 6
+iter  31  #CD cycles 16
+iter  32  #CD cycles 4
+iter  33  #CD cycles 16
+iter  34  #CD cycles 17
+iter  35  #CD cycles 10
+iter  36  #CD cycles 1
+iter  37  #CD cycles 613
 =========================
-optimization finished, #iter = 39
-Objective value = 49991.028167
+optimization finished, #iter = 37
+Objective value = 49991.027405
 #nonzeros/#features = 244/261
 [LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 12
-iter   7  #CD cycles 2
-iter   8  #CD cycles 2
-iter   9  #CD cycles 2
-iter  10  #CD cycles 1
-iter  11  #CD cycles 24
-iter  12  #CD cycles 37
-iter  13  #CD cycles 49
-iter  14  #CD cycles 18
-iter  15  #CD cycles 3
-iter  16  #CD cycles 16
-iter  17  #CD cycles 1
-iter  18  #CD cycles 209
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  19  #CD cycles 72
-iter  20  #CD cycles 1
-iter  21  #CD cycles 420
-iter  22  #CD cycles 126
-iter  23  #CD cycles 2
-iter  24  #CD cycles 2
-iter  25  #CD cycles 56
-iter  26  #CD cycles 12
-iter  27  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  28  #CD cycles 1000
-iter  29  #CD cycles 2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  30  #CD cycles 116
-iter  31  #CD cycles 7
-iter  32  #CD cycles 189
-iter  33  #CD cycles 10
-iter  34  #CD cycles 4
-iter  35  #CD cycles 41
-iter  36  #CD cycles 21
-iter  37  #CD cycles 11
-iter  38  #CD cycles 3
-iter  39  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  40  #CD cycles 1000
-=========================
-optimization finished, #iter = 40
-Objective value = 384338.867769
-#nonzeros/#features = 254/261
-[LibLinear]iter   1  #CD cycles 1
 iter   2  #CD cycles 2
-iter   3  #CD cycles 1
-iter   4  #CD cycles 9
-iter   5  #CD cycles 1
-iter   6  #CD cycles 7
-iter   7  #CD cycles 6
-iter   8  #CD cycles 4
-iter   9  #CD cycles 3
-iter  10  #CD cycles 2
-iter  11  #CD cycles 1
-iter  12  #CD cycles 50
-iter  13  #CD cycles 30
-iter  14  #CD cycles 20
-iter  15  #CD cycles 13
-iter  16  #CD cycles 8
-iter  17  #CD cycles 1
+iter   3  #CD cycles 2
+iter   4  #CD cycles 1
+iter   5  #CD cycles 6
+iter   6  #CD cycles 1
+iter   7  #CD cycles 14
+iter   8  #CD cycles 1
+iter   9  #CD cycles 58
+iter  10  #CD cycles 26
+iter  11  #CD cycles 16
+iter  12  #CD cycles 1
+iter  13  #CD cycles 46
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  18  #CD cycles 116
-iter  19  #CD cycles 31
-iter  20  #CD cycles 15
-iter  21  #CD cycles 36
-iter  22  #CD cycles 12
-iter  23  #CD cycles 7
-iter  24  #CD cycles 7
-iter  25  #CD cycles 17
-iter  26  #CD cycles 6
-iter  27  #CD cycles 2
-iter  28  #CD cycles 5
-iter  29  #CD cycles 1
-iter  30  #CD cycles 81
-iter  31  #CD cycles 3
-iter  32  #CD cycles 177
-iter  33  #CD cycles 160
-iter  34  #CD cycles 16
-iter  35  #CD cycles 2
-iter  36  #CD cycles 14
-iter  37  #CD cycles 3
-iter  38  #CD cycles 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  14  #CD cycles 188
+iter  15  #CD cycles 67
+iter  16  #CD cycles 1
+iter  17  #CD cycles 473
+iter  18  #CD cycles 14
+iter  19  #CD cycles 1
 WARNING: reaching max number of inner iterations
-iter  39  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  40  #CD cycles 924
-iter  41  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  42  #CD cycles 1000
-=========================
-optimization finished, #iter = 42
-Objective value = 2971755.755956
-#nonzeros/#features = 253/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 12
-iter   7  #CD cycles 2
-iter   8  #CD cycles 3
-iter   9  #CD cycles 1
-iter  10  #CD cycles 109
-iter  11  #CD cycles 10
-iter  12  #CD cycles 2
-iter  13  #CD cycles 1
-iter  14  #CD cycles 116
-iter  15  #CD cycles 27
-iter  16  #CD cycles 46
-iter  17  #CD cycles 6
-iter  18  #CD cycles 12
-iter  19  #CD cycles 14
-iter  20  #CD cycles 4
-iter  21  #CD cycles 4
-iter  22  #CD cycles 7
-iter  23  #CD cycles 4
-iter  24  #CD cycles 3
-iter  25  #CD cycles 4
-iter  26  #CD cycles 4
-iter  27  #CD cycles 10
-iter  28  #CD cycles 18
-iter  29  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  30  #CD cycles 123
-iter  31  #CD cycles 130
-iter  32  #CD cycles 4
-iter  33  #CD cycles 13
-iter  34  #CD cycles 63
-iter  35  #CD cycles 7
-iter  36  #CD cycles 10
-iter  37  #CD cycles 3
-iter  38  #CD cycles 17
-iter  39  #CD cycles 2
-iter  40  #CD cycles 64
-iter  41  #CD cycles 6
-iter  42  #CD cycles 7
-iter  43  #CD cycles 45
-iter  44  #CD cycles 8
-iter  45  #CD cycles 3
-iter  46  #CD cycles 2
-iter  47  #CD cycles 7
-iter  48  #CD cycles 24
-iter  49  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  50  #CD cycles 1000
-iter  51  #CD cycles 181
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  52  #CD cycles 323
-iter  53  #CD cycles 28
-iter  54  #CD cycles 125
-iter  55  #CD cycles 20
-iter  56  #CD cycles 61
-iter  57  #CD cycles 5
-iter  58  #CD cycles 19
-iter  59  #CD cycles 20
-iter  60  #CD cycles 4
-iter  61  #CD cycles 28
-iter  62  #CD cycles 47
-iter  63  #CD cycles 32
-iter  64  #CD cycles 28
-iter  65  #CD cycles 2
-iter  66  #CD cycles 8
-iter  67  #CD cycles 13
-iter  68  #CD cycles 11
-iter  69  #CD cycles 25
-iter  70  #CD cycles 6
-iter  71  #CD cycles 14
-iter  72  #CD cycles 2
-iter  73  #CD cycles 16
-iter  74  #CD cycles 9
-iter  75  #CD cycles 20
-iter  76  #CD cycles 12
-iter  77  #CD cycles 3
-iter  78  #CD cycles 2
-iter  79  #CD cycles 14
-iter  80  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  81  #CD cycles 1000
+iter  20  #CD cycles 1000
+iter  21  #CD cycles 154
+iter  22  #CD cycles 2
+iter  23  #CD cycles 107
+iter  24  #CD cycles 13
+iter  25  #CD cycles 61
+iter  26  #CD cycles 16
+iter  27  #CD cycles 16
+iter  28  #CD cycles 19
+iter  29  #CD cycles 10
+iter  30  #CD cycles 33
+iter  31  #CD cycles 1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  82  #CD cycles 1000
+iter  32  #CD cycles 1000
 =========================
-optimization finished, #iter = 82
-Objective value = 23003961.173707
+optimization finished, #iter = 32
+Objective value = 384338.838233
 #nonzeros/#features = 254/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 2
+iter   3  #CD cycles 2
+iter   4  #CD cycles 1
+iter   5  #CD cycles 5
+iter   6  #CD cycles 1
+iter   7  #CD cycles 16
+iter   8  #CD cycles 2
+iter   9  #CD cycles 1
+iter  10  #CD cycles 98
+iter  11  #CD cycles 8
+iter  12  #CD cycles 15
+iter  13  #CD cycles 4
+iter  14  #CD cycles 1
+iter  15  #CD cycles 122
+iter  16  #CD cycles 6
+iter  17  #CD cycles 7
+iter  18  #CD cycles 70
+iter  19  #CD cycles 3
+iter  20  #CD cycles 1
+iter  21  #CD cycles 302
+iter  22  #CD cycles 29
+iter  23  #CD cycles 19
+iter  24  #CD cycles 49
+iter  25  #CD cycles 174
+iter  26  #CD cycles 2
+iter  27  #CD cycles 7
+iter  28  #CD cycles 35
+iter  29  #CD cycles 34
+iter  30  #CD cycles 19
+iter  31  #CD cycles 15
+iter  32  #CD cycles 3
+iter  33  #CD cycles 44
+iter  34  #CD cycles 36
+iter  35  #CD cycles 1
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    9.4s finished
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
+iter  36  #CD cycles 1000
+iter  37  #CD cycles 341
+iter  38  #CD cycles 293
+iter  39  #CD cycles 4
+iter  40  #CD cycles 127
+iter  41  #CD cycles 31
+iter  42  #CD cycles 25
+iter  43  #CD cycles 10
+iter  44  #CD cycles 2
+iter  45  #CD cycles 42
+iter  46  #CD cycles 7
+iter  47  #CD cycles 7
+iter  48  #CD cycles 94
+iter  49  #CD cycles 2
+iter  50  #CD cycles 43
+iter  51  #CD cycles 3
+iter  52  #CD cycles 2
+iter  53  #CD cycles 21
+iter  54  #CD cycles 13
+iter  55  #CD cycles 9
+iter  56  #CD cycles 8
+=========================
+optimization finished, #iter = 56
+Objective value = 2971773.380270
+#nonzeros/#features = 255/261
+[LibLinear]iter   1  #CD cycles 1
+iter   2  #CD cycles 3
+iter   3  #CD cycles 1
+iter   4  #CD cycles 5
+iter   5  #CD cycles 2
+iter   6  #CD cycles 3
+iter   7  #CD cycles 1
+iter   8  #CD cycles 17
+iter   9  #CD cycles 2
+iter  10  #CD cycles 2
+iter  11  #CD cycles 2
+iter  12  #CD cycles 4
+iter  13  #CD cycles 2
+iter  14  #CD cycles 1
+iter  15  #CD cycles 66
+iter  16  #CD cycles 53
+iter  17  #CD cycles 7
+iter  18  #CD cycles 10
+iter  19  #CD cycles 1
+iter  20  #CD cycles 127
+iter  21  #CD cycles 45
+iter  22  #CD cycles 29
+iter  23  #CD cycles 53
+iter  24  #CD cycles 11
+iter  25  #CD cycles 22
+iter  26  #CD cycles 3
+iter  27  #CD cycles 2
+iter  28  #CD cycles 3
+iter  29  #CD cycles 7
+iter  30  #CD cycles 3
+iter  31  #CD cycles 6
+iter  32  #CD cycles 1
+iter  33  #CD cycles 71
+iter  34  #CD cycles 145
+iter  35  #CD cycles 12
+iter  36  #CD cycles 5
+iter  37  #CD cycles 27
+iter  38  #CD cycles 22
+iter  39  #CD cycles 62
+iter  40  #CD cycles 17
+iter  41  #CD cycles 15
+iter  42  #CD cycles 29
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  43  #CD cycles 9
+iter  44  #CD cycles 15
+iter  45  #CD cycles 3
+iter  46  #CD cycles 9
+iter  47  #CD cycles 5
+iter  48  #CD cycles 7
+iter  49  #CD cycles 8
+iter  50  #CD cycles 27
+iter  51  #CD cycles 1
+WARNING: reaching max number of inner iterations
+iter  52  #CD cycles 1000
+iter  53  #CD cycles 234
+iter  54  #CD cycles 306
+iter  55  #CD cycles 50
+iter  56  #CD cycles 24
+iter  57  #CD cycles 61
+iter  58  #CD cycles 30
+iter  59  #CD cycles 108
+iter  60  #CD cycles 11
+iter  61  #CD cycles 39
+iter  62  #CD cycles 47
+iter  63  #CD cycles 38
+iter  64  #CD cycles 35
+iter  65  #CD cycles 16
+iter  66  #CD cycles 10
+iter  67  #CD cycles 2
+iter  68  #CD cycles 5
+iter  69  #CD cycles 6
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  70  #CD cycles 49
+iter  71  #CD cycles 57
+iter  72  #CD cycles 6
+iter  73  #CD cycles 5
+iter  74  #CD cycles 8
+iter  75  #CD cycles 8
+=========================
+optimization finished, #iter = 75
+Objective value = 23004365.380213
+#nonzeros/#features = 256/261
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    6.7s finished
 </pre></div>
 </div>
 </div>
@@ -3800,7 +3852,7 @@ Objective value = 23003961.173707
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3844/1066459780.py:15: MatplotlibDeprecationWarning: The &#39;b&#39; parameter of grid() has been renamed &#39;visible&#39; since Matplotlib 3.5; support for the old name will be dropped two minor releases later.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1066459780.py:15: MatplotlibDeprecationWarning: The &#39;b&#39; parameter of grid() has been renamed &#39;visible&#39; since Matplotlib 3.5; support for the old name will be dropped two minor releases later.
   ax2.grid(b=None);
 </pre></div>
 </div>
@@ -3854,331 +3906,331 @@ consistent coefficient estimates.</p>
   <tbody>
     <tr>
       <th>Intercept</th>
-      <td>0.043157</td>
+      <td>0.035184</td>
     </tr>
     <tr>
       <th>sex[T.Male]</th>
-      <td>0.723679</td>
+      <td>0.724751</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.2]</th>
-      <td>0.325185</td>
+      <td>0.325194</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.3]</th>
-      <td>0.612190</td>
+      <td>0.612265</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.4]</th>
-      <td>0.749706</td>
+      <td>0.749697</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.5]</th>
-      <td>0.732795</td>
+      <td>0.732779</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.6]</th>
-      <td>0.792315</td>
+      <td>0.792324</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.7]</th>
-      <td>1.032687</td>
+      <td>1.032674</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.8]</th>
-      <td>1.322569</td>
+      <td>1.322565</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.9]</th>
-      <td>1.286941</td>
+      <td>1.286935</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.10]</th>
-      <td>1.318597</td>
+      <td>1.318396</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.11]</th>
-      <td>1.236905</td>
+      <td>1.236906</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.12]</th>
-      <td>0.985713</td>
+      <td>0.985709</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.13]</th>
-      <td>1.528294</td>
+      <td>1.528313</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.14]</th>
-      <td>0.406146</td>
+      <td>0.406009</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.15]</th>
-      <td>0.781430</td>
+      <td>0.781433</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.16]</th>
-      <td>0.355565</td>
+      <td>0.289700</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.17]</th>
-      <td>0.371227</td>
+      <td>0.370972</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.18]</th>
-      <td>1.524278</td>
+      <td>1.524261</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.19]</th>
-      <td>1.143306</td>
+      <td>1.143305</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.20]</th>
-      <td>0.116798</td>
+      <td>0.116839</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.21]</th>
-      <td>1.298580</td>
+      <td>1.298510</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.22]</th>
-      <td>1.676823</td>
+      <td>1.676815</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.23]</th>
-      <td>1.332217</td>
+      <td>1.332175</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.25]</th>
-      <td>0.481967</td>
+      <td>0.481926</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.26]</th>
-      <td>0.898944</td>
+      <td>0.658198</td>
     </tr>
     <tr>
       <th>c_charge_degree[T.M]</th>
-      <td>-0.228216</td>
+      <td>-0.228124</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
-      <td>-0.152896</td>
+      <td>-0.152877</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Assault W/dead Weap]</th>
-      <td>-0.457768</td>
+      <td>-0.457755</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Battery]</th>
-      <td>-0.426233</td>
+      <td>-0.426234</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery]</th>
-      <td>-0.008886</td>
+      <td>-0.008889</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery on Law Enforc Officer]</th>
-      <td>0.312838</td>
+      <td>0.312834</td>
     </tr>
     <tr>
       <th>charge_cat[T.Burglary Unoccupied Dwelling]</th>
-      <td>-0.151956</td>
+      <td>-0.151925</td>
     </tr>
     <tr>
       <th>charge_cat[T.Criminal Mischief]</th>
-      <td>0.441650</td>
+      <td>0.441652</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Level 0.15 Or Minor In Veh]</th>
-      <td>-0.043754</td>
+      <td>-0.043828</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Property Damage/Injury]</th>
-      <td>-0.957424</td>
+      <td>-0.957476</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving License Suspended]</th>
-      <td>-0.062536</td>
+      <td>-0.062528</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.141041</td>
+      <td>-0.141279</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.182775</td>
+      <td>0.182804</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Petit Theft]</th>
-      <td>0.697401</td>
+      <td>0.697384</td>
     </tr>
     <tr>
       <th>charge_cat[T.Grand Theft (Motor Vehicle)]</th>
-      <td>0.134819</td>
+      <td>0.134834</td>
     </tr>
     <tr>
       <th>charge_cat[T.Operating W/O Valid License]</th>
-      <td>-0.084339</td>
+      <td>-0.084297</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft]</th>
-      <td>0.574887</td>
+      <td>0.574957</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft $100- $300]</th>
-      <td>0.019328</td>
+      <td>0.019321</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss Pyrrolidinovalerophenone]</th>
-      <td>2.135430</td>
+      <td>2.135484</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
-      <td>-0.186735</td>
+      <td>-0.186709</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.394922</td>
+      <td>-0.394851</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cocaine]</th>
-      <td>0.595590</td>
+      <td>0.595589</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.135761</td>
+      <td>0.135554</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Pretrial Release Dom Viol]</th>
-      <td>0.230990</td>
+      <td>0.231020</td>
     </tr>
     <tr>
       <th>charge_cat[T.arrest case no charge]</th>
-      <td>-0.181106</td>
+      <td>-0.181094</td>
     </tr>
     <tr>
       <th>charge_cat[T.other]</th>
-      <td>-0.196731</td>
+      <td>-0.196715</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.1]</th>
-      <td>0.034432</td>
+      <td>0.034412</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.3]</th>
-      <td>0.087851</td>
+      <td>0.087769</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.6]</th>
-      <td>0.036028</td>
+      <td>0.036011</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.10]</th>
-      <td>0.200138</td>
+      <td>0.200349</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.14]</th>
-      <td>0.709636</td>
+      <td>0.709776</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.16]</th>
-      <td>0.952726</td>
+      <td>1.018608</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.17]</th>
-      <td>1.114953</td>
+      <td>1.115221</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.26]</th>
-      <td>0.008709</td>
+      <td>0.249475</td>
     </tr>
     <tr>
       <th>sex[T.Male]:c_charge_degree[T.M]</th>
-      <td>0.163811</td>
+      <td>0.163728</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Aggravated Battery / Pregnant]</th>
-      <td>0.024308</td>
+      <td>0.024297</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Burglary Conveyance Unoccup]</th>
-      <td>0.516838</td>
+      <td>0.516809</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Corrupt Public Servant]</th>
-      <td>0.717884</td>
+      <td>0.717904</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Crimin Mischief Damage $1000+]</th>
-      <td>0.044239</td>
+      <td>0.044230</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving License Suspended]</th>
-      <td>-0.000938</td>
+      <td>-0.000936</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.035206</td>
+      <td>-0.034967</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving While License Revoked]</th>
-      <td>-0.094702</td>
+      <td>-0.094704</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.False Ownership Info/Pawn Item]</th>
-      <td>0.480692</td>
+      <td>0.480691</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Battery w/Prior Convict]</th>
-      <td>-0.096471</td>
+      <td>-0.096453</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.114971</td>
+      <td>0.114957</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Grand Theft in the 3rd Degree]</th>
-      <td>0.277304</td>
+      <td>0.277293</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Petit Theft]</th>
-      <td>0.199674</td>
+      <td>0.199587</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.051102</td>
+      <td>-0.051191</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Resist/Obstruct W/O Violence]</th>
-      <td>0.272848</td>
+      <td>0.272838</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.325677</td>
+      <td>0.325878</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>-0.024256</td>
+      <td>-0.024231</td>
     </tr>
     <tr>
       <th>sex[T.Male]:age</th>
-      <td>-0.014765</td>
+      <td>-0.014793</td>
     </tr>
     <tr>
       <th>juv_fel_count</th>
-      <td>0.302096</td>
+      <td>0.302093</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_misd_count</th>
-      <td>0.181028</td>
+      <td>0.181023</td>
     </tr>
     <tr>
       <th>juv_other_count</th>
-      <td>0.149076</td>
+      <td>0.149184</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_other_count</th>
-      <td>-0.019088</td>
+      <td>-0.019212</td>
     </tr>
   </tbody>
 </table>
@@ -4203,17 +4255,19 @@ figures as we did above.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
 </pre></div>
 </div>
@@ -4412,8 +4466,8 @@ figures as we did above.</p>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/recidivism_71_4.png" src="../_images/recidivism_71_4.png" />
-<img alt="../_images/recidivism_71_5.png" src="../_images/recidivism_71_5.png" />
+</div></div><img alt="../_images/recidivism_71_5.png" src="../_images/recidivism_71_5.png" />
+<img alt="../_images/recidivism_71_6.png" src="../_images/recidivism_71_6.png" />
 </div>
 </div>
 <p>As with COMPAS score, our predictions are well-calibrated, but the
@@ -4423,9 +4477,9 @@ racial groups.</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 3 in the <a class="reference internal" href="#app-rcd-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="regularizing-to-maximize-balance">
-<h3>Regularizing to Maximize Balance<a class="headerlink" href="#regularizing-to-maximize-balance" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="regularizing-to-maximize-balance">
+<h3>Regularizing to Maximize Balance<a class="headerlink" href="#regularizing-to-maximize-balance" title="Permalink to this headline">#</a></h3>
 <p>Trying to improve balance by ad-hoc modifications will be
 difficult.</p>
 <p>Let’s try to do it more systematically.</p>
@@ -4472,10 +4526,6 @@ some other criteria.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/svm/_base.py:1225: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
-  warnings.warn(
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -4517,19 +4567,19 @@ are not so useful.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:44: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_3500/1996610596.py:44: RuntimeWarning: invalid value encountered in divide
   pcm = pcm/pcm.sum(axis=axis, keepdims=True)
 </pre></div>
 </div>
@@ -4756,17 +4806,17 @@ prediction and balance?</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3844/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_3500/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
 </pre></div>
 </div>
@@ -4799,38 +4849,38 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>Portion_of_NoRecid_and_LowRisk</th>
-      <td>0.405421</td>
-      <td>0.328025</td>
+      <td>0.404243</td>
+      <td>0.325902</td>
       <td>0.483333</td>
       <td>0.574194</td>
-      <td>0.561960</td>
+      <td>0.556196</td>
       <td>0.365185</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_LowRisk</th>
-      <td>0.147908</td>
-      <td>0.165605</td>
+      <td>0.149087</td>
+      <td>0.167728</td>
       <td>0.128333</td>
       <td>0.116129</td>
-      <td>0.083573</td>
+      <td>0.089337</td>
       <td>0.164444</td>
     </tr>
     <tr>
       <th>Portion_of_NoRecid_and_HighRisk</th>
-      <td>0.189747</td>
+      <td>0.190336</td>
       <td>0.181529</td>
+      <td>0.201667</td>
       <td>0.200000</td>
-      <td>0.200000</td>
-      <td>0.239193</td>
+      <td>0.242075</td>
       <td>0.177037</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_HighRisk</th>
-      <td>0.256924</td>
+      <td>0.256335</td>
       <td>0.324841</td>
-      <td>0.188333</td>
+      <td>0.186667</td>
       <td>0.109677</td>
-      <td>0.115274</td>
+      <td>0.112392</td>
       <td>0.293333</td>
     </tr>
   </tbody>
@@ -4864,38 +4914,38 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>P(NoRecid|LowRisk)</th>
-      <td>0.681188</td>
-      <td>0.643750</td>
-      <td>0.707317</td>
+      <td>0.679881</td>
+      <td>0.642259</td>
+      <td>0.705596</td>
       <td>0.741667</td>
-      <td>0.701439</td>
+      <td>0.696751</td>
       <td>0.673497</td>
     </tr>
     <tr>
       <th>P(NoRecid|HighRisk)</th>
-      <td>0.365357</td>
-      <td>0.337662</td>
-      <td>0.405263</td>
+      <td>0.367733</td>
+      <td>0.340517</td>
+      <td>0.407407</td>
       <td>0.514286</td>
-      <td>0.420290</td>
+      <td>0.442857</td>
       <td>0.359223</td>
     </tr>
     <tr>
       <th>P(Recid|LowRisk)</th>
-      <td>0.318812</td>
-      <td>0.356250</td>
-      <td>0.292683</td>
+      <td>0.320119</td>
+      <td>0.357741</td>
+      <td>0.294404</td>
       <td>0.258333</td>
-      <td>0.298561</td>
+      <td>0.303249</td>
       <td>0.326503</td>
     </tr>
     <tr>
       <th>P(Recid|HighRisk)</th>
-      <td>0.634643</td>
-      <td>0.662338</td>
-      <td>0.594737</td>
+      <td>0.632267</td>
+      <td>0.659483</td>
+      <td>0.592593</td>
       <td>0.485714</td>
-      <td>0.579710</td>
+      <td>0.557143</td>
       <td>0.640777</td>
     </tr>
   </tbody>
@@ -4929,38 +4979,38 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>P(LowRisk|NoRecid)</th>
-      <td>0.732694</td>
-      <td>0.664516</td>
+      <td>0.730564</td>
+      <td>0.660215</td>
       <td>0.790191</td>
       <td>0.831776</td>
-      <td>0.870536</td>
+      <td>0.861607</td>
       <td>0.689510</td>
     </tr>
     <tr>
       <th>P(HighRisk|NoRecid)</th>
-      <td>0.267306</td>
-      <td>0.335484</td>
+      <td>0.269436</td>
+      <td>0.339785</td>
       <td>0.209809</td>
       <td>0.168224</td>
-      <td>0.129464</td>
+      <td>0.138393</td>
       <td>0.310490</td>
     </tr>
     <tr>
       <th>P(LowRisk|Recid)</th>
-      <td>0.424802</td>
+      <td>0.426121</td>
       <td>0.358491</td>
-      <td>0.515021</td>
+      <td>0.519313</td>
       <td>0.645833</td>
-      <td>0.674797</td>
+      <td>0.682927</td>
       <td>0.376378</td>
     </tr>
     <tr>
       <th>P(HighRisk|Recid)</th>
-      <td>0.575198</td>
+      <td>0.573879</td>
       <td>0.641509</td>
-      <td>0.484979</td>
+      <td>0.480687</td>
       <td>0.354167</td>
-      <td>0.325203</td>
+      <td>0.317073</td>
       <td>0.623622</td>
     </tr>
   </tbody>
@@ -4974,19 +5024,19 @@ prediction and balance?</p>
 <p class="admonition-title">Exercise</p>
 <p>See exercise 4 in the <a class="reference internal" href="#app-rcd-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
-</div>
-<div class="section" id="tradeoffs-are-inevitable">
-<h3>Tradeoffs are Inevitable<a class="headerlink" href="#tradeoffs-are-inevitable" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tradeoffs-are-inevitable">
+<h3>Tradeoffs are Inevitable<a class="headerlink" href="#tradeoffs-are-inevitable" title="Permalink to this headline">#</a></h3>
 <p>We could try to tweak our predictions further to improve
 balance.</p>
 <p>However, motivated in part by this COMPAS example, <span id="id4">[<a class="reference internal" href="#id6" title="Jon Kleinberg, Himabindu Lakkaraju, Jure Leskovec, Jens Ludwig, and Sendhil Mullainathan. Human Decisions and Machine Predictions*. The Quarterly Journal of Economics, 133(1):237-293, 08 2017. URL: https://dx.doi.org/10.1093/qje/qjx032, arXiv:http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf, doi:10.1093/qje/qjx032.">recidKLL+17</a>]</span> proved
 that it is impossible for any prediction algorithm to be both perfectly
 balanced and well-calibrated.</p>
 <p>Improvements in balance necessarily make calibration worse.</p>
-</div>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <div class="docutils container" id="id5">
 <dl class="citation">
 <dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id1">recidDMB16</a></span></dt>
@@ -4997,16 +5047,16 @@ balanced and well-calibrated.</p>
 </dd>
 </dl>
 </div>
-</div>
-<div class="section" id="exercises">
-<span id="app-rcd-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercises">
+<span id="app-rcd-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Can you develop a model that performs better at mimicking their risk scores?</p>
 <p>(<a class="reference internal" href="#app-rcd-dir1"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>We made our calibration plot using a held-out test sample. What
 do you think would happen if made the calibration plot using the
 training sample? Check and see.</p>
@@ -5018,9 +5068,9 @@ training sample? Check and see.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-rcd-dir2"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Try to improve balance and/or calibration by creating an
 alternative prediction.</p>
 <div class="cell docutils container">
@@ -5031,15 +5081,15 @@ alternative prediction.</p>
 </div>
 </div>
 <p>(<a class="reference internal" href="#app-rcd-dir3"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-<div class="section" id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Modify the cross-validation scoring function to see how it affects
 calibration and balance.</p>
 <p>(<a class="reference internal" href="#app-rcd-dir4"><span class="std std-ref">back to text</span></a>)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
