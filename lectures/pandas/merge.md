@@ -19,7 +19,7 @@ kernelspec:
 
 - Know the different pandas routines for combining datasets
 - Know when to use `pd.concat` vs `pd.merge` vs `pd.join`
-- Be able to apply the three main combining routines
+- Be able to apply the three main combining routines 
 
 **Data**
 
