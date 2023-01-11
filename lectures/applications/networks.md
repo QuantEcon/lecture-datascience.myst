@@ -525,7 +525,7 @@ This is an adjacency matrix for an undirected graph!
 Let's take a look at it.
 
 ```{code-cell} ipython3
-stocknet = nx.from_numpy_matrix(adj.to_numpy()) # initialize a new graph from our adjacency matrix
+stocknet = nx.from_numpy_array(adj.to_numpy()) # initialize a new graph from our adjacency matrix
 stocknet = nx.relabel_nodes(stocknet, dict(enumerate(adj.columns))) # keep the stock tickers as the names of the nodes (instead of integers)
 stock_layout = nx.spring_layout(stocknet,seed=10) # fix our layout
 nx.draw(stocknet,stock_layout) # plot the graph, without any labels (for now)
