@@ -485,7 +485,8 @@ What this means, is that segregated social networks are also characterized by a 
 Graph clustering can be a useful concept outside of social networks too. Let's take a look at how graph clustering and spectral homophily could be used in a simple portfolio selection problem.
 
 ```{code-cell} ipython3
-df = pd.read_csv("/assets/data/stocks.csv") # load a dataset of weekly returns for some popular stocks over the past year
+url = "https://raw.githubusercontent.com/doctor-phil/analyzing-economic-networks/main/stocks.csv"
+df = pd.read_csv(url) # load a dataset of weekly returns for some popular stocks over the past year
 df.head(5) # take a peek at the data
 ```
 
@@ -560,9 +561,3 @@ We were able to identify a cluster of technology stocks (the red nodes, Amazon, 
 This highlights a few important closing points. We obtained this network by looking at a correlation matrix and sparsifying the network by arbitrarily choosing to treat correlations more than 0.92 as being links, and ignoring those with a correlation of less than 0.92. But there are *infinite* ways that we could have formed this network, for example, by choosing any other real value between 0 and 1 (which would change the density), by keeping all of the correlations and building a **weighted** network, by only forming links from one stock to the three most highly correlated others (by **k-nearest-neighbors** or **KNN**), or even by using a different distance metric than correlation entirely. For example, you could even build a network with links between companies whose names share a letter. Even though that is a perfectly valid network, it might not be the most informative choice in this particular setting.
 
 Thus, an important lesson to take away from this exercise is that a network can be used to represent basically any kind of data. This gives them the potential to be a powerful and convenient tool to understand underlying relational structure in a dataset. Often however, it comes down to the data scientist to understand *which* networks contain the information they need. Even using this very limited information about extreme correlations, we were able to use spectral clustering to correctly identify the two distinct sectors that comprise our dataset based only on their weekly returns. A worthwhile exercise, whenever you are faced with this choice, is to try forming the network in a bunch of different ways. If you get the same results, that's great! Otherwise, you might need to take a step back and think more carefully about what types of relationships are relevant for the problem you are interested in.
-
-(app-vis-ex)=
-## Exercises
-
-### Exercise 1
-
