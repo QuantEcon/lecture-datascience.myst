@@ -30,3 +30,5 @@ special types of analysis.
 ## <i class="fas fa-cogs" style="color:#1665ad"></i> [Machine Learning in Economics](../applications/ml_in_economics.md)
 
 ## <i class="fas fa-cogs" style="color:#1665ad"></i> [Heterogeneous Effects](../applications/heterogeneity.md)
+
+## <i class="fas fa-cogs" style="color:#1665ad"></i> [Social and Economic Networks](../applications/networks.md)
