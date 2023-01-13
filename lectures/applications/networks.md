@@ -14,7 +14,7 @@ kernelspec:
 # Analyzing Economic Networks
 
 **Co-author**
-> - [Philip Solimine *UBC*](https://www.psolimine.net)
+> - [Philip Solimine](https://www.psolimine.net), *UBC*
 
 **Prerequisites**
 
@@ -44,7 +44,7 @@ import networkx as nx
 
 ```{code-cell} ipython3
 karate = nx.karate_club_graph() #import the Zachary's karate club network data from NetworkX
-karate_layout = nx.spring_layout(karate,seed=10) #fix a random layout so we can get a consistent look at the network
+karate_layout = nx.spring_layout(karate,seed=2) #fix a random layout so we can get a consistent look at the network
 
 nx.draw(karate,karate_layout) #plot the network
 ```
