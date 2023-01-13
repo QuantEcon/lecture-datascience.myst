@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Analyzing Economic Networks
+# Social and Economic Networks
 
 **Co-author**
 > - [Philip Solimine, *UBC*](https://www.psolimine.net)
