@@ -14,12 +14,13 @@ kernelspec:
 # Analyzing Economic Networks
 
 **Co-author**
-> - [Philip Solimine](https://www.psolimine.net), *UBC*
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
 
 **Prerequisites**
 
 - {doc}`Introduction to Numpy <../scientific/numpy_arrays>`
 - {doc}`Applied Linear Algebra <../scientific/applied_linalg>`
+- {doc}`Randomnesss <../scientific/randomness>`
 - {doc}`Introduction to Pandas <../pandas/intro>`
 
 **Outcomes**
