@@ -373,19 +373,25 @@ package that we haven’t seen yet.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The negative minimum is: 
-      fun: -2.2499999999999996
- message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
-    nfev: 16
-     nit: 12
+  message: 
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 1.48e-08 )
  success: True
+     fun: -2.2499999999999996
        x: -1.2247448697638397
-The positive minimum is: 
-      fun: -2.2499999999999996
- message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
-    nfev: 16
      nit: 12
+    nfev: 15
+The positive minimum is: 
+  message: 
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 1.48e-08 )
  success: True
+     fun: -2.2499999999999996
        x: 1.2247448697638397
+     nit: 12
+    nfev: 15
 </pre></div>
 </div>
 </div>
@@ -406,12 +412,15 @@ will verify our maximum value.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The maximum is: 
-      fun: 1.1519919564363613e-23
- message: &#39;\nOptimization terminated successfully;\nThe returned value satisfies the termination criteria\n(using xtol = 1.48e-08 )&#39;
-    nfev: 13
-     nit: 9
+  message: 
+          Optimization terminated successfully;
+          The returned value satisfies the termination criteria
+          (using xtol = 1.48e-08 )
  success: True
+     fun: 1.1519919564363613e-23
        x: 1.9595849530247992e-12
+     nit: 9
+    nfev: 12
 </pre></div>
 </div>
 </div>
@@ -632,7 +641,7 @@ as <code class="docutils literal notranslate"><span class="pre">A_bc</span></cod
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize_scalar</span>
 
 <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">W</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return value of -U for a given B, when we consume as much A as possible</span>
 
 <span class="sd">    Note that we return -U because scipy wants to minimize functions,</span>
@@ -687,7 +696,7 @@ wealth levels change.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f7f0e4aaca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6471f51a60&gt;
 </pre></div>
 </div>
 <img alt="../_images/optimization_23_1.png" src="../_images/optimization_23_1.png" />
@@ -1034,6 +1043,11 @@ basket of potato chips and chocolate bars when <code class="docutils literal not
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/heterogeneity.html">
    Heterogeneous Effects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/networks.html">
+   Social and Economic Networks
   </a>
  </li>
 </ul>

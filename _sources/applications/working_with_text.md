@@ -734,7 +734,7 @@ document contribute to each of the 10 components.
 ```{code-cell} python
 print(svd_model.explained_variance_ratio_)
 print(svd_model.explained_variance_ratio_.cumsum())
-terms = tfidf_vectorizer.get_feature_names()
+terms = tfidf_vectorizer.get_feature_names_out() 
 comp_label=[]
 for i, comp in enumerate(svd_model.components_):
     terms_comp = zip(terms, comp)

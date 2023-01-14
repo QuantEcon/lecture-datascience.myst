@@ -19,7 +19,7 @@ kernelspec:
 
 - Know the different pandas routines for combining datasets
 - Know when to use `pd.concat` vs `pd.merge` vs `pd.join`
-- Be able to apply the three main combining routines
+- Be able to apply the three main combining routines 
 
 **Data**
 
@@ -424,7 +424,7 @@ The implementation of the `join` method calls `merge` internally,
 but sets the `left_on` and `right_index` arguments for you.
 
 You can do anything with `df.join` that you can do with
-`df.merge`, but df.join` is more convenient to use if the keys of `right`
+`df.merge`, but `df.join` is more convenient to use if the keys of `right`
 are in the index.
 
 ```{code-cell} python
@@ -673,7 +673,7 @@ Let's merge these names so we know which airlines we should avoid
 flying...
 
 ```{code-cell} python
-avg_delays_w_code = avg_delays.join(carrier_code)
+avg_delays_w_code = pd.merge(avg_delays,carrier_code, left_on="Carrier", right_on="Code")
 avg_delays_w_code.sort_values("CarrierDelay", ascending=False)
 ```
 

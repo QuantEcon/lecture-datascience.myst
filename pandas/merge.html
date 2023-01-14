@@ -2665,7 +2665,7 @@ method described above, but only allows you to use the index of the
 <p>The implementation of the <code class="docutils literal notranslate"><span class="pre">join</span></code> method calls <code class="docutils literal notranslate"><span class="pre">merge</span></code> internally,
 but sets the <code class="docutils literal notranslate"><span class="pre">left_on</span></code> and <code class="docutils literal notranslate"><span class="pre">right_index</span></code> arguments for you.</p>
 <p>You can do anything with <code class="docutils literal notranslate"><span class="pre">df.join</span></code> that you can do with
-<code class="docutils literal notranslate"><span class="pre">df.merge</span></code>, but df.join<code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">more</span> <span class="pre">convenient</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">if</span> <span class="pre">the</span> <span class="pre">keys</span> <span class="pre">of</span></code>right`
+<code class="docutils literal notranslate"><span class="pre">df.merge</span></code>, but <code class="docutils literal notranslate"><span class="pre">df.join</span></code> is more convenient to use if the keys of <code class="docutils literal notranslate"><span class="pre">right</span></code>
 are in the index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3784,7 +3784,7 @@ into the full airline name.</p>
 flying…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_delays_w_code</span> <span class="o">=</span> <span class="n">avg_delays</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">carrier_code</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_delays_w_code</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">avg_delays</span><span class="p">,</span><span class="n">carrier_code</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;Carrier&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;Code&quot;</span><span class="p">)</span>
 <span class="n">avg_delays_w_code</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;CarrierDelay&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3812,73 +3812,79 @@ flying…</p>
       <th>Code</th>
       <th>Description</th>
     </tr>
-    <tr>
-      <th>Carrier</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>F9</th>
+      <th>0</th>
       <td>7.856566</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>F9</td>
+      <td>Frontier Airlines Inc. (1994 - )</td>
     </tr>
     <tr>
-      <th>EV</th>
+      <th>1</th>
       <td>7.125663</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>EV</td>
+      <td>ExpressJet Airlines Inc. (2012 - )</td>
     </tr>
     <tr>
-      <th>OO</th>
+      <th>2</th>
+      <td>7.125663</td>
+      <td>EV</td>
+      <td>Atlantic Southeast Airlines (1993 - 2011)</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>6.705469</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>OO</td>
+      <td>SkyWest Airlines Inc. (2003 - )</td>
     </tr>
     <tr>
-      <th>B6</th>
+      <th>4</th>
       <td>5.588006</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>B6</td>
+      <td>JetBlue Airways (2000 - )</td>
     </tr>
     <tr>
-      <th>DL</th>
+      <th>5</th>
       <td>4.674957</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>DL</td>
+      <td>Delta Air Lines Inc. (1960 - )</td>
     </tr>
     <tr>
-      <th>HA</th>
+      <th>6</th>
       <td>4.577753</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>HA</td>
+      <td>Hawaiian Airlines Inc. (1960 - )</td>
     </tr>
     <tr>
-      <th>UA</th>
+      <th>7</th>
       <td>4.368148</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>UA</td>
+      <td>United Air Lines Inc. (1960 - )</td>
     </tr>
     <tr>
-      <th>NK</th>
+      <th>8</th>
       <td>4.166264</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>NK</td>
+      <td>Spirit Air Lines (1992 - )</td>
     </tr>
     <tr>
-      <th>AA</th>
+      <th>9</th>
       <td>4.073358</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>AA</td>
+      <td>American Airlines Inc. (1960 - )</td>
     </tr>
     <tr>
-      <th>VX</th>
+      <th>10</th>
       <td>3.342923</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>VX</td>
+      <td>Virgin America (2007 - )</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3.342923</td>
+      <td>VX</td>
+      <td>Aces Airlines (1992 - 2003)</td>
     </tr>
   </tbody>
 </table>
@@ -4772,6 +4778,11 @@ the most rated books?</p>
  <li class="toctree-l1">
   <a class="reference internal" href="../applications/heterogeneity.html">
    Heterogeneous Effects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/networks.html">
+   Social and Economic Networks
   </a>
  </li>
 </ul>

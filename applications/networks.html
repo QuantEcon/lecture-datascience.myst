@@ -1,0 +1,1863 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Social and Economic Networks &#8212; QuantEcon DataScience</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://datascience.quantecon.org/applications/networks.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Heterogeneous Effects" href="heterogeneity.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Chase Coleman, Spencer Lyon, and Jesse Perla" />
+<meta name="keywords" content="Python, QuantEcon, DataScience" />
+<meta name="description" content=This website presents a series of lectures on programming, data science, and economics. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@quantecon" />
+<meta name="twitter:title" content="Social and Economic Networks"/>
+<meta name="twitter:description" content="This website presents a series of lectures on programming, data science, and economics.">
+<meta name="twitter:creator" content="@quantecon">
+<meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Social and Economic Networks" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://datascience.quantecon.org/applications/networks.html" />
+<meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+<meta property="og:description" content="This website presents a series of lectures on programming, data science, and economics." />
+<meta property="og:site_name" content="QuantEcon DataScience" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=applications/networks>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-network">
+   What is a network?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graph-basics-in-networkx">
+   Graph basics in NetworkX
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-new-graph">
+     Creating a new graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-directedness">
+     (Un)directedness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degree">
+     Degree
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connectivity-and-routing">
+     Connectivity and routing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-representations">
+     Matrix representations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spectral-graph-theory">
+   Spectral graph theory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenvector-centrality">
+     Eigenvector centrality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spectral-graph-clustering">
+     Spectral graph clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications">
+   Applications
+  </a>
+ </li>
+</ul>
+
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="../index.html">QuantEcon DataScience</a></p>
+
+                        <p class="qe-page__header-subheading">Social and Economic Networks</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <section class="tex2jax_ignore mathjax_ignore" id="social-and-economic-networks">
+<h1>Social and Economic Networks<a class="headerlink" href="#social-and-economic-networks" title="Permalink to this headline">#</a></h1>
+<p><strong>Co-author</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.psolimine.net">Philip Solimine, <em>UBC</em></a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../scientific/numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
+<li><p><a class="reference internal" href="../scientific/applied_linalg.html"><span class="doc">Applied Linear Algebra</span></a></p></li>
+<li><p><a class="reference internal" href="../scientific/randomness.html"><span class="doc">Randomnesss</span></a></p></li>
+<li><p><a class="reference internal" href="../pandas/intro.html"><span class="doc">Introduction to Pandas</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Learn what a network is, and some of the basic terms of graph theory</p></li>
+<li><p>Understand how to represent data as a network, to get a window into its underlying structure</p></li>
+<li><p>Explore the relationship between networks and linear algebra, especially the role of eigenvalues in centrality, connectivity, and clustering</p></li>
+<li><p>Apply these tools to real economic data</p></li>
+</ul>
+<section id="what-is-a-network">
+<h2>What is a network?<a class="headerlink" href="#what-is-a-network" title="Permalink to this headline">#</a></h2>
+<p>Simply put, a network is a map that shows us how different objects are related to each other.</p>
+<p>Let’s take a look at one example, using a python library called NetworkX (which is included in Anaconda):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span> <span class="c1">#import the Zachary&#39;s karate club network data from NetworkX</span>
+<span class="n">karate_layout</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#fix a random layout so we can get a consistent look at the network</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">)</span> <span class="c1">#plot the network</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_2_0.png" src="../_images/networks_2_0.png" />
+</div>
+</div>
+<p>This is an example of a <strong>social network</strong>. (Specifically, it’s called “Zachary’s Karate Club Network”, and it represents some data collected by Wayne Zachary in 1977.) In this network, we have a set of dots representing people (<strong>nodes</strong> or <strong>vertices</strong>) who are connected by a line (<strong>link</strong> or <strong>edge</strong>) if they are friends with each other.</p>
+<p>A data structure that consists of a set of nodes connected by a set of links is called a <strong>graph</strong>.</p>
+<p>Importantly, this structure can be used to represent any situation where you have a group of objects and some information about how they are interconnected.</p>
+<p>In economics, networks or graphs are often used to represent:</p>
+<ul class="simple">
+<li><p>Social or communication networks</p></li>
+<li><p>Interbank lending relationships</p></li>
+<li><p>Asset price correlations</p></li>
+<li><p>Mobility of labor between firms</p></li>
+<li><p>Job referrals</p></li>
+<li><p>Supply chains</p></li>
+<li><p>Markets between buyers and sellers</p></li>
+<li><p>International trade</p></li>
+<li><p>Transportation systems (roads and intersections)</p></li>
+<li><p><em>Many</em> other situations</p></li>
+</ul>
+<p>Networks are also useful in machine learning, where they are used to describe the connections between neurons in neural architectures, and correlations between random variables in graphical models.</p>
+</section>
+<section id="graph-basics-in-networkx">
+<h2>Graph basics in NetworkX<a class="headerlink" href="#graph-basics-in-networkx" title="Permalink to this headline">#</a></h2>
+<p>Since networks arise so naturally in so many problems, mathematicians, computer scientists, physicists, biologists, engineers, and social scientists have developed a lot of different tools that we can use to understand their structure. The mathematical study of networks and their structure is called <strong>graph theory</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">networkx</span></code> library (<code class="docutils literal notranslate"><span class="pre">nx</span></code> for short) gives data scientists a convenient toolbox to these networks in Python. Here are some of the basic tools and terms in graph theory, and their Python implementation:</p>
+<section id="creating-a-new-graph">
+<h3>Creating a new graph<a class="headerlink" href="#creating-a-new-graph" title="Permalink to this headline">#</a></h3>
+<p>Zachary’s Karate Club Network is a really popular choice for testing out new approaches to social network analysis. That’s partially because it’s a nice size to work with, and partially because every network scientist will recognize it, and its really easy to find (in fact, it’s built in to <code class="docutils literal notranslate"><span class="pre">networkx</span></code>)</p>
+<p>But to introduce some of these topics, let’s start by making a new network from scratch. We can do this by creating an empty network with 12 nodes, and then filling it up with links:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span> <span class="c1">#initialize a new graph</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span> <span class="c1">#add a set of nodes numbered 1 through 12</span>
+<span class="n">edgelist</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> 
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">)]</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edgelist</span><span class="p">)</span> <span class="c1">#add a set of links or edges to form a network</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#fix the position again</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#plot the network graph</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_4_0.png" src="../_images/networks_4_0.png" />
+</div>
+</div>
+</section>
+<section id="un-directedness">
+<h3>(Un)directedness<a class="headerlink" href="#un-directedness" title="Permalink to this headline">#</a></h3>
+<p>Different types of situations can be represented using different types of graphs.</p>
+<p>For example, the social network shown above is called an <strong>undirected</strong> network. This is because the links aren’t associated with any direction. Like a two-way road; if you can use a road to get from point A to point B, then you can also use it to get from point B to point A. (Think about Facebook friendships. If you are friends with someone on Facebook, then they are also friends with you. Thus, the Facebook friendship network is undirected)</p>
+<p>This might make sense in certain situations. But in other cases, links can work more like a one-way street. (Think about Twitter. If you follow someone on Twitter, it doesn’t always mean they will follow you back.) This type of network is called <strong>directed</strong>.</p>
+<p>In this lesson, we are going to focus on undirected networks. <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> should create an undirected network by default. But just in case, we can use <code class="docutils literal notranslate"><span class="pre">nx.is_directed()</span></code> to verify that our network is, in fact, undirected, without needing to draw it. Like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">is_directed</span><span class="p">(</span><span class="n">network</span><span class="p">)</span> <span class="c1">#check if the network is directed (True) or undirected (False). (We should expect False)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="degree">
+<h3>Degree<a class="headerlink" href="#degree" title="Permalink to this headline">#</a></h3>
+<p>If you’re looking at a real network, a natural question to ask is, “who has the most links?”</p>
+<p>In an undirected network, the <strong>degree</strong> of a node is the number of connections that node has. For example, in our toy network, most of the nodes have degree 3. That is, except for nodes 1 and 2, which each have degree 2. We can verify this using <code class="docutils literal notranslate"><span class="pre">nx.degree()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="c1"># retrieve the degree sequence from our network</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 2), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3), (7, 3), (8, 3), (9, 3), (10, 3), (11, 3), (12, 2)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We call the total number of links in the network the <strong>degree of the network</strong>. In this case, our example network has a degree of 17.</p>
+<p>If we wanted to know the total number of links that would be possible in an undirected network with n nodes, we can use the simple formula <span class="math notranslate nohighlight">\(\frac{1}{2}n*(n-1)\)</span> to find it. For example, in our network we have 12 nodes. Each of these nodes can connect to 11 other people. So we multiply 12 nodes times 11 links, giving us 132. But we can’t forget that every link formed by a node must attach to one of the other nodes, so to find the actual maximum, we have to divide this number by 2, giving us 66 possible links.</p>
+<p>If we divide the degree of a network by the maximum possible degree, it gives us a measure called the <strong>density</strong> of the graph. If a network has a density that is very close to 1, then we would call the network <strong>dense</strong>. On the other hand, if the density is closer to 0, we would call the network <strong>sparse</strong>. In general, dense networks give us more information. However, sparse networks can be valuable because they provide a lot of computational benefits.</p>
+<p>The special cases of sparse and dense networks are the network with no links at all, and the network in which every node is connected to every other possible node. These networks are called the <strong>empty network</strong> and the <strong>complete network</strong>, respectively.</p>
+<p>Density tells us a little bit about the structure of the network. But there is a lot more that we can examine, just by using degrees. For example, we can draw a histogram of all the nodes with each degree:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="n">deg</span><span class="p">],</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span> <span class="c1"># this could also be done using plt.hist([d for n,d in deg]), but this way looks nicer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Degree&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_10_0.png" src="../_images/networks_10_0.png" />
+</div>
+</div>
+<p>This agrees with our guess. Nodes 1 and 12 each have degree 2, while the remaining 10 nodes have 3 links each.</p>
+<p>The distribution of degrees each node has is called its <strong>degree distribution</strong>, and is an easy way to get a feeling for the structure of your network. If every node had the same degree, we would call the network <strong>regular</strong>.</p>
+<p>On the other hand, real world networks tend to be more complex. For example, let’s take a look at the degree distribution for the Zachary’s Karate Club network:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deg</span> <span class="o">=</span> <span class="n">karate</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="c1"># retrieve the degree sequence from the karate club network, and plot its histogram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="n">deg</span><span class="p">],</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">21</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Degree&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_12_0.png" src="../_images/networks_12_0.png" />
+</div>
+</div>
+<p><strong>Note</strong>:
+The degree distribution is also a convenient way to start thinking about fitting statistical models to network data; if we want to understand how people form networks, one way to do this would be by fitting the degree distribution by estimating the parameters of some distribution.</p>
+<p>The Karate Club network shows us an example of something that is really common in networks. The degrees don’t seem to follow a normal distribution. Instead, the distribution is skewed and there are two nodes with exceptionally high degrees, relative to the rest. These nodes are called <strong>hubs</strong>.</p>
+<p>Degree distributions that are characterized by a high number of hubs are called <strong>scale-free</strong>. These distributions seem to arise in a lot of man-made networks. Conveniently, they can be modelled as the result of an intuitive structural process:</p>
+<ol class="simple">
+<li><p>Begin with a small, densely connected cluster of nodes.</p></li>
+<li><p>One-by-one, add a new node to the network and connect it randomly with a set number of existing nodes.</p></li>
+</ol>
+<p>If the new nodes have <strong>preferential attachment</strong>, that is, they put higher probability on connecting with other nodes that are already “popular”, then this process will result in a network with a scale-free degree distribution. This effect was first discovered by Albert-Lazlo Barabasi and Reka Albert, and thus is sometimes called the <strong>Barabasi-Albert</strong> or <strong>B-A</strong> model of network formation.</p>
+<p>In summary, the desire of new nodes to attach themselves with “popular” nodes can lead to the emergence of a relatively small set of “influencers”, who have a much higher degree than everyone else.</p>
+</section>
+<section id="connectivity-and-routing">
+<h3>Connectivity and routing<a class="headerlink" href="#connectivity-and-routing" title="Permalink to this headline">#</a></h3>
+<p>Another question we might ask when observing networks is how well-connected they are. An undirected graph is called <strong>connected</strong> if, for every pair <span class="math notranslate nohighlight">\((i,j)\)</span>, there exists a <strong>path</strong> between these two nodes.</p>
+<p>Such a path exists if there is a set of links that starts at <span class="math notranslate nohighlight">\(i\)</span> and ends at <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>If we think about this network as, for example, a set of roads connecting different businesses in a supply chain, it becomes clear why connectivity can be an important feature.</p>
+<p>Imagine that the edges of this graph represent roads, and the nodes represent different businesses. Firm 1 needs to make a shipment to Firm 12. How can they do this?</p>
+<p>Maybe it would be important to stop by all of the other businesses on the way. One way would be to follow a path that passes by nodes 3,2,4,5,6,7,8,9,11, and 10, before finally reaching 12.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_map</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">]</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># highlight our long path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_14_0.png" src="../_images/networks_14_0.png" />
+</div>
+</div>
+<p>However, this might not be the most efficient path since it takes a lot of driving. Another, faster route might be to skip 2,4,9, and 11, and head down the path through 3,5,6,7,8, and 10.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_map</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">]</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># highlight a shorter path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_16_0.png" src="../_images/networks_16_0.png" />
+</div>
+</div>
+<p>Clearly, this path will be a lot more efficient, since it gets to the final destination while traveling down 4 fewer roads than the previous path. Which one is “best” depends on your objective. Optimal transport and routing problems are a large part of operations research. In general, finding the shortest path from one node to another is very easy to do using a very famous heuristic called <strong>dijkstra’s algorithm</strong>. On the other hand, finding the shortest path that visits every single node in a graph is called the <strong>travelling salesman problem</strong>, and is notoriously difficult to solve (specifically, it is NP-hard.)</p>
+<p>Lastly, let’s imagine that a storm comes, and the road between 6 and 7 floods and cannot be used. The network now looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># delete the edge connecting node 6 to node 7</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_18_0.png" src="../_images/networks_18_0.png" />
+</div>
+</div>
+<p>We can see that there is no longer any possible path that could connect node 1 to node 12. For any node from 1 to 6, there is still a path; just like on the right hand side, there is a path between any two nodes from 7 to 12. But there is no path that can connect any node in one of these sets to a node in the other. We would refer to these two sets as <strong>connected components</strong>.</p>
+</section>
+<section id="matrix-representations">
+<h3>Matrix representations<a class="headerlink" href="#matrix-representations" title="Permalink to this headline">#</a></h3>
+<p>We read in this network as an <strong>edgelist</strong>. Often, when you download network data, it will be stored as a list just like that. But often, to learn more about a network, it can be useful to think about a graph as a matrix.</p>
+<p>The most common mathematical representation of a network is using its <strong>adjacency matrix</strong>. The adjacency matrix is a square matrix, with one row and one column for each node in the network. Since our toy network has 12 nodes, it’s adjacency will be a 12x12 matrix.</p>
+<p>For a simple, unweighted graph, the adjacency matrix has 0’s on the diagonal, and a 1 in the <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> position if there is a link between node <span class="math notranslate nohighlight">\(i\)</span> and node <span class="math notranslate nohighlight">\(j\)</span>. To refer to the adjacency matrix of a graph, we often use the letter <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Since our graph is undirected, if there is a link from <span class="math notranslate nohighlight">\(i\)</span> to <span class="math notranslate nohighlight">\(j\)</span>, then there must also be a link from <span class="math notranslate nohighlight">\(j\)</span> to <span class="math notranslate nohighlight">\(i\)</span>. This means that <span class="math notranslate nohighlight">\(A_{ij} = A_{ji}\)</span> for every node <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, so the adjacency matrix for an undirected graph will always be symmetric.</p>
+<p>This all sounds a little abstract. To make it more concrete, let’s take a look at the adjacency matrix for our toy network:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># add the (6,7) link back to get our original network</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">network</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># retrieve the network adjacency matrix, and store it as a dense numpy matrix (this will return a sparse matrix by default, which doesn&#39;t look as pretty)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 1 0 0 0 0 0 0 0 0 0]
+ [1 0 1 1 0 0 0 0 0 0 0 0]
+ [1 1 0 0 1 0 0 0 0 0 0 0]
+ [0 1 0 0 1 1 0 0 0 0 0 0]
+ [0 0 1 1 0 1 0 0 0 0 0 0]
+ [0 0 0 1 1 0 1 0 0 0 0 0]
+ [0 0 0 0 0 1 0 1 1 0 0 0]
+ [0 0 0 0 0 0 1 0 1 1 0 0]
+ [0 0 0 0 0 0 1 1 0 0 1 0]
+ [0 0 0 0 0 0 0 1 0 0 1 1]
+ [0 0 0 0 0 0 0 0 1 1 0 1]
+ [0 0 0 0 0 0 0 0 0 1 1 0]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To understand what’s going on here, take a closer look, thinking back to the structure of this network and its edgelist.</p>
+<p>Remember, when we looked at the degree distribution, nodes 1 and 12 each had 2 links. If we look at the first row (or column) of this matrix, we see that there are exactly two entries equal to 1, and the rest are zeros. Same for row/column 12. But every other row/column of the matrix has exactly three 1’s, and the rest of the entries are 0.</p>
+<p>Representing a network as a matrix connects the world of graph theory with the world of linear algebra, and gives us a lot of tools that we can use to analyze networks. In fact, the adjacency matrix has some properties that seem almost magical. For example, if you want to find the total number of paths of length <span class="math notranslate nohighlight">\(k\)</span> between two nodes, all you have to do is raise the adjacency matrix to the power <span class="math notranslate nohighlight">\(k\)</span>, and look at the entry corresponding to the pair of interest.</p>
+<p>Length 1 is easy… there is exactly one path of length one to every node you are connected to, and no paths of length one that can connect two nodes who do not share a link. But beyond 1 is when this gets interesting. This let’s us answer questions like the following: “how many shortest paths are there from node 1 to node 12?”</p>
+<p>Above, we saw that the shortest path between 1 and 12 contained 7 edges. Let’s see what happens when we raise the adjacency matrix to the power 6.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_paths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">6</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span> <span class="c1"># raise the adjacency matrix to the power 6, and print the entry in the first row, 12th column.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are&quot;</span><span class="p">,</span> <span class="n">n_paths</span><span class="p">,</span> <span class="s2">&quot;paths of length 6 from node 1 to node 12&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 0 paths of length 6 from node 1 to node 12
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we suspected, the entry in row 1, column 12 is equal to zero. This tells us that there are no paths of length 6 that can connect node 1 to node 12.</p>
+<p>How about length 7?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_paths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">7</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span> <span class="c1"># raise the adjacency matrix to the power 7</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are&quot;</span><span class="p">,</span> <span class="n">n_paths</span><span class="p">,</span> <span class="s2">&quot;paths of length 7 from node 1 to node 12&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 4 paths of length 7 from node 1 to node 12
+</pre></div>
+</div>
+</div>
+</div>
+<p>So there are no paths of length 6 that connect node 1 to node 12, but there are exactly 4 paths of length 7. We drew one of these paths out earlier. Can you find the other 3?</p>
+<p>The adjacency matrix is not the only convenient representation of a graph in matrix form. Another one, called the <strong>laplacian</strong>, has a lot of equally interesting properties.</p>
+<p>The graph laplacian is similar to the adjacency matrix, except that the off-diagonal elements are negative and the diagonal elements contain the degree of each node. Equivalently, if we let <span class="math notranslate nohighlight">\(D\)</span> be a diagonal matrix with each diagonal element corresponding to the degree of the corresponding node, then the laplacian matrix <span class="math notranslate nohighlight">\(L\)</span> could be constructed as <span class="math notranslate nohighlight">\(L = D - A\)</span></p>
+<p>We can get this matrix for our graph using <code class="docutils literal notranslate"><span class="pre">nx.laplacian_matrix()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">network</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># retrieve and print the laplacian matrix for our toy network</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2 -1 -1  0  0  0  0  0  0  0  0  0]
+ [-1  3 -1 -1  0  0  0  0  0  0  0  0]
+ [-1 -1  3  0 -1  0  0  0  0  0  0  0]
+ [ 0 -1  0  3 -1 -1  0  0  0  0  0  0]
+ [ 0  0 -1 -1  3 -1  0  0  0  0  0  0]
+ [ 0  0  0 -1 -1  3 -1  0  0  0  0  0]
+ [ 0  0  0  0  0 -1  3 -1 -1  0  0  0]
+ [ 0  0  0  0  0  0 -1  3 -1 -1  0  0]
+ [ 0  0  0  0  0  0 -1 -1  3  0 -1  0]
+ [ 0  0  0  0  0  0  0 -1  0  3 -1 -1]
+ [ 0  0  0  0  0  0  0  0 -1 -1  3 -1]
+ [ 0  0  0  0  0  0  0  0  0 -1 -1  2]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="spectral-graph-theory">
+<h2>Spectral graph theory<a class="headerlink" href="#spectral-graph-theory" title="Permalink to this headline">#</a></h2>
+<p>The ability to represent any data on relationships between objects as a square, symmetric matrix, provides a convenient bridge between the worlds of graph theory and linear algebra.</p>
+<p>One of the most useful tools in linear algebra, used to deal with square, symmetric matrices, is the eigenvalue decomposition. Given a square matrix <span class="math notranslate nohighlight">\(M\)</span>, the <strong>eigenvalues</strong> <span class="math notranslate nohighlight">\(\lambda\)</span> and <strong>eigenvectors</strong> <span class="math notranslate nohighlight">\(v\)</span> of the matrix <span class="math notranslate nohighlight">\(M\)</span> are the values and vectors that satisfy the equation:</p>
+<div class="math notranslate nohighlight">
+\[Mv = \lambda v\]</div>
+<p>What this equation means is that multiplying the matrix <span class="math notranslate nohighlight">\(M\)</span> times the vector <span class="math notranslate nohighlight">\(v\)</span> has only the effect of <em>scaling</em> the vector <span class="math notranslate nohighlight">\(v\)</span> by a constant <span class="math notranslate nohighlight">\(\lambda\)</span>, and that the result of this multiplication will thus be proportional to <span class="math notranslate nohighlight">\(v\)</span> and will not be rotated.</p>
+<p>Often when they are introduced, eigenvalues and eigenvectors can seem like intimidating and abstract theoretical ideas with dubious practical value. But it turns out, they can tell us a <em>lot</em> about the structure of a dataset, and network data is no exception. Some of the results connecting eigenvalues to graph structure seem almost magical. If you can get a good, intuitive understanding of what they represent, it might just change the way you think about data.</p>
+<section id="eigenvector-centrality">
+<h3>Eigenvector centrality<a class="headerlink" href="#eigenvector-centrality" title="Permalink to this headline">#</a></h3>
+<p>Often when dealing with network data, a natural question to ask is which node in the network is the most central, or most important. A metric that ranks each node by its importance is called a <strong>centrality measure</strong>.</p>
+<p>In fact, we have already discussed one way to do this, called <strong>degree centrality</strong>. If all that is important in your network is how many links a node has, then looking at the degree distribution might give you a good idea of where to find the most central nodes. For example, in the karate club network, there were two nodes who had a much higher degree than the others. It might be natural to guess that these two nodes are the most influential.</p>
+<p>Degree centrality, however, often does not tell the whole story. For example, lets revisit our toy network. Here, we’ll color every node by their degree centrality, with lighter colors indicating higher centrality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degrees</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="c1"># retrieve the degree sequence </span>
+<span class="n">degree_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">degrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span> <span class="c1"># turn it into a vector</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">degree_colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># plot the network with colors according to degree</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_28_0.png" src="../_images/networks_28_0.png" />
+</div>
+</div>
+<p>In this network, almost every node has the same degree. So if we wanted to know which nodes were the most important, number of connections alone would not really give us much useful information.</p>
+<p>Another idea, when trying to work out which nodes are the most influential, might accomodate some kind of “popularity effect”. Think about online social networks. If you want to learn how popular someone is, you might glance through their friends list. If they have a lot of friends, but their friends don’t seem very popular, then they might not be so influential. But if they are friends with Queen Elizabeth and the pope, you might get the idea that they are a pretty powerful person, even if they don’t have that many friends in total.</p>
+<p>So a node is important if it is connected to other important nodes, who are themselves important because they are also connected to important nodes, and so on. It seems like this line of reasoning might just go on forever. But actually, it doesn’t. To see why, let’s try to formalize this idea mathematically. Let’s imagine that there is some number <span class="math notranslate nohighlight">\(x_i\)</span> that represents the centrality of a node <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Further, we’ll say that the centrality of a node is proportional to the sum of centralities of its neighbors, with some constant of proportionality; let’s call that constant <span class="math notranslate nohighlight">\(\frac{1}{\mu}\)</span>.</p>
+<p>Remember that the adjacency matrix is a matrix where <span class="math notranslate nohighlight">\(A_{ij} = 1\)</span> if nodes <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are connected, and <span class="math notranslate nohighlight">\(A_{ij}=0\)</span> otherwise. Then we can write an expression for the centrality of a node <span class="math notranslate nohighlight">\(i\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[ x_i = \frac{1}{\mu} \sum_{j=1}^n A_{ij} x_j \]</div>
+<p>If we stack these centrality measures <span class="math notranslate nohighlight">\(x_i\)</span> into a vector <span class="math notranslate nohighlight">\(x\)</span>, the result will be a vector whose entries each correspond with the inner product of a row from a matrix with another vector. This is a roundabout way of saying, we can rewrite this equation as:</p>
+<div class="math notranslate nohighlight">
+\[ x = \frac{1}{\mu} Ax \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[ A x = \mu x \]</div>
+<p>It turns out that this measure of centrality, which we have constructed based on an argument about “popularity” as being the condition of being connected to other “popular” things, corresponds exactly with an eigenvector of the adjacency matrix! This measure is called <strong>eigenvector centrality</strong>. Eigenvector centrality can usually tell us a lot more about the distribution of influence than degree alone. To see, let’s try it out on our toy network. First, we’ll use <code class="docutils literal notranslate"><span class="pre">nx.eigenvector_centrality()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">network</span><span class="p">)</span> <span class="c1"># compute eigenvector centrality using networkx</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">centrality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.1853442621469683, 2: 0.2679342551926453, 3: 0.2679342551926453, 4: 0.32137618934240997, 5: 0.32137618934240997, 6: 0.3398597712666558, 7: 0.3398597712666558, 8: 0.32137618934241, 9: 0.32137618934241, 10: 0.2679342551926454, 11: 0.2679342551926454, 12: 0.18534426214696836}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first thing we might notice here is that it’s no longer the same situation as the degree; there is a lot more variance in the eigenvector centrality measure. Let’s visualize this by coloring nodes according to their eigenvector centrality, with lighter colors corresponding to higher centrality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cent_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">centrality</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span> <span class="c1"># build a list of eigenvector centralities</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">cent_colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># plot the graph with colors according to this list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_32_0.png" src="../_images/networks_32_0.png" />
+</div>
+</div>
+<p>As we suspected, considering influence as being the result of connections with other influential friends gives us a centrality measure that looks way more informative. Nodes that appear to be in “central” positions are indeed considered more “central”, while nodes that are further from the center have lower centrality.</p>
+<p>There is no “perfect” centrality measure that always gives the best ranking of nodes in a network, it always depends on the problem you are trying to use networks to solve. However, eigenvector centrality has proved immensely useful in <em>many</em> areas. For one thing, it turns out that it can help us find a good target to “seed” information so that it will flow quickly through the network. Additionally, different versions of this measure can be used in game theory to find the Nash equilibria of games that are played over networks.</p>
+<p>If you are still not convinced of how important this concept is, you should know that this idea has definitely already played a huge role in your life. In fact, it’s so ubiquitous that you might be using it every single day, without even knowing it. At Stanford in 1999, a group of researchers led by Larry Page and Sergey Brin, had the idea to build a version of eigenvector centrality (which they called PageRank) that could be used to rank websites based on their relevance. Brin and Page thought their work was so valuable that they eventually left Stanford to start their own company, called Google, that would use this version of eigenvector centrality to help people find information on the world wide web. While they have surely made some changes since 1999, the PageRank algorithm still forms the backbone of the google search engine, helping us all find the information we need by ranking it based on how influential it is in the ever-growing network that is the world wide web.</p>
+</section>
+<section id="spectral-graph-clustering">
+<h3>Spectral graph clustering<a class="headerlink" href="#spectral-graph-clustering" title="Permalink to this headline">#</a></h3>
+<p>In addition to the adjacency matrix, the laplacian matrix of a network is also particularly interesting because of the unique properties of its eigenvalues. They can be used to find natural ways to <strong>partition</strong> or <strong>cluster</strong> the nodes of a network.</p>
+<p>To understand how this works, it will be helpful to try and get an intuitive understanding of what these eigenvalues actually represent. First, let’s look at the <strong>spectrum</strong> (set of eigenvalues) of the laplacian of our toy network, by plotting them in increasing order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># get the eigenvalue decomposition of the laplacian matrix</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="c1"># sort the eigenvalues</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span> <span class="c1"># sort the eigenvectors to match the eigenvalues</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span><span class="n">u_sorted</span><span class="p">)</span> <span class="c1"># show a scatterplot of the eigenvalues in increasing order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7eff178f6e20&gt;
+</pre></div>
+</div>
+<img alt="../_images/networks_34_1.png" src="../_images/networks_34_1.png" />
+</div>
+</div>
+<p>The first thing we might notice is that all of these eigenvalues are non-negative, and that there is one equal to zero. This means that our laplacian matrix is positive semidefinite.</p>
+<p>Actually, all graph laplacian matrices are positive semidefinite by construction. When we add the degrees to the diagonal of the negative adjacency, it makes all of our row and column sums non-negative. This gives us a guarantee that the matrix we construct will always have strictly nonnegative eigenvalues.</p>
+<p>Now, let’s try removing a link from our network, to see how that will change its eigenvalues. First, let’s remove the link <span class="math notranslate nohighlight">\((1,2)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># remove the edge connecting node 1 to node 2, and draw the network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_36_0.png" src="../_images/networks_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">network</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># get the laplacian matrix of our new graph, without the (1,2) edge</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># get the eigenvalue decomposition of the laplacian matrix</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="c1"># sort the eigenvalues</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span> <span class="c1"># sort the eigenvectors to match the eigenvalues</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span><span class="n">u_sorted</span><span class="p">)</span> <span class="c1"># show a scatterplot of the eigenvalues in increasing order</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7eff17875f40&gt;
+</pre></div>
+</div>
+<img alt="../_images/networks_37_1.png" src="../_images/networks_37_1.png" />
+</div>
+</div>
+<p>We can see that not much has changed (although a few eigenvalues are lower than before). Let’s add that one back and try a different edge. This time, we’ll use <span class="math notranslate nohighlight">\((6,7)\)</span> again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># return the graph to normal</span>
+<span class="n">network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># delete the link from 6 to 7, and draw the network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_39_0.png" src="../_images/networks_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">network</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># get the laplacian matrix of our new graph, without the (6,7) edge</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># get the eigenvalue decomposition, sort the values and vectors, and plot the resulting sequence</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span><span class="n">u_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7eff178013a0&gt;
+</pre></div>
+</div>
+<img alt="../_images/networks_40_1.png" src="../_images/networks_40_1.png" />
+</div>
+</div>
+<p>Now, removing this edge had a very different impact on the spectrum of our laplacian matrix. In particular, one thing we might notice is that there are now 2 eigenvalues equal to zero, where before there was only one. Lets try removing a few more edges.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">remove_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">)])</span> <span class="c1"># remove a set of links, plot the result</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_42_0.png" src="../_images/networks_42_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">network</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># get the laplacian matrix of our new &quot;islands&quot; graph</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># get the eigenvalue decomposition, sort the values and vectors, and plot the resulting sequence</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span><span class="n">u_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7eff1777c400&gt;
+</pre></div>
+</div>
+<img alt="../_images/networks_43_1.png" src="../_images/networks_43_1.png" />
+</div>
+</div>
+<p>Now, the network has been broken up into 4 connected components, and has exactly 4 eigenvalues equal to zero.</p>
+<p>As it turns out, this is not a coincidence. The eigenvalues of the laplacian matrix are a really handy way to measure its connectivity; they are called the <strong>algebraic connectivity</strong> of the graph. Specifically, the number of connected components in a graph is exactly equal to the multiplicity of the null eigenvalue (in other words, the number of zeros in the spectrum of the matrix.)</p>
+<p>Now let’s take a step back and take another look at the spectrum of our original graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)])</span> <span class="c1"># add back the set of edges that we deleted</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">network</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># retrieve the spectrum of our original graph</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span><span class="n">u_sorted</span><span class="p">)</span> <span class="c1"># remind us what the plot looked like</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7eff17894e50&gt;
+</pre></div>
+</div>
+<img alt="../_images/networks_46_1.png" src="../_images/networks_46_1.png" />
+</div>
+</div>
+<p>Now that we’ve seen a few of these, we can get a better idea what we’re looking at. In particular, we can see that the graph is fully connected, because there is only one eigenvalue that is equal to zero. But that second eigenvalue is still looking awfully close to zero. Let’s investigate this second eigenvalue a little more by looking at it’s associated eigenvector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v_sorted</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.36274292 -0.33412898 -0.33412898 -0.2528014  -0.2528014  -0.13159078
+  0.13159078  0.2528014   0.2528014   0.33412898  0.33412898  0.36274292]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this vector, half of the entries are negative and half are positive. Let’s color the nodes in our graph according to whether they have a positive entry or a negative entry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;lightcoral&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># assign a nice reddish color to all nodes</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">):</span> <span class="c1"># for any nodes that have a negative entry, replace this with a nice purplish color</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mediumpurple&quot;</span>
+        
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># draw the result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_50_0.png" src="../_images/networks_50_0.png" />
+</div>
+</div>
+<p>Coloring nodes by their sign in this vector sorts them into two groups, on either side of the <span class="math notranslate nohighlight">\((6,7)\)</span> link!</p>
+<p>This is what we might think of as the most natural partitioning of this network into two groups. And this is not a coincidence. In fact, the eigenvector associated with the second smallest eigenvalue of the laplacian even has its own name: the <strong>Fiedler vector</strong>. Its associated eigenvalue is called the <strong>spectral gap</strong> (since it is technically the difference between the second smallest and the smallest eigenvalue, which is zero).</p>
+<p>In economics, the second smallest eigenvalue of the graph laplacian is often referred to as the network’s <strong>spectral homophily</strong>. That is because <strong>homophily</strong> refers to a type of <em>segregation</em> in a network, that emerges when two different types of nodes preferentially attach themselves to other nodes of the same type, and discriminate against the other type by forming fewer friendships with them.</p>
+<p>What this eigenvalue does exactly, is provide an approximation of the difficulty required to “cut” the graph into two separate components. If the second lowest eigenvalue of the graph’s laplacian is zero, it means we wouldn’t have to cut <em>any</em> edges to split the graph into two components, because it’s <em>already split</em> and there is no cutting required. If it is close to zero, like in this case, then we would only need to cut a few links (in this case, just one) in order to cut the graph into two components. In fact, roughly speaking, <em>for each subsequent eigenvalue, the increase in value from the previous one gives us a measure of the marginal difficulty required to segment the graph into one additional component</em>.</p>
+<p>For example, in our case we saw that it was relatively easy to split this network into four components, but we can see that there is a big jump from the fourth to the fifth eigenvalue. This tells us that there is <em>not</em> a natural segmentation of the graph into 5 components. (This logic actually generalizes quite well to discovering larger numbers of clusters; all you would need to do is take the first four eigenvalues of the laplacian, and run a clustering algorithm (like K-Means) on the eigenvectors, with K equal to the number of clusters you wish to discover. This class of methods is known as <strong>spectral clustering</strong>.)</p>
+</section>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
+<p>As a final exercise, let’s look at how these concepts can be applied to economic problems. First, let’s move back to Zachary’s Karate Club network. Let’s take a look at it again, but highlighting the centralities of each node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigen_cent</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">karate</span><span class="p">)</span>
+<span class="n">eigen_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">eigen_cent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">34</span><span class="p">)]</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">eigen_colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_52_0.png" src="../_images/networks_52_0.png" />
+</div>
+</div>
+<p>We see that there are two really highly central (yellow) nodes, on opposite sides of the network. This might be an indication that there is some homophily in the network. To verify this, let’s take a look at the natural partitioning of this network by plotting the eigenvalues of its laplacian matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">karate</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span> <span class="c1"># retrieve and plot the spectrum of Zachary&#39;s karate club graph</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">35</span><span class="p">),</span><span class="n">u_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7eff1765cfa0&gt;
+</pre></div>
+</div>
+<img alt="../_images/networks_54_1.png" src="../_images/networks_54_1.png" />
+</div>
+</div>
+<p>There are no big jumps between the first few eigenvalues so it is clear that there is a lot of segregation in this network, making it easy to partition. Let’s again color the nodes by their entries in the Fiedler vector (the eigenvector corresponding to the second lowest eigenvalue):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;lightcoral&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">34</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># assign colors to the nodes based on the sign of their entry in the Fiedler vector</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">34</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v_sorted</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mediumpurple&quot;</span>
+        
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span> <span class="c1"># draw the result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_56_0.png" src="../_images/networks_56_0.png" />
+</div>
+</div>
+<p>Again, this spectral homophily partitions the network in a way that seems very natural; into two dense clusters with sparse connections between them, and with each one containing its own highly central hub.</p>
+<p>In this case, that is not a surprise. In his original study, Wayne Zachary collected this network dataset from a set of two warring karate clubs in the same area. He collected information about who each individual member would spend the most time with, used that data to construct a graph, and found that the disconnect between clubs persisted into their social networks. Using the spectrum of this graph, we can learn that there are two easily disconnected groups in the network, without ever hearing this backstory.</p>
+<p>In social networks, this type of homophily is universally bad. Not only normatively, but also quantitatively. Economic research, beginning with a 2012 study by Benjamin Golub and Matthew Jackson, has shown that the size of this spectral homophily gives an indication of how fast information spreads through a social network. If the Fiedler value is very large, it indicates that the network structure will be effective at spreading information quickly. If the value is close to zero, on the other hand, new information may take a very long time to diffuse through the network, because it can take a long time for information starting in the red area to spread to the blue area and vice versa. (If you have any prior exposure to ordinary differential equations, this connection between eigenvalues and dynamics may not come as a huge surprise. In fact the laplacian matrix has a satisfying interpretation as describing diffusion processes over a network, which can explain a lot about it’s spectral properties.)</p>
+<p>What this means, is that segregated social networks are also characterized by a large amount of disagreement or discord.</p>
+<p>Graph clustering can be a useful concept outside of social networks too. Let’s take a look at how graph clustering and spectral homophily could be used in a simple portfolio selection problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/doctor-phil/analyzing-economic-networks/main/stocks.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1"># load a dataset of weekly returns for some popular stocks over the past year</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># take a peek at the data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>AAPL</th>
+      <th>AMZN</th>
+      <th>BAC</th>
+      <th>C</th>
+      <th>FB</th>
+      <th>GOOG</th>
+      <th>MSFT</th>
+      <th>JPM</th>
+      <th>V</th>
+      <th>WFC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1/25/2021</td>
+      <td>0.036374</td>
+      <td>0.045521</td>
+      <td>-0.063456</td>
+      <td>0.047653</td>
+      <td>0.037820</td>
+      <td>0.142863</td>
+      <td>0.044145</td>
+      <td>0.022682</td>
+      <td>0.010891</td>
+      <td>0.113961</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2/1/2021</td>
+      <td>-0.008685</td>
+      <td>-0.022207</td>
+      <td>0.052859</td>
+      <td>0.036858</td>
+      <td>0.008952</td>
+      <td>0.002912</td>
+      <td>0.011519</td>
+      <td>0.030858</td>
+      <td>0.037142</td>
+      <td>0.011411</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2/8/2021</td>
+      <td>-0.040629</td>
+      <td>-0.008485</td>
+      <td>0.043816</td>
+      <td>0.035116</td>
+      <td>-0.033050</td>
+      <td>-0.001412</td>
+      <td>-0.016409</td>
+      <td>0.066417</td>
+      <td>0.031438</td>
+      <td>0.054223</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2/15/2021</td>
+      <td>-0.066297</td>
+      <td>-0.048300</td>
+      <td>0.081788</td>
+      <td>0.058597</td>
+      <td>-0.015063</td>
+      <td>-0.030593</td>
+      <td>-0.033426</td>
+      <td>0.045614</td>
+      <td>0.039482</td>
+      <td>0.038190</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2/22/2021</td>
+      <td>0.001319</td>
+      <td>-0.029897</td>
+      <td>0.096682</td>
+      <td>0.090000</td>
+      <td>0.025852</td>
+      <td>0.035191</td>
+      <td>-0.003357</td>
+      <td>0.093960</td>
+      <td>0.073817</td>
+      <td>0.120655</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>First, let’s pretend that we don’t already recognize most of these ticker symbols.</p>
+<p>Imagine you work at a bank. Your boss gives you this set of stocks and data, and tells you to pick two stocks from the dataset to buy. But first, you want to get a better idea of what you’re looking at.</p>
+<p>One idea would be to look at the correlations between the returns of these stocks, to tell you how much comovement there is between their returns. Ideally, you want to choose stocks that are in different sectors, to make sure your portfolio is diversified. To examine correlations, we can construct a correlation matrix from our pandas dataframe using <code class="docutils literal notranslate"><span class="pre">pd.corr()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">returns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># remove the dates</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> <span class="c1"># calculate the correlations between the returns of each pair of stocks</span>
+<span class="n">corr</span> <span class="c1"># display the correlation matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3619/734395106.py:2: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  corr = returns.corr() # calculate the correlations between the returns of each pair of stocks
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AAPL</th>
+      <th>AMZN</th>
+      <th>BAC</th>
+      <th>C</th>
+      <th>FB</th>
+      <th>GOOG</th>
+      <th>MSFT</th>
+      <th>JPM</th>
+      <th>V</th>
+      <th>WFC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AAPL</th>
+      <td>1.000000</td>
+      <td>0.975844</td>
+      <td>0.922079</td>
+      <td>0.938198</td>
+      <td>0.964855</td>
+      <td>0.980586</td>
+      <td>0.986651</td>
+      <td>0.898194</td>
+      <td>0.929911</td>
+      <td>0.923325</td>
+    </tr>
+    <tr>
+      <th>AMZN</th>
+      <td>0.975844</td>
+      <td>1.000000</td>
+      <td>0.915539</td>
+      <td>0.925417</td>
+      <td>0.973629</td>
+      <td>0.978831</td>
+      <td>0.972704</td>
+      <td>0.889032</td>
+      <td>0.916407</td>
+      <td>0.913548</td>
+    </tr>
+    <tr>
+      <th>BAC</th>
+      <td>0.922079</td>
+      <td>0.915539</td>
+      <td>1.000000</td>
+      <td>0.986195</td>
+      <td>0.918874</td>
+      <td>0.936426</td>
+      <td>0.924780</td>
+      <td>0.959968</td>
+      <td>0.990712</td>
+      <td>0.987352</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>0.938198</td>
+      <td>0.925417</td>
+      <td>0.986195</td>
+      <td>1.000000</td>
+      <td>0.931981</td>
+      <td>0.947331</td>
+      <td>0.942960</td>
+      <td>0.950910</td>
+      <td>0.981090</td>
+      <td>0.992604</td>
+    </tr>
+    <tr>
+      <th>FB</th>
+      <td>0.964855</td>
+      <td>0.973629</td>
+      <td>0.918874</td>
+      <td>0.931981</td>
+      <td>1.000000</td>
+      <td>0.974683</td>
+      <td>0.964384</td>
+      <td>0.892842</td>
+      <td>0.917335</td>
+      <td>0.920788</td>
+    </tr>
+    <tr>
+      <th>GOOG</th>
+      <td>0.980586</td>
+      <td>0.978831</td>
+      <td>0.936426</td>
+      <td>0.947331</td>
+      <td>0.974683</td>
+      <td>1.000000</td>
+      <td>0.987984</td>
+      <td>0.913572</td>
+      <td>0.934986</td>
+      <td>0.936900</td>
+    </tr>
+    <tr>
+      <th>MSFT</th>
+      <td>0.986651</td>
+      <td>0.972704</td>
+      <td>0.924780</td>
+      <td>0.942960</td>
+      <td>0.964384</td>
+      <td>0.987984</td>
+      <td>1.000000</td>
+      <td>0.900485</td>
+      <td>0.928255</td>
+      <td>0.928075</td>
+    </tr>
+    <tr>
+      <th>JPM</th>
+      <td>0.898194</td>
+      <td>0.889032</td>
+      <td>0.959968</td>
+      <td>0.950910</td>
+      <td>0.892842</td>
+      <td>0.913572</td>
+      <td>0.900485</td>
+      <td>1.000000</td>
+      <td>0.950009</td>
+      <td>0.954812</td>
+    </tr>
+    <tr>
+      <th>V</th>
+      <td>0.929911</td>
+      <td>0.916407</td>
+      <td>0.990712</td>
+      <td>0.981090</td>
+      <td>0.917335</td>
+      <td>0.934986</td>
+      <td>0.928255</td>
+      <td>0.950009</td>
+      <td>1.000000</td>
+      <td>0.983043</td>
+    </tr>
+    <tr>
+      <th>WFC</th>
+      <td>0.923325</td>
+      <td>0.913548</td>
+      <td>0.987352</td>
+      <td>0.992604</td>
+      <td>0.920788</td>
+      <td>0.936900</td>
+      <td>0.928075</td>
+      <td>0.954812</td>
+      <td>0.983043</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>All of these stocks are really highly correlated with each other. Let’s try to pick out only the ones that are exceptionally strongly correlated with each other.</p>
+<p>The minimum correlation we can see in this matrix is around 0.89, which is still pretty big. Somewhat arbitrarily, let’s say that two stocks are “extremely correlated” if they have a correlation coefficient that is greater than 0.92, and make a matrix that will tell us which stocks are “extremely correlated” with each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="n">f</span><span class="p">):</span> <span class="c1"># define a function that &quot;rounds&quot; a number to 0 if it is lower than 0.92, and to 1 if it is higher (or equal).</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.92</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    
+<span class="c1"># we already know that every stock is perfectly correlated with itself, so the ones on the diagonal are not really useful information. Let&#39;s get rid of them.</span>
+<span class="n">adj</span> <span class="o">=</span> <span class="n">corr</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">truncate</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">adj</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AAPL</th>
+      <th>AMZN</th>
+      <th>BAC</th>
+      <th>C</th>
+      <th>FB</th>
+      <th>GOOG</th>
+      <th>MSFT</th>
+      <th>JPM</th>
+      <th>V</th>
+      <th>WFC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AAPL</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>AMZN</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>BAC</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>FB</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>GOOG</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>MSFT</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>JPM</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>V</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>WFC</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Does this look familiar? It has zeros on the diagonal, and has a 1 in the <span class="math notranslate nohighlight">\((i,j)^{th}\)</span> position if the performance of stock <span class="math notranslate nohighlight">\(i\)</span> is related through “extreme correlation” with the returns of stock <span class="math notranslate nohighlight">\(j\)</span>…</p>
+<p>This is an adjacency matrix for an undirected graph!</p>
+<p>Let’s take a look at it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stocknet</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span> <span class="c1"># initialize a new graph from our adjacency matrix</span>
+<span class="n">stocknet</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">relabel_nodes</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">adj</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span> <span class="c1"># keep the stock tickers as the names of the nodes (instead of integers)</span>
+<span class="n">stock_layout</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># fix our layout</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">)</span> <span class="c1"># plot the graph, without any labels (for now)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_64_0.png" src="../_images/networks_64_0.png" />
+</div>
+</div>
+<p>It’s hard to get much information about this graph, just by looking at it. Let’s take a look at its underlying structure by examining its spectrum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">laplacian_matrix</span><span class="p">(</span><span class="n">stocknet</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">u_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="n">v_sorted</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span> <span class="n">u</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;lightcoral&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v_sorted</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mediumpurple&quot;</span>
+        
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_66_0.png" src="../_images/networks_66_0.png" />
+</div>
+</div>
+<p>Ok, so our spectral homophily identifies two distinct groups in the data. But what do they represent?</p>
+<p>To understand, let’s add the labels back in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/networks_68_0.png" src="../_images/networks_68_0.png" />
+</div>
+</div>
+<p>Forming a network based on this simple method, and looking at its spectrum, was enough to cleanly identify both of the sectors in our dataset.</p>
+<p>We were able to identify a cluster of technology stocks (the red nodes, Amazon, Google, Microsoft, Facebook, and Apple) as being distinct from the stocks in the financial services sector (purple nodes, Citibank, JP Morgan, Bank of America, Wells Fargo, and Visa), without using any information about their names or what they do. Now you can pick 2 stocks for your boss, and be confident that you are recommending a diverse portfolio that spans multiple sectors.</p>
+<p>This highlights a few important closing points. We obtained this network by looking at a correlation matrix and sparsifying the network by arbitrarily choosing to treat correlations more than 0.92 as being links, and ignoring those with a correlation of less than 0.92. But there are <em>infinite</em> ways that we could have formed this network, for example, by choosing any other real value between 0 and 1 (which would change the density), by keeping all of the correlations and building a <strong>weighted</strong> network, by only forming links from one stock to the three most highly correlated others (by <strong>k-nearest-neighbors</strong> or <strong>KNN</strong>), or even by using a different distance metric than correlation entirely. For example, you could even build a network with links between companies whose names share a letter. Even though that is a perfectly valid network, it might not be the most informative choice in this particular setting.</p>
+<p>Thus, an important lesson to take away from this exercise is that a network can be used to represent basically any kind of data. This gives them the potential to be a powerful and convenient tool to understand underlying relational structure in a dataset. Often however, it comes down to the data scientist to understand <em>which</em> networks contain the information they need. Even using this very limited information about extreme correlations, we were able to use spectral clustering to correctly identify the two distinct sectors that comprise our dataset based only on their weekly returns. A worthwhile exercise, whenever you are faced with this choice, is to try forming the network in a bunch of different ways. If you get the same results, that’s great! Otherwise, you might need to take a step back and think more carefully about what types of relationships are relevant for the problem you are interested in.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./applications"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive persistent" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Course Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/cloud_setup.html">
+   Cloud Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/local_install.html">
+   Local Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Fundamentals
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/collections.html">
+   Collections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/control_flow.html">
+   Control Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/functions.html">
+   Functions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Scientific Computing
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/numpy_arrays.html">
+   Introduction to Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/plotting.html">
+   Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/applied_linalg.html">
+   Applied Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/randomness.html">
+   Randomness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/optimization.html">
+   Optimization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/index.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/basics.html">
+   Basic Functionality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/the_index.html">
+   The Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/storage_formats.html">
+   Storage Formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/data_clean.html">
+   Cleaning Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/reshape.html">
+   Reshape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/merge.html">
+   Merge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/timeseries.html">
+   Time series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/matplotlib.html">
+   Intermediate Plotting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization_rules.html">
+   Data Visualization: Rules and Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="recidivism.html">
+   Case Study: Recidivism
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maps.html">
+   Mapping in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="working_with_text.html">
+   Working with Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ml_in_economics.html">
+   Machine Learning in Economics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="heterogeneity.html">
+   Heterogeneous Effects
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   Social and Economic Networks
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/networks.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/networks.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/networks.ipynb">BinderHub</option>
+                
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/networks.ipynb">Colab</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="tree/lecture-datascience.notebooks/applications/networks.ipynb" data-branch=main>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/networks.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "applications/networks";
+                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
+                const urlPath = "tree/lecture-datascience.notebooks/applications/networks.ipynb";
+                const branch = "main"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54984338-5', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

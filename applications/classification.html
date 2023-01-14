@@ -411,7 +411,7 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f44c22110a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1b14106370&gt;]
 </pre></div>
 </div>
 <img alt="../_images/classification_3_1.png" src="../_images/classification_3_1.png" />
@@ -445,7 +445,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3652 + 0.2591 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4008 + 0.2681 decile_score)
 </pre></div>
 </div>
 </div>
@@ -494,7 +494,7 @@ less likely to commit crime again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot the decision boundaries for a classifier with 2 features x and y.</span>
 
 <span class="sd">    Parameters</span>
@@ -541,7 +541,7 @@ less likely to commit crime again.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/base.py:450: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/base.py:409: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
   warnings.warn(
 </pre></div>
 </div>
@@ -850,7 +850,7 @@ visually inspect the hypothesis.</p>
     <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">get_indicators_from_fred</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Fetch quarterly data on 6 leading indicators from time period start:end</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># yield curve, unemployment, change in inventory, new private housing permits</span>
@@ -934,7 +934,7 @@ visually inspect the hypothesis.</p>
       <td>7.566667</td>
       <td>61.087</td>
       <td>1171.333333</td>
-      <td>0.073303</td>
+      <td>0.073127</td>
       <td>0.056936</td>
     </tr>
     <tr>
@@ -943,7 +943,7 @@ visually inspect the hypothesis.</p>
       <td>7.733333</td>
       <td>55.190</td>
       <td>1345.000000</td>
-      <td>0.088158</td>
+      <td>0.087625</td>
       <td>0.037207</td>
     </tr>
     <tr>
@@ -952,7 +952,7 @@ visually inspect the hypothesis.</p>
       <td>7.766667</td>
       <td>20.163</td>
       <td>1489.000000</td>
-      <td>0.080360</td>
+      <td>0.080334</td>
       <td>0.047523</td>
     </tr>
     <tr>
@@ -961,7 +961,7 @@ visually inspect the hypothesis.</p>
       <td>7.500000</td>
       <td>34.343</td>
       <td>1562.000000</td>
-      <td>0.105648</td>
+      <td>0.105456</td>
       <td>0.037939</td>
     </tr>
     <tr>
@@ -970,7 +970,7 @@ visually inspect the hypothesis.</p>
       <td>7.133333</td>
       <td>51.245</td>
       <td>1693.333333</td>
-      <td>0.111230</td>
+      <td>0.111077</td>
       <td>0.032931</td>
     </tr>
   </tbody>
@@ -1106,53 +1106,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.82   0.7  ]
- [ 1.435  3.045]]
+ [[38.095  0.75 ]
+ [ 1.31   2.845]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.76   0.755]
- [ 2.265  2.22 ]]
+ [[37.65   0.81 ]
+ [ 2.295  2.245]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.65   0.625]
- [ 2.82   1.905]]
+ [[37.7    0.64 ]
+ [ 2.605  2.055]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[37.765  0.47 ]
- [ 2.8    1.965]]
+ [[38.015  0.34 ]
+ [ 2.685  1.96 ]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.24   0.78 ]
- [ 3.465  1.515]]
+ [[37.455  0.77 ]
+ [ 3.31   1.465]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.7    1.42 ]
- [ 4.02   1.505]]
+ [[36.64   1.165]
+ [ 3.925  1.27 ]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.365  1.37 ]
- [ 3.56   1.705]]
+ [[36.69   1.22 ]
+ [ 3.405  1.685]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[36.    1.48]
- [ 3.49  2.03]]
+ [[36.18  1.34]
+ [ 3.61  1.87]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.835  1.51 ]
- [ 4.175  1.48 ]]
+ [[35.615  1.49 ]
+ [ 4.405  1.49 ]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.505  1.695]
- [ 4.625  1.175]]
+ [[34.68   1.605]
+ [ 4.705  1.01 ]]
 </pre></div>
 </div>
 </div>
@@ -1293,7 +1293,7 @@ could you try to avoid overfitting?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data_varying_leads</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply per-indicator leads to each indicator and join with recession data</span>
 
 <span class="sd">    Parameters</span>
@@ -1628,6 +1628,11 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
  <li class="toctree-l1">
   <a class="reference internal" href="heterogeneity.html">
    Heterogeneous Effects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="networks.html">
+   Social and Economic Networks
   </a>
  </li>
 </ul>
