@@ -10,13 +10,13 @@ kernelspec:
 orphan: true
 ---
 
-# Previous Projects:
+# Previous Projects
 
-We are proud of the work that our previous students have produced for this class.
+We are immensely proud of the work that our previous students have produced for this class.
 
-This page contains a list of projects produced by our students that we share with their permission.
+This page contains a list of projects produced for this class by our students at UBC, which we share with their permission.
 
-This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](https://bayeswhu.github.io/teaching/qeds.html) and their students' [final projects](../theme/projects_hust.md).
+This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out some of their students' [final projects](../theme/projects_hust.md).
 
 ## 2021
 
