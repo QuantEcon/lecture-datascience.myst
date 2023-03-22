@@ -943,7 +943,7 @@ ax2 = ax1.twinx()
 ax2.plot(logpenalties,nnonzero, color=colors[1])
 ax2.set_ylabel("nonzero coefficients", color=colors[1])
 ax2.tick_params('y', colors=colors[1])
-ax2.grid(b=None);
+ax2.grid(visible=False);
 ```
 
 Let's also look at the nonzero coefficients. We should be careful
