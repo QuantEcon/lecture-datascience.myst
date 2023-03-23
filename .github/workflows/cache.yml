@@ -2,9 +2,12 @@ name: Build Cache [using jupyter-book]
 on:
   push:
     branches:
-      - main
+      - 'main'
+  schedule:
+    # Ensure Cache is built once a month
+    - cron:  '0 0 1 * *'
 jobs:
-  tests:
+  cache:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,7 +18,7 @@ jobs:
           auto-update-conda: true
           auto-activate-base: true
           miniconda-version: 'latest'
-          python-version: 3.8
+          python-version: 3.9
           environment-file: environment.yml
           activate-environment: lecture-datascience
       - name: Build HTML

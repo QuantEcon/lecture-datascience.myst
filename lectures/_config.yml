@@ -22,6 +22,7 @@ sphinx:
       repository_url: https://github.com/QuantEcon/lecture-datascience.myst
       repository_branch: main
       nb_repository_url: https://github.com/QuantEcon/lecture-datascience.notebooks
+      nb_branch: main
       twitter: quantecon
       twitter_logo_url: https://assets.quantecon.org/img/qe-twitter-logo.png
       og_logo_url: https://assets.quantecon.org/img/qe-og-logo.png
@@ -32,20 +33,16 @@ sphinx:
         binderhub_url: https://mybinder.org
       google_analytics_id: UA-54984338-5
       persistent_sidebar: true
-    mathjax2_config:
-      TeX:
+    mathjax3_config:
+      tex:
         extensions: ["autobold.js"]
-        Macros:
+        macros:
           "argmax" : "arg\\,max"
           "argmin" : "arg\\,min"
           "col"    : "col"
-        tex2jax: 
-          inlineMath: [ ['$','$'], ['\\(','\\)'] ]
-          processEscapes: true
-        SVG:
-          scale: 0.92,
-          useGlobalCache: true
-    mathjax_path: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+        processEscapes: true
+      svg:
+        scale: 0.92,
     tojupyter_static_file_path: ["_static"]
     tojupyter_target_html: true
     tojupyter_urlpath: "https://datascience.quantecon.org/"
