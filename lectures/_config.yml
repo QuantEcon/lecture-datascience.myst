@@ -18,9 +18,9 @@ bibtex_bibfiles:
 sphinx:
   extra_extensions: [sphinx_multitoc_numbering, sphinx_exercise, sphinx_tojupyter]
   config:
+    suppress_warnings: ["mystnb.unknown_mime_type"]
     nb_mime_priority_overrides: [
-       ['html', 'application/vnd.bokehjs_load.v0+json', 10],
-       ['html', 'application/vnd.jupyter.widget-view+json', 15],
+       ['html', 'application/vnd.jupyter.widget-view+json', 10],
        ['html', 'application/javascript', 20],
        ['html', 'text/html', 30],
        ['html', 'text/latex', 40],
