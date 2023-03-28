@@ -20,14 +20,30 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 
 ## 2021
 
+- [Go Pokemon! What does the data talk about?](https://nbviewer.jupyter.org/github/arhamnewaz/PokemonDataScienceProject/blob/master/PokemonEcon.ipynb)
+  - Chia-lin Chiu
+  - Arham Newaz
+
+- [NBA 2K Rating and On-court Performance in Real Life](https://nbviewer.jupyter.org/github/huichengying/NBA2K-Rating/blob/main/Final%20Project.ipynb)
+  - Chengying Hui
+
 - [Centrists Win: Evidence from US House Elections](https:/nbviewer.jupyter.org/github/HJIzt/Predicting-Election-Wins-in-the-2018-US-Congressional-Midterms---ECON-323-Project/blob/main/ECON%20323%20Final%20Project%20-%20Harry%20Izatt%20Reduced%20Copy.ipynb)
   - Harry Izatt
 
 - [Factors affecting bike share in San Francisco](https://nbviewer.jupyter.org/github/patkarns/econ-323-final-project/blob/main/final_draft.ipynb)
   - Napat Karnsakultorn
 
+- [Determinants of Heart Failure and Their Social Awareness](https://nbviewer.jupyter.org/github/linearabbit/ECON-323-Final-Project/blob/main/ECON%20323%20Final%20Project.ipynb)
+  - Matthew Ladd
+
 - [Evolution of NBA Player Salary Determinants](https://nbviewer.jupyter.org/github/silaslm/NBA-Player-Salary-Determinants/blob/main/NBA_Player_Salary_Determinants-2.ipynb)
   - Silas Lee-McNamee
+
+- [ProCyclingStats Analytics](https://nbviewer.jupyter.org/github/MiguelMaertens/ProCyclingStats/blob/main/Project_Miguel_Maertens.ipynb)
+  - Miguel Maertens
+
+- [Correlation between COVID-19 Severity and Travel Intensity](https://nbviewer.jupyter.org/github/dianee01/Relationship-between-COVID-19-Severity-and-Travelling)
+  - Diane Shen
 
 - [Visualization of Circum-Pacific Belt Earthquakes](https://nbviewer.jupyter.org/github/jessicashi98/ECON323/blob/main/final323.ipynb)
   - Jessica Shi
