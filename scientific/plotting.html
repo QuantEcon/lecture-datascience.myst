@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Plotting &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -94,6 +105,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scientific/plotting';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/scientific/plotting.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -147,39 +159,14 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualization">
-   Visualization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matplotlib">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     matplotlib
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-plot">
-     First Plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difference-between-figure-and-axis">
-     Difference between Figure and Axis
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functionality">
-     Functionality
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-plot">First Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-figure-and-axis">Difference between Figure and Axis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functionality">Functionality</a></li>
 </ul>
-
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -224,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="plotting">
-<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">#</a></h1>
+<h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
@@ -239,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <section id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
 <p>One of the most important outputs of your analysis will be the visualizations that you choose to
 communicate what you’ve discovered.</p>
 <p>Here are what some people – whom we think have earned the right to an opinion on this
@@ -263,7 +250,7 @@ more about what makes a useful visualization.</p>
 </ul>
 </section>
 <section id="matplotlib">
-<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h2>
 <p>The most widely used plotting package in Python is matplotlib.</p>
 <p>The standard import alias is</p>
 <div class="cell docutils container">
@@ -288,7 +275,7 @@ inside of the notebook itself instead of creating new windows with the image.</p
 </div>
 <p>The commands with <code class="docutils literal notranslate"><span class="pre">%</span></code> before them are called <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">Magics</a>.</p>
 <section id="first-plot">
-<h3>First Plot<a class="headerlink" href="#first-plot" title="Permalink to this headline">#</a></h3>
+<h3>First Plot<a class="headerlink" href="#first-plot" title="Permalink to this heading">#</a></h3>
 <p>Let’s create our first plot!</p>
 <p>After creating it, we will walk through the steps one-by-one to understand what they do.</p>
 <div class="cell docutils container">
@@ -306,20 +293,20 @@ inside of the notebook itself instead of creating new windows with the image.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa3444e5550&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd16c272d00&gt;]
 </pre></div>
 </div>
-<img alt="../_images/plotting_5_1.png" src="../_images/plotting_5_1.png" />
+<img alt="../_images/1897f140f44d04f7b52da359e9e89cdaa334e049536ac87106d5bc3d2107041c.png" src="../_images/1897f140f44d04f7b52da359e9e89cdaa334e049536ac87106d5bc3d2107041c.png" />
 </div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Create a figure and axis object which stores the information from our graph.</p></li>
 <li><p>Generate data that we will plot.</p></li>
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> data, and make a line plot on our axis, <code class="docutils literal notranslate"><span class="pre">ax</span></code>, by calling the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method.</p></li>
 </ol>
 </section>
 <section id="difference-between-figure-and-axis">
-<h3>Difference between Figure and Axis<a class="headerlink" href="#difference-between-figure-and-axis" title="Permalink to this headline">#</a></h3>
+<h3>Difference between Figure and Axis<a class="headerlink" href="#difference-between-figure-and-axis" title="Permalink to this heading">#</a></h3>
 <p>We’ve found that the easiest way for us to distinguish between the figure and axis objects is to
 think about them as a framed painting.</p>
 <p>The axis is the canvas; it is where we “draw” our plots.</p>
@@ -335,7 +322,7 @@ think about them as a framed painting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/plotting_7_0.png" src="../_images/plotting_7_0.png" />
+<img alt="../_images/83a85ad3fa27cb4e3869d3749e86b705ddfd138394f8613f6e24a70b37de40a7.png" src="../_images/83a85ad3fa27cb4e3869d3749e86b705ddfd138394f8613f6e24a70b37de40a7.png" />
 </div>
 </div>
 <p>This difference also means that you can place more than one axis on a figure.</p>
@@ -359,12 +346,12 @@ think about them as a framed painting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/plotting_9_0.png" src="../_images/plotting_9_0.png" />
+<img alt="../_images/f85ed9893ca4ec225543e96bed801ef6b67243d54b809fa4fda2a40b10ef79be.png" src="../_images/f85ed9893ca4ec225543e96bed801ef6b67243d54b809fa4fda2a40b10ef79be.png" />
 </div>
 </div>
 </section>
 <section id="functionality">
-<h3>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">#</a></h3>
+<h3>Functionality<a class="headerlink" href="#functionality" title="Permalink to this heading">#</a></h3>
 <p>The matplotlib library is versatile and very flexible.</p>
 <p>You can see various examples of what it can do on the
 <a class="reference external" href="https://matplotlib.org/gallery.html">matplotlib example gallery</a>.</p>
@@ -389,7 +376,7 @@ think about them as a framed painting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/plotting_11_0.png" src="../_images/plotting_11_0.png" />
+<img alt="../_images/86bb6f5ad3b61e92b110f5d1cf5c08b521a00235c85653d1b97601e7b01d3d6a.png" src="../_images/86bb6f5ad3b61e92b110f5d1cf5c08b521a00235c85653d1b97601e7b01d3d6a.png" />
 </div>
 </div>
 <p><strong>Scatter and annotation</strong></p>
@@ -420,7 +407,7 @@ think about them as a framed painting.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(25, -25, &#39;First point&#39;)
 </pre></div>
 </div>
-<img alt="../_images/plotting_13_1.png" src="../_images/plotting_13_1.png" />
+<img alt="../_images/a096278438276746ca22e763cac657f5eec80b373b378b962f5aa58ba7be129b.png" src="../_images/a096278438276746ca22e763cac657f5eec80b373b378b962f5aa58ba7be129b.png" />
 </div>
 </div>
 <p><strong>Fill between</strong></p>
@@ -437,10 +424,10 @@ think about them as a framed painting.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.patches.Polygon at 0x7fa3440480d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.patches.Polygon at 0x7fd15cda4df0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/plotting_15_1.png" src="../_images/plotting_15_1.png" />
+<img alt="../_images/83f3a9d336b015f9fdf82463f567525b414d7b43a3b8fa6338a6788214ce0fd2.png" src="../_images/83f3a9d336b015f9fdf82463f567525b414d7b43a3b8fa6338a6788214ce0fd2.png" />
 </div>
 </div>
 </section>
@@ -459,7 +446,7 @@ think about them as a framed painting.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./scientific"
         },
         predefinedOutput: true
@@ -742,7 +729,7 @@ think about them as a framed painting.</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -884,16 +871,5 @@ think about them as a framed painting.</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

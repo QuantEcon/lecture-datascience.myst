@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Classification &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -96,6 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'applications/classification';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/applications/classification.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,123 +161,38 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-classification">
-   Introduction to Classification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#warmup-example-logistic-regression">
-   Warmup Example: Logistic Regression
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualization-decision-boundaries">
-     Visualization: Decision Boundaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model-evaluation">
-   Model Evaluation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accuracy">
-     Accuracy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#precision-and-recall">
-     Precision and Recall
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#roc-and-auc">
-     ROC and AUC
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neural-network-classifiers">
-   Neural Network Classifiers
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aside-neural-network-toolboxes">
-     Aside: Neural Network Toolboxes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#application-predicting-us-recessions">
-   Application: Predicting US Recessions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-prep">
-     Data Prep
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-many-leads">
-     How Many leads?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7">
-     Exercise 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8">
-     Exercise 8
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-classification">Introduction to Classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-example-logistic-regression">Warmup Example: Logistic Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-decision-boundaries">Visualization: Decision Boundaries</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation">Model Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-and-recall">Precision and Recall</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-auc">ROC and AUC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-classifiers">Neural Network Classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-neural-network-toolboxes">Aside: Neural Network Toolboxes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-predicting-us-recessions">Application: Predicting US Recessions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep">Data Prep</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-many-leads">How Many leads?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -310,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="classification">
-<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h1>
+<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this heading">#</a></h1>
 <p><strong>Co-authors</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -334,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <section id="introduction-to-classification">
-<h2>Introduction to Classification<a class="headerlink" href="#introduction-to-classification" title="Permalink to this headline">#</a></h2>
+<h2>Introduction to Classification<a class="headerlink" href="#introduction-to-classification" title="Permalink to this heading">#</a></h2>
 <p>We now move from regression to the second main branch of machine learning:
 classification.</p>
 <p>Recall that the regression problem mapped a set of
@@ -387,7 +314,7 @@ lighter on exposition and then build up to an application.</p>
 </div>
 </section>
 <section id="warmup-example-logistic-regression">
-<h2>Warmup Example: Logistic Regression<a class="headerlink" href="#warmup-example-logistic-regression" title="Permalink to this headline">#</a></h2>
+<h2>Warmup Example: Logistic Regression<a class="headerlink" href="#warmup-example-logistic-regression" title="Permalink to this heading">#</a></h2>
 <p>We have actually already encountered a classification algorithm.</p>
 <p>In the <a class="reference internal" href="recidivism.html"><span class="doc">recidivism</span></a> example, we attempted to predict whether
 or not an individual would commit another crime by using a combination of the
@@ -411,10 +338,10 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1b14106370&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd4122cbb20&gt;]
 </pre></div>
 </div>
-<img alt="../_images/classification_3_1.png" src="../_images/classification_3_1.png" />
+<img alt="../_images/743fe241e086e2c4189a32633c22ec726f55e307e070f5bb3b26dc7ef548ca4c.png" src="../_images/743fe241e086e2c4189a32633c22ec726f55e307e070f5bb3b26dc7ef548ca4c.png" />
 </div>
 </div>
 <p>Notice that for all values of <span class="math notranslate nohighlight">\(x\)</span>, the value of the logistic function is
@@ -445,7 +372,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4008 + 0.2681 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3996 + 0.2639 decile_score)
 </pre></div>
 </div>
 </div>
@@ -460,7 +387,7 @@ recidivism”.</p>
 <p>See exercise 1 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
 <section id="visualization-decision-boundaries">
-<h3>Visualization: Decision Boundaries<a class="headerlink" href="#visualization-decision-boundaries" title="Permalink to this headline">#</a></h3>
+<h3>Visualization: Decision Boundaries<a class="headerlink" href="#visualization-decision-boundaries" title="Permalink to this heading">#</a></h3>
 <p>With just one feature that has a positive coefficient, the model’s predictions
 will always have this cutoff structure.</p>
 <p>Let’s add a second feature the model: the age of the individual.</p>
@@ -541,14 +468,14 @@ less likely to commit crime again.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/base.py:409: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;decile_score&#39;, ylabel=&#39;age&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;decile_score&#39;, ylabel=&#39;age&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/classification_9_2.png" src="../_images/classification_9_2.png" />
+<img alt="../_images/3c97e5d39f9bba1e9bdd3be12c3d80e1f9b1ae26483a91a05f52eb3520e6619d.png" src="../_images/3c97e5d39f9bba1e9bdd3be12c3d80e1f9b1ae26483a91a05f52eb3520e6619d.png" />
 </div>
 </div>
 <p>In this plot, we can clearly see the relationships we identified from the
@@ -556,7 +483,7 @@ coefficients.</p>
 <p>However, we do see that the model is not perfect, as some solid circles are
 in the light section and some light circles in the solid section.</p>
 <p>This is likely caused by two things:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The model inside the logistic function is a linear regression – thus only a
 linear combination of the input features can be used for prediction.</p></li>
 <li><p>Drawing a straight line (linear) that perfectly separates
@@ -569,12 +496,12 @@ true observations from the false is impossible.</p></li>
 </section>
 </section>
 <section id="model-evaluation">
-<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this headline">#</a></h2>
+<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this heading">#</a></h2>
 <p>Before we get too far into additional classification algorithms, let’s take a
 step back and think about how to evaluate the performance of a classification
 model.</p>
 <section id="accuracy">
-<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">#</a></h3>
+<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this heading">#</a></h3>
 <p>Perhaps the most intuitive classification metric is <em>accuracy</em>, which is the
 fraction of correct predictions.</p>
 <p>For a scikit-learn classifier, this can be computed using the <code class="docutils literal notranslate"><span class="pre">score</span></code> method.</p>
@@ -606,7 +533,7 @@ a model that always predicts false would have 99.99% accuracy, but the false
 negatives could have large consequences.</p>
 </section>
 <section id="precision-and-recall">
-<h3>Precision and Recall<a class="headerlink" href="#precision-and-recall" title="Permalink to this headline">#</a></h3>
+<h3>Precision and Recall<a class="headerlink" href="#precision-and-recall" title="Permalink to this heading">#</a></h3>
 <p>In order to capture situations like that, data scientists often use two other
 very common metrics:</p>
 <ul class="simple">
@@ -659,7 +586,7 @@ weighted avg       0.65      0.65      0.65      5410
 </div>
 </section>
 <section id="roc-and-auc">
-<h3>ROC and AUC<a class="headerlink" href="#roc-and-auc" title="Permalink to this headline">#</a></h3>
+<h3>ROC and AUC<a class="headerlink" href="#roc-and-auc" title="Permalink to this heading">#</a></h3>
 <p>For classification algorithms, there is a tradeoff between precision and recall.</p>
 <p>Let’s illustrate this point in the context of the logistic regression model.</p>
 <p>The output of a logistic regression is a probability of an event or label.</p>
@@ -674,7 +601,7 @@ that had a model output just below the raised threshold).</p>
 <p>Machine learning practitioners have adapted a way to help us visualize
 this tradeoff.</p>
 <p>The visualization technique is known as the receiver operating characteristic
-– or more commonly used ROC – curve <a class="footnote-reference brackets" href="#roc" id="id1">1</a>.</p>
+– or more commonly used ROC – curve <a class="footnote-reference brackets" href="#roc" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p>To understand this curve, consider two extremes choices for <span class="math notranslate nohighlight">\(p\)</span>:</p>
 <ul class="simple">
 <li><p>When <span class="math notranslate nohighlight">\(p=1\)</span>, we will (almost surely) never predict any observation to
@@ -714,7 +641,7 @@ each other.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/classification_15_0.png" src="../_images/classification_15_0.png" />
+<img alt="../_images/1833464249e167011bca79cb19eca83c4922eb6755055418791d3657feef706f.png" src="../_images/1833464249e167011bca79cb19eca83c4922eb6755055418791d3657feef706f.png" />
 </div>
 </div>
 <p>We can use the ROC curve to determine the optimal threshold value.</p>
@@ -764,7 +691,7 @@ metric in cross-validation.</p>
 </section>
 </section>
 <section id="neural-network-classifiers">
-<h2>Neural Network Classifiers<a class="headerlink" href="#neural-network-classifiers" title="Permalink to this headline">#</a></h2>
+<h2>Neural Network Classifiers<a class="headerlink" href="#neural-network-classifiers" title="Permalink to this heading">#</a></h2>
 <p>The final classifier we will visit today is a neural-network classifier, using
 the multi-layer perceptron network architecture.</p>
 <p>Recall from the <a class="reference internal" href="regression.html"><span class="doc">regression</span></a> chapter that a multi-layer
@@ -775,7 +702,7 @@ were hyperparameters that could be chosen by modeler, but for regression, the la
 layer had to have exactly one neuron which represented the single regression
 target.</p>
 <p>To use the MLP for classification tasks, we need to make three adjustments:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Construct a final layer with <span class="math notranslate nohighlight">\(N\)</span> neurons instead of 1, where <span class="math notranslate nohighlight">\(N\)</span> is the number of classes in the classification task.</p></li>
 <li><p>Apply a <em>softmax</em> function on the network output.</p></li>
 <li><p>Use the cross-entropy loss function instead of the MSE to optimize network weights and biases.</p></li>
@@ -809,7 +736,7 @@ interpretability.</p>
 <p>See exercise 5 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
 <section id="aside-neural-network-toolboxes">
-<h3>Aside: Neural Network Toolboxes<a class="headerlink" href="#aside-neural-network-toolboxes" title="Permalink to this headline">#</a></h3>
+<h3>Aside: Neural Network Toolboxes<a class="headerlink" href="#aside-neural-network-toolboxes" title="Permalink to this heading">#</a></h3>
 <p>Thus far, we have been using the routines in scikit-learn’s <code class="docutils literal notranslate"><span class="pre">neural_network</span></code> package.</p>
 <p>These are great for learning and exploratory analysis, as we have been doing,
 but are rarely used in production or real-world settings.</p>
@@ -827,7 +754,7 @@ access, so you will be well-prepared to start using them.</p>
 </section>
 </section>
 <section id="application-predicting-us-recessions">
-<h2>Application: Predicting US Recessions<a class="headerlink" href="#application-predicting-us-recessions" title="Permalink to this headline">#</a></h2>
+<h2>Application: Predicting US Recessions<a class="headerlink" href="#application-predicting-us-recessions" title="Permalink to this heading">#</a></h2>
 <p>Let’s apply our new classification algorithm knowledge and use
 <a class="reference external" href="https://www.investopedia.com/terms/l/leadingindicator.asp">leading indicators</a>
 to predict recessions in the US economy.</p>
@@ -838,7 +765,7 @@ of the economy.</p>
 but will show a plot of each variables that lets us
 visually inspect the hypothesis.</p>
 <section id="data-prep">
-<h3>Data Prep<a class="headerlink" href="#data-prep" title="Permalink to this headline">#</a></h3>
+<h3>Data Prep<a class="headerlink" href="#data-prep" title="Permalink to this heading">#</a></h3>
 <p>Let’s first gather the data from FRED.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -934,7 +861,7 @@ visually inspect the hypothesis.</p>
       <td>7.566667</td>
       <td>61.087</td>
       <td>1171.333333</td>
-      <td>0.073127</td>
+      <td>0.072951</td>
       <td>0.056936</td>
     </tr>
     <tr>
@@ -943,7 +870,7 @@ visually inspect the hypothesis.</p>
       <td>7.733333</td>
       <td>55.190</td>
       <td>1345.000000</td>
-      <td>0.087625</td>
+      <td>0.087433</td>
       <td>0.037207</td>
     </tr>
     <tr>
@@ -961,7 +888,7 @@ visually inspect the hypothesis.</p>
       <td>7.500000</td>
       <td>34.343</td>
       <td>1562.000000</td>
-      <td>0.105456</td>
+      <td>0.104945</td>
       <td>0.037939</td>
     </tr>
     <tr>
@@ -970,7 +897,7 @@ visually inspect the hypothesis.</p>
       <td>7.133333</td>
       <td>51.245</td>
       <td>1693.333333</td>
-      <td>0.111077</td>
+      <td>0.111230</td>
       <td>0.032931</td>
     </tr>
   </tbody>
@@ -1023,7 +950,7 @@ visually inspect the hypothesis.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/classification_23_0.png" src="../_images/classification_23_0.png" />
+<img alt="../_images/ec9cd3b2655b63353556d69cdb8c07c0936c20c69474d39e894d5eb3e7dedfe9.png" src="../_images/ec9cd3b2655b63353556d69cdb8c07c0936c20c69474d39e894d5eb3e7dedfe9.png" />
 </div>
 </div>
 <p>For each of the chosen variables, you can see that the leading indicator
@@ -1034,7 +961,7 @@ has a distinct move in periods leading up to a recession (noted by the grey band
 </div>
 </section>
 <section id="how-many-leads">
-<h3>How Many leads?<a class="headerlink" href="#how-many-leads" title="Permalink to this headline">#</a></h3>
+<h3>How Many leads?<a class="headerlink" href="#how-many-leads" title="Permalink to this heading">#</a></h3>
 <p>If the variables we have chosen truly are leading indicators, we should be able
 to use leading values of the variables to predict current or future recessions.</p>
 <p>A natural question is: how many leads should we include?</p>
@@ -1106,53 +1033,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[38.095  0.75 ]
- [ 1.31   2.845]]
+ [[37.835  0.855]
+ [ 1.715  3.24 ]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.65   0.81 ]
- [ 2.295  2.245]]
+ [[37.9    0.885]
+ [ 2.565  2.295]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.7    0.64 ]
- [ 2.605  2.055]]
+ [[37.805  0.67 ]
+ [ 2.66   1.865]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[38.015  0.34 ]
- [ 2.685  1.96 ]]
+ [[37.735  0.46 ]
+ [ 2.72   2.085]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.455  0.77 ]
- [ 3.31   1.465]]
+ [[37.35   0.81 ]
+ [ 3.365  1.475]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.64   1.165]
- [ 3.925  1.27 ]]
+ [[36.525  1.305]
+ [ 3.81   1.36 ]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.69   1.22 ]
- [ 3.405  1.685]]
+ [[36.195  1.395]
+ [ 3.6    1.81 ]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[36.18  1.34]
- [ 3.61  1.87]]
+ [[35.86   1.35 ]
+ [ 3.705  2.085]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.615  1.49 ]
- [ 4.405  1.49 ]]
+ [[35.845  1.445]
+ [ 4.18   1.53 ]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.68   1.605]
- [ 4.705  1.01 ]]
+ [[34.77  1.61]
+ [ 4.55  1.07]]
 </pre></div>
 </div>
 </div>
@@ -1177,9 +1104,9 @@ different number of periods before the recession hits.</p>
 </section>
 </section>
 <section id="exercises">
-<span id="app-cls-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="app-cls-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Determine the level of this cutoff value. Recall that the COMPAS
 score takes on integer values between 1 and 10, inclusive.</p>
 <p>What happens to the cutoff level of the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> when you change
@@ -1188,14 +1115,14 @@ idea – we’ll come back to it soon.</p>
 <p>(<a class="reference internal" href="#app-cls-dir1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Experiment with different pairs of features to see which ones show the
 clearest decision boundaries.</p>
 <p>Feed different <code class="docutils literal notranslate"><span class="pre">X</span></code> DataFrames into the <code class="docutils literal notranslate"><span class="pre">fit_and_plot_decision_boundary</span></code> function above.</p>
 <p>(<a class="reference internal" href="#app-cls-dir2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">metrics.roc_curve</span></code> function to determine an appropriate value
 for the probability threshold, keeping in mind our preference for
 high precision over high recall.</p>
@@ -1227,7 +1154,7 @@ possible.</p>
 <p>(<a class="reference internal" href="#app-cls-dir3"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> class with default arguments implements the
 regression including <code class="docutils literal notranslate"><span class="pre">l2</span></code> regularization (it penalizes coefficient
 vectors with an l2-norm).</p>
@@ -1251,7 +1178,7 @@ to use <code class="docutils literal notranslate"><span class="pre">model_select
 <p>(<a class="reference internal" href="#app-cls-dir4"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
 <p>Use a multi-layer perceptron in our recidivism example via the <code class="docutils literal notranslate"><span class="pre">neural_network.MLPClassifier</span></code> class.</p>
 <p>Experiment with different inputs such as:</p>
 <ul class="simple">
@@ -1274,7 +1201,7 @@ regression?</p>
 <p>(<a class="reference internal" href="#app-cls-dir5"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this heading">#</a></h3>
 <p>Let’s pause here to take a few minutes and digest.</p>
 <p>If the task is to use these leading indicators to predict a recession,
 would high recall or high precision be more important for our model?</p>
@@ -1284,7 +1211,7 @@ Times?</p>
 <p>(<a class="reference internal" href="#app-cls-dir6"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this heading">#</a></h3>
 <p>Extend the logic from the previous example and allow a different number
 of leading periods for each variable.</p>
 <p>How would you find the “optimal” number of leads for each variable? How
@@ -1346,18 +1273,17 @@ could you try to avoid overfitting?</p>
 <p>(<a class="reference internal" href="#app-cls-dir7"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this heading">#</a></h3>
 <p>Experiment with different classifiers. Which ones perform better or worse?</p>
 <p>How accurate can you become for each accuracy metric (accuracy, precision, and recall)?</p>
 <p>(<a class="reference internal" href="#app-cls-dir8"><span class="std std-ref">back to text</span></a>)</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="roc"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The name “receiver operating characteristic” comes from its origin;
+<aside class="footnote brackets" id="roc" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The name “receiver operating characteristic” comes from its origin;
 during World War II, engineers used ROC curves to measure how well a radar signal
 could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
-</dd>
-</dl>
+</aside>
 </section>
 </section>
 </section>
@@ -1374,7 +1300,7 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./applications"
         },
         predefinedOutput: true
@@ -1657,7 +1583,7 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -1799,16 +1725,5 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

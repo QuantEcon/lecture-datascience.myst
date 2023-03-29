@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Optimization &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -96,6 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scientific/optimization';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/scientific/optimization.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,64 +161,23 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-optimization">
-   What is Optimization?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#derivatives-and-optima">
-     Derivatives and Optima
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#application-consumer-theory">
-     Application: Consumer Theory
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#preferences-and-utility-functions">
-       Preferences and Utility Functions
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#budget-constraints">
-       Budget Constraints
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#optimal-choice">
-       Optimal Choice
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#satiation-point">
-       Satiation Point
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-optimization">What is Optimization?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives-and-optima">Derivatives and Optima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-consumer-theory">Application: Consumer Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preferences-and-utility-functions">Preferences and Utility Functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#budget-constraints">Budget Constraints</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-choice">Optimal Choice</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#satiation-point">Satiation Point</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -251,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="optimization">
-<h1>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">#</a></h1>
+<h1>Optimization<a class="headerlink" href="#optimization" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
@@ -277,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <section id="what-is-optimization">
-<h2>What is Optimization?<a class="headerlink" href="#what-is-optimization" title="Permalink to this headline">#</a></h2>
+<h2>What is Optimization?<a class="headerlink" href="#what-is-optimization" title="Permalink to this heading">#</a></h2>
 <p>Optimization is the branch of mathematics focused on finding extreme values (max or min) of
 functions.</p>
 <p>Optimization tools will appear in many places throughout this course, including:</p>
@@ -288,7 +259,7 @@ functions.</p></li>
 </ul>
 <p>In this lecture, we will focus mostly on the first to limit the moving pieces, but in other lectures, we’ll discuss the second in detail.</p>
 <section id="derivatives-and-optima">
-<h3>Derivatives and Optima<a class="headerlink" href="#derivatives-and-optima" title="Permalink to this headline">#</a></h3>
+<h3>Derivatives and Optima<a class="headerlink" href="#derivatives-and-optima" title="Permalink to this heading">#</a></h3>
 <p>Here, we revisit some of the theory that you have already learned in your calculus class.</p>
 <p>Consider function <span class="math notranslate nohighlight">\(f(x)\)</span> which maps a number into another number. We can say that any point
 where <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> is a local extremum of <span class="math notranslate nohighlight">\(f\)</span>.</p>
@@ -336,7 +307,7 @@ f(x) = x^4 - 3 x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/optimization_3_0.png" src="../_images/optimization_3_0.png" />
+<img alt="../_images/af798f09003b70783376c5fde35139dfebde020b857a1cd9dab6463e3afc77ae.png" src="../_images/af798f09003b70783376c5fde35139dfebde020b857a1cd9dab6463e3afc77ae.png" />
 </div>
 </div>
 <p>If you stare at this picture, you can probably determine the the local maximum is at
@@ -440,11 +411,11 @@ particular problem, you could try visualizing the function to determine whether 
 would be able to come to rest at the extreme values you are looking for.</p>
 </section>
 <section id="application-consumer-theory">
-<h3>Application: Consumer Theory<a class="headerlink" href="#application-consumer-theory" title="Permalink to this headline">#</a></h3>
+<h3>Application: Consumer Theory<a class="headerlink" href="#application-consumer-theory" title="Permalink to this heading">#</a></h3>
 <p>A common use of maximization in economics is to model
 optimal consumption decisions <a class="reference external" href="https://en.wikipedia.org/wiki/Consumer_choice">https://en.wikipedia.org/wiki/Consumer_choice</a>.</p>
 <section id="preferences-and-utility-functions">
-<h4>Preferences and Utility Functions<a class="headerlink" href="#preferences-and-utility-functions" title="Permalink to this headline">#</a></h4>
+<h4>Preferences and Utility Functions<a class="headerlink" href="#preferences-and-utility-functions" title="Permalink to this heading">#</a></h4>
 <p>To summarize introductory economics, take a set of
 <a class="reference external" href="https://en.wikipedia.org/wiki/Preference_%28economics%29">preferences</a> of consumers over “bundles”
 of goods (e.g. 2 apples and 3 oranges is preferred to 3 apples and 2 oranges, or a 100% chance to
@@ -477,7 +448,7 @@ U(B, A) = B^{\alpha}A^{1-\alpha}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;U(B=1.5, A)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/optimization_11_1.png" src="../_images/optimization_11_1.png" />
+<img alt="../_images/f032226f1eb96060e361c079a2cd5e5fe40481e1ad68bd7d4f2dd33d9edb8481.png" src="../_images/f032226f1eb96060e361c079a2cd5e5fe40481e1ad68bd7d4f2dd33d9edb8481.png" />
 </div>
 </div>
 <p>We note that</p>
@@ -505,7 +476,7 @@ bundles.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;U(A,B)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/optimization_13_1.png" src="../_images/optimization_13_1.png" />
+<img alt="../_images/777413eaf1085aef1860d43bf77468970c216b461e3cf8979e7be169c4ea9d0e.png" src="../_images/777413eaf1085aef1860d43bf77468970c216b461e3cf8979e7be169c4ea9d0e.png" />
 </div>
 </div>
 <p>We can find the bundles between which the consumer would be indifferent by fixing a
@@ -535,7 +506,7 @@ A(B, \bar{U}) = U^{\frac{1}{1-\alpha}}B^{\frac{-\alpha}{1-\alpha}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/optimization_15_0.png" src="../_images/optimization_15_0.png" />
+<img alt="../_images/4a82f0c30c5a89f033f40065237301d2facfc3b822eb9639d3ab163d3167b318.png" src="../_images/4a82f0c30c5a89f033f40065237301d2facfc3b822eb9639d3ab163d3167b318.png" />
 </div>
 </div>
 <p>Note that in every case, if you increase either the number of apples or bananas (holding the other
@@ -544,7 +515,7 @@ fixed), you reach a higher indifference curve.</p>
 an arbitrarily high number of both to maximize their utility.</p>
 </section>
 <section id="budget-constraints">
-<h4>Budget Constraints<a class="headerlink" href="#budget-constraints" title="Permalink to this headline">#</a></h4>
+<h4>Budget Constraints<a class="headerlink" href="#budget-constraints" title="Permalink to this heading">#</a></h4>
 <p>While the above example plots consumer preferences, it says nothing about what the consumers can afford.</p>
 <p>The simplest sort of constraint is a budget constraint where bananas and apples both have a price
 and the consumer has a limited amount of funds.</p>
@@ -580,16 +551,16 @@ can afford anything below the line.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;B&#39;, ylabel=&#39;A&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;B&#39;, ylabel=&#39;A&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/optimization_17_1.png" src="../_images/optimization_17_1.png" />
+<img alt="../_images/fb7cfcf8a138fae231e40eac994a29900b5852a961165710cc2a90c8b7947191.png" src="../_images/fb7cfcf8a138fae231e40eac994a29900b5852a961165710cc2a90c8b7947191.png" />
 </div>
 </div>
 <p>While the consumer can afford any of the bundles in that area, most will not be optimal.</p>
 </section>
 <section id="optimal-choice">
-<h4>Optimal Choice<a class="headerlink" href="#optimal-choice" title="Permalink to this headline">#</a></h4>
+<h4>Optimal Choice<a class="headerlink" href="#optimal-choice" title="Permalink to this heading">#</a></h4>
 <p>Putting the budget constraints and the utility functions together lets us visualize the optimal
 decision of a consumer. Choose the bundle with the highest possible indifference curve within its
 budget set.</p>
@@ -602,10 +573,10 @@ budget set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;B&#39;, ylabel=&#39;A&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;B&#39;, ylabel=&#39;A&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/optimization_19_1.png" src="../_images/optimization_19_1.png" />
+<img alt="../_images/3914a5666bde18e8b4d418199752785de51ce615ee95ee19d00a2ca7a78de6a2.png" src="../_images/3914a5666bde18e8b4d418199752785de51ce615ee95ee19d00a2ca7a78de6a2.png" />
 </div>
 </div>
 <p>We have several ways to find the particular point <span class="math notranslate nohighlight">\(A, B\)</span> of maximum utility, such as
@@ -696,10 +667,10 @@ wealth levels change.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6471f51a60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f254f8e4850&gt;
 </pre></div>
 </div>
-<img alt="../_images/optimization_23_1.png" src="../_images/optimization_23_1.png" />
+<img alt="../_images/d70c620ab14de21a97e3a5d031a69207923c25b348fceb8aa820b1ee5efcb2ce.png" src="../_images/d70c620ab14de21a97e3a5d031a69207923c25b348fceb8aa820b1ee5efcb2ce.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-5-1">
@@ -708,7 +679,7 @@ wealth levels change.</p>
 </div>
 </section>
 <section id="satiation-point">
-<h4>Satiation Point<a class="headerlink" href="#satiation-point" title="Permalink to this headline">#</a></h4>
+<h4>Satiation Point<a class="headerlink" href="#satiation-point" title="Permalink to this heading">#</a></h4>
 <p>The above example is a particular utility function where consumers prefer to “eat” as much as
 possible of every good available, but that may not be the case for all preferences.</p>
 <p>When an optimum exists for the unconstrained problem (e.g. with an infinite budget), it is called a
@@ -728,16 +699,16 @@ U(P, C) = -(P - 20)^2 - 2 * (C - 1)^2
 </section>
 </section>
 <section id="exercises">
-<span id="ex3-5"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="ex3-5"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Try solving the constrained maximization problem by hand via the Lagrangian method.</p>
 <p>Is it surprising that the demand for bananas is unaffected by the change in apple prices?</p>
 <p>Why might this be?</p>
 <p>(<a class="reference internal" href="#dir3-5-1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Using a similar approach to that of the apples/bananas example above, solve for the optimal
 basket of potato chips and chocolate bars when <code class="docutils literal notranslate"><span class="pre">W</span> <span class="pre">=</span> <span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">p_P</span> <span class="pre">=</span> <span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">p_C</span> <span class="pre">=</span> <span class="pre">2</span></code>.</p>
 <div class="cell docutils container">
@@ -789,7 +760,7 @@ basket of potato chips and chocolate bars when <code class="docutils literal not
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./scientific"
         },
         predefinedOutput: true
@@ -1072,7 +1043,7 @@ basket of potato chips and chocolate bars when <code class="docutils literal not
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -1214,16 +1185,5 @@ basket of potato chips and chocolate bars when <code class="docutils literal not
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

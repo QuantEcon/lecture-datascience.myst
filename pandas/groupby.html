@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>GroupBy &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -94,6 +105,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pandas/groupby';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/pandas/groupby.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -147,94 +159,27 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#split-apply-combine">
-   Split-Apply-Combine
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-example">
-     Simple Example
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#custom-aggregate-functions">
-     Custom Aggregate Functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#transforms-the-apply-method">
-     Transforms: The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       apply
-      </span>
-     </code>
-     Method
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pd-grouper">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pd.Grouper
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-airline-delays">
-   Case Study: Airline Delays
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-cohort-analysis-using-shopify-data">
-   Exercise: Cohort Analysis using Shopify Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extended-exercise">
-     Extended Exercise
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-apply-combine">Split-Apply-Combine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example">Simple Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-aggregate-functions">Custom Aggregate Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-the-apply-method">Transforms: The <code class="docutils literal notranslate"><span class="pre">apply</span></code> Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-grouper"><code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-airline-delays">Case Study: Airline Delays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-cohort-analysis-using-shopify-data">Exercise: Cohort Analysis using Shopify Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-exercise">Extended Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -279,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="groupby">
-<h1>GroupBy<a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h1>
+<h1>GroupBy<a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../python_fundamentals/functions.html"><span class="doc">Functions</span></a></p></li>
@@ -317,11 +262,11 @@ Statistics</a></p></li>
 </div>
 </div>
 <section id="split-apply-combine">
-<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">#</a></h2>
+<h2>Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this heading">#</a></h2>
 <p>One powerful paradigm for analyzing data is the “Split-Apply-Combine”
 strategy.</p>
 <p>This strategy has three steps:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Split</span></code>: split the data into groups based on values in one or more columns.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Apply</span></code>: apply a function or routine to each group separately.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Combine</span></code>: combine the output of the apply step into a DataFrame,
@@ -413,7 +358,7 @@ then work through extended example and exercises with real data.</p>
 </div></div></div>
 </div>
 <section id="simple-example">
-<h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline">#</a></h3>
+<h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this heading">#</a></h3>
 <p>To perform the <em>Split</em> step, we call the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> method on our
 DataFrame.</p>
 <p>The first argument to <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is a description of how we want to
@@ -693,11 +638,11 @@ with one index level per group key.</p>
 </div></blockquote>
 </section>
 <section id="custom-aggregate-functions">
-<h3>Custom Aggregate Functions<a class="headerlink" href="#custom-aggregate-functions" title="Permalink to this headline">#</a></h3>
+<h3>Custom Aggregate Functions<a class="headerlink" href="#custom-aggregate-functions" title="Permalink to this heading">#</a></h3>
 <p>So far, we have been applying built-in aggregations to our GroupBy object.</p>
 <p>We can also apply custom aggregations to each group of a GroupBy in two
 steps:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Write our custom aggregation as a Python function.</p></li>
 <li><p>Passing our function as an argument to the <code class="docutils literal notranslate"><span class="pre">.agg</span></code> method of a GroupBy.</p></li>
 </ol>
@@ -786,7 +731,7 @@ with one item per column in the original DataFrame.</p>
 our function as a DataFrame (or Series).</p>
 </section>
 <section id="transforms-the-apply-method">
-<h3>Transforms: The <code class="docutils literal notranslate"><span class="pre">apply</span></code> Method<a class="headerlink" href="#transforms-the-apply-method" title="Permalink to this headline">#</a></h3>
+<h3>Transforms: The <code class="docutils literal notranslate"><span class="pre">apply</span></code> Method<a class="headerlink" href="#transforms-the-apply-method" title="Permalink to this heading">#</a></h3>
 <p>As we saw in the <a class="reference internal" href="basics.html"><span class="doc">basics lecture</span></a>, we can apply transforms to DataFrames.</p>
 <p>We can do the same with GroupBy objects using the <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method.</p>
 <p>Let’s see an example.</p>
@@ -951,7 +896,7 @@ that would appear in the result of the call to <code class="docutils literal not
 </div>
 </section>
 <section id="pd-grouper">
-<h3><code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code><a class="headerlink" href="#pd-grouper" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">pd.Grouper</span></code><a class="headerlink" href="#pd-grouper" title="Permalink to this heading">#</a></h3>
 <p>Sometimes, in order to construct the groups you want, you need to give
 pandas more information than just a column name.</p>
 <p>Some examples are:</p>
@@ -976,7 +921,7 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4422/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3353/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
   start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
 </pre></div>
 </div>
@@ -1271,13 +1216,140 @@ denotes a column name</p>
 </section>
 </section>
 <section id="case-study-airline-delays">
-<h2>Case Study: Airline Delays<a class="headerlink" href="#case-study-airline-delays" title="Permalink to this headline">#</a></h2>
+<h2>Case Study: Airline Delays<a class="headerlink" href="#case-study-airline-delays" title="Permalink to this heading">#</a></h2>
 <p>Let’s apply our new split-apply-combine skills to the airline dataset we
 saw in the <a class="reference internal" href="merge.html"><span class="doc">merge</span></a> lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
 <span class="n">air_dec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/airline_performance_dec16.csv.zip&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">air_dec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1735,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1735</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1739</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1740</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1742</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1743</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1744</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1745</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:713,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="c1"># open URLs</span>
+<span class="ne">--&gt; </span><span class="mi">713</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span>     <span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">719</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:363,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="c1"># assuming storage_options is to be interpreted as headers</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="c1"># Override compression based on Content-Encoding header</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:265,</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd"> Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd"> the stdlib.</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:214,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:523,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">523</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:632,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">632</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:561,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
+<span class="ne">--&gt; </span><span class="mi">561</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:641,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">641</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+
+<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
 </pre></div>
 </div>
 </div>
@@ -1297,133 +1369,6 @@ each week.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Carrier</th>
-      <th>AA</th>
-      <th>AS</th>
-      <th>B6</th>
-      <th>DL</th>
-      <th>EV</th>
-      <th>F9</th>
-      <th>HA</th>
-      <th>NK</th>
-      <th>OO</th>
-      <th>UA</th>
-      <th>VX</th>
-      <th>WN</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016-12-04</th>
-      <td>-1.714887</td>
-      <td>2.724273</td>
-      <td>-2.894269</td>
-      <td>-5.088351</td>
-      <td>8.655332</td>
-      <td>-2.894212</td>
-      <td>-0.558282</td>
-      <td>5.468909</td>
-      <td>2.749573</td>
-      <td>5.564496</td>
-      <td>-2.121821</td>
-      <td>-1.663695</td>
-    </tr>
-    <tr>
-      <th>2016-12-11</th>
-      <td>1.148833</td>
-      <td>12.052031</td>
-      <td>5.795062</td>
-      <td>2.507745</td>
-      <td>13.220673</td>
-      <td>4.578861</td>
-      <td>2.054302</td>
-      <td>8.713755</td>
-      <td>15.429660</td>
-      <td>4.094176</td>
-      <td>12.080938</td>
-      <td>1.865933</td>
-    </tr>
-    <tr>
-      <th>2016-12-18</th>
-      <td>16.357561</td>
-      <td>7.643767</td>
-      <td>34.608356</td>
-      <td>18.000000</td>
-      <td>23.876622</td>
-      <td>45.014888</td>
-      <td>9.388889</td>
-      <td>22.857899</td>
-      <td>30.901639</td>
-      <td>22.398130</td>
-      <td>33.651128</td>
-      <td>18.373400</td>
-    </tr>
-    <tr>
-      <th>2016-12-25</th>
-      <td>6.364513</td>
-      <td>2.719699</td>
-      <td>5.586836</td>
-      <td>-0.916113</td>
-      <td>6.857143</td>
-      <td>54.084959</td>
-      <td>5.075747</td>
-      <td>10.443369</td>
-      <td>15.004780</td>
-      <td>5.332474</td>
-      <td>17.286917</td>
-      <td>10.197685</td>
-    </tr>
-    <tr>
-      <th>2017-01-01</th>
-      <td>2.321836</td>
-      <td>1.226662</td>
-      <td>10.661577</td>
-      <td>2.048116</td>
-      <td>6.800898</td>
-      <td>8.280298</td>
-      <td>6.970016</td>
-      <td>8.361123</td>
-      <td>8.971083</td>
-      <td>0.061786</td>
-      <td>1.349580</td>
-      <td>5.213019</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Let’s also plot this data.</p>
 <div class="cell docutils container">
@@ -1440,9 +1385,6 @@ each week.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">weekly_delays</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%a</span><span class="s2">, %b. </span><span class="si">%d</span><span class="s2">&#39;&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/groupby_41_0.png" src="../_images/groupby_41_0.png" />
 </div>
 </div>
 <p>It looks like more delays occurred during the week ending Sunday
@@ -1480,292 +1422,6 @@ attributed to 5 different categories:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3" halign="left">CarrierDelay</th>
-      <th colspan="3" halign="left">WeatherDelay</th>
-      <th colspan="3" halign="left">NASDelay</th>
-      <th colspan="3" halign="left">SecurityDelay</th>
-      <th colspan="3" halign="left">LateAircraftDelay</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>sum</th>
-      <th>mean</th>
-      <th>positive</th>
-      <th>sum</th>
-      <th>mean</th>
-      <th>positive</th>
-      <th>sum</th>
-      <th>mean</th>
-      <th>positive</th>
-      <th>sum</th>
-      <th>mean</th>
-      <th>positive</th>
-      <th>sum</th>
-      <th>mean</th>
-      <th>positive</th>
-    </tr>
-    <tr>
-      <th>Carrier</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>AA</th>
-      <td>105732.0</td>
-      <td>6.258553</td>
-      <td>2922</td>
-      <td>21820.0</td>
-      <td>1.291583</td>
-      <td>456</td>
-      <td>77279.0</td>
-      <td>4.574346</td>
-      <td>3159</td>
-      <td>721.0</td>
-      <td>0.042678</td>
-      <td>35</td>
-      <td>141249.0</td>
-      <td>8.360897</td>
-      <td>2574</td>
-    </tr>
-    <tr>
-      <th>AS</th>
-      <td>8762.0</td>
-      <td>2.691032</td>
-      <td>250</td>
-      <td>3219.0</td>
-      <td>0.988636</td>
-      <td>61</td>
-      <td>16344.0</td>
-      <td>5.019656</td>
-      <td>614</td>
-      <td>163.0</td>
-      <td>0.050061</td>
-      <td>10</td>
-      <td>13599.0</td>
-      <td>4.176597</td>
-      <td>271</td>
-    </tr>
-    <tr>
-      <th>B6</th>
-      <td>49421.0</td>
-      <td>9.031615</td>
-      <td>1575</td>
-      <td>9894.0</td>
-      <td>1.808114</td>
-      <td>112</td>
-      <td>38741.0</td>
-      <td>7.079861</td>
-      <td>1326</td>
-      <td>672.0</td>
-      <td>0.122807</td>
-      <td>30</td>
-      <td>100811.0</td>
-      <td>18.423063</td>
-      <td>1433</td>
-    </tr>
-    <tr>
-      <th>DL</th>
-      <td>151188.0</td>
-      <td>8.864212</td>
-      <td>2878</td>
-      <td>39145.0</td>
-      <td>2.295087</td>
-      <td>783</td>
-      <td>75110.0</td>
-      <td>4.403729</td>
-      <td>2605</td>
-      <td>107.0</td>
-      <td>0.006273</td>
-      <td>2</td>
-      <td>122896.0</td>
-      <td>7.205441</td>
-      <td>2289</td>
-    </tr>
-    <tr>
-      <th>EV</th>
-      <td>87408.0</td>
-      <td>9.939504</td>
-      <td>1375</td>
-      <td>3824.0</td>
-      <td>0.434842</td>
-      <td>76</td>
-      <td>49703.0</td>
-      <td>5.651922</td>
-      <td>1580</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>89773.0</td>
-      <td>10.208438</td>
-      <td>1568</td>
-    </tr>
-    <tr>
-      <th>F9</th>
-      <td>19568.0</td>
-      <td>10.430704</td>
-      <td>361</td>
-      <td>6198.0</td>
-      <td>3.303838</td>
-      <td>57</td>
-      <td>22459.0</td>
-      <td>11.971748</td>
-      <td>493</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>32236.0</td>
-      <td>17.183369</td>
-      <td>316</td>
-    </tr>
-    <tr>
-      <th>HA</th>
-      <td>7199.0</td>
-      <td>5.034266</td>
-      <td>218</td>
-      <td>3650.0</td>
-      <td>2.552448</td>
-      <td>145</td>
-      <td>86.0</td>
-      <td>0.060140</td>
-      <td>4</td>
-      <td>35.0</td>
-      <td>0.024476</td>
-      <td>3</td>
-      <td>4024.0</td>
-      <td>2.813986</td>
-      <td>189</td>
-    </tr>
-    <tr>
-      <th>NK</th>
-      <td>14735.0</td>
-      <td>5.294646</td>
-      <td>452</td>
-      <td>2240.0</td>
-      <td>0.804887</td>
-      <td>56</td>
-      <td>30361.0</td>
-      <td>10.909450</td>
-      <td>840</td>
-      <td>50.0</td>
-      <td>0.017966</td>
-      <td>5</td>
-      <td>22247.0</td>
-      <td>7.993891</td>
-      <td>372</td>
-    </tr>
-    <tr>
-      <th>OO</th>
-      <td>120307.0</td>
-      <td>10.439691</td>
-      <td>1378</td>
-      <td>26349.0</td>
-      <td>2.286446</td>
-      <td>308</td>
-      <td>54141.0</td>
-      <td>4.698108</td>
-      <td>2289</td>
-      <td>171.0</td>
-      <td>0.014839</td>
-      <td>12</td>
-      <td>166102.0</td>
-      <td>14.413572</td>
-      <td>2459</td>
-    </tr>
-    <tr>
-      <th>UA</th>
-      <td>66693.0</td>
-      <td>6.312636</td>
-      <td>1851</td>
-      <td>31602.0</td>
-      <td>2.991197</td>
-      <td>521</td>
-      <td>74992.0</td>
-      <td>7.098154</td>
-      <td>2065</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>0</td>
-      <td>118728.0</td>
-      <td>11.237861</td>
-      <td>1696</td>
-    </tr>
-    <tr>
-      <th>VX</th>
-      <td>8048.0</td>
-      <td>5.608362</td>
-      <td>246</td>
-      <td>3807.0</td>
-      <td>2.652962</td>
-      <td>126</td>
-      <td>12619.0</td>
-      <td>8.793728</td>
-      <td>224</td>
-      <td>73.0</td>
-      <td>0.050871</td>
-      <td>4</td>
-      <td>25242.0</td>
-      <td>17.590244</td>
-      <td>331</td>
-    </tr>
-    <tr>
-      <th>WN</th>
-      <td>123882.0</td>
-      <td>4.873790</td>
-      <td>5393</td>
-      <td>23516.0</td>
-      <td>0.925171</td>
-      <td>328</td>
-      <td>78645.0</td>
-      <td>3.094067</td>
-      <td>4247</td>
-      <td>252.0</td>
-      <td>0.009914</td>
-      <td>18</td>
-      <td>285073.0</td>
-      <td>11.215399</td>
-      <td>6472</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p><strong>Want</strong>: plot total, average, and number of each type of delay by
 carrier</p>
@@ -1791,179 +1447,6 @@ carrier</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="10" halign="left">mean</th>
-      <th>...</th>
-      <th colspan="10" halign="left">sum</th>
-    </tr>
-    <tr>
-      <th>Carrier</th>
-      <th>AA</th>
-      <th>AS</th>
-      <th>B6</th>
-      <th>DL</th>
-      <th>EV</th>
-      <th>F9</th>
-      <th>HA</th>
-      <th>NK</th>
-      <th>OO</th>
-      <th>UA</th>
-      <th>...</th>
-      <th>B6</th>
-      <th>DL</th>
-      <th>EV</th>
-      <th>F9</th>
-      <th>HA</th>
-      <th>NK</th>
-      <th>OO</th>
-      <th>UA</th>
-      <th>VX</th>
-      <th>WN</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CarrierDelay</th>
-      <td>6.258553</td>
-      <td>2.691032</td>
-      <td>9.031615</td>
-      <td>8.864212</td>
-      <td>9.939504</td>
-      <td>10.430704</td>
-      <td>5.034266</td>
-      <td>5.294646</td>
-      <td>10.439691</td>
-      <td>6.312636</td>
-      <td>...</td>
-      <td>49421.0</td>
-      <td>151188.0</td>
-      <td>87408.0</td>
-      <td>19568.0</td>
-      <td>7199.0</td>
-      <td>14735.0</td>
-      <td>120307.0</td>
-      <td>66693.0</td>
-      <td>8048.0</td>
-      <td>123882.0</td>
-    </tr>
-    <tr>
-      <th>WeatherDelay</th>
-      <td>1.291583</td>
-      <td>0.988636</td>
-      <td>1.808114</td>
-      <td>2.295087</td>
-      <td>0.434842</td>
-      <td>3.303838</td>
-      <td>2.552448</td>
-      <td>0.804887</td>
-      <td>2.286446</td>
-      <td>2.991197</td>
-      <td>...</td>
-      <td>9894.0</td>
-      <td>39145.0</td>
-      <td>3824.0</td>
-      <td>6198.0</td>
-      <td>3650.0</td>
-      <td>2240.0</td>
-      <td>26349.0</td>
-      <td>31602.0</td>
-      <td>3807.0</td>
-      <td>23516.0</td>
-    </tr>
-    <tr>
-      <th>NASDelay</th>
-      <td>4.574346</td>
-      <td>5.019656</td>
-      <td>7.079861</td>
-      <td>4.403729</td>
-      <td>5.651922</td>
-      <td>11.971748</td>
-      <td>0.060140</td>
-      <td>10.909450</td>
-      <td>4.698108</td>
-      <td>7.098154</td>
-      <td>...</td>
-      <td>38741.0</td>
-      <td>75110.0</td>
-      <td>49703.0</td>
-      <td>22459.0</td>
-      <td>86.0</td>
-      <td>30361.0</td>
-      <td>54141.0</td>
-      <td>74992.0</td>
-      <td>12619.0</td>
-      <td>78645.0</td>
-    </tr>
-    <tr>
-      <th>SecurityDelay</th>
-      <td>0.042678</td>
-      <td>0.050061</td>
-      <td>0.122807</td>
-      <td>0.006273</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.024476</td>
-      <td>0.017966</td>
-      <td>0.014839</td>
-      <td>0.000000</td>
-      <td>...</td>
-      <td>672.0</td>
-      <td>107.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>35.0</td>
-      <td>50.0</td>
-      <td>171.0</td>
-      <td>0.0</td>
-      <td>73.0</td>
-      <td>252.0</td>
-    </tr>
-    <tr>
-      <th>LateAircraftDelay</th>
-      <td>8.360897</td>
-      <td>4.176597</td>
-      <td>18.423063</td>
-      <td>7.205441</td>
-      <td>10.208438</td>
-      <td>17.183369</td>
-      <td>2.813986</td>
-      <td>7.993891</td>
-      <td>14.413572</td>
-      <td>11.237861</td>
-      <td>...</td>
-      <td>100811.0</td>
-      <td>122896.0</td>
-      <td>89773.0</td>
-      <td>32236.0</td>
-      <td>4024.0</td>
-      <td>22247.0</td>
-      <td>166102.0</td>
-      <td>118728.0</td>
-      <td>25242.0</td>
-      <td>285073.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 36 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1977,11 +1460,6 @@ carrier</p>
 <span class="c1">#     fig.tight_layout();</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/groupby_48_0.png" src="../_images/groupby_48_0.png" />
-<img alt="../_images/groupby_48_1.png" src="../_images/groupby_48_1.png" />
-<img alt="../_images/groupby_48_2.png" src="../_images/groupby_48_2.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-grp-dir4">
@@ -2000,7 +1478,7 @@ frequency instead of weekly.</p>
 <p>We could copy/paste the code from above and change the <code class="docutils literal notranslate"><span class="pre">W</span></code> to a <code class="docutils literal notranslate"><span class="pre">D</span></code>,
 but there’s a better way…</p>
 <p>Let’s convert the steps above into two functions:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Produce the set of bar charts for average delays at each frequency.</p></li>
 <li><p>Produce the second set of charts for the total, average, and number
 of occurrences of each type of delay.</p></li>
@@ -2076,9 +1554,6 @@ figure to be a bit wider in order to see the dates.)</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/groupby_52_0.png" src="../_images/groupby_52_0.png" />
-</div>
 </div>
 <p>As we expected given our analysis above, the longest average delays
 seemed to happen in the third week.</p>
@@ -2095,11 +1570,6 @@ the days together and separately without much effort.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/groupby_54_0.png" src="../_images/groupby_54_0.png" />
-<img alt="../_images/groupby_54_1.png" src="../_images/groupby_54_1.png" />
-<img alt="../_images/groupby_54_2.png" src="../_images/groupby_54_2.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2108,11 +1578,6 @@ the days together and separately without much effort.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/groupby_55_0.png" src="../_images/groupby_55_0.png" />
-<img alt="../_images/groupby_55_1.png" src="../_images/groupby_55_1.png" />
-<img alt="../_images/groupby_55_2.png" src="../_images/groupby_55_2.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2120,11 +1585,6 @@ the days together and separately without much effort.</p>
 <span class="n">delay_type_plot</span><span class="p">(</span><span class="n">air_dec</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">,</span> <span class="s2">&quot;12-18-16&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/groupby_56_0.png" src="../_images/groupby_56_0.png" />
-<img alt="../_images/groupby_56_1.png" src="../_images/groupby_56_1.png" />
-<img alt="../_images/groupby_56_2.png" src="../_images/groupby_56_2.png" />
 </div>
 </div>
 <p>The purpose of this exercise was to drive home the ability to <em>automate</em>
@@ -2137,7 +1597,7 @@ November 2016 data, with two lines of code).</p>
 <p>Keep that in mind as we work through the rest of the materials.</p>
 </section>
 <section id="exercise-cohort-analysis-using-shopify-data">
-<h2>Exercise: Cohort Analysis using Shopify Data<a class="headerlink" href="#exercise-cohort-analysis-using-shopify-data" title="Permalink to this headline">#</a></h2>
+<h2>Exercise: Cohort Analysis using Shopify Data<a class="headerlink" href="#exercise-cohort-analysis-using-shopify-data" title="Permalink to this heading">#</a></h2>
 <p>The code below will employ a fairly large simulated data set that has the
 properties of a order-detail report from <a class="reference external" href="https://www.shopify.com/">Shopify</a>.</p>
 <p>We’ll first look at the data, and then describe the exercise</p>
@@ -2155,160 +1615,6 @@ properties of a order-detail report from <a class="reference external" href="htt
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 715449 entries, 0 to 715448
-Data columns (total 15 columns):
- #   Column             Non-Null Count   Dtype  
----  ------             --------------   -----  
- 0   Unnamed: 0         715449 non-null  int64  
- 1   Day                715449 non-null  object 
- 2   customer_type      715449 non-null  object 
- 3   Customer ID        715449 non-null  int64  
- 4   orders             715449 non-null  int64  
- 5   total_sales        715449 non-null  float64
- 6   Returns            715449 non-null  float64
- 7   Ordered quantity   715449 non-null  int64  
- 8   Gross sales        715449 non-null  float64
- 9   Net sales          715449 non-null  float64
- 10  Shipping           715449 non-null  float64
- 11  Tax                715449 non-null  float64
- 12  Net quantity       715449 non-null  int64  
- 13  Returned quantity  715449 non-null  int64  
- 14  Discounts          715449 non-null  float64
-dtypes: float64(7), int64(6), object(2)
-memory usage: 81.9+ MB
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>Day</th>
-      <th>customer_type</th>
-      <th>Customer ID</th>
-      <th>orders</th>
-      <th>total_sales</th>
-      <th>Returns</th>
-      <th>Ordered quantity</th>
-      <th>Gross sales</th>
-      <th>Net sales</th>
-      <th>Shipping</th>
-      <th>Tax</th>
-      <th>Net quantity</th>
-      <th>Returned quantity</th>
-      <th>Discounts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>2019-06-17</td>
-      <td>Returning</td>
-      <td>6535260</td>
-      <td>1</td>
-      <td>41.03</td>
-      <td>-0.0</td>
-      <td>1</td>
-      <td>41.03</td>
-      <td>41.03</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>2015-01-31</td>
-      <td>First-time</td>
-      <td>4283889</td>
-      <td>1</td>
-      <td>37.96</td>
-      <td>-0.0</td>
-      <td>2</td>
-      <td>37.96</td>
-      <td>37.96</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>2017-09-14</td>
-      <td>Returning</td>
-      <td>5270434</td>
-      <td>1</td>
-      <td>-25.40</td>
-      <td>-30.5</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>-30.50</td>
-      <td>5.09</td>
-      <td>0.0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>2017-10-29</td>
-      <td>Returning</td>
-      <td>4836086</td>
-      <td>1</td>
-      <td>12.70</td>
-      <td>-0.0</td>
-      <td>4</td>
-      <td>12.70</td>
-      <td>12.70</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>-0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2016-10-01</td>
-      <td>Returning</td>
-      <td>9541330</td>
-      <td>1</td>
-      <td>216.58</td>
-      <td>-0.0</td>
-      <td>3</td>
-      <td>208.59</td>
-      <td>208.59</td>
-      <td>7.99</td>
-      <td>0.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>-0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We define a customer’s cohort as the month in which a customer placed
 their first order and the customer type as an indicator of whether this
@@ -2319,7 +1625,7 @@ complete.</p>
 total quantity separated by customer cohort and customer type.</p>
 <p>Read that carefully one more time…</p>
 <section id="extended-exercise">
-<h3>Extended Exercise<a class="headerlink" href="#extended-exercise" title="Permalink to this headline">#</a></h3>
+<h3>Extended Exercise<a class="headerlink" href="#extended-exercise" title="Permalink to this heading">#</a></h3>
 <p>Using the reshape and <code class="docutils literal notranslate"><span class="pre">groupby</span></code> tools you have learned, apply the want
 operator described above.</p>
 <p>See below for advice on how to proceed.</p>
@@ -2336,7 +1642,7 @@ have with this table to verify your progress.</p>
 <p>Now, how to do it?</p>
 <p>There is more than one way to code this, but here are some suggested
 steps.</p>
-<ol>
+<ol class="arabic">
 <li><p>Convert the <code class="docutils literal notranslate"><span class="pre">Day</span></code> column to have a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> <code class="docutils literal notranslate"><span class="pre">dtype</span></code> instead
 of object.</p>
 <ul>
@@ -2381,9 +1687,9 @@ move things to the right place in rows and columns.</p></li>
 </section>
 </section>
 <section id="exercises">
-<span id="pd-grp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="pd-grp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Look closely at the output of the cells below.</p>
 <p>How did pandas compute the sum of <code class="docutils literal notranslate"><span class="pre">gbA</span></code>? What happened to the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
 entries in column <code class="docutils literal notranslate"><span class="pre">C</span></code>?</p>
@@ -2410,7 +1716,7 @@ happened to the <code class="docutils literal notranslate"><span class="pre">NaN
 <p>(<a class="reference internal" href="#pd-grp-dir1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Use introspection (tab completion) to see what other aggregations are
 defined for GroupBy objects.</p>
 <p>Pick three and evaluate them in the cells below.</p>
@@ -2440,12 +1746,12 @@ output of <code class="docutils literal notranslate"><span class="pre">gbA.sum()
 <p>(<a class="reference internal" href="#pd-grp-dir2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This exercise has a few steps:</p>
 </div>
-<ol>
+<ol class="arabic">
 <li><p>Write a function that, given a DataFrame, computes each entry’s
 deviation from the mean of its column.</p></li>
 <li><p>Apply the function to <code class="docutils literal notranslate"><span class="pre">gbA</span></code>.</p></li>
@@ -2483,7 +1789,7 @@ new columns.</p>
 <p>(<a class="reference internal" href="#pd-grp-dir3"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>Think about what is shown in the the plots above.</p>
 <p>Answer questions like:</p>
 <ul class="simple">
@@ -2502,7 +1808,7 @@ new columns.</p>
 <p>(<a class="reference internal" href="#pd-grp-dir4"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
 <p>Verify that we wrote the functions properly by setting the arguments to
 appropriate values to replicate the plots from above.</p>
 <div class="cell docutils container">
@@ -2536,7 +1842,7 @@ appropriate values to replicate the plots from above.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./pandas"
         },
         predefinedOutput: true
@@ -2819,7 +2125,7 @@ appropriate values to replicate the plots from above.</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -2961,16 +2267,5 @@ appropriate values to replicate the plots from above.</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

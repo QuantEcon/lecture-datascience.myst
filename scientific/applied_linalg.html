@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Applied Linear Algebra &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -96,6 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scientific/applied_linalg';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/scientific/applied_linalg.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,91 +161,30 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vectors-and-matrices">
-   Vectors and Matrices
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vectors">
-     Vectors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matrices">
-     Matrices
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-linear-algebra-concepts">
-     Other Linear Algebra Concepts
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transpose">
-       Transpose
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#identity-matrix">
-       Identity Matrix
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inverse">
-       Inverse
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#portfolios">
-   Portfolios
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#static-payoffs">
-     Static Payoffs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#npv-of-a-portfolio">
-     NPV of a Portfolio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unemployment-dynamics">
-     Unemployment Dynamics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-linear-algebra-concepts">Other Linear Algebra Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-matrix">Identity Matrix</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse">Inverse</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolios">Portfolios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#static-payoffs">Static Payoffs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#npv-of-a-portfolio">NPV of a Portfolio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unemployment-dynamics">Unemployment Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -278,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="applied-linear-algebra">
-<h1><span class="target" id="index-0"></span>Applied Linear Algebra<a class="headerlink" href="#applied-linear-algebra" title="Permalink to this headline">#</a></h1>
+<h1><span class="target" id="index-0"></span>Applied Linear Algebra<a class="headerlink" href="#applied-linear-algebra" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="numpy_arrays.html"><span class="doc">Introduction to Numpy</span></a></p></li>
@@ -305,9 +256,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <section id="vectors-and-matrices">
-<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">#</a></h2>
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this heading">#</a></h2>
 <section id="vectors">
-<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h3>
+<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this heading">#</a></h3>
 <p>A (N-element) vector is <span class="math notranslate nohighlight">\(N\)</span> numbers stored together.</p>
 <p>We typically write a vector as <span class="math notranslate nohighlight">\(x = \begin{bmatrix} x_1 \\ x_2 \\ \dots \\ x_N \end{bmatrix}\)</span>.</p>
 <p>In numpy terms, a vector is a 1-dimensional array.</p>
@@ -427,7 +378,7 @@ equal to <span class="math notranslate nohighlight">\(\sum_{i=1}^N x_i y_i\)</sp
 </div>
 </section>
 <section id="matrices">
-<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h3>
+<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this heading">#</a></h3>
 <p>An <span class="math notranslate nohighlight">\(N \times M\)</span> matrix can be thought of as a collection of M
 N-element vectors stacked side-by-side as columns.</p>
 <p>We write a matrix as</p>
@@ -588,9 +539,9 @@ it is simplest to read and write.</p>
 </div>
 </section>
 <section id="other-linear-algebra-concepts">
-<h3>Other Linear Algebra Concepts<a class="headerlink" href="#other-linear-algebra-concepts" title="Permalink to this headline">#</a></h3>
+<h3>Other Linear Algebra Concepts<a class="headerlink" href="#other-linear-algebra-concepts" title="Permalink to this heading">#</a></h3>
 <section id="transpose">
-<h4>Transpose<a class="headerlink" href="#transpose" title="Permalink to this headline">#</a></h4>
+<h4>Transpose<a class="headerlink" href="#transpose" title="Permalink to this heading">#</a></h4>
 <p>A matrix transpose is an operation that flips all elements of a matrix along the diagonal.</p>
 <p>More formally, the <span class="math notranslate nohighlight">\((i, j)\)</span> element of <span class="math notranslate nohighlight">\(x\)</span> becomes the <span class="math notranslate nohighlight">\((j, i)\)</span> element of
 <span class="math notranslate nohighlight">\(x^T\)</span>.</p>
@@ -631,7 +582,7 @@ x = \begin{bmatrix} 1 &amp; 4 &amp; 7 \\
 </div>
 </section>
 <section id="identity-matrix">
-<h4>Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this headline">#</a></h4>
+<h4>Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permalink to this heading">#</a></h4>
 <p>In linear algebra, one particular matrix acts very similarly to how 1 behaves for scalar numbers.</p>
 <p>This matrix is known as the <em>identity matrix</em> and is given by</p>
 <div class="math notranslate nohighlight">
@@ -678,7 +629,7 @@ y @ I
 </div>
 </section>
 <section id="inverse">
-<h4>Inverse<a class="headerlink" href="#inverse" title="Permalink to this headline">#</a></h4>
+<h4>Inverse<a class="headerlink" href="#inverse" title="Permalink to this heading">#</a></h4>
 <p>If you recall, you learned in your primary education about solving equations for certain variables.</p>
 <p>For example, you might have been given the equation</p>
 <div class="math notranslate nohighlight">
@@ -747,14 +698,14 @@ Check that A @ A inverse is I
 </section>
 </section>
 <section id="portfolios">
-<h2>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this headline">#</a></h2>
+<h2>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this heading">#</a></h2>
 <p>In <a class="reference internal" href="../python_fundamentals/control_flow.html"><span class="doc">control flow</span></a>, we learned to value a stream of payoffs from a single
 asset.</p>
 <p>In this section, we generalize this to value a portfolio of multiple assets, or an asset
 that has easily separable components.</p>
 <p>Vectors and inner products give us a convenient way to organize and calculate these payoffs.</p>
 <section id="static-payoffs">
-<h3>Static Payoffs<a class="headerlink" href="#static-payoffs" title="Permalink to this headline">#</a></h3>
+<h3>Static Payoffs<a class="headerlink" href="#static-payoffs" title="Permalink to this heading">#</a></h3>
 <p>As an example, consider a portfolio with 4 units of asset A, 2.5 units of asset B, and 8 units of
 asset C.</p>
 <p>At a particular point in time, the assets pay <span class="math notranslate nohighlight">\(3\)</span>/unit of asset A, <span class="math notranslate nohighlight">\(5\)</span>/unit of B, and
@@ -845,7 +796,7 @@ Calculating with matrices
 </div>
 </section>
 <section id="npv-of-a-portfolio">
-<h3>NPV of a Portfolio<a class="headerlink" href="#npv-of-a-portfolio" title="Permalink to this headline">#</a></h3>
+<h3>NPV of a Portfolio<a class="headerlink" href="#npv-of-a-portfolio" title="Permalink to this heading">#</a></h3>
 <p>If a set of assets has payoffs over time, we can calculate the NPV of that portfolio in a similar way to the calculation in
 <a class="reference internal" href="../python_fundamentals/control_flow.html#npv"><span class="std std-ref">npv</span></a>.</p>
 <p>First, consider an example with an asset with claims to multiple streams of payoffs which are easily
@@ -965,7 +916,7 @@ us see how many periods are needed to approach the infinite horizon value.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/applied_linalg_40_0.png" src="../_images/applied_linalg_40_0.png" />
+<img alt="../_images/cc51a076d6f4cebd0c3c1eca3fefd439d74dd2479ba2a762b9d72d71061b02b5.png" src="../_images/cc51a076d6f4cebd0c3c1eca3fefd439d74dd2479ba2a762b9d72d71061b02b5.png" />
 </div>
 </div>
 <p>It is also worth noting that the computation of the infinite horizon net present value can be
@@ -1020,7 +971,7 @@ complicated <code class="docutils literal notranslate"><span class="pre">A</span
 linear state-space models with Python <a class="reference external" href="https://python.quantecon.org/linear_models.html">https://python.quantecon.org/linear_models.html</a>).</p>
 </section>
 <section id="unemployment-dynamics">
-<h3>Unemployment Dynamics<a class="headerlink" href="#unemployment-dynamics" title="Permalink to this headline">#</a></h3>
+<h3>Unemployment Dynamics<a class="headerlink" href="#unemployment-dynamics" title="Permalink to this heading">#</a></h3>
 <p>Consider an economy where in any given year, <span class="math notranslate nohighlight">\(\alpha = 5\%\)</span> of workers lose their jobs and
 <span class="math notranslate nohighlight">\(\phi = 10\%\)</span> of unemployed workers find jobs.</p>
 <p>Define the vector <span class="math notranslate nohighlight">\(x_0 = \begin{bmatrix} 900,000 &amp; 100,000 \end{bmatrix}\)</span> as the number of
@@ -1088,10 +1039,10 @@ x_{t+1} = A' x_t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;t&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;t&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/applied_linalg_46_1.png" src="../_images/applied_linalg_46_1.png" />
+<img alt="../_images/deb26552b4cb2976ca1e314cc1e2132f4eb91ed1cd98962396dc9648480a33b2.png" src="../_images/deb26552b4cb2976ca1e314cc1e2132f4eb91ed1cd98962396dc9648480a33b2.png" />
 </div>
 </div>
 <p>Notice that the levels of unemployed an employed workers seem to be heading to constant numbers.</p>
@@ -1105,10 +1056,10 @@ number.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;t&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;t&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/applied_linalg_48_1.png" src="../_images/applied_linalg_48_1.png" />
+<img alt="../_images/6c0820185e2081986a6b339fec2f9ef9f4b90edd83bb08272f0df4dd47278c0e.png" src="../_images/6c0820185e2081986a6b339fec2f9ef9f4b90edd83bb08272f0df4dd47278c0e.png" />
 </div>
 </div>
 <p>The convergence of this system is a property determined by the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
@@ -1158,9 +1109,9 @@ of <span class="math notranslate nohighlight">\(A'\)</span> that corresponds wit
 </section>
 </section>
 <section id="exercises">
-<span id="ex3-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="ex3-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Alice is a stock broker who owns two types of assets: A and B. She owns 100
 units of asset A and 50 units of asset B. The current interest rate is 5%.
 Each of the A assets have a remaining duration of 6 years and pay
@@ -1171,7 +1122,7 @@ multiplication, and dot products to determine whether she can retire.</p>
 <p>(<a class="reference internal" href="#dir3-3-1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Which of the following operations will work and which will
 create errors because of size issues?</p>
 <p>Test out your intuitions in the code cell below</p>
@@ -1196,7 +1147,7 @@ create errors because of size issues?</p>
 <p>(<a class="reference internal" href="#dir3-3-2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Compare the distribution above to the final values of a long simulation.</p>
 <p>If you multiply the distribution by 1,000,000 (the number of workers), do you get (roughly) the same number as the simulation?</p>
 <div class="cell docutils container">
@@ -1223,7 +1174,7 @@ create errors because of size issues?</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./scientific"
         },
         predefinedOutput: true
@@ -1506,7 +1457,7 @@ create errors because of size issues?</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -1648,16 +1599,5 @@ create errors because of size issues?</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

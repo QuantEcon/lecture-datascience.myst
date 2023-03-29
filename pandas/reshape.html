@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Reshape &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -94,6 +105,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pandas/reshape';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/pandas/reshape.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -147,167 +159,33 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tidy-data">
-   Tidy Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reshaping-your-data">
-   Reshaping your Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#long-vs-wide">
-   Long vs Wide
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set-index-reset-index-and-transpose">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     set_index
-    </span>
-   </code>
-   ,
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     reset_index
-    </span>
-   </code>
-   , and Transpose
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stack-and-unstack">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     stack
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     unstack
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stack">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       stack
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unstack">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       unstack
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#melt">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     melt
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pivot-and-pivot-table">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pivot
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pivot_table
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pivot-table">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pivot_table
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-reshaping">
-   Visualizing Reshaping
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       stack
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       unstack
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       melt
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data">Tidy Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-your-data">Reshaping your Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-vs-wide">Long vs Wide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-index-reset-index-and-transpose"><code class="docutils literal notranslate"><span class="pre">set_index</span></code>, <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>, and Transpose</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-and-unstack"><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unstack"><code class="docutils literal notranslate"><span class="pre">unstack</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melt"><code class="docutils literal notranslate"><span class="pre">melt</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pivot-and-pivot-table"><code class="docutils literal notranslate"><span class="pre">pivot</span></code> and <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pivot-table"><code class="docutils literal notranslate"><span class="pre">pivot_table</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-reshaping">Visualizing Reshaping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">melt</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -352,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="reshape">
-<h1>Reshape<a class="headerlink" href="#reshape" title="Permalink to this headline">#</a></h1>
+<h1>Reshape<a class="headerlink" href="#reshape" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="intro.html"><span class="doc">pandas intro</span></a></p></li>
@@ -380,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <section id="tidy-data">
-<h2>Tidy Data<a class="headerlink" href="#tidy-data" title="Permalink to this headline">#</a></h2>
+<h2>Tidy Data<a class="headerlink" href="#tidy-data" title="Permalink to this heading">#</a></h2>
 <p>While pushed more generally in the <code class="docutils literal notranslate"><span class="pre">R</span></code> language, the concept of “<a class="reference external" href="https://en.wikipedia.org/wiki/Tidy_data">tidy data</a>” is helpful in understanding the
 objectives for reshaping data, which in turn makes advanced features like
 <a class="reference internal" href="groupby.html"><span class="doc">groupby</span></a> more seamless.</p>
@@ -393,7 +271,7 @@ sciences, but nevertheless useful for the social sciences.</p>
 <blockquote>
 <div><p>A dataset is messy or tidy depending on how rows, columns and tables are
 matched with observations, variables, and types. In tidy data:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Each variable forms a column.</p></li>
 <li><p>Each observation forms a row.</p></li>
 <li><p>Each type of observational unit forms a table.</p></li>
@@ -422,7 +300,7 @@ analysis easier.  This doesn’t break the tidy format since those examples are
 ephemeral states used in analysis.</p>
 </section>
 <section id="reshaping-your-data">
-<h2>Reshaping your Data<a class="headerlink" href="#reshaping-your-data" title="Permalink to this headline">#</a></h2>
+<h2>Reshaping your Data<a class="headerlink" href="#reshaping-your-data" title="Permalink to this heading">#</a></h2>
 <p>The data you receive is not always in a “shape” that makes it easy to analyze.</p>
 <p>What do we mean by shape? The number of rows and columns in a
 DataFrame and how information is stored in the index and column names.</p>
@@ -443,158 +321,138 @@ these tools will reappear in subsequent lectures.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 9 entries, 0 to 8
-Data columns (total 8 columns):
- #   Column    Non-Null Count  Dtype  
----  ------    --------------  -----  
- 0   Year      9 non-null      int64  
- 1   Player    9 non-null      object 
- 2   Team      9 non-null      object 
- 3   TeamName  9 non-null      object 
- 4   Games     9 non-null      int64  
- 5   Pts       9 non-null      float64
- 6   Assist    9 non-null      float64
- 7   Rebound   9 non-null      float64
-dtypes: float64(3), int64(2), object(3)
-memory usage: 704.0+ bytes
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/bball.csv&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">bball</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">bball</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">bball</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1735,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1735</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1739</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1740</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1742</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1743</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1744</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1745</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:713,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="c1"># open URLs</span>
+<span class="ne">--&gt; </span><span class="mi">713</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span>     <span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">719</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:363,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="c1"># assuming storage_options is to be interpreted as headers</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="c1"># Override compression based on Content-Encoding header</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:265,</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd"> Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd"> the stdlib.</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:214,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:523,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">523</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:632,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">632</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:561,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
+<span class="ne">--&gt; </span><span class="mi">561</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:641,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">641</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+
+<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th>TeamName</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Assist</th>
-      <th>Rebound</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>30.1</td>
-      <td>6.7</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>25.3</td>
-      <td>6.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>51</td>
-      <td>26.4</td>
-      <td>6.1</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>72</td>
-      <td>28.2</td>
-      <td>5.0</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>62</td>
-      <td>25.1</td>
-      <td>4.8</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>68</td>
-      <td>26.4</td>
-      <td>5.4</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>78</td>
-      <td>12.6</td>
-      <td>0.8</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>56</td>
-      <td>15.1</td>
-      <td>1.1</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>23</td>
-      <td>14.2</td>
-      <td>0.7</td>
-      <td>6.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 </section>
 <section id="long-vs-wide">
-<h2>Long vs Wide<a class="headerlink" href="#long-vs-wide" title="Permalink to this headline">#</a></h2>
+<h2>Long vs Wide<a class="headerlink" href="#long-vs-wide" title="Permalink to this heading">#</a></h2>
 <p>Many of these operations change between long and wide DataFrames.</p>
 <p>What does it mean for a DataFrame to be long or wide?</p>
 <p>Here is long possible long-form representation of our basketball data.</p>
@@ -607,361 +465,6 @@ memory usage: 704.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th>TeamName</th>
-      <th>variable</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>79.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>79.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>51.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Games</td>
-      <td>72.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>62.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>68.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Games</td>
-      <td>78.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Games</td>
-      <td>56.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Games</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>30.1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>25.3</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>26.4</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Pts</td>
-      <td>28.2</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>25.1</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>26.4</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Pts</td>
-      <td>12.6</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Pts</td>
-      <td>15.1</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Pts</td>
-      <td>14.2</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>6.7</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>6.6</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Assist</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>4.8</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Assist</td>
-      <td>0.8</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Assist</td>
-      <td>1.1</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Assist</td>
-      <td>0.7</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Rebound</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>And here is a wide-form version.</p>
 <div class="cell docutils container">
@@ -976,179 +479,10 @@ memory usage: 704.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>Player</th>
-      <th colspan="4" halign="left">Curry</th>
-      <th colspan="6" halign="left">Durant</th>
-      <th>...</th>
-      <th colspan="10" halign="left">Ibaka</th>
-    </tr>
-    <tr>
-      <th>variable</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-      <th colspan="2" halign="left">Assist</th>
-      <th colspan="2" halign="left">Games</th>
-      <th colspan="2" halign="left">Pts</th>
-      <th>...</th>
-      <th>Assist</th>
-      <th colspan="3" halign="left">Games</th>
-      <th colspan="3" halign="left">Pts</th>
-      <th colspan="3" halign="left">Rebound</th>
-    </tr>
-    <tr>
-      <th>Team</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>...</th>
-      <th>TOR</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>6.7</td>
-      <td>79.0</td>
-      <td>30.1</td>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>5.0</td>
-      <td>NaN</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>28.2</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>6.6</td>
-      <td>79.0</td>
-      <td>25.3</td>
-      <td>4.5</td>
-      <td>4.8</td>
-      <td>NaN</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>25.1</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>0.7</td>
-      <td>NaN</td>
-      <td>56.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
-      <td>15.1</td>
-      <td>14.2</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>6.1</td>
-      <td>51.0</td>
-      <td>26.4</td>
-      <td>5.1</td>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>26.4</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>3 rows × 24 columns</p>
-</div></div></div>
 </div>
 </section>
 <section id="set-index-reset-index-and-transpose">
-<h2><code class="docutils literal notranslate"><span class="pre">set_index</span></code>, <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>, and Transpose<a class="headerlink" href="#set-index-reset-index-and-transpose" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">set_index</span></code>, <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>, and Transpose<a class="headerlink" href="#set-index-reset-index-and-transpose" title="Permalink to this heading">#</a></h2>
 <p>We have already seen a few basic methods for reshaping a
 DataFrame.</p>
 <ul class="simple">
@@ -1166,95 +500,6 @@ them either columns or drop from DataFrame.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>Team</th>
-      <th>TeamName</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Assist</th>
-      <th>Rebound</th>
-    </tr>
-    <tr>
-      <th>Player</th>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="3" valign="top">Curry</th>
-      <th>2015</th>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>30.1</td>
-      <td>6.7</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>25.3</td>
-      <td>6.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>51</td>
-      <td>26.4</td>
-      <td>6.1</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Durant</th>
-      <th>2015</th>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>72</td>
-      <td>28.2</td>
-      <td>5.0</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>62</td>
-      <td>25.1</td>
-      <td>4.8</td>
-      <td>8.3</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1263,114 +508,14 @@ them either columns or drop from DataFrame.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>Player</th>
-      <th colspan="3" halign="left">Curry</th>
-      <th colspan="3" halign="left">Durant</th>
-      <th colspan="3" halign="left">Ibaka</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2017</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2017</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2016</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Team</th>
-      <td>GSW</td>
-      <td>GSW</td>
-      <td>GSW</td>
-      <td>OKC</td>
-      <td>GSW</td>
-      <td>GSW</td>
-      <td>OKC</td>
-      <td>ORL</td>
-      <td>TOR</td>
-    </tr>
-    <tr>
-      <th>TeamName</th>
-      <td>Warriors</td>
-      <td>Warriors</td>
-      <td>Warriors</td>
-      <td>Thunder</td>
-      <td>Warriors</td>
-      <td>Warriors</td>
-      <td>Thunder</td>
-      <td>Magic</td>
-      <td>Raptors</td>
-    </tr>
-    <tr>
-      <th>Games</th>
-      <td>79</td>
-      <td>79</td>
-      <td>51</td>
-      <td>72</td>
-      <td>62</td>
-      <td>68</td>
-      <td>78</td>
-      <td>56</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <th>Pts</th>
-      <td>30.1</td>
-      <td>25.3</td>
-      <td>26.4</td>
-      <td>28.2</td>
-      <td>25.1</td>
-      <td>26.4</td>
-      <td>12.6</td>
-      <td>15.1</td>
-      <td>14.2</td>
-    </tr>
-    <tr>
-      <th>Assist</th>
-      <td>6.7</td>
-      <td>6.6</td>
-      <td>6.1</td>
-      <td>5.0</td>
-      <td>4.8</td>
-      <td>5.4</td>
-      <td>0.8</td>
-      <td>1.1</td>
-      <td>0.7</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="stack-and-unstack">
-<h2><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#stack-and-unstack" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#stack-and-unstack" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code> methods operate directly on the index
 and/or column labels.</p>
 <section id="stack">
-<h3><code class="docutils literal notranslate"><span class="pre">stack</span></code><a class="headerlink" href="#stack" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">stack</span></code><a class="headerlink" href="#stack" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">stack</span></code> is used to move certain levels of the column labels into the
 index (i.e. moving from wide to long)</p>
 <p>Let’s take <code class="docutils literal notranslate"><span class="pre">ball_wide</span></code> as an example.</p>
@@ -1380,175 +525,6 @@ index (i.e. moving from wide to long)</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>Player</th>
-      <th colspan="4" halign="left">Curry</th>
-      <th colspan="6" halign="left">Durant</th>
-      <th>...</th>
-      <th colspan="10" halign="left">Ibaka</th>
-    </tr>
-    <tr>
-      <th>variable</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-      <th colspan="2" halign="left">Assist</th>
-      <th colspan="2" halign="left">Games</th>
-      <th colspan="2" halign="left">Pts</th>
-      <th>...</th>
-      <th>Assist</th>
-      <th colspan="3" halign="left">Games</th>
-      <th colspan="3" halign="left">Pts</th>
-      <th colspan="3" halign="left">Rebound</th>
-    </tr>
-    <tr>
-      <th>Team</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>...</th>
-      <th>TOR</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>6.7</td>
-      <td>79.0</td>
-      <td>30.1</td>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>5.0</td>
-      <td>NaN</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>28.2</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>6.6</td>
-      <td>79.0</td>
-      <td>25.3</td>
-      <td>4.5</td>
-      <td>4.8</td>
-      <td>NaN</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>25.1</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>0.7</td>
-      <td>NaN</td>
-      <td>56.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
-      <td>15.1</td>
-      <td>14.2</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>6.1</td>
-      <td>51.0</td>
-      <td>26.4</td>
-      <td>5.1</td>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>26.4</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>3 rows × 24 columns</p>
-</div></div></div>
 </div>
 <p>Suppose that we want to be able to use the <code class="docutils literal notranslate"><span class="pre">mean</span></code> method to compute the
 average value of each stat for each player, regardless of year or team.</p>
@@ -1560,188 +536,12 @@ average value of each stat for each player, regardless of year or team.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Player</th>
-      <th colspan="4" halign="left">Curry</th>
-      <th colspan="4" halign="left">Durant</th>
-      <th colspan="4" halign="left">Ibaka</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>variable</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th>Team</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">2015</th>
-      <th>GSW</th>
-      <td>6.7</td>
-      <td>79.0</td>
-      <td>30.1</td>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>OKC</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>5.0</td>
-      <td>72.0</td>
-      <td>28.2</td>
-      <td>8.2</td>
-      <td>0.8</td>
-      <td>78.0</td>
-      <td>12.6</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">2016</th>
-      <th>GSW</th>
-      <td>6.6</td>
-      <td>79.0</td>
-      <td>25.3</td>
-      <td>4.5</td>
-      <td>4.8</td>
-      <td>62.0</td>
-      <td>25.1</td>
-      <td>8.3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ORL</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.1</td>
-      <td>56.0</td>
-      <td>15.1</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>TOR</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.7</td>
-      <td>23.0</td>
-      <td>14.2</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <th>GSW</th>
-      <td>6.1</td>
-      <td>51.0</td>
-      <td>26.4</td>
-      <td>5.1</td>
-      <td>5.4</td>
-      <td>68.0</td>
-      <td>26.4</td>
-      <td>6.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Now, we can compute the statistic we are after.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span> <span class="o">=</span> <span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">player_stats</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player  variable
-Curry   Assist       6.466667
-        Games       69.666667
-        Pts         27.266667
-        Rebound      5.000000
-Durant  Assist       5.066667
-        Games       67.333333
-        Pts         26.566667
-        Rebound      7.766667
-Ibaka   Assist       0.866667
-        Games       52.333333
-        Pts         13.966667
-        Rebound      6.800000
-dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1757,262 +557,11 @@ left with column levels for Team and variable.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th>variable</th>
-      <th colspan="4" halign="left">Assist</th>
-      <th colspan="4" halign="left">Games</th>
-      <th colspan="4" halign="left">Pts</th>
-      <th colspan="4" halign="left">Rebound</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>Team</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th>Player</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="3" valign="top">2015</th>
-      <th>Curry</th>
-      <td>6.7</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>79.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>30.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <td>NaN</td>
-      <td>5.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>28.2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Ibaka</th>
-      <td>NaN</td>
-      <td>0.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>12.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">2016</th>
-      <th>Curry</th>
-      <td>6.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>79.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>25.3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>4.5</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <td>4.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>25.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>8.3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Ibaka</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.1</td>
-      <td>0.7</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>56.0</td>
-      <td>23.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>15.1</td>
-      <td>14.2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2017</th>
-      <th>Curry</th>
-      <td>6.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>51.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>26.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>5.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <td>5.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>26.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>6.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Now we can compute the mean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bball_wide</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>variable  Team
-Assist    GSW      5.92
-          OKC      2.90
-          ORL      1.10
-          TOR      0.70
-Games     GSW     67.80
-          OKC     75.00
-          ORL     56.00
-          TOR     23.00
-Pts       GSW     26.66
-          OKC     20.40
-          ORL     15.10
-          TOR     14.20
-Rebound   GSW      6.02
-          OKC      7.50
-          ORL      6.80
-          TOR      6.80
-dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2035,120 +584,6 @@ relative position.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>variable</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="3" valign="top">2015</th>
-      <th>Curry</th>
-      <th>GSW</th>
-      <td>6.7</td>
-      <td>79.0</td>
-      <td>30.1</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <th>OKC</th>
-      <td>5.0</td>
-      <td>72.0</td>
-      <td>28.2</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>Ibaka</th>
-      <th>OKC</th>
-      <td>0.8</td>
-      <td>78.0</td>
-      <td>12.6</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th rowspan="4" valign="top">2016</th>
-      <th>Curry</th>
-      <th>GSW</th>
-      <td>6.6</td>
-      <td>79.0</td>
-      <td>25.3</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <th>GSW</th>
-      <td>4.8</td>
-      <td>62.0</td>
-      <td>25.1</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">Ibaka</th>
-      <th>ORL</th>
-      <td>1.1</td>
-      <td>56.0</td>
-      <td>15.1</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>TOR</th>
-      <td>0.7</td>
-      <td>23.0</td>
-      <td>14.2</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2017</th>
-      <th>Curry</th>
-      <th>GSW</th>
-      <td>6.1</td>
-      <td>51.0</td>
-      <td>26.4</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <th>GSW</th>
-      <td>5.4</td>
-      <td>68.0</td>
-      <td>26.4</td>
-      <td>6.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>In the example above, we started with one level on the index (just the year) and
 stacked two levels to end up with a three-level index.</p>
@@ -2157,7 +592,7 @@ level and that their order matched the order we passed in our list argument to
 <code class="docutils literal notranslate"><span class="pre">level</span></code>.</p>
 </section>
 <section id="unstack">
-<h3><code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#unstack" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#unstack" title="Permalink to this heading">#</a></h3>
 <p>Now suppose that we wanted to see a bar chart of each player’s stats.</p>
 <p>This chart should have one “section” for each player and a different colored
 bar for each variable.</p>
@@ -2175,24 +610,6 @@ on the horizontal (x) axis and make a new line/bar/etc. for each column.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player  variable
-Curry   Assist       6.466667
-        Games       69.666667
-        Pts         27.266667
-        Rebound      5.000000
-Durant  Assist       5.066667
-        Games       67.333333
-        Pts         26.566667
-        Rebound      7.766667
-Ibaka   Assist       0.866667
-        Games       52.333333
-        Pts         13.966667
-        Rebound      6.800000
-dtype: float64
-</pre></div>
-</div>
-</div>
 </div>
 <p>We now need to rotate the variable level of the index up to be column layers.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">unstack</span></code> method for this.</p>
@@ -2202,63 +619,6 @@ dtype: float64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>variable</th>
-      <th>Assist</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Rebound</th>
-    </tr>
-    <tr>
-      <th>Player</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Curry</th>
-      <td>6.466667</td>
-      <td>69.666667</td>
-      <td>27.266667</td>
-      <td>5.000000</td>
-    </tr>
-    <tr>
-      <th>Durant</th>
-      <td>5.066667</td>
-      <td>67.333333</td>
-      <td>26.566667</td>
-      <td>7.766667</td>
-    </tr>
-    <tr>
-      <th>Ibaka</th>
-      <td>0.866667</td>
-      <td>52.333333</td>
-      <td>13.966667</td>
-      <td>6.800000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>And we can make our plot!</p>
 <div class="cell docutils container">
@@ -2266,12 +626,6 @@ dtype: float64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;Player&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/reshape_28_1.png" src="../_images/reshape_28_1.png" />
 </div>
 </div>
 <p>This particular visualization would be helpful if we wanted to see which stats
@@ -2290,76 +644,12 @@ name as column names.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-    </tr>
-    <tr>
-      <th>variable</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Assist</th>
-      <td>6.466667</td>
-      <td>5.066667</td>
-      <td>0.866667</td>
-    </tr>
-    <tr>
-      <th>Games</th>
-      <td>69.666667</td>
-      <td>67.333333</td>
-      <td>52.333333</td>
-    </tr>
-    <tr>
-      <th>Pts</th>
-      <td>27.266667</td>
-      <td>26.566667</td>
-      <td>13.966667</td>
-    </tr>
-    <tr>
-      <th>Rebound</th>
-      <td>5.000000</td>
-      <td>7.766667</td>
-      <td>6.800000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">player_stats</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;variable&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/reshape_31_1.png" src="../_images/reshape_31_1.png" />
 </div>
 </div>
 <p>Now we can use the chart to make a number of statements about players:</p>
@@ -2386,7 +676,7 @@ levels to <code class="docutils literal notranslate"><span class="pre">unstack</
 </div>
 </section>
 <section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
 <p>In some ways <code class="docutils literal notranslate"><span class="pre">set_index</span></code>, <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>, <code class="docutils literal notranslate"><span class="pre">stack</span></code>, and <code class="docutils literal notranslate"><span class="pre">unstack</span></code>
 are the “most fundamental” reshaping operations…</p>
 <p>The other operations we discuss can be formulated with these
@@ -2397,7 +687,7 @@ levels <strong>U</strong>p</p>
 </section>
 </section>
 <section id="melt">
-<h2><code class="docutils literal notranslate"><span class="pre">melt</span></code><a class="headerlink" href="#melt" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">melt</span></code><a class="headerlink" href="#melt" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">melt</span></code> method is used to move from wide to long form.</p>
 <p>It can be used to move all of the “values” stored in your DataFrame to a
 single column with all other columns being used to contain identifying
@@ -2414,138 +704,6 @@ will be deleted.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th>TeamName</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Assist</th>
-      <th>Rebound</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>30.1</td>
-      <td>6.7</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>25.3</td>
-      <td>6.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>51</td>
-      <td>26.4</td>
-      <td>6.1</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>72</td>
-      <td>28.2</td>
-      <td>5.0</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>62</td>
-      <td>25.1</td>
-      <td>4.8</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>68</td>
-      <td>26.4</td>
-      <td>5.4</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>78</td>
-      <td>12.6</td>
-      <td>0.8</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>56</td>
-      <td>15.1</td>
-      <td>1.1</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>23</td>
-      <td>14.2</td>
-      <td>0.7</td>
-      <td>6.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2554,365 +712,10 @@ will be deleted.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th>TeamName</th>
-      <th>variable</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>79.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>79.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>51.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Games</td>
-      <td>72.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>62.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Games</td>
-      <td>68.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Games</td>
-      <td>78.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Games</td>
-      <td>56.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Games</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>30.1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>25.3</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>26.4</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Pts</td>
-      <td>28.2</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>25.1</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Pts</td>
-      <td>26.4</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Pts</td>
-      <td>12.6</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Pts</td>
-      <td>15.1</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Pts</td>
-      <td>14.2</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>6.7</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>6.6</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Assist</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>4.8</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Assist</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Assist</td>
-      <td>0.8</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Assist</td>
-      <td>1.1</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Assist</td>
-      <td>0.7</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Rebound</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>Rebound</td>
-      <td>6.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that the columns we specified as <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> remained columns, but all
 other columns were put into two new columns:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code>: This has dtype string and contains the former column names.
 as values</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: This has the former values.</p></li>
@@ -2925,7 +728,7 @@ above.</p>
 </div>
 </section>
 <section id="pivot-and-pivot-table">
-<h2><code class="docutils literal notranslate"><span class="pre">pivot</span></code> and <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code><a class="headerlink" href="#pivot-and-pivot-table" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">pivot</span></code> and <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code><a class="headerlink" href="#pivot-and-pivot-table" title="Permalink to this heading">#</a></h2>
 <p>The next two reshaping methods that we will use are closely related.</p>
 <p>Some of you might even already be familiar with these ideas because you
 have previously used <em>pivot tables</em> in Excel.</p>
@@ -2951,57 +754,10 @@ DataFrame values that correspond to that index/column pair.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>28.2</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can replicate <code class="docutils literal notranslate"><span class="pre">pivot</span></code> using three of the fundamental operations
 from above:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Call <code class="docutils literal notranslate"><span class="pre">set_index</span></code> with the <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code> arguments</p></li>
 <li><p>Extract the <code class="docutils literal notranslate"><span class="pre">values</span></code> column</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">unstack</span></code> the columns level of the new index</p></li>
@@ -3013,53 +769,6 @@ from above:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>28.2</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>One important thing to be aware of is that in order for <code class="docutils literal notranslate"><span class="pre">pivot</span></code> to
 work, the index/column pairs must be <em>unique</em>!</p>
@@ -3072,94 +781,12 @@ work, the index/column pairs must be <em>unique</em>!</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Ibaka shows up twice in 2016 because he was traded mid-season from</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># the Orlando Magic to the Toronto Raptors</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">bball</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/frame.py:8564,</span> in <span class="ni">DataFrame.pivot</span><span class="nt">(self, index, columns, values)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8558</span> <span class="nd">@Substitution</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8559</span> <span class="nd">@Appender</span><span class="p">(</span><span class="n">_shared_docs</span><span class="p">[</span><span class="s2">&quot;pivot&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">8560</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">8561</span> <span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">8562</span>     <span class="kn">from</span> <span class="nn">pandas.core.reshape.pivot</span> <span class="kn">import</span> <span class="n">pivot</span>
-<span class="ne">-&gt; </span><span class="mi">8564</span>     <span class="k">return</span> <span class="n">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/pivot.py:540,</span> in <span class="ni">pivot</span><span class="nt">(data, index, columns, values)</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span>         <span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_constructor_sliced</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">values</span><span class="p">]</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">multiindex</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># error: Argument 1 to &quot;unstack&quot; of &quot;DataFrame&quot; has incompatible type &quot;Union</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># [List[Any], ExtensionArray, ndarray[Any, Any], Index, Series]&quot;; expected</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="c1"># &quot;Hashable&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">540</span> <span class="k">return</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">columns_listlike</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/series.py:4455,</span> in <span class="ni">Series.unstack</span><span class="nt">(self, level, fill_value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4412</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4413</span><span class="sd"> Unstack, also known as pivot, Series with MultiIndex to produce DataFrame.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4414</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4451</span><span class="sd"> b    2    4</span>
-<span class="g g-Whitespace">   </span><span class="mi">4452</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4453</span> <span class="kn">from</span> <span class="nn">pandas.core.reshape.reshape</span> <span class="kn">import</span> <span class="n">unstack</span>
-<span class="ne">-&gt; </span><span class="mi">4455</span> <span class="k">return</span> <span class="n">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py:489,</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="k">if</span> <span class="n">is_1d_only_ea_dtype</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>     <span class="k">return</span> <span class="n">_unstack_extension_series</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">489</span> <span class="n">unstacker</span> <span class="o">=</span> <span class="n">_Unstacker</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">constructor</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">_constructor_expanddim</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">return</span> <span class="n">unstacker</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">obj</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">value_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py:137,</span> in <span class="ni">_Unstacker.__init__</span><span class="nt">(self, index, level, constructor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">if</span> <span class="n">num_cells</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="sa">f</span><span class="s2">&quot;The following operation may generate </span><span class="si">{</span><span class="n">num_cells</span><span class="si">}</span><span class="s2"> cells &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>         <span class="sa">f</span><span class="s2">&quot;in the resulting pandas object.&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="n">PerformanceWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">137</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_selectors</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py:189,</span> in <span class="ni">_Unstacker._make_selectors</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="n">mask</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">189</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Index contains duplicate entries, cannot reshape&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="bp">self</span><span class="o">.</span><span class="n">group_index</span> <span class="o">=</span> <span class="n">comp_index</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
-
-<span class="ne">ValueError</span>: Index contains duplicate entries, cannot reshape
-</pre></div>
-</div>
-</div>
 </div>
 <section id="pivot-table">
-<h3><code class="docutils literal notranslate"><span class="pre">pivot_table</span></code><a class="headerlink" href="#pivot-table" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">pivot_table</span></code><a class="headerlink" href="#pivot-table" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> method is a generalization of <code class="docutils literal notranslate"><span class="pre">pivot</span></code>.</p>
 <p>It overcomes two limitations of <code class="docutils literal notranslate"><span class="pre">pivot</span></code>:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>It allows you to choose multiple columns for the index/columns/values
 arguments.</p></li>
 <li><p>It allows you to deal with duplicate entries by
@@ -3171,138 +798,6 @@ having you choose how to combine them.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th>TeamName</th>
-      <th>Games</th>
-      <th>Pts</th>
-      <th>Assist</th>
-      <th>Rebound</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2015</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>30.1</td>
-      <td>6.7</td>
-      <td>5.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2016</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>79</td>
-      <td>25.3</td>
-      <td>6.6</td>
-      <td>4.5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2017</td>
-      <td>Curry</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>51</td>
-      <td>26.4</td>
-      <td>6.1</td>
-      <td>5.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2015</td>
-      <td>Durant</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>72</td>
-      <td>28.2</td>
-      <td>5.0</td>
-      <td>8.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2016</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>62</td>
-      <td>25.1</td>
-      <td>4.8</td>
-      <td>8.3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2017</td>
-      <td>Durant</td>
-      <td>GSW</td>
-      <td>Warriors</td>
-      <td>68</td>
-      <td>26.4</td>
-      <td>5.4</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2015</td>
-      <td>Ibaka</td>
-      <td>OKC</td>
-      <td>Thunder</td>
-      <td>78</td>
-      <td>12.6</td>
-      <td>0.8</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>ORL</td>
-      <td>Magic</td>
-      <td>56</td>
-      <td>15.1</td>
-      <td>1.1</td>
-      <td>6.8</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2016</td>
-      <td>Ibaka</td>
-      <td>TOR</td>
-      <td>Raptors</td>
-      <td>23</td>
-      <td>14.2</td>
-      <td>0.7</td>
-      <td>6.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Notice that we can replicate the functionality of <code class="docutils literal notranslate"><span class="pre">pivot</span></code> using <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> if we pass
 the same arguments.</p>
@@ -3312,53 +807,6 @@ the same arguments.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>28.2</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>But we can also choose multiple columns to be used in
 index/columns/values.</p>
@@ -3368,81 +816,6 @@ index/columns/values.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th>Team</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">2015</th>
-      <th>GSW</th>
-      <td>30.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>OKC</th>
-      <td>NaN</td>
-      <td>28.2</td>
-      <td>12.6</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">2016</th>
-      <th>GSW</th>
-      <td>25.3</td>
-      <td>25.1</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ORL</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>15.1</td>
-    </tr>
-    <tr>
-      <th>TOR</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>14.2</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <th>GSW</th>
-      <td>26.4</td>
-      <td>26.4</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3450,83 +823,6 @@ index/columns/values.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>Player</th>
-      <th>Curry</th>
-      <th colspan="2" halign="left">Durant</th>
-      <th colspan="3" halign="left">Ibaka</th>
-    </tr>
-    <tr>
-      <th>Team</th>
-      <th>GSW</th>
-      <th>GSW</th>
-      <th>OKC</th>
-      <th>OKC</th>
-      <th>ORL</th>
-      <th>TOR</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>NaN</td>
-      <td>28.2</td>
-      <td>12.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>15.1</td>
-      <td>14.2</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>AND we can deal with duplicated index/column pairs.</p>
 <div class="cell docutils container">
@@ -3540,58 +836,6 @@ index/columns/values.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>28.2</td>
-      <td>12.60</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-      <td>14.65</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> handles duplicate index/column pairs using an aggregation.</p>
 <p>By default, the aggregation is the mean.</p>
@@ -3606,58 +850,6 @@ associated values of 2 and 5.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>28.2</td>
-      <td>12.6</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-      <td>15.1</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>Maybe we wanted to count how many values there were.</p>
 <div class="cell docutils container">
@@ -3666,58 +858,6 @@ associated values of 2 and 5.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>We can even pass multiple aggregation functions!</p>
 <div class="cell docutils container">
@@ -3726,82 +866,6 @@ associated values of 2 and 5.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3" halign="left">max</th>
-      <th colspan="3" halign="left">len</th>
-    </tr>
-    <tr>
-      <th>Player</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-      <th>Curry</th>
-      <th>Durant</th>
-      <th>Ibaka</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015</th>
-      <td>30.1</td>
-      <td>28.2</td>
-      <td>12.6</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>25.3</td>
-      <td>25.1</td>
-      <td>15.1</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>26.4</td>
-      <td>26.4</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-shp-dir3">
 <p class="admonition-title">Exercise</p>
@@ -3810,7 +874,7 @@ associated values of 2 and 5.</p>
 </section>
 </section>
 <section id="visualizing-reshaping">
-<h2>Visualizing Reshaping<a class="headerlink" href="#visualizing-reshaping" title="Permalink to this headline">#</a></h2>
+<h2>Visualizing Reshaping<a class="headerlink" href="#visualizing-reshaping" title="Permalink to this heading">#</a></h2>
 <p>Now that you have learned the basics and had a chance to experiment,
 we will use some generic data to provide a visualization of what the above
 reshape operations do.</p>
@@ -3832,82 +896,6 @@ reshape operations do.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 4 entries, 0 to 3
-Data columns (total 5 columns):
- #   Column  Non-Null Count  Dtype 
----  ------  --------------  ----- 
- 0   A       4 non-null      int64 
- 1   B       4 non-null      object
- 2   C       4 non-null      int64 
- 3   D       4 non-null      int64 
- 4   E       4 non-null      int64 
-dtypes: int64(4), object(1)
-memory usage: 288.0+ bytes
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-      <th>D</th>
-      <th>E</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>x</td>
-      <td>1</td>
-      <td>10</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>y</td>
-      <td>2</td>
-      <td>20</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>x</td>
-      <td>1</td>
-      <td>30</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>z</td>
-      <td>4</td>
-      <td>20</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3916,68 +904,6 @@ memory usage: 288.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>C</th>
-      <th>D</th>
-      <th>E</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th>B</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">0</th>
-      <th>x</th>
-      <td>1</td>
-      <td>10</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td>2</td>
-      <td>20</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">1</th>
-      <th>x</th>
-      <td>1</td>
-      <td>30</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>z</th>
-      <td>4</td>
-      <td>20</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3986,64 +912,9 @@ memory usage: 288.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th>A</th>
-      <th colspan="2" halign="left">0</th>
-      <th colspan="2" halign="left">1</th>
-    </tr>
-    <tr>
-      <th>B</th>
-      <th>x</th>
-      <th>y</th>
-      <th>x</th>
-      <th>z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>C</th>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>D</th>
-      <td>10</td>
-      <td>20</td>
-      <td>30</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>E</th>
-      <td>2</td>
-      <td>1</td>
-      <td>5</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <section id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">stack</span></code> and <code class="docutils literal notranslate"><span class="pre">unstack</span></code><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Below is an animation that shows how stacking works.</p>
 <figure class="align-default">
 <img alt="stack.gif" src="../_images/stack.gif" />
@@ -4054,91 +925,11 @@ memory usage: 288.0+ bytes
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>C</th>
-      <th>D</th>
-      <th>E</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th>B</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">0</th>
-      <th>x</th>
-      <td>1</td>
-      <td>10</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td>2</td>
-      <td>20</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">1</th>
-      <th>x</th>
-      <td>1</td>
-      <td>30</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>z</th>
-      <td>4</td>
-      <td>20</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2_stack</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
 <span class="n">df2_stack</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A  B   
-0  x  C     1
-      D    10
-      E     2
-   y  C     2
-      D    20
-      E     1
-1  x  C     1
-      D    30
-      E     5
-   z  C     4
-      D    20
-      E     4
-dtype: int64
 </pre></div>
 </div>
 </div>
@@ -4153,68 +944,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>C</th>
-      <th>D</th>
-      <th>E</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th>B</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">0</th>
-      <th>x</th>
-      <td>1</td>
-      <td>10</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>y</th>
-      <td>2</td>
-      <td>20</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">1</th>
-      <th>x</th>
-      <td>1</td>
-      <td>30</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>z</th>
-      <td>4</td>
-      <td>20</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4222,90 +951,10 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3" halign="left">C</th>
-      <th colspan="3" halign="left">D</th>
-      <th colspan="3" halign="left">E</th>
-    </tr>
-    <tr>
-      <th>B</th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-    </tr>
-    <tr>
-      <th>A</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>NaN</td>
-      <td>10.0</td>
-      <td>20.0</td>
-      <td>NaN</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>4.0</td>
-      <td>30.0</td>
-      <td>NaN</td>
-      <td>20.0</td>
-      <td>5.0</td>
-      <td>NaN</td>
-      <td>4.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="id2">
-<h3><code class="docutils literal notranslate"><span class="pre">melt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">melt</span></code><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>As noted above, the <code class="docutils literal notranslate"><span class="pre">melt</span></code> method transforms data from wide to long in form.</p>
 <p>Here’s a visualization of that operation.</p>
 <figure class="align-default">
@@ -4317,68 +966,6 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
-      <th>D</th>
-      <th>E</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>x</td>
-      <td>1</td>
-      <td>10</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>y</td>
-      <td>2</td>
-      <td>20</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>x</td>
-      <td>1</td>
-      <td>30</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>z</td>
-      <td>4</td>
-      <td>20</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4387,126 +974,13 @@ dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>variable</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>x</td>
-      <td>C</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>y</td>
-      <td>C</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>x</td>
-      <td>C</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>z</td>
-      <td>C</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>x</td>
-      <td>D</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>y</td>
-      <td>D</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1</td>
-      <td>x</td>
-      <td>D</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>1</td>
-      <td>z</td>
-      <td>D</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0</td>
-      <td>x</td>
-      <td>E</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0</td>
-      <td>y</td>
-      <td>E</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1</td>
-      <td>x</td>
-      <td>E</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1</td>
-      <td>z</td>
-      <td>E</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 </section>
 <section id="exercises">
-<span id="pd-shp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="pd-shp-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This one is challenging</p>
@@ -4554,7 +1028,7 @@ level of column labels. This is ok.</p>
 <p>(<a class="reference internal" href="#pd-shp-dir1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>What do you think would happen if we wrote <code class="docutils literal notranslate"><span class="pre">bball.melt(id_vars=[&quot;Year&quot;,</span> <span class="pre">&quot;Player&quot;])</span></code>
 rather than <code class="docutils literal notranslate"><span class="pre">bball.melt(id_vars=[&quot;Year&quot;,</span> <span class="pre">&quot;Player&quot;,</span> <span class="pre">&quot;Team&quot;,</span> <span class="pre">&quot;TeamName&quot;])</span></code>?
@@ -4578,7 +1052,7 @@ above</p>
 <p>(<a class="reference internal" href="#pd-shp-dir2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>First, take a breath… That was a lot to take in.</p></li>
 <li><p>Can you think of a reason to ever use <code class="docutils literal notranslate"><span class="pre">pivot</span></code> rather than
@@ -4605,7 +1079,7 @@ each of the values in the resultant pivot table.</p></li>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./pandas"
         },
         predefinedOutput: true
@@ -4888,7 +1362,7 @@ each of the values in the resultant pivot table.</p></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -5030,16 +1504,5 @@ each of the values in the resultant pivot table.</p></li>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Intermediate Plotting &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -94,6 +105,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pandas/matplotlib';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/pandas/matplotlib.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -147,119 +159,32 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-want-operator-replicate-a-professional-figure">
-   The Want Operator: Replicate a Professional Figure
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data">
-   Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#warmup">
-   Warmup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-cleaning">
-   Data Cleaning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-the-plot">
-   Constructing the Plot
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subplot-spacing-fig-tight-layout">
-     Subplot Spacing:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       fig.tight_layout
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#properties-of-the-figure">
-     Properties of the Figure
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#properties-of-an-axes">
-     Properties of an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Axes
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#transforms-and-lines">
-     Transforms and Lines
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#annotations">
-     Annotations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#saving-the-figure">
-   Saving the Figure
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-want-operator-replicate-a-professional-figure">The Want Operator: Replicate a Professional Figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup">Warmup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-plot">Constructing the Plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot-spacing-fig-tight-layout">Subplot Spacing: <code class="docutils literal notranslate"><span class="pre">fig.tight_layout</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-figure">Properties of the Figure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-an-axes">Properties of an <code class="docutils literal notranslate"><span class="pre">Axes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms-and-lines">Transforms and Lines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-figure">Saving the Figure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -304,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="intermediate-plotting">
-<h1>Intermediate Plotting<a class="headerlink" href="#intermediate-plotting" title="Permalink to this headline">#</a></h1>
+<h1>Intermediate Plotting<a class="headerlink" href="#intermediate-plotting" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="intro.html"><span class="doc">Introduction</span></a></p></li>
@@ -347,7 +272,7 @@ of a Jupyter notebook</p></li>
 </div>
 </div>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>We have already seen a few examples of basic visualizations created
 using the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method for a DataFrame.</p>
 <p>When we use the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method, pandas uses a package called
@@ -357,7 +282,7 @@ the DataFrame <code class="docutils literal notranslate"><span class="pre">.plot
 use matplotlib directly to unlock unlimited control over our figures.</p>
 </section>
 <section id="the-want-operator-replicate-a-professional-figure">
-<h2>The Want Operator: Replicate a Professional Figure<a class="headerlink" href="#the-want-operator-replicate-a-professional-figure" title="Permalink to this headline">#</a></h2>
+<h2>The Want Operator: Replicate a Professional Figure<a class="headerlink" href="#the-want-operator-replicate-a-professional-figure" title="Permalink to this heading">#</a></h2>
 <p>Visualization is a complex subject.</p>
 <p><a class="reference external" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&amp;field-keywords=data+visualization&amp;rh=n%3A283155%2Ck%3Adata+visualization">Many
 books</a>
@@ -381,7 +306,7 @@ the lecture is to show what is possible and expose you a variety of the
 methods you can use.</p>
 </section>
 <section id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h2>
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
 <p>Let’s get the data.</p>
 <p>First, we create a Series containing the date of each iPhone
 announcement that appears in the FT original chart.</p>
@@ -561,9 +486,9 @@ weeks before the first announcement.</p>
 </div>
 </section>
 <section id="warmup">
-<h2>Warmup<a class="headerlink" href="#warmup" title="Permalink to this headline">#</a></h2>
+<h2>Warmup<a class="headerlink" href="#warmup" title="Permalink to this heading">#</a></h2>
 <p>Matplotlib figures are composed two main types of Python objects:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Figure</span></code>: represents the entirety of the visualization</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Axes</span></code>: A (potentially full) subset of the figure on which things
 are drawn</p></li>
@@ -594,7 +519,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_7_0.png" src="../_images/matplotlib_7_0.png" />
+<img alt="../_images/23361741a724223d8d5d3e31a7925fdee66e34f7ddafd24509e24a3c1ecce532.png" src="../_images/23361741a724223d8d5d3e31a7925fdee66e34f7ddafd24509e24a3c1ecce532.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -607,7 +532,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_8_0.png" src="../_images/matplotlib_8_0.png" />
+<img alt="../_images/810dacb690872115e86119863cd591b121f7e109d61a4a8ab1160c04ce59aae3.png" src="../_images/810dacb690872115e86119863cd591b121f7e109d61a4a8ab1160c04ce59aae3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -618,7 +543,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_9_0.png" src="../_images/matplotlib_9_0.png" />
+<img alt="../_images/4f74467cafcceaedc175491f5126abee8adeeefadc2639ab7497c675367003bd.png" src="../_images/4f74467cafcceaedc175491f5126abee8adeeefadc2639ab7497c675367003bd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -629,7 +554,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_10_0.png" src="../_images/matplotlib_10_0.png" />
+<img alt="../_images/7d10a93138fd027d166ecc70ca652ae41f7254cf3895851375d4d8be41adcb5c.png" src="../_images/7d10a93138fd027d166ecc70ca652ae41f7254cf3895851375d4d8be41adcb5c.png" />
 </div>
 </div>
 <p>We can also create a Figure and Axes beforehand and then tell pandas to
@@ -654,7 +579,7 @@ type(axs):  &lt;class &#39;numpy.ndarray&#39;&gt;
 axs2.shape:  (2,)
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_12_1.png" src="../_images/matplotlib_12_1.png" />
+<img alt="../_images/c51ae8acc2c21f729bcafd4bcf04132ac7bd878c078575dfc40c51ba4ecbe44c.png" src="../_images/c51ae8acc2c21f729bcafd4bcf04132ac7bd878c078575dfc40c51ba4ecbe44c.png" />
 </div>
 </div>
 <p>We can plot from our DataFrame directly on our Axes objects by setting
@@ -668,7 +593,7 @@ the <code class="docutils literal notranslate"><span class="pre">ax</span></code
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_14_0.png" src="../_images/matplotlib_14_0.png" />
+<img alt="../_images/5b6158f1d9558295f2cdc954e0d3e11eb5729c13aa899a87551b1f52fde2a264.png" src="../_images/5b6158f1d9558295f2cdc954e0d3e11eb5729c13aa899a87551b1f52fde2a264.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir2">
@@ -681,7 +606,7 @@ the <code class="docutils literal notranslate"><span class="pre">ax</span></code
 </div>
 </section>
 <section id="data-cleaning">
-<h2>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this headline">#</a></h2>
+<h2>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h2>
 <p>Let’s continue on our path to recreating the Financial Times
 visualization from above.</p>
 <p>Before we can actually make the plot, we first have to clean the data.</p>
@@ -1275,7 +1200,7 @@ each announcement date to 100 and scale all neighbors accordingly.</p>
 </div>
 </section>
 <section id="constructing-the-plot">
-<h2>Constructing the Plot<a class="headerlink" href="#constructing-the-plot" title="Permalink to this headline">#</a></h2>
+<h2>Constructing the Plot<a class="headerlink" href="#constructing-the-plot" title="Permalink to this heading">#</a></h2>
 <p>Now that we have cleaned up the data, let’s construct the plot.</p>
 <p>We do this by using the DataFrame <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method and then using the
 matplotlib methods and functions to fine tune our plot, changing one
@@ -1323,7 +1248,7 @@ function.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_29_0.png" src="../_images/matplotlib_29_0.png" />
+<img alt="../_images/600ffde656d5b31d99cd16898e985eb38be505c618b8c4012ae31079719fdfd9.png" src="../_images/600ffde656d5b31d99cd16898e985eb38be505c618b8c4012ae31079719fdfd9.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir4">
@@ -1331,7 +1256,7 @@ function.</p>
 <p>See exercise 4 in the <a class="reference internal" href="#pd-mpl-ex"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
 <section id="subplot-spacing-fig-tight-layout">
-<h3>Subplot Spacing: <code class="docutils literal notranslate"><span class="pre">fig.tight_layout</span></code><a class="headerlink" href="#subplot-spacing-fig-tight-layout" title="Permalink to this headline">#</a></h3>
+<h3>Subplot Spacing: <code class="docutils literal notranslate"><span class="pre">fig.tight_layout</span></code><a class="headerlink" href="#subplot-spacing-fig-tight-layout" title="Permalink to this heading">#</a></h3>
 <p>That figure has the basic lines we are after, but is quite ugly when
 compared to the FT figure we are trying to produce.</p>
 <p>Let’s refine the plot one step at a time.</p>
@@ -1351,12 +1276,12 @@ subplots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_31_0.png" src="../_images/matplotlib_31_0.png" />
+<img alt="../_images/d2bd3b86c6c90ec13c0b711cfc9540ae84ce2d74e6266d27478896881488bc51.png" src="../_images/d2bd3b86c6c90ec13c0b711cfc9540ae84ce2d74e6266d27478896881488bc51.png" />
 </div>
 </div>
 </section>
 <section id="properties-of-the-figure">
-<h3>Properties of the Figure<a class="headerlink" href="#properties-of-the-figure" title="Permalink to this headline">#</a></h3>
+<h3>Properties of the Figure<a class="headerlink" href="#properties-of-the-figure" title="Permalink to this heading">#</a></h3>
 <p>Now, let’s make the background of our figure match the background of the
 FT post.</p>
 <p>To do this, we will use the <code class="docutils literal notranslate"><span class="pre">fig.set_facecolor</span></code> method.</p>
@@ -1369,12 +1294,12 @@ FT post.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_33_0.png" src="../_images/matplotlib_33_0.png" />
+<img alt="../_images/47977a6b2bbca88c6ef4c1708312af86cc218ae83bff629b93c34551de982452.png" src="../_images/47977a6b2bbca88c6ef4c1708312af86cc218ae83bff629b93c34551de982452.png" />
 </div>
 </div>
 </section>
 <section id="properties-of-an-axes">
-<h3>Properties of an <code class="docutils literal notranslate"><span class="pre">Axes</span></code><a class="headerlink" href="#properties-of-an-axes" title="Permalink to this headline">#</a></h3>
+<h3>Properties of an <code class="docutils literal notranslate"><span class="pre">Axes</span></code><a class="headerlink" href="#properties-of-an-axes" title="Permalink to this heading">#</a></h3>
 <p>Notice that this worked for the figure as a whole, but not for any of
 the Axes.</p>
 <p>To fix this, we will need to call <code class="docutils literal notranslate"><span class="pre">.set_facecolor</span></code> on each Axes.</p>
@@ -1432,7 +1357,7 @@ Axes:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_35_0.png" src="../_images/matplotlib_35_0.png" />
+<img alt="../_images/a835d164f4dd7a054fe19afcf07743875565d9f02e21fa311d08cb2cfb322f96.png" src="../_images/a835d164f4dd7a054fe19afcf07743875565d9f02e21fa311d08cb2cfb322f96.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir5">
@@ -1451,7 +1376,7 @@ Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_37_0.png" src="../_images/matplotlib_37_0.png" />
+<img alt="../_images/f914f53ade4ac8d92470ac8f7f071c0ca91dae75a3494d287dc87ba18c62b165.png" src="../_images/f914f53ade4ac8d92470ac8f7f071c0ca91dae75a3494d287dc87ba18c62b165.png" />
 </div>
 </div>
 <p>We can also add tick labels for the x-axis ticks on the 1st and 6th
@@ -1472,12 +1397,12 @@ plots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_39_0.png" src="../_images/matplotlib_39_0.png" />
+<img alt="../_images/78b8a9fbad4792d933de1a23089f548866ce2d014d15be5391fee5350a37e4a3.png" src="../_images/78b8a9fbad4792d933de1a23089f548866ce2d014d15be5391fee5350a37e4a3.png" />
 </div>
 </div>
 </section>
 <section id="transforms-and-lines">
-<h3>Transforms and Lines<a class="headerlink" href="#transforms-and-lines" title="Permalink to this headline">#</a></h3>
+<h3>Transforms and Lines<a class="headerlink" href="#transforms-and-lines" title="Permalink to this heading">#</a></h3>
 <p>Now we would like to add a horizontal line that lines up with each
 vertical tick label (the numbers from 90 to 115) and runs across the
 entire figure.</p>
@@ -1537,7 +1462,7 @@ from (0, 1) in the Figure coordinates and the <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_43_0.png" src="../_images/matplotlib_43_0.png" />
+<img alt="../_images/6b1eaab836aa28de9abb5f5500a9e19eb94330b8335f701673624a0a5a7cb076.png" src="../_images/6b1eaab836aa28de9abb5f5500a9e19eb94330b8335f701673624a0a5a7cb076.png" />
 </div>
 </div>
 <p>Now, we need to a add vertical line from the (0, 90) to (0, 100) on the
@@ -1562,12 +1487,12 @@ Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_45_0.png" src="../_images/matplotlib_45_0.png" />
+<img alt="../_images/4d02826fcb7248e1c51721b36264b7cfc618cdc8023668b0f578e089809a2971.png" src="../_images/4d02826fcb7248e1c51721b36264b7cfc618cdc8023668b0f578e089809a2971.png" />
 </div>
 </div>
 </section>
 <section id="annotations">
-<h3>Annotations<a class="headerlink" href="#annotations" title="Permalink to this headline">#</a></h3>
+<h3>Annotations<a class="headerlink" href="#annotations" title="Permalink to this heading">#</a></h3>
 <p>The last step on our journey is to add annotations that mark Tim Cook’s
 first announcement as CEO, the lackluster market response to <code class="docutils literal notranslate"><span class="pre">S</span></code> model
 announcements, and a label showing that the white dot on each subplot is
@@ -1594,7 +1519,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_47_0.png" src="../_images/matplotlib_47_0.png" />
+<img alt="../_images/09b6ddf2a41224ec567dd03fb32c11367236c8914d9bff97f20cfa598942c513.png" src="../_images/09b6ddf2a41224ec567dd03fb32c11367236c8914d9bff97f20cfa598942c513.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1617,7 +1542,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_48_0.png" src="../_images/matplotlib_48_0.png" />
+<img alt="../_images/5922a24e5ef4cdc292c1f3338abc3f2e2699d1ef422c126a4451f86f9dcb0ccb.png" src="../_images/5922a24e5ef4cdc292c1f3338abc3f2e2699d1ef422c126a4451f86f9dcb0ccb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1635,13 +1560,13 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_49_0.png" src="../_images/matplotlib_49_0.png" />
+<img alt="../_images/df1db3b484ef9366c992ff6264cd7daee1187e7523353af707f23584b61dd94c.png" src="../_images/df1db3b484ef9366c992ff6264cd7daee1187e7523353af707f23584b61dd94c.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="saving-the-figure">
-<h2>Saving the Figure<a class="headerlink" href="#saving-the-figure" title="Permalink to this headline">#</a></h2>
+<h2>Saving the Figure<a class="headerlink" href="#saving-the-figure" title="Permalink to this heading">#</a></h2>
 <p>Now that we have a finished product we are happy with, let’s save it to
 a file on our computer using the <code class="docutils literal notranslate"><span class="pre">fig.savefig</span></code> function.</p>
 <div class="cell docutils container">
@@ -1675,7 +1600,7 @@ document, or presentation is is placed in).</p>
 </div>
 </div>
 <section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
 <p>Phew, we made it!</p>
 <p>We ended up writing quite a bit of code to get the figure to look
 <em>exactly</em> how we wanted it to look.</p>
@@ -1685,9 +1610,9 @@ properties as professional journalists do.</p>
 </section>
 </section>
 <section id="exercises">
-<span id="pd-mpl-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="pd-mpl-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p><strong>Exercise:</strong> Using the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method, plot the opening share price
 for Apple’s stock.</p>
 <p>What <code class="docutils literal notranslate"><span class="pre">type</span></code> of object is returned from that method?</p>
@@ -1701,7 +1626,7 @@ for Apple’s stock.</p>
 <p>(<a class="reference internal" href="#pd-mpl-dir1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> function, make a Figure with a two-by-one
 grid of subplots (two rows, one column).</p>
 <p>On the upper Axes, plot the adjusted close price.</p>
@@ -1711,7 +1636,7 @@ an argument on the <code class="docutils literal notranslate"><span class="pre">
 <p>(<a class="reference internal" href="#pd-mpl-dir2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Take 5 minutes to explore the different arguments to the DataFrame <code class="docutils literal notranslate"><span class="pre">.plot</span></code>
 method. Try to make a plot that is both good looking and interesting (
 we know, those are subjective, but do your best!).</p>
@@ -1732,7 +1657,7 @@ for inspiration.</p>
 <p>(<a class="reference internal" href="#pd-mpl-dir3"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>Think about  what each of the argument we passed to <code class="docutils literal notranslate"><span class="pre">.plot</span></code> does.</p>
 <p>For some you might be able to guess, for others you will need to look at
 the documentation.</p>
@@ -1744,7 +1669,7 @@ the documentation.</p>
 <p>(<a class="reference internal" href="#pd-mpl-dir4"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
 <p>For each operation in the list below (copied from above), make a note
 of which functions/methods were called to achieve the result.
 Edit the markdown cell containing the list directly.</p>
@@ -1780,7 +1705,7 @@ you remember them when you need them later on.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./pandas"
         },
         predefinedOutput: true
@@ -2063,7 +1988,7 @@ you remember them when you need them later on.</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -2205,16 +2130,5 @@ you remember them when you need them later on.</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

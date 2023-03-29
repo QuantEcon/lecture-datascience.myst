@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Case Study: Recidivism &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -96,6 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'applications/recidivism';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/applications/recidivism.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,124 +161,35 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction-to-recidivism">
-   Introduction to Recidivism
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-description">
-   Data Description
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#descriptive-statistics">
-   Descriptive Statistics
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#age-sex-and-race">
-     Age, Sex, and Race
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#recidivism">
-     Recidivism
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#risk-scores">
-     Risk Scores
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#risk-scores-and-recidivism">
-     Risk Scores and Recidivism
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression">
-   Regression
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preprocessing">
-     Preprocessing
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#predicting-compas-scores">
-     Predicting COMPAS Scores
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary-probability-models">
-     Binary Probability Models
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#false-positive-and-negative-rates">
-     False Positive and Negative Rates
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizing-calibration-and-balance">
-     Visualizing Calibration and Balance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-an-alternative-prediction">
-     Creating an Alternative Prediction
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#regularizing-to-maximize-balance">
-     Regularizing to Maximize Balance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tradeoffs-are-inevitable">
-     Tradeoffs are Inevitable
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-recidivism">Introduction to Recidivism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">Data Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age-sex-and-race">Age, Sex, and Race</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recidivism">Recidivism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-scores">Risk Scores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-scores-and-recidivism">Risk Scores and Recidivism</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-compas-scores">Predicting COMPAS Scores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-probability-models">Binary Probability Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-positive-and-negative-rates">False Positive and Negative Rates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-calibration-and-balance">Visualizing Calibration and Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-alternative-prediction">Creating an Alternative Prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularizing-to-maximize-balance">Regularizing to Maximize Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tradeoffs-are-inevitable">Tradeoffs are Inevitable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -311,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="case-study-recidivism">
-<h1>Case Study: Recidivism<a class="headerlink" href="#case-study-recidivism" title="Permalink to this headline">#</a></h1>
+<h1>Case Study: Recidivism<a class="headerlink" href="#case-study-recidivism" title="Permalink to this heading">#</a></h1>
 <p><strong>Co-authors</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -351,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <section id="introduction-to-recidivism">
-<h2>Introduction to Recidivism<a class="headerlink" href="#introduction-to-recidivism" title="Permalink to this headline">#</a></h2>
+<h2>Introduction to Recidivism<a class="headerlink" href="#introduction-to-recidivism" title="Permalink to this heading">#</a></h2>
 <p>Recidivism is the tendency for an individual who has previously committed a crime to commit another crime
 in the future.</p>
 <p>One key input to a judge’s sentencing decision is how likely a given convict is to re-offend, or recidivate.</p>
@@ -360,7 +283,7 @@ to predict an individual’s risk of recidivism from known observables.</p>
 <p>Some are concerned that this process may exhibit prejudice, either through biased inputs
 or through statistical discrimination.</p>
 <p>For example,</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Biased inputs: Imagine that a judge often writes harsher sentences to people of a particular race or gender. If an algorithm is trained to reproduce the sentences of this judge, the bias will be propagated by the algorithm.</p></li>
 <li><p>Statistical discrimination: Imagine that two variables (say race and income) are correlated, and one of them (say income) is correlated with the risk of recidivism. If income is unobserved, then an otherwise unbiased method would discriminate based on race, even if race has nothing to say about recidivism after controlling for income.</p></li>
 </ol>
@@ -383,7 +306,7 @@ risk of violent recidivism.</p></li>
 </ul>
 </section>
 <section id="data-description">
-<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h2>
+<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this heading">#</a></h2>
 <p>The authors of this article filed a public records request with the Broward County Sheriff’s office
 in Florida.</p>
 <p>Luckily for us, they did a significant amount of the legwork which is described in this
@@ -580,7 +503,7 @@ in Florida.</p>
 </ul>
 </section>
 <section id="descriptive-statistics">
-<h2>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">#</a></h2>
+<h2>Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this heading">#</a></h2>
 <p>The first thing we do with our data is to drop any classes without “enough” observations.</p>
 <p>One of our focuses will be on inter-race differences in scores and recidivism, so we only
 keep data on races with at least 500 observations in our data set.</p>
@@ -603,7 +526,7 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 <p>Next, we explore the remaining data using plots and tables.</p>
 <section id="age-sex-and-race">
-<h3>Age, Sex, and Race<a class="headerlink" href="#age-sex-and-race" title="Permalink to this headline">#</a></h3>
+<h3>Age, Sex, and Race<a class="headerlink" href="#age-sex-and-race" title="Permalink to this heading">#</a></h3>
 <p>Let’s look at how the dataset is broken down into age, sex, and race.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,7 +556,7 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/recidivism_8_0.png" src="../_images/recidivism_8_0.png" />
+<img alt="../_images/0e61d5e4c3e8dc3d18688232062526f21d1d25e77d2bdca0db4e70624ec00c0f.png" src="../_images/0e61d5e4c3e8dc3d18688232062526f21d1d25e77d2bdca0db4e70624ec00c0f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -645,10 +568,10 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 600x800 with 1 Axes&gt;, &lt;AxesSubplot: &gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 600x800 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_9_1.png" src="../_images/recidivism_9_1.png" />
+<img alt="../_images/3d7661648b18d8c61db1a61800f66c36b63459eab77de60b0d02426f1144ae23.png" src="../_images/3d7661648b18d8c61db1a61800f66c36b63459eab77de60b0d02426f1144ae23.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -660,17 +583,17 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x800 with 1 Axes&gt;, &lt;AxesSubplot: &gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x800 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_10_1.png" src="../_images/recidivism_10_1.png" />
+<img alt="../_images/671682db05ef26d152216393f174570073413b9fc705e3acd1d4a02e90c1edd4.png" src="../_images/671682db05ef26d152216393f174570073413b9fc705e3acd1d4a02e90c1edd4.png" />
 </div>
 </div>
 <p>From this, we learn that our population is mostly between 25-45, male, and
 is mostly African-American or Caucasian.</p>
 </section>
 <section id="recidivism">
-<h3>Recidivism<a class="headerlink" href="#recidivism" title="Permalink to this headline">#</a></h3>
+<h3>Recidivism<a class="headerlink" href="#recidivism" title="Permalink to this heading">#</a></h3>
 <p>We now look into how recidivism is split across groups.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,7 +683,7 @@ Caucasian females.</p>
 <p>Also, African-American males are at a particularly high risk of recidivism even as they get older.</p>
 </section>
 <section id="risk-scores">
-<h3>Risk Scores<a class="headerlink" href="#risk-scores" title="Permalink to this headline">#</a></h3>
+<h3>Risk Scores<a class="headerlink" href="#risk-scores" title="Permalink to this heading">#</a></h3>
 <p>Each individual in the dataset was assigned a <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> ranging from 1 to 10.</p>
 <p>This score represents the perceived risk of recidivism with 1 being the lowest risk and 10 being the highest.</p>
 <p>We show a bar plot of all decile scores below.</p>
@@ -771,10 +694,10 @@ Caucasian females.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x800 with 1 Axes&gt;, &lt;AxesSubplot: &gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x800 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_14_1.png" src="../_images/recidivism_14_1.png" />
+<img alt="../_images/ad6ef76121544c859a3a29f40672c82cb14c09a9607051ef8a2719c3d78f9b84.png" src="../_images/ad6ef76121544c859a3a29f40672c82cb14c09a9607051ef8a2719c3d78f9b84.png" />
 </div>
 </div>
 <p>How do these scores differ by race?</p>
@@ -806,14 +729,14 @@ Caucasian females.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Score Frequency by Race&#39;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_16_1.png" src="../_images/recidivism_16_1.png" />
+<img alt="../_images/7f4d2d30d526faae765f1de71d8270d95ea1fed823fccf681d8021dc4a75921f.png" src="../_images/7f4d2d30d526faae765f1de71d8270d95ea1fed823fccf681d8021dc4a75921f.png" />
 </div>
 </div>
 <p>While Caucasians and Hispanics both see the majority of their score distribution on low values,
 African-Americans are almost equally likely to receive any score.</p>
 </section>
 <section id="risk-scores-and-recidivism">
-<h3>Risk Scores and Recidivism<a class="headerlink" href="#risk-scores-and-recidivism" title="Permalink to this headline">#</a></h3>
+<h3>Risk Scores and Recidivism<a class="headerlink" href="#risk-scores-and-recidivism" title="Permalink to this heading">#</a></h3>
 <p>Now we can explore the relationship between the risk score and actual two year recidivism.</p>
 <p>The first measure we look at is the frequency of recidivism by decile score – these numbers
 tell us what percentage of people assigned a particular risk score committed a new crime within two
@@ -1020,13 +943,13 @@ positive correlation (~0.35).</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Recidivism Rates by Race&#39;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_24_1.png" src="../_images/recidivism_24_1.png" />
+<img alt="../_images/d980853d0ce78491acfc5b3341b78e708ecf7e27274f1ddbeeb205e63f8020ff.png" src="../_images/d980853d0ce78491acfc5b3341b78e708ecf7e27274f1ddbeeb205e63f8020ff.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="regression">
-<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h2>
+<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this heading">#</a></h2>
 <p>In what follows, we will be doing something slightly different than what was done in the Pro Publica
 article.</p>
 <p>First, we will explore what happens when we try to predict the COMPAS risk scores using the
@@ -1036,7 +959,7 @@ recidivism.</p>
 <p>We will do this first using the COMPAS risk scores, and then afterwards we will try to write our own
 model based on raw observables, like age, race and sex.</p>
 <section id="preprocessing">
-<h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">#</a></h3>
+<h3>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h3>
 <p>We would like to use some features that are inherently non-numerical such as sex, age group, and
 race in our model.</p>
 <p>Before we can do that, we need to encode these string values as numerical values
@@ -1081,7 +1004,7 @@ column’s category, and set all other columns to 0.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:808: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:868: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
   warnings.warn(
 </pre></div>
 </div>
@@ -1097,7 +1020,7 @@ column’s category, and set all other columns to 0.</p>
 <p>We will use this encoding trick below as we create our data.</p>
 </section>
 <section id="predicting-compas-scores">
-<h3>Predicting COMPAS Scores<a class="headerlink" href="#predicting-compas-scores" title="Permalink to this headline">#</a></h3>
+<h3>Predicting COMPAS Scores<a class="headerlink" href="#predicting-compas-scores" title="Permalink to this heading">#</a></h3>
 <p>First, we proceed by creating the <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> inputs into a manageable format.</p>
 <p>We encode the categorical variables using the <code class="docutils literal notranslate"><span class="pre">OneHotEncoder</span></code> described above, and then merge that with the non-categorical data.</p>
 <p>Finally, we split the data into training and validation (test) subsets.</p>
@@ -1198,7 +1121,7 @@ overpredicted the COMPAS score and a negative value means we underpredicted it.<
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Test Data&#39;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_38_1.png" src="../_images/recidivism_38_1.png" />
+<img alt="../_images/13103ebff010f185cc689098fdb6947a380ec1352091a4d08f978d16e3b809d2.png" src="../_images/13103ebff010f185cc689098fdb6947a380ec1352091a4d08f978d16e3b809d2.png" />
 </div>
 </div>
 <p>In both cases, the long left tails of errors suggest the existence of relevant features which would improve our model.</p>
@@ -1259,7 +1182,7 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:808: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:868: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
   warnings.warn(
 </pre></div>
 </div>
@@ -1292,14 +1215,14 @@ The errors also seem to have a less extreme tail.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:808: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py:868: FutureWarning: `sparse` was renamed to `sparse_output` in version 1.2 and will be removed in 1.4. `sparse_output` is ignored unless you leave `sparse` to its default value.
   warnings.warn(
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Test Data&#39;)
 </pre></div>
 </div>
-<img alt="../_images/recidivism_46_2.png" src="../_images/recidivism_46_2.png" />
+<img alt="../_images/8f51be4f5ac3117e1891829a7e6c2d658e88f6042da483d4193f38e902e5f373.png" src="../_images/8f51be4f5ac3117e1891829a7e6c2d658e88f6042da483d4193f38e902e5f373.png" />
 </div>
 </div>
 <p>The coefficients are listed below:</p>
@@ -1335,7 +1258,7 @@ Male :  -0.04293582427466229
 </div>
 </section>
 <section id="binary-probability-models">
-<h3>Binary Probability Models<a class="headerlink" href="#binary-probability-models" title="Permalink to this headline">#</a></h3>
+<h3>Binary Probability Models<a class="headerlink" href="#binary-probability-models" title="Permalink to this heading">#</a></h3>
 <p>Binary probability models are used to model “all or nothing” outcomes,
 like the occurrence of an event.</p>
 <p>Their output is the probability that an event of interest occurs.</p>
@@ -1529,17 +1452,17 @@ race and sex.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
 </pre></div>
 </div>
@@ -1703,7 +1626,7 @@ and (2) the company that produces COMPAS also produces a separate
 questionnaire and risk score designed only for women.</p>
 </section>
 <section id="false-positive-and-negative-rates">
-<h3>False Positive and Negative Rates<a class="headerlink" href="#false-positive-and-negative-rates" title="Permalink to this headline">#</a></h3>
+<h3>False Positive and Negative Rates<a class="headerlink" href="#false-positive-and-negative-rates" title="Permalink to this heading">#</a></h3>
 <p>What if we flip this around and look at the distributions of
 predictions conditional on outcomes?</p>
 <p>Why look at these probabilities?</p>
@@ -1809,7 +1732,7 @@ equal across races).</p>
 <p><span id="id3">[<a class="reference internal" href="#id6" title="Jon Kleinberg, Himabindu Lakkaraju, Jure Leskovec, Jens Ludwig, and Sendhil Mullainathan. Human Decisions and Machine Predictions*. The Quarterly Journal of Economics, 133(1):237-293, 08 2017. URL: https://dx.doi.org/10.1093/qje/qjx032, arXiv:http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf, doi:10.1093/qje/qjx032.">recidKLL+17</a>]</span> calls a prediction algorithm with this property balanced.</p>
 </section>
 <section id="visualizing-calibration-and-balance">
-<h3>Visualizing Calibration and Balance<a class="headerlink" href="#visualizing-calibration-and-balance" title="Permalink to this headline">#</a></h3>
+<h3>Visualizing Calibration and Balance<a class="headerlink" href="#visualizing-calibration-and-balance" title="Permalink to this heading">#</a></h3>
 <p>We can get a slightly more detailed look at calibration and balance by
 recognizing that prediction algorithms typically compute a predicted
 probability, not just a discrete predicted outcome.</p>
@@ -1853,7 +1776,7 @@ predicted probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/recidivism_59_0.png" src="../_images/recidivism_59_0.png" />
+<img alt="../_images/05222d01f12436b1aae28f3a8d559ebeb855094a9b11193d6ffb0ef5035f081f.png" src="../_images/05222d01f12436b1aae28f3a8d559ebeb855094a9b11193d6ffb0ef5035f081f.png" />
 </div>
 </div>
 <p>This figure is one way to visualize how well-calibrated these
@@ -1908,7 +1831,7 @@ outcomes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3647/1257276985.py:14: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2963/1257276985.py:14: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1919,7 +1842,7 @@ For a guide to updating your code to use the new functions, please see
 https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 
   sns.distplot(pred_sub[y_sub==0], hist=True, bins=bins, kde=False, ax=_ax,
-/tmp/ipykernel_3647/1257276985.py:16: UserWarning: 
+/tmp/ipykernel_2963/1257276985.py:16: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1932,7 +1855,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
   sns.distplot(pred_sub[y_sub==1], hist=True, bins=bins, kde=False, ax=_ax,
 </pre></div>
 </div>
-<img alt="../_images/recidivism_61_1.png" src="../_images/recidivism_61_1.png" />
+<img alt="../_images/18b43730cb20271dd7dbe14debaab92d8138696d8dd3d0e086b50ba4efb225c5.png" src="../_images/18b43730cb20271dd7dbe14debaab92d8138696d8dd3d0e086b50ba4efb225c5.png" />
 </div>
 </div>
 <p>This figure is somewhat useful, but not for depicting balance
@@ -1995,7 +1918,7 @@ positive rates, so let’s plot these rates as functions of the threshold.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/recidivism_63_0.png" src="../_images/recidivism_63_0.png" />
+<img alt="../_images/38b09bbd67deb82ef64514b8dbc73fccaabb2616182bee4e7d6dcaadb3bcd7ac.png" src="../_images/38b09bbd67deb82ef64514b8dbc73fccaabb2616182bee4e7d6dcaadb3bcd7ac.png" />
 </div>
 </div>
 <p>From this, we can more easily see the balance problem — regardless
@@ -2006,7 +1929,7 @@ race, but not balanced.</p>
 <p>Can we create an alternative prediction that is both well-calibrated and balanced?</p>
 </section>
 <section id="creating-an-alternative-prediction">
-<h3>Creating an Alternative Prediction<a class="headerlink" href="#creating-an-alternative-prediction" title="Permalink to this headline">#</a></h3>
+<h3>Creating an Alternative Prediction<a class="headerlink" href="#creating-an-alternative-prediction" title="Permalink to this heading">#</a></h3>
 <p>As a starting exercise, let’s predict recidivism using the variables
 in this dataset other than race and COMPAS score.</p>
 <p>Almost all variables in this data are categorical.</p>
@@ -2044,7 +1967,7 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
     <span class="n">X</span><span class="p">,</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">),</span><span class="n">df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
 <span class="p">)</span>
 
-<span class="n">lasso_mod</span><span class="o">=</span><span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="n">lasso_mod</span><span class="o">=</span><span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                             <span class="n">Cs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span>
                                             <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
                                             <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_log_loss&quot;</span><span class="p">,</span>
@@ -2054,1727 +1977,6 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 260 features
-[LibLinear]iter   1  #CD cycles 1
-=========================
-optimization finished, #iter = 1
-Objective value = 0.282248
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-=========================
-optimization finished, #iter = 2
-Objective value = 2.163071
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 3
-iter   4  #CD cycles 1
-iter   5  #CD cycles 13
-iter   6  #CD cycles 1
-iter   7  #CD cycles 6
-iter   8  #CD cycles 1
-iter   9  #CD cycles 8
-iter  10  #CD cycles 4
-iter  11  #CD cycles 1
-iter  12  #CD cycles 3
-iter  13  #CD cycles 1
-iter  14  #CD cycles 11
-=========================
-optimization finished, #iter = 14
-Objective value = 16.656307
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 6
-iter   7  #CD cycles 1
-iter   8  #CD cycles 2
-iter   9  #CD cycles 9
-iter  10  #CD cycles 1
-iter  11  #CD cycles 24
-iter  12  #CD cycles 19
-iter  13  #CD cycles 6
-iter  14  #CD cycles 4
-iter  15  #CD cycles 6
-iter  16  #CD cycles 9
-iter  17  #CD cycles 7
-iter  18  #CD cycles 13
-iter  19  #CD cycles 4
-iter  20  #CD cycles 5
-iter  21  #CD cycles 4
-iter  22  #CD cycles 10
-iter  23  #CD cycles 11
-iter  24  #CD cycles 5
-iter  25  #CD cycles 1
-iter  26  #CD cycles 13
-iter  27  #CD cycles 23
-iter  28  #CD cycles 3
-iter  29  #CD cycles 1
-iter  30  #CD cycles 155
-iter  31  #CD cycles 100
-iter  32  #CD cycles 2
-iter  33  #CD cycles 7
-iter  34  #CD cycles 37
-iter  35  #CD cycles 7
-iter  36  #CD cycles 24
-iter  37  #CD cycles 22
-iter  38  #CD cycles 6
-iter  39  #CD cycles 1
-iter  40  #CD cycles 37
-iter  41  #CD cycles 52
-=========================
-optimization finished, #iter = 41
-Objective value = 125.461771
-#nonzeros/#features = 14/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 13
-iter   7  #CD cycles 2
-iter   8  #CD cycles 1
-iter   9  #CD cycles 3
-iter  10  #CD cycles 10
-iter  11  #CD cycles 1
-iter  12  #CD cycles 168
-iter  13  #CD cycles 1
-iter  14  #CD cycles 39
-iter  15  #CD cycles 1
-iter  16  #CD cycles 53
-iter  17  #CD cycles 2
-iter  18  #CD cycles 2
-iter  19  #CD cycles 7
-=========================
-optimization finished, #iter = 19
-Objective value = 918.402898
-#nonzeros/#features = 72/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 2
-iter   4  #CD cycles 1
-iter   5  #CD cycles 6
-iter   6  #CD cycles 1
-iter   7  #CD cycles 8
-iter   8  #CD cycles 6
-iter   9  #CD cycles 1
-iter  10  #CD cycles 8
-iter  11  #CD cycles 2
-iter  12  #CD cycles 1
-iter  13  #CD cycles 44
-iter  14  #CD cycles 3
-iter  15  #CD cycles 1
-iter  16  #CD cycles 293
-iter  17  #CD cycles 6
-iter  18  #CD cycles 1
-iter  19  #CD cycles 110
-iter  20  #CD cycles 50
-iter  21  #CD cycles 61
-iter  22  #CD cycles 17
-iter  23  #CD cycles 21
-iter  24  #CD cycles 8
-iter  25  #CD cycles 2
-iter  26  #CD cycles 48
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  27  #CD cycles 16
-iter  28  #CD cycles 6
-iter  29  #CD cycles 7
-iter  30  #CD cycles 9
-iter  31  #CD cycles 3
-iter  32  #CD cycles 5
-iter  33  #CD cycles 2
-iter  34  #CD cycles 7
-iter  35  #CD cycles 3
-iter  36  #CD cycles 3
-iter  37  #CD cycles 4
-iter  38  #CD cycles 1
-iter  39  #CD cycles 122
-=========================
-optimization finished, #iter = 39
-Objective value = 6675.623143
-#nonzeros/#features = 180/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 9
-iter   5  #CD cycles 1
-iter   6  #CD cycles 5
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 25
-iter  10  #CD cycles 1
-iter  11  #CD cycles 87
-iter  12  #CD cycles 35
-iter  13  #CD cycles 1
-iter  14  #CD cycles 124
-iter  15  #CD cycles 23
-iter  16  #CD cycles 24
-iter  17  #CD cycles 8
-iter  18  #CD cycles 5
-iter  19  #CD cycles 1
-iter  20  #CD cycles 96
-iter  21  #CD cycles 4
-iter  22  #CD cycles 2
-iter  23  #CD cycles 2
-=========================
-optimization finished, #iter = 23
-Objective value = 50324.830494
-#nonzeros/#features = 245/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 2
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 7
-iter   9  #CD cycles 1
-iter  10  #CD cycles 7
-iter  11  #CD cycles 5
-iter  12  #CD cycles 1
-iter  13  #CD cycles 198
-iter  14  #CD cycles 11
-iter  15  #CD cycles 1
-iter  16  #CD cycles 219
-iter  17  #CD cycles 44
-iter  18  #CD cycles 3
-iter  19  #CD cycles 21
-iter  20  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  21  #CD cycles 772
-iter  22  #CD cycles 754
-iter  23  #CD cycles 234
-iter  24  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  25  #CD cycles 1000
-iter  26  #CD cycles 59
-=========================
-optimization finished, #iter = 26
-Objective value = 386592.521312
-#nonzeros/#features = 250/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 9
-iter   5  #CD cycles 1
-iter   6  #CD cycles 9
-iter   7  #CD cycles 1
-iter   8  #CD cycles 19
-iter   9  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  10  #CD cycles 55
-iter  11  #CD cycles 51
-iter  12  #CD cycles 4
-iter  13  #CD cycles 12
-iter  14  #CD cycles 13
-iter  15  #CD cycles 5
-iter  16  #CD cycles 5
-iter  17  #CD cycles 3
-iter  18  #CD cycles 6
-iter  19  #CD cycles 5
-iter  20  #CD cycles 4
-iter  21  #CD cycles 6
-iter  22  #CD cycles 2
-iter  23  #CD cycles 15
-iter  24  #CD cycles 1
-iter  25  #CD cycles 274
-iter  26  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  27  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  28  #CD cycles 1000
-iter  29  #CD cycles 423
-iter  30  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  31  #CD cycles 1000
-=========================
-optimization finished, #iter = 31
-Objective value = 2988413.358125
-#nonzeros/#features = 246/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 12
-iter   4  #CD cycles 2
-iter   5  #CD cycles 1
-iter   6  #CD cycles 7
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 13
-iter  10  #CD cycles 6
-iter  11  #CD cycles 1
-iter  12  #CD cycles 104
-iter  13  #CD cycles 4
-iter  14  #CD cycles 8
-iter  15  #CD cycles 17
-iter  16  #CD cycles 1
-iter  17  #CD cycles 236
-iter  18  #CD cycles 6
-iter  19  #CD cycles 58
-iter  20  #CD cycles 32
-iter  21  #CD cycles 18
-iter  22  #CD cycles 9
-iter  23  #CD cycles 7
-iter  24  #CD cycles 11
-iter  25  #CD cycles 3
-iter  26  #CD cycles 3
-iter  27  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  28  #CD cycles 1000
-WARNING: reaching max number of inner iterations
-iter  29  #CD cycles 1000
-iter  30  #CD cycles 57
-iter  31  #CD cycles 3
-iter  32  #CD cycles 3
-iter  33  #CD cycles 61
-iter  34  #CD cycles 11
-iter  35  #CD cycles 26
-iter  36  #CD cycles 17
-iter  37  #CD cycles 14
-=========================
-optimization finished, #iter = 37
-Objective value = 23132733.741303
-#nonzeros/#features = 249/261
-[LibLinear]iter   1  #CD cycles 1
-=========================
-optimization finished, #iter = 1
-Objective value = 0.282249
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 1
-iter   5  #CD cycles 1
-iter   6  #CD cycles 1
-iter   7  #CD cycles 6
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 5
-iter  11  #CD cycles 2
-iter  12  #CD cycles 2
-iter  13  #CD cycles 1
-iter  14  #CD cycles 6
-=========================
-optimization finished, #iter = 14
-Objective value = 2.163544
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 9
-iter   4  #CD cycles 1
-iter   5  #CD cycles 5
-iter   6  #CD cycles 4
-iter   7  #CD cycles 1
-iter   8  #CD cycles 5
-iter   9  #CD cycles 1
-iter  10  #CD cycles 7
-iter  11  #CD cycles 2
-iter  12  #CD cycles 1
-iter  13  #CD cycles 9
-iter  14  #CD cycles 1
-iter  15  #CD cycles 5
-=========================
-optimization finished, #iter = 15
-Objective value = 16.642208
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 10
-iter   5  #CD cycles 1
-iter   6  #CD cycles 4
-iter   7  #CD cycles 1
-iter   8  #CD cycles 13
-iter   9  #CD cycles 1
-iter  10  #CD cycles 5
-iter  11  #CD cycles 1
-iter  12  #CD cycles 14
-iter  13  #CD cycles 2
-iter  14  #CD cycles 2
-iter  15  #CD cycles 1
-iter  16  #CD cycles 17
-iter  17  #CD cycles 13
-iter  18  #CD cycles 16
-iter  19  #CD cycles 14
-iter  20  #CD cycles 11
-iter  21  #CD cycles 8
-iter  22  #CD cycles 1
-iter  23  #CD cycles 52
-=========================
-optimization finished, #iter = 23
-Objective value = 125.892096
-#nonzeros/#features = 12/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 3
-iter   6  #CD cycles 1
-iter   7  #CD cycles 10
-iter   8  #CD cycles 1
-iter   9  #CD cycles 16
-iter  10  #CD cycles 1
-iter  11  #CD cycles 1
-iter  12  #CD cycles 229
-iter  13  #CD cycles 1
-iter  14  #CD cycles 10
-iter  15  #CD cycles 10
-iter  16  #CD cycles 3
-iter  17  #CD cycles 6
-iter  18  #CD cycles 2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  19  #CD cycles 3
-=========================
-optimization finished, #iter = 19
-Objective value = 924.400399
-#nonzeros/#features = 68/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 1
-iter   4  #CD cycles 11
-iter   5  #CD cycles 1
-iter   6  #CD cycles 12
-iter   7  #CD cycles 1
-iter   8  #CD cycles 17
-iter   9  #CD cycles 6
-iter  10  #CD cycles 1
-iter  11  #CD cycles 29
-iter  12  #CD cycles 5
-iter  13  #CD cycles 1
-iter  14  #CD cycles 58
-iter  15  #CD cycles 1
-iter  16  #CD cycles 6
-iter  17  #CD cycles 42
-iter  18  #CD cycles 17
-iter  19  #CD cycles 5
-iter  20  #CD cycles 159
-iter  21  #CD cycles 2
-iter  22  #CD cycles 3
-iter  23  #CD cycles 43
-iter  24  #CD cycles 4
-iter  25  #CD cycles 5
-iter  26  #CD cycles 1
-iter  27  #CD cycles 65
-iter  28  #CD cycles 134
-=========================
-optimization finished, #iter = 28
-Objective value = 6720.449048
-#nonzeros/#features = 188/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 2
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 11
-iter   9  #CD cycles 1
-iter  10  #CD cycles 29
-iter  11  #CD cycles 9
-iter  12  #CD cycles 13
-iter  13  #CD cycles 7
-iter  14  #CD cycles 1
-iter  15  #CD cycles 66
-iter  16  #CD cycles 36
-iter  17  #CD cycles 3
-iter  18  #CD cycles 1
-iter  19  #CD cycles 112
-iter  20  #CD cycles 85
-iter  21  #CD cycles 1
-iter  22  #CD cycles 135
-iter  23  #CD cycles 33
-=========================
-optimization finished, #iter = 23
-Objective value = 50693.773324
-#nonzeros/#features = 240/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 7
-iter   7  #CD cycles 3
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 12
-iter  11  #CD cycles 7
-iter  12  #CD cycles 4
-iter  13  #CD cycles 3
-iter  14  #CD cycles 2
-iter  15  #CD cycles 6
-iter  16  #CD cycles 2
-iter  17  #CD cycles 1
-iter  18  #CD cycles 152
-iter  19  #CD cycles 3
-iter  20  #CD cycles 27
-iter  21  #CD cycles 7
-iter  22  #CD cycles 4
-iter  23  #CD cycles 13
-iter  24  #CD cycles 2
-iter  25  #CD cycles 1
-iter  26  #CD cycles 148
-iter  27  #CD cycles 6
-iter  28  #CD cycles 3
-iter  29  #CD cycles 5
-iter  30  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  31  #CD cycles 1000
-iter  32  #CD cycles 308
-iter  33  #CD cycles 177
-=========================
-optimization finished, #iter = 33
-Objective value = 389825.250854
-#nonzeros/#features = 247/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 9
-iter   7  #CD cycles 2
-iter   8  #CD cycles 2
-iter   9  #CD cycles 3
-iter  10  #CD cycles 1
-iter  11  #CD cycles 16
-iter  12  #CD cycles 12
-iter  13  #CD cycles 3
-iter  14  #CD cycles 3
-iter  15  #CD cycles 6
-iter  16  #CD cycles 2
-iter  17  #CD cycles 2
-iter  18  #CD cycles 2
-iter  19  #CD cycles 2
-iter  20  #CD cycles 1
-iter  21  #CD cycles 73
-iter  22  #CD cycles 2
-iter  23  #CD cycles 2
-iter  24  #CD cycles 2
-iter  25  #CD cycles 6
-iter  26  #CD cycles 2
-iter  27  #CD cycles 16
-iter  28  #CD cycles 1
-iter  29  #CD cycles 244
-iter  30  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  31  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  32  #CD cycles 1000
-iter  33  #CD cycles 71
-iter  34  #CD cycles 4
-iter  35  #CD cycles 2
-iter  36  #CD cycles 493
-=========================
-optimization finished, #iter = 36
-Objective value = 3014294.233231
-#nonzeros/#features = 249/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 2
-iter   4  #CD cycles 1
-iter   5  #CD cycles 7
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 9
-iter   9  #CD cycles 1
-iter  10  #CD cycles 15
-iter  11  #CD cycles 3
-iter  12  #CD cycles 1
-iter  13  #CD cycles 74
-iter  14  #CD cycles 16
-iter  15  #CD cycles 11
-iter  16  #CD cycles 21
-iter  17  #CD cycles 2
-iter  18  #CD cycles 15
-iter  19  #CD cycles 1
-iter  20  #CD cycles 139
-iter  21  #CD cycles 35
-iter  22  #CD cycles 33
-iter  23  #CD cycles 6
-iter  24  #CD cycles 39
-iter  25  #CD cycles 2
-iter  26  #CD cycles 13
-iter  27  #CD cycles 5
-iter  28  #CD cycles 2
-iter  29  #CD cycles 6
-iter  30  #CD cycles 5
-iter  31  #CD cycles 6
-iter  32  #CD cycles 4
-iter  33  #CD cycles 2
-iter  34  #CD cycles 13
-iter  35  #CD cycles 2
-iter  36  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  37  #CD cycles 1000
-iter  38  #CD cycles 925
-iter  39  #CD cycles 101
-iter  40  #CD cycles 12
-iter  41  #CD cycles 5
-iter  42  #CD cycles 9
-iter  43  #CD cycles 4
-iter  44  #CD cycles 8
-iter  45  #CD cycles 26
-iter  46  #CD cycles 5
-iter  47  #CD cycles 147
-iter  48  #CD cycles 15
-iter  49  #CD cycles 104
-iter  50  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  51  #CD cycles 1000
-WARNING: reaching max number of inner iterations
-iter  52  #CD cycles 1000
-WARNING: reaching max number of inner iterations
-iter  53  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  54  #CD cycles 1000
-=========================
-optimization finished, #iter = 54
-Objective value = 23332835.709867
-#nonzeros/#features = 249/261
-[LibLinear]=========================
-optimization finished, #iter = 0
-Objective value = 0.282250
-#nonzeros/#features = 0/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-=========================
-optimization finished, #iter = 2
-Objective value = 2.165028
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 6
-iter   4  #CD cycles 4
-iter   5  #CD cycles 1
-iter   6  #CD cycles 4
-iter   7  #CD cycles 3
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 3
-iter  11  #CD cycles 2
-iter  12  #CD cycles 2
-iter  13  #CD cycles 1
-iter  14  #CD cycles 7
-iter  15  #CD cycles 2
-iter  16  #CD cycles 1
-iter  17  #CD cycles 6
-iter  18  #CD cycles 1
-iter  19  #CD cycles 5
-=========================
-optimization finished, #iter = 19
-[LibLinear]Objective value = 16.659641
-#nonzeros/#features = 2/261
-iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 5
-iter   5  #CD cycles 3
-iter   6  #CD cycles 1
-iter   7  #CD cycles 4
-iter   8  #CD cycles 2
-iter   9  #CD cycles 3
-iter  10  #CD cycles 1
-iter  11  #CD cycles 5
-iter  12  #CD cycles 4
-iter  13  #CD cycles 2
-iter  14  #CD cycles 1
-iter  15  #CD cycles 13
-iter  16  #CD cycles 15
-iter  17  #CD cycles 3
-iter  18  #CD cycles 17
-iter  19  #CD cycles 2
-iter  20  #CD cycles 3
-iter  21  #CD cycles 4
-iter  22  #CD cycles 5
-iter  23  #CD cycles 1
-iter  24  #CD cycles 91
-iter  25  #CD cycles 2
-iter  26  #CD cycles 23
-iter  27  #CD cycles 11
-iter  28  #CD cycles 7
-iter  29  #CD cycles 19
-iter  30  #CD cycles 6
-iter  31  #CD cycles 5
-iter  32  #CD cycles 6
-iter  33  #CD cycles 2
-iter  34  #CD cycles 7
-iter  35  #CD cycles 17
-iter  36  #CD cycles 12
-iter  37  #CD cycles 4
-iter  38  #CD cycles 5
-iter  39  #CD cycles 4
-iter  40  #CD cycles 1
-iter  41  #CD cycles 82
-iter  42  #CD cycles 70
-iter  43  #CD cycles 19
-iter  44  #CD cycles 9
-iter  45  #CD cycles 11
-iter  46  #CD cycles 12
-iter  47  #CD cycles 3
-iter  48  #CD cycles 4
-iter  49  #CD cycles 7
-iter  50  #CD cycles 8
-iter  51  #CD cycles 8
-iter  52  #CD cycles 4
-iter  53  #CD cycles 4
-iter  54  #CD cycles 2
-iter  55  #CD cycles 7
-iter  56  #CD cycles 2
-iter  57  #CD cycles 6
-iter  58  #CD cycles 2
-iter  59  #CD cycles 6
-iter  60  #CD cycles 1
-iter  61  #CD cycles 56
-=========================
-optimization finished, #iter = 61
-Objective value = 126.264110
-#nonzeros/#features = 13/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 10
-iter   5  #CD cycles 1
-iter   6  #CD cycles 10
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 15
-iter  10  #CD cycles 2
-iter  11  #CD cycles 1
-iter  12  #CD cycles 11
-iter  13  #CD cycles 6
-iter  14  #CD cycles 4
-iter  15  #CD cycles 2
-iter  16  #CD cycles 1
-iter  17  #CD cycles 39
-iter  18  #CD cycles 6
-iter  19  #CD cycles 7
-iter  20  #CD cycles 3
-iter  21  #CD cycles 1
-iter  22  #CD cycles 64
-iter  23  #CD cycles 30
-iter  24  #CD cycles 26
-iter  25  #CD cycles 13
-iter  26  #CD cycles 16
-iter  27  #CD cycles 6
-iter  28  #CD cycles 2
-iter  29  #CD cycles 8
-iter  30  #CD cycles 3
-iter  31  #CD cycles 25
-iter  32  #CD cycles 1
-iter  33  #CD cycles 123
-=========================
-optimization finished, #iter = 33
-Objective value = 928.734284
-#nonzeros/#features = 74/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 9
-iter   5  #CD cycles 1
-iter   6  #CD cycles 12
-iter   7  #CD cycles 1
-iter   8  #CD cycles 68
-iter   9  #CD cycles 5
-iter  10  #CD cycles 4
-iter  11  #CD cycles 1
-iter  12  #CD cycles 118
-iter  13  #CD cycles 6
-iter  14  #CD cycles 4
-iter  15  #CD cycles 1
-iter  16  #CD cycles 82
-iter  17  #CD cycles 90
-iter  18  #CD cycles 4
-iter  19  #CD cycles 12
-iter  20  #CD cycles 3
-iter  21  #CD cycles 11
-iter  22  #CD cycles 5
-iter  23  #CD cycles 3
-iter  24  #CD cycles 7
-iter  25  #CD cycles 4
-iter  26  #CD cycles 4
-iter  27  #CD cycles 2
-iter  28  #CD cycles 4
-iter  29  #CD cycles 1
-iter  30  #CD cycles 232
-iter  31  #CD cycles 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  32  #CD cycles 30
-iter  33  #CD cycles 35
-iter  34  #CD cycles 6
-iter  35  #CD cycles 9
-iter  36  #CD cycles 1
-iter  37  #CD cycles 133
-=========================
-optimization finished, #iter = 37
-[LibLinear]Objective value = 6776.722781
-#nonzeros/#features = 187/261
-iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 8
-iter   4  #CD cycles 2
-iter   5  #CD cycles 1
-iter   6  #CD cycles 10
-iter   7  #CD cycles 5
-iter   8  #CD cycles 1
-iter   9  #CD cycles 78
-iter  10  #CD cycles 8
-iter  11  #CD cycles 1
-iter  12  #CD cycles 142
-iter  13  #CD cycles 38
-iter  14  #CD cycles 1
-iter  15  #CD cycles 148
-iter  16  #CD cycles 88
-iter  17  #CD cycles 3
-iter  18  #CD cycles 2
-iter  19  #CD cycles 15
-iter  20  #CD cycles 2
-iter  21  #CD cycles 2
-iter  22  #CD cycles 3
-iter  23  #CD cycles 11
-iter  24  #CD cycles 7
-iter  25  #CD cycles 3
-iter  26  #CD cycles 1
-iter  27  #CD cycles 560
-iter  28  #CD cycles 1
-iter  29  #CD cycles 370
-iter  30  #CD cycles 119
-iter  31  #CD cycles 211
-=========================
-optimization finished, #iter = 31
-Objective value = 51111.072028
-#nonzeros/#features = 244/261
-[LibLinear]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 10
-iter   7  #CD cycles 1
-iter   8  #CD cycles 31
-iter   9  #CD cycles 3
-iter  10  #CD cycles 5
-iter  11  #CD cycles 3
-iter  12  #CD cycles 2
-iter  13  #CD cycles 2
-iter  14  #CD cycles 4
-iter  15  #CD cycles 1
-iter  16  #CD cycles 160
-iter  17  #CD cycles 20
-iter  18  #CD cycles 2
-iter  19  #CD cycles 11
-iter  20  #CD cycles 1
-iter  21  #CD cycles 222
-iter  22  #CD cycles 15
-iter  23  #CD cycles 5
-iter  24  #CD cycles 34
-iter  25  #CD cycles 3
-iter  26  #CD cycles 6
-iter  27  #CD cycles 2
-iter  28  #CD cycles 2
-iter  29  #CD cycles 4
-iter  30  #CD cycles 2
-iter  31  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  32  #CD cycles 1000
-iter  33  #CD cycles 50
-iter  34  #CD cycles 244
-iter  35  #CD cycles 15
-iter  36  #CD cycles 16
-iter  37  #CD cycles 211
-iter  38  #CD cycles 5
-iter  39  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  40  #CD cycles 1000
-=========================
-optimization finished, #iter = 40
-Objective value = 392994.690466
-#nonzeros/#features = 250/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 10
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 27
-iter  10  #CD cycles 18
-iter  11  #CD cycles 8
-iter  12  #CD cycles 5
-iter  13  #CD cycles 5
-iter  14  #CD cycles 2
-iter  15  #CD cycles 7
-iter  16  #CD cycles 3
-iter  17  #CD cycles 4
-iter  18  #CD cycles 1
-iter  19  #CD cycles 81
-iter  20  #CD cycles 36
-iter  21  #CD cycles 10
-iter  22  #CD cycles 1
-iter  23  #CD cycles 140
-iter  24  #CD cycles 59
-iter  25  #CD cycles 91
-iter  26  #CD cycles 30
-iter  27  #CD cycles 52
-iter  28  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  29  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  30  #CD cycles 1000
-iter  31  #CD cycles 213
-iter  32  #CD cycles 62
-iter  33  #CD cycles 2
-iter  34  #CD cycles 185
-iter  35  #CD cycles 351
-=========================
-optimization finished, #iter = 35
-Objective value = 3038651.748749
-#nonzeros/#features = 252/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 2
-iter   6  #CD cycles 1
-iter   7  #CD cycles 9
-iter   8  #CD cycles 1
-iter   9  #CD cycles 38
-iter  10  #CD cycles 17
-iter  11  #CD cycles 21
-iter  12  #CD cycles 5
-iter  13  #CD cycles 1
-iter  14  #CD cycles 28
-iter  15  #CD cycles 31
-iter  16  #CD cycles 10
-iter  17  #CD cycles 14
-iter  18  #CD cycles 13
-iter  19  #CD cycles 6
-iter  20  #CD cycles 6
-iter  21  #CD cycles 19
-iter  22  #CD cycles 16
-iter  23  #CD cycles 6
-iter  24  #CD cycles 3
-iter  25  #CD cycles 23
-iter  26  #CD cycles 5
-iter  27  #CD cycles 2
-iter  28  #CD cycles 10
-iter  29  #CD cycles 1
-iter  30  #CD cycles 158
-iter  31  #CD cycles 21
-iter  32  #CD cycles 65
-iter  33  #CD cycles 4
-iter  34  #CD cycles 6
-iter  35  #CD cycles 14
-iter  36  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  37  #CD cycles 1000
-iter  38  #CD cycles 814
-iter  39  #CD cycles 68
-iter  40  #CD cycles 540
-iter  41  #CD cycles 49
-iter  42  #CD cycles 73
-iter  43  #CD cycles 38
-iter  44  #CD cycles 206
-iter  45  #CD cycles 30
-iter  46  #CD cycles 41
-iter  47  #CD cycles 9
-iter  48  #CD cycles 72
-iter  49  #CD cycles 17
-iter  50  #CD cycles 25
-iter  51  #CD cycles 44
-iter  52  #CD cycles 38
-iter  53  #CD cycles 9
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  54  #CD cycles 95
-iter  55  #CD cycles 14
-iter  56  #CD cycles 2
-iter  57  #CD cycles 66
-=========================
-optimization finished, #iter = 57
-Objective value = 23521794.004158
-#nonzeros/#features = 252/261
-[LibLinear]iter   1  #CD cycles 1
-=========================
-optimization finished, #iter = 1
-Objective value = 0.282249
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 1
-iter   4  #CD cycles 1
-iter   5  #CD cycles 1
-iter   6  #CD cycles 1
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 6
-iter  10  #CD cycles 1
-iter  11  #CD cycles 4
-=========================
-optimization finished, #iter = 11
-Objective value = 2.163670
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 8
-iter   4  #CD cycles 1
-iter   5  #CD cycles 11
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 8
-iter   9  #CD cycles 2
-iter  10  #CD cycles 1
-iter  11  #CD cycles 3
-iter  12  #CD cycles 1
-iter  13  #CD cycles 7
-iter  14  #CD cycles 1
-iter  15  #CD cycles 8
-iter  16  #CD cycles 1
-iter  17  #CD cycles 8
-=========================
-optimization finished, #iter = 17
-Objective value = 16.644976
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 3
-iter   4  #CD cycles 1
-iter   5  #CD cycles 1
-iter   6  #CD cycles 9
-iter   7  #CD cycles 3
-iter   8  #CD cycles 1
-iter   9  #CD cycles 4
-iter  10  #CD cycles 6
-iter  11  #CD cycles 1
-iter  12  #CD cycles 18
-iter  13  #CD cycles 2
-iter  14  #CD cycles 2
-iter  15  #CD cycles 5
-iter  16  #CD cycles 1
-iter  17  #CD cycles 30
-iter  18  #CD cycles 23
-iter  19  #CD cycles 12
-iter  20  #CD cycles 6
-iter  21  #CD cycles 5
-iter  22  #CD cycles 10
-iter  23  #CD cycles 11
-iter  24  #CD cycles 12
-iter  25  #CD cycles 4
-iter  26  #CD cycles 10
-iter  27  #CD cycles 11
-iter  28  #CD cycles 4
-iter  29  #CD cycles 6
-iter  30  #CD cycles 3
-iter  31  #CD cycles 9
-iter  32  #CD cycles 6
-iter  33  #CD cycles 1
-iter  34  #CD cycles 40
-iter  35  #CD cycles 93
-iter  36  #CD cycles 12
-iter  37  #CD cycles 9
-iter  38  #CD cycles 12
-iter  39  #CD cycles 5
-iter  40  #CD cycles 14
-iter  41  #CD cycles 10
-iter  42  #CD cycles 2
-iter  43  #CD cycles 1
-iter  44  #CD cycles 74
-=========================
-optimization finished, #iter = 44
-Objective value = 125.655760
-#nonzeros/#features = 15/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 4
-iter   5  #CD cycles 5
-iter   6  #CD cycles 1
-iter   7  #CD cycles 19
-iter   8  #CD cycles 1
-iter   9  #CD cycles 11
-iter  10  #CD cycles 1
-iter  11  #CD cycles 5
-iter  12  #CD cycles 3
-iter  13  #CD cycles 2
-iter  14  #CD cycles 3
-iter  15  #CD cycles 9
-iter  16  #CD cycles 2
-iter  17  #CD cycles 1
-iter  18  #CD cycles 250
-iter  19  #CD cycles 3
-iter  20  #CD cycles 1
-iter  21  #CD cycles 35
-iter  22  #CD cycles 2
-iter  23  #CD cycles 2
-iter  24  #CD cycles 1
-iter  25  #CD cycles 44
-=========================
-optimization finished, #iter = 25
-Objective value = 921.272524
-#nonzeros/#features = 71/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 10
-iter   5  #CD cycles 1
-iter   6  #CD cycles 11
-iter   7  #CD cycles 1
-iter   8  #CD cycles 27
-iter   9  #CD cycles 6
-iter  10  #CD cycles 1
-iter  11  #CD cycles 53
-iter  12  #CD cycles 1
-iter  13  #CD cycles 68
-iter  14  #CD cycles 6
-iter  15  #CD cycles 1
-iter  16  #CD cycles 132
-iter  17  #CD cycles 75
-iter  18  #CD cycles 13
-iter  19  #CD cycles 20
-iter  20  #CD cycles 17
-iter  21  #CD cycles 2
-iter  22  #CD cycles 17
-iter  23  #CD cycles 2
-iter  24  #CD cycles 6
-iter  25  #CD cycles 13
-iter  26  #CD cycles 12
-iter  27  #CD cycles 14
-iter  28  #CD cycles 6
-iter  29  #CD cycles 1
-iter  30  #CD cycles 138
-=========================
-optimization finished, #iter = 30
-Objective value = 6693.204470
-#nonzeros/#features = 188/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter   6  #CD cycles 12
-iter   7  #CD cycles 1
-iter   8  #CD cycles 19
-iter   9  #CD cycles 9
-iter  10  #CD cycles 1
-iter  11  #CD cycles 93
-iter  12  #CD cycles 26
-iter  13  #CD cycles 1
-iter  14  #CD cycles 200
-iter  15  #CD cycles 38
-iter  16  #CD cycles 34
-iter  17  #CD cycles 4
-iter  18  #CD cycles 19
-iter  19  #CD cycles 2
-iter  20  #CD cycles 2
-iter  21  #CD cycles 2
-iter  22  #CD cycles 3
-iter  23  #CD cycles 3
-iter  24  #CD cycles 1
-iter  25  #CD cycles 166
-iter  26  #CD cycles 57
-iter  27  #CD cycles 18
-iter  28  #CD cycles 8
-iter  29  #CD cycles 27
-iter  30  #CD cycles 28
-iter  31  #CD cycles 14
-iter  32  #CD cycles 10
-iter  33  #CD cycles 138
-iter  34  #CD cycles 15
-iter  35  #CD cycles 18
-iter  36  #CD cycles 5
-iter  37  #CD cycles 6
-iter  38  #CD cycles 6
-iter  39  #CD cycles 1
-iter  40  #CD cycles 894
-=========================
-optimization finished, #iter = 40
-Objective value = 50375.113680
-#nonzeros/#features = 247/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 5
-iter   5  #CD cycles 4
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 10
-iter   9  #CD cycles 2
-iter  10  #CD cycles 1
-iter  11  #CD cycles 2
-iter  12  #CD cycles 12
-iter  13  #CD cycles 2
-iter  14  #CD cycles 1
-iter  15  #CD cycles 57
-iter  16  #CD cycles 47
-iter  17  #CD cycles 10
-iter  18  #CD cycles 3
-iter  19  #CD cycles 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  20  #CD cycles 15
-iter  21  #CD cycles 1
-iter  22  #CD cycles 270
-iter  23  #CD cycles 149
-iter  24  #CD cycles 12
-iter  25  #CD cycles 12
-iter  26  #CD cycles 80
-iter  27  #CD cycles 38
-iter  28  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  29  #CD cycles 1000
-iter  30  #CD cycles 437
-iter  31  #CD cycles 106
-iter  32  #CD cycles 2
-iter  33  #CD cycles 45
-iter  34  #CD cycles 7
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  35  #CD cycles 100
-iter  36  #CD cycles 5
-iter  37  #CD cycles 2
-iter  38  #CD cycles 4
-iter  39  #CD cycles 378
-=========================
-optimization finished, #iter = 39
-Objective value = 387054.378788
-#nonzeros/#features = 252/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 3
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 7
-iter   9  #CD cycles 1
-iter  10  #CD cycles 15
-iter  11  #CD cycles 2
-iter  12  #CD cycles 7
-iter  13  #CD cycles 3
-iter  14  #CD cycles 4
-iter  15  #CD cycles 1
-iter  16  #CD cycles 36
-iter  17  #CD cycles 20
-iter  18  #CD cycles 7
-iter  19  #CD cycles 6
-iter  20  #CD cycles 3
-iter  21  #CD cycles 9
-iter  22  #CD cycles 15
-iter  23  #CD cycles 6
-iter  24  #CD cycles 14
-iter  25  #CD cycles 6
-iter  26  #CD cycles 9
-iter  27  #CD cycles 7
-iter  28  #CD cycles 4
-iter  29  #CD cycles 4
-iter  30  #CD cycles 6
-iter  31  #CD cycles 2
-iter  32  #CD cycles 6
-iter  33  #CD cycles 2
-iter  34  #CD cycles 4
-iter  35  #CD cycles 2
-iter  36  #CD cycles 6
-iter  37  #CD cycles 3
-iter  38  #CD cycles 8
-iter  39  #CD cycles 1
-iter  40  #CD cycles 513
-iter  41  #CD cycles 33
-iter  42  #CD cycles 39
-iter  43  #CD cycles 7
-iter  44  #CD cycles 5
-iter  45  #CD cycles 86
-iter  46  #CD cycles 3
-iter  47  #CD cycles 71
-iter  48  #CD cycles 3
-iter  49  #CD cycles 19
-iter  50  #CD cycles 7
-iter  51  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  52  #CD cycles 1000
-iter  53  #CD cycles 429
-iter  54  #CD cycles 69
-iter  55  #CD cycles 271
-iter  56  #CD cycles 149
-iter  57  #CD cycles 119
-iter  58  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  59  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-[LibLinear]iter  60  #CD cycles 1000
-=========================
-optimization finished, #iter = 60
-Objective value = 2992163.872093
-#nonzeros/#features = 253/261
-iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 2
-iter   4  #CD cycles 1
-iter   5  #CD cycles 6
-iter   6  #CD cycles 2
-iter   7  #CD cycles 1
-iter   8  #CD cycles 11
-iter   9  #CD cycles 1
-iter  10  #CD cycles 6
-iter  11  #CD cycles 6
-iter  12  #CD cycles 3
-iter  13  #CD cycles 1
-iter  14  #CD cycles 33
-iter  15  #CD cycles 11
-iter  16  #CD cycles 18
-iter  17  #CD cycles 4
-iter  18  #CD cycles 4
-iter  19  #CD cycles 4
-iter  20  #CD cycles 2
-iter  21  #CD cycles 16
-iter  22  #CD cycles 1
-iter  23  #CD cycles 265
-iter  24  #CD cycles 110
-iter  25  #CD cycles 20
-iter  26  #CD cycles 5
-iter  27  #CD cycles 45
-iter  28  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  29  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  30  #CD cycles 1000
-iter  31  #CD cycles 11
-iter  32  #CD cycles 94
-iter  33  #CD cycles 124
-iter  34  #CD cycles 197
-iter  35  #CD cycles 60
-iter  36  #CD cycles 11
-iter  37  #CD cycles 29
-iter  38  #CD cycles 4
-iter  39  #CD cycles 3
-iter  40  #CD cycles 77
-iter  41  #CD cycles 106
-iter  42  #CD cycles 2
-iter  43  #CD cycles 17
-iter  44  #CD cycles 2
-iter  45  #CD cycles 2
-iter  46  #CD cycles 79
-iter  47  #CD cycles 5
-=========================
-optimization finished, #iter = 47
-Objective value = 23161765.713181
-#nonzeros/#features = 254/261
-[LibLinear]iter   1  #CD cycles 1
-=========================
-optimization finished, #iter = 1
-Objective value = 0.282249
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-=========================
-optimization finished, #iter = 2
-Objective value = 2.163172
-#nonzeros/#features = 1/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 5
-iter   3  #CD cycles 1
-iter   4  #CD cycles 3
-iter   5  #CD cycles 1
-iter   6  #CD cycles 8
-iter   7  #CD cycles 2
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 4
-iter  11  #CD cycles 1
-iter  12  #CD cycles 6
-iter  13  #CD cycles 1
-iter  14  #CD cycles 10
-iter  15  #CD cycles 3
-iter  16  #CD cycles 2
-iter  17  #CD cycles 1
-iter  18  #CD cycles 2
-iter  19  #CD cycles 1
-iter  20  #CD cycles 11
-=========================
-optimization finished, #iter = 20
-Objective value = 16.656407
-#nonzeros/#features = 2/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 7
-iter   5  #CD cycles 1
-iter   6  #CD cycles 9
-iter   7  #CD cycles 1
-iter   8  #CD cycles 10
-iter   9  #CD cycles 1
-iter  10  #CD cycles 45
-iter  11  #CD cycles 17
-iter  12  #CD cycles 5
-iter  13  #CD cycles 7
-iter  14  #CD cycles 34
-iter  15  #CD cycles 5
-iter  16  #CD cycles 2
-iter  17  #CD cycles 12
-iter  18  #CD cycles 1
-iter  19  #CD cycles 4
-iter  20  #CD cycles 7
-iter  21  #CD cycles 17
-iter  22  #CD cycles 2
-iter  23  #CD cycles 8
-iter  24  #CD cycles 5
-iter  25  #CD cycles 2
-iter  26  #CD cycles 10
-iter  27  #CD cycles 5
-iter  28  #CD cycles 2
-iter  29  #CD cycles 9
-iter  30  #CD cycles 6
-iter  31  #CD cycles 7
-iter  32  #CD cycles 12
-iter  33  #CD cycles 4
-iter  34  #CD cycles 1
-iter  35  #CD cycles 65
-iter  36  #CD cycles 12
-iter  37  #CD cycles 24
-iter  38  #CD cycles 29
-iter  39  #CD cycles 17
-iter  40  #CD cycles 7
-iter  41  #CD cycles 17
-iter  42  #CD cycles 5
-iter  43  #CD cycles 5
-iter  44  #CD cycles 5
-iter  45  #CD cycles 3
-iter  46  #CD cycles 7
-iter  47  #CD cycles 4
-iter  48  #CD cycles 3
-iter  49  #CD cycles 4
-iter  50  #CD cycles 1
-iter  51  #CD cycles 26
-iter  52  #CD cycles 6
-iter  53  #CD cycles 18
-iter  54  #CD cycles 24
-=========================
-optimization finished, #iter = 54
-Objective value = 125.373822
-#nonzeros/#features = 14/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 1
-iter   3  #CD cycles 11
-iter   4  #CD cycles 4
-iter   5  #CD cycles 1
-iter   6  #CD cycles 16
-iter   7  #CD cycles 1
-iter   8  #CD cycles 35
-iter   9  #CD cycles 1
-iter  10  #CD cycles 70
-iter  11  #CD cycles 3
-iter  12  #CD cycles 1
-iter  13  #CD cycles 273
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  14  #CD cycles 59
-iter  15  #CD cycles 5
-iter  16  #CD cycles 4
-iter  17  #CD cycles 3
-iter  18  #CD cycles 4
-iter  19  #CD cycles 1
-iter  20  #CD cycles 75
-iter  21  #CD cycles 45
-iter  22  #CD cycles 22
-iter  23  #CD cycles 1
-iter  24  #CD cycles 129
-=========================
-optimization finished, #iter = 24
-Objective value = 913.979524
-#nonzeros/#features = 70/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 4
-iter   5  #CD cycles 3
-iter   6  #CD cycles 1
-iter   7  #CD cycles 16
-iter   8  #CD cycles 1
-iter   9  #CD cycles 97
-iter  10  #CD cycles 15
-iter  11  #CD cycles 2
-iter  12  #CD cycles 1
-iter  13  #CD cycles 154
-iter  14  #CD cycles 10
-iter  15  #CD cycles 1
-iter  16  #CD cycles 381
-iter  17  #CD cycles 12
-iter  18  #CD cycles 3
-iter  19  #CD cycles 3
-iter  20  #CD cycles 10
-iter  21  #CD cycles 9
-iter  22  #CD cycles 2
-iter  23  #CD cycles 10
-iter  24  #CD cycles 1
-iter  25  #CD cycles 176
-iter  26  #CD cycles 30
-iter  27  #CD cycles 8
-iter  28  #CD cycles 16
-iter  29  #CD cycles 13
-iter  30  #CD cycles 4
-iter  31  #CD cycles 3
-iter  32  #CD cycles 3
-iter  33  #CD cycles 2
-iter  34  #CD cycles 1
-iter  35  #CD cycles 171
-=========================
-optimization finished, #iter = 35
-Objective value = 6632.705162
-#nonzeros/#features = 188/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 2
-iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 15
-iter   7  #CD cycles 2
-iter   8  #CD cycles 1
-iter   9  #CD cycles 133
-iter  10  #CD cycles 8
-iter  11  #CD cycles 10
-iter  12  #CD cycles 1
-iter  13  #CD cycles 226
-iter  14  #CD cycles 7
-iter  15  #CD cycles 2
-iter  16  #CD cycles 5
-iter  17  #CD cycles 4
-iter  18  #CD cycles 5
-iter  19  #CD cycles 4
-iter  20  #CD cycles 3
-iter  21  #CD cycles 3
-iter  22  #CD cycles 2
-iter  23  #CD cycles 8
-iter  24  #CD cycles 29
-iter  25  #CD cycles 3
-iter  26  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  27  #CD cycles 439
-iter  28  #CD cycles 23
-iter  29  #CD cycles 1
-iter  30  #CD cycles 460
-iter  31  #CD cycles 1
-iter  32  #CD cycles 599
-=========================
-optimization finished, #iter = 32
-Objective value = 49991.031555
-#nonzeros/#features = 244/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 1
-iter   6  #CD cycles 13
-iter   7  #CD cycles 1
-iter   8  #CD cycles 108
-iter   9  #CD cycles 12
-iter  10  #CD cycles 1
-iter  11  #CD cycles 292
-iter  12  #CD cycles 39
-iter  13  #CD cycles 8
-iter  14  #CD cycles 2
-iter  15  #CD cycles 5
-iter  16  #CD cycles 7
-iter  17  #CD cycles 5
-iter  18  #CD cycles 6
-iter  19  #CD cycles 4
-iter  20  #CD cycles 8
-iter  21  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  22  #CD cycles 509
-iter  23  #CD cycles 57
-iter  24  #CD cycles 103
-iter  25  #CD cycles 8
-iter  26  #CD cycles 8
-iter  27  #CD cycles 6
-iter  28  #CD cycles 3
-iter  29  #CD cycles 1
-iter  30  #CD cycles 902
-iter  31  #CD cycles 10
-iter  32  #CD cycles 237
-iter  33  #CD cycles 15
-iter  34  #CD cycles 4
-iter  35  #CD cycles 10
-iter  36  #CD cycles 4
-iter  37  #CD cycles 4
-iter  38  #CD cycles 64
-iter  39  #CD cycles 7
-iter  40  #CD cycles 56
-iter  41  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  42  #CD cycles 1000
-WARNING: reaching max number of inner iterations
-iter  43  #CD cycles 1000
-=========================
-optimization finished, #iter = 43
-Objective value = 384337.472655
-#nonzeros/#features = 254/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 3
-iter   3  #CD cycles 1
-iter   4  #CD cycles 8
-iter   5  #CD cycles 1
-iter   6  #CD cycles 14
-iter   7  #CD cycles 1
-iter   8  #CD cycles 87
-iter   9  #CD cycles 10
-iter  10  #CD cycles 34
-iter  11  #CD cycles 1
-iter  12  #CD cycles 119
-iter  13  #CD cycles 21
-iter  14  #CD cycles 4
-iter  15  #CD cycles 3
-iter  16  #CD cycles 6
-iter  17  #CD cycles 4
-iter  18  #CD cycles 3
-iter  19  #CD cycles 17
-iter  20  #CD cycles 19
-iter  21  #CD cycles 20
-iter  22  #CD cycles 11
-iter  23  #CD cycles 1
-iter  24  #CD cycles 101
-iter  25  #CD cycles 345
-iter  26  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  27  #CD cycles 1000
-iter  28  #CD cycles 803
-iter  29  #CD cycles 8
-iter  30  #CD cycles 10
-iter  31  #CD cycles 95
-iter  32  #CD cycles 187
-iter  33  #CD cycles 11
-iter  34  #CD cycles 20
-iter  35  #CD cycles 8
-iter  36  #CD cycles 13
-iter  37  #CD cycles 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: reaching max number of inner iterations
-iter  38  #CD cycles 1000
-=========================
-optimization finished, #iter = 38
-Objective value = 2971751.337309
-#nonzeros/#features = 255/261
-[LibLinear]iter   1  #CD cycles 1
-iter   2  #CD cycles 4
-iter   3  #CD cycles 1
-iter   4  #CD cycles 6
-iter   5  #CD cycles 2
-iter   6  #CD cycles 1
-iter   7  #CD cycles 10
-iter   8  #CD cycles 2
-iter   9  #CD cycles 1
-iter  10  #CD cycles 43
-iter  11  #CD cycles 55
-iter  12  #CD cycles 12
-iter  13  #CD cycles 6
-iter  14  #CD cycles 10
-iter  15  #CD cycles 1
-iter  16  #CD cycles 43
-iter  17  #CD cycles 23
-iter  18  #CD cycles 64
-iter  19  #CD cycles 24
-iter  20  #CD cycles 47
-iter  21  #CD cycles 21
-iter  22  #CD cycles 27
-iter  23  #CD cycles 4
-iter  24  #CD cycles 6
-iter  25  #CD cycles 7
-iter  26  #CD cycles 5
-iter  27  #CD cycles 5
-iter  28  #CD cycles 12
-iter  29  #CD cycles 12
-iter  30  #CD cycles 1
-iter  31  #CD cycles 166
-iter  32  #CD cycles 70
-iter  33  #CD cycles 52
-iter  34  #CD cycles 10
-iter  35  #CD cycles 47
-iter  36  #CD cycles 17
-iter  37  #CD cycles 31
-iter  38  #CD cycles 11
-iter  39  #CD cycles 4
-iter  40  #CD cycles 17
-iter  41  #CD cycles 19
-iter  42  #CD cycles 4
-iter  43  #CD cycles 24
-iter  44  #CD cycles 5
-iter  45  #CD cycles 16
-iter  46  #CD cycles 22
-iter  47  #CD cycles 18
-iter  48  #CD cycles 3
-iter  49  #CD cycles 5
-iter  50  #CD cycles 4
-iter  51  #CD cycles 5
-iter  52  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  53  #CD cycles 1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter  54  #CD cycles 324
-iter  55  #CD cycles 43
-iter  56  #CD cycles 28
-iter  57  #CD cycles 6
-iter  58  #CD cycles 70
-iter  59  #CD cycles 2
-iter  60  #CD cycles 20
-iter  61  #CD cycles 56
-iter  62  #CD cycles 46
-iter  63  #CD cycles 66
-iter  64  #CD cycles 77
-iter  65  #CD cycles 1
-WARNING: reaching max number of inner iterations
-iter  66  #CD cycles 1000
-=========================
-optimization finished, #iter = 66
-Objective value = 23004120.828086
-#nonzeros/#features = 255/261
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    7.0s finished
 </pre></div>
 </div>
 </div>
@@ -3796,16 +1998,12 @@ Objective value = 23004120.828086
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">logpenalties</span><span class="p">,</span><span class="n">nnonzero</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;nonzero coefficients&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3647/1066459780.py:15: MatplotlibDeprecationWarning: The &#39;b&#39; parameter of grid() has been renamed &#39;visible&#39; since Matplotlib 3.5; support for the old name will be dropped two minor releases later.
-  ax2.grid(b=None);
-</pre></div>
-</div>
-<img alt="../_images/recidivism_67_1.png" src="../_images/recidivism_67_1.png" />
+<img alt="../_images/2634c8aeeac43221bdc0c47c7d63c1d93abb092723bcc1754cdc768f91579fc9.png" src="../_images/2634c8aeeac43221bdc0c47c7d63c1d93abb092723bcc1754cdc768f91579fc9.png" />
 </div>
 </div>
 <p>Let’s also look at the nonzero coefficients. We should be careful
@@ -3828,7 +2026,7 @@ consistent coefficient estimates.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -3854,32 +2052,36 @@ consistent coefficient estimates.</p>
   </thead>
   <tbody>
     <tr>
+      <th>Intercept</th>
+      <td>0.009468</td>
+    </tr>
+    <tr>
       <th>sex[T.Male]</th>
-      <td>0.724575</td>
+      <td>0.724846</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.2]</th>
-      <td>0.325190</td>
+      <td>0.325198</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.3]</th>
-      <td>0.612226</td>
+      <td>0.612269</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.4]</th>
-      <td>0.749692</td>
+      <td>0.749691</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.5]</th>
-      <td>0.732777</td>
+      <td>0.732782</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.6]</th>
-      <td>0.792317</td>
+      <td>0.792315</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.7]</th>
-      <td>1.032678</td>
+      <td>1.032675</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.8]</th>
@@ -3887,155 +2089,155 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>C(priors_count)[T.9]</th>
-      <td>1.286934</td>
+      <td>1.286940</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.10]</th>
-      <td>1.318435</td>
+      <td>1.318374</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.11]</th>
-      <td>1.236906</td>
+      <td>1.236911</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.12]</th>
-      <td>0.985704</td>
+      <td>0.985705</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.13]</th>
-      <td>1.528308</td>
+      <td>1.528314</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.14]</th>
-      <td>0.406007</td>
+      <td>0.405993</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.15]</th>
-      <td>0.781431</td>
+      <td>0.781425</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.16]</th>
-      <td>0.131662</td>
+      <td>0.263418</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.17]</th>
-      <td>0.371005</td>
+      <td>0.370954</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.18]</th>
-      <td>1.524261</td>
+      <td>1.524255</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.19]</th>
-      <td>1.143306</td>
+      <td>1.143303</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.20]</th>
-      <td>0.116828</td>
+      <td>0.116834</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.21]</th>
-      <td>1.298520</td>
+      <td>1.298504</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.22]</th>
-      <td>1.676819</td>
+      <td>1.676813</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.23]</th>
-      <td>1.332181</td>
+      <td>1.332174</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.25]</th>
-      <td>0.481923</td>
+      <td>0.481915</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.26]</th>
-      <td>0.229653</td>
+      <td>0.684995</td>
     </tr>
     <tr>
       <th>c_charge_degree[T.M]</th>
-      <td>-0.228174</td>
+      <td>-0.228133</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
-      <td>-0.152888</td>
+      <td>-0.152874</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Assault W/dead Weap]</th>
-      <td>-0.457763</td>
+      <td>-0.457761</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Battery]</th>
-      <td>-0.426239</td>
+      <td>-0.426232</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery]</th>
-      <td>-0.008881</td>
+      <td>-0.008882</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery on Law Enforc Officer]</th>
-      <td>0.312822</td>
+      <td>0.312824</td>
     </tr>
     <tr>
       <th>charge_cat[T.Burglary Unoccupied Dwelling]</th>
-      <td>-0.151930</td>
+      <td>-0.151916</td>
     </tr>
     <tr>
       <th>charge_cat[T.Criminal Mischief]</th>
-      <td>0.441646</td>
+      <td>0.441654</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Level 0.15 Or Minor In Veh]</th>
-      <td>-0.043810</td>
+      <td>-0.043827</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Property Damage/Injury]</th>
-      <td>-0.957457</td>
+      <td>-0.957477</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving License Suspended]</th>
-      <td>-0.062542</td>
+      <td>-0.062535</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.141248</td>
+      <td>-0.141307</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.182793</td>
+      <td>0.182808</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Petit Theft]</th>
-      <td>0.697390</td>
+      <td>0.697387</td>
     </tr>
     <tr>
       <th>charge_cat[T.Grand Theft (Motor Vehicle)]</th>
-      <td>0.134826</td>
+      <td>0.134834</td>
     </tr>
     <tr>
       <th>charge_cat[T.Operating W/O Valid License]</th>
-      <td>-0.084294</td>
+      <td>-0.084286</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft]</th>
-      <td>0.574963</td>
+      <td>0.574966</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft $100- $300]</th>
-      <td>0.019326</td>
+      <td>0.019324</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss Pyrrolidinovalerophenone]</th>
-      <td>2.135469</td>
+      <td>2.135486</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
-      <td>-0.186717</td>
+      <td>-0.186713</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.394867</td>
+      <td>-0.394859</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cocaine]</th>
@@ -4043,27 +2245,27 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.135584</td>
+      <td>0.135530</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Pretrial Release Dom Viol]</th>
-      <td>0.231026</td>
+      <td>0.231031</td>
     </tr>
     <tr>
       <th>charge_cat[T.arrest case no charge]</th>
-      <td>-0.181103</td>
+      <td>-0.181102</td>
     </tr>
     <tr>
       <th>charge_cat[T.other]</th>
-      <td>-0.196719</td>
+      <td>-0.196722</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.1]</th>
-      <td>0.034422</td>
+      <td>0.034420</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.3]</th>
-      <td>0.087813</td>
+      <td>0.087772</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.6]</th>
@@ -4071,39 +2273,39 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.10]</th>
-      <td>0.200309</td>
+      <td>0.200378</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.14]</th>
-      <td>0.709787</td>
+      <td>0.709799</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.16]</th>
-      <td>1.176643</td>
+      <td>1.044891</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.17]</th>
-      <td>1.115193</td>
+      <td>1.115246</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.26]</th>
-      <td>0.678018</td>
+      <td>0.222673</td>
     </tr>
     <tr>
       <th>sex[T.Male]:c_charge_degree[T.M]</th>
-      <td>0.163773</td>
+      <td>0.163725</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Aggravated Battery / Pregnant]</th>
-      <td>0.024302</td>
+      <td>0.024301</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Burglary Conveyance Unoccup]</th>
-      <td>0.516816</td>
+      <td>0.516809</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Corrupt Public Servant]</th>
-      <td>0.717907</td>
+      <td>0.717905</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Crimin Mischief Damage $1000+]</th>
@@ -4111,27 +2313,27 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving License Suspended]</th>
-      <td>-0.000916</td>
+      <td>-0.000919</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.034986</td>
+      <td>-0.034927</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving While License Revoked]</th>
-      <td>-0.094708</td>
+      <td>-0.094704</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.False Ownership Info/Pawn Item]</th>
-      <td>0.480690</td>
+      <td>0.480682</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Battery w/Prior Convict]</th>
-      <td>-0.096459</td>
+      <td>-0.096454</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.114968</td>
+      <td>0.114956</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Grand Theft in the 3rd Degree]</th>
@@ -4139,43 +2341,43 @@ consistent coefficient estimates.</p>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Petit Theft]</th>
-      <td>0.199594</td>
+      <td>0.199588</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.051178</td>
+      <td>-0.051182</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Resist/Obstruct W/O Violence]</th>
-      <td>0.272849</td>
+      <td>0.272845</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.325852</td>
+      <td>0.325915</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>-0.024234</td>
+      <td>-0.024228</td>
     </tr>
     <tr>
       <th>sex[T.Male]:age</th>
-      <td>-0.014789</td>
+      <td>-0.014796</td>
     </tr>
     <tr>
       <th>juv_fel_count</th>
-      <td>0.302099</td>
+      <td>0.302098</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_misd_count</th>
-      <td>0.181025</td>
+      <td>0.181023</td>
     </tr>
     <tr>
       <th>juv_other_count</th>
-      <td>0.149167</td>
+      <td>0.149194</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_other_count</th>
-      <td>-0.019193</td>
+      <td>-0.019222</td>
     </tr>
   </tbody>
 </table>
@@ -4200,17 +2402,17 @@ figures as we did above.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
 </pre></div>
 </div>
@@ -4409,8 +2611,8 @@ figures as we did above.</p>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/recidivism_71_4.png" src="../_images/recidivism_71_4.png" />
-<img alt="../_images/recidivism_71_5.png" src="../_images/recidivism_71_5.png" />
+</div></div><img alt="../_images/c0b2d8e938bd15d661d742d66dad6e7f5d0fa6728890331c5528baa258851513.png" src="../_images/c0b2d8e938bd15d661d742d66dad6e7f5d0fa6728890331c5528baa258851513.png" />
+<img alt="../_images/63d097626dd3262f38f6613a1d13440d3130a2a8da273dd91f00d9e383b55a1d.png" src="../_images/63d097626dd3262f38f6613a1d13440d3130a2a8da273dd91f00d9e383b55a1d.png" />
 </div>
 </div>
 <p>As with COMPAS score, our predictions are well-calibrated, but the
@@ -4422,7 +2624,7 @@ racial groups.</p>
 </div>
 </section>
 <section id="regularizing-to-maximize-balance">
-<h3>Regularizing to Maximize Balance<a class="headerlink" href="#regularizing-to-maximize-balance" title="Permalink to this headline">#</a></h3>
+<h3>Regularizing to Maximize Balance<a class="headerlink" href="#regularizing-to-maximize-balance" title="Permalink to this heading">#</a></h3>
 <p>Trying to improve balance by ad-hoc modifications will be
 difficult.</p>
 <p>Let’s try to do it more systematically.</p>
@@ -4489,7 +2691,7 @@ some other criteria.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/recidivism_74_0.png" src="../_images/recidivism_74_0.png" />
+<img alt="../_images/abfb75f1db3e2cf9b89cbcb94b4a56a960973d5f8767d33d12903c8b4850ec4d.png" src="../_images/abfb75f1db3e2cf9b89cbcb94b4a56a960973d5f8767d33d12903c8b4850ec4d.png" />
 </div>
 </div>
 <p>We can be perfectly balanced by making the regularization parameter
@@ -4510,19 +2712,19 @@ are not so useful.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:44: RuntimeWarning: invalid value encountered in divide
+/tmp/ipykernel_2963/1996610596.py:44: RuntimeWarning: invalid value encountered in divide
   pcm = pcm/pcm.sum(axis=axis, keepdims=True)
 </pre></div>
 </div>
@@ -4749,17 +2951,17 @@ prediction and balance?</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
-/tmp/ipykernel_3647/1996610596.py:38: FutureWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+/tmp/ipykernel_2963/1996610596.py:38: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
   output.loc[:, group] = vals.reshape(-1)
 </pre></div>
 </div>
@@ -4792,38 +2994,38 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>Portion_of_NoRecid_and_LowRisk</th>
-      <td>0.405421</td>
-      <td>0.328025</td>
+      <td>0.404243</td>
+      <td>0.325902</td>
       <td>0.483333</td>
       <td>0.574194</td>
-      <td>0.561960</td>
+      <td>0.556196</td>
       <td>0.365185</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_LowRisk</th>
-      <td>0.147908</td>
-      <td>0.165605</td>
+      <td>0.149087</td>
+      <td>0.167728</td>
       <td>0.128333</td>
       <td>0.116129</td>
-      <td>0.083573</td>
+      <td>0.089337</td>
       <td>0.164444</td>
     </tr>
     <tr>
       <th>Portion_of_NoRecid_and_HighRisk</th>
-      <td>0.189747</td>
+      <td>0.190336</td>
       <td>0.181529</td>
+      <td>0.201667</td>
       <td>0.200000</td>
-      <td>0.200000</td>
-      <td>0.239193</td>
+      <td>0.242075</td>
       <td>0.177037</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_HighRisk</th>
-      <td>0.256924</td>
+      <td>0.256335</td>
       <td>0.324841</td>
-      <td>0.188333</td>
+      <td>0.186667</td>
       <td>0.109677</td>
-      <td>0.115274</td>
+      <td>0.112392</td>
       <td>0.293333</td>
     </tr>
   </tbody>
@@ -4857,38 +3059,38 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>P(NoRecid|LowRisk)</th>
-      <td>0.681188</td>
-      <td>0.643750</td>
-      <td>0.707317</td>
+      <td>0.679881</td>
+      <td>0.642259</td>
+      <td>0.705596</td>
       <td>0.741667</td>
-      <td>0.701439</td>
+      <td>0.696751</td>
       <td>0.673497</td>
     </tr>
     <tr>
       <th>P(NoRecid|HighRisk)</th>
-      <td>0.365357</td>
-      <td>0.337662</td>
-      <td>0.405263</td>
+      <td>0.367733</td>
+      <td>0.340517</td>
+      <td>0.407407</td>
       <td>0.514286</td>
-      <td>0.420290</td>
+      <td>0.442857</td>
       <td>0.359223</td>
     </tr>
     <tr>
       <th>P(Recid|LowRisk)</th>
-      <td>0.318812</td>
-      <td>0.356250</td>
-      <td>0.292683</td>
+      <td>0.320119</td>
+      <td>0.357741</td>
+      <td>0.294404</td>
       <td>0.258333</td>
-      <td>0.298561</td>
+      <td>0.303249</td>
       <td>0.326503</td>
     </tr>
     <tr>
       <th>P(Recid|HighRisk)</th>
-      <td>0.634643</td>
-      <td>0.662338</td>
-      <td>0.594737</td>
+      <td>0.632267</td>
+      <td>0.659483</td>
+      <td>0.592593</td>
       <td>0.485714</td>
-      <td>0.579710</td>
+      <td>0.557143</td>
       <td>0.640777</td>
     </tr>
   </tbody>
@@ -4922,45 +3124,45 @@ prediction and balance?</p>
   <tbody>
     <tr>
       <th>P(LowRisk|NoRecid)</th>
-      <td>0.732694</td>
-      <td>0.664516</td>
+      <td>0.730564</td>
+      <td>0.660215</td>
       <td>0.790191</td>
       <td>0.831776</td>
-      <td>0.870536</td>
+      <td>0.861607</td>
       <td>0.689510</td>
     </tr>
     <tr>
       <th>P(HighRisk|NoRecid)</th>
-      <td>0.267306</td>
-      <td>0.335484</td>
+      <td>0.269436</td>
+      <td>0.339785</td>
       <td>0.209809</td>
       <td>0.168224</td>
-      <td>0.129464</td>
+      <td>0.138393</td>
       <td>0.310490</td>
     </tr>
     <tr>
       <th>P(LowRisk|Recid)</th>
-      <td>0.424802</td>
+      <td>0.426121</td>
       <td>0.358491</td>
-      <td>0.515021</td>
+      <td>0.519313</td>
       <td>0.645833</td>
-      <td>0.674797</td>
+      <td>0.682927</td>
       <td>0.376378</td>
     </tr>
     <tr>
       <th>P(HighRisk|Recid)</th>
-      <td>0.575198</td>
+      <td>0.573879</td>
       <td>0.641509</td>
-      <td>0.484979</td>
+      <td>0.480687</td>
       <td>0.354167</td>
-      <td>0.325203</td>
+      <td>0.317073</td>
       <td>0.623622</td>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/recidivism_78_5.png" src="../_images/recidivism_78_5.png" />
-<img alt="../_images/recidivism_78_6.png" src="../_images/recidivism_78_6.png" />
-<img alt="../_images/recidivism_78_7.png" src="../_images/recidivism_78_7.png" />
+</div></div><img alt="../_images/8d94afb3de3bf455457cffa000517384872bf10c6d00e3ca23fce2ba3a307278.png" src="../_images/8d94afb3de3bf455457cffa000517384872bf10c6d00e3ca23fce2ba3a307278.png" />
+<img alt="../_images/1e0c8e7b4e0c2c909fa745b9132d4cbe4a25c122d31c6197a1df33c7d3cafef3.png" src="../_images/1e0c8e7b4e0c2c909fa745b9132d4cbe4a25c122d31c6197a1df33c7d3cafef3.png" />
+<img alt="../_images/5d017d7a484873a24d4b950986c7063ede1beb67ad7bfb5a83694a6135d264c4.png" src="../_images/5d017d7a484873a24d4b950986c7063ede1beb67ad7bfb5a83694a6135d264c4.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="app-rcd-dir4">
@@ -4969,7 +3171,7 @@ prediction and balance?</p>
 </div>
 </section>
 <section id="tradeoffs-are-inevitable">
-<h3>Tradeoffs are Inevitable<a class="headerlink" href="#tradeoffs-are-inevitable" title="Permalink to this headline">#</a></h3>
+<h3>Tradeoffs are Inevitable<a class="headerlink" href="#tradeoffs-are-inevitable" title="Permalink to this heading">#</a></h3>
 <p>We could try to tweak our predictions further to improve
 balance.</p>
 <p>However, motivated in part by this COMPAS example, <span id="id4">[<a class="reference internal" href="#id6" title="Jon Kleinberg, Himabindu Lakkaraju, Jure Leskovec, Jens Ludwig, and Sendhil Mullainathan. Human Decisions and Machine Predictions*. The Quarterly Journal of Economics, 133(1):237-293, 08 2017. URL: https://dx.doi.org/10.1093/qje/qjx032, arXiv:http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf, doi:10.1093/qje/qjx032.">recidKLL+17</a>]</span> proved
@@ -4979,27 +3181,29 @@ balanced and well-calibrated.</p>
 </section>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <div class="docutils container" id="id5">
-<dl class="citation">
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id1">recidDMB16</a></span></dt>
-<dd><p>William Dieterich, Christina Mendoza, and Tim Brennan. Compas risk scales: demonstrating accuracy equity and predictive parity. <em>Northpoint Inc</em>, 2016.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets">recidKLL+17</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>,<a href="#id4">3</a>)</span></dt>
-<dd><p>Jon Kleinberg, Himabindu Lakkaraju, Jure Leskovec, Jens Ludwig, and Sendhil Mullainathan. Human Decisions and Machine Predictions*. <em>The Quarterly Journal of Economics</em>, 133(1):237–293, 08 2017. URL: <a class="reference external" href="https://dx.doi.org/10.1093/qje/qjx032">https://dx.doi.org/10.1093/qje/qjx032</a>, <a class="reference external" href="https://arxiv.org/abs/http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf">arXiv:http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf</a>, <a class="reference external" href="https://doi.org/10.1093/qje/qjx032">doi:10.1093/qje/qjx032</a>.</p>
-</dd>
-</dl>
+<div class="citation" id="id16" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">recidDMB16</a><span class="fn-bracket">]</span></span>
+<p>William Dieterich, Christina Mendoza, and Tim Brennan. Compas risk scales: demonstrating accuracy equity and predictive parity. <em>Northpoint Inc</em>, 2016.</p>
+</div>
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>recidKLL+17<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>)</span>
+<p>Jon Kleinberg, Himabindu Lakkaraju, Jure Leskovec, Jens Ludwig, and Sendhil Mullainathan. Human Decisions and Machine Predictions*. <em>The Quarterly Journal of Economics</em>, 133(1):237–293, 08 2017. URL: <a class="reference external" href="https://dx.doi.org/10.1093/qje/qjx032">https://dx.doi.org/10.1093/qje/qjx032</a>, <a class="reference external" href="https://arxiv.org/abs/http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf">arXiv:http://oup.prod.sis.lan/qje/article-pdf/133/1/237/24246094/qjx032.pdf</a>, <a class="reference external" href="https://doi.org/10.1093/qje/qjx032">doi:10.1093/qje/qjx032</a>.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="exercises">
-<span id="app-rcd-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="app-rcd-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Can you develop a model that performs better at mimicking their risk scores?</p>
 <p>(<a class="reference internal" href="#app-rcd-dir1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>We made our calibration plot using a held-out test sample. What
 do you think would happen if made the calibration plot using the
 training sample? Check and see.</p>
@@ -5013,7 +3217,7 @@ training sample? Check and see.</p>
 <p>(<a class="reference internal" href="#app-rcd-dir2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Try to improve balance and/or calibration by creating an
 alternative prediction.</p>
 <div class="cell docutils container">
@@ -5026,7 +3230,7 @@ alternative prediction.</p>
 <p>(<a class="reference internal" href="#app-rcd-dir3"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>Modify the cross-validation scoring function to see how it affects
 calibration and balance.</p>
 <p>(<a class="reference internal" href="#app-rcd-dir4"><span class="std std-ref">back to text</span></a>)</p>
@@ -5046,7 +3250,7 @@ calibration and balance.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./applications"
         },
         predefinedOutput: true
@@ -5329,7 +3533,7 @@ calibration and balance.</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -5471,16 +3675,5 @@ calibration and balance.</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

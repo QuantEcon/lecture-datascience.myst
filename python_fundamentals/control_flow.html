@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Control Flow &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -96,6 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python_fundamentals/control_flow';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/python_fundamentals/control_flow.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,168 +161,40 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#net-present-values-and-asset-pricing">
-   Net Present Values and Asset Pricing
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#net-present-value">
-     Net Present Value
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conditional-statements-and-blocks">
-   Conditional Statements and Blocks
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#elif-clauses">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       elif
-      </span>
-     </code>
-     clauses
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#iteration">
-   Iteration
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-contrived-example">
-     A Contrived Example
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loops">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       for
-      </span>
-     </code>
-     Loops
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#while-loops">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       while
-      </span>
-     </code>
-     Loops
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#break-and-continue">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       break
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       continue
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#break-out-of-a-loop">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         break
-        </span>
-       </code>
-       Out of a Loop
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#continue-to-the-next-iteration">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         continue
-        </span>
-       </code>
-       to the Next Iteration
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comprehension">
-   Comprehension
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3">
-     Exercise 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4">
-     Exercise 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5">
-     Exercise 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6">
-     Exercise 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7">
-     Exercise 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8">
-     Exercise 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9">
-     Exercise 9
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10">
-     Exercise 10
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#net-present-values-and-asset-pricing">Net Present Values and Asset Pricing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#net-present-value">Net Present Value</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-and-blocks">Conditional Statements and Blocks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elif-clauses"><code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-contrived-example">A Contrived Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break-and-continue"><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#break-out-of-a-loop"><code class="docutils literal notranslate"><span class="pre">break</span></code> Out of a Loop</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-to-the-next-iteration"><code class="docutils literal notranslate"><span class="pre">continue</span></code> to the Next Iteration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension">Comprehension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -355,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="control-flow">
-<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this headline">#</a></h1>
+<h1>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p>Booleans section in <a class="reference internal" href="basics.html"><span class="doc">Basics</span></a></p></li>
@@ -385,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <section id="net-present-values-and-asset-pricing">
-<span id="deterministic-asset-pricing"></span><h2>Net Present Values and Asset Pricing<a class="headerlink" href="#net-present-values-and-asset-pricing" title="Permalink to this headline">#</a></h2>
+<span id="deterministic-asset-pricing"></span><h2>Net Present Values and Asset Pricing<a class="headerlink" href="#net-present-values-and-asset-pricing" title="Permalink to this heading">#</a></h2>
 <p>In this lecture, we’ll introduce two related topics from economics:</p>
 <ul class="simple">
 <li><p>Net present valuations</p></li>
@@ -415,7 +299,7 @@ consuming 1.00 today and <span class="math notranslate nohighlight">\((1+r)(1+r)
 <p>See exercise 1 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
 <section id="net-present-value">
-<span id="npv"></span><h3>Net Present Value<a class="headerlink" href="#net-present-value" title="Permalink to this headline">#</a></h3>
+<span id="npv"></span><h3>Net Present Value<a class="headerlink" href="#net-present-value" title="Permalink to this heading">#</a></h3>
 <p>If an asset pays a stream of payoffs over multiple time periods, then we
 can use a discount rate to calculate the value to the consumer of a entire
 sequence of payoffs.</p>
@@ -458,7 +342,7 @@ pays 1 forever is <span class="math notranslate nohighlight">\(\frac{1+r}{r}\)</
 </section>
 </section>
 <section id="conditional-statements-and-blocks">
-<h2>Conditional Statements and Blocks<a class="headerlink" href="#conditional-statements-and-blocks" title="Permalink to this headline">#</a></h2>
+<h2>Conditional Statements and Blocks<a class="headerlink" href="#conditional-statements-and-blocks" title="Permalink to this heading">#</a></h2>
 <p>Sometimes, we will only want to execute some piece of code if a certain condition
 is met.</p>
 <p>These conditions can be anything.</p>
@@ -607,7 +491,7 @@ before, but now, we added an <code class="docutils literal notranslate"><span cl
 <p>See exercise 4 in the <a class="reference internal" href="#ex2-3"><span class="std std-ref">exercise list</span></a>.</p>
 </div>
 <section id="elif-clauses">
-<h3><code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses<a class="headerlink" href="#elif-clauses" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses<a class="headerlink" href="#elif-clauses" title="Permalink to this heading">#</a></h3>
 <p>Sometimes, you have more than one condition you want to check.</p>
 <p>For example, you might want to run a different set of code based on which
 quarter a particular transaction took place in.</p>
@@ -660,7 +544,7 @@ associated with <code class="docutils literal notranslate"><span class="pre">hal
 </section>
 </section>
 <section id="iteration">
-<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">#</a></h2>
+<h2>Iteration<a class="headerlink" href="#iteration" title="Permalink to this heading">#</a></h2>
 <p>When doing computations or analyzing data, we often need to repeat certain
 operations a finite number of times or until some condition is met.</p>
 <p>Examples include processing all data files in a directory (folder), aggregating
@@ -671,7 +555,7 @@ that we wrote down above.)</p>
 <p>We feel the concept is best understood through example, so we will present a
 contrived example and then discuss the details behind doing iteration in Python.</p>
 <section id="a-contrived-example">
-<h3>A Contrived Example<a class="headerlink" href="#a-contrived-example" title="Permalink to this headline">#</a></h3>
+<h3>A Contrived Example<a class="headerlink" href="#a-contrived-example" title="Permalink to this heading">#</a></h3>
 <p>Suppose we wanted to print out the first 10 integers and their squares.</p>
 <p>We <em>could</em> do something like this.</p>
 <div class="cell docutils container">
@@ -735,7 +619,7 @@ for each new value it did the operations in the indented block (here
 just one line that called the <code class="docutils literal notranslate"><span class="pre">print</span></code> function).</p>
 </section>
 <section id="for-loops">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
 <p>The general structure of a standard <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is as follows.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
    <span class="c1"># operation 1 with item</span>
@@ -824,7 +708,7 @@ New York is in New York
 </div>
 </section>
 <section id="while-loops">
-<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h3>
 <p>A related but slightly different form of iteration is to repeat something
 until some condition is met.</p>
 <p>This is typically achieved using a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
@@ -935,9 +819,9 @@ done
 </div>
 </section>
 <section id="break-and-continue">
-<h3><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-and-continue" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-and-continue" title="Permalink to this heading">#</a></h3>
 <section id="break-out-of-a-loop">
-<h4><code class="docutils literal notranslate"><span class="pre">break</span></code> Out of a Loop<a class="headerlink" href="#break-out-of-a-loop" title="Permalink to this headline">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">break</span></code> Out of a Loop<a class="headerlink" href="#break-out-of-a-loop" title="Permalink to this heading">#</a></h4>
 <p>Sometimes we want to stop a loop early if some condition is met.</p>
 <p>Let’s revisit the example of finding the smallest <code class="docutils literal notranslate"><span class="pre">N</span></code> such that
 <span class="math notranslate nohighlight">\(\sum_{i=0}^N i &gt; 1000\)</span>.</p>
@@ -969,7 +853,7 @@ iterating through our range once total goes above 1000.</p>
 </div>
 </section>
 <section id="continue-to-the-next-iteration">
-<h4><code class="docutils literal notranslate"><span class="pre">continue</span></code> to the Next Iteration<a class="headerlink" href="#continue-to-the-next-iteration" title="Permalink to this headline">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">continue</span></code> to the Next Iteration<a class="headerlink" href="#continue-to-the-next-iteration" title="Permalink to this heading">#</a></h4>
 <p>Sometimes we might want to stop the <em>body of a loop</em> early if a condition is met.</p>
 <p>To do this we can use the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword.</p>
 <p>The basic syntax for doing this is:</p>
@@ -1014,7 +898,7 @@ nothing otherwise.</p>
 </section>
 </section>
 <section id="comprehension">
-<h2>Comprehension<a class="headerlink" href="#comprehension" title="Permalink to this headline">#</a></h2>
+<h2>Comprehension<a class="headerlink" href="#comprehension" title="Permalink to this heading">#</a></h2>
 <p>Often, we will want to perform a very simple operation for every element of some iterable and
 create a new iterable with these values.</p>
 <p>This could be done by writing a for loop and saving each
@@ -1146,9 +1030,9 @@ and in <code class="docutils literal notranslate"><span class="pre">x2_comp</spa
 </div>
 </section>
 <section id="exercises">
-<span id="ex2-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="ex2-3"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Government bonds are often issued as <em>zero-coupon bonds</em> meaning that they
 make no payments throughout the entire time that they are held, but, rather
 make a single payment at the time of maturity.</p>
@@ -1164,7 +1048,7 @@ make a single payment at the time of maturity.</p>
 <p>(<a class="reference internal" href="#dir2-3-1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Run the following two variations on the code with only a single change in the indentation.</p>
 <p>After, modify the <code class="docutils literal notranslate"><span class="pre">x</span></code> to print <code class="docutils literal notranslate"><span class="pre">3</span></code> and then <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">3</span></code> instead.</p>
 <div class="cell tag_remove-output docutils container">
@@ -1194,7 +1078,7 @@ make a single payment at the time of maturity.</p>
 <p>(<a class="reference internal" href="#dir2-3-2"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Using the code cell below as a start, print <code class="docutils literal notranslate"><span class="pre">&quot;Good</span> <span class="pre">afternoon&quot;</span></code> if the
 <code class="docutils literal notranslate"><span class="pre">current_time</span></code> is past noon.</p>
 <p>Otherwise, do nothing.</p>
@@ -1216,7 +1100,7 @@ make a single payment at the time of maturity.</p>
 <p>(<a class="reference internal" href="#dir2-3-3"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>In this example, you will generate a random number between 0 and 1
 and then display “x &gt; 0.5” or “x &lt; 0.5” depending on the value of the
 number.</p>
@@ -1236,7 +1120,7 @@ drawing random numbers (more in the <a class="reference internal" href="../scien
 <p>(<a class="reference internal" href="#dir2-3-4"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-5">
-<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
 <p>In economics, when an individual has some knowledge, skills, or education
 which provides them with a source of future income, we call it <a class="reference external" href="https://en.wikipedia.org/wiki/Human_capital">human
 capital</a>.</p>
@@ -1246,7 +1130,7 @@ them higher paying jobs in the future, but requires that they don’t begin
 working until after graduation.</p>
 <p>Consider the simplified example where a student has perfectly forecastable
 employment and is given two choices:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Begin working immediately and make 40,000 a year until they retire 40
 years later.</p></li>
 <li><p>Pay 5,000 a year for the next 4 years to attend university, then
@@ -1280,7 +1164,7 @@ the college attendance decision.</p></li>
 <p>(<a class="reference internal" href="#dir2-3-5"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-6">
-<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this heading">#</a></h3>
 <p>Instead of the above, write a for loop that uses the lists of cities
 and states below to print the same “{city} is in {state}” using
 a <code class="docutils literal notranslate"><span class="pre">zip</span></code> instead of an <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
@@ -1301,7 +1185,7 @@ a <code class="docutils literal notranslate"><span class="pre">zip</span></code>
 <p>(<a class="reference internal" href="#dir2-3-6"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this heading">#</a></h3>
 <p>Companies often invest in training their employees to raise their
 productivity. Economists sometimes wonder why companies
 spend this money when this incentivizes other companies to hire
@@ -1335,7 +1219,7 @@ rate is r = 0.01?</p>
 <p>(<a class="reference internal" href="#dir2-3-7"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this heading">#</a></h3>
 <p>Try to find the index of the first value in <code class="docutils literal notranslate"><span class="pre">x</span></code>
 that is greater than 0.999 using a for loop and <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
 <div class="admonition hint">
@@ -1353,7 +1237,7 @@ that is greater than 0.999 using a for loop and <code class="docutils literal no
 <p>(<a class="reference internal" href="#dir2-3-8"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-9">
-<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this heading">#</a></h3>
 <p>Write a for loop that adds up all values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than
 or equal to 0.5.</p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">continue</span></code> word to end the body of the loop early for all values
@@ -1374,7 +1258,7 @@ iterating over the indices of <code class="docutils literal notranslate"><span c
 <p>(<a class="reference internal" href="#dir2-3-9"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-10">
-<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this heading">#</a></h3>
 <p>Returning to our previous example: print “{city} is in {state}” for each combination
 using a <code class="docutils literal notranslate"><span class="pre">zip</span></code> and a comprehension.</p>
 <div class="admonition hint">
@@ -1408,7 +1292,7 @@ using a <code class="docutils literal notranslate"><span class="pre">zip</span><
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./python_fundamentals"
         },
         predefinedOutput: true
@@ -1691,7 +1575,7 @@ using a <code class="docutils literal notranslate"><span class="pre">zip</span><
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -1833,16 +1717,5 @@ using a <code class="docutils literal notranslate"><span class="pre">zip</span><
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>

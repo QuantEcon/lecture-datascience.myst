@@ -919,7 +919,7 @@ X_train, X_test, y_train, y_test, df_train, df_test = model_selection.train_test
     X,pd.Series(y.reshape(-1),index=df.index),df, test_size=0.25, random_state=42
 )
 
-lasso_mod=linear_model.LogisticRegressionCV(cv=5,verbose=True,
+lasso_mod=linear_model.LogisticRegressionCV(cv=5,verbose=False,
                                             Cs=10, penalty='l1',
                                             max_iter=100,
                                             scoring="neg_log_loss",
@@ -943,7 +943,7 @@ ax2 = ax1.twinx()
 ax2.plot(logpenalties,nnonzero, color=colors[1])
 ax2.set_ylabel("nonzero coefficients", color=colors[1])
 ax2.tick_params('y', colors=colors[1])
-ax2.grid(b=None);
+ax2.grid(visible=False);
 ```
 
 Let's also look at the nonzero coefficients. We should be careful

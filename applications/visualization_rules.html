@@ -1,10 +1,13 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Data Visualization: Rules and Guidelines &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -48,44 +51,52 @@
         </script>
     
     
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -96,6 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'applications/visualization_rules';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/applications/visualization_rules.html" />
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -149,197 +161,56 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#steps-to-creating-effective-charts">
-   Steps to Creating Effective Charts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#identify-the-message">
-       Identify the Message
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#visualize">
-       Visualize
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#visualization-draft">
-       Visualization Draft
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fine-tune">
-       Fine-tune
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualization-types">
-   Visualization Types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scatter-plots">
-     Scatter Plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#line-plots">
-     Line Plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bar-charts">
-     Bar Charts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#histograms">
-     Histograms
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#color-in-plots">
-   Color in Plots
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hue-saturation-lightness">
-     Hue Saturation Lightness
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#color-palettes">
-     Color Palettes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#do-no-harm">
-     Do No Harm
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sometimes-value-is-more-effective-than-hue">
-       Sometimes Value is More Effective than Hue
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#carelessness-with-value-can-make-grayscale-impossible-to-read">
-       Carelessness with Value Can Make Grayscale Impossible to Read
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-color-to-draw-attention">
-       Use Color to Draw Attention
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#don-t-use-color-to-differentiate-small-objects">
-       Don’t Use Color to Differentiate Small Objects
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#colors-connotations">
-       Colors’ Connotations
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#accounting-for-color-blindness">
-       Accounting for Color Blindness
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualization-rules">
-   Visualization Rules
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bar-plot-recommendations">
-     Bar Plot Recommendations
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pie-plots">
-     Pie Plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simplify-line-plots">
-     Simplify Line Plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tick-steps">
-     Tick Steps
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#no-background-colors">
-     No Background Colors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#legends">
-     Legends
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limit-the-information-in-a-single-plot">
-     Limit the Information in a Single Plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#talk-to-other-people">
-     Talk to Other People
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1">
-     Exercise 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2">
-     Exercise  2
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-creating-effective-charts">Steps to Creating Effective Charts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-message">Identify the Message</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">Visualize</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-draft">Visualization Draft</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tune">Fine-tune</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-types">Visualization Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">Scatter Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots">Line Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar Charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-in-plots">Color in Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hue-saturation-lightness">Hue Saturation Lightness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#color-palettes">Color Palettes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-no-harm">Do No Harm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sometimes-value-is-more-effective-than-hue">Sometimes Value is More Effective than Hue</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#carelessness-with-value-can-make-grayscale-impossible-to-read">Carelessness with Value Can Make Grayscale Impossible to Read</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-color-to-draw-attention">Use Color to Draw Attention</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#don-t-use-color-to-differentiate-small-objects">Don’t Use Color to Differentiate Small Objects</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#colors-connotations">Colors’ Connotations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accounting-for-color-blindness">Accounting for Color Blindness</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-rules">Visualization Rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot-recommendations">Bar Plot Recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pie-plots">Pie Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-line-plots">Simplify Line Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tick-steps">Tick Steps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-background-colors">No Background Colors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legends">Legends</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-the-information-in-a-single-plot">Limit the Information in a Single Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#talk-to-other-people">Talk to Other People</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise  2</a></li>
+</ul>
+</li>
+</ul>
                             <p class="logo">
                                 
                                     
@@ -384,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="data-visualization-rules-and-guidelines">
-<h1>Data Visualization: Rules and Guidelines<a class="headerlink" href="#data-visualization-rules-and-guidelines" title="Permalink to this headline">#</a></h1>
+<h1>Data Visualization: Rules and Guidelines<a class="headerlink" href="#data-visualization-rules-and-guidelines" title="Permalink to this heading">#</a></h1>
 <p><strong>Co-author</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -422,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>An economist’s (or data scientist’s) job goes beyond simply learning new things using data and
 theory.</p>
 <p>Learning these new things is meant to help economists or data scientists communicate these ideas to others,
@@ -430,7 +301,7 @@ whether the medium is an academic paper or a business meeting.</p>
 <p>One of the most effective mediums of communication is visualization.</p>
 <p>Well-done visualizations can help your audience remember your message.</p>
 <p>They accomplish this through at least two main channels:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Psychology researchers have observed <a class="reference external" href="https://en.wikipedia.org/wiki/Picture_superiority_effect"><em>picture superiority</em></a>: the fact that images are more likely to be remembered than
 words. While the reasons and extent of the effect are debated, the consensus view is that the effect exists.
 How large might this effect be? In a paper by Defeyter, Russo, and McPartlin (2009), the authors found that participants were able to identify pictures they had previously studied for approximately 500 ms each with 75-85% accuracy but words with only a 55-65% accuracy.</p></li>
@@ -445,13 +316,13 @@ introductory lecture.</p>
 <a class="reference external" href="https://matplotlib.org/contents.html">online documentation</a> if you have questions.</p>
 </section>
 <section id="steps-to-creating-effective-charts">
-<h2>Steps to Creating Effective Charts<a class="headerlink" href="#steps-to-creating-effective-charts" title="Permalink to this headline">#</a></h2>
+<h2>Steps to Creating Effective Charts<a class="headerlink" href="#steps-to-creating-effective-charts" title="Permalink to this heading">#</a></h2>
 <p>Before we begin discussions of specific recommendations, it is helpful to agree on
 the goal of a data visualization and a process that can be used to accomplish the goal.</p>
 <p>As mentioned in the introduction, the purpose of a visualization is to facilitate the communication
 of a message or idea.</p>
 <p>We have found the following steps to be useful for achieving this goal:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Identify the message.</p></li>
 <li><p>Describe your visualization.</p></li>
 <li><p>Create a draft of the visualization (and verify your data!).</p></li>
@@ -473,10 +344,10 @@ is a reporting issue in the data collection.</p>
 <p>The steps and guidelines that follow may be helpful in the research process, but refining each of your exploratory visualizations to a publishable version is not practical.
 Some of these recommendations will be specific to creating a visualization after you understand the story you’re telling.</p>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
 <p>The output of this example will be a reproduction of a visualization from
 <a class="reference external" href="https://www.nytimes.com/2019/01/11/upshot/big-cities-low-skilled-workers-wages.html">this NYT article</a>.</p>
-<p>This NYT article is based on research done by David Autor <a class="footnote-reference brackets" href="#ely" id="id1">1</a> , an
+<p>This NYT article is based on research done by David Autor <a class="footnote-reference brackets" href="#ely" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> , an
 economist at MIT, and his co-authors.</p>
 <p>Autor’s research investigates the observable changes over time between work opportunities
 in rural and urban locations in the United States.</p>
@@ -486,7 +357,7 @@ to find higher-paying jobs by working in urban areas in the 20th century.</p>
 with college educations. However, for those without a college education, it has
 disappeared.</p>
 <section id="identify-the-message">
-<h4>Identify the Message<a class="headerlink" href="#identify-the-message" title="Permalink to this headline">#</a></h4>
+<h4>Identify the Message<a class="headerlink" href="#identify-the-message" title="Permalink to this heading">#</a></h4>
 <p>The first step to creating a visualization might feel a little obvious, but is
 the most important step.</p>
 <p>If you fail to choose a concise message, then you won’t be able to clearly communicate the idea.</p>
@@ -495,7 +366,7 @@ rural/urban wage gap for non-college-educated workers since the 1950s?”.</p>
 <p>Part of what makes the answer interesting is that the wage gap changes are unique to non-college-educated workers; we will want to display changes in the wage gap for college-educated workers as well.</p>
 </section>
 <section id="visualize">
-<h4>Visualize<a class="headerlink" href="#visualize" title="Permalink to this headline">#</a></h4>
+<h4>Visualize<a class="headerlink" href="#visualize" title="Permalink to this heading">#</a></h4>
 <p>Choosing the type of visualization that best illustrates your point is an important
 skill to develop.</p>
 <p>Using the wrong type of visualization can inhibit the flow of information from the
@@ -514,7 +385,7 @@ different subplots.</p>
 education using color and time using subplots.</p>
 </section>
 <section id="visualization-draft">
-<h4>Visualization Draft<a class="headerlink" href="#visualization-draft" title="Permalink to this headline">#</a></h4>
+<h4>Visualization Draft<a class="headerlink" href="#visualization-draft" title="Permalink to this heading">#</a></h4>
 <p>Drafting an early version of your visualization without concerning yourself about its aesthetics allows you to think about whether it is able to answer the proposed question.</p>
 <p>Sometimes you’ll get to this step and realize that you need to go back to one of the previous
 steps…</p>
@@ -554,7 +425,133 @@ settling on a draft we are happy with.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_3_0.png" src="../_images/visualization_rules_3_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Read in data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">def</span> <span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1735,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1735</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1739</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1740</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1742</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1743</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1744</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1745</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:713,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="c1"># open URLs</span>
+<span class="ne">--&gt; </span><span class="mi">713</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span>     <span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">719</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:363,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="c1"># assuming storage_options is to be interpreted as headers</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="c1"># Override compression based on Content-Encoding header</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:265,</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd"> Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd"> the stdlib.</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:214,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:523,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">523</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:632,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">632</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:561,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
+<span class="ne">--&gt; </span><span class="mi">561</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:641,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">641</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
+
+<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
+</pre></div>
+</div>
 </div>
 </div>
 <div class="admonition-exercise admonition" id="app-vis-dir1">
@@ -563,7 +560,7 @@ settling on a draft we are happy with.</p>
 </div>
 </section>
 <section id="fine-tune">
-<h4>Fine-tune<a class="headerlink" href="#fine-tune" title="Permalink to this headline">#</a></h4>
+<h4>Fine-tune<a class="headerlink" href="#fine-tune" title="Permalink to this heading">#</a></h4>
 <p>Great! We have now confirmed that our decisions up until this point have made sense and that a
 version of this graphic can successfully convey our message.</p>
 <p>The last step is to clean the graph. We want to ensure that no features
@@ -639,21 +636,18 @@ presenting the details.  However, the code we use to create the best version of 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_5_0.png" src="../_images/visualization_rules_5_0.png" />
-</div>
 </div>
 </section>
 </section>
 </section>
 <section id="visualization-types">
-<h2>Visualization Types<a class="headerlink" href="#visualization-types" title="Permalink to this headline">#</a></h2>
+<h2>Visualization Types<a class="headerlink" href="#visualization-types" title="Permalink to this heading">#</a></h2>
 <p>You have seen many kinds of visualizations throughout your life.</p>
 <p>We discuss a few of the most frequently used visualization types and how they describe data below.</p>
 <p>For a more complete list of visualization types, see the Duke library’s
 <a class="reference external" href="https://guides.library.duke.edu/datavis/vis_types">data visualization guide</a>.</p>
 <section id="scatter-plots">
-<h3>Scatter Plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">#</a></h3>
+<h3>Scatter Plots<a class="headerlink" href="#scatter-plots" title="Permalink to this heading">#</a></h3>
 <p>Scatter plots can be used in various ways.</p>
 <p>They are frequently used to show how two variables are related to one another or compare
 various observations based on two variables.</p>
@@ -709,13 +703,10 @@ variables.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_7_0.png" src="../_images/visualization_rules_7_0.png" />
-</div>
 </div>
 </section>
 <section id="line-plots">
-<h3>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this headline">#</a></h3>
+<h3>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this heading">#</a></h3>
 <p>Line plots are best used to either show how a variable evolves over time or to demonstrate the
 relationship between variables.</p>
 <p>Note: it differs from scatter plots in the way it displays relationships between variables.</p>
@@ -807,13 +798,10 @@ chose to remove them.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_9_0.png" src="../_images/visualization_rules_9_0.png" />
-</div>
 </div>
 </section>
 <section id="bar-charts">
-<h3>Bar Charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">#</a></h3>
+<h3>Bar Charts<a class="headerlink" href="#bar-charts" title="Permalink to this heading">#</a></h3>
 <p>Bar charts are mostly used to display differences for a variable between groups though they can also
 be used to show how a variable changes over time (which in some ways, is just showing a difference as grouped by time…).</p>
 <p>Bar charts show the differences between these groups using the length of each bar, so that comparing the different groups is straightforward.</p>
@@ -841,16 +829,10 @@ in the United States.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Unemployment Rate in US Cities&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_11_1.png" src="../_images/visualization_rules_11_1.png" />
-</div>
 </div>
 </section>
 <section id="histograms">
-<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h3>
+<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
 <p>Histograms display the approximate distribution of a single variable.</p>
 <p>They can be particularly important when your variables are not distributed normally
 since we typically think of means and variances in terms of the normal distribution.</p>
@@ -875,17 +857,11 @@ since we typically think of means and variances in terms of the normal distribut
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;US GDP Growth from 1948-2019&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_13_1.png" src="../_images/visualization_rules_13_1.png" />
-</div>
 </div>
 </section>
 </section>
 <section id="color-in-plots">
-<h2>Color in Plots<a class="headerlink" href="#color-in-plots" title="Permalink to this headline">#</a></h2>
+<h2>Color in Plots<a class="headerlink" href="#color-in-plots" title="Permalink to this heading">#</a></h2>
 <p>Choosing colors for your plots is not always a straightforward task.</p>
 <p>Visualization expert Edward Tufte <a class="reference external" href="https://www.edwardtufte.com/tufte/">https://www.edwardtufte.com/tufte/</a> wrote,</p>
 <blockquote>
@@ -893,7 +869,7 @@ since we typically think of means and variances in terms of the normal distribut
 </div></blockquote>
 <p>So how do we “do no harm”?</p>
 <section id="hue-saturation-lightness">
-<h3>Hue Saturation Lightness<a class="headerlink" href="#hue-saturation-lightness" title="Permalink to this headline">#</a></h3>
+<h3>Hue Saturation Lightness<a class="headerlink" href="#hue-saturation-lightness" title="Permalink to this heading">#</a></h3>
 <p>We will use the <a class="reference external" href="https://en.wikipedia.org/wiki/HSL_and_HSV">Hue Saturation Value</a> (HSV) paradigm as a way to formalize our discussion of colors.</p>
 <ul class="simple">
 <li><p><strong>Hue</strong>: This represents the share of each of the primary colors (red, green, blue)
@@ -946,12 +922,6 @@ color black). If the color has value 1 then it has no black and is just the orig
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Hue&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_16_1.png" src="../_images/visualization_rules_16_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -961,12 +931,6 @@ color black). If the color has value 1 then it has no black and is just the orig
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Varying Saturation&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Saturation&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_17_1.png" src="../_images/visualization_rules_17_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -978,16 +942,10 @@ color black). If the color has value 1 then it has no black and is just the orig
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Value&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_18_1.png" src="../_images/visualization_rules_18_1.png" />
-</div>
 </div>
 </section>
 <section id="color-palettes">
-<h3>Color Palettes<a class="headerlink" href="#color-palettes" title="Permalink to this headline">#</a></h3>
+<h3>Color Palettes<a class="headerlink" href="#color-palettes" title="Permalink to this heading">#</a></h3>
 <p>A good color palette will exploit aspects of hue, saturation, and value to emphasize the information
 in the data visualization.</p>
 <p>For example, for qualitatively different groups (where we just want to identify separate groups
@@ -1003,11 +961,6 @@ with matplotlib by doing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">colormaps</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;magma&#39;, &#39;inferno&#39;, &#39;plasma&#39;, &#39;viridis&#39;, &#39;cividis&#39;, &#39;twilight&#39;, &#39;twilight_shifted&#39;, &#39;turbo&#39;, &#39;Blues&#39;, &#39;BrBG&#39;, &#39;BuGn&#39;, &#39;BuPu&#39;, &#39;CMRmap&#39;, &#39;GnBu&#39;, &#39;Greens&#39;, &#39;Greys&#39;, &#39;OrRd&#39;, &#39;Oranges&#39;, &#39;PRGn&#39;, &#39;PiYG&#39;, &#39;PuBu&#39;, &#39;PuBuGn&#39;, &#39;PuOr&#39;, &#39;PuRd&#39;, &#39;Purples&#39;, &#39;RdBu&#39;, &#39;RdGy&#39;, &#39;RdPu&#39;, &#39;RdYlBu&#39;, &#39;RdYlGn&#39;, &#39;Reds&#39;, &#39;Spectral&#39;, &#39;Wistia&#39;, &#39;YlGn&#39;, &#39;YlGnBu&#39;, &#39;YlOrBr&#39;, &#39;YlOrRd&#39;, &#39;afmhot&#39;, &#39;autumn&#39;, &#39;binary&#39;, &#39;bone&#39;, &#39;brg&#39;, &#39;bwr&#39;, &#39;cool&#39;, &#39;coolwarm&#39;, &#39;copper&#39;, &#39;cubehelix&#39;, &#39;flag&#39;, &#39;gist_earth&#39;, &#39;gist_gray&#39;, &#39;gist_heat&#39;, &#39;gist_ncar&#39;, &#39;gist_rainbow&#39;, &#39;gist_stern&#39;, &#39;gist_yarg&#39;, &#39;gnuplot&#39;, &#39;gnuplot2&#39;, &#39;gray&#39;, &#39;hot&#39;, &#39;hsv&#39;, &#39;jet&#39;, &#39;nipy_spectral&#39;, &#39;ocean&#39;, &#39;pink&#39;, &#39;prism&#39;, &#39;rainbow&#39;, &#39;seismic&#39;, &#39;spring&#39;, &#39;summer&#39;, &#39;terrain&#39;, &#39;winter&#39;, &#39;Accent&#39;, &#39;Dark2&#39;, &#39;Paired&#39;, &#39;Pastel1&#39;, &#39;Pastel2&#39;, &#39;Set1&#39;, &#39;Set2&#39;, &#39;Set3&#39;, &#39;tab10&#39;, &#39;tab20&#39;, &#39;tab20b&#39;, &#39;tab20c&#39;, &#39;magma_r&#39;, &#39;inferno_r&#39;, &#39;plasma_r&#39;, &#39;viridis_r&#39;, &#39;cividis_r&#39;, &#39;twilight_r&#39;, &#39;twilight_shifted_r&#39;, &#39;turbo_r&#39;, &#39;Blues_r&#39;, &#39;BrBG_r&#39;, &#39;BuGn_r&#39;, &#39;BuPu_r&#39;, &#39;CMRmap_r&#39;, &#39;GnBu_r&#39;, &#39;Greens_r&#39;, &#39;Greys_r&#39;, &#39;OrRd_r&#39;, &#39;Oranges_r&#39;, &#39;PRGn_r&#39;, &#39;PiYG_r&#39;, &#39;PuBu_r&#39;, &#39;PuBuGn_r&#39;, &#39;PuOr_r&#39;, &#39;PuRd_r&#39;, &#39;Purples_r&#39;, &#39;RdBu_r&#39;, &#39;RdGy_r&#39;, &#39;RdPu_r&#39;, &#39;RdYlBu_r&#39;, &#39;RdYlGn_r&#39;, &#39;Reds_r&#39;, &#39;Spectral_r&#39;, &#39;Wistia_r&#39;, &#39;YlGn_r&#39;, &#39;YlGnBu_r&#39;, &#39;YlOrBr_r&#39;, &#39;YlOrRd_r&#39;, &#39;afmhot_r&#39;, &#39;autumn_r&#39;, &#39;binary_r&#39;, &#39;bone_r&#39;, &#39;brg_r&#39;, &#39;bwr_r&#39;, &#39;cool_r&#39;, &#39;coolwarm_r&#39;, &#39;copper_r&#39;, &#39;cubehelix_r&#39;, &#39;flag_r&#39;, &#39;gist_earth_r&#39;, &#39;gist_gray_r&#39;, &#39;gist_heat_r&#39;, &#39;gist_ncar_r&#39;, &#39;gist_rainbow_r&#39;, &#39;gist_stern_r&#39;, &#39;gist_yarg_r&#39;, &#39;gnuplot_r&#39;, &#39;gnuplot2_r&#39;, &#39;gray_r&#39;, &#39;hot_r&#39;, &#39;hsv_r&#39;, &#39;jet_r&#39;, &#39;nipy_spectral_r&#39;, &#39;ocean_r&#39;, &#39;pink_r&#39;, &#39;prism_r&#39;, &#39;rainbow_r&#39;, &#39;seismic_r&#39;, &#39;spring_r&#39;, &#39;summer_r&#39;, &#39;terrain_r&#39;, &#39;winter_r&#39;, &#39;Accent_r&#39;, &#39;Dark2_r&#39;, &#39;Paired_r&#39;, &#39;Pastel1_r&#39;, &#39;Pastel2_r&#39;, &#39;Set1_r&#39;, &#39;Set2_r&#39;, &#39;Set3_r&#39;, &#39;tab10_r&#39;, &#39;tab20_r&#39;, &#39;tab20b_r&#39;, &#39;tab20c_r&#39;]
 </pre></div>
 </div>
 </div>
@@ -1041,11 +994,11 @@ Nathaniel Smith.</p></li>
 </ul>
 </section>
 <section id="do-no-harm">
-<h3>Do No Harm<a class="headerlink" href="#do-no-harm" title="Permalink to this headline">#</a></h3>
+<h3>Do No Harm<a class="headerlink" href="#do-no-harm" title="Permalink to this heading">#</a></h3>
 <p>Now that we have a little background that we can use as a common language, we can proceed with
 discussing how we can use color effectively.</p>
 <section id="sometimes-value-is-more-effective-than-hue">
-<h4>Sometimes Value is More Effective than Hue<a class="headerlink" href="#sometimes-value-is-more-effective-than-hue" title="Permalink to this headline">#</a></h4>
+<h4>Sometimes Value is More Effective than Hue<a class="headerlink" href="#sometimes-value-is-more-effective-than-hue" title="Permalink to this heading">#</a></h4>
 <p>Sometimes, in a graph with many lines, using the same color with different values is a more effective way to highlight differences than using different colors.</p>
 <p>Compare the following example, which is a modification of an example by Larry Arend, Alex Logan, and
 Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa.gov/graphics_page_design.php">graphics website</a> (the NASA one we linked above).</p>
@@ -1091,9 +1044,6 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_23_0.png" src="../_images/visualization_rules_23_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1102,9 +1052,6 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 <span class="n">fig</span> <span class="o">=</span> <span class="n">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_24_0.png" src="../_images/visualization_rules_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1115,9 +1062,6 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_25_0.png" src="../_images/visualization_rules_25_0.png" />
-</div>
 </div>
 <p>In our opinion, the last one with no color is actually the most readable.</p>
 <p>The point of this exercise is <strong>not</strong> to not use color in your plots, but rather to
@@ -1125,7 +1069,7 @@ encourage you to think about whether hue or value will be more effective in
 communicating your message.</p>
 </section>
 <section id="carelessness-with-value-can-make-grayscale-impossible-to-read">
-<h4>Carelessness with Value Can Make Grayscale Impossible to Read<a class="headerlink" href="#carelessness-with-value-can-make-grayscale-impossible-to-read" title="Permalink to this headline">#</a></h4>
+<h4>Carelessness with Value Can Make Grayscale Impossible to Read<a class="headerlink" href="#carelessness-with-value-can-make-grayscale-impossible-to-read" title="Permalink to this heading">#</a></h4>
 <p>Recall that driving the saturation to 0 is approximately equivalent to projecting the colors
 onto grayscale.</p>
 <p>Well, if you aren’t careful in choosing your colors, then they may have the same projected
@@ -1165,9 +1109,6 @@ from the matplotlib documentation.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_27_0.png" src="../_images/visualization_rules_27_0.png" />
-</div>
 </div>
 <p>And here is the same image converted to grayscale.</p>
 <figure class="align-default">
@@ -1183,7 +1124,7 @@ like blue, green and purple) when converted to grayscale even when they have sim
 Sometimes to know whether colors are different enough, you just have to test it out.</p>
 </section>
 <section id="use-color-to-draw-attention">
-<h4>Use Color to Draw Attention<a class="headerlink" href="#use-color-to-draw-attention" title="Permalink to this headline">#</a></h4>
+<h4>Use Color to Draw Attention<a class="headerlink" href="#use-color-to-draw-attention" title="Permalink to this heading">#</a></h4>
 <p>If you are displaying information about various groups but are really only interested in how one
 group differs from the others, then you should choose several close-together hues to represent the less
 important groups and a distinct color to display the group of interest.</p>
@@ -1212,9 +1153,6 @@ important groups and a distinct color to display the group of interest.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_29_0.png" src="../_images/visualization_rules_29_0.png" />
-</div>
 </div>
 <div class="admonition-exercise admonition" id="app-vis-dir2">
 <p class="admonition-title">Exercise</p>
@@ -1222,7 +1160,7 @@ important groups and a distinct color to display the group of interest.</p>
 </div>
 </section>
 <section id="don-t-use-color-to-differentiate-small-objects">
-<h4>Don’t Use Color to Differentiate Small Objects<a class="headerlink" href="#don-t-use-color-to-differentiate-small-objects" title="Permalink to this headline">#</a></h4>
+<h4>Don’t Use Color to Differentiate Small Objects<a class="headerlink" href="#don-t-use-color-to-differentiate-small-objects" title="Permalink to this heading">#</a></h4>
 <p>Color is a great differentiator when there is enough of the colored object to see… However, when the objects
 become too small, differentiating between colors, no matter how distinct, becomes quite difficult.</p>
 <p>Below is the same plot as we had above, but we have made the scatter plot’s points smaller.</p>
@@ -1251,15 +1189,12 @@ become too small, differentiating between colors, no matter how distinct, become
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_31_0.png" src="../_images/visualization_rules_31_0.png" />
-</div>
 </div>
 <p>It becomes harder to read, but because the red is so much darker than some of the other colors,
 finding the group of interest is still possible (a lesson to be learned here!).</p>
 </section>
 <section id="colors-connotations">
-<h4>Colors’ Connotations<a class="headerlink" href="#colors-connotations" title="Permalink to this headline">#</a></h4>
+<h4>Colors’ Connotations<a class="headerlink" href="#colors-connotations" title="Permalink to this heading">#</a></h4>
 <p>Some colors have connotations.</p>
 <p>Using colors to mean the opposite of what they’re usually used for can be confusing.</p>
 <p>For example, using red to denote positive profits and black to denote negative profits would be
@@ -1294,13 +1229,6 @@ a poor color choice because red is often associated with losses and black is ass
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3796/472303190.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
-  ax.set_xticklabels(df.index)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_34_1.png" src="../_images/visualization_rules_34_1.png" />
-</div>
 </div>
 <p>This plot becomes much more intuitive by using red for negative values.</p>
 <div class="cell docutils container">
@@ -1323,17 +1251,10 @@ a poor color choice because red is often associated with losses and black is ass
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3796/1446163677.py:6: UserWarning: FixedFormatter should only be used together with FixedLocator
-  ax.set_xticklabels(df.index)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_36_1.png" src="../_images/visualization_rules_36_1.png" />
-</div>
 </div>
 </section>
 <section id="accounting-for-color-blindness">
-<h4>Accounting for Color Blindness<a class="headerlink" href="#accounting-for-color-blindness" title="Permalink to this headline">#</a></h4>
+<h4>Accounting for Color Blindness<a class="headerlink" href="#accounting-for-color-blindness" title="Permalink to this heading">#</a></h4>
 <p>Nearly 1 in 10 men have some form of color blindness.</p>
 <p>The most prevalent form makes differentiating between red
 and green difficult.</p>
@@ -1347,7 +1268,7 @@ and <a class="reference external" href="https://github.com/matplotlib/viscm">vis
 </section>
 </section>
 <section id="visualization-rules">
-<h2>Visualization Rules<a class="headerlink" href="#visualization-rules" title="Permalink to this headline">#</a></h2>
+<h2>Visualization Rules<a class="headerlink" href="#visualization-rules" title="Permalink to this heading">#</a></h2>
 <p>We have already discussed some guidelines for color.</p>
 <p>We will now discuss some guidelines for which elements to include and how to structure your graphs.</p>
 <p>Violating each of these may make sense in particular situations, but please have a
@@ -1360,14 +1281,14 @@ message in the graph.</p>
 <p>We will discuss some guidelines that we feel are most abused, but many very good books have
 been written on this subject.</p>
 <p>Some books that we have found extremely instructive are:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><em>Visual Display of Quantitative Information</em> by Edward Tufte.</p></li>
 <li><p><em>The Wall Street Journal Guide to Information Graphics: The Dos and Don’ts of Presenting Data,
 Facts, and Figures</em> by Dona M Wong.</p></li>
 <li><p><em>The Functional Art: An introduction to information graphics and visualization</em> by Alberto Cairo.</p></li>
 </ol>
 <p>Some blogs that we think are useful for seeing well-done visualizations are:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Flowing Data: <a class="reference external" href="https://flowingdata.com/">https://flowingdata.com/</a></p></li>
 <li><p>Story Telling with Data: <a class="reference external" href="http://www.storytellingwithdata.com/">http://www.storytellingwithdata.com/</a></p></li>
 <li><p>Visualizing Data: <a class="reference external" href="http://www.visualisingdata.com/">http://www.visualisingdata.com/</a></p></li>
@@ -1390,7 +1311,7 @@ does an exceptional job at redesigning graphics that were originally poorly done
 few concise rules worth reviewing.</p></li>
 </ul>
 <section id="bar-plot-recommendations">
-<h3>Bar Plot Recommendations<a class="headerlink" href="#bar-plot-recommendations" title="Permalink to this headline">#</a></h3>
+<h3>Bar Plot Recommendations<a class="headerlink" href="#bar-plot-recommendations" title="Permalink to this heading">#</a></h3>
 <p>In Dona Wong’s book, she advises against using <em>zebra patterns</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1429,9 +1350,6 @@ few concise rules worth reviewing.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/visualization_rules_40_0.png" src="../_images/visualization_rules_40_0.png" />
-</div>
 </div>
 <p>Notice that we put a legend at the top and maintain the same order as kept in the bars.</p>
 <p>Additionally, the general consensus is that starting bar plots at any number besides 0 is a
@@ -1460,12 +1378,6 @@ misrepresentation of the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_42_1.png" src="../_images/visualization_rules_42_1.png" />
-</div>
 </div>
 <p>This looks like a big difference!</p>
 <p>In fact, your eyes are telling you that taxes will increase by a factor of 5 if the tax cuts expire.</p>
@@ -1491,18 +1403,12 @@ increase in the top tax rate is only 5-10 percent.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_44_1.png" src="../_images/visualization_rules_44_1.png" />
-</div>
 </div>
 <p>We also have opinions about what type of person uses all caps, but we’ll keep that to ourselves for
 now.</p>
 </section>
 <section id="pie-plots">
-<h3>Pie Plots<a class="headerlink" href="#pie-plots" title="Permalink to this headline">#</a></h3>
+<h3>Pie Plots<a class="headerlink" href="#pie-plots" title="Permalink to this heading">#</a></h3>
 <p>As a general rule, you should avoid pie plots.</p>
 <p>When comparing groups, your reader can more easily measure the heights on a
 bar graph than determine the size of the angles in a pie chart.</p>
@@ -1530,12 +1436,6 @@ bar graph than determine the size of the angles in a pie chart.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;How many pieces of pie eaten&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_46_1.png" src="../_images/visualization_rules_46_1.png" />
-</div>
 </div>
 <p>Using the pie chart, can you tell who ate more pie Alice or Susan? How about with the bar chart?</p>
 <p>The pie chart can sometimes be used to illustrate whether one or two groups is much larger than the
@@ -1545,7 +1445,7 @@ then a pie chart works (though a bar plot also works…).</p>
 <p>If you wanted to make a more precise point, then you might consider going with a bar plot instead.</p>
 </section>
 <section id="simplify-line-plots">
-<h3>Simplify Line Plots<a class="headerlink" href="#simplify-line-plots" title="Permalink to this headline">#</a></h3>
+<h3>Simplify Line Plots<a class="headerlink" href="#simplify-line-plots" title="Permalink to this heading">#</a></h3>
 <p>We’ve tried to emphasize repeatedly that simplifying your visualizations is essential to being able
 to communicate your message.</p>
 <p>We do it again here and will do it a few more times after this…</p>
@@ -1583,12 +1483,6 @@ but have relatively higher health and pension expenditures to pay to the old.</p
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_50_1.png" src="../_images/visualization_rules_50_1.png" />
-</div>
 </div>
 <p>Notice that with so many lines, the message about Japan is hidden or polluted by noise.</p>
 <p>If we did want to demonstrate that Japan is significantly different than many other developed countries,
@@ -1612,12 +1506,6 @@ we might try a plot like this:</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Age Dependency Ratio&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_52_1.png" src="../_images/visualization_rules_52_1.png" />
 </div>
 </div>
 <p>However, placing this many lines on a single plot is definitely an exception, and we encourage you
@@ -1646,12 +1534,6 @@ to do so sparingly.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Age Dependency Ratio&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_54_1.png" src="../_images/visualization_rules_54_1.png" />
 </div>
 </div>
 <p>There are some good-use cases for using line styles to distinguish between different pieces
@@ -1683,16 +1565,10 @@ information, as seen below.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_56_1.png" src="../_images/visualization_rules_56_1.png" />
-</div>
 </div>
 </section>
 <section id="tick-steps">
-<h3>Tick Steps<a class="headerlink" href="#tick-steps" title="Permalink to this headline">#</a></h3>
+<h3>Tick Steps<a class="headerlink" href="#tick-steps" title="Permalink to this heading">#</a></h3>
 <p>Use easy to interpret increments such as multiples of 2, 5, 10, 25 etc…</p>
 <p>Using increments like <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9,</span> <span class="pre">12,</span> <span class="pre">...</span></code> make it more difficult for your reader to do mentally
 determine what the values between the lines are:</p>
@@ -1712,21 +1588,10 @@ determine what the values between the lines are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0, 0, &#39;0&#39;),
- Text(5, 0, &#39;5&#39;),
- Text(10, 0, &#39;10&#39;),
- Text(15, 0, &#39;15&#39;),
- Text(20, 0, &#39;20&#39;),
- Text(25, 0, &#39;25&#39;)]
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_58_1.png" src="../_images/visualization_rules_58_1.png" />
-</div>
 </div>
 </section>
 <section id="no-background-colors">
-<h3>No Background Colors<a class="headerlink" href="#no-background-colors" title="Permalink to this headline">#</a></h3>
+<h3>No Background Colors<a class="headerlink" href="#no-background-colors" title="Permalink to this heading">#</a></h3>
 <p>There are no reasons to use background colors in your visualizations.</p>
 <p>Research has shown that white or very light grays provide the best contrast as a background.</p>
 <p>Compare the following graphs and think about which feels better.</p>
@@ -1753,12 +1618,6 @@ determine what the values between the lines are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_60_1.png" src="../_images/visualization_rules_60_1.png" />
-</div>
 </div>
 <p>versus</p>
 <div class="cell docutils container">
@@ -1784,19 +1643,13 @@ determine what the values between the lines are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_62_1.png" src="../_images/visualization_rules_62_1.png" />
-</div>
 </div>
 </section>
 <section id="legends">
-<h3>Legends<a class="headerlink" href="#legends" title="Permalink to this headline">#</a></h3>
+<h3>Legends<a class="headerlink" href="#legends" title="Permalink to this heading">#</a></h3>
 <p>Legends are quite common in charts, but many visualization experts advise against using them.</p>
 <p>Legends have several weaknesses:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Relying solely on line color often makes a black and white version of your plot effectively
 useless, since you don’t know whether the colors will be distinguishable in grayscale.</p></li>
 <li><p>Legends require people to distinguish between small samples of colors. For
@@ -1838,12 +1691,6 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_66_1.png" src="../_images/visualization_rules_66_1.png" />
-</div>
 </div>
 <p>With labels:</p>
 <div class="cell docutils container">
@@ -1870,35 +1717,29 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
-</pre></div>
-</div>
-<img alt="../_images/visualization_rules_68_1.png" src="../_images/visualization_rules_68_1.png" />
-</div>
 </div>
 <p>Most people find the example with labels to be a more readable graph.</p>
 </section>
 <section id="limit-the-information-in-a-single-plot">
-<h3>Limit the Information in a Single Plot<a class="headerlink" href="#limit-the-information-in-a-single-plot" title="Permalink to this headline">#</a></h3>
+<h3>Limit the Information in a Single Plot<a class="headerlink" href="#limit-the-information-in-a-single-plot" title="Permalink to this heading">#</a></h3>
 <p>Don’t try to put too much information in a single plot!</p>
 <p>We have tried to emphasize this point throughout this lecture, but it is so important that
 we are emphasizing it again!</p>
 <p>Don’t information overload your audience!</p>
 </section>
 <section id="talk-to-other-people">
-<h3>Talk to Other People<a class="headerlink" href="#talk-to-other-people" title="Permalink to this headline">#</a></h3>
+<h3>Talk to Other People<a class="headerlink" href="#talk-to-other-people" title="Permalink to this heading">#</a></h3>
 <p>Our last guideline: talk with others about your visualization.</p>
 <p>The best way to determine whether other people understand your message is to show it to them.</p>
 </section>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="exercises">
-<span id="app-vis-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
+<span id="app-vis-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Create a draft of the alternative way to organize time and education – that is, have two subplots (one for each education level) and four groups of points (one for each year).</p>
 <p>Why do you think they chose to organize the information as they did rather than this way?</p>
 <div class="cell docutils container">
@@ -1911,7 +1752,7 @@ we are emphasizing it again!</p>
 <p>(<a class="reference internal" href="#app-vis-dir1"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise  2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3>Exercise  2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Using the data on Canadian GDP growth below, create a bar chart which uses one color for the
 bars for the years 2000 to 2008, a red for 2009, and the same color as before for 2010 to 2018.</p>
 <div class="cell tag_remove-output docutils container">
@@ -1931,9 +1772,9 @@ bars for the years 2000 to 2008, a red for 2009, and the same color as before fo
 </div>
 <p>(<a class="reference internal" href="#app-vis-dir2"><span class="std std-ref">back to text</span></a>)</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="ely"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>In particular, it is based on <a class="reference external" href="https://www.aeaweb.org/webcasts/2019/aea-ely-lecture-work-of-the-past-work-of-the-future">this lecture</a>
+<aside class="footnote brackets" id="ely" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>In particular, it is based on <a class="reference external" href="https://www.aeaweb.org/webcasts/2019/aea-ely-lecture-work-of-the-past-work-of-the-future">this lecture</a>
 by Autor presented at the annual AEA meeting in January, 2019. This
 is a prestigious invited lecture with a large audience, so it is a more
 “polished” than the typical academic lecture. It is worth
@@ -1941,8 +1782,7 @@ watching. Notice how almost every slide includes data
 visualizations, and very few consist solely of text. Also, notice
 the ways that the NYT modified Autor’s figures and think about
 whether these changes improved the figures.</p>
-</dd>
-</dl>
+</aside>
 </section>
 </section>
 </section>
@@ -1959,7 +1799,7 @@ whether these changes improved the figures.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./applications"
         },
         predefinedOutput: true
@@ -2242,7 +2082,7 @@ whether these changes improved the figures.</p>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
                     <!-- <li class="btn__search">
                         <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
                             <i data-feather="search"></i>
                         </form>
                     </li> -->
@@ -2384,16 +2224,5 @@ whether these changes improved the figures.</p>
         </div>
 
     </div> <!-- .wrapper-->
-    
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54984338-5', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
-
   </body>
 </html>
