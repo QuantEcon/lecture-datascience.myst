@@ -287,134 +287,6 @@ frequency.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">HTTPError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Load up the data -- this will take a couple seconds</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://datascience.quantecon.org/assets/data/state_unemployment.csv&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">unemp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">])</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
-<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1735,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1735</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1739</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1740</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1742</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1743</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1744</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:713,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">712</span> <span class="c1"># open URLs</span>
-<span class="ne">--&gt; </span><span class="mi">713</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">714</span>     <span class="n">path_or_buf</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">715</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">718</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">721</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
-<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:363,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="c1"># assuming storage_options is to be interpreted as headers</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">363</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="c1"># Override compression based on Content-Encoding header</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/io/common.py:265,</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd"> Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd"> the stdlib.</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="ne">--&gt; </span><span class="mi">265</span> <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:214,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
-<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:523,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
-<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">523</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:632,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
-<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">632</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">return</span> <span class="n">response</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:561,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">if</span> <span class="n">http_err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;http_error_default&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">orig_args</span>
-<span class="ne">--&gt; </span><span class="mi">561</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/urllib/request.py:641,</span> in <span class="ni">HTTPDefaultErrorHandler.http_error_default</span><span class="nt">(self, req, fp, code, msg, hdrs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="k">def</span> <span class="nf">http_error_default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">641</span>     <span class="k">raise</span> <span class="n">HTTPError</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span>
-
-<span class="ne">HTTPError</span>: HTTP Error 404: Not Found
-</pre></div>
-</div>
-</div>
 </div>
 <p>The pandas <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> will determine most datatypes of the underlying columns.  The
 exception here is that we need to give pandas a hint so it can load up the <code class="docutils literal notranslate"><span class="pre">Date</span></code> column as a Python datetime type: the <code class="docutils literal notranslate"><span class="pre">parse_dates=[&quot;Date&quot;]</span></code>.</p>
@@ -426,6 +298,70 @@ the underlying CSV file.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>state</th>
+      <th>LaborForce</th>
+      <th>UnemploymentRate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000-01-01</td>
+      <td>Alabama</td>
+      <td>2142945.0</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2000-01-01</td>
+      <td>Alaska</td>
+      <td>319059.0</td>
+      <td>6.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2000-01-01</td>
+      <td>Arizona</td>
+      <td>2499980.0</td>
+      <td>4.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2000-01-01</td>
+      <td>Arkansas</td>
+      <td>1264619.0</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2000-01-01</td>
+      <td>California</td>
+      <td>16680246.0</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Note that a row has a date, state, labor force size, and unemployment rate.</p>
 <p>For our analysis, we want to look at the unemployment rate across different states over time, which
@@ -442,6 +378,197 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Alabama</th>
+      <th>Alaska</th>
+      <th>Arizona</th>
+      <th>Arkansas</th>
+      <th>California</th>
+      <th>Colorado</th>
+      <th>Connecticut</th>
+      <th>Delaware</th>
+      <th>Florida</th>
+      <th>Georgia</th>
+      <th>...</th>
+      <th>South Dakota</th>
+      <th>Tennessee</th>
+      <th>Texas</th>
+      <th>Utah</th>
+      <th>Vermont</th>
+      <th>Virginia</th>
+      <th>Washington</th>
+      <th>West Virginia</th>
+      <th>Wisconsin</th>
+      <th>Wyoming</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.7</td>
+      <td>6.3</td>
+      <td>4.1</td>
+      <td>4.4</td>
+      <td>5.0</td>
+      <td>2.8</td>
+      <td>2.8</td>
+      <td>3.5</td>
+      <td>3.7</td>
+      <td>3.7</td>
+      <td>...</td>
+      <td>2.4</td>
+      <td>3.7</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>2.7</td>
+      <td>2.6</td>
+      <td>4.9</td>
+      <td>5.8</td>
+      <td>3.2</td>
+      <td>4.1</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.7</td>
+      <td>6.3</td>
+      <td>4.1</td>
+      <td>4.3</td>
+      <td>5.0</td>
+      <td>2.8</td>
+      <td>2.7</td>
+      <td>3.6</td>
+      <td>3.7</td>
+      <td>3.6</td>
+      <td>...</td>
+      <td>2.4</td>
+      <td>3.7</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>2.6</td>
+      <td>2.5</td>
+      <td>4.9</td>
+      <td>5.6</td>
+      <td>3.2</td>
+      <td>3.9</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.6</td>
+      <td>6.3</td>
+      <td>4.0</td>
+      <td>4.3</td>
+      <td>5.0</td>
+      <td>2.7</td>
+      <td>2.6</td>
+      <td>3.6</td>
+      <td>3.7</td>
+      <td>3.6</td>
+      <td>...</td>
+      <td>2.4</td>
+      <td>3.8</td>
+      <td>4.5</td>
+      <td>3.1</td>
+      <td>2.6</td>
+      <td>2.4</td>
+      <td>5.0</td>
+      <td>5.5</td>
+      <td>3.3</td>
+      <td>3.9</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.6</td>
+      <td>6.3</td>
+      <td>4.0</td>
+      <td>4.3</td>
+      <td>5.1</td>
+      <td>2.7</td>
+      <td>2.5</td>
+      <td>3.7</td>
+      <td>3.7</td>
+      <td>3.7</td>
+      <td>...</td>
+      <td>2.4</td>
+      <td>3.8</td>
+      <td>4.4</td>
+      <td>3.1</td>
+      <td>2.7</td>
+      <td>2.4</td>
+      <td>5.0</td>
+      <td>5.4</td>
+      <td>3.4</td>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.5</td>
+      <td>6.3</td>
+      <td>4.0</td>
+      <td>4.2</td>
+      <td>5.1</td>
+      <td>2.7</td>
+      <td>2.4</td>
+      <td>3.7</td>
+      <td>3.7</td>
+      <td>3.7</td>
+      <td>...</td>
+      <td>2.4</td>
+      <td>3.9</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>2.7</td>
+      <td>2.3</td>
+      <td>5.1</td>
+      <td>5.4</td>
+      <td>3.5</td>
+      <td>3.8</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 50 columns</p>
+</div></div></div>
 </div>
 <p>Finally, we can filter it to look at a subset of the columns (i.e. “state” in this case).</p>
 <div class="cell docutils container">
@@ -455,6 +582,98 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>When plotting, a DataFrame knows the column and index names.</p>
 <div class="cell docutils container">
@@ -462,6 +681,12 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Date&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/2df2fb8c0bc674154f2e119a88606d33efe930669879fea6620559617d9550fc.png" src="../_images/2df2fb8c0bc674154f2e119a88606d33efe930669879fea6620559617d9550fc.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-bas-dir1">
@@ -480,6 +705,18 @@ dates (<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2000-01-01&#39;, &#39;2000-02-01&#39;, &#39;2000-03-01&#39;, &#39;2000-04-01&#39;,
+               &#39;2000-05-01&#39;, &#39;2000-06-01&#39;, &#39;2000-07-01&#39;, &#39;2000-08-01&#39;,
+               &#39;2000-09-01&#39;, &#39;2000-10-01&#39;,
+               ...
+               &#39;2017-03-01&#39;, &#39;2017-04-01&#39;, &#39;2017-05-01&#39;, &#39;2017-06-01&#39;,
+               &#39;2017-07-01&#39;, &#39;2017-08-01&#39;, &#39;2017-09-01&#39;, &#39;2017-10-01&#39;,
+               &#39;2017-11-01&#39;, &#39;2017-12-01&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;Date&#39;, length=216, freq=None)
+</pre></div>
+</div>
+</div>
 </div>
 <p>We can index into a DataFrame with a <code class="docutils literal notranslate"><span class="pre">DatetimeIndex</span></code> using string
 representations of dates.</p>
@@ -491,6 +728,19 @@ representations of dates.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
+Arizona       4.1
+California    5.0
+Florida       3.7
+Illinois      4.2
+Michigan      3.3
+New York      4.7
+Texas         4.6
+Name: 2000-01-01 00:00:00, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,6 +749,108 @@ representations of dates.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+    <tr>
+      <th>2000-06-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>4.3</td>
+      <td>3.7</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We will learn more about what pandas can do with dates and times in an
 upcoming lecture on time series data.</p>
@@ -535,6 +887,19 @@ values into a single value.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
+Arizona       6.301389
+California    7.299074
+Florida       6.048611
+Illinois      6.822685
+Michigan      7.492593
+New York      6.102315
+Texas         5.695370
+dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>As seen above, the aggregation’s default is to aggregate each column.</p>
 <p>However, by using the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument, you can do aggregations by
@@ -542,6 +907,17 @@ row as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01    0.352381
+2000-02-01    0.384762
+2000-03-01    0.364762
+2000-04-01    0.353333
+2000-05-01    0.294762
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -590,11 +966,35 @@ above or below 6.5.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
+Arizona        Low
+California    High
+Florida        Low
+Illinois      High
+Michigan      High
+New York       Low
+Texas          Low
+dtype: object
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How does this differ from unemp.agg(high_or_low)?</span>
 <span class="n">unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">high_or_low</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01    Low
+2000-02-01    Low
+2000-03-01    Low
+2000-04-01    Low
+2000-05-01    Low
+dtype: object
 </pre></div>
 </div>
 </div>
@@ -606,6 +1006,68 @@ above or below 6.5.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>min</th>
+      <td>3.6</td>
+      <td>4.5</td>
+      <td>3.1</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.2</td>
+      <td>3.9</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10.9</td>
+      <td>12.3</td>
+      <td>11.3</td>
+      <td>11.3</td>
+      <td>14.6</td>
+      <td>8.9</td>
+      <td>8.3</td>
+    </tr>
+    <tr>
+      <th>high_or_low</th>
+      <td>Low</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="admonition-exercise admonition" id="pd-bas-dir2">
 <p class="admonition-title">Exercise</p>
@@ -641,6 +1103,98 @@ Series.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -648,6 +1202,98 @@ Series.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>0.00000</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.00000</td>
+      <td>-0.030303</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>-0.02439</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.02381</td>
+      <td>0.000000</td>
+      <td>-0.021277</td>
+      <td>-0.021739</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>0.00000</td>
+      <td>0.02</td>
+      <td>0.0</td>
+      <td>0.00000</td>
+      <td>0.031250</td>
+      <td>0.000000</td>
+      <td>-0.022222</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>0.00000</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.00000</td>
+      <td>0.060606</td>
+      <td>0.000000</td>
+      <td>-0.022727</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -655,6 +1301,98 @@ Series.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>-0.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>-0.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>-0.1</td>
+      <td>-0.1</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>-0.1</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>0.0</td>
+      <td>-0.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Transforms can be split into to several main categories:</p>
 <ol class="arabic simple">
@@ -701,6 +1439,98 @@ unemployment rate is most different from “normal times” for each state.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>-1.076861</td>
+      <td>-0.935545</td>
+      <td>-0.976846</td>
+      <td>-1.337203</td>
+      <td>-1.605740</td>
+      <td>-0.925962</td>
+      <td>-0.849345</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>-1.076861</td>
+      <td>-0.935545</td>
+      <td>-0.976846</td>
+      <td>-1.337203</td>
+      <td>-1.644039</td>
+      <td>-0.925962</td>
+      <td>-0.849345</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>-1.125778</td>
+      <td>-0.935545</td>
+      <td>-0.976846</td>
+      <td>-1.286217</td>
+      <td>-1.644039</td>
+      <td>-0.991993</td>
+      <td>-0.926885</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>-1.125778</td>
+      <td>-0.894853</td>
+      <td>-0.976846</td>
+      <td>-1.286217</td>
+      <td>-1.605740</td>
+      <td>-0.991993</td>
+      <td>-1.004424</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>-1.125778</td>
+      <td>-0.894853</td>
+      <td>-0.976846</td>
+      <td>-1.286217</td>
+      <td>-1.529141</td>
+      <td>-0.991993</td>
+      <td>-1.081964</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -711,6 +1541,98 @@ unemployment rate is most different from “normal times” for each state.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>1.076861</td>
+      <td>0.935545</td>
+      <td>0.976846</td>
+      <td>1.337203</td>
+      <td>1.605740</td>
+      <td>0.925962</td>
+      <td>0.849345</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>1.076861</td>
+      <td>0.935545</td>
+      <td>0.976846</td>
+      <td>1.337203</td>
+      <td>1.644039</td>
+      <td>0.925962</td>
+      <td>0.849345</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>1.125778</td>
+      <td>0.935545</td>
+      <td>0.976846</td>
+      <td>1.286217</td>
+      <td>1.644039</td>
+      <td>0.991993</td>
+      <td>0.926885</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>1.125778</td>
+      <td>0.894853</td>
+      <td>0.976846</td>
+      <td>1.286217</td>
+      <td>1.605740</td>
+      <td>0.991993</td>
+      <td>1.004424</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>1.125778</td>
+      <td>0.894853</td>
+      <td>0.976846</td>
+      <td>1.286217</td>
+      <td>1.529141</td>
+      <td>0.991993</td>
+      <td>1.081964</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,6 +1642,19 @@ unemployment rate is most different from “normal times” for each state.</p>
     <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 
 <span class="n">abs_std_unemp</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">idxmax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state
+Arizona      2009-11-01
+California   2010-03-01
+Florida      2010-01-01
+Illinois     2009-12-01
+Michigan     2009-06-01
+New York     2009-11-01
+Texas        2009-08-01
+dtype: datetime64[ns]
 </pre></div>
 </div>
 </div>
@@ -765,6 +1700,98 @@ to index into a Series or DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,6 +1800,78 @@ to index into a Series or DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,6 +1881,78 @@ to index into a Series or DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -790,6 +1961,58 @@ to index into a Series or DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="creating-boolean-dataframes-series">
 <h3>Creating Boolean DataFrames/Series<a class="headerlink" href="#creating-boolean-dataframes-series" title="Permalink to this heading">#</a></h3>
@@ -798,6 +2021,17 @@ construct Series of booleans from our data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">4.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01    False
+2000-02-01    False
+2000-03-01    False
+2000-04-01     True
+2000-05-01     True
+Name: Texas, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -810,10 +2044,83 @@ rows from our DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;New York&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unemp_small</span><span class="p">[</span><span class="s2">&quot;Texas&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01    True
+2000-02-01    True
+2000-03-01    True
+2000-04-01    True
+2000-05-01    True
+dtype: bool
 </pre></div>
 </div>
 </div>
@@ -825,6 +2132,98 @@ rows from our DataFrame.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="multiple-conditions">
 <h4>Multiple Conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this heading">#</a></h4>
@@ -856,6 +2255,17 @@ a single bool.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01    False
+2000-02-01    False
+2000-03-01     True
+2000-04-01     True
+2000-05-01     True
+dtype: bool
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,6 +2273,78 @@ a single bool.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.5</td>
+      <td>4.6</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="isin">
@@ -877,6 +2359,17 @@ several fixed values.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01     True
+2000-02-01     True
+2000-03-01     True
+2000-04-01     True
+2000-05-01    False
+Name: Michigan, dtype: bool
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -885,6 +2378,88 @@ several fixed values.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.3</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>4.1</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.2</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.2</td>
+      <td>4.6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>4.0</td>
+      <td>5.1</td>
+      <td>3.7</td>
+      <td>4.3</td>
+      <td>3.3</td>
+      <td>4.6</td>
+      <td>4.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="any-and-all">
@@ -932,12 +2507,115 @@ operator:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>state</th>
+      <th>Arizona</th>
+      <th>California</th>
+      <th>Florida</th>
+      <th>Illinois</th>
+      <th>Michigan</th>
+      <th>New York</th>
+      <th>Texas</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-01</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2000-02-01</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2000-03-01</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2000-04-01</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2000-05-01</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: use the .all method on axis=1 to get the dates where all states have a True</span>
 <span class="n">all_high</span> <span class="o">=</span> <span class="n">high</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">all_high</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+2000-01-01    False
+2000-02-01    False
+2000-03-01    False
+2000-04-01    False
+2000-05-01    False
+dtype: bool
 </pre></div>
 </div>
 </div>
@@ -948,6 +2626,11 @@ operator:</p>
 <span class="c1">#         (note that True == 1 and False == 0 in Python, so .sum will count Trues)</span>
 <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Out of </span><span class="si">{}</span><span class="s2"> months, </span><span class="si">{}</span><span class="s2"> had high unemployment across all states&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_high</span><span class="p">),</span> <span class="n">all_high</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 216 months, 41 had high unemployment across all states
 </pre></div>
 </div>
 </div>
