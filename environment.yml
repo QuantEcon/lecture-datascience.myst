@@ -3,16 +3,22 @@ channels:
   - default
 dependencies:
   - python=3.9
-  - anaconda=2022.05
+  - anaconda=2022.10
   - pip
   - pip:
-    - jupyter-book~=0.15.1
-    - quantecon-book-theme~=0.4.1
-    - sphinxext-rediraffe
-    - sphinx-exercise
+    # Build Requirements
+    - jupyter-book==0.15.1
+    - quantecon-book-theme==0.4.1
+    - sphinx-tojupyter==0.3.0
+    - sphinxext-rediraffe==0.2.7
+    - sphinx-exercise==0.4.1
+    - ghp-import==1.1.0
+    - sphinxcontrib-youtube==1.1.0
+    - sphinx-togglebutton==0.3.1
+    - arviz==0.13.0
+    # Datascience Requirements
     - joblib
     - interpolation
-    - sphinx-tojupyter
     - networkx
     - fiona 
     - geopandas 
