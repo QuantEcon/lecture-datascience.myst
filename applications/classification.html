@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Classification &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -338,7 +338,7 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8339a5c130&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd8f1b7e8e0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/743fe241e086e2c4189a32633c22ec726f55e307e070f5bb3b26dc7ef548ca4c.png" src="../_images/743fe241e086e2c4189a32633c22ec726f55e307e070f5bb3b26dc7ef548ca4c.png" />
@@ -372,7 +372,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4333 + 0.2719 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3827 + 0.2647 decile_score)
 </pre></div>
 </div>
 </div>
@@ -601,7 +601,7 @@ that had a model output just below the raised threshold).</p>
 <p>Machine learning practitioners have adapted a way to help us visualize
 this tradeoff.</p>
 <p>The visualization technique is known as the receiver operating characteristic
-– or more commonly used ROC – curve <a class="footnote-reference brackets" href="#roc" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+– or more commonly used ROC – curve <a class="footnote-reference brackets" href="#roc" id="id1">1</a>.</p>
 <p>To understand this curve, consider two extremes choices for <span class="math notranslate nohighlight">\(p\)</span>:</p>
 <ul class="simple">
 <li><p>When <span class="math notranslate nohighlight">\(p=1\)</span>, we will (almost surely) never predict any observation to
@@ -1033,53 +1033,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.875  0.605]
- [ 1.305  3.215]]
+ [[37.67  0.69]
+ [ 1.48  3.16]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.735  1.135]
- [ 2.825  2.595]]
+ [[37.62   0.76 ]
+ [ 2.335  2.285]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.82   0.81 ]
- [ 2.665  2.35 ]]
+ [[37.9   0.61]
+ [ 2.59  1.9 ]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[38.03   0.68 ]
- [ 2.71   2.225]]
+ [[38.14  0.29]
+ [ 2.6   1.97]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.315  0.845]
- [ 3.465  1.375]]
+ [[37.64   0.735]
+ [ 3.335  1.29 ]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.78   1.135]
- [ 3.735  1.35 ]]
+ [[36.68  1.31]
+ [ 3.65  1.36]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.27   1.385]
- [ 3.66   1.685]]
+ [[36.34  1.42]
+ [ 3.49  1.75]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[36.07   1.26 ]
- [ 3.825  1.845]]
+ [[35.845  1.45 ]
+ [ 3.71   1.995]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.58  1.55]
- [ 4.34  1.53]]
+ [[35.55   1.395]
+ [ 4.465  1.59 ]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.41   1.685]
- [ 4.745  1.16 ]]
+ [[34.69   1.49 ]
+ [ 4.825  0.995]]
 </pre></div>
 </div>
 </div>
@@ -1278,12 +1278,13 @@ could you try to avoid overfitting?</p>
 <p>How accurate can you become for each accuracy metric (accuracy, precision, and recall)?</p>
 <p>(<a class="reference internal" href="#app-cls-dir8"><span class="std std-ref">back to text</span></a>)</p>
 <hr class="footnotes docutils" />
-<aside class="footnote brackets" id="roc" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>The name “receiver operating characteristic” comes from its origin;
+<dl class="footnote brackets">
+<dt class="label" id="roc"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The name “receiver operating characteristic” comes from its origin;
 during World War II, engineers used ROC curves to measure how well a radar signal
 could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
-</aside>
+</dd>
+</dl>
 </section>
 </section>
 </section>

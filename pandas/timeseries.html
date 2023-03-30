@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Time series &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -360,68 +360,99 @@ an Amazon transaction report as</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unexpected exception formatting exception. Falling back to standard exception
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;pandas/_libs/tslib.pyx&quot;, line 605, in pandas._libs.tslib.array_to_datetime
-  File &quot;pandas/_libs/tslibs/parsing.pyx&quot;, line 318, in pandas._libs.tslibs.parsing.parse_datetime_string
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py&quot;, line 1368, in parse
-    return DEFAULTPARSER.parse(timestr, **kwargs)
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py&quot;, line 643, in parse
-    raise ParserError(&quot;Unknown string format: %s&quot;, timestr)
-dateutil.parser._parser.ParserError: Unknown string format: 2017-12-25T00:00:00+ 00 :00
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:605,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-During handling of the above exception, another exception occurred:
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:318,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
 
-Traceback (most recent call last):
-  File &quot;pandas/_libs/tslib.pyx&quot;, line 616, in pandas._libs.tslib.array_to_datetime
-TypeError: invalid string coercion to datetime for &quot;2017-12-25T00:00:00+ 00 :00&quot; at position 0
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1368</span>     <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-During handling of the above exception, another exception occurred:
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:643,</span> in <span class="ni">parser.parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">643</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 
-Traceback (most recent call last):
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3460, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_3681/1648798842.py&quot;, line 1, in &lt;module&gt;
-    pd.to_datetime(christmas_amzn)
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py&quot;, line 1102, in to_datetime
-    result = convert_listlike(np.array([arg]), format)[0]
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py&quot;, line 438, in _convert_listlike_datetimes
-    result, tz_parsed = objects_to_datetime64ns(
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py&quot;, line 2177, in objects_to_datetime64ns
-    result, tz_parsed = tslib.array_to_datetime(
-  File &quot;pandas/_libs/tslib.pyx&quot;, line 427, in pandas._libs.tslib.array_to_datetime
-  File &quot;pandas/_libs/tslib.pyx&quot;, line 683, in pandas._libs.tslib.array_to_datetime
-  File &quot;pandas/_libs/tslib.pyx&quot;, line 829, in pandas._libs.tslib._array_to_datetime_object
-  File &quot;pandas/_libs/tslib.pyx&quot;, line 819, in pandas._libs.tslib._array_to_datetime_object
-  File &quot;pandas/_libs/tslibs/parsing.pyx&quot;, line 318, in pandas._libs.tslibs.parsing.parse_datetime_string
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py&quot;, line 1368, in parse
-    return DEFAULTPARSER.parse(timestr, **kwargs)
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py&quot;, line 643, in parse
-    raise ParserError(&quot;Unknown string format: %s&quot;, timestr)
-dateutil.parser._parser.ParserError: Unknown string format: 2017-12-25T00:00:00+ 00 :00 present at position 0
+<span class="ne">ParserError</span>: Unknown string format: 2017-12-25T00:00:00+ 00 :00
 
-During handling of the above exception, another exception occurred:
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
-Traceback (most recent call last):
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2057, in showtraceback
-    stb = self.InteractiveTB.structured_traceback(
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 1288, in structured_traceback
-    return FormattedTB.structured_traceback(
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 1177, in structured_traceback
-    return VerboseTB.structured_traceback(
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 1049, in structured_traceback
-    formatted_exceptions += self.format_exception_as_a_whole(etype, evalue, etb, lines_of_context,
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 935, in format_exception_as_a_whole
-    self.get_records(etb, number_of_lines_of_context, tb_offset) if etb else []
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/IPython/core/ultratb.py&quot;, line 1003, in get_records
-    lines, first = inspect.getsourcelines(etb.tb_frame)
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/inspect.py&quot;, line 1006, in getsourcelines
-    lines, lnum = findsource(object)
-  File &quot;/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/inspect.py&quot;, line 835, in findsource
-    raise OSError(&#39;could not get source code&#39;)
-OSError: could not get source code
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:616,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+
+<span class="ne">TypeError</span>: invalid string coercion to datetime for &quot;2017-12-25T00:00:00+ 00 :00&quot; at position 0
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">christmas_amzn</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1102,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1102</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">arg</span><span class="p">]),</span> <span class="nb">format</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="n">result</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># TODO: avoid this kludge.</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:438,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">438</span> <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="n">arg</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="c1"># is in UTC</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="n">dta</span> <span class="o">=</span> <span class="n">DatetimeArray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tz_to_dtype</span><span class="p">(</span><span class="n">tz_parsed</span><span class="p">))</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py:2177,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2175</span> <span class="n">order</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span> <span class="k">if</span> <span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2176</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2177</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2178</span>         <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">2179</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2180</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2181</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2182</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2183</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2184</span>         <span class="n">allow_mixed</span><span class="o">=</span><span class="n">allow_mixed</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2185</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2186</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2187</span> <span class="k">except</span> <span class="ne">OverflowError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2188</span>     <span class="c1"># Exception is raised when a part of date is greater than 32 bit signed int</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:427,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:683,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:829,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslib.pyx:819,</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx:318,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1368</span>     <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/dateutil/parser/_parser.py:643,</span> in <span class="ni">parser.parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="n">res</span><span class="p">,</span> <span class="n">skipped_tokens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">643</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;String does not contain a date: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
+
+<span class="ne">ParserError</span>: Unknown string format: 2017-12-25T00:00:00+ 00 :00 present at position 0
 </pre></div>
 </div>
 </div>
@@ -2757,7 +2788,7 @@ window for the whole dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f03da52f310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f99b7b2edf0&gt;
 </pre></div>
 </div>
 <img alt="../_images/5af0f39d71ab916defb61fee3e759a4f5dcc9e448f93cfdab50d5a71a82a288e.png" src="../_images/5af0f39d71ab916defb61fee3e759a4f5dcc9e448f93cfdab50d5a71a82a288e.png" />
