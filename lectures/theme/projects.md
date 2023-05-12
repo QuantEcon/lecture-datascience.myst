@@ -51,7 +51,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Steven Mezei
   - Sameer Shankar
 
-- [Diffusion of political rhetoric: Radio coverage and deforestation rates in Bolsanaro's Brazil](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/Harterre Zolla Final Project.ipynb) ([Appendix 1: Deforestation map](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/deforestmap.pdf), [Appendix 2: Radio coverage map](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/radiomap.pdf))
+- [Diffusion of political rhetoric: Radio coverage and deforestation rates in Bolsanaro's Brazil](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/Harterre%20Zolla%20Final%20Project.ipynb) ([Appendix 1: Deforestation map](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/deforestmap.pdf), [Appendix 2: Radio coverage map](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/radiomap.pdf))
   - Nicholas Harterre
   - Valeria Zolla
 
