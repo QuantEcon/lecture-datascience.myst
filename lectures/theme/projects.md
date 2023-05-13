@@ -24,7 +24,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Yuetong (Tracy) Du
   - Elody Alcaraz
 
-- [NBA Games and LA Car Accidents: Do Sporting Events Lead to More Car Accidents?](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/final_project.ipynb) \ ([Appendix: Data Cleaning](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/data_cleaning.ipynb))
+- [NBA Games and LA Car Accidents: Do Sporting Events Lead to More Car Accidents?](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/final_project.ipynb) ([Appendix: Data Cleaning](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/data_cleaning.ipynb))
   - Teenida (Mea) Srisan
 
 - [Road Surface Temperature Analysis: Influence of weather on road conditions for self driving cars](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Project_ChiesaTerpstra-1.ipynb)
@@ -37,21 +37,21 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 - [Predicting House Price in Melbourne City via Machine Learning Model](https://nbviewer.jupyter.org/github/ScottCY/ECON323-Project/blob/main/Qian%20FinalProject%20Econ%20323.ipynb)
   - Chenyue Qian
 
-- [General Equilibrium with Heterogeneous Agents: A demonstration of the 1st welfare theorem](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/Znidaric_heterogeneous_agent_Ramsey–Cass–Koopmans.ipynb)
+- [General Equilibrium with Heterogeneous Agents: A demonstration of the 1st welfare theorem](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Znidaric_heterogeneous_agent_Ramsey–Cass–Koopmans.ipynb)
   - \[Name redacted by request\]
   - Paul Znidaric
 
-- [Correlation between players’ signing expenditure and the performance of the teams in the Spanish soccer league from the season 2009/2010 to 2018/2019](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/Luna_player_signing_expenditure_and_team_performance.ipynb)
+- [Correlation between players’ signing expenditure and the performance of the teams in the Spanish soccer league from the season 2009/2010 to 2018/2019](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Luna_player_signing_expenditure_and_team_performance.ipynb)
   - Sebastian Luna
 
-- [Using Machine Learning to predict Market Falls with Newspaper Articles](https://nbviewer.jupyter.org/jmochoagraciano/UBC_ECON/blob/main/ML_MarketFalls (2).ipynb)
+- [Using Machine Learning to predict Market Falls with Newspaper Articles](https://nbviewer.jupyter.org/github/jmochoagraciano/UBC_ECON/blob/main/ML_MarketFalls%20(2).ipynb)
   - Juan Manuel Ochoa Graciano
 
 - [Bank Account Fraud Analysis](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/ECON-323-Project-8-3.ipynb)
   - Steven Mezei
   - Sameer Shankar
 
-- [Diffusion of political rhetoric: Radio coverage and deforestation rates in Bolsanaro's Brazil](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/Harterre%20Zolla%20Final%20Project.ipynb) ([Appendix 1: Deforestation map](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/deforestmap.pdf), [Appendix 2: Radio coverage map](https://nbviewer.jupyter.org/ubcecon/econ323_projects/blob/main/2022_Fall/radiomap.pdf))
+- [Diffusion of political rhetoric: Radio coverage and deforestation rates in Bolsanaro's Brazil](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Harterre%20Zolla%20Final%20Project.ipynb) ([Appendix 1: Deforestation map](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/deforestmap.pdf), [Appendix 2: Radio coverage map](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/radiomap.pdf))
   - Nicholas Harterre
   - Valeria Zolla
 
