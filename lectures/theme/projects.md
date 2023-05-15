@@ -21,7 +21,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 ## 2022
 
 - [An analysis of implicit carbon emission between provinces in China with Data Science application](https://nbviewer.jupyter.org/github/Yuetong-Du/projects/blob/main/ECON%20323%20Project%20with%20Elody/323%20project%20Tracy%20Elody%20final_1.ipynb)
-  - Yuetong (Tracy) Du
+  - Tracy Du
   - Elody Alcaraz
 
 - [NBA Games and LA Car Accidents: Do Sporting Events Lead to More Car Accidents?](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/final_project.ipynb) ([Appendix: Data Cleaning](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/data_cleaning.ipynb))
