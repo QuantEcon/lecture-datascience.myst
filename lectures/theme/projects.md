@@ -41,7 +41,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - \[Name redacted by request\]
   - Paul Znidaric
 
-- [Correlation between players’ signing expenditure and the performance of the teams in the Spanish soccer league from the season 2009/2010 to 2018/2019](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Luna_player_signing_expenditure_and_team_performance.ipynb)
+- [Correlation between players’ signing expenditure and the performance of the teams in the Spanish soccer league](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Luna_player_signing_expenditure_and_team_performance.ipynb)
   - Sebastian Luna
 
 - [Using Machine Learning to predict Market Falls with Newspaper Articles](https://nbviewer.jupyter.org/github/jmochoagraciano/UBC_ECON/blob/main/ML_MarketFalls%20(2).ipynb)
