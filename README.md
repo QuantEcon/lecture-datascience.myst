@@ -2,8 +2,6 @@
 
 Source repository for https://datascience.quantecon.org
 
-Website: https://datascience.quantecon.org.
-
 ## Development 
 
 ### Setup
