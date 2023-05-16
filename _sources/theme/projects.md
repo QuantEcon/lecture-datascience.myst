@@ -10,17 +10,54 @@ kernelspec:
 orphan: true
 ---
 
-# Previous Projects:
+# Previous Projects
 
-We are proud of the work that our previous students have produced for this class.
+We are immensely proud of the work that our previous students have produced for this class.
 
-This page contains a list of projects produced by our students that we share with their permission.
+This page contains a list of projects produced for this class by our students at UBC, which we share with their permission.
 
-This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out their [course website](https://bayeswhu.github.io/teaching/qeds.html) and their students' [final projects](../theme/projects_hust.md).
+This course is also taught at [Huazhong University of Science and Technology](http://english.hust.edu.cn/). Check out some of their students' [final projects](../theme/projects_hust.md).
+
+## 2022
+
+- [An analysis of implicit carbon emission between provinces in China with Data Science application](https://nbviewer.jupyter.org/github/Yuetong-Du/projects/blob/main/ECON%20323%20Project%20with%20Elody/323%20project%20Tracy%20Elody%20final_1.ipynb)
+  - Tracy Du
+  - Elody Alcaraz
+
+- [NBA Games and LA Car Accidents: Do Sporting Events Lead to More Car Accidents?](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/final_project.ipynb) ([Appendix: Data Cleaning](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/data_cleaning.ipynb))
+  - Mea Srisan
+
+- [Road Surface Temperature Analysis: Influence of weather on road conditions for self driving cars](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Project_ChiesaTerpstra-1.ipynb)
+  - Martina Chiesa
+  - Pascal Terpstra
+
+- [Personalization of the E-Learning Experience](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Alkorey_student_grade_predictions.ipynb)
+  - Aziz Alkorey
+
+- [Predicting House Price in Melbourne City via Machine Learning Model](https://nbviewer.jupyter.org/github/ScottCY/ECON323-Project/blob/main/Qian%20FinalProject%20Econ%20323.ipynb)
+  - Chenyue Qian
+
+- [General Equilibrium with Heterogeneous Agents: A demonstration of the 1st welfare theorem](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Znidaric_heterogeneous_agent_Ramsey–Cass–Koopmans.ipynb)
+  - \[Name redacted by request\]
+  - Paul Znidaric
+
+- [Correlation between players’ signing expenditure and the performance of the teams in the Spanish soccer league](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Luna_player_signing_expenditure_and_team_performance.ipynb)
+  - Sebastian Luna
+
+- [Using Machine Learning to predict Market Falls with Newspaper Articles](https://nbviewer.jupyter.org/github/jmochoagraciano/UBC_ECON/blob/main/ML_MarketFalls%20(2).ipynb)
+  - Juan Manuel Ochoa Graciano
+
+- [Bank Account Fraud Analysis](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/ECON-323-Project-8-3.ipynb)
+  - Steven Mezei
+  - Sameer Shankar
+
+- [Diffusion of political rhetoric: Radio coverage and deforestation rates in Bolsanaro's Brazil](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Harterre%20Zolla%20Final%20Project.ipynb) ([Appendix 1: Deforestation map](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/deforestmap.pdf), [Appendix 2: Radio coverage map](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/radiomap.pdf))
+  - Nicholas Harterre
+  - Valeria Zolla
 
 ## 2021
 
-- [Centrists Win: Evidence from US House Elections](https:/nbviewer.jupyter.org/github/HJIzt/Predicting-Election-Wins-in-the-2018-US-Congressional-Midterms---ECON-323-Project/blob/main/ECON%20323%20Final%20Project%20-%20Harry%20Izatt%20Reduced%20Copy.ipynb)
+- [Centrists Win: Evidence from US House Elections](https://nbviewer.jupyter.org/github/HJIzt/Predicting-Election-Wins-in-the-2018-US-Congressional-Midterms---ECON-323-Project/blob/main/ECON%20323%20Final%20Project%20-%20Harry%20Izatt%20Reduced%20Copy.ipynb)
   - Harry Izatt
 
 - [Factors affecting bike share in San Francisco](https://nbviewer.jupyter.org/github/patkarns/econ-323-final-project/blob/main/final_draft.ipynb)
