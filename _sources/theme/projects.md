@@ -25,7 +25,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Elody Alcaraz
 
 - [NBA Games and LA Car Accidents: Do Sporting Events Lead to More Car Accidents?](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/final_project.ipynb) ([Appendix: Data Cleaning](https://nbviewer.jupyter.org/github/teenida/econ323-final-project/blob/main/data_cleaning.ipynb))
-  - Mea Srisan
+  - Teenida Mea Srisan
 
 - [Road Surface Temperature Analysis: Influence of weather on road conditions for self driving cars](https://nbviewer.jupyter.org/github/ubcecon/econ323_projects/blob/main/2022_Fall/Project_ChiesaTerpstra-1.ipynb)
   - Martina Chiesa
