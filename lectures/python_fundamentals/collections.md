@@ -214,7 +214,7 @@ x
 To see the types of individual elements in the list:
 
 ```{code-cell} python
-print(f"type(x[0]) = {type(x[0])}, type(x[0]) = {type(x[1])}, type(x[2]) = {type(x[2])}")
+print(f"type(x[0]) = {type(x[0])}, type(x[1]) = {type(x[1])}, type(x[2]) = {type(x[2])}")
 ```
 
 While no programming limitations prevent this, you should be careful if you write code
