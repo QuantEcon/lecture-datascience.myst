@@ -16,7 +16,7 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`matplotlib Introduction <../pandas/matplotlib>`
+- {doc}`matplotlib Introduction <matplotlib>`
 - {doc}`Visualization Rules <visualization_rules>`
 
 **Outcomes**

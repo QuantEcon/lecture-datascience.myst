@@ -21,7 +21,7 @@ import pandas as pd
 
 ## Question 1
 
-From {doc}`Data Visualization: Rules and Guidelines <../applications/visualization_rules>`
+From {doc}`Data Visualization: Rules and Guidelines <../tools/visualization_rules>`
 
 Create a bar chart of the below data on Canadian GDP growth.
 Use a non-red color for the years 2000 to 2008, red for
@@ -41,7 +41,7 @@ for side in ["right", "top", "left", "bottom"]:
 
 ## Question 2
 
-From {doc}`Data Visualization: Rules and Guidelines <../applications/visualization_rules>`
+From {doc}`Data Visualization: Rules and Guidelines <../tools/visualization_rules>`
 
 Draft another way to organize time and education by modifying the code below.
 That is, have two subplots (one for each

@@ -19,7 +19,7 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`Regression </applications/regression>`
+- {doc}`Regression </tools/regression>`
 
 **Outcomes**
 
@@ -93,7 +93,7 @@ import matplotlib.pyplot as plt
 
 We have actually already encountered a classification algorithm.
 
-In the {doc}`recidivism <recidivism>` example, we attempted to predict whether
+In the {doc}`recidivism <../applications/recidivism>` example, we attempted to predict whether
 or not an individual would commit another crime by using a combination of the
 assigned COMPAS score and the individual's gender or race.
 
@@ -778,7 +778,7 @@ Your task here is to use the `model_selection.cross_val_score` method to select 
 optimal level for the regularization parameter `C`. The `scoring` argument should be set
 to `roc_auc`.
 
-Refer to the example in the {doc}`recidivism lecture <recidivism>` for how
+Refer to the example in the {doc}`recidivism lecture <../applications/recidivism>` for how
 to use `model_selection.cross_val_score`.
 
 ```{code-cell} python
