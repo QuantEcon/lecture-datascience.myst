@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# pandas
+# DataFrames and Series in Pandas
 
 This section of the workshop covers data ingestion, cleaning,
 manipulation, analysis, and visualization in Python.
@@ -56,6 +56,4 @@ your programs will fall dramatically.
 
 ## <i class="fas fa-code" style="color:#6dae5c"></i> [GroupBy](../pandas/groupby.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Time series](../pandas/timeseries.md)
-
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Intermediate Plotting](../pandas/matplotlib.md)
+## <i class="fas fa-code" style="color:#6dae5c"></i> [Time Series](../pandas/timeseries.md)
