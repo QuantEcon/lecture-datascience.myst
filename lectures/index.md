@@ -34,14 +34,14 @@ Course description, software installation
 ## <i class="fab fa-python" style="color:#ffd053"></i> [Python Fundamentals](../python_fundamentals/index.md)
 Basic Python programming
 
-## <i class="fas fa-server" style="color:#d45f6c"></i> [Scientific Computing with Numpy](../scientific/index.md)
+## <i class="fas fa-server" style="color:#d45f6c"></i> [Scientific Computing](../scientific/index.md)
 Numerical and scientific methods
 
-## <i class="fas fa-database" style="color:#6dae5c"></i> [Working With Data in Pandas](../pandas/index.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Working With Data](../pandas/index.md)
 The "data" in data science
 
 ## <i class="fas fa-cogs" style="color:#9933ff"></i> [Data Science Tools](../tools/index.md)
 Putting everything together
 
-## <i class="fas fa-bar-chart" data-fa-transform="flip-h rotate-270" style="color:#ff9900"></i> [Applications](../applications/index.md)
+## <i class="fas fa-chart-column" style="color:#ff9900"></i> [Applications](../applications/index.md)
 Applying our skills to real economic data
