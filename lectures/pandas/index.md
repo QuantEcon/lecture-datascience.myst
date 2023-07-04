@@ -40,20 +40,20 @@ The expression "practice makes perfect" is especially true here.
 As you work with these tools, both the time to write and the time to run
 your programs will fall dramatically.
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Introduction](../pandas/intro.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Introduction](../pandas/intro.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Basic Functionality](../pandas/basics.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Basic Functionality](../pandas/basics.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [The Index](../pandas/the_index.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [The Index](../pandas/the_index.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Storage Formats](../pandas/storage_formats.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Storage Formats](../pandas/storage_formats.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Cleaning Data](../pandas/data_clean.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Cleaning Data](../pandas/data_clean.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Reshape](../pandas/reshape.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Reshape](../pandas/reshape.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Merge](../pandas/merge.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Merge](../pandas/merge.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [GroupBy](../pandas/groupby.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [GroupBy](../pandas/groupby.md)
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Time Series](../pandas/timeseries.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Time Series](../pandas/timeseries.md)
