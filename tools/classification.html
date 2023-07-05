@@ -1,0 +1,1749 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Classification &#8212; QuantEcon DataScience</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-S8CBQPC844');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/classification';</script>
+    <link rel="canonical" href="https://datascience.quantecon.org/tools/classification.html" />
+    <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Applications" href="../applications/index.html" />
+    <link rel="prev" title="Regression" href="regression.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Chase Coleman, Spencer Lyon, and Jesse Perla" />
+<meta name="keywords" content="Python, QuantEcon, DataScience" />
+<meta name="description" content=This website presents a series of lectures on programming, data science, and economics. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@quantecon" />
+<meta name="twitter:title" content="Classification"/>
+<meta name="twitter:description" content="This website presents a series of lectures on programming, data science, and economics.">
+<meta name="twitter:creator" content="@quantecon">
+<meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Classification" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://datascience.quantecon.org/tools/classification.html" />
+<meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+<meta property="og:description" content="This website presents a series of lectures on programming, data science, and economics." />
+<meta property="og:site_name" content="QuantEcon DataScience" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=tools/classification>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-classification">Introduction to Classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warmup-example-logistic-regression">Warmup Example: Logistic Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-decision-boundaries">Visualization: Decision Boundaries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation">Model Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-and-recall">Precision and Recall</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-and-auc">ROC and AUC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-classifiers">Neural Network Classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-neural-network-toolboxes">Aside: Neural Network Toolboxes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application-predicting-us-recessions">Application: Predicting US Recessions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep">Data Prep</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-many-leads">How Many leads?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8</a></li>
+</ul>
+</li>
+</ul>
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="../index.html">QuantEcon DataScience</a></p>
+
+                        <p class="qe-page__header-subheading">Classification</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <section class="tex2jax_ignore mathjax_ignore" id="classification">
+<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this heading">#</a></h1>
+<p><strong>Co-authors</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/QBatista">Quentin Batista <em>University of Tokyo</em></a></p></li>
+<li><p><a class="reference external" href="http://www.tomsargent.com/">Thomas Sargent <em>NYU</em></a></p></li>
+<li><p><a class="reference external" href="https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/">Paul Schrimpf <em>UBC</em></a></p></li>
+<li><p><a class="reference external" href="https://github.com/natashawatkins">Natasha Watkins <em>UCLA</em></a></p></li>
+</ul>
+</div></blockquote>
+<p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="regression.html"><span class="doc">Regression</span></a></p></li>
+</ul>
+<p><strong>Outcomes</strong></p>
+<ul class="simple">
+<li><p>Understand what problems classification solves</p></li>
+<li><p>Evaluate classification models using a variety of metrics</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment following line to install on colab</span>
+<span class="c1">#! pip install fiona geopandas xgboost gensim folium pyLDAvis descartes</span>
+</pre></div>
+</div>
+<section id="introduction-to-classification">
+<h2>Introduction to Classification<a class="headerlink" href="#introduction-to-classification" title="Permalink to this heading">#</a></h2>
+<p>We now move from regression to the second main branch of machine learning:
+classification.</p>
+<p>Recall that the regression problem mapped a set of
+feature variables to a continuous target.</p>
+<p>Classification is similar to regression, but instead of predicting a continuous
+target, classification algorithms attempt to apply one (or more) of a discrete
+number of labels or classes to each observation.</p>
+<p>Another perspective is that for regression, the targets are usually
+continuous-valued, while in classification, the targets are categorical.</p>
+<p>Common examples of classification problems are</p>
+<ul class="simple">
+<li><p>Labeling emails as spam or not spam</p></li>
+<li><p>Person identification in a photo</p></li>
+<li><p>Speech recognition</p></li>
+<li><p>Whether or not a country is or will be in a recession</p></li>
+</ul>
+<p>Classification can also be applied in settings where the target isn’t naturally
+categorical.</p>
+<p>For example, suppose we want to predict whether the unemployment rate for a state
+will be low (<span class="math notranslate nohighlight">\(&lt;3\%\)</span>), medium (<span class="math notranslate nohighlight">\(\in [3\%, 5\%]\)</span>), or high (<span class="math notranslate nohighlight">\(&gt;5\%\)</span>)
+but don’t care about the actual number.</p>
+<p>Most economic problems are posed in continuous terms, so it may take some creativity
+to determine the optimal way to categorize a target variable so
+classification algorithms can be applied.</p>
+<p>As many problems can be posed either as classification or regression, many
+machine learning algorithms have variants that perform regression or
+classification tasks.</p>
+<p>Throughout this lecture, we will revisit some of the algorithms from the
+<a class="reference internal" href="regression.html"><span class="doc">regression</span></a> lecture and discuss how they can be applied in
+classification settings.</p>
+<p>As we have already seen relatives of these algorithms, this lecture will be
+lighter on exposition and then build up to an application.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">neural_network</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">model_selection</span>
+<span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="warmup-example-logistic-regression">
+<h2>Warmup Example: Logistic Regression<a class="headerlink" href="#warmup-example-logistic-regression" title="Permalink to this heading">#</a></h2>
+<p>We have actually already encountered a classification algorithm.</p>
+<p>In the <a class="reference internal" href="../applications/recidivism.html"><span class="doc">recidivism</span></a> example, we attempted to predict whether
+or not an individual would commit another crime by using a combination of the
+assigned COMPAS score and the individual’s gender or race.</p>
+<p>In that example, we used a <em>logistic regression</em> model, which is a close
+relative of the linear regression model from the <a class="reference internal" href="regression.html"><span class="doc">regression</span></a> section.</p>
+<p>The logistic regression model for predicting the likelihood of recidivism using
+the <code class="docutils literal notranslate"><span class="pre">COMPAS</span></code> score as the single feature is written</p>
+<div class="math notranslate nohighlight">
+\[
+p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the <em>logistic function</em>: <span class="math notranslate nohighlight">\(L(x) = \frac{1}{1 + e^{-x}}\)</span>.</p>
+<p>To get some intuition for this function, let’s plot it below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f488c0bd160&gt;]
+</pre></div>
+</div>
+<img alt="../_images/743fe241e086e2c4189a32633c22ec726f55e307e070f5bb3b26dc7ef548ca4c.png" src="../_images/743fe241e086e2c4189a32633c22ec726f55e307e070f5bb3b26dc7ef548ca4c.png" />
+</div>
+</div>
+<p>Notice that for all values of <span class="math notranslate nohighlight">\(x\)</span>, the value of the logistic function is
+always between 0 and 1.</p>
+<p>This is perfect for binary classification problems that need to
+output the probability of one of the two labels.</p>
+<p>Let’s load up the recidivism data and fit the logistic regression model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/propublica/compas-analysis&quot;</span>
+<span class="n">data_url</span> <span class="o">+=</span> <span class="s2">&quot;/master/compas-scores-two-years.csv&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;decile_score&quot;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;two_year_recid&quot;</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">logistic_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;lbfgs&quot;</span><span class="p">)</span>
+<span class="n">logistic_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">beta_0</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">beta_1</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fit model: p(recid) = L(</span><span class="si">{</span><span class="n">beta_0</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">beta_1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> decile_score)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3420 + 0.2594 decile_score)
+</pre></div>
+</div>
+</div>
+</div>
+<p>From these coefficients, we see that an increase in the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> leads
+to an increase in the predicted probability of recidivism.</p>
+<p>Suppose we choose to classify any model output greater than 0.5 as “at risk of
+recidivism”.</p>
+<p>Then, the positive coefficient on <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> means that there is some cutoff score above which all individuals will be labeled as high-risk.</p>
+<div class="admonition-exercise admonition" id="app-cls-dir1">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 1 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<section id="visualization-decision-boundaries">
+<h3>Visualization: Decision Boundaries<a class="headerlink" href="#visualization-decision-boundaries" title="Permalink to this heading">#</a></h3>
+<p>With just one feature that has a positive coefficient, the model’s predictions
+will always have this cutoff structure.</p>
+<p>Let’s add a second feature the model: the age of the individual.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;decile_score&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">]]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">logistic_age_model</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;lbfgs&quot;</span><span class="p">)</span>
+<span class="n">logistic_age_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">beta_0</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">beta_1</span><span class="p">,</span> <span class="n">beta_2</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fit model: p(recid) = L(</span><span class="si">{</span><span class="n">beta_0</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">beta_1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> decile_score + </span><span class="si">{</span><span class="n">beta_2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> age)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-0.8505 + 0.2470 decile_score + -0.0130 age)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we see that an increase in the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> still leads to an increase in
+the predicted probability of recidivism, while older individuals are slightly
+less likely to commit crime again.</p>
+<p>We’ll build on an example from the <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html">scikit-learn documentation</a> to visualize the predictions of this model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot the decision boundaries for a classifier with 2 features x and y.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ax: matplotlib axes object</span>
+<span class="sd">    mod: a classifier</span>
+<span class="sd">    xx: meshgrid ndarray</span>
+<span class="sd">    yy: meshgrid ndarray</span>
+<span class="sd">    params: dictionary of params to pass to contourf, optional</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span> <span class="nf">fit_and_plot_decision_boundary</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+    <span class="c1"># fit model</span>
+    <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># generate grids of first two columns of X</span>
+    <span class="k">def</span> <span class="nf">gen_grid</span><span class="p">(</span><span class="n">xseries</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">xseries</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">xseries</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xseries</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">xseries</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">gen_grid</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">gen_grid</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]))</span>
+
+    <span class="c1"># plot contours and scatter</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">x1_name</span><span class="p">,</span> <span class="n">x2_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">X</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x1_name</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">x2_name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">x1_name</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">x2_name</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ax</span>
+
+<span class="n">fit_and_plot_decision_boundary</span><span class="p">(</span>
+    <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;lbfgs&quot;</span><span class="p">),</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greys</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/sklearn/base.py:439: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;decile_score&#39;, ylabel=&#39;age&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/3c97e5d39f9bba1e9bdd3be12c3d80e1f9b1ae26483a91a05f52eb3520e6619d.png" src="../_images/3c97e5d39f9bba1e9bdd3be12c3d80e1f9b1ae26483a91a05f52eb3520e6619d.png" />
+</div>
+</div>
+<p>In this plot, we can clearly see the relationships we identified from the
+coefficients.</p>
+<p>However, we do see that the model is not perfect, as some solid circles are
+in the light section and some light circles in the solid section.</p>
+<p>This is likely caused by two things:</p>
+<ol class="arabic simple">
+<li><p>The model inside the logistic function is a linear regression – thus only a
+linear combination of the input features can be used for prediction.</p></li>
+<li><p>Drawing a straight line (linear) that perfectly separates
+true observations from the false is impossible.</p></li>
+</ol>
+<div class="admonition-exercise admonition" id="app-cls-dir2">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 2 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="model-evaluation">
+<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this heading">#</a></h2>
+<p>Before we get too far into additional classification algorithms, let’s take a
+step back and think about how to evaluate the performance of a classification
+model.</p>
+<section id="accuracy">
+<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this heading">#</a></h3>
+<p>Perhaps the most intuitive classification metric is <em>accuracy</em>, which is the
+fraction of correct predictions.</p>
+<p>For a scikit-learn classifier, this can be computed using the <code class="docutils literal notranslate"><span class="pre">score</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_acc</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">test_acc</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="n">train_acc</span><span class="p">,</span> <span class="n">test_acc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6534195933456562, 0.667960088691796)
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the testing accuracy is similar to or higher than the training
+accuracy (as it is here), the model might be underfitting.
+Thus, we should consider either using a more powerful model or adding additional
+features.</p>
+<p>In many contexts, this would be an appropriate way to evaluate a model, but in
+others, this is insufficient.</p>
+<p>For example, suppose we want to use a classification model to predict the
+likelihood of someone having a rare, but serious health condition.</p>
+<p>If the condition is very rare (say it appears in 0.01% of the population), then
+a model that always predicts false would have 99.99% accuracy, but the false
+negatives could have large consequences.</p>
+</section>
+<section id="precision-and-recall">
+<h3>Precision and Recall<a class="headerlink" href="#precision-and-recall" title="Permalink to this heading">#</a></h3>
+<p>In order to capture situations like that, data scientists often use two other
+very common metrics:</p>
+<ul class="simple">
+<li><p><em>Precision</em>: The number of true positives over the number of positive
+predictions. Precision tells us how often the model was correct when it
+predicted true.</p></li>
+<li><p><em>Recall</em>: The number of true positives over the number of actual positives.
+Recall answers the question, “What fraction of the positives did we get
+correct?”</p></li>
+</ul>
+<p>In the rare health condition example, you may prefer
+a model with high recall (never misses an at-risk patient), even if the
+precision is a bit low (sometimes you have false positives).</p>
+<p>On the other hand, if your algorithm filters spam emails out of an inbox,
+you may prefer a model with high precision so that when an email is
+classified as spam, it is very likely to actually be spam (i.e. non-spam
+messages don’t get sent to spam folder).</p>
+<p>In many settings, both precision and recall are equally important and a
+compound metric known as the F1-score is used:</p>
+<div class="math notranslate nohighlight">
+\[
+F1 = 2 \frac{\text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}
+\]</div>
+<p>The F1 score is bounded between 0 and 1. It will only achieve a value of 1 if
+both precision and recall are exactly 1.</p>
+<p>We can have scikit-learn produce a textual report with precision and recall.</p>
+<p>Scikit-learn</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span>
+    <span class="n">y_train</span><span class="p">,</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
+    <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;no recid&quot;</span><span class="p">,</span> <span class="s2">&quot;recid&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+    no recid       0.67      0.73      0.69      2940
+       recid       0.64      0.57      0.60      2470
+
+    accuracy                           0.65      5410
+   macro avg       0.65      0.65      0.65      5410
+weighted avg       0.65      0.65      0.65      5410
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="roc-and-auc">
+<h3>ROC and AUC<a class="headerlink" href="#roc-and-auc" title="Permalink to this heading">#</a></h3>
+<p>For classification algorithms, there is a tradeoff between precision and recall.</p>
+<p>Let’s illustrate this point in the context of the logistic regression model.</p>
+<p>The output of a logistic regression is a probability of an event or label.</p>
+<p>To obtain a definite prediction from the algorithm, the modeler would
+first select a threshold parameter <span class="math notranslate nohighlight">\(p\)</span> such that all model outputs above the
+threshold are given the label of true.</p>
+<p>As this <span class="math notranslate nohighlight">\(p\)</span> increases, the model must be relatively more confident before
+assigning a label of true.</p>
+<p>In this case, the model’s precision will increase (very confident when applying
+true label), but the recall will suffer (will apply false to some true cases
+that had a model output just below the raised threshold).</p>
+<p>Machine learning practitioners have adapted a way to help us visualize
+this tradeoff.</p>
+<p>The visualization technique is known as the receiver operating characteristic
+– or more commonly used ROC – curve <a class="footnote-reference brackets" href="#roc" id="id1">1</a>.</p>
+<p>To understand this curve, consider two extremes choices for <span class="math notranslate nohighlight">\(p\)</span>:</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(p=1\)</span>, we will (almost surely) never predict any observation to
+have a label 1. In this case, the false positive rate will be equal to 0, as
+will the true positive rate.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(p=0\)</span>, we will predict that all observations always have a label
+of 1. The false positive rate and true positive rates will be equal to 1.</p></li>
+</ul>
+<p>The <em>ROC curve</em> traces the relationship between the false positive rate (on
+the x axis) and the true positive rate (on the y axis) as the probability
+threshold <span class="math notranslate nohighlight">\(p\)</span> is changed.</p>
+<p>Below, we define a function that uses scikit-learn to compute the true positive
+rate and false positive rates. Then we plot these rates against
+each other.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="c1"># predicted_probs is an N x 2 array, where N is number of observations</span>
+    <span class="c1"># and 2 is number of classes</span>
+    <span class="n">predicted_probs</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c1"># keep the second column, for label=1</span>
+    <span class="n">predicted_prob1</span> <span class="o">=</span> <span class="n">predicted_probs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted_prob1</span><span class="p">)</span>
+
+    <span class="c1"># Plot ROC curve</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;k--&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;False Positive Rate&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;True Positive Rate&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;ROC Curve&quot;</span><span class="p">)</span>
+
+<span class="n">plot_roc</span><span class="p">(</span><span class="n">logistic_age_model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1833464249e167011bca79cb19eca83c4922eb6755055418791d3657feef706f.png" src="../_images/1833464249e167011bca79cb19eca83c4922eb6755055418791d3657feef706f.png" />
+</div>
+</div>
+<p>We can use the ROC curve to determine the optimal threshold value.</p>
+<p>Since the output of our recidivism application model could
+potentially inform judicial decisions that impact the lives of individuals, we
+should be careful when considering a threshold value with low false
+positive rate vs high recall (low false negative rate).</p>
+<p>We may choose to err on the side of low false negative rate so that when the model
+predicts recidivism, recidivism will likely occur – in other words,
+we would favor a high true positive rate even if the false positive rate is
+higher.</p>
+<div class="admonition-exercise admonition" id="app-cls-dir3">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 3 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<p>The ROC curve can also be used to do hyper-parameter selection for the model’s
+parameters.</p>
+<p>To see how, consider a model with an ROC curve that has a single point at (0, 1)
+– meaning the true positive rate is 1 and false positive rate is zero or
+that the model has 100% accuracy.</p>
+<p>Notice that integrating to obtain the area under the ROC curve returns
+a value of 1 for the perfect model.</p>
+<p>The area under any other ROC curve would be less than 1.</p>
+<p>Thus, we could use the area under the curve (abbreviated AUC) as an objective
+metric in cross-validation.</p>
+<p>Let’s see an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_prob1</span> <span class="o">=</span> <span class="n">logistic_age_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">auc</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">predicted_prob1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Initial AUC value is </span><span class="si">{</span><span class="n">auc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># help(linear_model.LogisticRegression)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial AUC value is 0.7057
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition" id="app-cls-dir4">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 4 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="neural-network-classifiers">
+<h2>Neural Network Classifiers<a class="headerlink" href="#neural-network-classifiers" title="Permalink to this heading">#</a></h2>
+<p>The final classifier we will visit today is a neural-network classifier, using
+the multi-layer perceptron network architecture.</p>
+<p>Recall from the <a class="reference internal" href="regression.html"><span class="doc">regression</span></a> chapter that a multi-layer
+perceptron is comprised of a series of nested linear regressions separated by
+non-linear activation functions.</p>
+<p>The number of neurons (size of weight matrices and bias vectors) in each layer
+were hyperparameters that could be chosen by modeler, but for regression, the last
+layer had to have exactly one neuron which represented the single regression
+target.</p>
+<p>To use the MLP for classification tasks, we need to make three adjustments:</p>
+<ol class="arabic simple">
+<li><p>Construct a final layer with <span class="math notranslate nohighlight">\(N\)</span> neurons instead of 1, where <span class="math notranslate nohighlight">\(N\)</span> is the number of classes in the classification task.</p></li>
+<li><p>Apply a <em>softmax</em> function on the network output.</p></li>
+<li><p>Use the cross-entropy loss function instead of the MSE to optimize network weights and biases.</p></li>
+</ol>
+<p>The softmax function applied to a vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> is computed as</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x)_i = \frac{e^{x_i}}{\sum_{j=1}^{N} e^{x_j}}
+\]</div>
+<p>In words, the softmax function is computed by exponentiating all the values,
+then dividing by the sum of exponentiated values.</p>
+<p>The output of the softmax function is a probability distribution (all
+non-negative and sum to 1) weighted by the relative value of the input values.</p>
+<p>Finally, the cross entropy loss function for <span class="math notranslate nohighlight">\(M\)</span> observations <span class="math notranslate nohighlight">\(y\)</span>, with associated softmax vectors <span class="math notranslate nohighlight">\(z\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{1}{M} \sum_{j=1}^M \sum_{i=1}^N 1_{y_j = i} log\left(z_{i,j}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(1_{y_j = i}\)</span> is an indicator variable with the value of 1 if
+the observed class was equal to <span class="math notranslate nohighlight">\(i\)</span> for the <span class="math notranslate nohighlight">\(j\)</span> th observation, 0
+otherwise.</p>
+<p>All the same tradeoffs we saw when we used the multi-layer perceptron for
+regression will apply for classification tasks.</p>
+<p>This includes positives like automated-feature enginnering and theoretically unlimited flexibility.</p>
+<p>It also includes potential negatives, such as a risk of overfitting, high
+computational expenses compared to many classification algorithms, and lack of
+interpretability.</p>
+<p>For a more detailed discussion, review the <a class="reference internal" href="regression.html"><span class="doc">regression lecture</span></a>.</p>
+<div class="admonition-exercise admonition" id="app-cls-dir5">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 5 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<section id="aside-neural-network-toolboxes">
+<h3>Aside: Neural Network Toolboxes<a class="headerlink" href="#aside-neural-network-toolboxes" title="Permalink to this heading">#</a></h3>
+<p>Thus far, we have been using the routines in scikit-learn’s <code class="docutils literal notranslate"><span class="pre">neural_network</span></code> package.</p>
+<p>These are great for learning and exploratory analysis, as we have been doing,
+but are rarely used in production or real-world settings.</p>
+<p>Why? 1) The scikit-learn routines do not leverage modern
+hardware like GPUs, so performance is likely much slower than it could be.
+2) The routines only provide implementations of the most basic deep neural networks.</p>
+<p>If you were to use neural networks in mission-critical situations, you would
+want to use modern neural network libraries such as Google’s <a class="reference external" href="https://www.tensorflow.org/">tensorflow</a>,
+Facebook’s <a class="reference external" href="https://pytorch.org/">pytorch</a>, the Amazon-supported <a class="reference external" href="https://mxnet.apache.org/">MXNet</a>, or
+<a class="reference external" href="https://www.fast.ai/">fastai</a>.</p>
+<p>Each of these toolkits has its own relative strengths and weaknesses, but we’ve
+seen tensorflow and pytorch used the most.</p>
+<p>Thankfully, they all support Python as either the only or the primary point of
+access, so you will be well-prepared to start using them.</p>
+</section>
+</section>
+<section id="application-predicting-us-recessions">
+<h2>Application: Predicting US Recessions<a class="headerlink" href="#application-predicting-us-recessions" title="Permalink to this heading">#</a></h2>
+<p>Let’s apply our new classification algorithm knowledge and use
+<a class="reference external" href="https://www.investopedia.com/terms/l/leadingindicator.asp">leading indicators</a>
+to predict recessions in the US economy.</p>
+<p>A leading indicator is a variable that moves or changes before the rest
+of the economy.</p>
+<p>Many different leading indicators have been proposed – we’ll use a few of them.</p>
+<p>We won’t explicitly prove that these variables are actually leading indicators,
+but will show a plot of each variables that lets us
+visually inspect the hypothesis.</p>
+<section id="data-prep">
+<h3>Data Prep<a class="headerlink" href="#data-prep" title="Permalink to this heading">#</a></h3>
+<p>Let’s first gather the data from FRED.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;1974-01-01&quot;</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">pct_change_on_last_year</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s2">&quot;compute pct_change on previous year, assuming quarterly&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_indicators_from_fred</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetch quarterly data on 6 leading indicators from time period start:end</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># yield curve, unemployment, change in inventory, new private housing permits</span>
+    <span class="n">yc_unemp_inv_permit</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s2">&quot;T10Y2Y&quot;</span><span class="p">,</span> <span class="s2">&quot;UNRATE&quot;</span><span class="p">,</span> <span class="s2">&quot;CBIC1&quot;</span><span class="p">,</span> <span class="s2">&quot;PERMIT&quot;</span><span class="p">],</span> <span class="s2">&quot;fred&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;QS&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1"># percent change in housing prices and retail sales</span>
+    <span class="n">hpi_retail</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s2">&quot;USSTHPI&quot;</span><span class="p">,</span> <span class="s2">&quot;SLRTTO01USQ661S&quot;</span><span class="p">],</span> <span class="s2">&quot;fred&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;QS&quot;</span><span class="p">)</span>  <span class="c1"># already quarterly, adjusting so index is same</span>
+        <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">pct_change_on_last_year</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">indicators</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">yc_unemp_inv_permit</span>
+        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hpi_retail</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">USSTHPI</span><span class="o">=</span><span class="s2">&quot;pct_change_hpi&quot;</span><span class="p">,</span>
+            <span class="n">T10Y2Y</span><span class="o">=</span><span class="s2">&quot;yield_curve&quot;</span><span class="p">,</span>
+            <span class="n">UNRATE</span><span class="o">=</span><span class="s2">&quot;unemp&quot;</span><span class="p">,</span>
+            <span class="n">CBIC1</span><span class="o">=</span><span class="s2">&quot;inventory&quot;</span><span class="p">,</span>
+            <span class="n">SLRTTO01USQ661S</span><span class="o">=</span><span class="s2">&quot;retail_sales&quot;</span><span class="p">,</span>
+            <span class="n">PERMIT</span><span class="o">=</span><span class="s2">&quot;house_permits&quot;</span>
+        <span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">indicators</span>
+
+<span class="n">indicators</span> <span class="o">=</span> <span class="n">get_indicators_from_fred</span><span class="p">()</span>
+
+<span class="n">indicators</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>yield_curve</th>
+      <th>unemp</th>
+      <th>inventory</th>
+      <th>house_permits</th>
+      <th>pct_change_hpi</th>
+      <th>retail_sales</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1976-04-01</th>
+      <td>0.801364</td>
+      <td>7.566667</td>
+      <td>61.087</td>
+      <td>1171.333333</td>
+      <td>0.073267</td>
+      <td>0.056936</td>
+    </tr>
+    <tr>
+      <th>1976-07-01</th>
+      <td>1.099687</td>
+      <td>7.733333</td>
+      <td>55.190</td>
+      <td>1345.000000</td>
+      <td>0.087255</td>
+      <td>0.037207</td>
+    </tr>
+    <tr>
+      <th>1976-10-01</th>
+      <td>1.467377</td>
+      <td>7.766667</td>
+      <td>20.163</td>
+      <td>1489.000000</td>
+      <td>0.080334</td>
+      <td>0.047523</td>
+    </tr>
+    <tr>
+      <th>1977-01-01</th>
+      <td>1.332222</td>
+      <td>7.500000</td>
+      <td>34.343</td>
+      <td>1562.000000</td>
+      <td>0.105104</td>
+      <td>0.037939</td>
+    </tr>
+    <tr>
+      <th>1977-04-01</th>
+      <td>1.248254</td>
+      <td>7.133333</td>
+      <td>51.245</td>
+      <td>1693.333333</td>
+      <td>0.110874</td>
+      <td>0.032931</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, we also need data on recessions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_recession_data</span><span class="p">():</span>
+    <span class="n">recession</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s2">&quot;USRECQ&quot;</span><span class="p">],</span> <span class="s2">&quot;fred&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">USRECQ</span><span class="o">=</span><span class="s2">&quot;recession&quot;</span><span class="p">))</span>
+        <span class="p">[</span><span class="s2">&quot;recession&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># extract start and end date for each recession</span>
+    <span class="n">start_dates</span> <span class="o">=</span> <span class="n">recession</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">recession</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">recession</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">start_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">recession</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">start_dates</span>
+
+    <span class="n">end_dates</span> <span class="o">=</span> <span class="n">recession</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">recession</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">start_dates</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">end_dates</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">start_dates</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">end_dates</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Need to have same number of start/end dates!&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">recession</span><span class="p">,</span> <span class="n">start_dates</span><span class="p">,</span> <span class="n">end_dates</span>
+
+<span class="n">recession</span><span class="p">,</span> <span class="n">start_dates</span><span class="p">,</span> <span class="n">end_dates</span> <span class="o">=</span> <span class="n">get_recession_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s take a look at the data we have.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_recession_bands</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">start_dates</span><span class="p">,</span> <span class="n">end_dates</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">axs</span> <span class="o">=</span> <span class="n">indicators</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+    <span class="n">add_recession_bands</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">indicators</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9db6e83d5bd0f5c0e1748b9dd20ced293da763d2f116e339a15d413fda94baee.png" src="../_images/9db6e83d5bd0f5c0e1748b9dd20ced293da763d2f116e339a15d413fda94baee.png" />
+</div>
+</div>
+<p>For each of the chosen variables, you can see that the leading indicator
+has a distinct move in periods leading up to a recession (noted by the grey bands in background).</p>
+<div class="admonition-exercise admonition" id="app-cls-dir6">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 6 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</section>
+<section id="how-many-leads">
+<h3>How Many leads?<a class="headerlink" href="#how-many-leads" title="Permalink to this heading">#</a></h3>
+<p>If the variables we have chosen truly are leading indicators, we should be able
+to use leading values of the variables to predict current or future recessions.</p>
+<p>A natural question is: how many leads should we include?</p>
+<p>Let’s explore that question by looking at many different sets of leads.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">indicators</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">nlead</span><span class="p">))</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">fit_for_nlead</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">make_train_data</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;recession&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;recession&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">model_selection</span><span class="o">.</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">cmat</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cmat</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">make_pipeline</span><span class="p">(</span>
+    <span class="n">preprocessing</span><span class="o">.</span><span class="n">StandardScaler</span><span class="p">(),</span>
+    <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;lbfgs&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">cmats</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">nlead</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="n">cmats</span><span class="p">[</span><span class="n">nlead</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;starting for </span><span class="si">{</span><span class="n">nlead</span><span class="si">}</span><span class="s2"> leads&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">rep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+        <span class="n">cmats</span><span class="p">[</span><span class="n">nlead</span><span class="p">]</span> <span class="o">+=</span> <span class="n">fit_for_nlead</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">recession</span><span class="p">,</span> <span class="n">nlead</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+
+    <span class="n">cmats</span><span class="p">[</span><span class="n">nlead</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmats</span><span class="p">[</span><span class="n">nlead</span><span class="p">]</span> <span class="o">/</span> <span class="mi">200</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">cmats</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">The average confusion matrix for </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> lag(s) was:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 1 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 2 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 3 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 4 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 5 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 6 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 7 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 8 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 9 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 10 leads
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
+ [[37.625  0.58 ]
+ [ 1.795  3.   ]]
+
+
+The average confusion matrix for 2 lag(s) was:
+ [[37.605  0.895]
+ [ 2.55   2.595]]
+
+
+The average confusion matrix for 3 lag(s) was:
+ [[37.69   0.635]
+ [ 2.51   2.165]]
+
+
+The average confusion matrix for 4 lag(s) was:
+ [[38.     0.66 ]
+ [ 2.78   2.205]]
+
+
+The average confusion matrix for 5 lag(s) was:
+ [[37.375  1.015]
+ [ 3.57   1.685]]
+
+
+The average confusion matrix for 6 lag(s) was:
+ [[36.615  1.36 ]
+ [ 3.645  1.38 ]]
+
+
+The average confusion matrix for 7 lag(s) was:
+ [[36.33   1.355]
+ [ 3.58   1.735]]
+
+
+The average confusion matrix for 8 lag(s) was:
+ [[36.055  1.27 ]
+ [ 3.745  1.93 ]]
+
+
+The average confusion matrix for 9 lag(s) was:
+ [[35.615  1.545]
+ [ 4.35   1.49 ]]
+
+
+The average confusion matrix for 10 lag(s) was:
+ [[34.59   1.465]
+ [ 4.915  1.03 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the averaged confusion matrices reported above, we see that the model with
+only one leading period was the most accurate.</p>
+<p>After that was the model with 4 leading quarters.</p>
+<p>Depending on the application, we might favor a model with higher accuracy or
+one that gives us more time to prepare (the 4 quarter model).</p>
+<p>Why did the 1-lead and 4-lead models perform better than models with
+another number of leads? Perhaps because different variables start moving a
+different number of periods before the recession hits.</p>
+<p>The exercise below asks you to explore this idea.</p>
+<div class="admonition-exercise admonition" id="app-cls-dir7">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 7 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+<div class="admonition-exercise admonition" id="app-cls-dir8">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 8 in the <a class="reference internal" href="#app-cls-ex"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="exercises">
+<span id="app-cls-ex"></span><h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<p>Determine the level of this cutoff value. Recall that the COMPAS
+score takes on integer values between 1 and 10, inclusive.</p>
+<p>What happens to the cutoff level of the <code class="docutils literal notranslate"><span class="pre">decile_score</span></code> when you change
+the classification threshold from 0.5 to 0.7? What about 0.3? Remember this
+idea – we’ll come back to it soon.</p>
+<p>(<a class="reference internal" href="#app-cls-dir1"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<p>Experiment with different pairs of features to see which ones show the
+clearest decision boundaries.</p>
+<p>Feed different <code class="docutils literal notranslate"><span class="pre">X</span></code> DataFrames into the <code class="docutils literal notranslate"><span class="pre">fit_and_plot_decision_boundary</span></code> function above.</p>
+<p>(<a class="reference internal" href="#app-cls-dir2"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">metrics.roc_curve</span></code> function to determine an appropriate value
+for the probability threshold, keeping in mind our preference for
+high precision over high recall.</p>
+<p>The third return value of <code class="docutils literal notranslate"><span class="pre">metrics.roc_curve</span></code> is an array of the
+probability thresholds (<code class="docutils literal notranslate"><span class="pre">p</span></code>) used to compute each false positive rate and
+true positive rate.</p>
+<p>To do this problem, you may wish to do the following steps:</p>
+<ul class="simple">
+<li><p>Concoct objective function in terms of the <code class="docutils literal notranslate"><span class="pre">fpr</span></code> and <code class="docutils literal notranslate"><span class="pre">tpr</span></code>.</p></li>
+<li><p>Evaluate the objective function using the <code class="docutils literal notranslate"><span class="pre">fpr</span></code> and <code class="docutils literal notranslate"><span class="pre">tpr</span></code> variables returned by the <code class="docutils literal notranslate"><span class="pre">metrics.roc_curve</span></code> function.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.argmin</span></code> to find the  <em>index</em> of the smallest value of the objective function.</p></li>
+<li><p>Extract the value at the margin index from the probability threshold values array.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If we cared about both precision and recall equally (we don’t here),
+we might choose <code class="docutils literal notranslate"><span class="pre">(fpr</span> <span class="pre">-</span> <span class="pre">tpr)**2</span></code> as one objective function. With this
+objective function, we would find the probability threshold value
+that makes the false positive and true positive rates as equal as
+possible.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#app-cls-dir3"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> class with default arguments implements the
+regression including <code class="docutils literal notranslate"><span class="pre">l2</span></code> regularization (it penalizes coefficient
+vectors with an l2-norm).</p>
+<p>The regularization strength is controlled by a parameter <code class="docutils literal notranslate"><span class="pre">C</span></code> that is
+passed to the <code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code> constructor.</p>
+<p>Smaller values of <code class="docutils literal notranslate"><span class="pre">C</span></code> lead to stronger regularization.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">LogisticRegression(C=10)</span></code> would have weaker regularization
+than <code class="docutils literal notranslate"><span class="pre">LogisticRegression(C=0.5)</span></code>.</p>
+<p>Your task here is to use the <code class="docutils literal notranslate"><span class="pre">model_selection.cross_val_score</span></code> method to select an
+optimal level for the regularization parameter <code class="docutils literal notranslate"><span class="pre">C</span></code>. The <code class="docutils literal notranslate"><span class="pre">scoring</span></code> argument should be set
+to <code class="docutils literal notranslate"><span class="pre">roc_auc</span></code>.</p>
+<p>Refer to the example in the <a class="reference internal" href="../applications/recidivism.html"><span class="doc">recidivism lecture</span></a> for how
+to use <code class="docutils literal notranslate"><span class="pre">model_selection.cross_val_score</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#app-cls-dir4"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
+<p>Use a multi-layer perceptron in our recidivism example via the <code class="docutils literal notranslate"><span class="pre">neural_network.MLPClassifier</span></code> class.</p>
+<p>Experiment with different inputs such as:</p>
+<ul class="simple">
+<li><p>The features to include</p></li>
+<li><p>The number of layers and number of neurons in each layer</p></li>
+<li><p>The l2 regularization parameter <code class="docutils literal notranslate"><span class="pre">alpha</span></code></p></li>
+<li><p>The solver</p></li>
+</ul>
+<p>See if you can create a model that outperforms logistic regression.</p>
+<p>Keep in mind other things, like the degree of overfitting and time required
+to estimate the model parameters. How do these compare to logistic
+regression?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#app-cls-dir5"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this heading">#</a></h3>
+<p>Let’s pause here to take a few minutes and digest.</p>
+<p>If the task is to use these leading indicators to predict a recession,
+would high recall or high precision be more important for our model?</p>
+<p>Would your answer change if you worked at the Federal Reserve?</p>
+<p>What if you worked at a news company such as the Economist or the New York
+Times?</p>
+<p>(<a class="reference internal" href="#app-cls-dir6"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this heading">#</a></h3>
+<p>Extend the logic from the previous example and allow a different number
+of leading periods for each variable.</p>
+<p>How would you find the “optimal” number of leads for each variable? How
+could you try to avoid overfitting?</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">make_train_data_varying_leads</span></code> function below to construct your model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data_varying_leads</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply per-indicator leads to each indicator and join with recession data</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    indicators: pd.DataFrame</span>
+<span class="sd">        A DataFrame with timestamps on index and leading indicators as columns</span>
+
+<span class="sd">    rec: pd.Series</span>
+<span class="sd">        A Series indicating if the US economy was in a recession each period</span>
+
+<span class="sd">    nlead: dict</span>
+<span class="sd">        A dictionary which maps a column name to a positive integer</span>
+<span class="sd">        specifying how many periods to shift each indicator. Any</span>
+<span class="sd">        indicator not given a key in this dictionary will not be</span>
+<span class="sd">        included in the output DataFrame.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df: pd.DataFrame</span>
+<span class="sd">        A DataFrame with the leads applied and merged with the recession</span>
+<span class="sd">        indicator</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+
+<span class="sd">    ```</span>
+<span class="sd">    df = make_train_data_varying_leads(</span>
+<span class="sd">        indicators,</span>
+<span class="sd">        recession,</span>
+<span class="sd">        nlead=dict(yield_curve=3, unemp=4)</span>
+<span class="sd">    )</span>
+
+<span class="sd">    df.shape[1]  # == 3 (yield_curve, unemp, recession))</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">indicators</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">nlead</span><span class="p">:</span>
+            <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indicators</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="n">nlead</span><span class="p">[</span><span class="n">col</span><span class="p">]))</span>
+
+    <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#app-cls-dir7"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this heading">#</a></h3>
+<p>Experiment with different classifiers. Which ones perform better or worse?</p>
+<p>How accurate can you become for each accuracy metric (accuracy, precision, and recall)?</p>
+<p>(<a class="reference internal" href="#app-cls-dir8"><span class="std std-ref">back to text</span></a>)</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="roc"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The name “receiver operating characteristic” comes from its origin;
+during World War II, engineers used ROC curves to measure how well a radar signal
+could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tools"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive persistent" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/overview.html">
+   Course Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/cloud_setup.html">
+   Cloud Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/local_install.html">
+   Local Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Fundamentals
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/index.html">
+   Python Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/collections.html">
+   Collections
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/control_flow.html">
+   Control Flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python_fundamentals/functions.html">
+   Functions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Scientific Computing
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/index.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/numpy_arrays.html">
+   Introduction to Numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/plotting.html">
+   Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/applied_linalg.html">
+   Applied Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/randomness.html">
+   Randomness
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../scientific/optimization.html">
+   Optimization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pandas
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/index.html">
+   DataFrames and Series in Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/basics.html">
+   Basic Functionality
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/the_index.html">
+   The Index
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/storage_formats.html">
+   Storage Formats
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/data_clean.html">
+   Cleaning Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/reshape.html">
+   Reshape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/merge.html">
+   Merge
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pandas/timeseries.html">
+   Time series
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science Tools
+ </span>
+</p>
+<ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Data Science Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib.html">
+   Intermediate Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maps.html">
+   Mapping in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="visualization_rules.html">
+   Data Visualization: Rules and Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   Classification
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/index.html">
+   Applications
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/ml_in_economics.html">
+   Machine Learning in Economics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/networks.html">
+   Social and Economic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/recidivism.html">
+   Case Study: Recidivism
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/working_with_text.html">
+   Working with Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../applications/heterogeneity.html">
+   Heterogeneous Effects
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/tools/classification.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/tools/classification.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/classification.ipynb">BinderHub</option>
+                
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/classification.ipynb">Colab</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-datascience.notebooks" data-urlpath="tree/lecture-datascience.notebooks/tools/classification.ipynb" data-branch=main>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/classification.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "tools/classification";
+                const repoURL = "https://github.com/QuantEcon/lecture-datascience.notebooks";
+                const urlPath = "tree/lecture-datascience.notebooks/tools/classification.ipynb";
+                const branch = "main"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+  </body>
+</html>

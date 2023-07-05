@@ -928,7 +928,7 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3514/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3390/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
   start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
 </pre></div>
 </div>
@@ -966,37 +966,37 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
       <th>1</th>
       <td>1</td>
       <td>1.0</td>
-      <td>2023-06-30</td>
+      <td>2023-09-29</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>2.0</td>
-      <td>2023-09-29</td>
+      <td>2023-12-29</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>3.0</td>
-      <td>2023-12-29</td>
+      <td>2024-03-29</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
       <td>NaN</td>
-      <td>2024-03-29</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>5.0</td>
       <td>2024-06-28</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
-      <td>NaN</td>
+      <td>5.0</td>
       <td>2024-09-30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2024-12-31</td>
     </tr>
   </tbody>
 </table>
@@ -1040,13 +1040,13 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
   <tbody>
     <tr>
       <th>2023-12-31</th>
-      <td>3</td>
-      <td>3</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2024-12-31</th>
-      <td>3</td>
-      <td>1</td>
+      <td>4</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1147,11 +1147,16 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
     <tr>
       <th>2023-12-31</th>
       <th>1</th>
-      <td>3</td>
-      <td>3</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>2024-12-31</th>
+      <th rowspan="2" valign="top">2024-12-31</th>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
       <th>2</th>
       <td>3</td>
       <td>1</td>
@@ -1198,13 +1203,9 @@ denotes a column name</p>
   </thead>
   <tbody>
     <tr>
-      <th rowspan="2" valign="top">2023-12-31</th>
+      <th>2023-12-31</th>
       <th>1</th>
       <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">2024-12-31</th>
@@ -1213,7 +1214,7 @@ denotes a column name</p>
     </tr>
     <tr>
       <th>2</th>
-      <td>0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -2638,7 +2639,7 @@ appropriate values to replicate the plots from above.</p>
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
-   pandas
+   DataFrames and Series in Pandas
   </a>
  </li>
  <li class="toctree-l1">
@@ -2686,9 +2687,41 @@ appropriate values to replicate the plots from above.</p>
    Time series
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="matplotlib.html">
+  <a class="reference internal" href="../tools/index.html">
+   Data Science Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/matplotlib.html">
    Intermediate Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/maps.html">
+   Mapping in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/visualization_rules.html">
+   Data Visualization: Rules and Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/classification.html">
+   Classification
   </a>
  </li>
 </ul>
@@ -2704,13 +2737,13 @@ appropriate values to replicate the plots from above.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/visualization_rules.html">
-   Data Visualization: Rules and Guidelines
+  <a class="reference internal" href="../applications/ml_in_economics.html">
+   Machine Learning in Economics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/regression.html">
-   Regression
+  <a class="reference internal" href="../applications/networks.html">
+   Social and Economic Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -2719,33 +2752,13 @@ appropriate values to replicate the plots from above.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/maps.html">
-   Mapping in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../applications/classification.html">
-   Classification
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../applications/working_with_text.html">
    Working with Text
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/ml_in_economics.html">
-   Machine Learning in Economics
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../applications/heterogeneity.html">
    Heterogeneous Effects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../applications/networks.html">
-   Social and Economic Networks
   </a>
  </li>
 </ul>

@@ -17,9 +17,9 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`matplotlib Introduction <../pandas/matplotlib>`
-- {doc}`Visualization Rules <visualization_rules>`
-- {doc}`Regression <regression>`
+- {doc}`matplotlib Introduction <../tools/matplotlib>`
+- {doc}`Visualization Rules <../tools/visualization_rules>`
+- {doc}`Regression <../tools/regression>`
 
 **Outcomes**
 

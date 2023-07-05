@@ -37,8 +37,11 @@ Basic Python programming
 ## <i class="fas fa-server" style="color:#d45f6c"></i> [Scientific Computing](../scientific/index.md)
 Numerical and scientific methods
 
-## <i class="fas fa-code" style="color:#6dae5c"></i> [Pandas](../pandas/index.md)
+## <i class="fas fa-database" style="color:#6dae5c"></i> [Working With Data](../pandas/index.md)
 The "data" in data science
 
-## <i class="fas fa-cogs" style="color:#1665ad"></i> [Applications](../applications/index.md)
-Applications and statistical tools
+## <i class="fas fa-cogs" style="color:#9933ff"></i> [Data Science Tools](../tools/index.md)
+Putting everything together
+
+## <i class="fas fa-chart-column" style="color:#ff9900"></i> [Applications](../applications/index.md)
+Applying our skills to real economic data

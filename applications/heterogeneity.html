@@ -119,8 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Social and Economic Networks" href="networks.html" />
-    <link rel="prev" title="Machine Learning in Economics" href="ml_in_economics.html" />
+    <link rel="prev" title="Working with Text" href="working_with_text.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Chase Coleman, Spencer Lyon, and Jesse Perla" />
@@ -239,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div></blockquote>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="regression.html"><span class="doc">Regression</span></a></p></li>
+<li><p><a class="reference internal" href="../tools/regression.html"><span class="doc">Regression</span></a></p></li>
 <li><p><a class="reference internal" href="ml_in_economics.html"><span class="doc">Machine Learning in Economics</span></a></p></li>
 </ul>
 <p><strong>Outcomes</strong></p>
@@ -962,29 +961,29 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.510043</td>
-      <td>0.194724</td>
-      <td>-0.189065</td>
+      <td>0.156632</td>
+      <td>0.093947</td>
+      <td>-0.302837</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.510043</td>
+      <td>0.156632</td>
       <td>1.000000</td>
-      <td>0.510038</td>
-      <td>-0.238836</td>
+      <td>0.450256</td>
+      <td>-0.070728</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.194724</td>
-      <td>0.510038</td>
+      <td>0.093947</td>
+      <td>0.450256</td>
       <td>1.000000</td>
-      <td>-0.107659</td>
+      <td>-0.060512</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>-0.189065</td>
-      <td>-0.238836</td>
-      <td>-0.107659</td>
+      <td>-0.302837</td>
+      <td>-0.070728</td>
+      <td>-0.060512</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1021,32 +1020,32 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>-5.904156</td>
-      <td>-17.761597</td>
-      <td>-15.986654</td>
-      <td>-18.753227</td>
+      <td>-1.712738e+01</td>
+      <td>-12.563799</td>
+      <td>-12.220228</td>
+      <td>-16.601702</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.007151</td>
-      <td>0.159222</td>
-      <td>0.114643</td>
-      <td>-1261.843455</td>
+      <td>-4.812813e-14</td>
+      <td>0.059846</td>
+      <td>0.130586</td>
+      <td>-709.677809</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>32.645218</td>
-      <td>33.162597</td>
-      <td>32.019504</td>
-      <td>33.963197</td>
+      <td>3.326222e+01</td>
+      <td>32.473523</td>
+      <td>32.355404</td>
+      <td>33.839813</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.582841</td>
-      <td>0.283740</td>
-      <td>0.082917</td>
-      <td>2635.793256</td>
+      <td>4.166842e-14</td>
+      <td>0.253185</td>
+      <td>0.077566</td>
+      <td>3164.084284</td>
     </tr>
   </tbody>
 </table>
@@ -1082,78 +1081,78 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>0.000000</td>
-      <td>-0.711636</td>
-      <td>-59.291156</td>
-      <td>17.937528</td>
+      <td>0.000000e+00</td>
+      <td>-25.606486</td>
+      <td>-82.909828</td>
+      <td>-2.304682</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000000</td>
-      <td>-65.116392</td>
-      <td>-42.480342</td>
-      <td>42.237932</td>
+      <td>0.000000e+00</td>
+      <td>29.807966</td>
+      <td>26.133495</td>
+      <td>8.055963</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>7.609843</td>
-      <td>-20.877542</td>
-      <td>19.490821</td>
-      <td>-17.690797</td>
+      <td>0.000000e+00</td>
+      <td>15.365834</td>
+      <td>-50.237479</td>
+      <td>-34.065326</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-35.007053</td>
-      <td>-49.430632</td>
-      <td>-31.450467</td>
-      <td>-50.293759</td>
+      <td>0.000000e+00</td>
+      <td>-57.251284</td>
+      <td>-28.835689</td>
+      <td>-15.807445</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-8.234656</td>
-      <td>27.278790</td>
-      <td>81.068944</td>
-      <td>-9.901348</td>
+      <td>-1.712738e+01</td>
+      <td>21.879972</td>
+      <td>70.621439</td>
+      <td>-19.798691</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>60.117712</td>
-      <td>63.047359</td>
-      <td>69.583958</td>
-      <td>78.093924</td>
+      <td>2.630303e-15</td>
+      <td>66.788456</td>
+      <td>65.932350</td>
+      <td>81.422837</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>68.217592</td>
-      <td>65.045561</td>
-      <td>70.808013</td>
-      <td>79.435484</td>
+      <td>0.000000e+00</td>
+      <td>68.734618</td>
+      <td>64.440158</td>
+      <td>77.729994</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>61.023633</td>
-      <td>70.922506</td>
-      <td>68.717317</td>
-      <td>66.993487</td>
+      <td>4.738376e+01</td>
+      <td>68.855645</td>
+      <td>66.420910</td>
+      <td>70.685069</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>72.317398</td>
-      <td>67.374366</td>
-      <td>69.577588</td>
-      <td>68.776780</td>
+      <td>0.000000e+00</td>
+      <td>73.383581</td>
+      <td>72.351190</td>
+      <td>69.684000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>65.315615</td>
-      <td>82.881091</td>
-      <td>75.848690</td>
-      <td>62.454792</td>
+      <td>3.815599e+01</td>
+      <td>66.745546</td>
+      <td>72.719252</td>
+      <td>60.211381</td>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/e0f4797d4916e8feec44fdff6342424f9632c7b3154c8ddc886a875960cf0a00.png" src="../_images/e0f4797d4916e8feec44fdff6342424f9632c7b3154c8ddc886a875960cf0a00.png" />
+</div></div><img alt="../_images/58627c6443ed18d1ab4abaade8e13b21d6f06664f50c095ae5e78a1092dac8af.png" src="../_images/58627c6443ed18d1ab4abaade8e13b21d6f06664f50c095ae5e78a1092dac8af.png" />
 </div>
 </div>
 <p>From the second table above, we see that regardless of the machine
@@ -1214,29 +1213,29 @@ conditional average treatment effect.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.853895</td>
-      <td>0.492726</td>
-      <td>0.763052</td>
+      <td>0.850798</td>
+      <td>0.509709</td>
+      <td>0.918684</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.853895</td>
+      <td>0.850798</td>
       <td>1.000000</td>
-      <td>0.553155</td>
-      <td>0.627420</td>
+      <td>0.563338</td>
+      <td>0.739073</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.492726</td>
-      <td>0.553155</td>
+      <td>0.509709</td>
+      <td>0.563338</td>
       <td>1.000000</td>
-      <td>0.428002</td>
+      <td>0.435442</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>0.763052</td>
-      <td>0.627420</td>
-      <td>0.428002</td>
+      <td>0.918684</td>
+      <td>0.739073</td>
+      <td>0.435442</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1273,32 +1272,32 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>0.054316</td>
-      <td>0.042702</td>
-      <td>0.037754</td>
-      <td>0.038905</td>
+      <td>0.038036</td>
+      <td>0.045872</td>
+      <td>0.051108</td>
+      <td>0.038392</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.443675</td>
-      <td>0.592666</td>
-      <td>0.097964</td>
-      <td>0.439758</td>
+      <td>0.452902</td>
+      <td>0.540841</td>
+      <td>0.137712</td>
+      <td>0.408430</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>0.020308</td>
-      <td>0.021881</td>
-      <td>0.021886</td>
-      <td>0.021866</td>
+      <td>0.021951</td>
+      <td>0.021433</td>
+      <td>0.021964</td>
+      <td>0.021005</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.120258</td>
-      <td>0.152160</td>
-      <td>0.075731</td>
-      <td>1.061555</td>
+      <td>0.133564</td>
+      <td>0.141358</td>
+      <td>0.077247</td>
+      <td>0.117452</td>
     </tr>
   </tbody>
 </table>
@@ -1334,78 +1333,78 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>-0.004681</td>
-      <td>-0.054784</td>
-      <td>-0.023362</td>
-      <td>-0.005883</td>
+      <td>-0.051304</td>
+      <td>-0.055949</td>
+      <td>0.012484</td>
+      <td>-0.019391</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.008229</td>
-      <td>-0.013617</td>
-      <td>0.024070</td>
-      <td>-0.007818</td>
+      <td>-0.035064</td>
+      <td>0.011699</td>
+      <td>0.047200</td>
+      <td>-0.011647</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.017498</td>
-      <td>0.012029</td>
-      <td>0.019009</td>
-      <td>0.026379</td>
+      <td>0.015977</td>
+      <td>0.000816</td>
+      <td>0.023544</td>
+      <td>-0.016998</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.078150</td>
-      <td>0.069494</td>
-      <td>0.050852</td>
-      <td>0.037499</td>
+      <td>0.082861</td>
+      <td>0.059628</td>
+      <td>0.081914</td>
+      <td>0.066200</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.203986</td>
-      <td>0.213211</td>
-      <td>0.085284</td>
-      <td>0.117262</td>
+      <td>0.185422</td>
+      <td>0.189873</td>
+      <td>0.116538</td>
+      <td>0.181413</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>0.036124</td>
-      <td>0.050244</td>
-      <td>0.049413</td>
-      <td>0.042949</td>
+      <td>0.041082</td>
+      <td>0.048499</td>
+      <td>0.050587</td>
+      <td>0.032304</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.041141</td>
-      <td>0.042720</td>
-      <td>0.041598</td>
-      <td>0.044575</td>
+      <td>0.044352</td>
+      <td>0.041362</td>
+      <td>0.042698</td>
+      <td>0.043245</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.045428</td>
-      <td>0.040804</td>
-      <td>0.045232</td>
-      <td>0.049942</td>
+      <td>0.044392</td>
+      <td>0.044229</td>
+      <td>0.045532</td>
+      <td>0.050485</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.045028</td>
-      <td>0.046633</td>
-      <td>0.044641</td>
-      <td>0.045700</td>
+      <td>0.048118</td>
+      <td>0.045415</td>
+      <td>0.044544</td>
+      <td>0.048633</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.050235</td>
-      <td>0.051627</td>
-      <td>0.050201</td>
-      <td>0.055144</td>
+      <td>0.053772</td>
+      <td>0.048717</td>
+      <td>0.050209</td>
+      <td>0.053403</td>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/e63c2915874cf8a526380a330b82bc652c0cb8ec4902e3fefc501b867b79d90c.png" src="../_images/e63c2915874cf8a526380a330b82bc652c0cb8ec4902e3fefc501b867b79d90c.png" />
+</div></div><img alt="../_images/74f5229180491d1585e71cc15f0bb64b7b63706556952a51cb647ede27cf4a77.png" src="../_images/74f5229180491d1585e71cc15f0bb64b7b63706556952a51cb647ede27cf4a77.png" />
 </div>
 </div>
 <p>Now, the results are more encouraging. For all four machine learning
@@ -1507,7 +1506,7 @@ develop simple rules for targeting future treatments.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27cd4329f90efda1b4f2658e4f6dc4af7b034a59a464211818ba3a4a5e9447f1.png" src="../_images/27cd4329f90efda1b4f2658e4f6dc4af7b034a59a464211818ba3a4a5e9447f1.png" />
+<img alt="../_images/8a121c47b8989977368fb2004f83ae71a6874a8501deeb1f7b503e2d83834fb3.png" src="../_images/8a121c47b8989977368fb2004f83ae71a6874a8501deeb1f7b503e2d83834fb3.png" />
 </div>
 </div>
 <p>From this, we see that the group predicted to be most affected by treatment
@@ -1744,7 +1743,7 @@ relatively low dimension) to get precise estimates.</p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../pandas/index.html">
-   pandas
+   DataFrames and Series in Pandas
   </a>
  </li>
  <li class="toctree-l1">
@@ -1792,9 +1791,41 @@ relatively low dimension) to get precise estimates.</p>
    Time series
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../pandas/matplotlib.html">
+  <a class="reference internal" href="../tools/index.html">
+   Data Science Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/matplotlib.html">
    Intermediate Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/maps.html">
+   Mapping in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/visualization_rules.html">
+   Data Visualization: Rules and Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/classification.html">
+   Classification
   </a>
  </li>
 </ul>
@@ -1810,13 +1841,13 @@ relatively low dimension) to get precise estimates.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="visualization_rules.html">
-   Data Visualization: Rules and Guidelines
+  <a class="reference internal" href="ml_in_economics.html">
+   Machine Learning in Economics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="regression.html">
-   Regression
+  <a class="reference internal" href="networks.html">
+   Social and Economic Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -1825,33 +1856,13 @@ relatively low dimension) to get precise estimates.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="maps.html">
-   Mapping in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="classification.html">
-   Classification
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="working_with_text.html">
    Working with Text
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ml_in_economics.html">
-   Machine Learning in Economics
   </a>
  </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
    Heterogeneous Effects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="networks.html">
-   Social and Economic Networks
   </a>
  </li>
 </ul>

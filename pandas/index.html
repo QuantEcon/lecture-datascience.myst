@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>pandas &#8212; QuantEcon DataScience</title>
+    <title>DataFrames and Series in Pandas &#8212; QuantEcon DataScience</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -128,13 +128,13 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Twitter tags -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@quantecon" />
-<meta name="twitter:title" content="pandas"/>
+<meta name="twitter:title" content="DataFrames and Series in Pandas"/>
 <meta name="twitter:description" content="This website presents a series of lectures on programming, data science, and economics.">
 <meta name="twitter:creator" content="@quantecon">
 <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
 
 <!-- Opengraph tags -->
-<meta property="og:title" content="pandas" />
+<meta property="og:title" content="DataFrames and Series in Pandas" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://datascience.quantecon.org/pandas/index.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
@@ -166,16 +166,15 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-introduction"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Introduction</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-basic-functionality"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Basic Functionality</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-the-index"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">The Index</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-storage-formats"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Storage Formats</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-cleaning-data"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Cleaning Data</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-reshape"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Reshape</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-merge"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Merge</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-groupby"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">GroupBy</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-time-series"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Time series</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-code-style-color-6dae5c-i-intermediate-plotting"><i class="fas fa-code" style="color:#6dae5c"></i> <span class="xref myst">Intermediate Plotting</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-introduction"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Introduction</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-basic-functionality"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Basic Functionality</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-the-index"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">The Index</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-storage-formats"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Storage Formats</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-cleaning-data"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Cleaning Data</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-reshape"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Reshape</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-merge"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Merge</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-groupby"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">GroupBy</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#i-class-fas-fa-database-style-color-6dae5c-i-time-series"><i class="fas fa-database" style="color:#6dae5c"></i> <span class="xref myst">Time Series</span></a></li>
 </ul>
                             <p class="logo">
                                 
@@ -205,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <p class="qe-page__header-heading"><a href="../index.html">QuantEcon DataScience</a></p>
 
-                        <p class="qe-page__header-subheading">pandas</p>
+                        <p class="qe-page__header-subheading">DataFrames and Series in Pandas</p>
 
                     </div>
 
@@ -220,8 +219,8 @@ const thebe_selector_output = ".output, .cell_output"
                     
                     <div>
                         
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1>pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataframes-and-series-in-pandas">
+<h1>DataFrames and Series in Pandas<a class="headerlink" href="#dataframes-and-series-in-pandas" title="Permalink to this heading">#</a></h1>
 <p>This section of the workshop covers data ingestion, cleaning,
 manipulation, analysis, and visualization in Python.</p>
 <p>We build on the skills learned in the <a class="reference internal" href="../python_fundamentals/index.html"><span class="doc">Python fundamentals</span></a> section and teach the
@@ -245,35 +244,32 @@ studying this section.</p>
 <p>The expression “practice makes perfect” is especially true here.</p>
 <p>As you work with these tools, both the time to write and the time to run
 your programs will fall dramatically.</p>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-introduction">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="intro.html"><span class="doc std std-doc">Introduction</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-introduction" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-introduction">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="intro.html"><span class="doc std std-doc">Introduction</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-introduction" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-basic-functionality">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="basics.html"><span class="doc std std-doc">Basic Functionality</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-basic-functionality" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-basic-functionality">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="basics.html"><span class="doc std std-doc">Basic Functionality</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-basic-functionality" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-the-index">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="the_index.html"><span class="doc std std-doc">The Index</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-the-index" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-the-index">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="the_index.html"><span class="doc std std-doc">The Index</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-the-index" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-storage-formats">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="storage_formats.html"><span class="doc std std-doc">Storage Formats</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-storage-formats" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-storage-formats">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="storage_formats.html"><span class="doc std std-doc">Storage Formats</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-storage-formats" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-cleaning-data">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="data_clean.html"><span class="doc std std-doc">Cleaning Data</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-cleaning-data" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-cleaning-data">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="data_clean.html"><span class="doc std std-doc">Cleaning Data</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-cleaning-data" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-reshape">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="reshape.html"><span class="doc std std-doc">Reshape</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-reshape" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-reshape">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="reshape.html"><span class="doc std std-doc">Reshape</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-reshape" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-merge">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="merge.html"><span class="doc std std-doc">Merge</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-merge" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-merge">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="merge.html"><span class="doc std std-doc">Merge</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-merge" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-groupby">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="groupby.html"><span class="doc std std-doc">GroupBy</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-groupby" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-groupby">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="groupby.html"><span class="doc std std-doc">GroupBy</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-groupby" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-time-series">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="timeseries.html"><span class="doc std std-doc">Time series</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-time-series" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="i-class-fas-fa-code-style-color-6dae5c-i-intermediate-plotting">
-<h2><i class="fas fa-code" style="color:#6dae5c"></i> <a class="reference internal" href="matplotlib.html"><span class="doc std std-doc">Intermediate Plotting</span></a><a class="headerlink" href="#i-class-fas-fa-code-style-color-6dae5c-i-intermediate-plotting" title="Permalink to this heading">#</a></h2>
+<section id="i-class-fas-fa-database-style-color-6dae5c-i-time-series">
+<h2><i class="fas fa-database" style="color:#6dae5c"></i> <a class="reference internal" href="timeseries.html"><span class="doc std std-doc">Time Series</span></a><a class="headerlink" href="#i-class-fas-fa-database-style-color-6dae5c-i-time-series" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -440,7 +436,7 @@ your programs will fall dramatically.</p>
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   pandas
+   DataFrames and Series in Pandas
   </a>
  </li>
  <li class="toctree-l1">
@@ -488,9 +484,41 @@ your programs will fall dramatically.</p>
    Time series
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Science Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="matplotlib.html">
+  <a class="reference internal" href="../tools/index.html">
+   Data Science Tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/matplotlib.html">
    Intermediate Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/maps.html">
+   Mapping in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/visualization_rules.html">
+   Data Visualization: Rules and Guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/classification.html">
+   Classification
   </a>
  </li>
 </ul>
@@ -506,13 +534,13 @@ your programs will fall dramatically.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/visualization_rules.html">
-   Data Visualization: Rules and Guidelines
+  <a class="reference internal" href="../applications/ml_in_economics.html">
+   Machine Learning in Economics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/regression.html">
-   Regression
+  <a class="reference internal" href="../applications/networks.html">
+   Social and Economic Networks
   </a>
  </li>
  <li class="toctree-l1">
@@ -521,33 +549,13 @@ your programs will fall dramatically.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/maps.html">
-   Mapping in Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../applications/classification.html">
-   Classification
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../applications/working_with_text.html">
    Working with Text
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../applications/ml_in_economics.html">
-   Machine Learning in Economics
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../applications/heterogeneity.html">
    Heterogeneous Effects
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../applications/networks.html">
-   Social and Economic Networks
   </a>
  </li>
 </ul>
