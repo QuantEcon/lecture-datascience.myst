@@ -1075,7 +1075,7 @@ See exercise 11 in the {ref}`exercise list <app-reg-ex>`.
 Two good text books covering the above regression methods are
 {cite}`reg-friedman2008` and {cite}`reg-efron2016`
 
-```{bibliography} applications.bib
+```{bibliography} ../applications/applications.bib
 :keyprefix: reg-
 :labelprefix: reg
 :cited:

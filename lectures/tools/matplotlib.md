@@ -13,7 +13,7 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`Introduction <intro>`
+- {doc}`Introduction <../pandas/intro>`
 
 **Outcomes**
 

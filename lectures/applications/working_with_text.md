@@ -16,10 +16,10 @@ kernelspec:
 
 **Prerequisites**
 
-- {doc}`Visualization Rules <visualization_rules>`
-- {doc}`Regression <regression>`
-- {doc}`Classification <classification>`
-- {doc}`Maps <maps>`
+- {doc}`Visualization Rules <../tools/visualization_rules>`
+- {doc}`Regression <../tools/regression>`
+- {doc}`Classification <../tools/classification>`
+- {doc}`Maps <../tools/maps>`
 
 **Outcomes**
 
