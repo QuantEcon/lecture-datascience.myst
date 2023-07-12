@@ -342,6 +342,7 @@ class LoanRepaymentParams2:
         
         # This does a calculation and sets a new value
         self.repayment_part = repayment_full * partial_fraction
+
 # Create an instance of the class        
 params = LoanRepaymentParams2(0.05, 50_000.0, 0.5)        
 print(params.repayment_part) # Acccess the calculation
@@ -355,6 +356,7 @@ FInally, there are some special features we can use to create classes in python 
 
 ```{code-cell} python
 from dataclasses import dataclass
+
 @dataclass
 class LoanRepaymentParams3:
     r = 0.05

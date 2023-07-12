@@ -582,6 +582,58 @@ In that example, the `z` on the left hand side of `z = z` refers
 to the local variable name in the function whereas the `z` on the
 right hand side refers to the `z` in the outer scope.
 
+
+### Creating Custom Types
+
+IN PROGRESS!
+
+- we aer used to doing `x = dict("a": 1, "b": 2)` and then `x["a"]` to access
+
+Used both internal and etemrianl
+
+We can create new one
+
+```{code-cell} python
+class A
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+```
+
+Explain the self and the special  `__init__`
+
+Exlain the difference of an instance/object vs. the class
+
+```{code-cell} python
+a = A(1, 2)
+b = A(3, 4)
+# Notice that these are different objects
+a == b
+```
+
+Tell people how to see the `type`
+Point at the debugger to see the `a.x` etc. fields
+
+Show a method
+
+```{code-cell} python
+class B
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+
+  def add(self):
+    return self.x + self.y
+```
+
+```{code-cell} python
+a = B(1, 2)
+print a.add()
+```
+
+
+
+
 ### Aside: Methods
 
 As we learned earlier, all variables in Python have a type associated
