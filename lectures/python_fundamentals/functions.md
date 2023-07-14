@@ -594,7 +594,7 @@ Used both internal and etemrianl
 We can create new one
 
 ```{code-cell} python
-class A
+class A:
   def __init__(self, x, y):
     self.x = x
     self.y = y
