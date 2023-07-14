@@ -359,12 +359,12 @@ from dataclasses import dataclass
 
 @dataclass
 class LoanRepaymentParams3:
-    r = 0.05
-    repayment_full = 50_000
-    repayment_part = 25_000
+    r: float = 0.05
+    repayment_full: float = 50_000
+    repayment_part: float = 25_000
 
 params = LoanRepaymentParams3() # uses all defaults
-params2 = LoanRepaymentParams3(0.05, 60_000, 25_000) # changes the full repayment amount
+params2 = LoanRepaymentParams3(repayment_full= 60_000) # changes the full repayment amount
 
 # show the objects
 print(params)
