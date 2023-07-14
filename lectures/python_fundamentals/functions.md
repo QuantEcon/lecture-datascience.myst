@@ -617,7 +617,7 @@ Point at the debugger to see the `a.x` etc. fields
 Show a method
 
 ```{code-cell} python
-class B
+class B:
   def __init__(self, x, y):
     self.x = x
     self.y = y
