@@ -627,8 +627,8 @@ class B:
 ```
 
 ```{code-cell} python
-a = B(1, 2)
-print a.add()
+b = B(1, 2)
+print(b.add())
 ```
 
 
