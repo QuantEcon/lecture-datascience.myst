@@ -352,7 +352,7 @@ print(np.mean(simulate_loan_repayments_2(N, params)))
 This setup a default value for the `partial_fraction` so that we could also have called this with `LoanRepaymentParams2(0.05, 50_000)`.
 
 
-FInally, there are some special features we can use to create classes in python which automatically create the `__init__` function, allow for more easily setting default values.   The easiest is to create a `dataclass` (see [documentation](https://docs.python.org/3/library/dataclasses.html)).
+Finally, there are some special features we can use to create classes in python which automatically create the `__init__` function, allow for more easily setting default values.   The easiest is to create a `dataclass` (see [documentation](https://docs.python.org/3/library/dataclasses.html)).
 
 ```{code-cell} python
 from dataclasses import dataclass
@@ -364,7 +364,7 @@ class LoanRepaymentParams3:
     repayment_part = 25_000
 
 params = LoanRepaymentParams3() # uses all defaults
-params2 = LoanRepaymentParams3(repayment_full = 60_000)
+params2 = LoanRepaymentParams3(0.05, 60_000, 25_000) # changes the full repayment amount
 
 # show the objects
 print(params)
