@@ -174,6 +174,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-randomness">Why Do We Need Randomness?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions">Discrete Distributions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-vectorized-computations">Aside: Vectorized Computations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-using-class-to-hold-parameters">Aside: Using Class to Hold Parameters</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#profitability-threshold">Profitability Threshold</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loan-states">Loan States</a></li>
 </ul>
@@ -311,7 +314,7 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8408522083869787
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7017197534853112
 </pre></div>
 </div>
 </div>
@@ -324,11 +327,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.53310306, 0.56092167, 0.66279418, 0.86786171, 0.38505595,
-       0.41472351, 0.84267881, 0.55640451, 0.03566157, 0.91686702,
-       0.46706224, 0.59235212, 0.23079519, 0.02003316, 0.67177572,
-       0.56920561, 0.69733621, 0.76906096, 0.29521267, 0.1237557 ,
-       0.95448334, 0.82622446, 0.77991338, 0.38273009, 0.0547401 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.37112944, 0.3986884 , 0.45568034, 0.32956416, 0.16405904,
+       0.00110441, 0.47390929, 0.80458016, 0.10399214, 0.76842305,
+       0.02965434, 0.71787048, 0.60063419, 0.43061657, 0.10592868,
+       0.54410791, 0.35915903, 0.37754798, 0.20461177, 0.88724179,
+       0.52688612, 0.58614429, 0.67773241, 0.1031947 , 0.08267117])
 </pre></div>
 </div>
 </div>
@@ -340,11 +343,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.87935565, 0.67153012, 0.77026775, 0.62892032, 0.09855393],
-       [0.50725532, 0.45697895, 0.95196643, 0.95608279, 0.22905013],
-       [0.17341244, 0.26897564, 0.2542015 , 0.72242762, 0.92385557],
-       [0.86851671, 0.10080736, 0.95692822, 0.55163303, 0.768211  ],
-       [0.98052748, 0.00921926, 0.81939425, 0.68459445, 0.10844058]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.64249484, 0.93607053, 0.55676925, 0.90251533, 0.6744578 ],
+       [0.86186342, 0.27236915, 0.369404  , 0.6132413 , 0.4539612 ],
+       [0.36270753, 0.13226146, 0.49956696, 0.37032543, 0.27325021],
+       [0.22785271, 0.79944896, 0.2301901 , 0.47532461, 0.71980382],
+       [0.41059467, 0.3463279 , 0.45594583, 0.7989351 , 0.72213495]])
 </pre></div>
 </div>
 </div>
@@ -356,13 +359,13 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.52589019, 0.0128898 , 0.80172701, 0.75893165],
-        [0.68070894, 0.42075132, 0.76257059, 0.82055957],
-        [0.08473889, 0.63607371, 0.74308796, 0.74637617]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.46453083, 0.71893111, 0.69284811, 0.4507103 ],
+        [0.23598752, 0.51951464, 0.69210225, 0.63942095],
+        [0.54545273, 0.16950095, 0.40065334, 0.30772411]],
 
-       [[0.12823149, 0.71464788, 0.86553518, 0.91490429],
-        [0.35371763, 0.12723614, 0.47034768, 0.47624143],
-        [0.48184545, 0.54759003, 0.23079272, 0.11314988]]])
+       [[0.36453847, 0.97064896, 0.51308543, 0.22688607],
+        [0.02105818, 0.50399923, 0.17981742, 0.47876494],
+        [0.84291609, 0.68557194, 0.41458049, 0.55129036]]])
 </pre></div>
 </div>
 </div>
@@ -407,7 +410,7 @@ Numbers</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/52cdb158e044b741902024353ccc52a9067bc62f4d134870471075c8d6ae3334.png" src="../_images/52cdb158e044b741902024353ccc52a9067bc62f4d134870471075c8d6ae3334.png" />
+<img alt="../_images/ecf5403e551ddec567a271e352ac7852e8fcdd432f440be02346aff39d39f6e1.png" src="../_images/ecf5403e551ddec567a271e352ac7852e8fcdd432f440be02346aff39d39f6e1.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-4-1">
@@ -460,7 +463,7 @@ probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20269.047619047615
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20275.23809523809
 </pre></div>
 </div>
 </div>
@@ -500,7 +503,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20219.999999999996
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20273.809523809523
 </pre></div>
 </div>
 </div>
@@ -513,7 +516,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>170 ms ± 1.47 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>168 ms ± 1.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -525,7 +528,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.14 ms ± 87.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.32 ms ± 81.9 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -541,6 +544,136 @@ element at a time.</p>
 <p>For more information see the
 <a class="reference external" href="https://python-programming.quantecon.org/numba.html">QuantEcon lecture on performance Python</a> code.</p>
 </section>
+</section>
+<section id="aside-using-class-to-hold-parameters">
+<h3>Aside: Using Class to Hold Parameters<a class="headerlink" href="#aside-using-class-to-hold-parameters" title="Permalink to this heading">#</a></h3>
+<p>We have been using objects and classes both internal to python (e.g. <code class="docutils literal notranslate"><span class="pre">list</span></code>) from external libraries (e.g. <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>). Sometimes it is convenient to create your own classes to organize parameter, data, and functions.</p>
+<p>In this section we will reimplement our function using new classes to hold parameters.</p>
+<p>First, we rewrite <code class="docutils literal notranslate"><span class="pre">simulate_loan_repayments</span></code>  so that instead of a collection of individual parameters, it takes in an object (titles <code class="docutils literal notranslate"><span class="pre">params</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_repayments_2</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>    
+    <span class="c1"># Extract fields from params object</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">r</span>
+    <span class="n">repayment_part</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">repayment_part</span>
+    <span class="n">repayment_full</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">repayment_full</span>
+
+    <span class="n">random_numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># start as 0 -- no repayment</span>
+    <span class="n">repayment_sims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># adjust for full and partial repayment</span>
+    <span class="n">partial</span> <span class="o">=</span> <span class="n">random_numbers</span> <span class="o">&lt;=</span> <span class="mf">0.20</span>
+    <span class="n">repayment_sims</span><span class="p">[</span><span class="n">partial</span><span class="p">]</span> <span class="o">=</span> <span class="n">repayment_part</span>
+
+    <span class="n">full</span> <span class="o">=</span> <span class="o">~</span><span class="n">partial</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">random_numbers</span> <span class="o">&lt;=</span> <span class="mf">0.95</span><span class="p">)</span>
+    <span class="n">repayment_sims</span><span class="p">[</span><span class="n">full</span><span class="p">]</span> <span class="o">=</span> <span class="n">repayment_full</span>
+
+    <span class="n">repayment_sims</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">))</span> <span class="o">*</span> <span class="n">repayment_sims</span>
+
+    <span class="k">return</span> <span class="n">repayment_sims</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Any object which fulfills <code class="docutils literal notranslate"><span class="pre">params.r,</span> <span class="pre">params.replayment_part</span></code> and <code class="docutils literal notranslate"><span class="pre">params.repayment_full</span></code> will work, so we will create a few versions of this to explore features of custom classes in Python.</p>
+<p>The most important function in a class is the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function which determines how it is constructed and creates an object of that type.  This function has the special argument <code class="docutils literal notranslate"><span class="pre">self</span></code> which refers to the new object being created, and with which you can easily add new fields.  For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoanRepaymentParams</span><span class="p">:</span>
+    <span class="c1"># A special function &#39;constructor&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">repayment_full</span><span class="p">,</span> <span class="n">repayment_part</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repayment_full</span> <span class="o">=</span> <span class="n">repayment_full</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repayment_part</span> <span class="o">=</span> <span class="n">repayment_part</span>
+
+<span class="c1"># Create an instance of the class        </span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">LoanRepaymentParams</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">50_000.0</span><span class="p">,</span> <span class="mi">25_000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05
+</pre></div>
+</div>
+</div>
+</div>
+<p>The inside of the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function simply takes the arguments and assigns them as new fields in the <code class="docutils literal notranslate"><span class="pre">self</span></code>.  Calling the <code class="docutils literal notranslate"><span class="pre">LoanRepaymentParams(...)</span></code> implicitly calls the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function and returns the new object.</p>
+<p>We can then use the new object to call the function <code class="docutils literal notranslate"><span class="pre">simulate_loan_repayments_2</span></code> as before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">LoanRepaymentParams</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">50_000.0</span><span class="p">,</span> <span class="mi">25_000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulate_loan_repayments_2</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">params</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40452.38095238095
+</pre></div>
+</div>
+</div>
+</div>
+<p>One benefit of using a class is that you can do calculations in the constructor.  For example, instead of passing in the partial repayment amount, we could pass in the fraction of the full repayment that is paid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoanRepaymentParams2</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">repayment_full</span><span class="p">,</span> <span class="n">partial_fraction</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repayment_full</span> <span class="o">=</span> <span class="n">repayment_full</span>
+        
+        <span class="c1"># This does a calculation and sets a new value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">repayment_part</span> <span class="o">=</span> <span class="n">repayment_full</span> <span class="o">*</span> <span class="n">partial_fraction</span>
+
+<span class="c1"># Create an instance of the class        </span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">LoanRepaymentParams2</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">50_000.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>        
+<span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">repayment_part</span><span class="p">)</span> <span class="c1"># Acccess the calculation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulate_loan_repayments_2</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">params</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25000.0
+41119.04761904761
+</pre></div>
+</div>
+</div>
+</div>
+<p>This setup a default value for the <code class="docutils literal notranslate"><span class="pre">partial_fraction</span></code> so that we could also have called this with <code class="docutils literal notranslate"><span class="pre">LoanRepaymentParams2(0.05,</span> <span class="pre">50_000)</span></code>.</p>
+<p>Finally, there are some special features we can use to create classes in python which automatically create the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function, allow for more easily setting default values.   The easiest is to create a <code class="docutils literal notranslate"><span class="pre">dataclass</span></code> (see <a class="reference external" href="https://docs.python.org/3/library/dataclasses.html">documentation</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">LoanRepaymentParams3</span><span class="p">:</span>
+    <span class="n">r</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span>
+    <span class="n">repayment_full</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">50_000</span>
+    <span class="n">repayment_part</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">25_000</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="n">LoanRepaymentParams3</span><span class="p">()</span> <span class="c1"># uses all defaults</span>
+<span class="n">params2</span> <span class="o">=</span> <span class="n">LoanRepaymentParams3</span><span class="p">(</span><span class="n">repayment_full</span><span class="o">=</span> <span class="mi">60_000</span><span class="p">)</span> <span class="c1"># changes the full repayment amount</span>
+
+<span class="c1"># show the objects</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">params2</span><span class="p">)</span>
+
+<span class="c1"># simulate using the new object</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulate_loan_repayments_2</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">params2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LoanRepaymentParams3(r=0.05, repayment_full=50000, repayment_part=25000)
+LoanRepaymentParams3(r=0.05, repayment_full=60000, repayment_part=25000)
+48223.80952380952
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;dataclass</span></code> is an example of a python decorator (see <a class="reference external" href="https://docs.python.org/3/glossary.html#term-decorator">documentation</a>). Decorators take in a class (or function) and return a new class (or function) with some additional features.  In this case, it automatically creates the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function, allows for default values, and adds a new <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> function which determines how the object is printed.</p>
 <section id="profitability-threshold">
 <h4>Profitability Threshold<a class="headerlink" href="#profitability-threshold" title="Permalink to this heading">#</a></h4>
 <p>Rather than looking for the break even point, we might be interested in the largest loan size that
@@ -577,7 +710,7 @@ being profitable.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The largest loan size such that we were profitable 95% of time is
-19523.809523809523
+19476.190476190477
 </pre></div>
 </div>
 </div>
@@ -707,7 +840,7 @@ some particular state).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;delinquency&#39;,
        &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
        &#39;repaying&#39;, &#39;repaying&#39;], dtype=&#39;&lt;U11&#39;)
 </pre></div>
@@ -785,10 +918,10 @@ described by the mean and variance of that distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f57060bd130&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2bd7a3beb0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/11c9fc5fbeb5c3e025ab97852d0aed8d539c4676e63e9e29d20076ae78c4727b.png" src="../_images/11c9fc5fbeb5c3e025ab97852d0aed8d539c4676e63e9e29d20076ae78c4727b.png" />
+<img alt="../_images/93cfab25c648ff769bbaf4755fea8196d743ccaa4e0a07b1215066d1fd6dae8a.png" src="../_images/93cfab25c648ff769bbaf4755fea8196d743ccaa4e0a07b1215066d1fd6dae8a.png" />
 </div>
 </div>
 <p>Another common continuous distribution used in economics is the gamma distribution.</p>
@@ -820,7 +953,7 @@ parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale pa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5cae6e87a593574c0419ac6dcbfa2ce71bd3a30cdc669ac346dac8de04f75cc8.png" src="../_images/5cae6e87a593574c0419ac6dcbfa2ce71bd3a30cdc669ac346dac8de04f75cc8.png" />
+<img alt="../_images/e0c74d4de737a2e3e828c346e24de444d965fa849ec84eac3c1ecb7f4ac95484.png" src="../_images/e0c74d4de737a2e3e828c346e24de444d965fa849ec84eac3c1ecb7f4ac95484.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-4-4">

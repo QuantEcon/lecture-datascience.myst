@@ -184,6 +184,9 @@ temp = pd.concat([wdi2017, sq_miles], axis=1)
 temp["Consumption"] / temp["sq_miles"]
 ```
 
+Since the WDI data is measured in millions of US Dollars, this gives us the consumption per square mile measured in units of millions of USD per square mile.
+
+
 ## `pd.merge`
 
 `pd.merge` operates on two DataFrames at a time and is primarily used
@@ -257,6 +260,8 @@ wdi_pop["GDP"] / wdi_pop["Population"]
 ```{code-cell} python
 wdi_pop["Consumption"] / wdi_pop["Population"]
 ```
+
+These numbers tell us the GDP and consumption per capita, measured in units of millions of USD per person.
 
 ````{admonition} Exercise
 :name: pd-mrg-dir1
@@ -346,10 +351,10 @@ the image below.
 
 In words, we have:
 
-- `left`: Default and what we described above. It uses
+- `left`: What we described above. It uses
   the keys from the `left` DataFrame.
 - `right`: Output will contain all keys from `right`.
-- `inner`: The output will only contain keys that appear in *both*
+- `inner`: The default `how`; the output will only contain keys that appear in *both*
   `left` and `right`.
 - `outer`: The output will contain any key found in either `left`
   or `right`.

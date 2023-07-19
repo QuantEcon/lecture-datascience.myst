@@ -272,6 +272,110 @@ element at a time.
 For more information see the
 [QuantEcon lecture on performance Python](https://python-programming.quantecon.org/numba.html) code.
 
+
+### Aside: Using Class to Hold Parameters
+
+We have been using objects and classes both internal to python (e.g. `list`) from external libraries (e.g. `numpy.array`). Sometimes it is convenient to create your own classes to organize parameter, data, and functions.
+
+In this section we will reimplement our function using new classes to hold parameters.
+
+First, we rewrite `simulate_loan_repayments`  so that instead of a collection of individual parameters, it takes in an object (titles `params`).
+
+```{code-cell} python
+def simulate_loan_repayments_2(N, params):    
+    # Extract fields from params object
+    r = params.r
+    repayment_part = params.repayment_part
+    repayment_full = params.repayment_full
+
+    random_numbers = np.random.rand(N)
+
+    # start as 0 -- no repayment
+    repayment_sims = np.zeros(N)
+
+    # adjust for full and partial repayment
+    partial = random_numbers <= 0.20
+    repayment_sims[partial] = repayment_part
+
+    full = ~partial & (random_numbers <= 0.95)
+    repayment_sims[full] = repayment_full
+
+    repayment_sims = (1 / (1 + r)) * repayment_sims
+
+    return repayment_sims
+```
+
+Any object which fulfills `params.r, params.replayment_part` and `params.repayment_full` will work, so we will create a few versions of this to explore features of custom classes in Python.
+
+The most important function in a class is the `__init__` function which determines how it is constructed and creates an object of that type.  This function has the special argument `self` which refers to the new object being created, and with which you can easily add new fields.  For example,
+
+```{code-cell} python
+class LoanRepaymentParams:
+    # A special function 'constructor'
+    def __init__(self, r, repayment_full, repayment_part):
+        self.r = r
+        self.repayment_full = repayment_full
+        self.repayment_part = repayment_part
+
+# Create an instance of the class        
+params = LoanRepaymentParams(0.05, 50_000.0, 25_000)
+print(params.r)
+```
+
+The inside of the `__init__` function simply takes the arguments and assigns them as new fields in the `self`.  Calling the `LoanRepaymentParams(...)` implicitly calls the `__init__` function and returns the new object.
+
+We can then use the new object to call the function `simulate_loan_repayments_2` as before.
+
+```{code-cell} python
+N = 1000
+params = LoanRepaymentParams(0.05, 50_000.0, 25_000)
+print(np.mean(simulate_loan_repayments_2(N, params)))
+```
+
+One benefit of using a class is that you can do calculations in the constructor.  For example, instead of passing in the partial repayment amount, we could pass in the fraction of the full repayment that is paid.
+
+```{code-cell} python
+class LoanRepaymentParams2:
+    def __init__(self, r, repayment_full, partial_fraction = 0.3):
+        self.r = r
+        self.repayment_full = repayment_full
+        
+        # This does a calculation and sets a new value
+        self.repayment_part = repayment_full * partial_fraction
+
+# Create an instance of the class        
+params = LoanRepaymentParams2(0.05, 50_000.0, 0.5)        
+print(params.repayment_part) # Acccess the calculation
+print(np.mean(simulate_loan_repayments_2(N, params)))
+```
+
+This setup a default value for the `partial_fraction` so that we could also have called this with `LoanRepaymentParams2(0.05, 50_000)`.
+
+
+Finally, there are some special features we can use to create classes in python which automatically create the `__init__` function, allow for more easily setting default values.   The easiest is to create a `dataclass` (see [documentation](https://docs.python.org/3/library/dataclasses.html)).
+
+```{code-cell} python
+from dataclasses import dataclass
+
+@dataclass
+class LoanRepaymentParams3:
+    r: float = 0.05
+    repayment_full: float = 50_000
+    repayment_part: float = 25_000
+
+params = LoanRepaymentParams3() # uses all defaults
+params2 = LoanRepaymentParams3(repayment_full= 60_000) # changes the full repayment amount
+
+# show the objects
+print(params)
+print(params2)
+
+# simulate using the new object
+print(np.mean(simulate_loan_repayments_2(N, params2)))
+```
+
+The `@dataclass` is an example of a python decorator (see [documentation](https://docs.python.org/3/glossary.html#term-decorator)). Decorators take in a class (or function) and return a new class (or function) with some additional features.  In this case, it automatically creates the `__init__` function, allows for default values, and adds a new `__repr__` function which determines how the object is printed.
+
 #### Profitability Threshold
 
 Rather than looking for the break even point, we might be interested in the largest loan size that

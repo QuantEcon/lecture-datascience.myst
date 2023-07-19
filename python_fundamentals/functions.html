@@ -181,6 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-and-keyword-arguments">Default and Keyword Arguments</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aside-methods">Aside: Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-custom-types">Creating Custom Types</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-scope-optional">More on Scope (Optional)</a></li>
@@ -189,6 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5</a></li>
 </ul>
 </li>
 </ul>
@@ -947,6 +949,99 @@ described above.</p>
 </div>
 </div>
 </section>
+<section id="creating-custom-types">
+<h3>Creating Custom Types<a class="headerlink" href="#creating-custom-types" title="Permalink to this heading">#</a></h3>
+<p>Python allows for Object-Oriented Programming (OOP), allowing you to define your own custom types and merge together some sets of parameters with custom methods. This can help you streamline your code by making it more modular.</p>
+<p>We are used to defining variables like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">dict(&quot;a&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;b&quot;:</span> <span class="pre">2)</span></code> and then using notation like <code class="docutils literal notranslate"><span class="pre">x[&quot;a&quot;]</span></code> to access the value of <code class="docutils literal notranslate"><span class="pre">1</span></code>. We can also define our own custom types and use them in similar ways.</p>
+<p>For example, a simple class that stores two variables would look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Used both internal and external to classes, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is a special method that is called when an object is created. It is used to initialize the object’s state. The <code class="docutils literal notranslate"><span class="pre">self</span></code> argument refers to the object itself. The <code class="docutils literal notranslate"><span class="pre">self</span></code> argument is always the first argument of any method in a class. The <code class="docutils literal notranslate"><span class="pre">self</span></code> argument is not passed in when the method is called, but Python will pass in the object itself when the method is called.</p>
+<p>A class, defined by the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword, is a blueprint for an object. It defines the attributes and methods that an object will have. An object is an instance of a class that has been created and assigned to a variable. It is created by calling the class name as if it were a function. When you call the class name, the object is created and the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is called by default.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Notice that these are different objects</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can see that <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are both instances of the <code class="docutils literal notranslate"><span class="pre">A</span></code> class by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.A
+</pre></div>
+</div>
+</div>
+</div>
+<p>Point at the debugger to see the <code class="docutils literal notranslate"><span class="pre">a.x</span></code> etc. fields
+You can access the attributes of an object using the dot notation. For example, to access the <code class="docutils literal notranslate"><span class="pre">x</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">a</span></code> object, you would use <code class="docutils literal notranslate"><span class="pre">a.x</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a.x = </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> and a.y = </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a.x = 1 and a.y = 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition to attributes, objects can also have methods. Methods are functions that are defined inside of a class. They are accessed using the dot notation as well. For example, let’s define a method that adds the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> attributes of an object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+  <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now create an object of type <code class="docutils literal notranslate"><span class="pre">B</span></code> and call the <code class="docutils literal notranslate"><span class="pre">add</span></code> method, in the same way that we called methods on built-in types (like the <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> method on a string.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using custom classes can often be a helpful way to organize your code and make it more modular, by grouping together related variables and functions. Understanding how to create and use custom classes is also a key part of understanding how Python works under the hood, and can be crucial to using some of the more advanced Python packages (like <a class="reference external" href="https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html">PyTorch</a>.)</p>
+<div class="admonition-exercise admonition" id="dir2-4-5">
+<p class="admonition-title">Exercise</p>
+<p>See exercise 5 in the <a class="reference internal" href="#ex2-4"><span class="std std-ref">exercise list</span></a>.</p>
+</div>
+</section>
 </section>
 <section id="more-on-scope-optional">
 <h2>More on Scope (Optional)<a class="headerlink" href="#more-on-scope-optional" title="Permalink to this heading">#</a></h2>
@@ -1143,6 +1238,26 @@ returns_to_scale<span class="o">?</span>
 </div>
 </div>
 <p>(<a class="reference internal" href="#dir2-4-4"><span class="std std-ref">back to text</span></a>)</p>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
+<p>Define a custom class called <code class="docutils literal notranslate"><span class="pre">CobbDouglas</span></code> that collects the parameters <code class="docutils literal notranslate"><span class="pre">z</span></code> and <code class="docutils literal notranslate"><span class="pre">alpha</span></code> as attributes, and has a method called <code class="docutils literal notranslate"><span class="pre">produce</span></code> that takes <code class="docutils literal notranslate"><span class="pre">K</span></code> and <code class="docutils literal notranslate"><span class="pre">L</span></code> as arguments and returns the output from the Cobb-Douglas production function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now create an instance of the <code class="docutils literal notranslate"><span class="pre">CobbDouglas</span></code> class called <code class="docutils literal notranslate"><span class="pre">cobb_douglas1</span></code> with <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">0.33</span></code>. Use the <code class="docutils literal notranslate"><span class="pre">produce</span></code> method to compute the output when <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">0.5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<a class="reference internal" href="#dir2-4-5"><span class="std std-ref">back to text</span></a>)</p>
 </section>
 </section>
 </section>

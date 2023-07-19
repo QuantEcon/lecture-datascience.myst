@@ -978,6 +978,7 @@ dtype: float64
 </div>
 </div>
 </div>
+<p>Since the WDI data is measured in millions of US Dollars, this gives us the consumption per square mile measured in units of millions of USD per square mile.</p>
 </section>
 </section>
 <section id="pd-merge">
@@ -1522,6 +1523,7 @@ dtype: float64
 </div>
 </div>
 </div>
+<p>These numbers tell us the GDP and consumption per capita, measured in units of millions of USD per person.</p>
 <div class="admonition-exercise admonition" id="pd-mrg-dir1">
 <p class="admonition-title">Exercise</p>
 <p>See exercise 1 in the <a class="reference internal" href="#pd-mrg-ex"><span class="std std-ref">exercise list</span></a>.</p>
@@ -1907,10 +1909,10 @@ the image below.</p>
 </figure>
 <p>In words, we have:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code>: Default and what we described above. It uses
+<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code>: What we described above. It uses
 the keys from the <code class="docutils literal notranslate"><span class="pre">left</span></code> DataFrame.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">right</span></code>: Output will contain all keys from <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">inner</span></code>: The output will only contain keys that appear in <em>both</em>
+<li><p><code class="docutils literal notranslate"><span class="pre">inner</span></code>: The default <code class="docutils literal notranslate"><span class="pre">how</span></code>; the output will only contain keys that appear in <em>both</em>
 <code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">outer</span></code>: The output will contain any key found in either <code class="docutils literal notranslate"><span class="pre">left</span></code>
 or <code class="docutils literal notranslate"><span class="pre">right</span></code>.</p></li>
@@ -2778,7 +2780,7 @@ memory usage: 182.4 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/080071d6e7b6e8a6a3d7bd68ef98f2b90043cfd2508d6d903713e81a1b807cb1.png" src="../_images/080071d6e7b6e8a6a3d7bd68ef98f2b90043cfd2508d6d903713e81a1b807cb1.png" />
+<img alt="../_images/21670d449d9b9c1b2f50acbeec26edc0f452f4fdb5134da2baa3ad1beb06d0b9.png" src="../_images/21670d449d9b9c1b2f50acbeec26edc0f452f4fdb5134da2baa3ad1beb06d0b9.png" />
 </div>
 </div>
 <p>Let’s also see how many users have rated <code class="docutils literal notranslate"><span class="pre">N</span></code> books, for all <code class="docutils literal notranslate"><span class="pre">N</span></code>
@@ -2966,7 +2968,7 @@ N_users      Axes(0.547727,0.11;0.352273x0.77)
 dtype: object
 </pre></div>
 </div>
-<img alt="../_images/630a2bb0dcbbb84b2176195f0c542eadc4a687fd53f102901b035884bf302e3b.png" src="../_images/630a2bb0dcbbb84b2176195f0c542eadc4a687fd53f102901b035884bf302e3b.png" />
+<img alt="../_images/0fe896879246a0f227d064354e350afee2913510f55e69777c7af2733bc5b4cc.png" src="../_images/0fe896879246a0f227d064354e350afee2913510f55e69777c7af2733bc5b4cc.png" />
 </div>
 </div>
 <p>Let’s practice applying the want operator…</p>
@@ -3044,7 +3046,7 @@ Name: user_id, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribution of ratings by most active users&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/ed6d0f467113f4ffd7e19f0dd56e699a92a995eb93b34364e5040a6914de6c47.png" src="../_images/ed6d0f467113f4ffd7e19f0dd56e699a92a995eb93b34364e5040a6914de6c47.png" />
+<img alt="../_images/fcf08de8b2f58314488373c316333cf83cd2d896e7bef2b41d7dec6a09a325a2.png" src="../_images/fcf08de8b2f58314488373c316333cf83cd2d896e7bef2b41d7dec6a09a325a2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3059,7 +3061,7 @@ Name: user_id, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;Distribution of ratings by least active users&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../_images/ce1b68f6af7d579c15e2eca3a5593e6a007d80cf75829f79d5b1d343a527d3d3.png" src="../_images/ce1b68f6af7d579c15e2eca3a5593e6a007d80cf75829f79d5b1d343a527d3d3.png" />
+<img alt="../_images/339d876b99b3f4ed5ad96ada9d0aca35b0a8082ac44db5d01cc91fe45f8a47eb.png" src="../_images/339d876b99b3f4ed5ad96ada9d0aca35b0a8082ac44db5d01cc91fe45f8a47eb.png" />
 </div>
 </div>
 <p>Nice! From the picture above, the new users look much more
@@ -3366,8 +3368,8 @@ rated books on Goodreads.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/839829d361c12cb6da774e89ce54756addc4fb55abb2925a3b2bcd339ac86d3f.png" src="../_images/839829d361c12cb6da774e89ce54756addc4fb55abb2925a3b2bcd339ac86d3f.png" />
-<img alt="../_images/c717b7f92e4023254bb74ef6604a90a00a972facb0e1a5c7d4f82c8c0dc19542.png" src="../_images/c717b7f92e4023254bb74ef6604a90a00a972facb0e1a5c7d4f82c8c0dc19542.png" />
+<img alt="../_images/1d69ce7bc23c366aa3cb89aa6e31be64e574cded3b8dad6000c37502c12f3b51.png" src="../_images/1d69ce7bc23c366aa3cb89aa6e31be64e574cded3b8dad6000c37502c12f3b51.png" />
+<img alt="../_images/b7d571a82a8dac80ec08d0395eba14d2d9219f6f4f2a653ff3eb810aa15da91a.png" src="../_images/b7d571a82a8dac80ec08d0395eba14d2d9219f6f4f2a653ff3eb810aa15da91a.png" />
 </div>
 </div>
 <p>It looks like most books have an average rating of just below 4.</p>
