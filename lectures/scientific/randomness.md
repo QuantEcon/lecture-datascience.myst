@@ -275,7 +275,7 @@ For more information see the
 
 ### Aside: Using Class to Hold Parameters
 
-We have been using objects and classes both internal to python (e.g. `list`) from external libraries (e.g. `numpy.array`).  Sometimes it is convenient to create your own classes to organize parameter, data, and functions.
+We have been using objects and classes both internal to python (e.g. `list`) from external libraries (e.g. `numpy.array`). Sometimes it is convenient to create your own classes to organize parameter, data, and functions.
 
 In this section we will reimplement our function using new classes to hold parameters.
 
@@ -374,7 +374,7 @@ print(params2)
 print(np.mean(simulate_loan_repayments_2(N, params2)))
 ```
 
-The `@dataclass` is an example of a python decorator (see [documentation](https://docs.python.org/3/glossary.html#term-decorator)).  Decorators take in a class (or function) and return a new class (or function) with some additional features.  In this case, it automatically creates the `__init__` function, allows for default values, and adds a new `__repr__` function which determines how the object is printed.
+The `@dataclass` is an example of a python decorator (see [documentation](https://docs.python.org/3/glossary.html#term-decorator)). Decorators take in a class (or function) and return a new class (or function) with some additional features.  In this case, it automatically creates the `__init__` function, allows for default values, and adds a new `__repr__` function which determines how the object is printed.
 
 #### Profitability Threshold
 

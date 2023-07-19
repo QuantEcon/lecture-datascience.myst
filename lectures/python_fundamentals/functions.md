@@ -654,7 +654,6 @@ b = A(3, 4)
 a == b
 ```
 
-Tell people how to see the `type`:
 You can see that `a` and `b` are both instances of the `A` class by using the `type` function.
 
 ```{code-cell} python
