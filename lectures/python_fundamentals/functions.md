@@ -583,56 +583,6 @@ to the local variable name in the function whereas the `z` on the
 right hand side refers to the `z` in the outer scope.
 
 
-### Creating Custom Types
-
-IN PROGRESS!
-
-- we aer used to doing `x = dict("a": 1, "b": 2)` and then `x["a"]` to access
-
-Used both internal and etemrianl
-
-We can create new one
-
-```{code-cell} python
-class A:
-  def __init__(self, x, y):
-    self.x = x
-    self.y = y
-```
-
-Explain the self and the special  `__init__`
-
-Exlain the difference of an instance/object vs. the class
-
-```{code-cell} python
-a = A(1, 2)
-b = A(3, 4)
-# Notice that these are different objects
-a == b
-```
-
-Tell people how to see the `type`
-Point at the debugger to see the `a.x` etc. fields
-
-Show a method
-
-```{code-cell} python
-class B:
-  def __init__(self, x, y):
-    self.x = x
-    self.y = y
-
-  def add(self):
-    return self.x + self.y
-```
-
-```{code-cell} python
-b = B(1, 2)
-print(b.add())
-```
-
-
-
 
 ### Aside: Methods
 
@@ -676,6 +626,75 @@ s.upper()
 ```{code-cell} python
 s.title()
 ```
+
+
+### Creating Custom Types
+
+Python allows for Object-Oriented Programming (OOP), allowing you to define your own custom types and merge together some sets of parameters with custom methods. This can help you streamline your code by making it more modular.
+
+We are used to defining variables like `x = dict("a": 1, "b": 2)` and then using notation like `x["a"]` to access the value of `1`. We can also define our own custom types and use them in similar ways.
+
+For example, a simple class that stores two variables would look like this:
+
+```{code-cell} python
+class A:
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+```
+
+Used both internal and external to classes, the `__init__` method is a special method that is called when an object is created. It is used to initialize the object's state. The `self` argument refers to the object itself. The `self` argument is always the first argument of any method in a class. The `self` argument is not passed in when the method is called, but Python will pass in the object itself when the method is called.
+
+A class, defined by the `class` keyword, is a blueprint for an object. It defines the attributes and methods that an object will have. An object is an instance of a class that has been created and assigned to a variable. It is created by calling the class name as if it were a function. When you call the class name, the object is created and the `__init__` method is called by default.
+
+```{code-cell} python
+a = A(1, 2)
+b = A(3, 4)
+# Notice that these are different objects
+a == b
+```
+
+Tell people how to see the `type`:
+You can see that `a` and `b` are both instances of the `A` class by using the `type` function.
+
+```{code-cell} python
+type(a)
+```
+Point at the debugger to see the `a.x` etc. fields
+You can access the attributes of an object using the dot notation. For example, to access the `x` attribute of the `a` object, you would use `a.x`.
+
+```{code-cell} python
+print(f"a.x = {a.x} and a.y = {a.y}")
+```
+
+In addition to attributes, objects can also have methods. Methods are functions that are defined inside of a class. They are accessed using the dot notation as well. For example, let's define a method that adds the `x` and `y` attributes of an object.
+
+
+```{code-cell} python
+class B:
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+
+  def add(self):
+    return self.x + self.y
+```
+
+We can now create an object of type `B` and call the `add` method, in the same way that we called methods on built-in types (like the `.upper()` method on a string.)
+
+```{code-cell} python
+b = B(1, 2)
+print(b.add())
+```
+
+Using custom classes can often be a helpful way to organize your code and make it more modular, by grouping together related variables and functions. Understanding how to create and use custom classes is also a key part of understanding how Python works under the hood, and can be crucial to using some of the more advanced Python packages (like [PyTorch](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html).)
+
+````{admonition} Exercise
+:name: dir2-4-5
+
+See exercise 5 in the {ref}`exercise list <ex2-4>`.
+````
+
 
 ## More on Scope (Optional)
 
@@ -841,3 +860,19 @@ These can *only* be set by name.
 ```
 
 ({ref}`back to text <dir2-4-4>`)
+
+### Exercise 5
+
+Define a custom class called `CobbDouglas` that collects the parameters `z` and `alpha` as attributes, and has a method called `produce` that takes `K` and `L` as arguments and returns the output from the Cobb-Douglas production function.
+
+```{code-cell} python
+# Your code here.
+```
+
+Now create an instance of the `CobbDouglas` class called `cobb_douglas1` with `z = 1` and `alpha = 0.33`. Use the `produce` method to compute the output when `K = 1` and `L = 0.5`.
+
+```{code-cell} python
+# Your code here.
+```
+
+({ref}`back to text <dir2-4-5>`)
