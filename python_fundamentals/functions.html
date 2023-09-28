@@ -239,6 +239,12 @@ const thebe_selector_output = ".output, .cell_output"
                         
   <section class="tex2jax_ignore mathjax_ignore" id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h1>
+<p><strong>Co-author</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.psolimine.net">Philip Solimine, <em>UBC</em></a></p></li>
+</ul>
+</div></blockquote>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../introduction/getting_started.html"><span class="doc">Getting Started</span></a></p></li>
@@ -956,7 +962,7 @@ described above.</p>
 <p>For example, a simple class that stores two variables would look like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyType</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -968,9 +974,9 @@ described above.</p>
 <p>A class, defined by the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword, is a blueprint for an object. It defines the attributes and methods that an object will have. An object is an instance of a class that has been created and assigned to a variable. It is created by calling the class name as if it were a function. When you call the class name, the object is created and the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is called by default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="c1"># Notice that these are different objects</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">MyType</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">MyType</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1"># Notice that these are different objects, even though they are the same type!</span>
 <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
 </div>
@@ -981,7 +987,7 @@ described above.</p>
 </div>
 </div>
 </div>
-<p>You can see that <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are both instances of the <code class="docutils literal notranslate"><span class="pre">A</span></code> class by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
+<p>You can see that <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are both instances of the <code class="docutils literal notranslate"><span class="pre">MyType</span></code> class by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -989,7 +995,7 @@ described above.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.A
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.MyType
 </pre></div>
 </div>
 </div>
@@ -1011,7 +1017,7 @@ You can access the attributes of an object using the dot notation. For example, 
 <p>In addition to attributes, objects can also have methods. Methods are functions that are defined inside of a class. They are accessed using the dot notation as well. For example, let’s define a method that adds the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> attributes of an object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyAdder</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -1022,10 +1028,10 @@ You can access the attributes of an object using the dot notation. For example, 
 </div>
 </div>
 </div>
-<p>We can now create an object of type <code class="docutils literal notranslate"><span class="pre">B</span></code> and call the <code class="docutils literal notranslate"><span class="pre">add</span></code> method, in the same way that we called methods on built-in types (like the <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> method on a string.)</p>
+<p>We can now create an object of type <code class="docutils literal notranslate"><span class="pre">MyAdder</span></code> and call the <code class="docutils literal notranslate"><span class="pre">add</span></code> method, in the same way that we called methods on built-in types (like the <code class="docutils literal notranslate"><span class="pre">.upper()</span></code> method on a string.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">MyAdder</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="p">())</span>
 </pre></div>
 </div>
