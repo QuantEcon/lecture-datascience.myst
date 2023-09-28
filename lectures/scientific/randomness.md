@@ -11,6 +11,9 @@ kernelspec:
 
 # Randomness
 
+**Co-author**
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
+
 **Prerequisites**
 
 - {doc}`Introduction to Numpy <numpy_arrays>`
