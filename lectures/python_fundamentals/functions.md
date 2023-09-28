@@ -11,6 +11,9 @@ kernelspec:
 
 # Functions
 
+**Co-author**
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
+
 **Prerequisites**
 
 - {doc}`Getting Started <../introduction/getting_started>`
@@ -637,7 +640,7 @@ We are used to defining variables like `x = dict("a": 1, "b": 2)` and then using
 For example, a simple class that stores two variables would look like this:
 
 ```{code-cell} python
-class A:
+class MyType:
   def __init__(self, x, y):
     self.x = x
     self.y = y
@@ -648,13 +651,13 @@ Used both internal and external to classes, the `__init__` method is a special m
 A class, defined by the `class` keyword, is a blueprint for an object. It defines the attributes and methods that an object will have. An object is an instance of a class that has been created and assigned to a variable. It is created by calling the class name as if it were a function. When you call the class name, the object is created and the `__init__` method is called by default.
 
 ```{code-cell} python
-a = A(1, 2)
-b = A(3, 4)
-# Notice that these are different objects
+a = MyType(1, 2)
+b = MyType(3, 4)
+# Notice that these are different objects, even though they are the same type!
 a == b
 ```
 
-You can see that `a` and `b` are both instances of the `A` class by using the `type` function.
+You can see that `a` and `b` are both instances of the `MyType` class by using the `type` function.
 
 ```{code-cell} python
 type(a)
@@ -670,7 +673,7 @@ In addition to attributes, objects can also have methods. Methods are functions 
 
 
 ```{code-cell} python
-class B:
+class MyAdder:
   def __init__(self, x, y):
     self.x = x
     self.y = y
@@ -682,7 +685,7 @@ class B:
 We can now create an object of type `B` and call the `add` method, in the same way that we called methods on built-in types (like the `.upper()` method on a string.)
 
 ```{code-cell} python
-b = B(1, 2)
+b = MyAdder(1, 2)
 print(b.add())
 ```
 
