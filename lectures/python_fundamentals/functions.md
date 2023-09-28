@@ -682,7 +682,7 @@ class MyAdder:
     return self.x + self.y
 ```
 
-We can now create an object of type `B` and call the `add` method, in the same way that we called methods on built-in types (like the `.upper()` method on a string.)
+We can now create an object of type `MyAdder` and call the `add` method, in the same way that we called methods on built-in types (like the `.upper()` method on a string.)
 
 ```{code-cell} python
 b = MyAdder(1, 2)
