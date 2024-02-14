@@ -45,11 +45,10 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 
 **Section 2**
 
-- [Predicting rice crop yield in Vietnam](https://nbviewer.org/ubcecon/econ323_projects/blob/main/2023_Spring/Punjabi_Rohira_Zahir.html)
+- [Predicting rice crop yield in Vietnam](https://nbviewer.org/ubcecon/econ323_projects/blob/main/2023_Spring/Punjabi_Rohira_Zahir.html) **Press release -** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
   - Divyadarshan Punjabi
   - Nirvaan Rohira
   - Yasin Zahir
-**Press release -** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
   - Divyadarshan Punjabi and Nirvaan Rohira, both students in the 2023 Spring section of ECON 323, used their insights from this final project to compete in the EY Open Science Data Challenge 2023. Their project was selected as the WINNER of the challenge, which was composed of 13,000+ participants across 7,500+ teams.
 
 - [Spillover effects of mass shootings](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Co_Kaskeyeva_Nainani_Zong.html)
