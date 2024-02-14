@@ -43,6 +43,30 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Evagelos Ifantidis
   - Ameesh Perchani
 
+**Section 2**
+
+- [Predicting rice crop yield in Vietnam](https://nbviewer.org/ubcecon/econ323_projects/blob/main/2023_Spring/Punjabi_Rohira_Zahir.html)
+  - Divyadarshan Punjabi
+  - Nirvaan Rohira
+  - Yasin Zahir
+**Press release -** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
+  - Divyadarshan Punjabi and Nirvaan Rohira, both students in the 2023 Spring section of ECON 323, used their insights from this final project to compete in the EY Open Science Data Challenge 2023. Their project was selected as the WINNER of the challenge, which was composed of 13,000+ participants across 7,500+ teams.
+
+- [Spillover effects of mass shootings](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Co_Kaskeyeva_Nainani_Zong.html)
+  - William Clinton Co
+  - Diana Kaskeyeva
+  - Janavi Nainani
+  - Hanye Zong
+
+- [Is ESG dead? Investigating the link between ESG scores and the stock market](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Chan_Du.html)
+  - Dalton Du
+  - Harvey Chan
+
+- [Predicting price ranges of AirBnB's in NYC](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Lu_Anon.html)
+  - Joyce Lu
+  - 1 Anonymous student
+
+
 ## 2022
 
 - [An analysis of implicit carbon emission between provinces in China with Data Science application](https://nbviewer.jupyter.org/github/Yuetong-Du/projects/blob/main/ECON%20323%20Project%20with%20Elody/323%20project%20Tracy%20Elody%20final_1.ipynb)
