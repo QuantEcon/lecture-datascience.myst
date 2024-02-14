@@ -22,27 +22,26 @@ This course is also taught at [Huazhong University of Science and Technology](ht
 
 **Section 1**
 
-- [Fuel efficiency of Canadian vehicles](https://nbviewer.org/github/ubcecon/econ323_projects/blob/9233228694e2658c5a450983260f5a5d5adb635a/2023_Spring/Proskiw_Groden_Gilchrist.html)
-  - Alexander Proskiw
-  - Kai Groden-Gilchrist
-
-- [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)
-  - Annabella Stoll-Dansereau
-
+- [Investigating public health funding discrepancies between counties in Kenya](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/decosta_harrop.html)
+  - Jesse DeCosta
+  - Duncan Harrop
+ 
 - [Examining the US/Canada oil price differential](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Hooey_Petroff.ipynb)
   - Nolan Petroff
   - Shaan Hooey
+ 
+- [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)
+  - Annabella Stoll-Dansereau
 
+- [Fuel efficiency of Canadian vehicles](https://nbviewer.org/github/ubcecon/econ323_projects/blob/9233228694e2658c5a450983260f5a5d5adb635a/2023_Spring/Proskiw_Groden_Gilchrist.html)
+  - Alexander Proskiw
+  - Kai Groden-Gilchrist
+    
 - [The TikTok effect on an artist’s streaming performance on Spotify](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/lucasbruxellasisabela_et_al.ipynb)
   - Isabella Lucas Bruxellas
   - Janvi Singh
   - Evagelos Ifantidis
   - Ameesh Perchani
-
-- [Investigating public health funding discrepancies between counties in Kenya](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/decosta_harrop.html)
-  - Jesse DeCosta
-  - Duncan Harrop
-
 
 ## 2022
 
