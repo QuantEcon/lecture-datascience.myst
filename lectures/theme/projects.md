@@ -30,10 +30,13 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Nolan Petroff
   - Shaan Hooey
  
-- [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)
-  - Annabella Stoll-Dansereau
+- Part I: [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)
+- Part II: [Theory versus machine learning for exchange rate predictions](https://nbviewer.org/github/ubcecon/econ323_projects/blob/d9696ff285416707bddfa0c45e67c8d1a4830a39/2023_Spring/SD_Kwok.ipynb)
+  - Annabella Stoll-Dansereau (Parts I & II)
+  - Silas Kwok (Part II)
+  - 1 Anonymous student (Part II)
 
-- [Fuel efficiency of Canadian vehicles](https://nbviewer.org/github/ubcecon/econ323_projects/blob/9233228694e2658c5a450983260f5a5d5adb635a/2023_Spring/Proskiw_Groden_Gilchrist.html)
+- [Driving Toward Efficiency: Trends in fuel consumption of Canadian vehicles](https://nbviewer.org/github/kaigg96/Driving-Towards-Efficiency/blob/main/ECON323%20Final%20Project.ipynb)
   - Alexander Proskiw
   - Kai Groden-Gilchrist
     
