@@ -30,8 +30,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Nolan Petroff
   - Shaan Hooey
  
-- Part I: [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)
-- Part II: [Theory versus machine learning for exchange rate predictions](https://nbviewer.org/github/ubcecon/econ323_projects/blob/d9696ff285416707bddfa0c45e67c8d1a4830a39/2023_Spring/SD_Kwok.ipynb)
+- **Part I:** [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html) **Part II:** [Theory versus machine learning for exchange rate predictions](https://nbviewer.org/github/ubcecon/econ323_projects/blob/d9696ff285416707bddfa0c45e67c8d1a4830a39/2023_Spring/SD_Kwok.ipynb)
   - Annabella Stoll-Dansereau (Parts I & II)
   - Silas Kwok (Part II)
   - 1 Anonymous student (Part II)
