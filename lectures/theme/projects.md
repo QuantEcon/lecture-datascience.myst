@@ -44,8 +44,7 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Ameesh Perchani
 
 **Section 2**
-- [Predicting Rice Crop Yield In Vietnam](https://github.com/ubcecon/econ323_projects/blob/594f7b1532f75dffb4f9760d859fcca5f16e3bb9/2023_Spring/Punjabi_Rohira_Zahir.html)
-- **Press release -** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
+- [Predicting Rice Crop Yield In Vietnam](https://github.com/ubcecon/econ323_projects/blob/594f7b1532f75dffb4f9760d859fcca5f16e3bb9/2023_Spring/Punjabi_Rohira_Zahir.html) **PRESS RELEASE:** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
   - Divyadarshan Punjabi
   - Nirvaan Rohira
   - Yasin Zahir
