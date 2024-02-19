@@ -30,12 +30,18 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Nolan Petroff
   - Shaan Hooey
  
-- [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)
-  - Annabella Stoll-Dansereau
+- **Part I:** [Betting on exchange rates](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Annabella_323_final_project-3.html)\
+**Part II:** [Theory versus machine learning for exchange rate predictions](https://nbviewer.org/github/ubcecon/econ323_projects/blob/d9696ff285416707bddfa0c45e67c8d1a4830a39/2023_Spring/SD_Kwok.ipynb)
+  - Annabella Stoll-Dansereau (Parts I & II)
+  - Silas Kwok (Part II)
+  - 1 Anonymous student (Part II)
 
-- [Fuel efficiency of Canadian vehicles](https://nbviewer.org/github/ubcecon/econ323_projects/blob/9233228694e2658c5a450983260f5a5d5adb635a/2023_Spring/Proskiw_Groden_Gilchrist.html)
+- [Driving Toward Efficiency: Trends in fuel consumption of Canadian vehicles](https://nbviewer.org/github/kaigg96/Driving-Towards-Efficiency/blob/main/ECON323%20Final%20Project.ipynb)
   - Alexander Proskiw
   - Kai Groden-Gilchrist
+ 
+- [Access to legal abortion in Mexico City, 2016 to 2018](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Martinez.ipynb)
+  - Julia Martinez
     
 - [The TikTok effect on an artist’s streaming performance on Spotify](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/lucasbruxellasisabela_et_al.ipynb)
   - Isabella Lucas Bruxellas
@@ -44,12 +50,11 @@ This course is also taught at [Huazhong University of Science and Technology](ht
   - Ameesh Perchani
 
 **Section 2**
-
-- [Predicting rice crop yield in Vietnam](https://nbviewer.org/ubcecon/econ323_projects/blob/main/2023_Spring/Punjabi_Rohira_Zahir.html) **Press release -** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
+- [Predicting rice crop yield in Vietnam](https://nbviewer.org/github/ubcecon/econ323_projects/blob/594f7b1532f75dffb4f9760d859fcca5f16e3bb9/2023_Spring/Punjabi_Rohira_Zahir.html)\
+**PRESS RELEASE:** [EY 2023 Open Science Data Challenge winners help solve world hunger through AI models](https://www.ey.com/en_ps/news/2023/06/ey-2023-open-science-data-challenge-winners-help-solve-world-hunger-through-ai-models)
   - Divyadarshan Punjabi
   - Nirvaan Rohira
   - Yasin Zahir
-  - Divyadarshan Punjabi and Nirvaan Rohira, both students in the 2023 Spring section of ECON 323, used their insights from this final project to compete in the EY Open Science Data Challenge 2023. Their project was selected as the WINNER of the challenge, which was composed of 13,000+ participants across 7,500+ teams.
 
 - [Spillover effects of mass shootings](https://nbviewer.org/github/ubcecon/econ323_projects/blob/main/2023_Spring/Co_Kaskeyeva_Nainani_Zong.html)
   - William Clinton Co
