@@ -452,7 +452,7 @@ See exercise 4 in the {ref}`exercise list <ex2-2>`.
 An important quirk of some iterable types that are not lists (such as the above `zip`) is that
 you cannot convert the same type to a list twice.
 
-This is because `zip`, `enumerate`, and `range` produce what is called a generator.
+This is because `zip` and `enumerate` produce what is called a generator.
 
 A generator will only produce each of its elements a single time, so if you call `list` on the same
 generator a second time, it will not have any elements to iterate over anymore.
