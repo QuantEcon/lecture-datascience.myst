@@ -60,7 +60,7 @@ series functionality.
 Among these topics are:
 
 - Parsing strings as dates
-- Writing `datetime` objects as (inverse operation of previous point)
+- Writing `datetime` objects as strings (inverse operation of previous point)
 - Extracting data from a DataFrame or Series with date information in
   the index
 - Shifting data through time (taking leads or lags)
