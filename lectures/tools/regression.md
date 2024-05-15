@@ -150,7 +150,7 @@ optimal linear regression line through the data.
 
 ```{code-cell} python
 sns.lmplot(
-    data=df, x="sqft\_living", y="log_price", height=6,
+    data=df, x="sqft_living", y="log_price", height=6,
     scatter_kws=dict(s=1.5, alpha=0.35)
 );
 ```
