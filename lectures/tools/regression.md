@@ -123,7 +123,7 @@ only the livable square footage of the home.
 The linear regression model for this situation is
 
 $$
-\log(\text{price}) = \beta_0 + \beta_1 \text{sqft_living} + \epsilon
+\log(\text{price}) = \beta_0 + \beta_1 \text{sqft\_living} + \epsilon
 $$
 
 $\beta_0$ and $\beta_1$ are called parameters (also coefficients or
@@ -132,14 +132,14 @@ that best fit the data.
 
 $\epsilon$ is the error term. It would be unusual for the observed
 $\log(\text{price})$ to be an exact linear function of
-$\text{sqft_living}$. The error term captures the deviation of
-$\log(\text{price})$ from a linear function of $\text{sqft_living}$.
+$\text{sqft\_living}$. The error term captures the deviation of
+$\log(\text{price})$ from a linear function of $\text{sqft\_living}$.
 
 The linear regression algorithm will choose the parameters that minimize the
 *mean squared error* (MSE) function, which for our example is written.
 
 $$
-\frac{1}{N} \sum_{i=1}^N \left(\log(\text{price}_i) - (\beta_0 + \beta_1 \text{sqft_living}_i) \right)^2
+\frac{1}{N} \sum_{i=1}^N \left(\log(\text{price}_i) - (\beta_0 + \beta_1 \text{sqft\_living}_i) \right)^2
 $$
 
 The output of this algorithm is the straight line (hence linear) that passes as
@@ -150,7 +150,7 @@ optimal linear regression line through the data.
 
 ```{code-cell} python
 sns.lmplot(
-    data=df, x="sqft_living", y="log_price", height=6,
+    data=df, x="sqft\_living", y="log_price", height=6,
     scatter_kws=dict(s=1.5, alpha=0.35)
 );
 ```
@@ -218,7 +218,7 @@ Suppose that in addition to `sqft_living`, we also wanted to use the `bathrooms`
 In this case, the linear regression model is
 
 $$
-\log(\text{price}) = \beta_0 + \beta_1 \text{sqft_living} +
+\log(\text{price}) = \beta_0 + \beta_1 \text{sqft\_living} +
 \beta_2 \text{bathrooms} + \epsilon
 $$
 
@@ -227,7 +227,7 @@ We could keep adding one variable at a time, along with a new $\beta_{j}$ coeffi
 Let's write this equation in vector/matrix form as
 
 $$
-\underbrace{\begin{bmatrix} \log(\text{price}_1) \\ \log(\text{price}_2) \\ \vdots \\ \log(\text{price}_N)\end{bmatrix}}_Y = \underbrace{\begin{bmatrix} 1 & \text{sqft_living}_1 & \text{bathrooms}_1 \\ 1 & \text{sqft_living}_2 & \text{bathrooms}_2 \\ \vdots & \vdots & \vdots \\ 1 & \text{sqft_living}_N & \text{bathrooms}_N \end{bmatrix}}_{X} \underbrace{\begin{bmatrix} \beta_0 \\ \beta_1 \\ \beta_2 \end{bmatrix}}_{\beta} + \epsilon
+\underbrace{\begin{bmatrix} \log(\text{price}_1) \\ \log(\text{price}_2) \\ \vdots \\ \log(\text{price}_N)\end{bmatrix}}_Y = \underbrace{\begin{bmatrix} 1 & \text{sqft\_living}_1 & \text{bathrooms}_1 \\ 1 & \text{sqft\_living}_2 & \text{bathrooms}_2 \\ \vdots & \vdots & \vdots \\ 1 & \text{sqft\_living}_N & \text{bathrooms}_N \end{bmatrix}}_{X} \underbrace{\begin{bmatrix} \beta_0 \\ \beta_1 \\ \beta_2 \end{bmatrix}}_{\beta} + \epsilon
 $$
 
 Notice that we can add as many columns to $X$ as we'd like and the linear
@@ -252,7 +252,7 @@ We just fit a model with 18 variables -- just as quickly and easily as
 fitting the model with 1 variable!
 
 Visualizing a 18-dimensional model is rather difficult, but just so we can see how the
-extra features changed our model, let's make the log price vs `sqft_living`
+extra features changed our model, let's make the log price vs `sqft\_living`
 one more time -- this time including the prediction from both of our linear models.
 
 ```{code-cell} python
@@ -673,7 +673,7 @@ regression surface.
 from sklearn import tree
 fitted_tree = tree.DecisionTreeRegressor(max_depth=3).fit(Xsim,ysim)
 fig=surface_scatter_plot(
-    Xsim, ysim, lambda x: fitted_tree.predict([x]), show_f0=True
+    Xsim, ysim, lambda x: fitted_tree.predict([x])[0], show_f0=True
 )
 fig
 ```
