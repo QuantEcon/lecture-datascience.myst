@@ -331,7 +331,7 @@ sex_encoded = np.array([
 Using `sklearn` it would be:
 
 ```{code-cell} python
-ohe = preprocessing.OneHotEncoder(sparse=False)
+ohe = preprocessing.OneHotEncoder(sparse_output=False)
 sex_ohe = ohe.fit_transform(sex)
 
 # This should shows 0s!
@@ -351,7 +351,7 @@ Finally, we split the data into training and validation (test) subsets.
 ```{code-cell} python
 def prep_data(df, continuous_variables, categories, y_var, test_size=0.15):
 
-    ohe = preprocessing.OneHotEncoder(sparse=False)
+    ohe = preprocessing.OneHotEncoder(sparse_output=False)
 
     y = df[y_var].values
     X = np.zeros((y.size, 0))
