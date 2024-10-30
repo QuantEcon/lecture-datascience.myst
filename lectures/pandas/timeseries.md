@@ -38,10 +38,10 @@ kernelspec:
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import quandl
+import nasdaqdatalink as ndl
 
 # see section on API keys at end of lecture!
-quandl.ApiConfig.api_key = os.environ.get("QUANDL_AUTH", "Dn6BtVoBhzuKTuyo6hbp")
+os.environ["NASDAQ_DATA_LINK_API_KEY"] = "jEKP58z7JaX6utPkkpEp"
 start_date = "2014-05-01"
 
 %matplotlib inline
@@ -197,7 +197,7 @@ The flexibility of these features is best understood through example,
 so let's load up some data and take a look.
 
 ```{code-cell} python
-btc_usd = quandl.get("BCHARTS/BITSTAMPUSD", start_date=start_date)
+btc_usd = ndl.get_table("QDL/BCHAIN")
 btc_usd.info()
 btc_usd.head()
 ```
@@ -471,18 +471,18 @@ See exercise 8 in the {ref}`exercise list <pd-tim-ex>`.
 Recall above that we had the line of code:
 
 ```{code-block} python
-quandl.ApiConfig.api_key = "Dn6BtVoBhzuKTuyo6hbp"
+os.environ["NASDAQ_DATA_LINK_API_KEY"] = "jEKP58z7JaX6utPkkpEp"
 ```
 
-This line told the `quandl` library that when obtaining making requests for data, it should use the *API key* `Dn6BtVoBhzuKTuyo6hbp`.
+This line told the `nasdaqdatalink` library that when obtaining making requests for data, it should use the *API key* `jEKP58z7JaX6utPkkpEp`.
 
-An API key is a sort of password that web services (like the Quandl API) require you to provide when you make requests.
+An API key is a sort of password that web services (like the Nasdaq Data Link Tables API) require you to provide when you make requests.
 
-Using this password, we were able to make a request to Quandl to obtain data directly from them.
+Using this password, we were able to make a request to Nasdaq data link to obtain data directly from them.
 
 The API key used here is one that we requested on behalf of this course.
 
-If you plan to use Quandl more extensively, you should obtain your own personal API key from [their website](https://docs.quandl.com/docs#section-authentication) and re-run the `quandl.ApiConfig.api_key...` line of code with your new API key on the right-hand side.
+If you plan to use Nasdaq data more extensively, you should obtain your own personal API key from [their website](https://www.nasdaq.com/nasdaq-data-link) and re-run the `os.environ...` line of code with your new API key on the right-hand side.
 
 (pd-tim-ex)=
 ## Exercises
