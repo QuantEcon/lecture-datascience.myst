@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup Anaconda
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
           auto-activate-base: true
@@ -22,7 +22,7 @@ jobs:
         shell: bash -l {0}
         run: pip list
       - name: Download "build" folder (cache)
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v6
         with:
           workflow: cache.yml
           branch: main
@@ -33,7 +33,7 @@ jobs:
         run: |
           jb build lectures --path-output ./ -W --keep-going
       - name: Upload Execution Reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: execution-reports
@@ -50,7 +50,7 @@ jobs:
           mkdir -p _build/html/assets/data
           cp -a lectures/_data/. _build/html/assets/data/
       - name: Preview Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.1
+        uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build/html/'
           production-branch: master
