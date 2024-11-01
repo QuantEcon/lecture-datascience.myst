@@ -492,7 +492,7 @@ An API key is a sort of password that web services (like the Nasdaq Data Link Ta
 
 Using this password, we were able to make a request to Nasdaq data link to obtain data directly from them.
 
-The API key used here is one that we requested on behalf of this course.
+The API key used here is one that we requested on behalf of this course. Note that **for the environment variable `NASDAQ_DATA_LINK_API_KEY` to work properly, you must run the line above before importing the `nasdaqdatalink` library.** This is because the library reads the environment variable when it is imported to set its key automatically. Using an environment variable like this is a common way to store sensitive information like API keys, since you can set the environment variable in a secure way that is not stored in your code. How to set environment variables varies by operating system, but you can find instructions for doing so on the web.
 
 If you plan to use Nasdaq data more extensively, you should obtain your own personal API key from [their website](https://www.nasdaq.com/nasdaq-data-link) and re-run the `os.environ...` line of code with your new API key on the right-hand side.
 
