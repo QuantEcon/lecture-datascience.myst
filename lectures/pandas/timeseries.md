@@ -198,24 +198,23 @@ The flexibility of these features is best understood through example,
 so let's load up some data and take a look.
 
 ```{code-cell} python
-btc_usd = ndl.get_table("QDL/BCHAIN", paginate=True)
-btc_usd.info()
-btc_usd.head()
+btc_usd = ndl.get_table("QDL/BCHAIN", date = { 'gte': '2009-12-25', 'lte': '2019-01-01' }, code = ["MKPRU", "MKTCP", "ETRVU"])
+btc_usd_long.info()
+btc_usd_long.head()
 ```
 
 Here, we have the Bitcoin (BTC) to US dollar (USD) exchange rate from
 2009 until today, as well as other variables relevant to the Bitcoin ecosystem, in long ("melted") form.
 
 ```{code-cell} python
-print(btc_usd.code.unique())
+print(btc_usd_long.code.unique())
 btc_usd.dtypes
 ```
 
-Notice that the type of `date` is `datetime`. We would like this to be the index, and we want to drop the long form. We'll also select only a couple of columns of interest. (The column descriptions can be found [here](https://data.nasdaq.com/databases/BCHAIN)). We'll choose Market Price (in USD) (`MKPRU`), Total Market Cap (`MKTCP`), and Estimated Transaction Volume in USD (`ETRVU`).
+Notice that the type of `date` is `datetime`. We would like this to be the index, and we want to drop the long form. We also selected only a couple of columns of interest, but the dataset has a lot more options. (The column descriptions can be found [here](https://data.nasdaq.com/databases/BCHAIN)). We chose Market Price (in USD) (`MKPRU`), Total Market Cap (`MKTCP`), and Estimated Transaction Volume in USD (`ETRVU`).
 
 ```{code-cell} python
-btc_usd = btc_usd.pivot_table(index='date', columns='code', values='value')
-btc_usd = btc_usd[["MKPRU", "MKTCP", "ETRVU"]]
+btc_usd = btc_usd_long.pivot_table(index='date', columns='code', values='value')
 btc_usd.head()
 ```
 
