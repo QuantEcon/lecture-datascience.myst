@@ -37,11 +37,11 @@ kernelspec:
 ```{code-cell} python
 import os
 # see section on API keys at end of lecture!
-os.environ["NASDAQ_DATA_LINK_API_KEY"] = "jEKP58z7JaX6utPkkpEp"
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import nasdaqdatalink as ndl
+
+ndl.ApiConfig.api_key = os.environ.get("NASDAQ_DATA_LINK_API_KEY", "jEKP58z7JaX6utPkkpEp")
 
 start_date = "2014-05-01"
 
@@ -482,7 +482,7 @@ See exercise 8 in the {ref}`exercise list <pd-tim-ex>`.
 Recall above that we had the line of code:
 
 ```{code-block} python
-os.environ["NASDAQ_DATA_LINK_API_KEY"] = "jEKP58z7JaX6utPkkpEp"
+ndl.ApiConfig.api_key = os.environ.get("NASDAQ_DATA_LINK_API_KEY", "jEKP58z7JaX6utPkkpEp")
 ```
 
 This line told the `nasdaqdatalink` library that when obtaining making requests for data, it should use the *API key* `jEKP58z7JaX6utPkkpEp`.
@@ -491,7 +491,7 @@ An API key is a sort of password that web services (like the Nasdaq Data Link AP
 
 Using this password, we were able to make a request to Nasdaq data link to obtain data directly from them.
 
-The API key used here is one that we requested on behalf of this course. Note that **for the environment variable `NASDAQ_DATA_LINK_API_KEY` to work properly, you must run the line above before importing the `nasdaqdatalink` library.** This is because the library reads the environment variable when it is imported to set its key automatically. Using an environment variable like this is a common way to store sensitive information like API keys, since you can set the environment variable in a secure way that is not stored in your code. How to set environment variables varies by operating system, but you can find instructions for doing so on the web.
+The API key used here is one that we requested on behalf of this course. If you create your own API key, you should store it in the NASDAQ_DATA_LINK_API_KEY environment variable, locally on your computer. Using an environment variable like this is a common way to store sensitive information like API keys, since you can set the environment variable in a secure way that is not stored in your code. How to set environment variables varies by operating system, but you can find instructions for doing so on the web.
 
 If you plan to use Nasdaq data more extensively, you should obtain your own personal API key from [their website](https://www.nasdaq.com/nasdaq-data-link) and re-run the `os.environ...` line of code with your new API key on the right-hand side.
 
