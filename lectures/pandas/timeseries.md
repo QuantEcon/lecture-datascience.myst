@@ -208,7 +208,7 @@ Here, we have the Bitcoin (BTC) to US dollar (USD) exchange rate from
 
 ```{code-cell} python
 print(btc_usd_long.code.unique())
-btc_usd.dtypes
+btc_usd_long.dtypes
 ```
 
 Notice that the type of `date` is `datetime`. We would like this to be the index, and we want to drop the long form. We also selected only a couple of columns of interest, but the dataset has a lot more options. (The column descriptions can be found [here](https://data.nasdaq.com/databases/BCHAIN)). We chose Market Price (in USD) (`MKPRU`), Total Market Cap (`MKTCP`), and Estimated Transaction Volume in USD (`ETRVU`).
