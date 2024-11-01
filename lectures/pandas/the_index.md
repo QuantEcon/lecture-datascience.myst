@@ -186,7 +186,7 @@ This would be helpful, for example, if we wanted to compute the difference
 in the average of all our variables from one year to the next.
 
 ```{code-cell} python
-df_year.loc[2009].mean() - df_year.loc[2008].mean()
+df_year.loc[2009].mean(numeric_only=True) - df_year.loc[2008].mean(numeric_only=True)
 ```
 
 Notice that pandas did a few things for us.
