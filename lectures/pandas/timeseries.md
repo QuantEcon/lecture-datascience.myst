@@ -198,7 +198,7 @@ The flexibility of these features is best understood through example,
 so let's load up some data and take a look.
 
 ```{code-cell} python
-btc_usd = ndl.get_table("QDL/BCHAIN", date = { 'gte': '2009-12-25', 'lte': '2019-01-01' }, code = ["MKPRU", "MKTCP", "ETRVU"])
+btc_usd_long = ndl.get_table("QDL/BCHAIN", date = { 'gte': '2009-12-25', 'lte': '2019-01-01' }, code = ["MKPRU", "MKTCP", "ETRVU"])
 btc_usd_long.info()
 btc_usd_long.head()
 ```
