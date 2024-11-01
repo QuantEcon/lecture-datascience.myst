@@ -488,7 +488,7 @@ os.environ["NASDAQ_DATA_LINK_API_KEY"] = "jEKP58z7JaX6utPkkpEp"
 
 This line told the `nasdaqdatalink` library that when obtaining making requests for data, it should use the *API key* `jEKP58z7JaX6utPkkpEp`.
 
-An API key is a sort of password that web services (like the Nasdaq Data Link Tables API) require you to provide when you make requests.
+An API key is a sort of password that web services (like the Nasdaq Data Link API) require you to provide when you make requests.
 
 Using this password, we were able to make a request to Nasdaq data link to obtain data directly from them.
 
