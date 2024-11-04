@@ -475,7 +475,7 @@ eigen_cent = nx.eigenvector_centrality(karate)
 eigen_colors = [eigen_cent[i] for i in range(0,34)]
 
 fig,ax = plt.subplots() # create a figure and axis object
-nx.draw(karate,ax,karate_layout,node_color=eigen_colors)
+nx.draw(karate,karate_layout,ax,node_color=eigen_colors)
 ```
 
 We see that there are two really highly central (yellow) nodes, on opposite sides of the network. This might be an indication that there is some homophily in the network. To verify this, let's take a look at the natural partitioning of this network by plotting the eigenvalues of its laplacian matrix.
