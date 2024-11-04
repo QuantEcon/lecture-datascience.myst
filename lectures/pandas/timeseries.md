@@ -11,6 +11,9 @@ kernelspec:
 
 # Time series
 
+**Co-author**
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
+
 **Prerequisites**
 
 - {doc}`Python functions <../python_fundamentals/functions>`

@@ -11,6 +11,9 @@ kernelspec:
 
 # Intermediate Plotting
 
+**Co-author**
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
+
 **Prerequisites**
 
 - {doc}`Introduction <../pandas/intro>`

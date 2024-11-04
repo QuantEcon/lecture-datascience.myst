@@ -13,6 +13,7 @@ kernelspec:
 
 **Co-author**
 > - [Kim Ruhl *University of Wisconsin*](http://kimjruhl.com)
+> - [Philip Solimine *UBC*](https://www.psolimine.net)
 
 **Prerequisites**
 
@@ -125,24 +126,24 @@ that we use here.
 The file provides the outlines of countries, over which we'll plot the city locations
 from our GeoDataFrame.
 
-Luckily, `geopandas` already comes bundled with this data, so we don't
-have to hunt it down!
+Luckily, Natural Earth has already done the hard work of creating these files, and we can pull them directly from their website.
 
 ```{code-cell} python
-# Grab low resolution world file
-world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
-world = world.set_index("iso_a3")
-
+# Grab low resolution world file from NACIS
+url = "https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_countries.zip"
+world = gpd.read_file(url)[['SOV_A3', 'POP_EST', 'CONTINENT', 'NAME', 'GDP_MD', 'geometry']]
+world = world.set_index("SOV_A3")
+print(world.columns)
 world.head()
 ```
 
 `world` is a GeoDataFrame with the following columns:
 
-* `pop_est`: Contains a population estimate for the country
-* `continent`: The country's continent
-* `name`: The country's name
-* `iso_a3`: The country's 3 letter abbreviation (we made this the index)
-* `gdp_md_est`: An estimate of country's GDP
+* `POP_EST`: Contains a population estimate for the country
+* `CONTINENT`: The country's continent
+* `NAME`: The country's name
+* `SOV_A3`: The country's 3 letter abbreviation (we made this the index)
+* `GDP_MD`: The most recent estimate of country's GDP
 * `geometry`: A `POLYGON` for each country (we will learn more about these soon)
 
 ```{code-cell} python
@@ -201,7 +202,7 @@ This is a more complex shape than Albania and thus required more points.
 fig, gax = plt.subplots(figsize=(10,10))
 
 # By only plotting rows in which the continent is 'South America' we only plot SA.
-world.query("continent == 'South America'").plot(ax=gax, edgecolor='black',color='white')
+world.query("CONTINENT == 'South America'").plot(ax=gax, edgecolor='black',color='white')
 
 # By the way, if you haven't read the book 'longitude' by Dava Sobel, you should...
 gax.set_xlabel('longitude')
@@ -234,7 +235,7 @@ fig, gax = plt.subplots(figsize=(10,10))
 
 # By only plotting rows in which the continent is 'South America' we only plot, well,
 # South America.
-world.query("continent == 'South America'").plot(ax = gax, edgecolor='black', color='white')
+world.query("CONTINENT == 'South America'").plot(ax = gax, edgecolor='black', color='white')
 
 # This plot the cities. It's the same syntax, but we are plotting from a different GeoDataFrame.
 # I want the cities as pale red dots.
@@ -260,7 +261,7 @@ Finally, we might want to consider annotating the cities so we know which cities
 fig, gax = plt.subplots(figsize=(10,10))
 
 # By only plotting rows in which the continent is 'South America' we only plot, well, South America.
-world.query("continent == 'South America'").plot(ax = gax, edgecolor='black', color='white')
+world.query("CONTINENT == 'South America'").plot(ax = gax, edgecolor='black', color='white')
 
 # This plot the cities. It's the same syntax, but we are plotting from a different GeoDataFrame. I want the
 # cities as pale red dots.
