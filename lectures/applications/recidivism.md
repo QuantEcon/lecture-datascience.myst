@@ -177,7 +177,7 @@ is mostly African-American or Caucasian.
 We now look into how recidivism is split across groups.
 
 ```{code-cell} python
-recid = df.groupby(["age_cat", "sex", "race"])["two_year_recid"].mean().unstack(level="race")
+recid = df.groupby(["age_cat", "sex", "race"], observed=True)["two_year_recid"].mean().unstack(level="race")
 recid
 ```
 
