@@ -540,7 +540,7 @@ def truncate(f): # define a function that "rounds" a number to 0 if it is lower 
         return 1
     
 # we already know that every stock is perfectly correlated with itself, so the ones on the diagonal are not really useful information. Let's get rid of them.
-adj = corr.applymap(truncate) - np.identity(10)
+adj = corr.map(truncate) - np.identity(10)
 adj
 ```
 
