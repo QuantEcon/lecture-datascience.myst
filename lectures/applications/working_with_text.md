@@ -532,6 +532,7 @@ import nltk
 import string
 nltk.download('omw-1.4')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 # Remove stopwords (the, a, is, etc)
