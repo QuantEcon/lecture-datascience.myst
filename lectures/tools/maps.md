@@ -13,7 +13,6 @@ kernelspec:
 
 **Co-author**
 > - [Kim Ruhl *University of Wisconsin*](http://kimjruhl.com)
-> - [Philip Solimine *UBC*](https://www.psolimine.net)
 
 **Prerequisites**
 
