@@ -126,9 +126,10 @@ def get_incident_details(id):
     return(result)
 
 
-incidentsfile = "incidents.csv"
+incidentsfile = http://datascience.quantecon.org/assets/data/avalanche_incidents.csv
 
 # To avoid loading the avalanche Canada servers, we save the incident details locally.
+# to update the data locally, change the incidentsfile to some other file name
 
 try:
     incidents = pd.read_csv(incidentsfile)
