@@ -443,7 +443,7 @@ def get_forecasts(start, end, region):
         #print("working on {}, {}".format(region,day))
         forecasts = forecasts + [get_forecast(day, region)]
         #print("sleeping")
-        time.sleep(0.1) # to avoid too much load on Avalanche Canada servers
+        time.sleep(0.05) # to avoid too much load on Avalanche Canada servers
         day = day + pd.Timedelta(1,"D")
     return(forecasts)
 
