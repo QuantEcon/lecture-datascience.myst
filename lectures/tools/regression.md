@@ -783,7 +783,7 @@ This improves predictions and reduces the variance of the predictions.
 
 from sklearn.ensemble import RandomForestRegressor
 forest = RandomForestRegressor(n_estimators = 10).fit(Xsim,ysim)
-fig=surface_scatter_plot(Xsim,ysim,lambda x: forest.predict([x]),
+fig=surface_scatter_plot(Xsim,ysim,lambda x: forest.predict([x])[0],
                          show_f0=True)
 fig
 ```
@@ -892,7 +892,7 @@ from sklearn import neural_network
 nn = neural_network.MLPRegressor((6,), activation="logistic",
                                  verbose=True, solver="lbfgs",
                                  alpha=0.0).fit(Xsim,ysim)
-fig=surface_scatter_plot(Xsim,ysim,lambda x: nn.predict([x]), show_f0=True)
+fig=surface_scatter_plot(Xsim,ysim,lambda x: nn.predict([x])[0], show_f0=True)
 fig
 ```
 
