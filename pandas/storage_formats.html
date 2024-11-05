@@ -420,7 +420,7 @@ the <code class="docutils literal notranslate"><span class="pre">wanted_mb</span
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>df2.shape =  (100000, 13)
-df2 is approximately 9.9183349609375 MB
+df2 is approximately 9.918338775634766 MB
 </pre></div>
 </div>
 </div>
@@ -486,8 +486,8 @@ the cell)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.1 s, sys: 87.6 ms, total: 1.18 s
-Wall time: 1.19 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.11 s, sys: 58.5 ms, total: 1.17 s
+Wall time: 1.18 s
 </pre></div>
 </div>
 </div>
@@ -507,6 +507,12 @@ sheet name as the second argument as follows.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2988/2560744568.py:1: FutureWarning: Starting with pandas version 3.0 all arguments of to_excel except for the argument &#39;excel_writer&#39; will be keyword-only.
+  df1.to_excel(&quot;df1.xlsx&quot;, &quot;df1&quot;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>pandas also gives us the option to write more than one DataFrame to a
 workbook.</p>
@@ -518,6 +524,14 @@ and then pass that as the first argument to <code class="docutils literal notran
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="s2">&quot;df1.xlsx&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
     <span class="n">df1</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="s2">&quot;df1&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="n">df1</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="s2">&quot;df1 plus 10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2988/2131460028.py:2: FutureWarning: Starting with pandas version 3.0 all arguments of to_excel except for the argument &#39;excel_writer&#39; will be keyword-only.
+  df1.to_excel(writer, &quot;df1&quot;)
+/tmp/ipykernel_2988/2131460028.py:3: FutureWarning: Starting with pandas version 3.0 all arguments of to_excel except for the argument &#39;excel_writer&#39; will be keyword-only.
+  (df1 + 10).to_excel(writer, &quot;df1 plus 10&quot;)
 </pre></div>
 </div>
 </div>
@@ -573,8 +587,8 @@ below into a code cell and execute.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.28 ms, sys: 23.9 ms, total: 31.2 ms
-Wall time: 18.6 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 21.4 ms, sys: 17.3 ms, total: 38.7 ms
+Wall time: 20.2 ms
 </pre></div>
 </div>
 </div>

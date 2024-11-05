@@ -13,6 +13,7 @@ kernelspec:
 
 **Author**
 > - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
+> - [Philip Solimine *UBC*](https://www.psolimine.net/)
 
 **Prerequisites**
 
@@ -259,11 +260,11 @@ tags: [hide-output]
 ---
 cps["female"] = (cps.sex==2)
 cps["log_earn"] = np.log(cps.earnwke)
-cps["log_earn"][np.isinf(cps.log_earn)] = np.nan
+cps.loc[np.isinf(cps.log_earn),"log_earn"] = np.nan
 cps["log_uhours"] = np.log(cps.uhourse)
-cps["log_uhours"][np.isinf(cps.log_uhours)] = np.nan
+cps.loc[np.isinf(cps.log_uhours),"log_uhours"] = np.nan
 cps["log_hourslw"] = np.log(cps.hourslw)
-cps["log_hourslw"][np.isinf(cps.log_hourslw)] = np.nan
+cps.loc[np.isinf(cps.log_hourslw),"log_hourslw"] = np.nan
 cps["log_wageu"] = cps.log_earn - cps.log_uhours
 cps["log_wagelw"] = cps.log_earn - cps.log_hourslw
 
@@ -394,12 +395,8 @@ def plotpredictions(pl) :
     plt.title("Prediction Errors")
 
     plt.figure()
-    sns.distplot(pl[2][female==0], hist = True, kde = False,
-                 kde_kws = {'shade': True, 'linewidth': 3},
-                 label = "Male")
-    sns.distplot(pl[2][female==1], hist = True, kde = False,
-                 kde_kws = {'shade': True, 'linewidth': 3},
-                 label = "Female")
+    sns.histplot(pl[2][female == 0], bins=30, label="Male", kde=False)
+    sns.histplot(pl[2][female == 1], bins=30, label="Female", kde=False)
     plt.title('P(female|x)')
 plotpredictions(pl_lasso)
 ```

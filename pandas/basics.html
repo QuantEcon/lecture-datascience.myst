@@ -253,7 +253,7 @@ apply them using <code class="docutils literal notranslate"><span class="pre">ag
 <li><p>Use built-in Series transformation functions and be able to create your
 own and apply them using <code class="docutils literal notranslate"><span class="pre">apply</span></code></p></li>
 <li><p>Use built-in scalar transformation functions and be able to create your
-own and apply them using <code class="docutils literal notranslate"><span class="pre">applymap</span></code></p></li>
+own and apply them using <code class="docutils literal notranslate"><span class="pre">map</span></code></p></li>
 <li><p>Be able to select subsets of the DataFrame using boolean selection</p></li>
 <li><p>Know what the “want operator” is and how to apply it</p></li>
 </ul>
@@ -280,7 +280,7 @@ frequency.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.5.3&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.2.3&#39;
 </pre></div>
 </div>
 </div>
@@ -693,7 +693,7 @@ requires a transformation of the data similar to an Excel pivot-table.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Date&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/b88f771115e33586b60c37f3ed4eeba8b4ea5c360b89fef67c7eebf22438c6d3.png" src="../_images/b88f771115e33586b60c37f3ed4eeba8b4ea5c360b89fef67c7eebf22438c6d3.png" />
+<img alt="../_images/f9aa91d7be2fda989de8d0bd0beaa96c3c5da190abfda6280a6b89dccc8e45d9.png" src="../_images/f9aa91d7be2fda989de8d0bd0beaa96c3c5da190abfda6280a6b89dccc8e45d9.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-bas-dir1">
@@ -1014,6 +1014,12 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2802/286408109.py:1: FutureWarning: The provided callable &lt;built-in function min&gt; is currently using Series.min. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;min&quot; instead.
+  unemp.agg([min, max, high_or_low])
+/tmp/ipykernel_2802/286408109.py:1: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using Series.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  unemp.agg([min, max, high_or_low])
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1674,7 +1680,7 @@ pandas data.</p>
 <p>To do this, we use the following pattern:</p>
 <ol class="arabic simple">
 <li><p>Define a Python function that takes in a scalar and produces a scalar.</p></li>
-<li><p>Pass this function as an argument to the <code class="docutils literal notranslate"><span class="pre">applymap</span></code> Series or DataFrame method.</p></li>
+<li><p>Pass this function as an argument to the <code class="docutils literal notranslate"><span class="pre">map</span></code> Series or DataFrame method.</p></li>
 </ol>
 <p>Complete the exercise below to practice writing and using your own scalar
 transforms.</p>
@@ -2727,7 +2733,7 @@ medium (4.5 &lt; x &lt;= 6.5), or low (&lt;= 4.5) for each state and each month.
 <ol class="arabic">
 <li><p>Write a Python function that takes a single number as an input and
 outputs a single string noting if that number is high, medium, or low.</p></li>
-<li><p>Pass your function to <code class="docutils literal notranslate"><span class="pre">applymap</span></code> (quiz: why <code class="docutils literal notranslate"><span class="pre">applymap</span></code> and not
+<li><p>Pass your function to <code class="docutils literal notranslate"><span class="pre">map</span></code> (quiz: why <code class="docutils literal notranslate"><span class="pre">map</span></code> and not
 <code class="docutils literal notranslate"><span class="pre">agg</span></code> or <code class="docutils literal notranslate"><span class="pre">apply</span></code>?) and save the result in a new DataFrame called
 <code class="docutils literal notranslate"><span class="pre">unemp_bins</span></code>.</p></li>
 <li><p>(Challenging) This exercise has multiple parts:</p>
@@ -2765,8 +2771,8 @@ with high unemployment? What about medium and low?</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 2: Pass your function from part 1 to applymap</span>
-<span class="n">unemp_bins</span> <span class="o">=</span> <span class="n">unemp</span><span class="o">.</span><span class="n">applymap</span><span class="c1">#replace this comment with your code!!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Part 2: Pass your function from part 1 to map</span>
+<span class="n">unemp_bins</span> <span class="o">=</span> <span class="n">unemp</span><span class="o">.</span><span class="n">map</span><span class="c1">#replace this comment with your code!!</span>
 </pre></div>
 </div>
 </div>

@@ -237,6 +237,12 @@ const thebe_selector_output = ".output, .cell_output"
                         
   <section class="tex2jax_ignore mathjax_ignore" id="intermediate-plotting">
 <h1>Intermediate Plotting<a class="headerlink" href="#intermediate-plotting" title="Permalink to this heading">#</a></h1>
+<p><strong>Co-author</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.psolimine.net">Philip Solimine, <em>UBC</em></a></p></li>
+</ul>
+</div></blockquote>
 <p><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../pandas/intro.html"><span class="doc">Introduction</span></a></p></li>
@@ -263,15 +269,14 @@ of a Jupyter notebook</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;NASDAQ_DATA_LINK_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;jEKP58z7JaX6utPkkpEp&quot;</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
-<span class="kn">import</span> <span class="nn">quandl</span>
-
-<span class="n">quandl</span><span class="o">.</span><span class="n">ApiConfig</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;QUANDL_AUTH&quot;</span><span class="p">,</span> <span class="s2">&quot;Dn6BtVoBhzuKTuyo6hbp&quot;</span><span class="p">)</span>
-
+<span class="kn">import</span> <span class="nn">nasdaqdatalink</span> <span class="k">as</span> <span class="nn">ndl</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -358,7 +363,8 @@ Name: Model, dtype: object
 weeks before the first announcement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;WIKI/AAPL&quot;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s2">&quot;2006-12-25&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span> <span class="o">=</span> <span class="n">ndl</span><span class="o">.</span><span class="n">get_table</span><span class="p">(</span><span class="s1">&#39;WIKI/PRICES&#39;</span><span class="p">,</span> <span class="n">ticker</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AAPL&#39;</span><span class="p">],</span> <span class="n">date</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;gte&#39;</span><span class="p">:</span> <span class="s1">&#39;2006-12-25&#39;</span><span class="p">,</span> <span class="s1">&#39;lte&#39;</span><span class="p">:</span> <span class="s1">&#39;2018-01-01&#39;</span> <span class="p">})</span>
+<span class="n">aapl</span> <span class="o">=</span> <span class="n">aapl</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
 <span class="n">aapl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -382,21 +388,23 @@ weeks before the first announcement.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume</th>
-      <th>Ex-Dividend</th>
-      <th>Split Ratio</th>
-      <th>Adj. Open</th>
-      <th>Adj. High</th>
-      <th>Adj. Low</th>
-      <th>Adj. Close</th>
-      <th>Adj. Volume</th>
+      <th>ticker</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>ex-dividend</th>
+      <th>split_ratio</th>
+      <th>adj_open</th>
+      <th>adj_high</th>
+      <th>adj_low</th>
+      <th>adj_close</th>
+      <th>adj_volume</th>
     </tr>
     <tr>
-      <th>Date</th>
+      <th>date</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -413,79 +421,84 @@ weeks before the first announcement.</p>
   </thead>
   <tbody>
     <tr>
-      <th>2006-12-26</th>
-      <td>82.15</td>
-      <td>82.57</td>
-      <td>80.89</td>
-      <td>81.51</td>
-      <td>17524600.0</td>
+      <th>2017-12-29</th>
+      <td>AAPL</td>
+      <td>170.52</td>
+      <td>170.590</td>
+      <td>169.220</td>
+      <td>169.23</td>
+      <td>25643711.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>10.557420</td>
-      <td>10.611396</td>
-      <td>10.395492</td>
-      <td>10.475171</td>
-      <td>122672200.0</td>
+      <td>170.52</td>
+      <td>170.590</td>
+      <td>169.220</td>
+      <td>169.23</td>
+      <td>25643711.0</td>
     </tr>
     <tr>
-      <th>2006-12-27</th>
-      <td>78.15</td>
-      <td>82.00</td>
-      <td>76.77</td>
-      <td>81.52</td>
-      <td>69134100.0</td>
+      <th>2017-12-28</th>
+      <td>AAPL</td>
+      <td>171.00</td>
+      <td>171.850</td>
+      <td>170.480</td>
+      <td>171.08</td>
+      <td>15997739.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>10.043364</td>
-      <td>10.538143</td>
-      <td>9.866015</td>
-      <td>10.476456</td>
-      <td>483938700.0</td>
+      <td>171.00</td>
+      <td>171.850</td>
+      <td>170.480</td>
+      <td>171.08</td>
+      <td>15997739.0</td>
     </tr>
     <tr>
-      <th>2006-12-28</th>
-      <td>80.22</td>
-      <td>81.25</td>
-      <td>79.65</td>
-      <td>80.87</td>
-      <td>39995600.0</td>
+      <th>2017-12-27</th>
+      <td>AAPL</td>
+      <td>170.10</td>
+      <td>170.780</td>
+      <td>169.710</td>
+      <td>170.60</td>
+      <td>21672062.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>10.309388</td>
-      <td>10.441757</td>
-      <td>10.236135</td>
-      <td>10.392922</td>
-      <td>279969200.0</td>
+      <td>170.10</td>
+      <td>170.780</td>
+      <td>169.710</td>
+      <td>170.60</td>
+      <td>21672062.0</td>
     </tr>
     <tr>
-      <th>2006-12-29</th>
-      <td>83.95</td>
-      <td>85.40</td>
-      <td>83.36</td>
-      <td>84.84</td>
-      <td>38443900.0</td>
+      <th>2017-12-26</th>
+      <td>AAPL</td>
+      <td>170.80</td>
+      <td>171.470</td>
+      <td>169.679</td>
+      <td>170.57</td>
+      <td>32968167.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>10.788745</td>
-      <td>10.975090</td>
-      <td>10.712922</td>
-      <td>10.903122</td>
-      <td>269107300.0</td>
+      <td>170.80</td>
+      <td>171.470</td>
+      <td>169.679</td>
+      <td>170.57</td>
+      <td>32968167.0</td>
     </tr>
     <tr>
-      <th>2007-01-03</th>
-      <td>86.29</td>
-      <td>86.58</td>
-      <td>81.90</td>
-      <td>83.80</td>
-      <td>44225700.0</td>
+      <th>2017-12-22</th>
+      <td>AAPL</td>
+      <td>174.68</td>
+      <td>175.424</td>
+      <td>174.500</td>
+      <td>175.01</td>
+      <td>16052615.0</td>
       <td>0.0</td>
       <td>1.0</td>
-      <td>11.089468</td>
-      <td>11.126737</td>
-      <td>10.525291</td>
-      <td>10.769468</td>
-      <td>309579900.0</td>
+      <td>174.68</td>
+      <td>175.424</td>
+      <td>174.500</td>
+      <td>175.01</td>
+      <td>16052615.0</td>
     </tr>
   </tbody>
 </table>
@@ -518,7 +531,7 @@ methods on an Axes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the Adjusted open to account for stock split</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">aapl</span><span class="p">[</span><span class="s2">&quot;Adj. Open&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">aapl</span><span class="p">[</span><span class="s2">&quot;adj_open&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
 <span class="c1"># get the figure so we can re-display the plot after making changes</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
@@ -526,7 +539,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e5ae5027a1933fb311e9b4bfe826a8af796647c021750c33426bc207957eac41.png" src="../_images/e5ae5027a1933fb311e9b4bfe826a8af796647c021750c33426bc207957eac41.png" />
+<img alt="../_images/f3dd02052286501bdb3b31fdf88d770592c455ad707e669e69246adb56455d8f.png" src="../_images/f3dd02052286501bdb3b31fdf88d770592c455ad707e669e69246adb56455d8f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -539,7 +552,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f1183c7c9c2ae7358436348817d9cdacd6fc5f9395726b3345b8b5e61b33db7d.png" src="../_images/f1183c7c9c2ae7358436348817d9cdacd6fc5f9395726b3345b8b5e61b33db7d.png" />
+<img alt="../_images/6466b5c622a5bc91e737e6075e86d0a9b2a7b58c41c7e5a18f6ec5581c1b4e9f.png" src="../_images/6466b5c622a5bc91e737e6075e86d0a9b2a7b58c41c7e5a18f6ec5581c1b4e9f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -550,7 +563,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4354df125028850b6c0281776e95dfff2a862b8c86248a6e57aa1721d486cdee.png" src="../_images/4354df125028850b6c0281776e95dfff2a862b8c86248a6e57aa1721d486cdee.png" />
+<img alt="../_images/1fefbdde56e09a3da4e29289a2dca67ece2ee816eb5b6dfd2909ef5c3838a34b.png" src="../_images/1fefbdde56e09a3da4e29289a2dca67ece2ee816eb5b6dfd2909ef5c3838a34b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -561,7 +574,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/49b0a08ff77a7aa69cc4f5ab2f7f120dcd343b161fb34ee72851fc799226af44.png" src="../_images/49b0a08ff77a7aa69cc4f5ab2f7f120dcd343b161fb34ee72851fc799226af44.png" />
+<img alt="../_images/19a0ed54aeec7c5748b289c562bb2f33217e0a6763e0a7f3aa3ad425d0c5639e.png" src="../_images/19a0ed54aeec7c5748b289c562bb2f33217e0a6763e0a7f3aa3ad425d0c5639e.png" />
 </div>
 </div>
 <p>We can also create a Figure and Axes beforehand and then tell pandas to
@@ -586,21 +599,21 @@ type(axs):  &lt;class &#39;numpy.ndarray&#39;&gt;
 axs2.shape:  (2,)
 </pre></div>
 </div>
-<img alt="../_images/b1a301f680334428bfb3569198b146ed02d0c2ca2e08f9683abe33c31aad45ae.png" src="../_images/b1a301f680334428bfb3569198b146ed02d0c2ca2e08f9683abe33c31aad45ae.png" />
+<img alt="../_images/d71e83e14d74702d16ff53ec1c529fa830675fa4b1a30efd6da54184b3857115.png" src="../_images/d71e83e14d74702d16ff53ec1c529fa830675fa4b1a30efd6da54184b3857115.png" />
 </div>
 </div>
 <p>We can plot from our DataFrame directly on our Axes objects by setting
 the <code class="docutils literal notranslate"><span class="pre">ax</span></code> argument when calling <code class="docutils literal notranslate"><span class="pre">.plot</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;Adj. Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Adj. High&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;adj_low&quot;</span><span class="p">,</span> <span class="s2">&quot;adj_high&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">aapl</span><span class="p">[[</span><span class="s2">&quot;low&quot;</span><span class="p">,</span> <span class="s2">&quot;high&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axs2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">fig2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d15f3030718773c859c4117b134a7478d4a49fb7dae9e663a9fc9974cb52d4d.png" src="../_images/9d15f3030718773c859c4117b134a7478d4a49fb7dae9e663a9fc9974cb52d4d.png" />
+<img alt="../_images/f9f156dceaada1244b4cd72a77a870d4787892fc336d8ffe266d6cd6d6382a8b.png" src="../_images/f9f156dceaada1244b4cd72a77a870d4787892fc336d8ffe266d6cd6d6382a8b.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir2">
@@ -668,21 +681,23 @@ the announcement and scale the neighboring days accordingly.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Open</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Close</th>
-      <th>Volume</th>
-      <th>Ex-Dividend</th>
-      <th>Split Ratio</th>
-      <th>Adj. Open</th>
-      <th>Adj. High</th>
-      <th>Adj. Low</th>
-      <th>Adj. Close</th>
-      <th>Adj. Volume</th>
+      <th>ticker</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+      <th>ex-dividend</th>
+      <th>split_ratio</th>
+      <th>adj_open</th>
+      <th>adj_high</th>
+      <th>adj_low</th>
+      <th>adj_close</th>
+      <th>adj_volume</th>
     </tr>
     <tr>
-      <th>Date</th>
+      <th>date</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -700,6 +715,7 @@ the announcement and scale the neighboring days accordingly.</p>
   <tbody>
     <tr>
       <th>2007-01-04</th>
+      <td>AAPL</td>
       <td>84.05</td>
       <td>85.95</td>
       <td>83.82</td>
@@ -715,6 +731,7 @@ the announcement and scale the neighboring days accordingly.</p>
     </tr>
     <tr>
       <th>2007-01-05</th>
+      <td>AAPL</td>
       <td>85.77</td>
       <td>86.20</td>
       <td>84.40</td>
@@ -730,6 +747,7 @@ the announcement and scale the neighboring days accordingly.</p>
     </tr>
     <tr>
       <th>2007-01-08</th>
+      <td>AAPL</td>
       <td>85.96</td>
       <td>86.53</td>
       <td>85.28</td>
@@ -745,6 +763,7 @@ the announcement and scale the neighboring days accordingly.</p>
     </tr>
     <tr>
       <th>2007-01-09</th>
+      <td>AAPL</td>
       <td>86.45</td>
       <td>92.98</td>
       <td>85.15</td>
@@ -760,6 +779,7 @@ the announcement and scale the neighboring days accordingly.</p>
     </tr>
     <tr>
       <th>2007-01-10</th>
+      <td>AAPL</td>
       <td>94.75</td>
       <td>97.80</td>
       <td>93.45</td>
@@ -803,7 +823,7 @@ announcement with the model name (no more <code class="docutils literal notransl
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date
 2007-01-04             NaN
 2007-01-05             NaN
 2007-01-08             NaN
@@ -828,7 +848,7 @@ Name: Model, dtype: object
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>33
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date
 2007-01-04             NaN
 2007-01-05             NaN
 2007-01-08             NaN
@@ -853,7 +873,7 @@ Name: Model, dtype: object
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date
 2007-01-04    First iPhone
 2007-01-05    First iPhone
 2007-01-08    First iPhone
@@ -878,7 +898,7 @@ each announcement date to 100 and scale all neighbors accordingly.</p>
     <span class="c1"># Divide by middle row and scale to 100</span>
     <span class="c1"># Note: N // 2 is modulus division meaning that it is</span>
     <span class="c1">#       rounded to nearest whole number)</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Open&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">][</span><span class="s2">&quot;Open&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;open&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">][</span><span class="s2">&quot;open&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
 
     <span class="c1"># We don&#39;t want to keep actual dates, but rather the number</span>
     <span class="c1"># of days before or after the announcment. Let&#39;s set that</span>
@@ -900,6 +920,10 @@ each announcement date to 100 and scale all neighbors accordingly.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3622/3433067278.py:1: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  to_plot = prices.groupby(&quot;Model&quot;).apply(scale_by_middle).T
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1255,7 +1279,7 @@ function.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3782fbc1ecf7be65be71d820ea3df55ad9356e842d64ff82b5a72a7f99c85521.png" src="../_images/3782fbc1ecf7be65be71d820ea3df55ad9356e842d64ff82b5a72a7f99c85521.png" />
+<img alt="../_images/e588967b11f6217d2e21e6baa628119b0c3bee3fb8f6fe4041044484c70eab0e.png" src="../_images/e588967b11f6217d2e21e6baa628119b0c3bee3fb8f6fe4041044484c70eab0e.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir4">
@@ -1283,7 +1307,7 @@ subplots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cca38d6e698a1c01b0306397aa724b5bae693e3296a3864620e9d004a82991db.png" src="../_images/cca38d6e698a1c01b0306397aa724b5bae693e3296a3864620e9d004a82991db.png" />
+<img alt="../_images/ffc8aec43b9c23e0ab1ef9103c53c7fc0e55133f3651fa3f64f9973f0b24c728.png" src="../_images/ffc8aec43b9c23e0ab1ef9103c53c7fc0e55133f3651fa3f64f9973f0b24c728.png" />
 </div>
 </div>
 </section>
@@ -1301,7 +1325,7 @@ FT post.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/088a02f94eb74e8c19a7f0a570593f6dec7789c9ed3b82169cce95a92dd18ed9.png" src="../_images/088a02f94eb74e8c19a7f0a570593f6dec7789c9ed3b82169cce95a92dd18ed9.png" />
+<img alt="../_images/251cd4e4ee9936c8bc7b37b49c9b34df0dca912a65c2ea2497d1b4d5e838fe2d.png" src="../_images/251cd4e4ee9936c8bc7b37b49c9b34df0dca912a65c2ea2497d1b4d5e838fe2d.png" />
 </div>
 </div>
 </section>
@@ -1364,7 +1388,7 @@ Axes:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af1ff1dfb32d1ade911a723700a5bff39c0ab8a366ac0778bf793681a542dccf.png" src="../_images/af1ff1dfb32d1ade911a723700a5bff39c0ab8a366ac0778bf793681a542dccf.png" />
+<img alt="../_images/0e178e7fa0f5e676ea167850e9f608c13be4eb62b9e64b9f5d8c0cdb06bc5d00.png" src="../_images/0e178e7fa0f5e676ea167850e9f608c13be4eb62b9e64b9f5d8c0cdb06bc5d00.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir5">
@@ -1383,7 +1407,7 @@ Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1c9a682f1fbf69a11886aebe7d5bcbc491a471ce03e0af9182c6f1a230ce306d.png" src="../_images/1c9a682f1fbf69a11886aebe7d5bcbc491a471ce03e0af9182c6f1a230ce306d.png" />
+<img alt="../_images/fd4a161ce24e20e359c8912c87ace81037a2f1a70511fc04818baa7067b025fb.png" src="../_images/fd4a161ce24e20e359c8912c87ace81037a2f1a70511fc04818baa7067b025fb.png" />
 </div>
 </div>
 <p>We can also add tick labels for the x-axis ticks on the 1st and 6th
@@ -1404,7 +1428,7 @@ plots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dd4b9bdf4d95b3e44c0e41ee48cfb12215d577655fb5c3c0ad771b9f62e9e1fb.png" src="../_images/dd4b9bdf4d95b3e44c0e41ee48cfb12215d577655fb5c3c0ad771b9f62e9e1fb.png" />
+<img alt="../_images/b3bb7d176e126a9d6bb1f539f3aa5ebb525d1824029481c43920702ba8d7683c.png" src="../_images/b3bb7d176e126a9d6bb1f539f3aa5ebb525d1824029481c43920702ba8d7683c.png" />
 </div>
 </div>
 </section>
@@ -1469,7 +1493,7 @@ from (0, 1) in the Figure coordinates and the <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d4fadf92c48721998bb5b783acd80bb9b953ab65dcaf606367a1842269bb127d.png" src="../_images/d4fadf92c48721998bb5b783acd80bb9b953ab65dcaf606367a1842269bb127d.png" />
+<img alt="../_images/f0dbdacf059e3ffcbbfc90b1b72c51a824a0ff4afe172ea9fb565cd61541a1a5.png" src="../_images/f0dbdacf059e3ffcbbfc90b1b72c51a824a0ff4afe172ea9fb565cd61541a1a5.png" />
 </div>
 </div>
 <p>Now, we need to a add vertical line from the (0, 90) to (0, 100) on the
@@ -1494,7 +1518,7 @@ Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f35d764d226d2745583261e2484ff4f988b80ffd0899b561c155ac504c41a482.png" src="../_images/f35d764d226d2745583261e2484ff4f988b80ffd0899b561c155ac504c41a482.png" />
+<img alt="../_images/e99c827c4775451184ee1b4a56185f2be7d49d5b656cf9708add36527124e873.png" src="../_images/e99c827c4775451184ee1b4a56185f2be7d49d5b656cf9708add36527124e873.png" />
 </div>
 </div>
 </section>
@@ -1526,7 +1550,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/487055173a1213730154a5d8924abd00fb4a0725758a68ec47b9b5f65d0f75da.png" src="../_images/487055173a1213730154a5d8924abd00fb4a0725758a68ec47b9b5f65d0f75da.png" />
+<img alt="../_images/9bdf3850a2c3cc98f9b9fa996ea0fcffef234242b947c3a2949aa6c62bbfafe5.png" src="../_images/9bdf3850a2c3cc98f9b9fa996ea0fcffef234242b947c3a2949aa6c62bbfafe5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1549,7 +1573,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/38f51cfc135ec6942460815f46b3b102ff8ecefba52b53102c1d2f8c02385fd8.png" src="../_images/38f51cfc135ec6942460815f46b3b102ff8ecefba52b53102c1d2f8c02385fd8.png" />
+<img alt="../_images/817632d15e742f760b09659798d7b73350de1adc78f1e63df7292c423cfa1c81.png" src="../_images/817632d15e742f760b09659798d7b73350de1adc78f1e63df7292c423cfa1c81.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1567,7 +1591,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5d286cfd5af71a275d9c14932d5ecb27566f90879fc59ae6acbccbbbb71aa92a.png" src="../_images/5d286cfd5af71a275d9c14932d5ecb27566f90879fc59ae6acbccbbbb71aa92a.png" />
+<img alt="../_images/76aaf3ff166ac3a8c7fe00c216c4bc07b08bfe9ed5f2f855679b7566741c0f10.png" src="../_images/76aaf3ff166ac3a8c7fe00c216c4bc07b08bfe9ed5f2f855679b7566741c0f10.png" />
 </div>
 </div>
 </section>

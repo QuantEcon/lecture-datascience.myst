@@ -828,6 +828,10 @@ our function as a DataFrame (or Series).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/322410337.py:1: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  gbA.apply(smallest_by_b)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -918,7 +922,7 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
-    <span class="n">start</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">),</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">),</span>
     <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;BQ&quot;</span><span class="p">,</span>
     <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="p">)</span>
@@ -928,8 +932,8 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3100/2961039157.py:3: FutureWarning: The pandas.datetime class is deprecated and will be removed from pandas in a future version. Import from datetime module instead.
-  start=pd.datetime.today().strftime(&quot;%m/%d/%Y&quot;),
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3685276675.py:2: FutureWarning: &#39;BQ&#39; is deprecated and will be removed in a future version, please use &#39;BQE&#39; instead.
+  df2[&quot;Date&quot;] = pd.date_range(
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -966,37 +970,37 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
       <th>1</th>
       <td>1</td>
       <td>1.0</td>
-      <td>2024-06-28</td>
+      <td>2024-12-31</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>2.0</td>
-      <td>2024-09-30</td>
+      <td>2025-03-31</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>3.0</td>
-      <td>2024-12-31</td>
+      <td>2025-06-30</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
       <td>NaN</td>
-      <td>2025-03-31</td>
+      <td>2025-09-30</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
       <td>5.0</td>
-      <td>2025-06-30</td>
+      <td>2025-12-31</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
       <td>NaN</td>
-      <td>2025-09-30</td>
+      <td>2026-03-31</td>
     </tr>
   </tbody>
 </table>
@@ -1010,6 +1014,10 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/554447956.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
+  df2.groupby(pd.Grouper(key=&quot;Date&quot;, freq=&quot;A&quot;)).count()
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1040,13 +1048,18 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
   <tbody>
     <tr>
       <th>2024-12-31</th>
-      <td>3</td>
-      <td>3</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2025-12-31</th>
+      <td>4</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <th>2026-12-31</th>
       <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1114,6 +1127,10 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/1087709782.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
+  df2.groupby([pd.Grouper(key=&quot;Date&quot;, freq=&quot;A&quot;), pd.Grouper(level=&quot;A&quot;)]).count()
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1147,14 +1164,25 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
     <tr>
       <th>2024-12-31</th>
       <th>1</th>
-      <td>3</td>
-      <td>3</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>2025-12-31</th>
+      <th rowspan="2" valign="top">2025-12-31</th>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
       <th>2</th>
-      <td>3</td>
+      <td>2</td>
       <td>1</td>
+    </tr>
+    <tr>
+      <th>2026-12-31</th>
+      <th>2</th>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1169,6 +1197,10 @@ denotes a column name</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3014178998.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
+  df2.groupby([pd.Grouper(key=&quot;Date&quot;, freq=&quot;A&quot;), &quot;B&quot;]).count()
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1198,7 +1230,12 @@ denotes a column name</p>
   </thead>
   <tbody>
     <tr>
-      <th rowspan="2" valign="top">2024-12-31</th>
+      <th>2024-12-31</th>
+      <th>1</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025-12-31</th>
       <th>1</th>
       <td>2</td>
     </tr>
@@ -1207,12 +1244,8 @@ denotes a column name</p>
       <td>1</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">2025-12-31</th>
+      <th>2026-12-31</th>
       <th>1</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>0</td>
     </tr>
   </tbody>
@@ -1393,7 +1426,7 @@ each week.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a65b9d6f37736009c848f78651d1669f4bc726c8421e8c752815f83c3d436a33.png" src="../_images/a65b9d6f37736009c848f78651d1669f4bc726c8421e8c752815f83c3d436a33.png" />
+<img alt="../_images/ee03e2691407f4cff103027702be05ee6ae843f6171711121039e253c70e0d64.png" src="../_images/ee03e2691407f4cff103027702be05ee6ae843f6171711121039e253c70e0d64.png" />
 </div>
 </div>
 <p>It looks like more delays occurred during the week ending Sunday
@@ -1743,6 +1776,10 @@ carrier</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/1201432368.py:3: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  .stack()             # move aggregation method into index (with Carrier)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1930,9 +1967,9 @@ carrier</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/500645100d6450c2fb7afe16ced85205b4960f5ec05ce7ba75e48377f0442b1b.png" src="../_images/500645100d6450c2fb7afe16ced85205b4960f5ec05ce7ba75e48377f0442b1b.png" />
-<img alt="../_images/5986a6d244a005a32949b60bd341b5f0e46123776c1bca982ca5ecdefb1eacd6.png" src="../_images/5986a6d244a005a32949b60bd341b5f0e46123776c1bca982ca5ecdefb1eacd6.png" />
-<img alt="../_images/cad9623d925cdfe3da86414baad90078fb0228dcd5dd49130bd61212676f69e5.png" src="../_images/cad9623d925cdfe3da86414baad90078fb0228dcd5dd49130bd61212676f69e5.png" />
+<img alt="../_images/32159f517a925210e079a053a6eb1d82b805a0720036f6f7feae93b42054b121.png" src="../_images/32159f517a925210e079a053a6eb1d82b805a0720036f6f7feae93b42054b121.png" />
+<img alt="../_images/1b3f2c4efdc3c8e822470f883dde44a5533f726405734c6ec4b2456cd8e6f3f7.png" src="../_images/1b3f2c4efdc3c8e822470f883dde44a5533f726405734c6ec4b2456cd8e6f3f7.png" />
+<img alt="../_images/ec86f3e1d889a81831cc9b665c0497e749b9e8efb1bef78b916e8c220db9092c.png" src="../_images/ec86f3e1d889a81831cc9b665c0497e749b9e8efb1bef78b916e8c220db9092c.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-grp-dir4">
@@ -2028,7 +2065,7 @@ figure to be a bit wider in order to see the dates.)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5f7b9716a15bcd67525649df412e0bf4fe9e41b2e45187d2080d5e0e5e5ac9c8.png" src="../_images/5f7b9716a15bcd67525649df412e0bf4fe9e41b2e45187d2080d5e0e5e5ac9c8.png" />
+<img alt="../_images/cd3175cb5fec336872239970546befefd66eeb616b1583a2fc9aa3bdd9963b90.png" src="../_images/cd3175cb5fec336872239970546befefd66eeb616b1583a2fc9aa3bdd9963b90.png" />
 </div>
 </div>
 <p>As we expected given our analysis above, the longest average delays
@@ -2047,9 +2084,13 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aae3372ae64f7c606a06aa7e25e5bafdccba8e9a5dd51bd99890e7c1cdf43ba3.png" src="../_images/aae3372ae64f7c606a06aa7e25e5bafdccba8e9a5dd51bd99890e7c1cdf43ba3.png" />
-<img alt="../_images/bbb8b403896b977cd6665453f5130290d3e63e36d3073c73820b664f5859596e.png" src="../_images/bbb8b403896b977cd6665453f5130290d3e63e36d3073c73820b664f5859596e.png" />
-<img alt="../_images/348b37810d5a0011db733ff0b2da8568d148022e25e4179c6f0359ebfa1ffd5c.png" src="../_images/348b37810d5a0011db733ff0b2da8568d148022e25e4179c6f0359ebfa1ffd5c.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
+</pre></div>
+</div>
+<img alt="../_images/8a111efb33a6e234ee439245ada7c7aefe88d141ec87362716162f1e5c4e0e1b.png" src="../_images/8a111efb33a6e234ee439245ada7c7aefe88d141ec87362716162f1e5c4e0e1b.png" />
+<img alt="../_images/1fac3c81b67b115b3d4352c419377d9637fd158df5a65b292994c06e5797f1f0.png" src="../_images/1fac3c81b67b115b3d4352c419377d9637fd158df5a65b292994c06e5797f1f0.png" />
+<img alt="../_images/78c63eb38a0e17d7505ca29ad85c33f255c7f83a3766a2b726fbe488af3dcbd3.png" src="../_images/78c63eb38a0e17d7505ca29ad85c33f255c7f83a3766a2b726fbe488af3dcbd3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2060,9 +2101,13 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51df53f5414b8304cba21a29c52a4adf8a49ef1158d7334f2c17f92fbc3bed18.png" src="../_images/51df53f5414b8304cba21a29c52a4adf8a49ef1158d7334f2c17f92fbc3bed18.png" />
-<img alt="../_images/d1b5d33a61db3bb0c2ab9b0e1e75cf6c3d6140654b3109731a819c76d3f7a8d4.png" src="../_images/d1b5d33a61db3bb0c2ab9b0e1e75cf6c3d6140654b3109731a819c76d3f7a8d4.png" />
-<img alt="../_images/1bce7d9bf4904980956879db02bac42d9764ef5a5738c70b0a0de389c19d4ee1.png" src="../_images/1bce7d9bf4904980956879db02bac42d9764ef5a5738c70b0a0de389c19d4ee1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
+</pre></div>
+</div>
+<img alt="../_images/b65484a7493eb7fa186826a8a4f86fafa8da85bfde09facc8f90814205f8b8a8.png" src="../_images/b65484a7493eb7fa186826a8a4f86fafa8da85bfde09facc8f90814205f8b8a8.png" />
+<img alt="../_images/4695cc2d875db6590619882c92a3a60fc44098485deb6e2b8b06188677fa33ca.png" src="../_images/4695cc2d875db6590619882c92a3a60fc44098485deb6e2b8b06188677fa33ca.png" />
+<img alt="../_images/c69f1c10427ee456a6ddcb13ef5df5b47424ea144ddc06bbd933b9cfc9cc6f38.png" src="../_images/c69f1c10427ee456a6ddcb13ef5df5b47424ea144ddc06bbd933b9cfc9cc6f38.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2073,9 +2118,13 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/40c8ec0f0c1c3f2ab9ac34870bbc4bec5f7b40b2c32c8b8afd5db49817ff8f0b.png" src="../_images/40c8ec0f0c1c3f2ab9ac34870bbc4bec5f7b40b2c32c8b8afd5db49817ff8f0b.png" />
-<img alt="../_images/fb0c2602d81d2f8a922c724f7ac2360006d5d6baa845381a44c0ef1e1702222c.png" src="../_images/fb0c2602d81d2f8a922c724f7ac2360006d5d6baa845381a44c0ef1e1702222c.png" />
-<img alt="../_images/81ff5e42f413e0fd27e45b70809635c1af75d983e0a3f0b196017d768c6ce00d.png" src="../_images/81ff5e42f413e0fd27e45b70809635c1af75d983e0a3f0b196017d768c6ce00d.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
+</pre></div>
+</div>
+<img alt="../_images/51ccd35010ad1624f00a59867e91d7bbbd5321921e54663953bf21e79f104bc2.png" src="../_images/51ccd35010ad1624f00a59867e91d7bbbd5321921e54663953bf21e79f104bc2.png" />
+<img alt="../_images/43187c72f4dbc4acb86fe2f2f44f3c85f5f61920ffa3ca49849f66f5bcd8b0e2.png" src="../_images/43187c72f4dbc4acb86fe2f2f44f3c85f5f61920ffa3ca49849f66f5bcd8b0e2.png" />
+<img alt="../_images/d4840b349ad7e60e78acca73acec0e9667b183f877f430fb4e983a870bb62188.png" src="../_images/d4840b349ad7e60e78acca73acec0e9667b183f877f430fb4e983a870bb62188.png" />
 </div>
 </div>
 <p>The purpose of this exercise was to drive home the ability to <em>automate</em>

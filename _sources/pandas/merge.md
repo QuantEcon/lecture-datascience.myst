@@ -477,11 +477,13 @@ a future lecture.
 ```{code-cell} python
 users_by_n = (
     ratings["user_id"]
-    .value_counts()  # Series. Index: user_id, value: n ratings by user
-    .value_counts()  # Series. Index: n_ratings by user, value: N_users with this many ratings
+    .value_counts()  # Series called "count". Index: user_id, value: n ratings by user
+    .rename("N_ratings")  # Rename the Series to "N_ratings"
+    .value_counts()  # Series called "count". Index: n_ratings by user, value: N_users with this many ratings
     .sort_index()    # Sort our Series by the index (number of ratings)
     .reset_index()   # Dataframe with columns `index` (from above) and `user_id`
-    .rename(columns={"index": "N_ratings", "user_id": "N_users"})
+    .rename(columns={"count": "N_users"})
+    .set_index("N_ratings")
 )
 users_by_n.head(10)
 ```

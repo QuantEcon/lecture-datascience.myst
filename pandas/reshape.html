@@ -342,7 +342,7 @@ Data columns (total 8 columns):
  6   Assist    9 non-null      float64
  7   Rebound   9 non-null      float64
 dtypes: float64(3), int64(2), object(3)
-memory usage: 704.0+ bytes
+memory usage: 708.0+ bytes
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1446,6 +1446,10 @@ average value of each stat for each player, regardless of year or team.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/3078492543.py:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  bball_wide.stack()
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1613,6 +1617,10 @@ average value of each stat for each player, regardless of year or team.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/3326948702.py:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  player_stats = bball_wide.stack().mean()
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player  variable
 Curry   Assist       6.466667
         Games       69.666667
@@ -1643,6 +1651,10 @@ left with column levels for Team and variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/4239274239.py:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  bball_wide.stack(level=&quot;Player&quot;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1666,28 +1678,36 @@ left with column levels for Team and variable.</p>
     <tr>
       <th></th>
       <th>variable</th>
-      <th colspan="4" halign="left">Assist</th>
-      <th colspan="4" halign="left">Games</th>
-      <th colspan="4" halign="left">Pts</th>
-      <th colspan="4" halign="left">Rebound</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+      <th>Assist</th>
+      <th>Games</th>
+      <th>Pts</th>
+      <th>Rebound</th>
+      <th colspan="2" halign="left">Assist</th>
+      <th colspan="2" halign="left">Games</th>
+      <th colspan="2" halign="left">Pts</th>
+      <th colspan="2" halign="left">Rebound</th>
     </tr>
     <tr>
       <th></th>
       <th>Team</th>
       <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>GSW</th>
+      <th>OKC</th>
+      <th>OKC</th>
+      <th>OKC</th>
       <th>OKC</th>
       <th>ORL</th>
       <th>TOR</th>
-      <th>GSW</th>
-      <th>OKC</th>
       <th>ORL</th>
       <th>TOR</th>
-      <th>GSW</th>
-      <th>OKC</th>
       <th>ORL</th>
       <th>TOR</th>
-      <th>GSW</th>
-      <th>OKC</th>
       <th>ORL</th>
       <th>TOR</th>
     </tr>
@@ -1717,18 +1737,18 @@ left with column levels for Team and variable.</p>
       <th rowspan="3" valign="top">2015</th>
       <th>Curry</th>
       <td>6.7</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>79.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>30.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>5.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1736,38 +1756,38 @@ left with column levels for Team and variable.</p>
     <tr>
       <th>Durant</th>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>5.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>72.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>28.2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>Ibaka</th>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>78.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>12.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1775,18 +1795,18 @@ left with column levels for Team and variable.</p>
       <th rowspan="3" valign="top">2016</th>
       <th>Curry</th>
       <td>6.6</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>79.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>25.3</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>4.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1794,18 +1814,18 @@ left with column levels for Team and variable.</p>
     <tr>
       <th>Durant</th>
       <td>4.8</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>62.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>25.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8.3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1814,18 +1834,18 @@ left with column levels for Team and variable.</p>
       <th>Ibaka</th>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>1.1</td>
       <td>0.7</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>56.0</td>
       <td>23.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>15.1</td>
       <td>14.2</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6.8</td>
       <td>6.8</td>
     </tr>
@@ -1833,18 +1853,18 @@ left with column levels for Team and variable.</p>
       <th rowspan="2" valign="top">2017</th>
       <th>Curry</th>
       <td>6.1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>51.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>26.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>5.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1852,18 +1872,18 @@ left with column levels for Team and variable.</p>
     <tr>
       <th>Durant</th>
       <td>5.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>68.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>26.4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -1880,22 +1900,26 @@ left with column levels for Team and variable.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/2580576761.py:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  bball_wide.stack(level=&quot;Player&quot;).mean()
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>variable  Team
 Assist    GSW      5.92
-          OKC      2.90
-          ORL      1.10
-          TOR      0.70
 Games     GSW     67.80
-          OKC     75.00
-          ORL     56.00
-          TOR     23.00
 Pts       GSW     26.66
-          OKC     20.40
-          ORL     15.10
-          TOR     14.20
 Rebound   GSW      6.02
-          OKC      7.50
-          ORL      6.80
+Assist    OKC      2.90
+Games     OKC     75.00
+Pts       OKC     20.40
+Rebound   OKC      7.50
+Assist    ORL      1.10
+          TOR      0.70
+Games     ORL     56.00
+          TOR     23.00
+Pts       ORL     15.10
+          TOR     14.20
+Rebound   ORL      6.80
           TOR      6.80
 dtype: float64
 </pre></div>
@@ -1921,6 +1945,10 @@ relative position.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/2766069166.py:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+  bball_wide.stack(level=[&quot;Player&quot;, &quot;Team&quot;])
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2156,7 +2184,7 @@ dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Player&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/9a8e3dfc6a9d189f8141225d1062bc080fb668d7ef1f9a85355bbe789f7ac445.png" src="../_images/9a8e3dfc6a9d189f8141225d1062bc080fb668d7ef1f9a85355bbe789f7ac445.png" />
+<img alt="../_images/6a20384713c304a0e7bb9e46eef38be6051bd624c6ecd0446c5fe6ed3dbb3218.png" src="../_images/6a20384713c304a0e7bb9e46eef38be6051bd624c6ecd0446c5fe6ed3dbb3218.png" />
 </div>
 </div>
 <p>This particular visualization would be helpful if we wanted to see which stats
@@ -2244,7 +2272,7 @@ name as column names.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;variable&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/242b200d74cde1e77f5c680ecaac7d6ee1f0ac183fa43bd8dfdcace0b466a089.png" src="../_images/242b200d74cde1e77f5c680ecaac7d6ee1f0ac183fa43bd8dfdcace0b466a089.png" />
+<img alt="../_images/10648a49ec77ad1938fd73397ef5ba5055af3e1daeae5463d32b291f1b520d75.png" src="../_images/10648a49ec77ad1938fd73397ef5ba5055af3e1daeae5463d32b291f1b520d75.png" />
 </div>
 </div>
 <p>Now we can use the chart to make a number of statements about players:</p>
@@ -2965,75 +2993,62 @@ work, the index/column pairs must be <em>unique</em>!</p>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># the Orlando Magic to the Toronto Raptors</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">bball</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Player&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;Pts&quot;</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File ~/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/pandas/core/frame.py:9339,</span> in <span class="ni">DataFrame.pivot</span><span class="nt">(self, columns, index, values)</span>
+<span class="g g-Whitespace">   </span><span class="mi">9332</span> <span class="nd">@Substitution</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">9333</span> <span class="nd">@Appender</span><span class="p">(</span><span class="n">_shared_docs</span><span class="p">[</span><span class="s2">&quot;pivot&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">9334</span> <span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">9335</span>     <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">lib</span><span class="o">.</span><span class="n">no_default</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">lib</span><span class="o">.</span><span class="n">no_default</span>
+<span class="g g-Whitespace">   </span><span class="mi">9336</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">9337</span>     <span class="kn">from</span> <span class="nn">pandas.core.reshape.pivot</span> <span class="kn">import</span> <span class="n">pivot</span>
+<span class="ne">-&gt; </span><span class="mi">9339</span>     <span class="k">return</span> <span class="n">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/frame.py:8567,</span> in <span class="ni">DataFrame.pivot</span><span class="nt">(self, index, columns, values)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8561</span> <span class="nd">@Substitution</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8562</span> <span class="nd">@Appender</span><span class="p">(</span><span class="n">_shared_docs</span><span class="p">[</span><span class="s2">&quot;pivot&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">8563</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">8564</span> <span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">8565</span>     <span class="kn">from</span> <span class="nn">pandas.core.reshape.pivot</span> <span class="kn">import</span> <span class="n">pivot</span>
-<span class="ne">-&gt; </span><span class="mi">8567</span>     <span class="k">return</span> <span class="n">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
+<span class="nn">File ~/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/pandas/core/reshape/pivot.py:570,</span> in <span class="ni">pivot</span><span class="nt">(data, columns, index, values)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span>         <span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_constructor_sliced</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">values</span><span class="p">]</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">multiindex</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span> <span class="c1"># error: Argument 1 to &quot;unstack&quot; of &quot;DataFrame&quot; has incompatible type &quot;Union</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span> <span class="c1"># [List[Any], ExtensionArray, ndarray[Any, Any], Index, Series]&quot;; expected</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span> <span class="c1"># &quot;Hashable&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">570</span> <span class="n">result</span> <span class="o">=</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">columns_listlike</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span>     <span class="n">name</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">lib</span><span class="o">.</span><span class="n">no_default</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span> <span class="k">return</span> <span class="n">result</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/pivot.py:540,</span> in <span class="ni">pivot</span><span class="nt">(data, index, columns, values)</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span>         <span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_constructor_sliced</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">values</span><span class="p">]</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">multiindex</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> <span class="c1"># error: Argument 1 to &quot;unstack&quot; of &quot;DataFrame&quot; has incompatible type &quot;Union</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="c1"># [List[Any], ExtensionArray, ndarray[Any, Any], Index, Series]&quot;; expected</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="c1"># &quot;Hashable&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">540</span> <span class="k">return</span> <span class="n">indexed</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">columns_listlike</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/series.py:4455,</span> in <span class="ni">Series.unstack</span><span class="nt">(self, level, fill_value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4412</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4413</span><span class="sd"> Unstack, also known as pivot, Series with MultiIndex to produce DataFrame.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4414</span><span class="sd"> </span>
+<span class="nn">File ~/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/pandas/core/series.py:4615,</span> in <span class="ni">Series.unstack</span><span class="nt">(self, level, fill_value, sort)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4570</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4571</span><span class="sd"> Unstack, also known as pivot, Series with MultiIndex to produce DataFrame.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4572</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4451</span><span class="sd"> b    2    4</span>
-<span class="g g-Whitespace">   </span><span class="mi">4452</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">4453</span> <span class="kn">from</span> <span class="nn">pandas.core.reshape.reshape</span> <span class="kn">import</span> <span class="n">unstack</span>
-<span class="ne">-&gt; </span><span class="mi">4455</span> <span class="k">return</span> <span class="n">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4611</span><span class="sd"> b    2    4</span>
+<span class="g g-Whitespace">   </span><span class="mi">4612</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4613</span> <span class="kn">from</span> <span class="nn">pandas.core.reshape.reshape</span> <span class="kn">import</span> <span class="n">unstack</span>
+<span class="ne">-&gt; </span><span class="mi">4615</span> <span class="k">return</span> <span class="n">unstack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">,</span> <span class="n">sort</span><span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py:489,</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="k">if</span> <span class="n">is_1d_only_ea_dtype</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>     <span class="k">return</span> <span class="n">_unstack_extension_series</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">489</span> <span class="n">unstacker</span> <span class="o">=</span> <span class="n">_Unstacker</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">constructor</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">_constructor_expanddim</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">return</span> <span class="n">unstacker</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">obj</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">value_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="p">)</span>
+<span class="nn">File ~/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/pandas/core/reshape/reshape.py:517,</span> in <span class="ni">unstack</span><span class="nt">(obj, level, fill_value, sort)</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span> <span class="k">if</span> <span class="n">is_1d_only_ea_dtype</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span>     <span class="k">return</span> <span class="n">_unstack_extension_series</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">517</span> <span class="n">unstacker</span> <span class="o">=</span> <span class="n">_Unstacker</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span>     <span class="n">obj</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> <span class="n">constructor</span><span class="o">=</span><span class="n">obj</span><span class="o">.</span><span class="n">_constructor_expanddim</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">sort</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span> <span class="k">return</span> <span class="n">unstacker</span><span class="o">.</span><span class="n">get_result</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>     <span class="n">obj</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="n">value_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span> <span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py:137,</span> in <span class="ni">_Unstacker.__init__</span><span class="nt">(self, index, level, constructor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="k">if</span> <span class="n">num_cells</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="sa">f</span><span class="s2">&quot;The following operation may generate </span><span class="si">{</span><span class="n">num_cells</span><span class="si">}</span><span class="s2"> cells &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>         <span class="sa">f</span><span class="s2">&quot;in the resulting pandas object.&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="n">PerformanceWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">137</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_selectors</span><span class="p">()</span>
+<span class="nn">File ~/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/pandas/core/reshape/reshape.py:154,</span> in <span class="ni">_Unstacker.__init__</span><span class="nt">(self, index, level, constructor, sort)</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="k">if</span> <span class="n">num_cells</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>         <span class="sa">f</span><span class="s2">&quot;The following operation may generate </span><span class="si">{</span><span class="n">num_cells</span><span class="si">}</span><span class="s2"> cells &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="sa">f</span><span class="s2">&quot;in the resulting pandas object.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="n">PerformanceWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">154</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_selectors</span><span class="p">()</span>
 
-<span class="nn">File /usr/share/miniconda3/envs/lecture-datascience/lib/python3.9/site-packages/pandas/core/reshape/reshape.py:189,</span> in <span class="ni">_Unstacker._make_selectors</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="n">mask</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">189</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Index contains duplicate entries, cannot reshape&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="bp">self</span><span class="o">.</span><span class="n">group_index</span> <span class="o">=</span> <span class="n">comp_index</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
+<span class="nn">File ~/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/pandas/core/reshape/reshape.py:210,</span> in <span class="ni">_Unstacker._make_selectors</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="n">mask</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span> <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">210</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Index contains duplicate entries, cannot reshape&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="bp">self</span><span class="o">.</span><span class="n">group_index</span> <span class="o">=</span> <span class="n">comp_index</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
 
 <span class="ne">ValueError</span>: Index contains duplicate entries, cannot reshape
 </pre></div>
@@ -3492,6 +3507,10 @@ associated values of 2 and 5.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/108613235.py:1: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using DataFrameGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  bball.pivot_table(index=&quot;Year&quot;, columns=&quot;Player&quot;, values=&quot;Pts&quot;, aggfunc=max)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3612,6 +3631,10 @@ associated values of 2 and 5.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2961/2429470343.py:1: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using DataFrameGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+  bball.pivot_table(index=&quot;Year&quot;, columns=&quot;Player&quot;, values=&quot;Pts&quot;, aggfunc=[max, len])
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3729,7 +3752,7 @@ Data columns (total 5 columns):
  3   D       4 non-null      int64 
  4   E       4 non-null      int64 
 dtypes: int64(4), object(1)
-memory usage: 288.0+ bytes
+memory usage: 292.0+ bytes
 </pre></div>
 </div>
 <div class="output text_html"><div>

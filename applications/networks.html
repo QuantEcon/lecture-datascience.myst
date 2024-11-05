@@ -259,6 +259,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -268,12 +270,13 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">karate</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span> <span class="c1">#import the Zachary&#39;s karate club network data from NetworkX</span>
 <span class="n">karate_layout</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#fix a random layout so we can get a consistent look at the network</span>
 
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">)</span> <span class="c1">#plot the network</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span> <span class="c1">#plot the network</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/da4dd8dbc16c159723088d24c2af23556d773ee311d2c5562f3e3cc0e63c0ce1.png" src="../_images/da4dd8dbc16c159723088d24c2af23556d773ee311d2c5562f3e3cc0e63c0ce1.png" />
+<img alt="../_images/504935f4229f61fdb25cf161834cc214a9917a5bc5e8d534a86a38a7833a4b7c.png" src="../_images/504935f4229f61fdb25cf161834cc214a9917a5bc5e8d534a86a38a7833a4b7c.png" />
 </div>
 </div>
 <p>This is an example of a <strong>social network</strong>. (Specifically, it’s called “Zachary’s Karate Club Network”, and it represents some data collected by Wayne Zachary in 1977.) In this network, we have a set of dots representing people (<strong>nodes</strong> or <strong>vertices</strong>) who are connected by a line (<strong>link</strong> or <strong>edge</strong>) if they are friends with each other.</p>
@@ -325,12 +328,14 @@ const thebe_selector_output = ".output, .cell_output"
             <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">)]</span>
 <span class="n">network</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edgelist</span><span class="p">)</span> <span class="c1">#add a set of links or edges to form a network</span>
 <span class="n">positions</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#fix the position again</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#plot the network graph</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#plot the network graph</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c777fd27fdf6348b119a6cdce36efd8b9bbc4ac918410ae4c2489faee2428baf.png" src="../_images/c777fd27fdf6348b119a6cdce36efd8b9bbc4ac918410ae4c2489faee2428baf.png" />
+<img alt="../_images/aeb0843ca7c731a6a10602ee8ceb25f238ac1cb7ba961090fffc79991861148f.png" src="../_images/aeb0843ca7c731a6a10602ee8ceb25f238ac1cb7ba961090fffc79991861148f.png" />
 </div>
 </div>
 </section>
@@ -385,7 +390,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ac60935bbbaaa6b57e8e0d9e4d5e9d62fad6841d2fcceaa4f43226c758c787ed.png" src="../_images/ac60935bbbaaa6b57e8e0d9e4d5e9d62fad6841d2fcceaa4f43226c758c787ed.png" />
+<img alt="../_images/20be7f00e825a35f3658c15e8d841543da8c76334d5614a730f627169d428c05.png" src="../_images/20be7f00e825a35f3658c15e8d841543da8c76334d5614a730f627169d428c05.png" />
 </div>
 </div>
 <p>This agrees with our guess. Nodes 1 and 12 each have degree 2, while the remaining 10 nodes have 3 links each.</p>
@@ -403,7 +408,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/400346abec91896be0782df9a21bb80482aece220c56c7364e4102ce53eceab3.png" src="../_images/400346abec91896be0782df9a21bb80482aece220c56c7364e4102ce53eceab3.png" />
+<img alt="../_images/48bd05a292485865eefa7126421491d85a1ac60ddf8879ec577f9bb7e978f897.png" src="../_images/48bd05a292485865eefa7126421491d85a1ac60ddf8879ec577f9bb7e978f897.png" />
 </div>
 </div>
 <p><strong>Note</strong>:
@@ -427,24 +432,28 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_map</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">]</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># highlight our long path</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># highlight our long path</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b5320f1b7aa8432712d49cc67cbf5b296330c274247ae12fe34acb8a3ca4f8a.png" src="../_images/0b5320f1b7aa8432712d49cc67cbf5b296330c274247ae12fe34acb8a3ca4f8a.png" />
+<img alt="../_images/547ede4b9b485828d61df37f61e942ada18fe71c184e7f1314f19c653154dd78.png" src="../_images/547ede4b9b485828d61df37f61e942ada18fe71c184e7f1314f19c653154dd78.png" />
 </div>
 </div>
 <p>However, this might not be the most efficient path since it takes a lot of driving. Another, faster route might be to skip 2,4,9, and 11, and head down the path through 3,5,6,7,8, and 10.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_map</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">]</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># highlight a shorter path</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">edge_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># highlight a shorter path</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d003d3c1f8f49b690b6bf85c66fcf6c10e54bae7d822f813f870741b1a7d8cf6.png" src="../_images/d003d3c1f8f49b690b6bf85c66fcf6c10e54bae7d822f813f870741b1a7d8cf6.png" />
+<img alt="../_images/ad978c844e6d9e84b1a5dca1cf0f88718ce81b4a4816ef1ceae963b5d65fc2b2.png" src="../_images/ad978c844e6d9e84b1a5dca1cf0f88718ce81b4a4816ef1ceae963b5d65fc2b2.png" />
 </div>
 </div>
 <p>Clearly, this path will be a lot more efficient, since it gets to the final destination while traveling down 4 fewer roads than the previous path. Which one is “best” depends on your objective. Optimal transport and routing problems are a large part of operations research. In general, finding the shortest path from one node to another is very easy to do using a very famous heuristic called <strong>dijkstra’s algorithm</strong>. On the other hand, finding the shortest path that visits every single node in a graph is called the <strong>travelling salesman problem</strong>, and is notoriously difficult to solve (specifically, it is NP-hard.)</p>
@@ -452,12 +461,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># delete the edge connecting node 6 to node 7</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9bdaaa14e20d6e6b9b88134e59a9c68a9c4eaae25c47aa35ad1a978d9a8eed0.png" src="../_images/f9bdaaa14e20d6e6b9b88134e59a9c68a9c4eaae25c47aa35ad1a978d9a8eed0.png" />
+<img alt="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" src="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" />
 </div>
 </div>
 <p>We can see that there is no longer any possible path that could connect node 1 to node 12. For any node from 1 to 6, there is still a path; just like on the right hand side, there is a path between any two nodes from 7 to 12. But there is no path that can connect any node in one of these sets to a node in the other. We would refer to these two sets as <strong>connected components</strong>.</p>
@@ -574,12 +585,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degrees</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="c1"># retrieve the degree sequence </span>
 <span class="n">degree_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">degrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span> <span class="c1"># turn it into a vector</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">degree_colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># plot the network with colors according to degree</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">degree_colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># plot the network with colors according to degree</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/84370fe15add938a46b5c0534f2d5d3af4a07e6e76363045b57601479bb03234.png" src="../_images/84370fe15add938a46b5c0534f2d5d3af4a07e6e76363045b57601479bb03234.png" />
+<img alt="../_images/d310510b0ac2d6e958781629642cf9bdccb94855f0f99892409c4816cbc3cc8f.png" src="../_images/d310510b0ac2d6e958781629642cf9bdccb94855f0f99892409c4816cbc3cc8f.png" />
 </div>
 </div>
 <p>In this network, almost every node has the same degree. So if we wanted to know which nodes were the most important, number of connections alone would not really give us much useful information.</p>
@@ -604,7 +617,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.1853442621469683, 2: 0.2679342551926453, 3: 0.2679342551926453, 4: 0.32137618934240997, 5: 0.32137618934240997, 6: 0.3398597712666558, 7: 0.3398597712666558, 8: 0.32137618934241, 9: 0.32137618934241, 10: 0.2679342551926454, 11: 0.2679342551926454, 12: 0.18534426214696836}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.18534426214696834, 2: 0.26793425519264535, 3: 0.26793425519264535, 4: 0.32137618934240997, 5: 0.32137618934240997, 6: 0.33985977126665573, 7: 0.3398597712666558, 8: 0.32137618934241, 9: 0.32137618934241, 10: 0.2679342551926454, 11: 0.2679342551926454, 12: 0.1853442621469684}
 </pre></div>
 </div>
 </div>
@@ -613,12 +626,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cent_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">centrality</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">)]</span> <span class="c1"># build a list of eigenvector centralities</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">cent_colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># plot the graph with colors according to this list</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">cent_colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># plot the graph with colors according to this list</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7bfdcd9db3cdf9117eb8213c1a4febd3a9de178f3217d97fd071c2e5a7f50a9e.png" src="../_images/7bfdcd9db3cdf9117eb8213c1a4febd3a9de178f3217d97fd071c2e5a7f50a9e.png" />
+<img alt="../_images/c2d1323dd054c5ad5ef0e2bb4fd0a033c6500d2f9172c66d963092a405dafd39.png" src="../_images/c2d1323dd054c5ad5ef0e2bb4fd0a033c6500d2f9172c66d963092a405dafd39.png" />
 </div>
 </div>
 <p>As we suspected, considering influence as being the result of connections with other influential friends gives us a centrality measure that looks way more informative. Nodes that appear to be in “central” positions are indeed considered more “central”, while nodes that are further from the center have lower centrality.</p>
@@ -639,10 +654,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f79347ccac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80ccc31160&gt;
 </pre></div>
 </div>
-<img alt="../_images/c12b182b9b4a5c6bb391efe4691ec49457690973116a6028ae07e844747bfe05.png" src="../_images/c12b182b9b4a5c6bb391efe4691ec49457690973116a6028ae07e844747bfe05.png" />
+<img alt="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" src="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" />
 </div>
 </div>
 <p>The first thing we might notice is that all of these eigenvalues are non-negative, and that there is one equal to zero. This means that our laplacian matrix is positive semidefinite.</p>
@@ -651,12 +666,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># remove the edge connecting node 1 to node 2, and draw the network</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3985d2f7de8f7bd56e1207b535fe28521bff14d6e64c3364660390a0c589297.png" src="../_images/c3985d2f7de8f7bd56e1207b535fe28521bff14d6e64c3364660390a0c589297.png" />
+<img alt="../_images/9b595006c77e5636ce70df93bb5489e0a725eab0056886ff10ba9bd50e651ec9.png" src="../_images/9b595006c77e5636ce70df93bb5489e0a725eab0056886ff10ba9bd50e651ec9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -670,10 +687,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f7944756730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80ccc31c10&gt;
 </pre></div>
 </div>
-<img alt="../_images/c50ba42c8bf630c80b2610a26590bf59f8c7e9c6b2745a08b39682ec2c95eb0f.png" src="../_images/c50ba42c8bf630c80b2610a26590bf59f8c7e9c6b2745a08b39682ec2c95eb0f.png" />
+<img alt="../_images/13138d6c6cab160dc0459a6d0b58a738651a2b16bb04e726f0446e689bb16171.png" src="../_images/13138d6c6cab160dc0459a6d0b58a738651a2b16bb04e726f0446e689bb16171.png" />
 </div>
 </div>
 <p>We can see that not much has changed (although a few eigenvalues are lower than before). Let’s add that one back and try a different edge. This time, we’ll use <span class="math notranslate nohighlight">\((6,7)\)</span> again.</p>
@@ -681,12 +698,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># return the graph to normal</span>
 <span class="n">network</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># delete the link from 6 to 7, and draw the network</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9bdaaa14e20d6e6b9b88134e59a9c68a9c4eaae25c47aa35ad1a978d9a8eed0.png" src="../_images/f9bdaaa14e20d6e6b9b88134e59a9c68a9c4eaae25c47aa35ad1a978d9a8eed0.png" />
+<img alt="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" src="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -700,22 +719,24 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f7947804bb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc80f770&gt;
 </pre></div>
 </div>
-<img alt="../_images/cd2796f741c93b44616f2f40384a0e23b1943f5251d2bdd864d3612e64bd2618.png" src="../_images/cd2796f741c93b44616f2f40384a0e23b1943f5251d2bdd864d3612e64bd2618.png" />
+<img alt="../_images/548477300dce551c46b44f205c63bc716bf4e170c6c38011dc033eb68c19c1ce.png" src="../_images/548477300dce551c46b44f205c63bc716bf4e170c6c38011dc033eb68c19c1ce.png" />
 </div>
 </div>
 <p>Now, removing this edge had a very different impact on the spectrum of our laplacian matrix. In particular, one thing we might notice is that there are now 2 eigenvalues equal to zero, where before there was only one. Lets try removing a few more edges.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">remove_edges_from</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">)])</span> <span class="c1"># remove a set of links, plot the result</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;lightblue&quot;</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/39204d514ba487862e57191340718796eb0ddb82fd35f54a127a48286e792a7f.png" src="../_images/39204d514ba487862e57191340718796eb0ddb82fd35f54a127a48286e792a7f.png" />
+<img alt="../_images/845f67542ebf01ff8026318ad2b91a95d493f3e12c1d5d98d714ef12d8116226.png" src="../_images/845f67542ebf01ff8026318ad2b91a95d493f3e12c1d5d98d714ef12d8116226.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -729,10 +750,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f79477d2340&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc6ec920&gt;
 </pre></div>
 </div>
-<img alt="../_images/aa8d3d23a8e74e74251a8a0519e6a31a88032951899a923c1ab12a1f613b2a3d.png" src="../_images/aa8d3d23a8e74e74251a8a0519e6a31a88032951899a923c1ab12a1f613b2a3d.png" />
+<img alt="../_images/bb84e5f42e3db5eb718e0d850c4ea81e23342abb8cfc91b153d6375f0ed2ec3c.png" src="../_images/bb84e5f42e3db5eb718e0d850c4ea81e23342abb8cfc91b153d6375f0ed2ec3c.png" />
 </div>
 </div>
 <p>Now, the network has been broken up into 4 connected components, and has exactly 4 eigenvalues equal to zero.</p>
@@ -756,10 +777,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f79477b7d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc6ed250&gt;
 </pre></div>
 </div>
-<img alt="../_images/c12b182b9b4a5c6bb391efe4691ec49457690973116a6028ae07e844747bfe05.png" src="../_images/c12b182b9b4a5c6bb391efe4691ec49457690973116a6028ae07e844747bfe05.png" />
+<img alt="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" src="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" />
 </div>
 </div>
 <p>Now that we’ve seen a few of these, we can get a better idea what we’re looking at. In particular, we can see that the graph is fully connected, because there is only one eigenvalue that is equal to zero. But that second eigenvalue is still looking awfully close to zero. Let’s investigate this second eigenvalue a little more by looking at it’s associated eigenvector.</p>
@@ -783,13 +804,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">):</span> <span class="c1"># for any nodes that have a negative entry, replace this with a nice purplish color</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mediumpurple&quot;</span>
-        
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># draw the result</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># draw the result</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/176b17a69b694813ca117d3cec46c87f7b3bca8b4ec59e57629ccb353215b634.png" src="../_images/176b17a69b694813ca117d3cec46c87f7b3bca8b4ec59e57629ccb353215b634.png" />
+<img alt="../_images/f49a85af203308686e87af01aa270044eac96be89658e855b3e2f7576aa21e9d.png" src="../_images/f49a85af203308686e87af01aa270044eac96be89658e855b3e2f7576aa21e9d.png" />
 </div>
 </div>
 <p>Coloring nodes by their sign in this vector sorts them into two groups, on either side of the <span class="math notranslate nohighlight">\((6,7)\)</span> link!</p>
@@ -806,12 +828,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigen_cent</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">karate</span><span class="p">)</span>
 <span class="n">eigen_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">eigen_cent</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">34</span><span class="p">)]</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">eigen_colors</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">eigen_colors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c5339cc0d4628c6d6c1dd98bf4bec41022d021ab1cd42321210046df39a1ea4.png" src="../_images/4c5339cc0d4628c6d6c1dd98bf4bec41022d021ab1cd42321210046df39a1ea4.png" />
+<img alt="../_images/fa6c3d6789b71e7b5483cad77d54c64c987722c493d0e0e0907f78ef5cfe4c68.png" src="../_images/fa6c3d6789b71e7b5483cad77d54c64c987722c493d0e0e0907f78ef5cfe4c68.png" />
 </div>
 </div>
 <p>We see that there are two really highly central (yellow) nodes, on opposite sides of the network. This might be an indication that there is some homophily in the network. To verify this, let’s take a look at the natural partitioning of this network by plotting the eigenvalues of its laplacian matrix.</p>
@@ -826,10 +850,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f79479d8310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc634c50&gt;
 </pre></div>
 </div>
-<img alt="../_images/9df308d6e6bebd9e48462ecd969aac153e9f206f546aa18634063348ec4600b8.png" src="../_images/9df308d6e6bebd9e48462ecd969aac153e9f206f546aa18634063348ec4600b8.png" />
+<img alt="../_images/ef891415802f8cbd9fccd7783198eef2418ff2c09ad67852c53a6d63a4a4178f.png" src="../_images/ef891415802f8cbd9fccd7783198eef2418ff2c09ad67852c53a6d63a4a4178f.png" />
 </div>
 </div>
 <p>There are no big jumps between the first few eigenvalues so it is clear that there is a lot of segregation in this network, making it easy to partition. Let’s again color the nodes by their entries in the Fiedler vector (the eigenvector corresponding to the second lowest eigenvalue):</p>
@@ -839,13 +863,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">34</span><span class="p">):</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">v_sorted</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mediumpurple&quot;</span>
-        
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span> <span class="c1"># draw the result</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">karate</span><span class="p">,</span><span class="n">karate_layout</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span> <span class="c1"># draw the result</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab40b186aaea98c51d69af5be0ce3165c73925ce89a1938d04254d0dd6fde181.png" src="../_images/ab40b186aaea98c51d69af5be0ce3165c73925ce89a1938d04254d0dd6fde181.png" />
+<img alt="../_images/eb8e4a5480fccb37f3e52b151d0760c9b154068d59c2e6b5ef2d851eb92a10a3.png" src="../_images/eb8e4a5480fccb37f3e52b151d0760c9b154068d59c2e6b5ef2d851eb92a10a3.png" />
 </div>
 </div>
 <p>Again, this spectral homophily partitions the network in a way that seems very natural; into two dense clusters with sparse connections between them, and with each one containing its own highly central hub.</p>
@@ -974,16 +999,12 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">returns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># remove the dates</span>
-<span class="n">corr</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> <span class="c1"># calculate the correlations between the returns of each pair of stocks</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># calculate the correlations between the returns of each pair of stocks</span>
 <span class="n">corr</span> <span class="c1"># display the correlation matrix</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2697/734395106.py:2: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
-  corr = returns.corr() # calculate the correlations between the returns of each pair of stocks
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1166,6 +1187,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2544/3149573054.py:8: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  adj = corr.applymap(truncate) - np.identity(10)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1339,12 +1364,14 @@ The degree distribution is also a convenient way to start thinking about fitting
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stocknet</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span> <span class="c1"># initialize a new graph from our adjacency matrix</span>
 <span class="n">stocknet</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">relabel_nodes</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">adj</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span> <span class="c1"># keep the stock tickers as the names of the nodes (instead of integers)</span>
 <span class="n">stock_layout</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># fix our layout</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">)</span> <span class="c1"># plot the graph, without any labels (for now)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">ax</span><span class="p">)</span> <span class="c1"># plot the graph, without any labels (for now)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96ccf10af5a3eb657d16d907945be019827876ac97ae89bb28292df3425b6ed9.png" src="../_images/96ccf10af5a3eb657d16d907945be019827876ac97ae89bb28292df3425b6ed9.png" />
+<img alt="../_images/47e1ba4f506dc0337be9cea137f1ace6ac8c907987aa89580ea704e476d62938.png" src="../_images/47e1ba4f506dc0337be9cea137f1ace6ac8c907987aa89580ea704e476d62938.png" />
 </div>
 </div>
 <p>It’s hard to get much information about this graph, just by looking at it. Let’s take a look at its underlying structure by examining its spectrum.</p>
@@ -1358,25 +1385,27 @@ The degree distribution is also a convenient way to start thinking about fitting
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">v_sorted</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mediumpurple&quot;</span>
-        
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/652080ccf7bab16894f5884084cf90ac8715abab767e2ace5c218406dd267ad7.png" src="../_images/652080ccf7bab16894f5884084cf90ac8715abab767e2ace5c218406dd267ad7.png" />
+<img alt="../_images/51db35238c95faf4072e651176ae74f8966f9b54444e471fb5752a9b28ca47c4.png" src="../_images/51db35238c95faf4072e651176ae74f8966f9b54444e471fb5752a9b28ca47c4.png" />
 </div>
 </div>
 <p>Ok, so our spectral homophily identifies two distinct groups in the data. But what do they represent?</p>
 <p>To understand, let’s add the labels back in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create a figure and axis object</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">stocknet</span><span class="p">,</span><span class="n">stock_layout</span><span class="p">,</span><span class="n">ax</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4cdb52c603046fdafe466df0bda65a506ffacc8f4876d0ba16da1ec7a82f07b9.png" src="../_images/4cdb52c603046fdafe466df0bda65a506ffacc8f4876d0ba16da1ec7a82f07b9.png" />
+<img alt="../_images/fecf820d4701b55d868458e092e152106aba210d1a2b2c61a7c17409879095c7.png" src="../_images/fecf820d4701b55d868458e092e152106aba210d1a2b2c61a7c17409879095c7.png" />
 </div>
 </div>
 <p>Forming a network based on this simple method, and looking at its spectrum, was enough to cleanly identify both of the sectors in our dataset.</p>

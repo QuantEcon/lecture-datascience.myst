@@ -249,7 +249,7 @@ index and a `Date` column added.
 ```{code-cell} python
 df2 = df.copy()
 df2["Date"] = pd.date_range(
-    start=pd.datetime.today().strftime("%m/%d/%Y"),
+    start=pd.Timestamp.today().strftime("%m/%d/%Y"),
     freq="BQ",
     periods=df.shape[0]
 )
