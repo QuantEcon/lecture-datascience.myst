@@ -318,7 +318,7 @@ def scale_by_middle(df):
 ```
 
 ```{code-cell} python
-to_plot = prices.groupby("Model").apply(scale_by_middle).T
+to_plot = prices.groupby("Model").apply(scale_by_middle, include_groups=False).T
 to_plot
 ```
 
