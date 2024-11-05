@@ -442,7 +442,7 @@ Below are some examples.
 
 ```{code-cell} python
 # business quarter
-btc_usd.resample("BQ").mean()
+btc_usd.resample("BQE").mean()
 ```
 
 Note that unlike with `rolling`, a single number is returned for
