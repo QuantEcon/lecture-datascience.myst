@@ -1021,7 +1021,7 @@ def balance_scorer(y_true, prob, df, weights):
            -weights[2]*(metrics.log_loss(y_true, prob, normalize=True)))
 
 score_params = {"df": df_train, "weights": [10.0, 1.0, 0.0]}
-scorer = metrics.make_scorer(balance_scorer, **score_params, needs_proba=True)
+scorer = metrics.make_scorer(balance_scorer, **score_params, response_method="predict_proba")
 grid_cv = model_selection.GridSearchCV(
     estimator=linear_model.LogisticRegression(penalty="l1",
                                               max_iter=100,
@@ -1090,7 +1090,7 @@ prediction and balance?
 
 ```{code-cell} python
 score_params = {"df": df_train, "weights": [10.0, 1.0, 5.0]}
-grid_cv.set_params(scoring=metrics.make_scorer(balance_scorer, **score_params, needs_proba=True))
+grid_cv.set_params(scoring=metrics.make_scorer(balance_scorer, **score_params, response_method="predict_proba"))
 bf_mod=grid_cv.fit(X_train,y_train)
 grid_cv_plot(bf_mod,"CV balance & fit")
 
