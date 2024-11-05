@@ -468,13 +468,12 @@ def get_season(year, region):
 ```
 
 ```{code-cell} python
-forecastlist = [
-    forecast
-    for year in range(2011, 2019)
-    for region in [region["id"] for region in forecastregions["features"]]
-    for forecast in (get_season(year, region) or [])
-    if forecast is not None
-]
+forecastlist=[]
+
+for year in range(2011,2019):
+    print("working on {}".format(year))
+    for region in [region["id"] for region in forecastregions["features"]]:
+        forecastlist = forecastlist + get_season(year, region)
 ```
 
 ```{code-cell} python
