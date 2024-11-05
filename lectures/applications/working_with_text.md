@@ -445,7 +445,7 @@ def get_forecasts(start, end, region):
         #print("working on {}, {}".format(region,day))
         forecasts = forecasts + [get_forecast(day, region)]
         #print("sleeping")
-        time.sleep(0.05) # to avoid too much load on Avalanche Canada servers
+        time.sleep(0.01) # to avoid too much load on Avalanche Canada servers
         day = day + pd.Timedelta(1,"D")
     return(forecasts)
 
@@ -458,11 +458,13 @@ def get_season(year, region):
         os.mkdir("avalanche_forecasts")
     seasonfile = "avalanche_forecasts/{}_{}-{}.json".format(region, year, year+1)
     if (not os.path.isfile(seasonfile)):
-        startdate = pd.to_datetime("{}-{}-{} 12:00".format(year, start_month, start_day))
-        lastdate = pd.to_datetime("{}-{}-{} 12:00".format(year+1, last_month, last_day))
-        season = get_forecasts(startdate,lastdate,region)
-        with open(seasonfile, 'w') as outfile:
-            json.dump(season, outfile, ensure_ascii=False)
+        print(f"Season file {seasonfile} not found. Uncomment code here to update cached data")
+        season = []
+        #startdate = pd.to_datetime("{}-{}-{} 12:00".format(year, start_month, start_day))
+        #lastdate = pd.to_datetime("{}-{}-{} 12:00".format(year+1, last_month, last_day))
+        #season = get_forecasts(startdate,lastdate,region)
+        #with open(seasonfile, 'w') as outfile:
+        #    json.dump(season, outfile, ensure_ascii=False)
     else:
         with open(seasonfile, "rb") as json_data:
             season = json.load(json_data)
