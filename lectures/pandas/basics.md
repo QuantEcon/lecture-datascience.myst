@@ -23,7 +23,7 @@ kernelspec:
 - Use built-in Series transformation functions and be able to create your
   own and apply them using `apply`
 - Use built-in scalar transformation functions and be able to create your
-  own and apply them using `applymap`
+  own and apply them using `map`
 - Be able to select subsets of the DataFrame using boolean selection
 - Know what the "want operator" is and how to apply it
 
@@ -335,7 +335,7 @@ pandas data.
 To do this, we use the following pattern:
 
 1. Define a Python function that takes in a scalar and produces a scalar.
-1. Pass this function as an argument to the `applymap` Series or DataFrame method.
+1. Pass this function as an argument to the `map` Series or DataFrame method.
 
 Complete the exercise below to practice writing and using your own scalar
 transforms.
@@ -593,7 +593,7 @@ medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
 
 1. Write a Python function that takes a single number as an input and
    outputs a single string noting if that number is high, medium, or low.
-1. Pass your function to `applymap` (quiz: why `applymap` and not
+1. Pass your function to `map` (quiz: why `map` and not
    `agg` or `apply`?) and save the result in a new DataFrame called
    `unemp_bins`.
 1. (Challenging) This exercise has multiple parts:
@@ -617,8 +617,8 @@ medium (4.5 < x <= 6.5), or low (<= 4.5) for each state and each month.
 ```
 
 ```{code-cell} python
-# Part 2: Pass your function from part 1 to applymap
-unemp_bins = unemp.applymap#replace this comment with your code!!
+# Part 2: Pass your function from part 1 to map
+unemp_bins = unemp.map#replace this comment with your code!!
 ```
 
 ```{code-cell} python

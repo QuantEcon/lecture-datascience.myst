@@ -41,13 +41,16 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import networkx as nx
+
+%matplotlib inline
 ```
 
 ```{code-cell} ipython3
 karate = nx.karate_club_graph() #import the Zachary's karate club network data from NetworkX
 karate_layout = nx.spring_layout(karate,seed=2) #fix a random layout so we can get a consistent look at the network
 
-nx.draw(karate,karate_layout) #plot the network
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(karate,karate_layout, ax) #plot the network
 ```
 
 This is an example of a **social network**. (Specifically, it's called "Zachary's Karate Club Network", and it represents some data collected by Wayne Zachary in 1977.) In this network, we have a set of dots representing people (**nodes** or **vertices**) who are connected by a line (**link** or **edge**) if they are friends with each other.
@@ -105,7 +108,9 @@ edgelist = [(1,2),
             (11,12)]
 network.add_edges_from(edgelist) #add a set of links or edges to form a network
 positions = nx.spring_layout(network,seed=10) #fix the position again
-nx.draw(network,positions,node_color="lightblue",with_labels=True) #plot the network graph
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",with_labels=True) #plot the network graph
 ```
 
 ### (Un)directedness
@@ -192,14 +197,18 @@ Maybe it would be important to stop by all of the other businesses on the way. O
 
 ```{code-cell} ipython3
 color_map = ["black","red","red","red","black","red","black","red","red","red","black","red","black","red","red","red","black"]
-nx.draw(network,positions,node_color="lightblue",edge_color=color_map,with_labels=True) # highlight our long path
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",edge_color=color_map,with_labels=True) # highlight our long path
 ```
 
 However, this might not be the most efficient path since it takes a lot of driving. Another, faster route might be to skip 2,4,9, and 11, and head down the path through 3,5,6,7,8, and 10.
 
 ```{code-cell} ipython3
 color_map = ["black","red","black","black","red","black","black","red","red","red","black","black","red","black","black","red","black"]
-nx.draw(network,positions,node_color="lightblue",edge_color=color_map,with_labels=True) # highlight a shorter path
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",edge_color=color_map,with_labels=True) # highlight a shorter path
 ```
 
 Clearly, this path will be a lot more efficient, since it gets to the final destination while traveling down 4 fewer roads than the previous path. Which one is "best" depends on your objective. Optimal transport and routing problems are a large part of operations research. In general, finding the shortest path from one node to another is very easy to do using a very famous heuristic called **dijkstra's algorithm**. On the other hand, finding the shortest path that visits every single node in a graph is called the **travelling salesman problem**, and is notoriously difficult to solve (specifically, it is NP-hard.)
@@ -208,7 +217,9 @@ Lastly, let's imagine that a storm comes, and the road between 6 and 7 floods an
 
 ```{code-cell} ipython3
 network.remove_edge(6,7) # delete the edge connecting node 6 to node 7
-nx.draw(network,positions,node_color="lightblue",with_labels=True)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",with_labels=True)
 ```
 
 We can see that there is no longer any possible path that could connect node 1 to node 12. For any node from 1 to 6, there is still a path; just like on the right hand side, there is a path between any two nodes from 7 to 12. But there is no path that can connect any node in one of these sets to a node in the other. We would refer to these two sets as **connected components**.
@@ -292,7 +303,9 @@ Degree centrality, however, often does not tell the whole story. For example, le
 ```{code-cell} ipython3
 degrees = network.degree() # retrieve the degree sequence 
 degree_colors = [degrees[i] for i in range(1,13)] # turn it into a vector
-nx.draw(network,positions,node_color=degree_colors,with_labels=True) # plot the network with colors according to degree
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color=degree_colors,with_labels=True) # plot the network with colors according to degree
 ```
 
 In this network, almost every node has the same degree. So if we wanted to know which nodes were the most important, number of connections alone would not really give us much useful information.
@@ -326,7 +339,9 @@ The first thing we might notice here is that it's no longer the same situation a
 
 ```{code-cell} ipython3
 cent_colors = [centrality[i] for i in range(1,13)] # build a list of eigenvector centralities
-nx.draw(network,positions,node_color=cent_colors,with_labels=True) # plot the graph with colors according to this list
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color=cent_colors,with_labels=True) # plot the graph with colors according to this list
 ```
 
 As we suspected, considering influence as being the result of connections with other influential friends gives us a centrality measure that looks way more informative. Nodes that appear to be in "central" positions are indeed considered more "central", while nodes that are further from the center have lower centrality. 
@@ -356,7 +371,9 @@ Now, let's try removing a link from our network, to see how that will change its
 
 ```{code-cell} ipython3
 network.remove_edge(1,2) # remove the edge connecting node 1 to node 2, and draw the network
-nx.draw(network,positions,node_color="lightblue",with_labels=True)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",with_labels=True)
 ```
 
 ```{code-cell} ipython3
@@ -372,7 +389,9 @@ We can see that not much has changed (although a few eigenvalues are lower than 
 ```{code-cell} ipython3
 network.add_edge(1,2) # return the graph to normal
 network.remove_edge(6,7) # delete the link from 6 to 7, and draw the network
-nx.draw(network,positions,node_color="lightblue",with_labels=True)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",with_labels=True)
 ```
 
 ```{code-cell} ipython3
@@ -387,7 +406,9 @@ Now, removing this edge had a very different impact on the spectrum of our lapla
 
 ```{code-cell} ipython3
 network.remove_edges_from([(3,5),(2,4),(8,10),(9,11)]) # remove a set of links, plot the result
-nx.draw(network,positions,node_color="lightblue",with_labels=True)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color="lightblue",with_labels=True)
 ```
 
 ```{code-cell} ipython3
@@ -429,8 +450,9 @@ colors = [ "lightcoral" for i in range(1,13) ] # assign a nice reddish color to 
 for i in range(0,12): # for any nodes that have a negative entry, replace this with a nice purplish color
     if (v[i,1] < 0):
         colors[i] = "mediumpurple"
-        
-nx.draw(network,positions,node_color=colors,with_labels=True) # draw the result
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(network,positions,ax,node_color=colors,with_labels=True) # draw the result
 ```
 
 Coloring nodes by their sign in this vector sorts them into two groups, on either side of the $(6,7)$ link!
@@ -451,7 +473,9 @@ As a final exercise, let's look at how these concepts can be applied to economic
 ```{code-cell} ipython3
 eigen_cent = nx.eigenvector_centrality(karate)
 eigen_colors = [eigen_cent[i] for i in range(0,34)]
-nx.draw(karate,karate_layout,node_color=eigen_colors)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(karate,karate_layout,ax,node_color=eigen_colors)
 ```
 
 We see that there are two really highly central (yellow) nodes, on opposite sides of the network. This might be an indication that there is some homophily in the network. To verify this, let's take a look at the natural partitioning of this network by plotting the eigenvalues of its laplacian matrix.
@@ -471,8 +495,9 @@ colors = [ "lightcoral" for i in range(0,34) ] # assign colors to the nodes base
 for i in range(0,34):
     if (v_sorted[i,1] < 0):
         colors[i] = "mediumpurple"
-        
-nx.draw(karate,karate_layout,node_color=colors) # draw the result
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(karate,karate_layout,ax,node_color=colors) # draw the result
 ```
 
 Again, this spectral homophily partitions the network in a way that seems very natural; into two dense clusters with sparse connections between them, and with each one containing its own highly central hub.
@@ -499,7 +524,7 @@ One idea would be to look at the correlations between the returns of these stock
 
 ```{code-cell} ipython3
 returns = df[1:] # remove the dates
-corr = returns.corr() # calculate the correlations between the returns of each pair of stocks
+corr = returns.corr(numeric_only=True) # calculate the correlations between the returns of each pair of stocks
 corr # display the correlation matrix
 ```
 
@@ -529,7 +554,9 @@ Let's take a look at it.
 stocknet = nx.from_numpy_array(adj.to_numpy()) # initialize a new graph from our adjacency matrix
 stocknet = nx.relabel_nodes(stocknet, dict(enumerate(adj.columns))) # keep the stock tickers as the names of the nodes (instead of integers)
 stock_layout = nx.spring_layout(stocknet,seed=10) # fix our layout
-nx.draw(stocknet,stock_layout) # plot the graph, without any labels (for now)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(stocknet,stock_layout,ax) # plot the graph, without any labels (for now)
 ```
 
 It's hard to get much information about this graph, just by looking at it. Let's take a look at its underlying structure by examining its spectrum.
@@ -543,8 +570,9 @@ colors = [ "lightcoral" for i in range(0,10) ]
 for i in range(0,10):
     if (v_sorted[i,1] < 0):
         colors[i] = "mediumpurple"
-        
-nx.draw(stocknet,stock_layout,node_color=colors)
+
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(stocknet,stock_layout,ax,node_color=colors)
 ```
 
 Ok, so our spectral homophily identifies two distinct groups in the data. But what do they represent?
@@ -552,7 +580,8 @@ Ok, so our spectral homophily identifies two distinct groups in the data. But wh
 To understand, let's add the labels back in.
 
 ```{code-cell} ipython3
-nx.draw(stocknet,stock_layout,node_color=colors,with_labels=True)
+fig,ax = plt.subplots() # create a figure and axis object
+nx.draw(stocknet,stock_layout,ax,node_color=colors,with_labels=True)
 ```
 
 Forming a network based on this simple method, and looking at its spectrum, was enough to cleanly identify both of the sectors in our dataset.

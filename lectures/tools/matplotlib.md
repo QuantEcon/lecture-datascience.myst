@@ -11,6 +11,9 @@ kernelspec:
 
 # Intermediate Plotting
 
+**Co-author**
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
+
 **Prerequisites**
 
 - {doc}`Introduction <../pandas/intro>`
@@ -35,15 +38,14 @@ kernelspec:
 
 ```{code-cell} python
 import os
+os.environ["NASDAQ_DATA_LINK_API_KEY"] = "jEKP58z7JaX6utPkkpEp"
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
 import matplotlib.transforms as transforms
-import quandl
-
-quandl.ApiConfig.api_key = os.environ.get("QUANDL_AUTH", "Dn6BtVoBhzuKTuyo6hbp")
-
+import nasdaqdatalink as ndl
 
 %matplotlib inline
 ```
@@ -122,7 +124,8 @@ Then, let's grab Apple's stock price data from quandl, starting a few
 weeks before the first announcement.
 
 ```{code-cell} python
-aapl = quandl.get("WIKI/AAPL", start_date="2006-12-25")
+aapl = ndl.get_table('WIKI/PRICES', ticker = ['AAPL'], date = { 'gte': '2006-12-25', 'lte': '2018-01-01' })
+aapl = aapl.set_index("date")
 aapl.head()
 ```
 
@@ -158,7 +161,7 @@ Let's see some examples.
 
 ```{code-cell} python
 # plot the Adjusted open to account for stock split
-ax = aapl["Adj. Open"].plot()
+ax = aapl["adj_open"].plot()
 
 # get the figure so we can re-display the plot after making changes
 fig = ax.get_figure()
@@ -202,8 +205,8 @@ We can plot from our DataFrame directly on our Axes objects by setting
 the `ax` argument when calling `.plot`.
 
 ```{code-cell} python
-aapl[["Adj. Low", "Adj. High"]].plot(ax=axs2[0])
-aapl[["Low", "High"]].plot(ax=axs2[1])
+aapl[["adj_low", "adj_high"]].plot(ax=axs2[0])
+aapl[["low", "high"]].plot(ax=axs2[1])
 fig2
 ```
 
@@ -302,7 +305,7 @@ def scale_by_middle(df):
     # Divide by middle row and scale to 100
     # Note: N // 2 is modulus division meaning that it is
     #       rounded to nearest whole number)
-    out = (df["Open"] / df.iloc[N // 2]["Open"]) * 100
+    out = (df["open"] / df.iloc[N // 2]["open"]) * 100
 
     # We don't want to keep actual dates, but rather the number
     # of days before or after the announcment. Let's set that

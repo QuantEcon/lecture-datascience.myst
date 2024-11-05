@@ -12,7 +12,7 @@ jobs:
           auto-update-conda: true
           auto-activate-base: true
           miniconda-version: 'latest'
-          python-version: 3.9
+          python-version: 3.12
           environment-file: environment.yml
           activate-environment: lecture-datascience
       - name: Display Conda Environment Versions
@@ -21,13 +21,13 @@ jobs:
       - name: Display Pip Versions
         shell: bash -l {0}
         run: pip list
-      - name: Download "build" folder (cache)
-        uses: dawidd6/action-download-artifact@v6
-        with:
-          workflow: cache.yml
-          branch: main
-          name: build-cache
-          path: _build
+      # - name: Download "build" folder (cache)
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     workflow: cache.yml
+      #     branch: main
+      #     name: build-cache
+      #     path: _build
       - name: Build HTML
         shell: bash -l {0}
         run: |

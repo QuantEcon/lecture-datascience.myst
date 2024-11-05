@@ -11,6 +11,9 @@ kernelspec:
 
 # Time series
 
+**Co-author**
+> - [Philip Solimine, *UBC*](https://www.psolimine.net)
+
 **Prerequisites**
 
 - {doc}`Python functions <../python_fundamentals/functions>`
@@ -36,12 +39,13 @@ kernelspec:
 
 ```{code-cell} python
 import os
+# see section on API keys at end of lecture!
 import pandas as pd
 import matplotlib.pyplot as plt
-import quandl
+import nasdaqdatalink as ndl
 
-# see section on API keys at end of lecture!
-quandl.ApiConfig.api_key = os.environ.get("QUANDL_AUTH", "Dn6BtVoBhzuKTuyo6hbp")
+ndl.ApiConfig.api_key = os.environ.get("NASDAQ_DATA_LINK_API_KEY", "jEKP58z7JaX6utPkkpEp")
+
 start_date = "2014-05-01"
 
 %matplotlib inline
@@ -197,17 +201,27 @@ The flexibility of these features is best understood through example,
 so let's load up some data and take a look.
 
 ```{code-cell} python
-btc_usd = quandl.get("BCHARTS/BITSTAMPUSD", start_date=start_date)
-btc_usd.info()
-btc_usd.head()
+btc_usd_long = ndl.get_table("QDL/BCHAIN", date = { 'gte': '2009-12-25', 'lte': '2019-01-01' }, code = ["MKPRU", "MKTCP", "ETRVU"])
+btc_usd_long.info()
+btc_usd_long.head()
 ```
 
 Here, we have the Bitcoin (BTC) to US dollar (USD) exchange rate from
-March 2014 until today.
+2009 until today, as well as other variables relevant to the Bitcoin ecosystem, in long ("melted") form.
 
-Notice that the type of index is `DateTimeIndex`.
+```{code-cell} python
+print(btc_usd_long.code.unique())
+btc_usd_long.dtypes
+```
 
-This is the key that enables things like...
+Notice that the type of `date` is `datetime`. We would like this to be the index, and we want to drop the long form. We also selected only a couple of columns of interest, but the dataset has a lot more options. (The column descriptions can be found [here](https://data.nasdaq.com/databases/BCHAIN)). We chose Market Price (in USD) (`MKPRU`), Total Market Cap (`MKTCP`), and Estimated Transaction Volume in USD (`ETRVU`).
+
+```{code-cell} python
+btc_usd = btc_usd_long.pivot_table(index='date', columns='code', values='value')
+btc_usd.head()
+```
+
+Now that we have a datetime index, it enables things like...
 
 Extracting all data for the year 2015 by passing `"2015"` to `.loc`.
 
@@ -289,11 +303,11 @@ btc_date_column.head()
 ```
 
 ```{code-cell} python
-btc_date_column["Date"].dt.year.head()
+btc_date_column["date"].dt.year.head()
 ```
 
 ```{code-cell} python
-btc_date_column["Date"].dt.month.head()
+btc_date_column["date"].dt.month.head()
 ```
 
 ## Leads and Lags: `df.shift`
@@ -379,8 +393,8 @@ window for the whole dataset.
 
 ```{code-cell} python
 fig, ax = plt.subplots(figsize=(10, 4))
-btc_usd["Open"].plot(ax=ax, linestyle="--", alpha=0.8)
-btc_usd.rolling("21d").max()["Open"].plot(ax=ax, alpha=0.8, linewidth=3)
+btc_usd["MKPRU"].plot(ax=ax, linestyle="--", alpha=0.8)
+btc_usd.rolling("21d").max()["MKPRU"].plot(ax=ax, alpha=0.8, linewidth=3)
 ax.legend(["Original", "21 day max"])
 ```
 
@@ -471,18 +485,18 @@ See exercise 8 in the {ref}`exercise list <pd-tim-ex>`.
 Recall above that we had the line of code:
 
 ```{code-block} python
-quandl.ApiConfig.api_key = "Dn6BtVoBhzuKTuyo6hbp"
+ndl.ApiConfig.api_key = os.environ.get("NASDAQ_DATA_LINK_API_KEY", "jEKP58z7JaX6utPkkpEp")
 ```
 
-This line told the `quandl` library that when obtaining making requests for data, it should use the *API key* `Dn6BtVoBhzuKTuyo6hbp`.
+This line told the `nasdaqdatalink` library that when obtaining making requests for data, it should use the *API key* `jEKP58z7JaX6utPkkpEp`.
 
-An API key is a sort of password that web services (like the Quandl API) require you to provide when you make requests.
+An API key is a sort of password that web services (like the Nasdaq Data Link API) require you to provide when you make requests.
 
-Using this password, we were able to make a request to Quandl to obtain data directly from them.
+Using this password, we were able to make a request to Nasdaq data link to obtain data directly from them.
 
-The API key used here is one that we requested on behalf of this course.
+The API key used here is one that we requested on behalf of this course. If you create your own API key, you should store it in the NASDAQ_DATA_LINK_API_KEY environment variable, locally on your computer. Using an environment variable like this is a common way to store sensitive information like API keys, since you can set the environment variable in a secure way that is not stored in your code. How to set environment variables varies by operating system, but you can find instructions for doing so on the web.
 
-If you plan to use Quandl more extensively, you should obtain your own personal API key from [their website](https://docs.quandl.com/docs#section-authentication) and re-run the `quandl.ApiConfig.api_key...` line of code with your new API key on the right-hand side.
+If you plan to use Nasdaq data more extensively, you should obtain your own personal API key from [their website](https://www.nasdaq.com/nasdaq-data-link) and re-run the `os.environ...` line of code with your new API key on the right-hand side.
 
 (pd-tim-ex)=
 ## Exercises

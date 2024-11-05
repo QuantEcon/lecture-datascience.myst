@@ -46,7 +46,7 @@ ahs.info()
 ```{code-cell} python
 # dataframe of variable descriptions
 ahs_doc = pd.read_csv("https://datascience.quantecon.org/assets/data/ahs-doc.csv", encoding="latin1")
-with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'max_colwidth', -1):
+with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'max_colwidth', None):
     display(ahs_doc[["Variable","Question","Description","Associated.Response.Codes"]])
 ```
 

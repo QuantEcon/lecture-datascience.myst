@@ -13,6 +13,7 @@ kernelspec:
 
 **Author**
 > - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
+> - [Phil Solimine *UBC*](https://www.psolimine.net/)
 
 **Prerequisites**
 
@@ -126,17 +127,18 @@ def get_incident_details(id):
     return(result)
 
 
-incidentsfile = "https://datascience.quantecon.org/assets/data/avalanche_incidents.csv"
+incidentsfile = "http://datascience.quantecon.org/assets/data/avalanche_incidents.csv"
 
 # To avoid loading the avalanche Canada servers, we save the incident details locally.
-if (not os.path.isfile(incidentsfile)):
+# to update the data locally, change the incidentsfile to some other file name
+
+try:
+    incidents = pd.read_csv(incidentsfile)
+except Exception as e:
     incident_detail_list = incidents_brief.id.apply(get_incident_details).to_list()
     incidents = pd.DataFrame.from_dict(incident_detail_list, orient="columns")
     incidents.to_csv(incidentsfile)
-else:
-    incidents = pd.read_csv(incidentsfile)
-
-incidents
+incidents.head()
 ```
 
 Many incidents include coordinates, but others do not. Most
@@ -317,10 +319,9 @@ You may have to uncomment the second line below if  folium is not installed.
 import folium
 import matplotlib
 
-cmap = matplotlib.cm.get_cmap('Set1')
+cmap = matplotlib.colormaps["Set1"]
 fmap = folium.Map(location=[60, -98],
-                            zoom_start=3,
-                            tiles='Stamen Terrain')
+                            zoom_start=3)
 with urllib.request.urlopen(req) as response:
     regions_tmp = json.loads(response.read().decode('utf-8'))
 folium.GeoJson(regions_tmp,
@@ -411,6 +412,7 @@ def download_cached_forecasts():
                     warnings.warn(f"'File $f exists and is larger than version in cache. Not replacing.")
                 else :
                     z.extract(f)
+                    print("Downloaded and extracted", f)
 
 download_cached_forecasts()
 ```
@@ -443,7 +445,7 @@ def get_forecasts(start, end, region):
         #print("working on {}, {}".format(region,day))
         forecasts = forecasts + [get_forecast(day, region)]
         #print("sleeping")
-        time.sleep(0.1) # to avoid too much load on Avalanche Canada servers
+        time.sleep(0.05) # to avoid too much load on Avalanche Canada servers
         day = day + pd.Timedelta(1,"D")
     return(forecasts)
 
@@ -481,7 +483,7 @@ for year in range(2011,2019):
 forecasts = pd.DataFrame.from_dict([f for f in forecastlist if not f==None],orient="columns")
 
 forecasts["danger_date"] = forecasts.dangerRatings.apply(lambda r: r[0]["date"])
-forecasts["danger_date"] = pd.to_datetime(forecasts.danger_date, utc=True).dt.date
+forecasts["danger_date"] = pd.to_datetime(forecasts.danger_date, format='ISO8601').dt.date
 forecasts["danger_alpine"]=forecasts.dangerRatings.apply(lambda r: r[0]["dangerRating"]["alp"])
 forecasts["danger_treeline"]=forecasts.dangerRatings.apply(lambda r: r[0]["dangerRating"]["tln"])
 forecasts["danger_belowtree"]=forecasts.dangerRatings.apply(lambda r: r[0]["dangerRating"]["btl"])
@@ -532,6 +534,7 @@ import nltk
 import string
 nltk.download('omw-1.4')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 nltk.download('wordnet')
 # Remove stopwords (the, a, is, etc)
@@ -783,7 +786,7 @@ dimensional space or that the t-SNE algorithm parameters were
 chosen poorly.
 
 ```{code-cell} python
-cmap = matplotlib.cm.get_cmap('Paired')
+cmap = matplotlib.colormaps["Paired"]
 fig, ax = plt.subplots(1,2,figsize=(16,6))
 n_topics=len(svd_model.components_)
 lsa_keys = np.argmax(lsa_topic_sample, axis=1)
