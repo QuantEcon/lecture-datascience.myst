@@ -13,6 +13,7 @@ kernelspec:
 
 **Author**
 > - [Paul Schrimpf *UBC*](https://economics.ubc.ca/faculty-and-staff/paul-schrimpf/)
+> - [Phil Solimine *UBC*](https://www.psolimine.net/)
 
 **Prerequisites**
 
