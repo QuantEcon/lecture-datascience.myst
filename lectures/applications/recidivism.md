@@ -138,7 +138,7 @@ Let's look at how the dataset is broken down into age, sex, and race.
 ```{code-cell} python
 def create_groupcount_barplot(df, group_col, figsize, **kwargs):
     "call df.groupby(group_col), then count number of records and plot"
-    counts = df.groupby(group_col)["name"].count().sort_index()
+    counts = df.groupby(group_col,observed=True)["name"].count().sort_index()
 
     fig, ax = plt.subplots(figsize=figsize)
     counts.plot(kind="bar", **kwargs)
@@ -201,8 +201,8 @@ create_groupcount_barplot(df, "decile_score", (12, 8), color="DarkBlue", rot=0)
 How do these scores differ by race?
 
 ```{code-cell} python
-dfgb = df.groupby("race")
-race_count = df.groupby("race")["name"].count()
+dfgb = df.groupby("race", observed=True)
+race_count = df.groupby("race", observed=True)["name"].count()
 
 fig, ax = plt.subplots(3, figsize=(14, 8))
 
@@ -253,7 +253,7 @@ One of the key critiques from Pro Publica, though, was that the inaccuracies wer
 Let's now separate the correlations by race and see what happens.
 
 ```{code-cell} python
-recid_rates = df.pivot_table(index="decile_score", columns="race", values="two_year_recid")
+recid_rates = df.pivot_table(index="decile_score", columns="race", values="two_year_recid", observed=True)
 
 recid_rates
 ```
