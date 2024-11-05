@@ -914,16 +914,12 @@ each announcement date to 100 and scale all neighbors accordingly.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_plot</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scale_by_middle</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_plot</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scale_by_middle</span><span class="p">,</span> <span class="n">include_groups</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 <span class="n">to_plot</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3622/3433067278.py:1: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
-  to_plot = prices.groupby(&quot;Model&quot;).apply(scale_by_middle).T
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {

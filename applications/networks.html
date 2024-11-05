@@ -654,7 +654,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80ccc31160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeba0ab6b0&gt;
 </pre></div>
 </div>
 <img alt="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" src="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" />
@@ -687,7 +687,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80ccc31c10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9fa5a60&gt;
 </pre></div>
 </div>
 <img alt="../_images/13138d6c6cab160dc0459a6d0b58a738651a2b16bb04e726f0446e689bb16171.png" src="../_images/13138d6c6cab160dc0459a6d0b58a738651a2b16bb04e726f0446e689bb16171.png" />
@@ -719,7 +719,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc80f770&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeba12f590&gt;
 </pre></div>
 </div>
 <img alt="../_images/548477300dce551c46b44f205c63bc716bf4e170c6c38011dc033eb68c19c1ce.png" src="../_images/548477300dce551c46b44f205c63bc716bf4e170c6c38011dc033eb68c19c1ce.png" />
@@ -750,7 +750,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc6ec920&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9f39820&gt;
 </pre></div>
 </div>
 <img alt="../_images/bb84e5f42e3db5eb718e0d850c4ea81e23342abb8cfc91b153d6375f0ed2ec3c.png" src="../_images/bb84e5f42e3db5eb718e0d850c4ea81e23342abb8cfc91b153d6375f0ed2ec3c.png" />
@@ -777,7 +777,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc6ed250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9da1a00&gt;
 </pre></div>
 </div>
 <img alt="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" src="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" />
@@ -850,7 +850,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f80cc634c50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9ccec60&gt;
 </pre></div>
 </div>
 <img alt="../_images/ef891415802f8cbd9fccd7783198eef2418ff2c09ad67852c53a6d63a4a4178f.png" src="../_images/ef891415802f8cbd9fccd7783198eef2418ff2c09ad67852c53a6d63a4a4178f.png" />
@@ -1181,16 +1181,12 @@ The degree distribution is also a convenient way to start thinking about fitting
         <span class="k">return</span> <span class="mi">1</span>
     
 <span class="c1"># we already know that every stock is perfectly correlated with itself, so the ones on the diagonal are not really useful information. Let&#39;s get rid of them.</span>
-<span class="n">adj</span> <span class="o">=</span> <span class="n">corr</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">truncate</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">adj</span> <span class="o">=</span> <span class="n">corr</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">truncate</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">adj</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2544/3149573054.py:8: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
-  adj = corr.applymap(truncate) - np.identity(10)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {

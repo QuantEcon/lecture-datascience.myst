@@ -823,15 +823,11 @@ our function as a DataFrame (or Series).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">smallest_by_b</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbA</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">smallest_by_b</span><span class="p">,</span> <span class="n">include_groups</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/322410337.py:1: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
-  gbA.apply(smallest_by_b)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -851,13 +847,11 @@ our function as a DataFrame (or Series).</p>
     <tr style="text-align: right;">
       <th></th>
       <th></th>
-      <th>A</th>
       <th>B</th>
       <th>C</th>
     </tr>
     <tr>
       <th>A</th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -868,25 +862,21 @@ our function as a DataFrame (or Series).</p>
       <th rowspan="2" valign="top">1</th>
       <th>0</th>
       <td>1</td>
-      <td>1</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
       <td>1</td>
       <td>2.0</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">2</th>
       <th>4</th>
-      <td>2</td>
       <td>1</td>
       <td>5.0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>2</td>
       <td>1</td>
       <td>NaN</td>
     </tr>
@@ -923,7 +913,7 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
     <span class="n">start</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">),</span>
-    <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;BQ&quot;</span><span class="p">,</span>
+    <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;BQE&quot;</span><span class="p">,</span>
     <span class="n">periods</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="p">)</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
@@ -932,10 +922,6 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3685276675.py:2: FutureWarning: &#39;BQ&#39; is deprecated and will be removed in a future version, please use &#39;BQE&#39; instead.
-  df2[&quot;Date&quot;] = pd.date_range(
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1009,15 +995,11 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 <p>We can group by year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;YE&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/554447956.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
-  df2.groupby(pd.Grouper(key=&quot;Date&quot;, freq=&quot;A&quot;)).count()
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1122,15 +1104,11 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 <p>We can combine these to group by both.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;YE&quot;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/1087709782.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
-  df2.groupby([pd.Grouper(key=&quot;Date&quot;, freq=&quot;A&quot;), pd.Grouper(level=&quot;A&quot;)]).count()
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1192,15 +1170,11 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
 denotes a column name</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;YE&quot;</span><span class="p">),</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3014178998.py:1: FutureWarning: &#39;A&#39; is deprecated and will be removed in a future version, please use &#39;YE&#39; instead.
-  df2.groupby([pd.Grouper(key=&quot;Date&quot;, freq=&quot;A&quot;), &quot;B&quot;]).count()
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1776,7 +1750,7 @@ carrier</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/1201432368.py:3: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/1201432368.py:3: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   .stack()             # move aggregation method into index (with Carrier)
 </pre></div>
 </div>
@@ -2084,7 +2058,7 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
 </pre></div>
 </div>
@@ -2101,7 +2075,7 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
 </pre></div>
 </div>
@@ -2118,7 +2092,7 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2855/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
 </pre></div>
 </div>

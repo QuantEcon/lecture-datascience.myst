@@ -474,8 +474,8 @@ methods…</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.68 ms, sys: 0 ns, total: 1.68 ms
-Wall time: 1.64 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.2 ms, sys: 496 μs, total: 1.7 ms
+Wall time: 1.66 ms
 </pre></div>
 </div>
 </div>
@@ -503,8 +503,8 @@ Series in one shot!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 322 μs, sys: 143 μs, total: 465 μs
-Wall time: 455 μs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 320 μs, sys: 133 μs, total: 453 μs
+Wall time: 450 μs
 </pre></div>
 </div>
 </div>
@@ -1216,15 +1216,11 @@ article</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the _next_ valid observation to fill the missing data</span>
-<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;bfill&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span> <span class="c1"># in new versions of pandas, bfill will directly fill missing data</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2830/3959128414.py:2: FutureWarning: DataFrame.fillna with &#39;method&#39; is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
-  df.fillna(method=&quot;bfill&quot;)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1330,15 +1326,11 @@ article</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the _previous_ valid observation to fill missing data</span>
-<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ffill&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2830/2101003498.py:2: FutureWarning: DataFrame.fillna with &#39;method&#39; is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
-  df.fillna(method=&quot;ffill&quot;)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1580,28 +1572,28 @@ a much larger dataset.</p>
   <tbody>
     <tr>
       <th>0</th>
-      <td>59.84</td>
-      <td>59.84%</td>
+      <td>44.33</td>
+      <td>44.33%</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>78.10</td>
-      <td>78.1%</td>
+      <td>38.71</td>
+      <td>38.71%</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>63.22</td>
-      <td>63.22%</td>
+      <td>12.55</td>
+      <td>12.55%</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>95.15</td>
-      <td>95.15%</td>
+      <td>61.65</td>
+      <td>61.65%</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>85.91</td>
-      <td>85.91%</td>
+      <td>5.09</td>
+      <td>5.09%</td>
     </tr>
   </tbody>
 </table>
@@ -1619,7 +1611,7 @@ a much larger dataset.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.93 s, sys: 2.17 ms, total: 3.93 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.93 s, sys: 491 μs, total: 3.93 s
 Wall time: 3.93 s
 </pre></div>
 </div>
@@ -1633,8 +1625,8 @@ Wall time: 3.93 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 12.6 ms, sys: 4.06 ms, total: 16.7 ms
-Wall time: 16.3 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.8 ms, sys: 3.81 ms, total: 17.6 ms
+Wall time: 17.3 ms
 </pre></div>
 </div>
 </div>
