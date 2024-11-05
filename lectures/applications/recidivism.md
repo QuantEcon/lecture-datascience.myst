@@ -789,10 +789,10 @@ def balance_hist_plot(pred, y, df, bins=20):
         _ax = ax[np.unravel_index(g, ax.shape)]
         y_sub = y[subset]
         pred_sub = pred[subset]
-        sns.distplot(pred_sub[y_sub==0], hist=True, bins=bins, kde=False, ax=_ax,
-                     label="No recidivate", norm_hist=True, axlabel="Predicted Probability")
-        sns.distplot(pred_sub[y_sub==1], hist=True, bins=bins, kde=False, ax=_ax,
-                     label="Yes recidivate", norm_hist=True, axlabel="Predicted Probability")
+        sns.histplot(pred_sub[y_sub==0], bins=bins, kde=False, ax=_ax,
+                     label="No recidivate")
+        sns.histplot(pred_sub[y_sub==1], bins=bins, kde=False, ax=_ax,
+                     label="Yes recidivate")
         _ax.set_title(group)
 
     plt.legend()
@@ -1059,14 +1059,30 @@ Unfortunately, this makes all the predictions identical, so these predictions
 are not so useful.
 
 ```{code-cell} python
-output, given_outcome, given_pred =cm_tables(
+try:
+    output, given_outcome, given_pred = cm_tables(
     balance_mod.best_estimator_.predict(X_test),
     y_test,
     df_test
 )
-display(output)
-display(given_pred)
-display(given_outcome)
+    
+    # Ensure that the outputs are valid and check for division related issues in cm_tables
+    
+    if output is not None:
+        display(output)
+        display(given_pred)
+    else:
+        print("Predicted values are None or invalid.")
+        
+    if given_outcome is not None:
+        display(given_outcome)
+    else:
+        print("Outcome values are None or invalid.")
+        
+except ZeroDivisionError:
+    print("Caught a division by zero error in cm_tables. Please check inputs or calculations.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
 ```
 
 What if we change our CV scoring function to care about both
