@@ -213,7 +213,7 @@ def smallest_by_b(df):
 ```
 
 ```{code-cell} python
-gbA.apply(smallest_by_b)
+gbA.apply(smallest_by_b, include_groups=False)
 ```
 
 Notice that the return value from applying our series transform to `gbA`
@@ -250,7 +250,7 @@ index and a `Date` column added.
 df2 = df.copy()
 df2["Date"] = pd.date_range(
     start=pd.Timestamp.today().strftime("%m/%d/%Y"),
-    freq="BQ",
+    freq="BQE",
     periods=df.shape[0]
 )
 df2 = df2.set_index("A")
@@ -260,7 +260,7 @@ df2
 We can group by year.
 
 ```{code-cell} python
-df2.groupby(pd.Grouper(key="Date", freq="A")).count()
+df2.groupby(pd.Grouper(key="Date", freq="YE")).count()
 ```
 
 We can group by the `A` level of the index.
@@ -272,14 +272,14 @@ df2.groupby(pd.Grouper(level="A")).count()
 We can combine these to group by both.
 
 ```{code-cell} python
-df2.groupby([pd.Grouper(key="Date", freq="A"), pd.Grouper(level="A")]).count()
+df2.groupby([pd.Grouper(key="Date", freq="YE"), pd.Grouper(level="A")]).count()
 ```
 
 And we can combine `pd.Grouper` with a string, where the string
 denotes a column name
 
 ```{code-cell} python
-df2.groupby([pd.Grouper(key="Date", freq="A"), "B"]).count()
+df2.groupby([pd.Grouper(key="Date", freq="YE"), "B"]).count()
 ```
 
 ## Case Study: Airline Delays

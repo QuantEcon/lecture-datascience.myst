@@ -254,12 +254,12 @@ df.fillna(value=100)
 
 ```{code-cell} python
 # use the _next_ valid observation to fill the missing data
-df.fillna(method="bfill")
+df.bfill() # in new versions of pandas, bfill will directly fill missing data
 ```
 
 ```{code-cell} python
 # use the _previous_ valid observation to fill missing data
-df.fillna(method="ffill")
+df.ffill()
 ```
 
 We will see more examples of dealing with missing data in future
