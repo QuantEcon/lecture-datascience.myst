@@ -411,6 +411,7 @@ def download_cached_forecasts():
                     warnings.warn(f"'File $f exists and is larger than version in cache. Not replacing.")
                 else :
                     z.extract(f)
+                    print("Downloaded and extracted", f)
 
 download_cached_forecasts()
 ```
