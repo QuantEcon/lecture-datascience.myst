@@ -209,8 +209,7 @@ $S(x)$ approximates $s_0(x)$ is to look at the best linear
 projection of $s_0(x)$ on $S(x)$.
 
 $$
-\DeclareMathOperator*{\argmin}{arg\,min}
-\beta_0, \beta_1 = \argmin_{b_0,b_1} E[(s_0(x) -
+\beta_0, \beta_1 = \mathit{argmin}_{b_0,b_1} E[(s_0(x) -
 b_0 - b_1 (S(x)-E[S(x)]))^2]
 $$
 
