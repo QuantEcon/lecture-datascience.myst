@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -147,6 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -195,7 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -223,8 +223,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Randomness</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -268,8 +269,8 @@ numpy.random to numerically verify some of the facts associated with them.</p>
 <p>We import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as usual</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -320,7 +321,7 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.941127809402735
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2772332224205004
 </pre></div>
 </div>
 </div>
@@ -333,11 +334,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.34131861, 0.02850245, 0.1714833 , 0.66301277, 0.24032435,
-       0.35787597, 0.01370565, 0.88543634, 0.37203481, 0.65317351,
-       0.57825157, 0.75654105, 0.34604401, 0.06040527, 0.65148872,
-       0.73365536, 0.37958848, 0.38486645, 0.22020274, 0.46929965,
-       0.39494407, 0.58476836, 0.23225156, 0.38507787, 0.07672422])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.66288805, 0.41571433, 0.54108339, 0.04388545, 0.02766315,
+       0.80438508, 0.60870762, 0.28270468, 0.57650549, 0.52330285,
+       0.47869682, 0.19605571, 0.68443666, 0.47100141, 0.89423615,
+       0.75582871, 0.35536336, 0.09663832, 0.37661227, 0.25351727,
+       0.5843779 , 0.13379252, 0.28313714, 0.30214497, 0.57378365])
 </pre></div>
 </div>
 </div>
@@ -349,11 +350,11 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.21398758, 0.31772983, 0.53588224, 0.68397508, 0.78349938],
-       [0.0237918 , 0.49292449, 0.66354702, 0.27184552, 0.98887313],
-       [0.30423186, 0.22558943, 0.06018894, 0.92623161, 0.56184458],
-       [0.22022271, 0.05379506, 0.29812961, 0.62004232, 0.44766478],
-       [0.90055847, 0.82100331, 0.29328936, 0.13165437, 0.48099525]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.32976405, 0.25906114, 0.24630638, 0.97634598, 0.05908475],
+       [0.94115018, 0.89400297, 0.11472964, 0.39805358, 0.02982396],
+       [0.74103095, 0.04774968, 0.23630551, 0.12251254, 0.59688255],
+       [0.52115035, 0.09484548, 0.24633937, 0.81362154, 0.64659859],
+       [0.31034732, 0.40535843, 0.08714472, 0.65452701, 0.90806512]])
 </pre></div>
 </div>
 </div>
@@ -365,13 +366,13 @@ between 0 and 1.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.52814097, 0.20889012, 0.33736975, 0.48627616],
-        [0.41603512, 0.684994  , 0.23047829, 0.54244482],
-        [0.21077767, 0.32940071, 0.07673128, 0.37728421]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.79194927, 0.80416329, 0.83517901, 0.16113934],
+        [0.19740642, 0.93804055, 0.89731244, 0.32774414],
+        [0.12089387, 0.7000393 , 0.50864725, 0.38171871]],
 
-       [[0.2860922 , 0.26437473, 0.10948727, 0.51674905],
-        [0.4372499 , 0.06579328, 0.04750807, 0.13503901],
-        [0.35582747, 0.09054709, 0.04521003, 0.98276237]]])
+       [[0.32205688, 0.01508386, 0.30213161, 0.34959085],
+        [0.37727773, 0.07529313, 0.13385931, 0.09003726],
+        [0.81011371, 0.02564506, 0.62423636, 0.14673312]]])
 </pre></div>
 </div>
 </div>
@@ -416,7 +417,7 @@ Numbers</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/82672067d1b625ca921fa3b9c56f2099dfddca9940ff87a2dd4ac727409a40b9.png" src="../_images/82672067d1b625ca921fa3b9c56f2099dfddca9940ff87a2dd4ac727409a40b9.png" />
+<img alt="../_images/33596ed6276daaee20b1292d5d776558cd97c567004bc264bed23203f6875124.png" src="../_images/33596ed6276daaee20b1292d5d776558cd97c567004bc264bed23203f6875124.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-4-1">
@@ -446,7 +447,7 @@ probability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You&#39;ll see why we call it `_slow` soon :)</span>
-<span class="k">def</span> <span class="nf">simulate_loan_repayments_slow</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_loan_repayments_slow</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
                                   <span class="n">repayment_part</span><span class="o">=</span><span class="mf">12_500.0</span><span class="p">):</span>
     <span class="n">repayment_sims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
@@ -469,7 +470,7 @@ probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20339.999999999996
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20247.619047619042
 </pre></div>
 </div>
 </div>
@@ -482,7 +483,7 @@ necessary.</p>
 instead of only storing the values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_repayments</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_loan_repayments</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">repayment_full</span><span class="o">=</span><span class="mf">25_000.0</span><span class="p">,</span>
                              <span class="n">repayment_part</span><span class="o">=</span><span class="mf">12_500.0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Simulate present value of N loans given values for discount rate and</span>
@@ -509,7 +510,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20221.904761904763
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20281.42857142857
 </pre></div>
 </div>
 </div>
@@ -522,7 +523,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>110 ms ± 594 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111 ms ± 2.16 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -534,7 +535,7 @@ instead of only storing the values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.68 ms ± 7.87 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.83 ms ± 44.2 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -558,7 +559,7 @@ element at a time.</p>
 <p>First, we rewrite <code class="docutils literal notranslate"><span class="pre">simulate_loan_repayments</span></code>  so that instead of a collection of individual parameters, it takes in an object (titles <code class="docutils literal notranslate"><span class="pre">params</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_repayments_2</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_loan_repayments_2</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>    
     <span class="c1"># Extract fields from params object</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">r</span>
     <span class="n">repayment_part</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">repayment_part</span>
@@ -587,9 +588,9 @@ element at a time.</p>
 <p>The most important function in a class is the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function which determines how it is constructed and creates an object of that type.  This function has the special argument <code class="docutils literal notranslate"><span class="pre">self</span></code> which refers to the new object being created, and with which you can easily add new fields.  For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoanRepaymentParams</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LoanRepaymentParams</span><span class="p">:</span>
     <span class="c1"># A special function &#39;constructor&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">repayment_full</span><span class="p">,</span> <span class="n">repayment_part</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">repayment_full</span><span class="p">,</span> <span class="n">repayment_part</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">repayment_full</span> <span class="o">=</span> <span class="n">repayment_full</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">repayment_part</span> <span class="o">=</span> <span class="n">repayment_part</span>
@@ -617,7 +618,7 @@ element at a time.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40261.90476190476
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40714.28571428572
 </pre></div>
 </div>
 </div>
@@ -625,8 +626,8 @@ element at a time.</p>
 <p>One benefit of using a class is that you can do calculations in the constructor.  For example, instead of passing in the partial repayment amount, we could pass in the fraction of the full repayment that is paid.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LoanRepaymentParams2</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">repayment_full</span><span class="p">,</span> <span class="n">partial_fraction</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LoanRepaymentParams2</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">repayment_full</span><span class="p">,</span> <span class="n">partial_fraction</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">repayment_full</span> <span class="o">=</span> <span class="n">repayment_full</span>
         
@@ -642,7 +643,7 @@ element at a time.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25000.0
-40904.7619047619
+39952.38095238095
 </pre></div>
 </div>
 </div>
@@ -651,10 +652,10 @@ element at a time.</p>
 <p>Finally, there are some special features we can use to create classes in python which automatically create the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function, allow for more easily setting default values.   The easiest is to create a <code class="docutils literal notranslate"><span class="pre">dataclass</span></code> (see <a class="reference external" href="https://docs.python.org/3/library/dataclasses.html">documentation</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 
 <span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">LoanRepaymentParams3</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LoanRepaymentParams3</span><span class="p">:</span>
     <span class="n">r</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span>
     <span class="n">repayment_full</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">50_000</span>
     <span class="n">repayment_part</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">25_000</span>
@@ -674,7 +675,7 @@ element at a time.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LoanRepaymentParams3(r=0.05, repayment_full=50000, repayment_part=25000)
 LoanRepaymentParams3(r=0.05, repayment_full=60000, repayment_part=25000)
-47966.666666666664
+47223.80952380952
 </pre></div>
 </div>
 </div>
@@ -691,7 +692,7 @@ at the the 5th percentile of total repayment to find the loan size needed for 95
 being profitable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_year_of_loans</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_year_of_loans</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
 
     <span class="c1"># Create array where we store the values</span>
     <span class="n">avg_repayments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
@@ -745,7 +746,7 @@ this means people who experience delinquency won’t be required to repay their 
 <p>Let’s write the code required to perform this dynamic simulation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_loan_lifetime</span><span class="p">(</span><span class="n">monthly_payment</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_loan_lifetime</span><span class="p">(</span><span class="n">monthly_payment</span><span class="p">):</span>
 
     <span class="c1"># Create arrays to store outputs</span>
     <span class="n">payments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
@@ -830,7 +831,7 @@ some particular state).</p></li>
 <a class="reference external" href="https://github.com/QuantEcon/QuantEcon.py/">quantecon python library</a> to analyze this model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">quantecon</span> <span class="k">as</span> <span class="nn">qe</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">quantecon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">qe</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">markov</span><span class="o">.</span><span class="n">MarkovChain</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">state_values</span><span class="p">)</span>
 </pre></div>
@@ -846,9 +847,9 @@ some particular state).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;,
-       &#39;delinquency&#39;, &#39;delinquency&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;,
-       &#39;default&#39;, &#39;default&#39;], dtype=&#39;&lt;U11&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;repaying&#39;, &#39;repaying&#39;, &#39;repaying&#39;, &#39;default&#39;, &#39;default&#39;,
+       &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;, &#39;default&#39;,
+       &#39;default&#39;], dtype=&#39;&lt;U11&#39;)
 </pre></div>
 </div>
 </div>
@@ -909,7 +910,7 @@ described by the mean and variance of that distribution.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scipy is an extension of numpy, and the stats</span>
 <span class="c1"># subpackage has tools for working with various probability distributions</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
@@ -924,10 +925,10 @@ described by the mean and variance of that distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc154360d70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fafe7597890&gt;]
 </pre></div>
 </div>
-<img alt="../_images/2efdd5614df2499862848b8cfd75390bcacb4310dc5cb51a2639278dbce94d64.png" src="../_images/2efdd5614df2499862848b8cfd75390bcacb4310dc5cb51a2639278dbce94d64.png" />
+<img alt="../_images/b5559c12ef10b8efce8537b7e8f7e1857cd8933b9a2e4e93a728ee1a90a8d9e5.png" src="../_images/b5559c12ef10b8efce8537b7e8f7e1857cd8933b9a2e4e93a728ee1a90a8d9e5.png" />
 </div>
 </div>
 <p>Another common continuous distribution used in economics is the gamma distribution.</p>
@@ -936,7 +937,7 @@ parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale pa
 <p>Let’s see what the distribution looks like for various choices of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_gamma</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
@@ -959,7 +960,7 @@ parameter <span class="math notranslate nohighlight">\(k\)</span> and a scale pa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9ff340c0dc4af597a9d4b6c486feee9ab035100f137d6c0e80accdd73df6eb28.png" src="../_images/9ff340c0dc4af597a9d4b6c486feee9ab035100f137d6c0e80accdd73df6eb28.png" />
+<img alt="../_images/de06493d0b1d407f5c8b8f8324cf90c70e5d88bc64ec4a5d8da786b7718d2166.png" src="../_images/de06493d0b1d407f5c8b8f8324cf90c70e5d88bc64ec4a5d8da786b7718d2166.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="dir3-4-4">
@@ -1103,6 +1104,8 @@ and express your preferences.</p>
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -1377,15 +1380,15 @@ and express your preferences.</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -1393,7 +1396,11 @@ and express your preferences.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/scientific/randomness.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/scientific/randomness.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/scientific/randomness.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1422,8 +1429,6 @@ and express your preferences.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/scientific/randomness.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/scientific/randomness.ipynb">Colab</option>
                 
                 </select>
@@ -1435,7 +1440,7 @@ and express your preferences.</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/scientific/randomness.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/scientific/randomness.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1492,7 +1497,7 @@ and express your preferences.</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

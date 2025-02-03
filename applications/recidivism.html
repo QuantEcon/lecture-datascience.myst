@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -147,6 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -200,7 +199,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -228,8 +228,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Case Study: Recidivism</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -266,12 +267,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">neural_network</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">model_selection</span>
 <span class="p">)</span>
 
@@ -537,7 +538,7 @@ keep data on races with at least 500 observations in our data set.</p>
 <p>Let’s look at how the dataset is broken down into age, sex, and race.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">group_col</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_groupcount_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">group_col</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="s2">&quot;call df.groupby(group_col), then count number of records and plot&quot;</span>
     <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">group_col</span><span class="p">,</span><span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 
@@ -563,7 +564,7 @@ keep data on races with at least 500 observations in our data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/344d691cc9c9cb5b94119ea849dd1354dcbd960fceb106eb8ea5b2f1fe5c9d01.png" src="../_images/344d691cc9c9cb5b94119ea849dd1354dcbd960fceb106eb8ea5b2f1fe5c9d01.png" />
+<img alt="../_images/984e180bec4bb25cc57283851f297a7cb47e1e480bb6fda2b8a01b141c277d3f.png" src="../_images/984e180bec4bb25cc57283851f297a7cb47e1e480bb6fda2b8a01b141c277d3f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -578,7 +579,7 @@ keep data on races with at least 500 observations in our data set.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 600x800 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../_images/5651518f4ba2249fd13699892b5ea62f9fd74bfabc7b0407165ac318bb4c6a28.png" src="../_images/5651518f4ba2249fd13699892b5ea62f9fd74bfabc7b0407165ac318bb4c6a28.png" />
+<img alt="../_images/ab90f125fbde124d46664ea1598a4bd1a3e73e6146dd3db07024cfd759fc10d6.png" src="../_images/ab90f125fbde124d46664ea1598a4bd1a3e73e6146dd3db07024cfd759fc10d6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -593,7 +594,7 @@ keep data on races with at least 500 observations in our data set.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x800 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../_images/eab010a199e040a790dfea67cac848c89005d4e907c7dd3cfa14654f2a3d872a.png" src="../_images/eab010a199e040a790dfea67cac848c89005d4e907c7dd3cfa14654f2a3d872a.png" />
+<img alt="../_images/dd769b720040aa42017a3e21ac2df583a25c05ac0223a8073e912c02bc8b3bcf.png" src="../_images/dd769b720040aa42017a3e21ac2df583a25c05ac0223a8073e912c02bc8b3bcf.png" />
 </div>
 </div>
 <p>From this, we learn that our population is mostly between 25-45, male, and
@@ -704,7 +705,7 @@ Caucasian females.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x800 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../_images/d2a1a1cee4889853e2ad9fde08fcb285507dfef6eb1e1ae2418065232cdc2466.png" src="../_images/d2a1a1cee4889853e2ad9fde08fcb285507dfef6eb1e1ae2418065232cdc2466.png" />
+<img alt="../_images/b806eb2d9302c4183b62a68bf9366b3928bb12a62002628c48a06cd2650fddec.png" src="../_images/b806eb2d9302c4183b62a68bf9366b3928bb12a62002628c48a06cd2650fddec.png" />
 </div>
 </div>
 <p>How do these scores differ by race?</p>
@@ -736,7 +737,7 @@ Caucasian females.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Score Frequency by Race&#39;)
 </pre></div>
 </div>
-<img alt="../_images/1320419cdb075c7549ea3777fbec6e2892993b1f7309b1044f9a8d0d3ee90285.png" src="../_images/1320419cdb075c7549ea3777fbec6e2892993b1f7309b1044f9a8d0d3ee90285.png" />
+<img alt="../_images/0f590c2e1f058e9c02e2061995e9cdec4e53a6b7de25e804cc0af0b484de600c.png" src="../_images/0f590c2e1f058e9c02e2061995e9cdec4e53a6b7de25e804cc0af0b484de600c.png" />
 </div>
 </div>
 <p>While Caucasians and Hispanics both see the majority of their score distribution on low values,
@@ -950,7 +951,7 @@ positive correlation (~0.35).</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Recidivism Rates by Race&#39;)
 </pre></div>
 </div>
-<img alt="../_images/24dbf8ff33b9016c83f252a96ddd87622a58a90834bc5ce41e8041d19f05a5ae.png" src="../_images/24dbf8ff33b9016c83f252a96ddd87622a58a90834bc5ce41e8041d19f05a5ae.png" />
+<img alt="../_images/822d1afa011703ec85ba00db2b6dfebcd354369e63d9c4eff1b563d61483a67f.png" src="../_images/822d1afa011703ec85ba00db2b6dfebcd354369e63d9c4eff1b563d61483a67f.png" />
 </div>
 </div>
 </section>
@@ -1029,7 +1030,7 @@ column’s category, and set all other columns to 0.</p>
 <p>Finally, we split the data into training and validation (test) subsets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prep_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">continuous_variables</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">y_var</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prep_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">continuous_variables</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">y_var</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.15</span><span class="p">):</span>
 
     <span class="n">ohe</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
@@ -1057,7 +1058,7 @@ scores.</p>
 <p>As we estimate these models, one of our metrics for success will be mean absolute error (MAE).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fit_and_report_maes</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_inv_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fit_and_report_maes</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">y_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_inv_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">y_transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_transform</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1124,7 +1125,7 @@ overpredicted the COMPAS score and a negative value means we underpredicted it.<
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Test Data&#39;)
 </pre></div>
 </div>
-<img alt="../_images/6a98c8d74b5a825b40a220d5175b69fe81698d295cc0046313156d48707125a6.png" src="../_images/6a98c8d74b5a825b40a220d5175b69fe81698d295cc0046313156d48707125a6.png" />
+<img alt="../_images/70270c5e0a7ff2ce2c0538992ab98580f30071882fc5f65f4b7d50c20667ce91.png" src="../_images/70270c5e0a7ff2ce2c0538992ab98580f30071882fc5f65f4b7d50c20667ce91.png" />
 </div>
 </div>
 <p>In both cases, the long left tails of errors suggest the existence of relevant features which would improve our model.</p>
@@ -1217,7 +1218,7 @@ The errors also seem to have a less extreme tail.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Test Data&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0c21f5748d23635249a759009626a90727a2f3ee44a4e0b59facbb2f836123cd.png" src="../_images/0c21f5748d23635249a759009626a90727a2f3ee44a4e0b59facbb2f836123cd.png" />
+<img alt="../_images/e484de808d77ad818337ea5371c3891d18411e0a9b32d0856446dc075f8796b2.png" src="../_images/e484de808d77ad818337ea5371c3891d18411e0a9b32d0856446dc075f8796b2.png" />
 </div>
 </div>
 <p>The coefficients are listed below:</p>
@@ -1371,7 +1372,7 @@ confusion_matrix(y_true, y_pred, *, labels=None, sample_weight=None, normalize=N
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">report_cm</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">report_cm</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
      <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
          <span class="n">cm_train</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)),</span>
          <span class="n">cm_test</span><span class="o">=</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
@@ -1385,7 +1386,7 @@ as a feature and then examine how the confusion matrices differ by
 race and sex.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">patsy</span><span class="w"> </span><span class="kn">import</span> <span class="n">dmatrices</span>
 <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;overall&quot;</span><span class="p">,</span> <span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span>
 <span class="p">]</span>
@@ -1404,7 +1405,7 @@ race and sex.</p>
 
 <span class="n">decile_mod</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;lbfgs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">cm_tables</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cm_tables</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">ind</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">groups</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">]:</span>
@@ -1425,7 +1426,7 @@ race and sex.</p>
         <span class="n">output</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">group</span><span class="p">]</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
-    <span class="k">def</span> <span class="nf">cond_probs</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cond_probs</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
         <span class="n">d</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">col</span><span class="p">)))</span>
         <span class="n">pcm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
         <span class="n">pcm</span> <span class="o">=</span> <span class="n">pcm</span><span class="o">/</span><span class="n">pcm</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1722,9 +1723,9 @@ predicted probability.</p>
 <p>We can examine calibration graphically by plotting the P(recidivism | predicted probability)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span>
 
-<span class="k">def</span> <span class="nf">calibration_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calibration_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">group</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">]:</span>
@@ -1757,7 +1758,7 @@ predicted probability.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f179ebf41066fa0ef754f8a5c6fb94f94876e98b3e8fbf5ceb9a4b67c2ac078e.png" src="../_images/f179ebf41066fa0ef754f8a5c6fb94f94876e98b3e8fbf5ceb9a4b67c2ac078e.png" />
+<img alt="../_images/88d93a43395dd11c590b486b581d05e500ffaa0ca604f67e15c5ca7fc994438c.png" src="../_images/88d93a43395dd11c590b486b581d05e500ffaa0ca604f67e15c5ca7fc994438c.png" />
 </div>
 </div>
 <p>This figure is one way to visualize how well-calibrated these
@@ -1782,8 +1783,8 @@ so we will plot histograms of predicted probabilities conditional on realized
 outcomes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="k">def</span> <span class="nf">balance_hist_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">balance_hist_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">group</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;African-American&quot;</span><span class="p">,</span> <span class="s2">&quot;Caucasian&quot;</span><span class="p">,</span> <span class="s2">&quot;Hispanic&quot;</span><span class="p">]:</span>
@@ -1812,7 +1813,7 @@ outcomes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/74513e141e39767eafec5406f83666c1acc014f28a21b35aff9ade62bc1c2fe6.png" src="../_images/74513e141e39767eafec5406f83666c1acc014f28a21b35aff9ade62bc1c2fe6.png" />
+<img alt="../_images/26120c141c498bc5166aaa8381d64ae07b47f4b83562bd1bf07429bf0819705f.png" src="../_images/26120c141c498bc5166aaa8381d64ae07b47f4b83562bd1bf07429bf0819705f.png" />
 </div>
 </div>
 <p>This figure is somewhat useful, but not for depicting balance
@@ -1828,7 +1829,7 @@ the predicted probability exceeds this threshold.</p>
 positive rates, so let’s plot these rates as functions of the threshold.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">balance_threshold_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">balance_threshold_plot</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                           <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">pred</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">pred</span><span class="p">),</span> <span class="n">bins</span><span class="p">)</span>
@@ -1875,7 +1876,7 @@ positive rates, so let’s plot these rates as functions of the threshold.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b00cd967cd2b8eb8de611f1adccbe8865fa62928076e30b574e3cd9f864d589.png" src="../_images/1b00cd967cd2b8eb8de611f1adccbe8865fa62928076e30b574e3cd9f864d589.png" />
+<img alt="../_images/15305cd412e728990643cfa15d89a86c38a1d237e53cd5f09df486be24a77f0e.png" src="../_images/15305cd412e728990643cfa15d89a86c38a1d237e53cd5f09df486be24a77f0e.png" />
 </div>
 </div>
 <p>From this, we can more easily see the balance problem — regardless
@@ -1900,8 +1901,8 @@ and indicator terms here.</p>
 regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> penalty.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">model_selection</span><span class="p">,</span> <span class="n">linear_model</span>
-<span class="kn">from</span> <span class="nn">patsy</span> <span class="kn">import</span> <span class="n">dmatrices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">model_selection</span><span class="p">,</span> <span class="n">linear_model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">patsy</span><span class="w"> </span><span class="kn">import</span> <span class="n">dmatrices</span>
 
 <span class="c1"># charge_desc has many values with one observations, we will</span>
 <span class="c1"># combine these descriptions into a single &quot;other.&quot; This could</span>
@@ -1960,7 +1961,7 @@ regression with an <span class="math notranslate nohighlight">\(\ell-1\)</span> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3caa78f43e8bb44fc64feea7b2d3db34885e1b9ed6c474f4dde5341ec21829d3.png" src="../_images/3caa78f43e8bb44fc64feea7b2d3db34885e1b9ed6c474f4dde5341ec21829d3.png" />
+<img alt="../_images/023d73db8745a30aead42f0adc5af3a5bc9491bde1a2013292eae542c1b5833d.png" src="../_images/023d73db8745a30aead42f0adc5af3a5bc9491bde1a2013292eae542c1b5833d.png" />
 </div>
 </div>
 <p>Let’s also look at the nonzero coefficients. We should be careful
@@ -1983,7 +1984,7 @@ consistent coefficient estimates.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2010,727 +2011,331 @@ consistent coefficient estimates.</p>
   <tbody>
     <tr>
       <th>Intercept</th>
-      <td>0.106794</td>
+      <td>0.059457</td>
     </tr>
     <tr>
       <th>sex[T.Male]</th>
-      <td>0.540544</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.1]</th>
-      <td>0.133043</td>
+      <td>0.724317</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.2]</th>
-      <td>0.596605</td>
+      <td>0.325179</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.3]</th>
-      <td>0.818527</td>
+      <td>0.612226</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.4]</th>
-      <td>1.237653</td>
+      <td>0.749687</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.5]</th>
-      <td>1.013985</td>
+      <td>0.732780</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.6]</th>
-      <td>1.076469</td>
+      <td>0.792287</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.7]</th>
-      <td>1.386997</td>
+      <td>1.032673</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.8]</th>
-      <td>1.809132</td>
+      <td>1.322558</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.9]</th>
-      <td>2.082248</td>
+      <td>1.286930</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.10]</th>
-      <td>1.417743</td>
+      <td>1.318447</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.11]</th>
-      <td>1.754714</td>
+      <td>1.236898</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.12]</th>
-      <td>1.774408</td>
+      <td>0.985699</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.13]</th>
-      <td>1.634843</td>
+      <td>1.528307</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.14]</th>
-      <td>0.676274</td>
+      <td>0.406050</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.15]</th>
-      <td>1.328427</td>
+      <td>0.781425</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.16]</th>
-      <td>1.621348</td>
+      <td>1.129211</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.17]</th>
-      <td>0.496631</td>
+      <td>0.371015</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.18]</th>
-      <td>2.677707</td>
+      <td>1.524262</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.19]</th>
-      <td>2.145367</td>
+      <td>1.143297</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.20]</th>
-      <td>1.235022</td>
+      <td>0.116823</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.21]</th>
-      <td>2.827844</td>
+      <td>1.298534</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.22]</th>
-      <td>3.418735</td>
+      <td>1.676816</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.23]</th>
-      <td>3.201673</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.24]</th>
-      <td>1.721607</td>
+      <td>1.332190</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.25]</th>
-      <td>3.546168</td>
+      <td>0.481936</td>
     </tr>
     <tr>
       <th>C(priors_count)[T.26]</th>
-      <td>2.246730</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.27]</th>
-      <td>0.024405</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.28]</th>
-      <td>2.888711</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.29]</th>
-      <td>1.170354</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.30]</th>
-      <td>2.572477</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.31]</th>
-      <td>1.027458</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.33]</th>
-      <td>0.151072</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.36]</th>
-      <td>0.034322</td>
-    </tr>
-    <tr>
-      <th>C(priors_count)[T.38]</th>
-      <td>1.026928</td>
+      <td>0.281198</td>
     </tr>
     <tr>
       <th>c_charge_degree[T.M]</th>
-      <td>-0.256738</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Agg Battery Grt/Bod/Harm]</th>
-      <td>-0.702946</td>
+      <td>-0.228188</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
-      <td>-0.854279</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Aggravated Assault W/Dead Weap]</th>
-      <td>-0.408456</td>
+      <td>-0.152893</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Assault W/dead Weap]</th>
-      <td>-0.970441</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Aggravated Assault w/Firearm]</th>
-      <td>-0.696543</td>
+      <td>-0.457776</td>
     </tr>
     <tr>
       <th>charge_cat[T.Aggravated Battery]</th>
-      <td>-1.436414</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Att Burgl Unoccupied Dwel]</th>
-      <td>-0.205827</td>
+      <td>-0.426259</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery]</th>
-      <td>-0.288622</td>
+      <td>-0.008900</td>
     </tr>
     <tr>
       <th>charge_cat[T.Battery on Law Enforc Officer]</th>
-      <td>0.532589</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Battery on a Person Over 65]</th>
-      <td>1.720175</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Burglary Conveyance Unoccup]</th>
-      <td>-0.377439</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Burglary Dwelling Assault/Batt]</th>
-      <td>0.129763</td>
+      <td>0.312823</td>
     </tr>
     <tr>
       <th>charge_cat[T.Burglary Unoccupied Dwelling]</th>
-      <td>-0.406872</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Carrying Concealed Firearm]</th>
-      <td>-0.000084</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Crim Use of Personal ID Info]</th>
-      <td>-0.528549</td>
+      <td>-0.151946</td>
     </tr>
     <tr>
       <th>charge_cat[T.Criminal Mischief]</th>
-      <td>1.629321</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Criminal Mischief Damage &lt;$200]</th>
-      <td>0.308763</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Criminal Mischief&gt;$200&lt;$1000]</th>
-      <td>-0.288008</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Cruelty Toward Child]</th>
-      <td>-0.430909</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.DUI - Enhanced]</th>
-      <td>-2.352127</td>
+      <td>0.441644</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Level 0.15 Or Minor In Veh]</th>
-      <td>-0.438073</td>
+      <td>-0.043803</td>
     </tr>
     <tr>
       <th>charge_cat[T.DUI Property Damage/Injury]</th>
-      <td>-1.430982</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Dealing in Stolen Property]</th>
-      <td>-0.073386</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Deliver 3,4 Methylenediox]</th>
-      <td>-0.690243</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Deliver Cocaine]</th>
-      <td>-0.697769</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Disorderly Conduct]</th>
-      <td>0.035587</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Disorderly Intoxication]</th>
-      <td>-0.861381</td>
+      <td>-0.957467</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving License Suspended]</th>
-      <td>-0.367071</td>
+      <td>-0.062534</td>
     </tr>
     <tr>
       <th>charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.204027</td>
+      <td>-0.141200</td>
     </tr>
     <tr>
-      <th>charge_cat[T.Exposes Culpable Negligence]</th>
-      <td>-0.487179</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.False Ownership Info/Pawn Item]</th>
-      <td>-0.375180</td>
+      <th>charge_cat[T.Felony Driving While Lic Suspd]</th>
+      <td>0.182787</td>
     </tr>
     <tr>
       <th>charge_cat[T.Felony Petit Theft]</th>
-      <td>0.552390</td>
+      <td>0.697375</td>
     </tr>
     <tr>
       <th>charge_cat[T.Grand Theft (Motor Vehicle)]</th>
-      <td>0.198247</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Grand Theft in the 3rd Degree]</th>
-      <td>-0.327968</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Leave Acc/Attend Veh/More $50]</th>
-      <td>0.541431</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Leaving Acc/Unattended Veh]</th>
-      <td>-0.507138</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Leaving the Scene of Accident]</th>
-      <td>-0.454525</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Lewd or Lascivious Molestation]</th>
-      <td>-2.097775</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Lve/Scen/Acc/Veh/Prop/Damage]</th>
-      <td>0.548869</td>
+      <td>0.134803</td>
     </tr>
     <tr>
       <th>charge_cat[T.Operating W/O Valid License]</th>
-      <td>-0.587517</td>
+      <td>-0.084327</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft]</th>
-      <td>0.205809</td>
+      <td>0.574943</td>
     </tr>
     <tr>
       <th>charge_cat[T.Petit Theft $100- $300]</th>
-      <td>0.797348</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Pos Cannabis W/Intent Sel/Del]</th>
-      <td>-0.059576</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Poss 3,4 MDMA (Ecstasy)]</th>
-      <td>0.422914</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Poss Contr Subst W/o Prescript]</th>
-      <td>0.030051</td>
+      <td>0.019311</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss Pyrrolidinovalerophenone]</th>
-      <td>4.176537</td>
+      <td>2.135452</td>
     </tr>
     <tr>
       <th>charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
-      <td>-2.156010</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Possess Cannabis/20 Grams Or Less]</th>
-      <td>-0.455052</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Possession Burglary Tools]</th>
-      <td>0.007134</td>
+      <td>-0.186742</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.670021</td>
+      <td>-0.394920</td>
     </tr>
     <tr>
       <th>charge_cat[T.Possession of Cocaine]</th>
-      <td>0.436730</td>
+      <td>0.595576</td>
     </tr>
     <tr>
-      <th>charge_cat[T.Possession of Hydrocodone]</th>
-      <td>-0.311074</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Possession of Oxycodone]</th>
-      <td>0.163198</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Prowling/Loitering]</th>
-      <td>0.600440</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Resist Officer w/Violence]</th>
-      <td>-0.021559</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Robbery / No Weapon]</th>
-      <td>-1.437629</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Susp Drivers Lic 1st Offense]</th>
-      <td>-0.317395</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Tamper With Witness/Victim/CI]</th>
-      <td>0.320606</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Tampering With Physical Evidence]</th>
-      <td>1.788952</td>
-    </tr>
-    <tr>
-      <th>charge_cat[T.Uttering a Forged Instrument]</th>
-      <td>0.402108</td>
+      <th>charge_cat[T.Viol Injunct Domestic Violence]</th>
+      <td>0.135652</td>
     </tr>
     <tr>
       <th>charge_cat[T.Viol Pretrial Release Dom Viol]</th>
-      <td>1.169393</td>
+      <td>0.230993</td>
     </tr>
     <tr>
       <th>charge_cat[T.arrest case no charge]</th>
-      <td>-0.544823</td>
+      <td>-0.181117</td>
     </tr>
     <tr>
       <th>charge_cat[T.other]</th>
-      <td>-0.540615</td>
+      <td>-0.196737</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.1]</th>
-      <td>0.178058</td>
+      <td>0.034413</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.3]</th>
-      <td>0.202535</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.4]</th>
-      <td>-0.199658</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.5]</th>
-      <td>0.086984</td>
+      <td>0.087811</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.6]</th>
-      <td>0.159082</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.9]</th>
-      <td>-0.374414</td>
+      <td>0.036044</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.10]</th>
-      <td>0.688974</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.12]</th>
-      <td>-0.128479</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.13]</th>
-      <td>0.552845</td>
+      <td>0.200299</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.14]</th>
-      <td>1.185079</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.15]</th>
-      <td>0.177682</td>
+      <td>0.709728</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.16]</th>
-      <td>0.537898</td>
+      <td>0.179086</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.17]</th>
-      <td>2.036591</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.24]</th>
-      <td>0.368940</td>
+      <td>1.115176</td>
     </tr>
     <tr>
       <th>sex[T.Male]:C(priors_count)[T.26]</th>
-      <td>1.947713</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.27]</th>
-      <td>0.093653</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.28]</th>
-      <td>0.325210</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.29]</th>
-      <td>0.846291</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.31]</th>
-      <td>0.812785</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.33]</th>
-      <td>1.910180</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.36]</th>
-      <td>0.001497</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:C(priors_count)[T.38]</th>
-      <td>1.508434</td>
+      <td>0.626455</td>
     </tr>
     <tr>
       <th>sex[T.Male]:c_charge_degree[T.M]</th>
-      <td>0.248408</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Aggrav Battery w/Deadly Weapon]</th>
-      <td>0.543062</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Aggravated Assault W/Dead Weap]</th>
-      <td>0.734849</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Aggravated Assault W/dead Weap]</th>
-      <td>-0.147755</td>
+      <td>0.163780</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Aggravated Battery / Pregnant]</th>
-      <td>0.160726</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Assault]</th>
-      <td>-0.000686</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Att Burgl Unoccupied Dwel]</th>
-      <td>-0.242996</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Battery]</th>
-      <td>0.188641</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Battery on Law Enforc Officer]</th>
-      <td>-0.261603</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Battery on a Person Over 65]</th>
-      <td>-2.353918</td>
+      <td>0.024287</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Burglary Conveyance Unoccup]</th>
-      <td>1.074102</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Burglary Unoccupied Dwelling]</th>
-      <td>-0.109822</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Carrying Concealed Firearm]</th>
-      <td>-0.009358</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Child Abuse]</th>
-      <td>-0.194906</td>
+      <td>0.516814</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Corrupt Public Servant]</th>
-      <td>2.104204</td>
+      <td>0.717883</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Crimin Mischief Damage $1000+]</th>
-      <td>1.127057</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Criminal Mischief Damage &lt;$200]</th>
-      <td>-0.936006</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.DUI Property Damage/Injury]</th>
-      <td>0.027661</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Deliver 3,4 Methylenediox]</th>
-      <td>-0.163973</td>
+      <td>0.044218</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving License Suspended]</th>
-      <td>-0.147984</td>
+      <td>-0.000947</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving Under The Influence]</th>
-      <td>-0.192395</td>
+      <td>-0.035059</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Driving While License Revoked]</th>
-      <td>-0.477108</td>
+      <td>-0.094722</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.False Ownership Info/Pawn Item]</th>
-      <td>1.669729</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Felony Battery (Dom Strang)]</th>
-      <td>-0.024259</td>
+      <td>0.480675</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Battery w/Prior Convict]</th>
-      <td>-0.760625</td>
+      <td>-0.096477</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Felony Driving While Lic Suspd]</th>
-      <td>0.297832</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Grand Theft (Motor Vehicle)]</th>
-      <td>-0.043309</td>
+      <td>0.114962</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Grand Theft in the 3rd Degree]</th>
-      <td>0.572824</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Leave Acc/Attend Veh/More $50]</th>
-      <td>-1.698306</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Lewd or Lascivious Molestation]</th>
-      <td>-0.303527</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Lve/Scen/Acc/Veh/Prop/Damage]</th>
-      <td>-0.385134</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Neglect Child / No Bodily Harm]</th>
-      <td>-1.014337</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Operating W/O Valid License]</th>
-      <td>-0.160610</td>
+      <td>0.277286</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Petit Theft]</th>
-      <td>1.082298</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Poss Cocaine/Intent To Del/Sel]</th>
-      <td>-1.316600</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Poss3,4 Methylenedioxymethcath]</th>
-      <td>1.845302</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Possess Cannabis/20 Grams Or Less]</th>
-      <td>0.406425</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Possession Of Alprazolam]</th>
-      <td>0.112736</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Possession Of Heroin]</th>
-      <td>0.511519</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Possession Of Methamphetamine]</th>
-      <td>0.234476</td>
+      <td>0.199593</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Possession of Cannabis]</th>
-      <td>-0.095294</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Possession of Hydromorphone]</th>
-      <td>-0.704457</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Possession of Oxycodone]</th>
-      <td>-0.818569</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Prowling/Loitering]</th>
-      <td>0.000540</td>
+      <td>-0.051139</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Resist/Obstruct W/O Violence]</th>
-      <td>0.402307</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Robbery / No Weapon]</th>
-      <td>0.885641</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Tampering With Physical Evidence]</th>
-      <td>-1.774589</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.Uttering a Forged Instrument]</th>
-      <td>-0.373709</td>
+      <td>0.272828</td>
     </tr>
     <tr>
       <th>sex[T.Male]:charge_cat[T.Viol Injunct Domestic Violence]</th>
-      <td>0.752602</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.arrest case no charge]</th>
-      <td>0.121329</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:charge_cat[T.other]</th>
-      <td>0.221349</td>
+      <td>0.325777</td>
     </tr>
     <tr>
       <th>age</th>
-      <td>-0.030206</td>
+      <td>-0.024241</td>
     </tr>
     <tr>
       <th>sex[T.Male]:age</th>
-      <td>-0.015453</td>
+      <td>-0.014782</td>
     </tr>
     <tr>
       <th>juv_fel_count</th>
-      <td>0.399469</td>
-    </tr>
-    <tr>
-      <th>sex[T.Male]:juv_fel_count</th>
-      <td>-0.158209</td>
-    </tr>
-    <tr>
-      <th>juv_misd_count</th>
-      <td>-0.259265</td>
+      <td>0.302101</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_misd_count</th>
-      <td>0.321945</td>
+      <td>0.181024</td>
     </tr>
     <tr>
       <th>juv_other_count</th>
-      <td>0.317840</td>
+      <td>0.149143</td>
     </tr>
     <tr>
       <th>sex[T.Male]:juv_other_count</th>
-      <td>-0.229096</td>
+      <td>-0.019169</td>
     </tr>
   </tbody>
 </table>
@@ -2784,39 +2389,39 @@ figures as we did above.</p>
   <tbody>
     <tr>
       <th>Portion_of_NoRecid_and_LowRisk</th>
-      <td>0.404243</td>
-      <td>0.325902</td>
-      <td>0.483333</td>
-      <td>0.574194</td>
-      <td>0.556196</td>
-      <td>0.365185</td>
+      <td>0.411903</td>
+      <td>0.332272</td>
+      <td>0.49</td>
+      <td>0.593548</td>
+      <td>0.596542</td>
+      <td>0.364444</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_LowRisk</th>
-      <td>0.149087</td>
-      <td>0.167728</td>
-      <td>0.128333</td>
-      <td>0.116129</td>
-      <td>0.089337</td>
-      <td>0.164444</td>
+      <td>0.141426</td>
+      <td>0.161359</td>
+      <td>0.121667</td>
+      <td>0.096774</td>
+      <td>0.048991</td>
+      <td>0.165185</td>
     </tr>
     <tr>
       <th>Portion_of_NoRecid_and_HighRisk</th>
-      <td>0.190336</td>
+      <td>0.190925</td>
       <td>0.18259</td>
       <td>0.201667</td>
-      <td>0.193548</td>
-      <td>0.239193</td>
-      <td>0.177778</td>
+      <td>0.2</td>
+      <td>0.25072</td>
+      <td>0.175556</td>
     </tr>
     <tr>
       <th>Portion_of_Recid_and_HighRisk</th>
-      <td>0.256335</td>
+      <td>0.255745</td>
       <td>0.323779</td>
       <td>0.186667</td>
-      <td>0.116129</td>
-      <td>0.115274</td>
-      <td>0.292593</td>
+      <td>0.109677</td>
+      <td>0.103746</td>
+      <td>0.294815</td>
     </tr>
   </tbody>
 </table>
@@ -2849,39 +2454,39 @@ figures as we did above.</p>
   <tbody>
     <tr>
       <th>P(NoRecid|LowRisk)</th>
-      <td>0.679881</td>
-      <td>0.640919</td>
-      <td>0.705596</td>
-      <td>0.747899</td>
-      <td>0.699275</td>
-      <td>0.672578</td>
+      <td>0.683284</td>
+      <td>0.645361</td>
+      <td>0.708434</td>
+      <td>0.747967</td>
+      <td>0.704082</td>
+      <td>0.674897</td>
     </tr>
     <tr>
       <th>P(NoRecid|HighRisk)</th>
-      <td>0.367733</td>
-      <td>0.341253</td>
-      <td>0.407407</td>
-      <td>0.5</td>
-      <td>0.43662</td>
-      <td>0.359806</td>
+      <td>0.356083</td>
+      <td>0.332604</td>
+      <td>0.394595</td>
+      <td>0.46875</td>
+      <td>0.320755</td>
+      <td>0.359098</td>
     </tr>
     <tr>
       <th>P(Recid|LowRisk)</th>
-      <td>0.320119</td>
-      <td>0.359081</td>
-      <td>0.294404</td>
-      <td>0.252101</td>
-      <td>0.300725</td>
-      <td>0.327422</td>
+      <td>0.316716</td>
+      <td>0.354639</td>
+      <td>0.291566</td>
+      <td>0.252033</td>
+      <td>0.295918</td>
+      <td>0.325103</td>
     </tr>
     <tr>
       <th>P(Recid|HighRisk)</th>
-      <td>0.632267</td>
-      <td>0.658747</td>
-      <td>0.592593</td>
-      <td>0.5</td>
-      <td>0.56338</td>
-      <td>0.640194</td>
+      <td>0.643917</td>
+      <td>0.667396</td>
+      <td>0.605405</td>
+      <td>0.53125</td>
+      <td>0.679245</td>
+      <td>0.640902</td>
     </tr>
   </tbody>
 </table>
@@ -2914,44 +2519,44 @@ figures as we did above.</p>
   <tbody>
     <tr>
       <th>P(LowRisk|NoRecid)</th>
-      <td>0.730564</td>
-      <td>0.660215</td>
-      <td>0.790191</td>
-      <td>0.831776</td>
-      <td>0.861607</td>
-      <td>0.68951</td>
+      <td>0.744409</td>
+      <td>0.673118</td>
+      <td>0.80109</td>
+      <td>0.859813</td>
+      <td>0.924107</td>
+      <td>0.688112</td>
     </tr>
     <tr>
       <th>P(HighRisk|NoRecid)</th>
-      <td>0.269436</td>
-      <td>0.339785</td>
-      <td>0.209809</td>
-      <td>0.168224</td>
-      <td>0.138393</td>
-      <td>0.31049</td>
+      <td>0.255591</td>
+      <td>0.326882</td>
+      <td>0.19891</td>
+      <td>0.140187</td>
+      <td>0.075893</td>
+      <td>0.311888</td>
     </tr>
     <tr>
       <th>P(LowRisk|Recid)</th>
-      <td>0.426121</td>
+      <td>0.427441</td>
       <td>0.360587</td>
       <td>0.519313</td>
-      <td>0.625</td>
-      <td>0.674797</td>
-      <td>0.377953</td>
+      <td>0.645833</td>
+      <td>0.707317</td>
+      <td>0.373228</td>
     </tr>
     <tr>
       <th>P(HighRisk|Recid)</th>
-      <td>0.573879</td>
+      <td>0.572559</td>
       <td>0.639413</td>
       <td>0.480687</td>
-      <td>0.375</td>
-      <td>0.325203</td>
-      <td>0.622047</td>
+      <td>0.354167</td>
+      <td>0.292683</td>
+      <td>0.626772</td>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/6025e7e8130a8686b04673cd98c4a81d3b3ba138d46b064b330b887afab53adb.png" src="../_images/6025e7e8130a8686b04673cd98c4a81d3b3ba138d46b064b330b887afab53adb.png" />
-<img alt="../_images/0ce2688a1f70f8dacb4fe8f65a5bab539550e03d68c40398cbd1d682058aad18.png" src="../_images/0ce2688a1f70f8dacb4fe8f65a5bab539550e03d68c40398cbd1d682058aad18.png" />
+</div></div><img alt="../_images/85c0f6762974cb57d6fe8322e769d0ad095828d1780886344b28a83943c513e2.png" src="../_images/85c0f6762974cb57d6fe8322e769d0ad095828d1780886344b28a83943c513e2.png" />
+<img alt="../_images/50b5699e6d9c7219d4a6062b3ca4de4ee01ab156412a7e4abbc20b0fb160054d.png" src="../_images/50b5699e6d9c7219d4a6062b3ca4de4ee01ab156412a7e4abbc20b0fb160054d.png" />
 </div>
 </div>
 <p>As with COMPAS score, our predictions are well-calibrated, but the
@@ -2974,7 +2579,7 @@ some other criteria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a custom CV criteria to maximize</span>
-<span class="k">def</span> <span class="nf">balance_scorer</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">balance_scorer</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">y_true</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
     <span class="n">df_cv</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">y_true</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">,:]</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">df_cv</span><span class="o">.</span><span class="n">race</span><span class="o">==</span><span class="s2">&quot;African-American&quot;</span>
@@ -3015,7 +2620,7 @@ some other criteria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plots illustrating regularization parameter choice</span>
-<span class="k">def</span> <span class="nf">grid_cv_plot</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">grid_cv_plot</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
     <span class="n">scores</span><span class="o">=</span><span class="n">mod</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">[</span><span class="s2">&quot;mean_test_score&quot;</span><span class="p">]</span>
     <span class="n">Cdict</span><span class="o">=</span><span class="n">mod</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]</span>
     <span class="n">logpenalties</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">([</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Cdict</span><span class="p">])</span>
@@ -3030,7 +2635,7 @@ some other criteria.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2acedc0927ec5b3c40d97c22a29df267c5721e409e7ea925a26aaa0bcd0df7fc.png" src="../_images/2acedc0927ec5b3c40d97c22a29df267c5721e409e7ea925a26aaa0bcd0df7fc.png" />
+<img alt="../_images/5f81330278afc9e9567258d04425dcbe026f289c359241849c826c86561ee6f7.png" src="../_images/5f81330278afc9e9567258d04425dcbe026f289c359241849c826c86561ee6f7.png" />
 </div>
 </div>
 <p>We can be perfectly balanced by making the regularization parameter
@@ -3096,6 +2701,10 @@ prediction and balance?</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 10 candidates, totalling 50 fits
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/svm/_base.py:1249: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -3293,9 +2902,9 @@ prediction and balance?</p>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/df63d4a17d769e7c19efca13758a17ec1bcb3c9dc054baea3d45b266b106d563.png" src="../_images/df63d4a17d769e7c19efca13758a17ec1bcb3c9dc054baea3d45b266b106d563.png" />
-<img alt="../_images/1e4578216c552fc0850924cdbebb3424b6490c52dc8afb32bf796e085d1d68a4.png" src="../_images/1e4578216c552fc0850924cdbebb3424b6490c52dc8afb32bf796e085d1d68a4.png" />
-<img alt="../_images/0c4d593f7cb2ee7d987ca48ddfc897a49c4405de38de12c686068456946b4243.png" src="../_images/0c4d593f7cb2ee7d987ca48ddfc897a49c4405de38de12c686068456946b4243.png" />
+</div></div><img alt="../_images/a7c12b784173cd3c2fbab84f4d1987c427225364682aa5432ce39de4526c665f.png" src="../_images/a7c12b784173cd3c2fbab84f4d1987c427225364682aa5432ce39de4526c665f.png" />
+<img alt="../_images/03c82e55ff9b8a91619c72e3e6fc2ba360e471d77b36500807738acc91e64a07.png" src="../_images/03c82e55ff9b8a91619c72e3e6fc2ba360e471d77b36500807738acc91e64a07.png" />
+<img alt="../_images/aafc875459ff1cce2ec15c016de46d968a27e8bd8ebbd2759308adaadcef1d56.png" src="../_images/aafc875459ff1cce2ec15c016de46d968a27e8bd8ebbd2759308adaadcef1d56.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="app-rcd-dir4">
@@ -3400,6 +3009,8 @@ calibration and balance.</p>
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -3674,15 +3285,15 @@ calibration and balance.</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -3690,7 +3301,11 @@ calibration and balance.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/recidivism.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/recidivism.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/applications/recidivism.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -3719,8 +3334,6 @@ calibration and balance.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/recidivism.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/recidivism.ipynb">Colab</option>
                 
                 </select>
@@ -3732,7 +3345,7 @@ calibration and balance.</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/recidivism.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/recidivism.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -3789,7 +3402,7 @@ calibration and balance.</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

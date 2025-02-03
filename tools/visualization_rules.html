@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -147,6 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -221,7 +220,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -249,8 +249,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Data Visualization: Rules and Guidelines</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -285,14 +286,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mplc</span>
-<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mplc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
-<span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">DataReader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas_datareader</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataReader</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -408,7 +409,7 @@ settling on a draft we are happy with.</p>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
 
-<span class="k">def</span> <span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function creates a single year&#39;s and education level&#39;s</span>
 <span class="sd">    log density to log wage plot</span>
@@ -432,7 +433,7 @@ settling on a draft we are happy with.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/37ae46b9bac35b177d15cc0d52833ea1f7d61d3e7a5aac5184f68704f6eb5fea.png" src="../_images/37ae46b9bac35b177d15cc0d52833ea1f7d61d3e7a5aac5184f68704f6eb5fea.png" />
+<img alt="../_images/0a0a08fa455980ac92f0784b61e6f70bcf470208d669172947e05e83c4dfc590.png" src="../_images/0a0a08fa455980ac92f0784b61e6f70bcf470208d669172947e05e83c4dfc590.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="app-vis-dir1">
@@ -455,7 +456,7 @@ presenting the details.  However, the code we use to create the best version of 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
 
-<span class="k">def</span> <span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function creates a single year&#39;s and education level&#39;s</span>
 <span class="sd">    log density to log wage plot</span>
@@ -518,7 +519,7 @@ presenting the details.  However, the code we use to create the best version of 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1dced3447c6cbb8db05dd0eb45fc1ed1a971ef7bbbafdf0f163c030eb29734d1.png" src="../_images/1dced3447c6cbb8db05dd0eb45fc1ed1a971ef7bbbafdf0f163c030eb29734d1.png" />
+<img alt="../_images/14d2469a367010ca16d58107d0a80e69ac25cf9a93803edf87cd5be057c04b91.png" src="../_images/14d2469a367010ca16d58107d0a80e69ac25cf9a93803edf87cd5be057c04b91.png" />
 </div>
 </div>
 </section>
@@ -588,7 +589,7 @@ variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e8d37914039ad6453eca854f9761e336e502580a682119d453bf68059b82039.png" src="../_images/2e8d37914039ad6453eca854f9761e336e502580a682119d453bf68059b82039.png" />
+<img alt="../_images/1e2e0c7ec7041db1d5a71105188cbdfa34b2d770c2df2ce1f8840ac238b93e13.png" src="../_images/1e2e0c7ec7041db1d5a71105188cbdfa34b2d770c2df2ce1f8840ac238b93e13.png" />
 </div>
 </div>
 </section>
@@ -607,14 +608,14 @@ our college/non-college urban wage premium plot.</p>
 chose to remove them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
 
 <span class="c1"># Read in data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://datascience.quantecon.org/assets/data/density_wage_data.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert year to int</span>
 
 
-<span class="k">def</span> <span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">single_scatter_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">educ</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function creates a single year&#39;s and education level&#39;s</span>
 <span class="sd">    log density to log wage plot</span>
@@ -686,7 +687,7 @@ chose to remove them.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/97009d554ea41dcac78032a52903a2198553d0d56130b0da3b55fe51eeaf58a1.png" src="../_images/97009d554ea41dcac78032a52903a2198553d0d56130b0da3b55fe51eeaf58a1.png" />
+<img alt="../_images/1ff7a6a365a44799b0328e3d15b352f9100afb563410bbec30268ff933a0e18e.png" src="../_images/1ff7a6a365a44799b0328e3d15b352f9100afb563410bbec30268ff933a0e18e.png" />
 </div>
 </div>
 </section>
@@ -723,7 +724,7 @@ in the United States.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Unemployment Rate in US Cities&#39;)
 </pre></div>
 </div>
-<img alt="../_images/112d6b2b75cbb2fb1548bce1a01e5acf153c3d16d85c34ebf244bdb3dd12ce71.png" src="../_images/112d6b2b75cbb2fb1548bce1a01e5acf153c3d16d85c34ebf244bdb3dd12ce71.png" />
+<img alt="../_images/3d5b5417e8bd562ac1f7b755744c8acb1508cda55da734a9847e526480f69339.png" src="../_images/3d5b5417e8bd562ac1f7b755744c8acb1508cda55da734a9847e526480f69339.png" />
 </div>
 </div>
 </section>
@@ -757,7 +758,7 @@ since we typically think of means and variances in terms of the normal distribut
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;US GDP Growth from 1948-2019&#39;)
 </pre></div>
 </div>
-<img alt="../_images/8240915b8be40abbb67cea71a25292f8191888de46f5349b0a5a0920ba02a5b3.png" src="../_images/8240915b8be40abbb67cea71a25292f8191888de46f5349b0a5a0920ba02a5b3.png" />
+<img alt="../_images/3b29528b0e6fb2eea4d3fc7fbf34ec4e35e120754517fa2dd749d4e51b966b30.png" src="../_images/3b29528b0e6fb2eea4d3fc7fbf34ec4e35e120754517fa2dd749d4e51b966b30.png" />
 </div>
 </div>
 </section>
@@ -794,7 +795,7 @@ color black). If the color has value 1 then it has no black and is just the orig
 <p>Below, we demonstrate how colors change as we move hue/saturation/value one at a time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">color_swatches</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
 
     <span class="n">ncolors</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">ncolors</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -828,7 +829,7 @@ color black). If the color has value 1 then it has no black and is just the orig
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Hue&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b20b47ef1cea5cb3ad89aa1d2c9326a901ace26776ab03ba9bd0c17cd555e479.png" src="../_images/b20b47ef1cea5cb3ad89aa1d2c9326a901ace26776ab03ba9bd0c17cd555e479.png" />
+<img alt="../_images/b94595e2c97b43399a6282de4923d0c3f1d38c7ddc0c845809816309729836f3.png" src="../_images/b94595e2c97b43399a6282de4923d0c3f1d38c7ddc0c845809816309729836f3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -844,7 +845,7 @@ color black). If the color has value 1 then it has no black and is just the orig
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Saturation&#39;)
 </pre></div>
 </div>
-<img alt="../_images/01cdae0d68547683cce27257c17cdc3b46d193e5529e171f428ef95195b117c4.png" src="../_images/01cdae0d68547683cce27257c17cdc3b46d193e5529e171f428ef95195b117c4.png" />
+<img alt="../_images/423443343e68e12c6e7830c9cfa30fb7624f5fd1279de0b52b24b7492f8846ec.png" src="../_images/423443343e68e12c6e7830c9cfa30fb7624f5fd1279de0b52b24b7492f8846ec.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -860,7 +861,7 @@ color black). If the color has value 1 then it has no black and is just the orig
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Varying Value&#39;)
 </pre></div>
 </div>
-<img alt="../_images/e4a74bd001679af46097cc92ef818cbd16a904fbea1a1e189d243eb4e5052192.png" src="../_images/e4a74bd001679af46097cc92ef818cbd16a904fbea1a1e189d243eb4e5052192.png" />
+<img alt="../_images/e60def07bef1c511b6acfa767072f1992ef4673593544eb92c1dc458827ddd4a.png" src="../_images/e60def07bef1c511b6acfa767072f1992ef4673593544eb92c1dc458827ddd4a.png" />
 </div>
 </div>
 </section>
@@ -885,7 +886,7 @@ with matplotlib by doing:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;magma&#39;, &#39;inferno&#39;, &#39;plasma&#39;, &#39;viridis&#39;, &#39;cividis&#39;, &#39;twilight&#39;, &#39;twilight_shifted&#39;, &#39;turbo&#39;, &#39;Blues&#39;, &#39;BrBG&#39;, &#39;BuGn&#39;, &#39;BuPu&#39;, &#39;CMRmap&#39;, &#39;GnBu&#39;, &#39;Greens&#39;, &#39;Greys&#39;, &#39;OrRd&#39;, &#39;Oranges&#39;, &#39;PRGn&#39;, &#39;PiYG&#39;, &#39;PuBu&#39;, &#39;PuBuGn&#39;, &#39;PuOr&#39;, &#39;PuRd&#39;, &#39;Purples&#39;, &#39;RdBu&#39;, &#39;RdGy&#39;, &#39;RdPu&#39;, &#39;RdYlBu&#39;, &#39;RdYlGn&#39;, &#39;Reds&#39;, &#39;Spectral&#39;, &#39;Wistia&#39;, &#39;YlGn&#39;, &#39;YlGnBu&#39;, &#39;YlOrBr&#39;, &#39;YlOrRd&#39;, &#39;afmhot&#39;, &#39;autumn&#39;, &#39;binary&#39;, &#39;bone&#39;, &#39;brg&#39;, &#39;bwr&#39;, &#39;cool&#39;, &#39;coolwarm&#39;, &#39;copper&#39;, &#39;cubehelix&#39;, &#39;flag&#39;, &#39;gist_earth&#39;, &#39;gist_gray&#39;, &#39;gist_heat&#39;, &#39;gist_ncar&#39;, &#39;gist_rainbow&#39;, &#39;gist_stern&#39;, &#39;gist_yarg&#39;, &#39;gnuplot&#39;, &#39;gnuplot2&#39;, &#39;gray&#39;, &#39;hot&#39;, &#39;hsv&#39;, &#39;jet&#39;, &#39;nipy_spectral&#39;, &#39;ocean&#39;, &#39;pink&#39;, &#39;prism&#39;, &#39;rainbow&#39;, &#39;seismic&#39;, &#39;spring&#39;, &#39;summer&#39;, &#39;terrain&#39;, &#39;winter&#39;, &#39;Accent&#39;, &#39;Dark2&#39;, &#39;Paired&#39;, &#39;Pastel1&#39;, &#39;Pastel2&#39;, &#39;Set1&#39;, &#39;Set2&#39;, &#39;Set3&#39;, &#39;tab10&#39;, &#39;tab20&#39;, &#39;tab20b&#39;, &#39;tab20c&#39;, &#39;grey&#39;, &#39;gist_grey&#39;, &#39;gist_yerg&#39;, &#39;Grays&#39;, &#39;magma_r&#39;, &#39;inferno_r&#39;, &#39;plasma_r&#39;, &#39;viridis_r&#39;, &#39;cividis_r&#39;, &#39;twilight_r&#39;, &#39;twilight_shifted_r&#39;, &#39;turbo_r&#39;, &#39;Blues_r&#39;, &#39;BrBG_r&#39;, &#39;BuGn_r&#39;, &#39;BuPu_r&#39;, &#39;CMRmap_r&#39;, &#39;GnBu_r&#39;, &#39;Greens_r&#39;, &#39;Greys_r&#39;, &#39;OrRd_r&#39;, &#39;Oranges_r&#39;, &#39;PRGn_r&#39;, &#39;PiYG_r&#39;, &#39;PuBu_r&#39;, &#39;PuBuGn_r&#39;, &#39;PuOr_r&#39;, &#39;PuRd_r&#39;, &#39;Purples_r&#39;, &#39;RdBu_r&#39;, &#39;RdGy_r&#39;, &#39;RdPu_r&#39;, &#39;RdYlBu_r&#39;, &#39;RdYlGn_r&#39;, &#39;Reds_r&#39;, &#39;Spectral_r&#39;, &#39;Wistia_r&#39;, &#39;YlGn_r&#39;, &#39;YlGnBu_r&#39;, &#39;YlOrBr_r&#39;, &#39;YlOrRd_r&#39;, &#39;afmhot_r&#39;, &#39;autumn_r&#39;, &#39;binary_r&#39;, &#39;bone_r&#39;, &#39;brg_r&#39;, &#39;bwr_r&#39;, &#39;cool_r&#39;, &#39;coolwarm_r&#39;, &#39;copper_r&#39;, &#39;cubehelix_r&#39;, &#39;flag_r&#39;, &#39;gist_earth_r&#39;, &#39;gist_gray_r&#39;, &#39;gist_heat_r&#39;, &#39;gist_ncar_r&#39;, &#39;gist_rainbow_r&#39;, &#39;gist_stern_r&#39;, &#39;gist_yarg_r&#39;, &#39;gnuplot_r&#39;, &#39;gnuplot2_r&#39;, &#39;gray_r&#39;, &#39;hot_r&#39;, &#39;hsv_r&#39;, &#39;jet_r&#39;, &#39;nipy_spectral_r&#39;, &#39;ocean_r&#39;, &#39;pink_r&#39;, &#39;prism_r&#39;, &#39;rainbow_r&#39;, &#39;seismic_r&#39;, &#39;spring_r&#39;, &#39;summer_r&#39;, &#39;terrain_r&#39;, &#39;winter_r&#39;, &#39;Accent_r&#39;, &#39;Dark2_r&#39;, &#39;Paired_r&#39;, &#39;Pastel1_r&#39;, &#39;Pastel2_r&#39;, &#39;Set1_r&#39;, &#39;Set2_r&#39;, &#39;Set3_r&#39;, &#39;tab10_r&#39;, &#39;tab20_r&#39;, &#39;tab20b_r&#39;, &#39;tab20c_r&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;magma&#39;, &#39;inferno&#39;, &#39;plasma&#39;, &#39;viridis&#39;, &#39;cividis&#39;, &#39;twilight&#39;, &#39;twilight_shifted&#39;, &#39;turbo&#39;, &#39;berlin&#39;, &#39;managua&#39;, &#39;vanimo&#39;, &#39;Blues&#39;, &#39;BrBG&#39;, &#39;BuGn&#39;, &#39;BuPu&#39;, &#39;CMRmap&#39;, &#39;GnBu&#39;, &#39;Greens&#39;, &#39;Greys&#39;, &#39;OrRd&#39;, &#39;Oranges&#39;, &#39;PRGn&#39;, &#39;PiYG&#39;, &#39;PuBu&#39;, &#39;PuBuGn&#39;, &#39;PuOr&#39;, &#39;PuRd&#39;, &#39;Purples&#39;, &#39;RdBu&#39;, &#39;RdGy&#39;, &#39;RdPu&#39;, &#39;RdYlBu&#39;, &#39;RdYlGn&#39;, &#39;Reds&#39;, &#39;Spectral&#39;, &#39;Wistia&#39;, &#39;YlGn&#39;, &#39;YlGnBu&#39;, &#39;YlOrBr&#39;, &#39;YlOrRd&#39;, &#39;afmhot&#39;, &#39;autumn&#39;, &#39;binary&#39;, &#39;bone&#39;, &#39;brg&#39;, &#39;bwr&#39;, &#39;cool&#39;, &#39;coolwarm&#39;, &#39;copper&#39;, &#39;cubehelix&#39;, &#39;flag&#39;, &#39;gist_earth&#39;, &#39;gist_gray&#39;, &#39;gist_heat&#39;, &#39;gist_ncar&#39;, &#39;gist_rainbow&#39;, &#39;gist_stern&#39;, &#39;gist_yarg&#39;, &#39;gnuplot&#39;, &#39;gnuplot2&#39;, &#39;gray&#39;, &#39;hot&#39;, &#39;hsv&#39;, &#39;jet&#39;, &#39;nipy_spectral&#39;, &#39;ocean&#39;, &#39;pink&#39;, &#39;prism&#39;, &#39;rainbow&#39;, &#39;seismic&#39;, &#39;spring&#39;, &#39;summer&#39;, &#39;terrain&#39;, &#39;winter&#39;, &#39;Accent&#39;, &#39;Dark2&#39;, &#39;Paired&#39;, &#39;Pastel1&#39;, &#39;Pastel2&#39;, &#39;Set1&#39;, &#39;Set2&#39;, &#39;Set3&#39;, &#39;tab10&#39;, &#39;tab20&#39;, &#39;tab20b&#39;, &#39;tab20c&#39;, &#39;grey&#39;, &#39;gist_grey&#39;, &#39;gist_yerg&#39;, &#39;Grays&#39;, &#39;magma_r&#39;, &#39;inferno_r&#39;, &#39;plasma_r&#39;, &#39;viridis_r&#39;, &#39;cividis_r&#39;, &#39;twilight_r&#39;, &#39;twilight_shifted_r&#39;, &#39;turbo_r&#39;, &#39;berlin_r&#39;, &#39;managua_r&#39;, &#39;vanimo_r&#39;, &#39;Blues_r&#39;, &#39;BrBG_r&#39;, &#39;BuGn_r&#39;, &#39;BuPu_r&#39;, &#39;CMRmap_r&#39;, &#39;GnBu_r&#39;, &#39;Greens_r&#39;, &#39;Greys_r&#39;, &#39;OrRd_r&#39;, &#39;Oranges_r&#39;, &#39;PRGn_r&#39;, &#39;PiYG_r&#39;, &#39;PuBu_r&#39;, &#39;PuBuGn_r&#39;, &#39;PuOr_r&#39;, &#39;PuRd_r&#39;, &#39;Purples_r&#39;, &#39;RdBu_r&#39;, &#39;RdGy_r&#39;, &#39;RdPu_r&#39;, &#39;RdYlBu_r&#39;, &#39;RdYlGn_r&#39;, &#39;Reds_r&#39;, &#39;Spectral_r&#39;, &#39;Wistia_r&#39;, &#39;YlGn_r&#39;, &#39;YlGnBu_r&#39;, &#39;YlOrBr_r&#39;, &#39;YlOrRd_r&#39;, &#39;afmhot_r&#39;, &#39;autumn_r&#39;, &#39;binary_r&#39;, &#39;bone_r&#39;, &#39;brg_r&#39;, &#39;bwr_r&#39;, &#39;cool_r&#39;, &#39;coolwarm_r&#39;, &#39;copper_r&#39;, &#39;cubehelix_r&#39;, &#39;flag_r&#39;, &#39;gist_earth_r&#39;, &#39;gist_gray_r&#39;, &#39;gist_heat_r&#39;, &#39;gist_ncar_r&#39;, &#39;gist_rainbow_r&#39;, &#39;gist_stern_r&#39;, &#39;gist_yarg_r&#39;, &#39;gnuplot_r&#39;, &#39;gnuplot2_r&#39;, &#39;gray_r&#39;, &#39;hot_r&#39;, &#39;hsv_r&#39;, &#39;jet_r&#39;, &#39;nipy_spectral_r&#39;, &#39;ocean_r&#39;, &#39;pink_r&#39;, &#39;prism_r&#39;, &#39;rainbow_r&#39;, &#39;seismic_r&#39;, &#39;spring_r&#39;, &#39;summer_r&#39;, &#39;terrain_r&#39;, &#39;winter_r&#39;, &#39;Accent_r&#39;, &#39;Dark2_r&#39;, &#39;Paired_r&#39;, &#39;Pastel1_r&#39;, &#39;Pastel2_r&#39;, &#39;Set1_r&#39;, &#39;Set2_r&#39;, &#39;Set3_r&#39;, &#39;tab10_r&#39;, &#39;tab20_r&#39;, &#39;tab20b_r&#39;, &#39;tab20c_r&#39;, &#39;grey_r&#39;, &#39;gist_grey_r&#39;, &#39;gist_yerg_r&#39;, &#39;Grays_r&#39;]
 </pre></div>
 </div>
 </div>
@@ -929,7 +930,7 @@ discussing how we can use color effectively.</p>
 Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa.gov/graphics_page_design.php">graphics website</a> (the NASA one we linked above).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">confusing_plot</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
 
     <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">colors</span>
 
@@ -970,7 +971,7 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8feb2511aeef5c3bbf12386ef6893745a6c61fd868aab13243f0dc3cc65bc980.png" src="../_images/8feb2511aeef5c3bbf12386ef6893745a6c61fd868aab13243f0dc3cc65bc980.png" />
+<img alt="../_images/80c6a55313a06845a729ce52538c4a86817fc3383a280c49d8c7b3044e77f091.png" src="../_images/80c6a55313a06845a729ce52538c4a86817fc3383a280c49d8c7b3044e77f091.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -982,7 +983,7 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/96292f00972f82feed1589a07d4fccb559f0db6e04cfbb6edc143860da308930.png" src="../_images/96292f00972f82feed1589a07d4fccb559f0db6e04cfbb6edc143860da308930.png" />
+<img alt="../_images/d3c68acf0adb0217a22030e74617946aabe08cd5a59eed706ea7fd5b8519df88.png" src="../_images/d3c68acf0adb0217a22030e74617946aabe08cd5a59eed706ea7fd5b8519df88.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -994,7 +995,7 @@ Galina Havin’s <a class="reference external" href="https://colorusage.arc.nasa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f425e732b00453a4d882adbabfe52f6df7a8523d7e964756ed0bb3d021a924b5.png" src="../_images/f425e732b00453a4d882adbabfe52f6df7a8523d7e964756ed0bb3d021a924b5.png" />
+<img alt="../_images/760c2e27391c05a55dc79856bdc119cd3e5771b97937d1d012742f7ea931234b.png" src="../_images/760c2e27391c05a55dc79856bdc119cd3e5771b97937d1d012742f7ea931234b.png" />
 </div>
 </div>
 <p>In our opinion, the last one with no color is actually the most readable.</p>
@@ -1044,7 +1045,7 @@ from the matplotlib documentation.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a774ce9656cd0ec7138be8be2a3dc0e1aa46592e622b153d71e81cd462d716ae.png" src="../_images/a774ce9656cd0ec7138be8be2a3dc0e1aa46592e622b153d71e81cd462d716ae.png" />
+<img alt="../_images/bc412b932e1d466f939e8ca8c8fe495da788c1b00b7208bbb9bab2ff9f7c9778.png" src="../_images/bc412b932e1d466f939e8ca8c8fe495da788c1b00b7208bbb9bab2ff9f7c9778.png" />
 </div>
 </div>
 <p>And here is the same image converted to grayscale.</p>
@@ -1091,7 +1092,7 @@ important groups and a distinct color to display the group of interest.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/334a5488a7c34631b94a0649608848f13e64a035a5c879df5245d0b03dd752b9.png" src="../_images/334a5488a7c34631b94a0649608848f13e64a035a5c879df5245d0b03dd752b9.png" />
+<img alt="../_images/6e9908ca5422ae98200a991c4754982b21540d639b85f73ae96a80fdf841be22.png" src="../_images/6e9908ca5422ae98200a991c4754982b21540d639b85f73ae96a80fdf841be22.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="app-vis-dir2">
@@ -1130,7 +1131,7 @@ become too small, differentiating between colors, no matter how distinct, become
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ec4f2de32cef19a6eea724fa6e6984cfc73c181cfa64629c0ff871db7c65ba2.png" src="../_images/1ec4f2de32cef19a6eea724fa6e6984cfc73c181cfa64629c0ff871db7c65ba2.png" />
+<img alt="../_images/48b50639cd2b390d07c4166edcfeaa27fa58131a429a1822877e77dbf854639d.png" src="../_images/48b50639cd2b390d07c4166edcfeaa27fa58131a429a1822877e77dbf854639d.png" />
 </div>
 </div>
 <p>It becomes harder to read, but because the red is so much darker than some of the other colors,
@@ -1173,11 +1174,11 @@ a poor color choice because red is often associated with losses and black is ass
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3717/472303190.py:6: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3903/472303190.py:6: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
   ax.set_xticklabels(df.index)
 </pre></div>
 </div>
-<img alt="../_images/6e60e14e20997a5ed20d2aa1a35eb34c0ff581b93a8a8b2413848d46056591f0.png" src="../_images/6e60e14e20997a5ed20d2aa1a35eb34c0ff581b93a8a8b2413848d46056591f0.png" />
+<img alt="../_images/4ffaa87286bd3d66522f36574f2c28b33f0caae94ac88bbe1049f75e1ebeafcf.png" src="../_images/4ffaa87286bd3d66522f36574f2c28b33f0caae94ac88bbe1049f75e1ebeafcf.png" />
 </div>
 </div>
 <p>This plot becomes much more intuitive by using red for negative values.</p>
@@ -1202,11 +1203,11 @@ a poor color choice because red is often associated with losses and black is ass
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3717/1446163677.py:6: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3903/1446163677.py:6: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
   ax.set_xticklabels(df.index)
 </pre></div>
 </div>
-<img alt="../_images/16cdbab6489e4259f6ed73dc5987ea1e5c9cc5064513366ca473837195019584.png" src="../_images/16cdbab6489e4259f6ed73dc5987ea1e5c9cc5064513366ca473837195019584.png" />
+<img alt="../_images/ca329a39f1533ac49e5a1464786a981ffd74de0262dabee173061dbd07ef4d6e.png" src="../_images/ca329a39f1533ac49e5a1464786a981ffd74de0262dabee173061dbd07ef4d6e.png" />
 </div>
 </div>
 </section>
@@ -1282,7 +1283,7 @@ few concise rules worth reviewing.</p></li>
     <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Australia&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">create_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_barplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
 
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
@@ -1308,7 +1309,7 @@ few concise rules worth reviewing.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c897a1e3c13579679e98318d26747267560be179a800cc437befaba45eda8284.png" src="../_images/c897a1e3c13579679e98318d26747267560be179a800cc437befaba45eda8284.png" />
+<img alt="../_images/6cf608a4d04602dc5f3ff9602951c8e9b9c64ff651700563f0e4f520961796f3.png" src="../_images/6cf608a4d04602dc5f3ff9602951c8e9b9c64ff651700563f0e4f520961796f3.png" />
 </div>
 </div>
 <p>Notice that we put a legend at the top and maintain the same order as kept in the bars.</p>
@@ -1342,7 +1343,7 @@ misrepresentation of the data.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
 </pre></div>
 </div>
-<img alt="../_images/4e08e9993a71a660bd3dbe8fff960ff79973846c85b51e4f366c52630f16c82a.png" src="../_images/4e08e9993a71a660bd3dbe8fff960ff79973846c85b51e4f366c52630f16c82a.png" />
+<img alt="../_images/2e8267a9395905ada26f95538fb452b4f8b077dfcf04fa7991236b7f80e3b30d.png" src="../_images/2e8267a9395905ada26f95538fb452b4f8b077dfcf04fa7991236b7f80e3b30d.png" />
 </div>
 </div>
 <p>This looks like a big difference!</p>
@@ -1373,7 +1374,7 @@ increase in the top tax rate is only 5-10 percent.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
 </pre></div>
 </div>
-<img alt="../_images/37615345221ce84ba1c34e767a3c60cc828e04073dfdcac24fa6ab21fe5a7e20.png" src="../_images/37615345221ce84ba1c34e767a3c60cc828e04073dfdcac24fa6ab21fe5a7e20.png" />
+<img alt="../_images/3f5946f05118e95bfb4a7389b35a5f68e3dc6f8110a8a8dc4bc7f0b96137439b.png" src="../_images/3f5946f05118e95bfb4a7389b35a5f68e3dc6f8110a8a8dc4bc7f0b96137439b.png" />
 </div>
 </div>
 <p>We also have opinions about what type of person uses all caps, but we’ll keep that to ourselves for
@@ -1412,7 +1413,7 @@ bar graph than determine the size of the angles in a pie chart.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;How many pieces of pie eaten&#39;)
 </pre></div>
 </div>
-<img alt="../_images/bca9ee931f31ed25bde23e6c33dc37a053f4c60e5918475bf5d9336248682e78.png" src="../_images/bca9ee931f31ed25bde23e6c33dc37a053f4c60e5918475bf5d9336248682e78.png" />
+<img alt="../_images/0f22fb34e9f6401f7ddd7c008568eb8d91eb975bb9c07f6c8be94e5f5717df9d.png" src="../_images/0f22fb34e9f6401f7ddd7c008568eb8d91eb975bb9c07f6c8be94e5f5717df9d.png" />
 </div>
 </div>
 <p>Using the pie chart, can you tell who ate more pie Alice or Susan? How about with the bar chart?</p>
@@ -1465,7 +1466,7 @@ but have relatively higher health and pension expenditures to pay to the old.</p
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../_images/7187f1d34b9dbe654f5de8e2077bab7d516ec9280ac212e4efffcac930661f51.png" src="../_images/7187f1d34b9dbe654f5de8e2077bab7d516ec9280ac212e4efffcac930661f51.png" />
+<img alt="../_images/d44bbc01c984f61b13175b79baeb31f016f693e844a8e13ea7abf65364e6bb90.png" src="../_images/d44bbc01c984f61b13175b79baeb31f016f693e844a8e13ea7abf65364e6bb90.png" />
 </div>
 </div>
 <p>Notice that with so many lines, the message about Japan is hidden or polluted by noise.</p>
@@ -1495,7 +1496,7 @@ we might try a plot like this:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../_images/924ebc6582c3a54026f26720b47f74133add3f8d2362e6b51224eaa7b1082c12.png" src="../_images/924ebc6582c3a54026f26720b47f74133add3f8d2362e6b51224eaa7b1082c12.png" />
+<img alt="../_images/c8c69a69ad9804abb6997f58b6f6c996ab35be0f0c8e1a0937f6c3a59bb14cb7.png" src="../_images/c8c69a69ad9804abb6997f58b6f6c996ab35be0f0c8e1a0937f6c3a59bb14cb7.png" />
 </div>
 </div>
 <p>However, placing this many lines on a single plot is definitely an exception, and we encourage you
@@ -1529,7 +1530,7 @@ to do so sparingly.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../_images/03f6b4e8c1de1ec56055584130b7dc062b066be9c32cf351c7ab20b7288e375e.png" src="../_images/03f6b4e8c1de1ec56055584130b7dc062b066be9c32cf351c7ab20b7288e375e.png" />
+<img alt="../_images/7244b8a0f64d229116ce18157d2a2d9a5a38189c9cdf03696a83bacc06540972.png" src="../_images/7244b8a0f64d229116ce18157d2a2d9a5a38189c9cdf03696a83bacc06540972.png" />
 </div>
 </div>
 <p>There are some good-use cases for using line styles to distinguish between different pieces
@@ -1565,7 +1566,7 @@ information, as seen below.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../_images/bfeced263959f269d3dead19e20149c562317d7e2cf9d031b43bb2890f99af3f.png" src="../_images/bfeced263959f269d3dead19e20149c562317d7e2cf9d031b43bb2890f99af3f.png" />
+<img alt="../_images/56ade46c14f125135b9b0ef3b3d68ca1b7083cc891b4583857c8279a47cf22f3.png" src="../_images/56ade46c14f125135b9b0ef3b3d68ca1b7083cc891b4583857c8279a47cf22f3.png" />
 </div>
 </div>
 </section>
@@ -1599,7 +1600,7 @@ determine what the values between the lines are:</p>
  Text(25, 0, &#39;25&#39;)]
 </pre></div>
 </div>
-<img alt="../_images/5afd2c0b8df324ae962e2aec1dc6638f2f859bc88bc3dc582ef3a8209179f362.png" src="../_images/5afd2c0b8df324ae962e2aec1dc6638f2f859bc88bc3dc582ef3a8209179f362.png" />
+<img alt="../_images/cb9cd38f51f3e66f2786d400fee5b1d6a26ebe2c0662b8b638af816b9b93a4fb.png" src="../_images/cb9cd38f51f3e66f2786d400fee5b1d6a26ebe2c0662b8b638af816b9b93a4fb.png" />
 </div>
 </div>
 </section>
@@ -1635,7 +1636,7 @@ determine what the values between the lines are:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
 </pre></div>
 </div>
-<img alt="../_images/72c884cd22e73ad7346e67586df3041a8b7bd0001f6d458eee9a617172cc9961.png" src="../_images/72c884cd22e73ad7346e67586df3041a8b7bd0001f6d458eee9a617172cc9961.png" />
+<img alt="../_images/5c8d3844871c20c5aee80dee1744b9c843e1bdf3b37497b3acdbdab4399c2159.png" src="../_images/5c8d3844871c20c5aee80dee1744b9c843e1bdf3b37497b3acdbdab4399c2159.png" />
 </div>
 </div>
 <p>versus</p>
@@ -1666,7 +1667,7 @@ determine what the values between the lines are:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;IF BUSH TAX CUTS EXPIRE\nTop Tax Rate&#39;)
 </pre></div>
 </div>
-<img alt="../_images/9f5f9894c4e7612708e3c89eb8a1bb82119803e8df7b78226ee55779b916e815.png" src="../_images/9f5f9894c4e7612708e3c89eb8a1bb82119803e8df7b78226ee55779b916e815.png" />
+<img alt="../_images/eb7d6d3ef552f0cfe8dd97d3c06c5e6dd7fd4fe26a781694ae92ad47e6c0a234.png" src="../_images/eb7d6d3ef552f0cfe8dd97d3c06c5e6dd7fd4fe26a781694ae92ad47e6c0a234.png" />
 </div>
 </div>
 </section>
@@ -1720,7 +1721,7 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../_images/1323f28b3d45905d1067763013f9eee3df813767c9b40fbf36f0f072d936ad76.png" src="../_images/1323f28b3d45905d1067763013f9eee3df813767c9b40fbf36f0f072d936ad76.png" />
+<img alt="../_images/08cfff86351631c7323bb914036f347386385cae7a2998b0b504227c5242899f.png" src="../_images/08cfff86351631c7323bb914036f347386385cae7a2998b0b504227c5242899f.png" />
 </div>
 </div>
 <p>With labels:</p>
@@ -1752,7 +1753,7 @@ distracts from the ability to digest the story quickly and succinctly.</p></li>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Age Dependency Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../_images/bfeced263959f269d3dead19e20149c562317d7e2cf9d031b43bb2890f99af3f.png" src="../_images/bfeced263959f269d3dead19e20149c562317d7e2cf9d031b43bb2890f99af3f.png" />
+<img alt="../_images/56ade46c14f125135b9b0ef3b3d68ca1b7083cc891b4583857c8279a47cf22f3.png" src="../_images/56ade46c14f125135b9b0ef3b3d68ca1b7083cc891b4583857c8279a47cf22f3.png" />
 </div>
 </div>
 <p>Most people find the example with labels to be a more readable graph.</p>
@@ -1856,6 +1857,8 @@ whether these changes improved the figures.</p>
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -2130,15 +2133,15 @@ whether these changes improved the figures.</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -2146,7 +2149,11 @@ whether these changes improved the figures.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/tools/visualization_rules.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/tools/visualization_rules.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/tools/visualization_rules.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -2175,8 +2182,6 @@ whether these changes improved the figures.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/visualization_rules.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/visualization_rules.ipynb">Colab</option>
                 
                 </select>
@@ -2188,7 +2193,7 @@ whether these changes improved the figures.</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/visualization_rules.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/visualization_rules.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -2245,7 +2250,7 @@ whether these changes improved the figures.</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

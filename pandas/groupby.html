@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pandas/groupby';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/pandas/groupby.html" />
@@ -145,6 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -190,7 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -218,8 +218,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">GroupBy</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -258,10 +259,10 @@ Statistics</a></p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -656,7 +657,7 @@ steps:</p>
 <p>Let’s see an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">num_missing</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="s2">&quot;Return the number of missing items in each column of df&quot;</span>
     <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
@@ -815,7 +816,7 @@ our function as a DataFrame (or Series).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">smallest_by_b</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">smallest_by_b</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -956,37 +957,37 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
       <th>1</th>
       <td>1</td>
       <td>1.0</td>
-      <td>2024-12-31</td>
+      <td>2025-03-31</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1</td>
       <td>2.0</td>
-      <td>2025-03-31</td>
+      <td>2025-06-30</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>3.0</td>
-      <td>2025-06-30</td>
+      <td>2025-09-30</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2</td>
       <td>NaN</td>
-      <td>2025-09-30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>5.0</td>
       <td>2025-12-31</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1</td>
-      <td>NaN</td>
+      <td>5.0</td>
       <td>2026-03-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>NaN</td>
+      <td>2026-06-30</td>
     </tr>
   </tbody>
 </table>
@@ -1029,19 +1030,14 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
   </thead>
   <tbody>
     <tr>
-      <th>2024-12-31</th>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
       <th>2025-12-31</th>
       <td>4</td>
       <td>3</td>
     </tr>
     <tr>
       <th>2026-12-31</th>
+      <td>2</td>
       <td>1</td>
-      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1140,27 +1136,21 @@ index and a <code class="docutils literal notranslate"><span class="pre">Date</s
   </thead>
   <tbody>
     <tr>
-      <th>2024-12-31</th>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
       <th rowspan="2" valign="top">2025-12-31</th>
       <th>1</th>
-      <td>2</td>
-      <td>2</td>
+      <td>3</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
       <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2026-12-31</th>
       <th>2</th>
+      <td>2</td>
       <td>1</td>
-      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1204,11 +1194,6 @@ denotes a column name</p>
   </thead>
   <tbody>
     <tr>
-      <th>2024-12-31</th>
-      <th>1</th>
-      <td>1</td>
-    </tr>
-    <tr>
       <th rowspan="2" valign="top">2025-12-31</th>
       <th>1</th>
       <td>2</td>
@@ -1220,7 +1205,7 @@ denotes a column name</p>
     <tr>
       <th>2026-12-31</th>
       <th>1</th>
-      <td>0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -1400,7 +1385,7 @@ each week.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ee03e2691407f4cff103027702be05ee6ae843f6171711121039e253c70e0d64.png" src="../_images/ee03e2691407f4cff103027702be05ee6ae843f6171711121039e253c70e0d64.png" />
+<img alt="../_images/094b85db9297d57565cab4ff897f8d744f16961adb4c56a62e4679ce80179605.png" src="../_images/094b85db9297d57565cab4ff897f8d744f16961adb4c56a62e4679ce80179605.png" />
 </div>
 </div>
 <p>It looks like more delays occurred during the week ending Sunday
@@ -1430,7 +1415,7 @@ attributed to 5 different categories:</p>
 <span class="p">]</span>
 
 <span class="c1"># custom agg function</span>
-<span class="k">def</span> <span class="nf">positive</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">positive</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
 <span class="n">delay_totals</span> <span class="o">=</span> <span class="n">pre_christmas</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">)[</span><span class="n">delay_cols</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="p">])</span>
@@ -1750,7 +1735,7 @@ carrier</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/1201432368.py:3: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3014/1201432368.py:3: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   .stack()             # move aggregation method into index (with Carrier)
 </pre></div>
 </div>
@@ -1941,9 +1926,9 @@ carrier</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/32159f517a925210e079a053a6eb1d82b805a0720036f6f7feae93b42054b121.png" src="../_images/32159f517a925210e079a053a6eb1d82b805a0720036f6f7feae93b42054b121.png" />
-<img alt="../_images/1b3f2c4efdc3c8e822470f883dde44a5533f726405734c6ec4b2456cd8e6f3f7.png" src="../_images/1b3f2c4efdc3c8e822470f883dde44a5533f726405734c6ec4b2456cd8e6f3f7.png" />
-<img alt="../_images/ec86f3e1d889a81831cc9b665c0497e749b9e8efb1bef78b916e8c220db9092c.png" src="../_images/ec86f3e1d889a81831cc9b665c0497e749b9e8efb1bef78b916e8c220db9092c.png" />
+<img alt="../_images/112f47d1d337360c67e57c97bffde4401a3ac9691aaabaed44b1b340f496f3b4.png" src="../_images/112f47d1d337360c67e57c97bffde4401a3ac9691aaabaed44b1b340f496f3b4.png" />
+<img alt="../_images/24a2c4a45938ebeb70e22e3e362a64faf3698863e99772b43dc371b90f90b197.png" src="../_images/24a2c4a45938ebeb70e22e3e362a64faf3698863e99772b43dc371b90f90b197.png" />
+<img alt="../_images/8ad5748b17b9d50e2963dc7e34b7e458e226841b7779c1301919106a1637a361.png" src="../_images/8ad5748b17b9d50e2963dc7e34b7e458e226841b7779c1301919106a1637a361.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-grp-dir4">
@@ -1969,7 +1954,7 @@ of occurrences of each type of delay.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean_delay_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean_delay_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Make a bar chart of average flight delays for each carrier at</span>
 <span class="sd">    a given frequency.</span>
@@ -1997,7 +1982,7 @@ of occurrences of each type of delay.</p></li>
     <span class="k">return</span> <span class="n">axs</span>
 
 
-<span class="k">def</span> <span class="nf">delay_type_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">delay_type_plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Make bar charts for total minutes, average minutes, and number of</span>
 <span class="sd">    occurrences for each delay type, for all flights that were scheduled</span>
@@ -2007,7 +1992,7 @@ of occurrences of each type of delay.</p></li>
         <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">)</span>
     <span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">positive</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">positive</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
     <span class="n">aggs</span> <span class="o">=</span> <span class="n">sub_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Carrier&quot;</span><span class="p">)[</span><span class="n">delay_cols</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="p">])</span>
@@ -2039,7 +2024,7 @@ figure to be a bit wider in order to see the dates.)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cd3175cb5fec336872239970546befefd66eeb616b1583a2fc9aa3bdd9963b90.png" src="../_images/cd3175cb5fec336872239970546befefd66eeb616b1583a2fc9aa3bdd9963b90.png" />
+<img alt="../_images/c14aa01f0935ae84cb1535671b249dced02c555b53fedc4b5540eb3c3aa3b9e2.png" src="../_images/c14aa01f0935ae84cb1535671b249dced02c555b53fedc4b5540eb3c3aa3b9e2.png" />
 </div>
 </div>
 <p>As we expected given our analysis above, the longest average delays
@@ -2058,13 +2043,13 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3014/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
 </pre></div>
 </div>
-<img alt="../_images/8a111efb33a6e234ee439245ada7c7aefe88d141ec87362716162f1e5c4e0e1b.png" src="../_images/8a111efb33a6e234ee439245ada7c7aefe88d141ec87362716162f1e5c4e0e1b.png" />
-<img alt="../_images/1fac3c81b67b115b3d4352c419377d9637fd158df5a65b292994c06e5797f1f0.png" src="../_images/1fac3c81b67b115b3d4352c419377d9637fd158df5a65b292994c06e5797f1f0.png" />
-<img alt="../_images/78c63eb38a0e17d7505ca29ad85c33f255c7f83a3766a2b726fbe488af3dcbd3.png" src="../_images/78c63eb38a0e17d7505ca29ad85c33f255c7f83a3766a2b726fbe488af3dcbd3.png" />
+<img alt="../_images/575fdc6014c27197b56b49d83ff3fab532faf277848e64f52aa5c70ad31f885d.png" src="../_images/575fdc6014c27197b56b49d83ff3fab532faf277848e64f52aa5c70ad31f885d.png" />
+<img alt="../_images/d785f730bce5e7f8a70ae3183039fee9fe9e1a7d299a35c48989e735a320d19e.png" src="../_images/d785f730bce5e7f8a70ae3183039fee9fe9e1a7d299a35c48989e735a320d19e.png" />
+<img alt="../_images/dfb862dc6ee6f9d51efc97b8bd19005ba4278616f50aa7ab55b3c82dd151c9ad.png" src="../_images/dfb862dc6ee6f9d51efc97b8bd19005ba4278616f50aa7ab55b3c82dd151c9ad.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2075,13 +2060,13 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3014/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
 </pre></div>
 </div>
-<img alt="../_images/b65484a7493eb7fa186826a8a4f86fafa8da85bfde09facc8f90814205f8b8a8.png" src="../_images/b65484a7493eb7fa186826a8a4f86fafa8da85bfde09facc8f90814205f8b8a8.png" />
-<img alt="../_images/4695cc2d875db6590619882c92a3a60fc44098485deb6e2b8b06188677fa33ca.png" src="../_images/4695cc2d875db6590619882c92a3a60fc44098485deb6e2b8b06188677fa33ca.png" />
-<img alt="../_images/c69f1c10427ee456a6ddcb13ef5df5b47424ea144ddc06bbd933b9cfc9cc6f38.png" src="../_images/c69f1c10427ee456a6ddcb13ef5df5b47424ea144ddc06bbd933b9cfc9cc6f38.png" />
+<img alt="../_images/fdfee68ac595f46d90de93520c241812f01489f48d055bae9a6b89d4a4d254e9.png" src="../_images/fdfee68ac595f46d90de93520c241812f01489f48d055bae9a6b89d4a4d254e9.png" />
+<img alt="../_images/e99b831067c942ecfb4ccc727ad4c394d46590b0e9f80dbb1792f38b935eb25c.png" src="../_images/e99b831067c942ecfb4ccc727ad4c394d46590b0e9f80dbb1792f38b935eb25c.png" />
+<img alt="../_images/7c6b4ae763755a0a551fdca89d716d6c347db19b276ce613c568282fa50eaea1.png" src="../_images/7c6b4ae763755a0a551fdca89d716d6c347db19b276ce613c568282fa50eaea1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2092,13 +2077,13 @@ the days together and separately without much effort.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2808/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3014/3865096838.py:44: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   reshaped = aggs.stack().T.swaplevel(axis=1).sort_index(axis=1)
 </pre></div>
 </div>
-<img alt="../_images/51ccd35010ad1624f00a59867e91d7bbbd5321921e54663953bf21e79f104bc2.png" src="../_images/51ccd35010ad1624f00a59867e91d7bbbd5321921e54663953bf21e79f104bc2.png" />
-<img alt="../_images/43187c72f4dbc4acb86fe2f2f44f3c85f5f61920ffa3ca49849f66f5bcd8b0e2.png" src="../_images/43187c72f4dbc4acb86fe2f2f44f3c85f5f61920ffa3ca49849f66f5bcd8b0e2.png" />
-<img alt="../_images/d4840b349ad7e60e78acca73acec0e9667b183f877f430fb4e983a870bb62188.png" src="../_images/d4840b349ad7e60e78acca73acec0e9667b183f877f430fb4e983a870bb62188.png" />
+<img alt="../_images/cbfac01806f7c084335394ceae425796af6a840526bd35c6ca89ed28f03e981f.png" src="../_images/cbfac01806f7c084335394ceae425796af6a840526bd35c6ca89ed28f03e981f.png" />
+<img alt="../_images/e0947e43ff929a8c02b781fee81c95508b7a0630f976575fa739ee26a0ebc8be.png" src="../_images/e0947e43ff929a8c02b781fee81c95508b7a0630f976575fa739ee26a0ebc8be.png" />
+<img alt="../_images/e0d6d65706e5bc3f4fe24ba57a3387ce347557c85bf364e04e567bdc53d397cd.png" src="../_images/e0d6d65706e5bc3f4fe24ba57a3387ce347557c85bf364e04e567bdc53d397cd.png" />
 </div>
 </div>
 <p>The purpose of this exercise was to drive home the ability to <em>automate</em>
@@ -2530,6 +2515,8 @@ appropriate values to replicate the plots from above.</p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
 
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
+
                 </footer> <!-- .page__footer -->
 
             </div> <!-- .page -->
@@ -2803,15 +2790,15 @@ appropriate values to replicate the plots from above.</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -2819,7 +2806,11 @@ appropriate values to replicate the plots from above.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/pandas/groupby.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/pandas/groupby.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/pandas/groupby.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -2848,8 +2839,6 @@ appropriate values to replicate the plots from above.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/pandas/groupby.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/pandas/groupby.ipynb">Colab</option>
                 
                 </select>
@@ -2861,7 +2850,7 @@ appropriate values to replicate the plots from above.</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/pandas/groupby.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/pandas/groupby.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -2918,7 +2907,7 @@ appropriate values to replicate the plots from above.</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

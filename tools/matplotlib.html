@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/matplotlib';</script>
     <link rel="canonical" href="https://datascience.quantecon.org/tools/matplotlib.html" />
@@ -145,6 +143,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -195,7 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -223,8 +223,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Intermediate Plotting</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -268,15 +269,15 @@ of a Jupyter notebook</p></li>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;NASDAQ_DATA_LINK_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;jEKP58z7JaX6utPkkpEp&quot;</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
-<span class="kn">import</span> <span class="nn">nasdaqdatalink</span> <span class="k">as</span> <span class="nn">ndl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">transforms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nasdaqdatalink</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ndl</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -296,7 +297,7 @@ use matplotlib directly to unlock unlimited control over our figures.</p>
 <section id="the-want-operator-replicate-a-professional-figure">
 <h2>The Want Operator: Replicate a Professional Figure<a class="headerlink" href="#the-want-operator-replicate-a-professional-figure" title="Permalink to this heading">#</a></h2>
 <p>Visualization is a complex subject.</p>
-<p><a class="reference external" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&amp;field-keywords=data+visualization&amp;rh=n%3A283155%2Ck%3Adata+visualization">Many
+<p><a class="reference external" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&amp;amp;field-keywords=data+visualization&amp;amp;rh=n%3A283155%2Ck%3Adata+visualization">Many
 books</a>
 have been written on the subject.</p>
 <p>We cannot hope to convey all of what is possible in a short lecture, so
@@ -539,7 +540,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f3dd02052286501bdb3b31fdf88d770592c455ad707e669e69246adb56455d8f.png" src="../_images/f3dd02052286501bdb3b31fdf88d770592c455ad707e669e69246adb56455d8f.png" />
+<img alt="../_images/5b27948094b735fac172a12aecb6453981a58563449765585e279e4b19f6bb5b.png" src="../_images/5b27948094b735fac172a12aecb6453981a58563449765585e279e4b19f6bb5b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -552,7 +553,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6466b5c622a5bc91e737e6075e86d0a9b2a7b58c41c7e5a18f6ec5581c1b4e9f.png" src="../_images/6466b5c622a5bc91e737e6075e86d0a9b2a7b58c41c7e5a18f6ec5581c1b4e9f.png" />
+<img alt="../_images/11b3a39114824635dbb1b057e3ef49b7815689245c35cb2cee0181966c7d782e.png" src="../_images/11b3a39114824635dbb1b057e3ef49b7815689245c35cb2cee0181966c7d782e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -563,7 +564,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1fefbdde56e09a3da4e29289a2dca67ece2ee816eb5b6dfd2909ef5c3838a34b.png" src="../_images/1fefbdde56e09a3da4e29289a2dca67ece2ee816eb5b6dfd2909ef5c3838a34b.png" />
+<img alt="../_images/b1c585e2bcbd781228dabe1ce48d21c807db88e9dd6a7ee13dc43f3f7d44afcd.png" src="../_images/b1c585e2bcbd781228dabe1ce48d21c807db88e9dd6a7ee13dc43f3f7d44afcd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -574,7 +575,7 @@ methods on an Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19a0ed54aeec7c5748b289c562bb2f33217e0a6763e0a7f3aa3ad425d0c5639e.png" src="../_images/19a0ed54aeec7c5748b289c562bb2f33217e0a6763e0a7f3aa3ad425d0c5639e.png" />
+<img alt="../_images/6b9ae244e440e5e20f798ab9cc3cb6ad3534ab1be620a52dbb68e3d185c43e55.png" src="../_images/6b9ae244e440e5e20f798ab9cc3cb6ad3534ab1be620a52dbb68e3d185c43e55.png" />
 </div>
 </div>
 <p>We can also create a Figure and Axes beforehand and then tell pandas to
@@ -599,7 +600,7 @@ type(axs):  &lt;class &#39;numpy.ndarray&#39;&gt;
 axs2.shape:  (2,)
 </pre></div>
 </div>
-<img alt="../_images/d71e83e14d74702d16ff53ec1c529fa830675fa4b1a30efd6da54184b3857115.png" src="../_images/d71e83e14d74702d16ff53ec1c529fa830675fa4b1a30efd6da54184b3857115.png" />
+<img alt="../_images/03947f08fd05b82f90b86f3be544320a6aa75162f705a9c63772f00f03e50ce2.png" src="../_images/03947f08fd05b82f90b86f3be544320a6aa75162f705a9c63772f00f03e50ce2.png" />
 </div>
 </div>
 <p>We can plot from our DataFrame directly on our Axes objects by setting
@@ -613,7 +614,7 @@ the <code class="docutils literal notranslate"><span class="pre">ax</span></code
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9f156dceaada1244b4cd72a77a870d4787892fc336d8ffe266d6cd6d6382a8b.png" src="../_images/f9f156dceaada1244b4cd72a77a870d4787892fc336d8ffe266d6cd6d6382a8b.png" />
+<img alt="../_images/5e48d75a61a232146c37149e8456b35826ad2edd4f117cc52b873579e1609dbd.png" src="../_images/5e48d75a61a232146c37149e8456b35826ad2edd4f117cc52b873579e1609dbd.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir2">
@@ -636,12 +637,12 @@ after each announcement.</p>
 the announcement and scale the neighboring days accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
-<span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CustomBusinessDay</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pandas.tseries.holiday</span><span class="w"> </span><span class="kn">import</span> <span class="n">USFederalHolidayCalendar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas.tseries.offsets</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomBusinessDay</span>
 
 <span class="n">bday_us</span> <span class="o">=</span> <span class="n">CustomBusinessDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">USFederalHolidayCalendar</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">neighbor_dates</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">nbefore</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nafter</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">neighbor_dates</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">nbefore</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nafter</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="c1"># Make sure the date is a datetime</span>
     <span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
 
@@ -891,7 +892,7 @@ Name: Model, dtype: object
 each announcement date to 100 and scale all neighbors accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scale_by_middle</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scale_by_middle</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># How many rows</span>
     <span class="n">N</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -1242,7 +1243,7 @@ marks on the vertical axis.</p>
 <span class="n">blue</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">134</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 <span class="n">pink</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">232</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">126</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">get_color</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_color</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="s2">&quot;S&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pink</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1275,7 +1276,7 @@ function.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e588967b11f6217d2e21e6baa628119b0c3bee3fb8f6fe4041044484c70eab0e.png" src="../_images/e588967b11f6217d2e21e6baa628119b0c3bee3fb8f6fe4041044484c70eab0e.png" />
+<img alt="../_images/d32d4a687afa5c7bb362943344ac6542bfdd7edfbf4345c8fed392b71c3aeed8.png" src="../_images/d32d4a687afa5c7bb362943344ac6542bfdd7edfbf4345c8fed392b71c3aeed8.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir4">
@@ -1303,7 +1304,7 @@ subplots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ffc8aec43b9c23e0ab1ef9103c53c7fc0e55133f3651fa3f64f9973f0b24c728.png" src="../_images/ffc8aec43b9c23e0ab1ef9103c53c7fc0e55133f3651fa3f64f9973f0b24c728.png" />
+<img alt="../_images/78e148afe512d52bff7bda0b032fafebd5e213db41a78e50a781617e22806f65.png" src="../_images/78e148afe512d52bff7bda0b032fafebd5e213db41a78e50a781617e22806f65.png" />
 </div>
 </div>
 </section>
@@ -1321,7 +1322,7 @@ FT post.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/251cd4e4ee9936c8bc7b37b49c9b34df0dca912a65c2ea2497d1b4d5e838fe2d.png" src="../_images/251cd4e4ee9936c8bc7b37b49c9b34df0dca912a65c2ea2497d1b4d5e838fe2d.png" />
+<img alt="../_images/295d8cb59d71a2038b49fed797603e016fc8beae183723e906b535df4a161a35.png" src="../_images/295d8cb59d71a2038b49fed797603e016fc8beae183723e906b535df4a161a35.png" />
 </div>
 </div>
 </section>
@@ -1384,7 +1385,7 @@ Axes:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0e178e7fa0f5e676ea167850e9f608c13be4eb62b9e64b9f5d8c0cdb06bc5d00.png" src="../_images/0e178e7fa0f5e676ea167850e9f608c13be4eb62b9e64b9f5d8c0cdb06bc5d00.png" />
+<img alt="../_images/340264177e29accaf2791e35ce9c5461a8e1702705a7ac87e36096c68b4060ae.png" src="../_images/340264177e29accaf2791e35ce9c5461a8e1702705a7ac87e36096c68b4060ae.png" />
 </div>
 </div>
 <div class="admonition-exercise admonition" id="pd-mpl-dir5">
@@ -1403,7 +1404,7 @@ Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fd4a161ce24e20e359c8912c87ace81037a2f1a70511fc04818baa7067b025fb.png" src="../_images/fd4a161ce24e20e359c8912c87ace81037a2f1a70511fc04818baa7067b025fb.png" />
+<img alt="../_images/e81b76e50286e3f1ebdbb5884ccc5f903c77ff4acbec77944502edd27e85e2d5.png" src="../_images/e81b76e50286e3f1ebdbb5884ccc5f903c77ff4acbec77944502edd27e85e2d5.png" />
 </div>
 </div>
 <p>We can also add tick labels for the x-axis ticks on the 1st and 6th
@@ -1424,7 +1425,7 @@ plots.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b3bb7d176e126a9d6bb1f539f3aa5ebb525d1824029481c43920702ba8d7683c.png" src="../_images/b3bb7d176e126a9d6bb1f539f3aa5ebb525d1824029481c43920702ba8d7683c.png" />
+<img alt="../_images/bd43363d871888338b132537a8c5f0814a7cb6245630ea6c7bcd4252aeb8a3de.png" src="../_images/bd43363d871888338b132537a8c5f0814a7cb6245630ea6c7bcd4252aeb8a3de.png" />
 </div>
 </div>
 </section>
@@ -1489,7 +1490,7 @@ from (0, 1) in the Figure coordinates and the <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f0dbdacf059e3ffcbbfc90b1b72c51a824a0ff4afe172ea9fb565cd61541a1a5.png" src="../_images/f0dbdacf059e3ffcbbfc90b1b72c51a824a0ff4afe172ea9fb565cd61541a1a5.png" />
+<img alt="../_images/135397b7be9db98ab3eb90038b5bbb7f5ecf005247b1d233f4c953fad31102e4.png" src="../_images/135397b7be9db98ab3eb90038b5bbb7f5ecf005247b1d233f4c953fad31102e4.png" />
 </div>
 </div>
 <p>Now, we need to a add vertical line from the (0, 90) to (0, 100) on the
@@ -1514,7 +1515,7 @@ Axes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e99c827c4775451184ee1b4a56185f2be7d49d5b656cf9708add36527124e873.png" src="../_images/e99c827c4775451184ee1b4a56185f2be7d49d5b656cf9708add36527124e873.png" />
+<img alt="../_images/448f61dbfe99dafd35abe52d950887aad581f3dd2b20472088fea7c7ce9228a0.png" src="../_images/448f61dbfe99dafd35abe52d950887aad581f3dd2b20472088fea7c7ce9228a0.png" />
 </div>
 </div>
 </section>
@@ -1546,7 +1547,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9bdf3850a2c3cc98f9b9fa996ea0fcffef234242b947c3a2949aa6c62bbfafe5.png" src="../_images/9bdf3850a2c3cc98f9b9fa996ea0fcffef234242b947c3a2949aa6c62bbfafe5.png" />
+<img alt="../_images/43edba02329fe9300b90d74d273a991b5765789eeee4aa285353b6311595fa5d.png" src="../_images/43edba02329fe9300b90d74d273a991b5765789eeee4aa285353b6311595fa5d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1569,7 +1570,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/817632d15e742f760b09659798d7b73350de1adc78f1e63df7292c423cfa1c81.png" src="../_images/817632d15e742f760b09659798d7b73350de1adc78f1e63df7292c423cfa1c81.png" />
+<img alt="../_images/93fc55065b05cd909197081e2f2d3a4af417bd62d29e845de131b7f9ee1454bb.png" src="../_images/93fc55065b05cd909197081e2f2d3a4af417bd62d29e845de131b7f9ee1454bb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1587,7 +1588,7 @@ by what is happening here.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/76aaf3ff166ac3a8c7fe00c216c4bc07b08bfe9ed5f2f855679b7566741c0f10.png" src="../_images/76aaf3ff166ac3a8c7fe00c216c4bc07b08bfe9ed5f2f855679b7566741c0f10.png" />
+<img alt="../_images/7296b433491ed2700f5a9348df7f478aa1c758e0a40b760b0323efdbd46ea8e4.png" src="../_images/7296b433491ed2700f5a9348df7f478aa1c758e0a40b760b0323efdbd46ea8e4.png" />
 </div>
 </div>
 </section>
@@ -1751,6 +1752,8 @@ you remember them when you need them later on.</p>
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -2025,15 +2028,15 @@ you remember them when you need them later on.</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -2041,7 +2044,11 @@ you remember them when you need them later on.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/tools/matplotlib.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/tools/matplotlib.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/tools/matplotlib.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -2070,8 +2077,6 @@ you remember them when you need them later on.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/matplotlib.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/matplotlib.ipynb">Colab</option>
                 
                 </select>
@@ -2083,7 +2088,7 @@ you remember them when you need them later on.</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/matplotlib.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/matplotlib.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -2140,7 +2145,7 @@ you remember them when you need them later on.</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

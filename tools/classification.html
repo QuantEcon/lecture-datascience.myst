@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -147,6 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -203,7 +202,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -231,8 +231,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Classification</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -303,17 +304,17 @@ classification settings.</p>
 lighter on exposition and then build up to an application.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="k">as</span> <span class="nn">web</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas_datareader.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">web</span>
 
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">neural_network</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">model_selection</span>
 <span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -345,10 +346,10 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fde3b59c6b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fad003f3c80&gt;]
 </pre></div>
 </div>
-<img alt="../_images/cf29598180abef55aaf52b07861f9f7d46ecf9bacccf6f045c95f5d028fe76b9.png" src="../_images/cf29598180abef55aaf52b07861f9f7d46ecf9bacccf6f045c95f5d028fe76b9.png" />
+<img alt="../_images/51e4af1564afcd694ff12882b96fce605b323e4e3ca60e27f93f3c457432431f.png" src="../_images/51e4af1564afcd694ff12882b96fce605b323e4e3ca60e27f93f3c457432431f.png" />
 </div>
 </div>
 <p>Notice that for all values of <span class="math notranslate nohighlight">\(x\)</span>, the value of the logistic function is
@@ -379,7 +380,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3582 + 0.2576 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3982 + 0.2674 decile_score)
 </pre></div>
 </div>
 </div>
@@ -427,7 +428,7 @@ less likely to commit crime again.</p>
 <p>We’ll build on an example from the <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html">scikit-learn documentation</a> to visualize the predictions of this model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_contours</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot the decision boundaries for a classifier with 2 features x and y.</span>
 
@@ -444,12 +445,12 @@ less likely to commit crime again.</p>
     <span class="n">out</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
-<span class="k">def</span> <span class="nf">fit_and_plot_decision_boundary</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fit_and_plot_decision_boundary</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
     <span class="c1"># fit model</span>
     <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
     <span class="c1"># generate grids of first two columns of X</span>
-    <span class="k">def</span> <span class="nf">gen_grid</span><span class="p">(</span><span class="n">xseries</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gen_grid</span><span class="p">(</span><span class="n">xseries</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">xseries</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">xseries</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
@@ -475,14 +476,14 @@ less likely to commit crime again.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LogisticRegression was fitted with feature names
   warnings.warn(
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;decile_score&#39;, ylabel=&#39;age&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/de16d4d216cfd136939c3fbf2806a16f8c9ed8aa97c021dc9eedcee5e2b8f29b.png" src="../_images/de16d4d216cfd136939c3fbf2806a16f8c9ed8aa97c021dc9eedcee5e2b8f29b.png" />
+<img alt="../_images/e510c4009dca4a77898a4040208593102f84c952068a3a90a5a2a4b758ae2fb0.png" src="../_images/e510c4009dca4a77898a4040208593102f84c952068a3a90a5a2a4b758ae2fb0.png" />
 </div>
 </div>
 <p>In this plot, we can clearly see the relationships we identified from the
@@ -625,7 +626,7 @@ rate and false positive rates. Then we plot these rates against
 each other.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_roc</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_roc</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="c1"># predicted_probs is an N x 2 array, where N is number of observations</span>
     <span class="c1"># and 2 is number of classes</span>
     <span class="n">predicted_probs</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
@@ -648,7 +649,7 @@ each other.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/671c4eccfb9ae5a1993e2364cb8694e120aa2a4c2c8f0a9df53e9b6090f7716e.png" src="../_images/671c4eccfb9ae5a1993e2364cb8694e120aa2a4c2c8f0a9df53e9b6090f7716e.png" />
+<img alt="../_images/c8b35cf0da53805f53b0313b8481d164a557a9594ca3ec42110b75906d37968e.png" src="../_images/c8b35cf0da53805f53b0313b8481d164a557a9594ca3ec42110b75906d37968e.png" />
 </div>
 </div>
 <p>We can use the ROC curve to determine the optimal threshold value.</p>
@@ -779,11 +780,11 @@ visually inspect the hypothesis.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;1974-01-01&quot;</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">pct_change_on_last_year</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pct_change_on_last_year</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="s2">&quot;compute pct_change on previous year, assuming quarterly&quot;</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">get_indicators_from_fred</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_indicators_from_fred</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Fetch quarterly data on 6 leading indicators from time period start:end</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -868,7 +869,7 @@ visually inspect the hypothesis.</p>
       <td>7.566667</td>
       <td>58.961</td>
       <td>1171.333333</td>
-      <td>0.073163</td>
+      <td>0.074762</td>
       <td>0.056936</td>
     </tr>
     <tr>
@@ -877,7 +878,7 @@ visually inspect the hypothesis.</p>
       <td>7.733333</td>
       <td>53.269</td>
       <td>1345.000000</td>
-      <td>0.087759</td>
+      <td>0.086339</td>
       <td>0.037207</td>
     </tr>
     <tr>
@@ -886,7 +887,7 @@ visually inspect the hypothesis.</p>
       <td>7.766667</td>
       <td>19.461</td>
       <td>1489.000000</td>
-      <td>0.080495</td>
+      <td>0.080656</td>
       <td>0.047523</td>
     </tr>
     <tr>
@@ -895,7 +896,7 @@ visually inspect the hypothesis.</p>
       <td>7.500000</td>
       <td>33.147</td>
       <td>1562.000000</td>
-      <td>0.107518</td>
+      <td>0.107535</td>
       <td>0.037939</td>
     </tr>
     <tr>
@@ -904,7 +905,7 @@ visually inspect the hypothesis.</p>
       <td>7.133333</td>
       <td>49.461</td>
       <td>1693.333333</td>
-      <td>0.111740</td>
+      <td>0.111909</td>
       <td>0.032931</td>
     </tr>
   </tbody>
@@ -914,7 +915,7 @@ visually inspect the hypothesis.</p>
 <p>Now, we also need data on recessions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_recession_data</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_recession_data</span><span class="p">():</span>
     <span class="n">recession</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s2">&quot;USRECQ&quot;</span><span class="p">],</span> <span class="s2">&quot;fred&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
         <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">USRECQ</span><span class="o">=</span><span class="s2">&quot;recession&quot;</span><span class="p">))</span>
@@ -941,7 +942,7 @@ visually inspect the hypothesis.</p>
 <p>Now, let’s take a look at the data we have.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_recession_bands</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_recession_bands</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">start_dates</span><span class="p">,</span> <span class="n">end_dates</span><span class="p">):</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 
@@ -957,7 +958,7 @@ visually inspect the hypothesis.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd87012f14e621e87aaf5516d4517c1393b12ff9aa10a5b4d16ab4727cddf118.png" src="../_images/bd87012f14e621e87aaf5516d4517c1393b12ff9aa10a5b4d16ab4727cddf118.png" />
+<img alt="../_images/e34390d57c136794b0a5df38777f0b90e0fb764d6402e256a151528a9258608f.png" src="../_images/e34390d57c136794b0a5df38777f0b90e0fb764d6402e256a151528a9258608f.png" />
 </div>
 </div>
 <p>For each of the chosen variables, you can see that the leading indicator
@@ -975,10 +976,10 @@ to use leading values of the variables to predict current or future recessions.<
 <p>Let’s explore that question by looking at many different sets of leads.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_train_data</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">indicators</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">nlead</span><span class="p">))</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">fit_for_nlead</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fit_for_nlead</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">make_train_data</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">)</span>
     <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;recession&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;recession&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1018,7 +1019,15 @@ to use leading values of the variables to predict current or future recessions.<
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 3 leads
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/metrics/_classification.py:407: UserWarning: A single label was found in &#39;y_true&#39; and &#39;y_pred&#39;. For the confusion matrix to have the correct shape, use the &#39;labels&#39; parameter to pass all known labels.
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 4 leads
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/metrics/_classification.py:407: UserWarning: A single label was found in &#39;y_true&#39; and &#39;y_pred&#39;. For the confusion matrix to have the correct shape, use the &#39;labels&#39; parameter to pass all known labels.
+  warnings.warn(
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 5 leads
@@ -1040,53 +1049,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.65  0.73]
- [ 1.52  3.1 ]]
+ [[37.685  0.735]
+ [ 1.375  3.205]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.515  0.73 ]
- [ 2.565  2.19 ]]
+ [[37.625  0.715]
+ [ 2.335  2.325]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.735  0.645]
- [ 2.6    2.02 ]]
+ [[37.695  0.855]
+ [ 2.795  2.3  ]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[38.095  0.375]
- [ 2.65   1.88 ]]
+ [[37.995  0.62 ]
+ [ 2.935  2.095]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.415  0.74 ]
- [ 3.45   1.395]]
+ [[37.475  0.785]
+ [ 3.33   1.41 ]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.65  1.2 ]
- [ 3.9   1.25]]
+ [[36.715  1.245]
+ [ 3.68   1.36 ]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.71   1.185]
- [ 3.48   1.625]]
+ [[36.275  1.18 ]
+ [ 3.785  1.76 ]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[35.84   1.395]
- [ 3.835  1.93 ]]
+ [[35.86   1.35 ]
+ [ 3.945  1.845]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.69   1.625]
- [ 4.235  1.45 ]]
+ [[35.89  1.52]
+ [ 4.19  1.4 ]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.64  1.53]
- [ 4.8   1.03]]
+ [[34.56   1.68 ]
+ [ 4.745  1.015]]
 </pre></div>
 </div>
 </div>
@@ -1226,7 +1235,7 @@ could you try to avoid overfitting?</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">make_train_data_varying_leads</span></code> function below to construct your model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_train_data_varying_leads</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_train_data_varying_leads</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="n">rec</span><span class="p">,</span> <span class="n">nlead</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply per-indicator leads to each indicator and join with recession data</span>
 
@@ -1327,6 +1336,8 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -1601,15 +1612,15 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -1617,7 +1628,11 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/tools/classification.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/tools/classification.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/tools/classification.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1646,8 +1661,6 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/classification.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/classification.ipynb">Colab</option>
                 
                 </select>
@@ -1659,7 +1672,7 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/tools/classification.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/tools/classification.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1716,7 +1729,7 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

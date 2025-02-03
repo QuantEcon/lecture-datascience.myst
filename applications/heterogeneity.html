@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -146,6 +144,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -188,7 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -216,8 +216,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Heterogeneous Effects</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -252,18 +253,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">patsy</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">neural_network</span>
-<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">from</span> <span class="nn">sklearn.utils._testing</span> <span class="kn">import</span> <span class="n">ignore_warnings</span>
-<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">patsy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">ensemble</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">neural_network</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils._testing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ignore_warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConvergenceWarning</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 </pre></div>
 </div>
 </div>
@@ -600,7 +601,7 @@ E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
 <span class="c1">#center = bw.mean()</span>
 <span class="n">loc_id</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;Location_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="c1"># remove [ ] from names for compatibility with xgboost</span>
 <span class="n">Xl</span> <span class="o">=</span> <span class="n">Xl</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\[|\]&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
@@ -609,7 +610,7 @@ E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\[&#39;
 &lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\[&#39;
-/tmp/ipykernel_2244/696473966.py:29: SyntaxWarning: invalid escape sequence &#39;\[&#39;
+/tmp/ipykernel_2393/696473966.py:29: SyntaxWarning: invalid escape sequence &#39;\[&#39;
   Xl = Xl.rename(columns=lambda x: re.sub(&#39;\[|\]&#39;,&#39;_&#39;,x))
 </pre></div>
 </div>
@@ -618,7 +619,7 @@ E[y_i(1) - y_i(0) ] = &amp; E[y_i(1)] - E[y_i(0)] \\
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estimate average treatment effects</span>
-<span class="kn">from</span> <span class="nn">statsmodels.iolib.summary2</span> <span class="kn">import</span> <span class="n">summary_col</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.iolib.summary2</span><span class="w"> </span><span class="kn">import</span> <span class="n">summary_col</span>
 <span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">birthweight</span><span class="o">=</span><span class="n">bw</span><span class="p">,</span><span class="n">treatment</span><span class="o">=</span><span class="n">treatment</span><span class="p">,</span><span class="n">assisted_delivery</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;good_assisted_delivery&quot;</span><span class="p">]))</span>
 <span class="n">usage</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;assisted_delivery ~ treatment&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span> <span class="n">cov_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;groups&#39;</span><span class="p">:</span><span class="n">loc_id</span><span class="p">})</span>
 <span class="n">health</span><span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s2">&quot;bw ~ treatment&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cov_type</span><span class="o">=</span><span class="s2">&quot;cluster&quot;</span><span class="p">,</span> <span class="n">cov_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;groups&#39;</span><span class="p">:</span><span class="n">loc_id</span><span class="p">})</span>
@@ -775,7 +776,7 @@ asymptotically normal with the usual regression standard errors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for clustering standard errors</span>
-<span class="k">def</span> <span class="nf">get_treatment_se</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_treatment_se</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">cluster_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">cluster_id</span><span class="p">)</span>
@@ -789,7 +790,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generic_ml_model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generic_ml_model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_split</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_group</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">cluster_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">nobs</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="n">blp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_split</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -851,7 +852,7 @@ asymptotically normal with the usual regression standard errors.</p>
     <span class="k">return</span> <span class="n">out</span>
 
 
-<span class="k">def</span> <span class="nf">generic_ml_summary</span><span class="p">(</span><span class="n">generic_ml_output</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generic_ml_summary</span><span class="p">(</span><span class="n">generic_ml_output</span><span class="p">):</span>
     <span class="n">out</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">generic_ml_output</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;blp&quot;</span><span class="p">,</span> <span class="s2">&quot;blp_se&quot;</span><span class="p">,</span> <span class="s2">&quot;gate&quot;</span><span class="p">,</span> <span class="s2">&quot;gate_se&quot;</span><span class="p">,</span> <span class="s2">&quot;Lambda&quot;</span><span class="p">]</span>
@@ -872,7 +873,7 @@ asymptotically normal with the usual regression standard errors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@ignore_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">other_kw</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_models</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">other_kw</span><span class="p">):</span>
     <span class="n">all_kw</span> <span class="o">=</span> <span class="n">kw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">all_kw</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
     <span class="n">all_kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">other_kw</span><span class="p">)</span>
@@ -883,7 +884,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_report</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
     <span class="n">summaries</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">generic_ml_summary</span><span class="p">,</span> <span class="n">results</span><span class="p">))</span>
     <span class="n">df_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
         <span class="n">mod</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">mod</span><span class="p">[</span><span class="s2">&quot;cate&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -913,7 +914,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xgboost</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xgb</span>
 <span class="n">models</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">linear_model</span><span class="o">.</span><span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_alphas</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
     <span class="n">ensemble</span><span class="o">.</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
@@ -970,29 +971,29 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.480702</td>
-      <td>0.171859</td>
-      <td>-0.175950</td>
+      <td>0.530398</td>
+      <td>0.224198</td>
+      <td>-0.360588</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.480702</td>
+      <td>0.530398</td>
       <td>1.000000</td>
-      <td>0.481737</td>
-      <td>-0.086976</td>
+      <td>0.496352</td>
+      <td>-0.107582</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.171859</td>
-      <td>0.481737</td>
+      <td>0.224198</td>
+      <td>0.496352</td>
       <td>1.000000</td>
-      <td>0.102983</td>
+      <td>-0.066304</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>-0.175950</td>
-      <td>-0.086976</td>
-      <td>0.102983</td>
+      <td>-0.360588</td>
+      <td>-0.107582</td>
+      <td>-0.066304</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1000,7 +1001,7 @@ asymptotically normal with the usual regression standard errors.</p>
 </div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best linear projection of CATE
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2244/3641282101.py:16: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2393/3641282101.py:16: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   }).T.stack()
 </pre></div>
 </div>
@@ -1033,39 +1034,39 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>-7.536270e+00</td>
-      <td>-10.013717</td>
-      <td>-11.338626</td>
-      <td>-19.177319</td>
+      <td>-23.097689</td>
+      <td>-23.318775</td>
+      <td>-6.483560</td>
+      <td>-18.049856</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1.823394e-14</td>
-      <td>0.035031</td>
-      <td>0.110593</td>
-      <td>-502.106168</td>
+      <td>0.000000</td>
+      <td>0.015646</td>
+      <td>0.149471</td>
+      <td>-1532.791209</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>3.339571e+01</td>
-      <td>32.859495</td>
-      <td>32.579731</td>
-      <td>33.395595</td>
+      <td>32.493923</td>
+      <td>32.622979</td>
+      <td>33.079496</td>
+      <td>31.804028</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4.735791e-01</td>
-      <td>0.284781</td>
-      <td>0.078259</td>
-      <td>3066.149848</td>
+      <td>0.523001</td>
+      <td>0.280245</td>
+      <td>0.080562</td>
+      <td>3513.172855</td>
     </tr>
   </tbody>
 </table>
 </div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group average treatment effects:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2244/3641282101.py:23: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2393/3641282101.py:23: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   }).T.stack()
 </pre></div>
 </div>
@@ -1098,78 +1099,78 @@ asymptotically normal with the usual regression standard errors.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>0.000000e+00</td>
-      <td>19.985877</td>
-      <td>-24.319601</td>
-      <td>-6.964637</td>
+      <td>-30.586664</td>
+      <td>-17.518664</td>
+      <td>-50.736851</td>
+      <td>-40.916761</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000000e+00</td>
-      <td>-50.218856</td>
-      <td>-51.020945</td>
-      <td>4.534946</td>
+      <td>0.000000</td>
+      <td>2.916231</td>
+      <td>-52.848812</td>
+      <td>-28.608996</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000000e+00</td>
-      <td>-15.373052</td>
-      <td>-44.670063</td>
-      <td>-45.151634</td>
+      <td>0.000000</td>
+      <td>-51.486513</td>
+      <td>-25.031511</td>
+      <td>-22.791027</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000000e+00</td>
-      <td>-40.323181</td>
-      <td>-17.568400</td>
-      <td>8.718585</td>
+      <td>0.000000</td>
+      <td>-28.647543</td>
+      <td>-5.020894</td>
+      <td>-22.188374</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.132399e+00</td>
-      <td>25.442819</td>
-      <td>84.560677</td>
-      <td>-41.177043</td>
+      <td>-24.345524</td>
+      <td>-16.268687</td>
+      <td>119.285262</td>
+      <td>-36.302011</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>1.664306e-14</td>
-      <td>67.073122</td>
-      <td>67.710760</td>
-      <td>76.520082</td>
+      <td>67.414679</td>
+      <td>71.052974</td>
+      <td>64.931702</td>
+      <td>80.456399</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5.855539e+01</td>
-      <td>65.455299</td>
-      <td>67.932934</td>
-      <td>75.890873</td>
+      <td>61.256053</td>
+      <td>64.958371</td>
+      <td>70.805073</td>
+      <td>73.377010</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000000e+00</td>
-      <td>62.741177</td>
-      <td>70.549379</td>
-      <td>73.620534</td>
+      <td>64.333252</td>
+      <td>69.235690</td>
+      <td>69.191562</td>
+      <td>69.795630</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4.002871e+01</td>
-      <td>70.491424</td>
-      <td>71.235326</td>
-      <td>68.940949</td>
+      <td>67.474235</td>
+      <td>67.740413</td>
+      <td>66.300952</td>
+      <td>64.631415</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.610114e+01</td>
-      <td>79.648827</td>
-      <td>70.870150</td>
-      <td>64.375781</td>
+      <td>68.013042</td>
+      <td>73.421267</td>
+      <td>68.635071</td>
+      <td>60.745071</td>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/15d8ac3f30ca3ab098cf7fbb1bfd49e00c2f2be2f5245a830f13e9f77ceb22bf.png" src="../_images/15d8ac3f30ca3ab098cf7fbb1bfd49e00c2f2be2f5245a830f13e9f77ceb22bf.png" />
+</div></div><img alt="../_images/2ddae75c5123941a6c3a5da6138881c4d71789736867da6f9f0f86c131a41fba.png" src="../_images/2ddae75c5123941a6c3a5da6138881c4d71789736867da6f9f0f86c131a41fba.png" />
 </div>
 </div>
 <p>From the second table above, we see that regardless of the machine
@@ -1230,29 +1231,29 @@ conditional average treatment effect.</p>
     <tr>
       <th>LassoCV</th>
       <td>1.000000</td>
-      <td>0.854541</td>
-      <td>0.574424</td>
-      <td>0.826553</td>
+      <td>0.851550</td>
+      <td>0.575727</td>
+      <td>0.854914</td>
     </tr>
     <tr>
       <th>RandomForestRegressor</th>
-      <td>0.854541</td>
+      <td>0.851550</td>
       <td>1.000000</td>
-      <td>0.595125</td>
-      <td>0.706343</td>
+      <td>0.595695</td>
+      <td>0.720102</td>
     </tr>
     <tr>
       <th>XGBRegressor</th>
-      <td>0.574424</td>
-      <td>0.595125</td>
+      <td>0.575727</td>
+      <td>0.595695</td>
       <td>1.000000</td>
-      <td>0.460944</td>
+      <td>0.472689</td>
     </tr>
     <tr>
       <th>MLPRegressor</th>
-      <td>0.826553</td>
-      <td>0.706343</td>
-      <td>0.460944</td>
+      <td>0.854914</td>
+      <td>0.720102</td>
+      <td>0.472689</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1260,7 +1261,7 @@ conditional average treatment effect.</p>
 </div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Best linear projection of CATE
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2244/3641282101.py:16: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2393/3641282101.py:16: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   }).T.stack()
 </pre></div>
 </div>
@@ -1293,39 +1294,39 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="2" valign="top">blp</th>
       <th>0</th>
-      <td>0.049785</td>
-      <td>0.051040</td>
-      <td>0.058993</td>
-      <td>0.045816</td>
+      <td>0.042573</td>
+      <td>0.045042</td>
+      <td>0.043032</td>
+      <td>0.042300</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.445777</td>
-      <td>0.513787</td>
-      <td>0.109727</td>
-      <td>0.480818</td>
+      <td>0.426443</td>
+      <td>0.471617</td>
+      <td>0.140579</td>
+      <td>0.434615</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">se</th>
       <th>0</th>
-      <td>0.021627</td>
-      <td>0.021288</td>
-      <td>0.021567</td>
-      <td>0.021064</td>
+      <td>0.020890</td>
+      <td>0.022041</td>
+      <td>0.022128</td>
+      <td>0.020600</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.145711</td>
-      <td>0.142162</td>
-      <td>0.076361</td>
-      <td>0.133513</td>
+      <td>0.140927</td>
+      <td>0.139262</td>
+      <td>0.075790</td>
+      <td>0.122987</td>
     </tr>
   </tbody>
 </table>
 </div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group average treatment effects:
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2244/3641282101.py:23: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2393/3641282101.py:23: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What&#39;s New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
   }).T.stack()
 </pre></div>
 </div>
@@ -1358,78 +1359,78 @@ conditional average treatment effect.</p>
     <tr>
       <th rowspan="5" valign="top">gate</th>
       <th>0</th>
-      <td>-0.029022</td>
-      <td>-0.041218</td>
-      <td>0.017218</td>
-      <td>-0.025055</td>
+      <td>-0.018296</td>
+      <td>-0.030353</td>
+      <td>-0.029706</td>
+      <td>-0.005878</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.038544</td>
-      <td>0.004969</td>
-      <td>0.008352</td>
-      <td>-0.008350</td>
+      <td>-0.040465</td>
+      <td>-0.021909</td>
+      <td>0.022866</td>
+      <td>-0.019303</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.009118</td>
-      <td>0.011491</td>
-      <td>0.008213</td>
-      <td>-0.024232</td>
+      <td>0.001177</td>
+      <td>-0.011931</td>
+      <td>0.020322</td>
+      <td>-0.002018</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.114224</td>
-      <td>0.053644</td>
-      <td>0.068551</td>
-      <td>0.089660</td>
+      <td>0.104378</td>
+      <td>0.096253</td>
+      <td>0.033442</td>
+      <td>0.062705</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.156450</td>
-      <td>0.207278</td>
-      <td>0.115149</td>
-      <td>0.191232</td>
+      <td>0.157928</td>
+      <td>0.167815</td>
+      <td>0.133617</td>
+      <td>0.168207</td>
     </tr>
     <tr>
       <th rowspan="5" valign="top">se</th>
       <th>0</th>
-      <td>0.042187</td>
-      <td>0.044139</td>
-      <td>0.050784</td>
-      <td>0.034259</td>
+      <td>0.040332</td>
+      <td>0.047728</td>
+      <td>0.051094</td>
+      <td>0.028703</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.043557</td>
-      <td>0.040830</td>
-      <td>0.043351</td>
-      <td>0.037132</td>
+      <td>0.043891</td>
+      <td>0.042627</td>
+      <td>0.040773</td>
+      <td>0.042520</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.044949</td>
-      <td>0.043120</td>
-      <td>0.046938</td>
-      <td>0.051445</td>
+      <td>0.046744</td>
+      <td>0.044120</td>
+      <td>0.045068</td>
+      <td>0.046491</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.042376</td>
-      <td>0.045375</td>
-      <td>0.043997</td>
-      <td>0.049179</td>
+      <td>0.043889</td>
+      <td>0.043093</td>
+      <td>0.047198</td>
+      <td>0.049583</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.051092</td>
-      <td>0.051871</td>
-      <td>0.050701</td>
-      <td>0.054801</td>
+      <td>0.054160</td>
+      <td>0.049473</td>
+      <td>0.051285</td>
+      <td>0.054817</td>
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../_images/fbc36b26e7a7d7efcf917db52124bf74e4e373308d40a8431954d0ada8b8aab2.png" src="../_images/fbc36b26e7a7d7efcf917db52124bf74e4e373308d40a8431954d0ada8b8aab2.png" />
+</div></div><img alt="../_images/aad5677fb2bb0385dc7f2ff316d0870f5a857b549143166ed3622a48815c30e4.png" src="../_images/aad5677fb2bb0385dc7f2ff316d0870f5a857b549143166ed3622a48815c30e4.png" />
 </div>
 </div>
 <p>Now, the results are more encouraging. For all four machine learning
@@ -1463,7 +1464,7 @@ develop simple rules for targeting future treatments.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cov_mean_by_group</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cov_mean_by_group</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">cluster_id</span><span class="p">):</span>
     <span class="n">n_group</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">gate</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">gate_se</span> <span class="o">=</span> <span class="n">gate</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1496,7 +1497,7 @@ develop simple rules for targeting future treatments.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_group_means_for_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_group_means_for_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
     <span class="n">to_cat</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
@@ -1531,7 +1532,7 @@ develop simple rules for targeting future treatments.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5ac836ac3a2eca721154e044c6454b95bb09955e50b16a16bf1de41b080c060c.png" src="../_images/5ac836ac3a2eca721154e044c6454b95bb09955e50b16a16bf1de41b080c060c.png" />
+<img alt="../_images/ffb939c93776e6f7df15a9131432c5e05427d976d7324394c0be5bc60783e73c.png" src="../_images/ffb939c93776e6f7df15a9131432c5e05427d976d7324394c0be5bc60783e73c.png" />
 </div>
 </div>
 <p>From this, we see that the group predicted to be most affected by treatment
@@ -1636,6 +1637,8 @@ relatively low dimension) to get precise estimates.</p>
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -1910,15 +1913,15 @@ relatively low dimension) to get precise estimates.</p>
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -1926,7 +1929,11 @@ relatively low dimension) to get precise estimates.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/heterogeneity.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/heterogeneity.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/applications/heterogeneity.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1955,8 +1962,6 @@ relatively low dimension) to get precise estimates.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/heterogeneity.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/heterogeneity.ipynb">Colab</option>
                 
                 </select>
@@ -1968,7 +1973,7 @@ relatively low dimension) to get precise estimates.</p>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/heterogeneity.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/heterogeneity.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -2025,7 +2030,7 @@ relatively low dimension) to get precise estimates.</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")

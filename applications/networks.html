@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -56,32 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/quantecon-book-theme.279dae03c5caae754d20501e3fa00bbf.css" />
+    <link rel="stylesheet" href="../_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -89,16 +90,17 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -106,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-S8CBQPC844');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"extensions": ["autobold.js"], "macros": {"argmax": "arg\\,max", "argmin": "arg\\,min", "col": "col"}, "processEscapes": true}, "svg": {"scale": "0.92,"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -147,6 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
   </head>
 <body>
 
+<!-- Override QuantEcon theme colors -->
 
     <span id="top"></span>
 
@@ -187,7 +186,8 @@ const thebe_selector_output = ".output, .cell_output"
                             <p class="logo">
                                 
                                     
-                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo" alt="logo"></a>
+                                    <a href=https://quantecon.org><img src="../_static/datascience-logo.png" class="logo logo-img" alt="logo"></a>
+                                    
                                     
                                 
                             </p>
@@ -215,8 +215,9 @@ const thebe_selector_output = ".output, .cell_output"
                         <p class="qe-page__header-subheading">Social and Economic Networks</p>
 
                     </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
-                    <p class="qe-page__header-authors">Chase Coleman, Spencer Lyon, and Jesse Perla</p>
 
                 </div> <!-- .page__header -->
 
@@ -255,10 +256,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s take a look at one example, using a python library called NetworkX (which is included in Anaconda):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -276,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/504935f4229f61fdb25cf161834cc214a9917a5bc5e8d534a86a38a7833a4b7c.png" src="../_images/504935f4229f61fdb25cf161834cc214a9917a5bc5e8d534a86a38a7833a4b7c.png" />
+<img alt="../_images/67f35af529246aae6a2a1c35cb427f6de8f55376b86619cdaac9b7adcaed7fea.png" src="../_images/67f35af529246aae6a2a1c35cb427f6de8f55376b86619cdaac9b7adcaed7fea.png" />
 </div>
 </div>
 <p>This is an example of a <strong>social network</strong>. (Specifically, it’s called “Zachary’s Karate Club Network”, and it represents some data collected by Wayne Zachary in 1977.) In this network, we have a set of dots representing people (<strong>nodes</strong> or <strong>vertices</strong>) who are connected by a line (<strong>link</strong> or <strong>edge</strong>) if they are friends with each other.</p>
@@ -335,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aeb0843ca7c731a6a10602ee8ceb25f238ac1cb7ba961090fffc79991861148f.png" src="../_images/aeb0843ca7c731a6a10602ee8ceb25f238ac1cb7ba961090fffc79991861148f.png" />
+<img alt="../_images/27af4f41f33ed534648f83d8a2f4c9a547ec581d8909a55175df1a7bbd4ff5cb.png" src="../_images/27af4f41f33ed534648f83d8a2f4c9a547ec581d8909a55175df1a7bbd4ff5cb.png" />
 </div>
 </div>
 </section>
@@ -390,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20be7f00e825a35f3658c15e8d841543da8c76334d5614a730f627169d428c05.png" src="../_images/20be7f00e825a35f3658c15e8d841543da8c76334d5614a730f627169d428c05.png" />
+<img alt="../_images/ee170bf21265f98f3c5ba0b509ea27b347c9dd6120826fbc4ee1f7e1e24ad1de.png" src="../_images/ee170bf21265f98f3c5ba0b509ea27b347c9dd6120826fbc4ee1f7e1e24ad1de.png" />
 </div>
 </div>
 <p>This agrees with our guess. Nodes 1 and 12 each have degree 2, while the remaining 10 nodes have 3 links each.</p>
@@ -408,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/48bd05a292485865eefa7126421491d85a1ac60ddf8879ec577f9bb7e978f897.png" src="../_images/48bd05a292485865eefa7126421491d85a1ac60ddf8879ec577f9bb7e978f897.png" />
+<img alt="../_images/ab098ffe70e931097f973cdf0931e904339707dd15203c0a718c6636596ccb08.png" src="../_images/ab098ffe70e931097f973cdf0931e904339707dd15203c0a718c6636596ccb08.png" />
 </div>
 </div>
 <p><strong>Note</strong>:
@@ -439,7 +440,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/547ede4b9b485828d61df37f61e942ada18fe71c184e7f1314f19c653154dd78.png" src="../_images/547ede4b9b485828d61df37f61e942ada18fe71c184e7f1314f19c653154dd78.png" />
+<img alt="../_images/98db82e08dc6d6da32f3ef944f3ea7e674c9f17997001b15e00ff1218545a2e6.png" src="../_images/98db82e08dc6d6da32f3ef944f3ea7e674c9f17997001b15e00ff1218545a2e6.png" />
 </div>
 </div>
 <p>However, this might not be the most efficient path since it takes a lot of driving. Another, faster route might be to skip 2,4,9, and 11, and head down the path through 3,5,6,7,8, and 10.</p>
@@ -453,7 +454,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ad978c844e6d9e84b1a5dca1cf0f88718ce81b4a4816ef1ceae963b5d65fc2b2.png" src="../_images/ad978c844e6d9e84b1a5dca1cf0f88718ce81b4a4816ef1ceae963b5d65fc2b2.png" />
+<img alt="../_images/ca52e0c9e2ed1c3b1fb8a763645de5085182b587a5b081296a4321fbad01b9d3.png" src="../_images/ca52e0c9e2ed1c3b1fb8a763645de5085182b587a5b081296a4321fbad01b9d3.png" />
 </div>
 </div>
 <p>Clearly, this path will be a lot more efficient, since it gets to the final destination while traveling down 4 fewer roads than the previous path. Which one is “best” depends on your objective. Optimal transport and routing problems are a large part of operations research. In general, finding the shortest path from one node to another is very easy to do using a very famous heuristic called <strong>dijkstra’s algorithm</strong>. On the other hand, finding the shortest path that visits every single node in a graph is called the <strong>travelling salesman problem</strong>, and is notoriously difficult to solve (specifically, it is NP-hard.)</p>
@@ -468,7 +469,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" src="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" />
+<img alt="../_images/dc98d3634f7546f8d7a22760155059e4fe379a29f0925d42cc8bac1e9c01cf03.png" src="../_images/dc98d3634f7546f8d7a22760155059e4fe379a29f0925d42cc8bac1e9c01cf03.png" />
 </div>
 </div>
 <p>We can see that there is no longer any possible path that could connect node 1 to node 12. For any node from 1 to 6, there is still a path; just like on the right hand side, there is a path between any two nodes from 7 to 12. But there is no path that can connect any node in one of these sets to a node in the other. We would refer to these two sets as <strong>connected components</strong>.</p>
@@ -592,7 +593,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d310510b0ac2d6e958781629642cf9bdccb94855f0f99892409c4816cbc3cc8f.png" src="../_images/d310510b0ac2d6e958781629642cf9bdccb94855f0f99892409c4816cbc3cc8f.png" />
+<img alt="../_images/36ca2c4ad7d00ff8d02344abdb0b269f3a1d6246d5e0eed1ce7bd14cb7121a44.png" src="../_images/36ca2c4ad7d00ff8d02344abdb0b269f3a1d6246d5e0eed1ce7bd14cb7121a44.png" />
 </div>
 </div>
 <p>In this network, almost every node has the same degree. So if we wanted to know which nodes were the most important, number of connections alone would not really give us much useful information.</p>
@@ -633,7 +634,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c2d1323dd054c5ad5ef0e2bb4fd0a033c6500d2f9172c66d963092a405dafd39.png" src="../_images/c2d1323dd054c5ad5ef0e2bb4fd0a033c6500d2f9172c66d963092a405dafd39.png" />
+<img alt="../_images/1f7d4a4e8888cc00323c3a4a80756671e12927c3ce3d331eeca50d58bc61ba37.png" src="../_images/1f7d4a4e8888cc00323c3a4a80756671e12927c3ce3d331eeca50d58bc61ba37.png" />
 </div>
 </div>
 <p>As we suspected, considering influence as being the result of connections with other influential friends gives us a centrality measure that looks way more informative. Nodes that appear to be in “central” positions are indeed considered more “central”, while nodes that are further from the center have lower centrality.</p>
@@ -654,10 +655,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeba0ab6b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f64e21629c0&gt;
 </pre></div>
 </div>
-<img alt="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" src="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" />
+<img alt="../_images/11c2e22c49b5c3292c753853a9a31e5ff8e5555c5fed56b21165873d3fe36817.png" src="../_images/11c2e22c49b5c3292c753853a9a31e5ff8e5555c5fed56b21165873d3fe36817.png" />
 </div>
 </div>
 <p>The first thing we might notice is that all of these eigenvalues are non-negative, and that there is one equal to zero. This means that our laplacian matrix is positive semidefinite.</p>
@@ -673,7 +674,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9b595006c77e5636ce70df93bb5489e0a725eab0056886ff10ba9bd50e651ec9.png" src="../_images/9b595006c77e5636ce70df93bb5489e0a725eab0056886ff10ba9bd50e651ec9.png" />
+<img alt="../_images/b2b46c138cdfa04617061d15252f9c3afd61cf4198f496016335aeeacb375e2f.png" src="../_images/b2b46c138cdfa04617061d15252f9c3afd61cf4198f496016335aeeacb375e2f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -687,10 +688,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9fa5a60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f64e21e8890&gt;
 </pre></div>
 </div>
-<img alt="../_images/13138d6c6cab160dc0459a6d0b58a738651a2b16bb04e726f0446e689bb16171.png" src="../_images/13138d6c6cab160dc0459a6d0b58a738651a2b16bb04e726f0446e689bb16171.png" />
+<img alt="../_images/94a10b09fe9d09e2fb0a5857690f8cc27811e30db6b54e657af84503ec0351b1.png" src="../_images/94a10b09fe9d09e2fb0a5857690f8cc27811e30db6b54e657af84503ec0351b1.png" />
 </div>
 </div>
 <p>We can see that not much has changed (although a few eigenvalues are lower than before). Let’s add that one back and try a different edge. This time, we’ll use <span class="math notranslate nohighlight">\((6,7)\)</span> again.</p>
@@ -705,7 +706,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" src="../_images/7aa318c9289c4d4230c30e784fc3d94ba9da8f7f382821c94bf5cdbf6126bf9b.png" />
+<img alt="../_images/dc98d3634f7546f8d7a22760155059e4fe379a29f0925d42cc8bac1e9c01cf03.png" src="../_images/dc98d3634f7546f8d7a22760155059e4fe379a29f0925d42cc8bac1e9c01cf03.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -719,10 +720,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeba12f590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f64e0fd9ca0&gt;
 </pre></div>
 </div>
-<img alt="../_images/548477300dce551c46b44f205c63bc716bf4e170c6c38011dc033eb68c19c1ce.png" src="../_images/548477300dce551c46b44f205c63bc716bf4e170c6c38011dc033eb68c19c1ce.png" />
+<img alt="../_images/9bf3b3a6d483f6b1a413ef55a1cef6741e20ac15647cf1f8895fcdd327577051.png" src="../_images/9bf3b3a6d483f6b1a413ef55a1cef6741e20ac15647cf1f8895fcdd327577051.png" />
 </div>
 </div>
 <p>Now, removing this edge had a very different impact on the spectrum of our laplacian matrix. In particular, one thing we might notice is that there are now 2 eigenvalues equal to zero, where before there was only one. Lets try removing a few more edges.</p>
@@ -736,7 +737,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/845f67542ebf01ff8026318ad2b91a95d493f3e12c1d5d98d714ef12d8116226.png" src="../_images/845f67542ebf01ff8026318ad2b91a95d493f3e12c1d5d98d714ef12d8116226.png" />
+<img alt="../_images/86a53a1f0a097c7be677c50e18937c27d8f480f77967e9c864afacb92447d2ca.png" src="../_images/86a53a1f0a097c7be677c50e18937c27d8f480f77967e9c864afacb92447d2ca.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -750,10 +751,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9f39820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f64d9d5bf80&gt;
 </pre></div>
 </div>
-<img alt="../_images/bb84e5f42e3db5eb718e0d850c4ea81e23342abb8cfc91b153d6375f0ed2ec3c.png" src="../_images/bb84e5f42e3db5eb718e0d850c4ea81e23342abb8cfc91b153d6375f0ed2ec3c.png" />
+<img alt="../_images/0e0046ef2cc92c95fc5f347971bdcba652083808b3cdf6163b14127c151b19d0.png" src="../_images/0e0046ef2cc92c95fc5f347971bdcba652083808b3cdf6163b14127c151b19d0.png" />
 </div>
 </div>
 <p>Now, the network has been broken up into 4 connected components, and has exactly 4 eigenvalues equal to zero.</p>
@@ -777,10 +778,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9da1a00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f64d9da3530&gt;
 </pre></div>
 </div>
-<img alt="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" src="../_images/f3e7bfbe34e62df067e81989e1c4c088fe1d677a8ab18ef81ab11e4a3ad8a470.png" />
+<img alt="../_images/11c2e22c49b5c3292c753853a9a31e5ff8e5555c5fed56b21165873d3fe36817.png" src="../_images/11c2e22c49b5c3292c753853a9a31e5ff8e5555c5fed56b21165873d3fe36817.png" />
 </div>
 </div>
 <p>Now that we’ve seen a few of these, we can get a better idea what we’re looking at. In particular, we can see that the graph is fully connected, because there is only one eigenvalue that is equal to zero. But that second eigenvalue is still looking awfully close to zero. Let’s investigate this second eigenvalue a little more by looking at it’s associated eigenvector.</p>
@@ -811,7 +812,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f49a85af203308686e87af01aa270044eac96be89658e855b3e2f7576aa21e9d.png" src="../_images/f49a85af203308686e87af01aa270044eac96be89658e855b3e2f7576aa21e9d.png" />
+<img alt="../_images/2124503d70888a7d051146c3671a515c7bc1d777995aec3071e511dadb758f5b.png" src="../_images/2124503d70888a7d051146c3671a515c7bc1d777995aec3071e511dadb758f5b.png" />
 </div>
 </div>
 <p>Coloring nodes by their sign in this vector sorts them into two groups, on either side of the <span class="math notranslate nohighlight">\((6,7)\)</span> link!</p>
@@ -835,7 +836,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fa6c3d6789b71e7b5483cad77d54c64c987722c493d0e0e0907f78ef5cfe4c68.png" src="../_images/fa6c3d6789b71e7b5483cad77d54c64c987722c493d0e0e0907f78ef5cfe4c68.png" />
+<img alt="../_images/6aae4ca94779d186c4257c4aafc008a6c58ff2522753d6e1a87014aaacff9f4a.png" src="../_images/6aae4ca94779d186c4257c4aafc008a6c58ff2522753d6e1a87014aaacff9f4a.png" />
 </div>
 </div>
 <p>We see that there are two really highly central (yellow) nodes, on opposite sides of the network. This might be an indication that there is some homophily in the network. To verify this, let’s take a look at the natural partitioning of this network by plotting the eigenvalues of its laplacian matrix.</p>
@@ -850,10 +851,10 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7faeb9ccec60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f64e0fd9bb0&gt;
 </pre></div>
 </div>
-<img alt="../_images/ef891415802f8cbd9fccd7783198eef2418ff2c09ad67852c53a6d63a4a4178f.png" src="../_images/ef891415802f8cbd9fccd7783198eef2418ff2c09ad67852c53a6d63a4a4178f.png" />
+<img alt="../_images/2abbe6a35c792828fee014d0be691d3d5eaac355fb1b61cd80a3bed6682f766d.png" src="../_images/2abbe6a35c792828fee014d0be691d3d5eaac355fb1b61cd80a3bed6682f766d.png" />
 </div>
 </div>
 <p>There are no big jumps between the first few eigenvalues so it is clear that there is a lot of segregation in this network, making it easy to partition. Let’s again color the nodes by their entries in the Fiedler vector (the eigenvector corresponding to the second lowest eigenvalue):</p>
@@ -870,7 +871,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb8e4a5480fccb37f3e52b151d0760c9b154068d59c2e6b5ef2d851eb92a10a3.png" src="../_images/eb8e4a5480fccb37f3e52b151d0760c9b154068d59c2e6b5ef2d851eb92a10a3.png" />
+<img alt="../_images/a5f48eb4a4c14b217fef63958b63405a5a1a5142c22624f555c663f88f79876b.png" src="../_images/a5f48eb4a4c14b217fef63958b63405a5a1a5142c22624f555c663f88f79876b.png" />
 </div>
 </div>
 <p>Again, this spectral homophily partitions the network in a way that seems very natural; into two dense clusters with sparse connections between them, and with each one containing its own highly central hub.</p>
@@ -1174,7 +1175,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 <p>The minimum correlation we can see in this matrix is around 0.89, which is still pretty big. Somewhat arbitrarily, let’s say that two stocks are “extremely correlated” if they have a correlation coefficient that is greater than 0.92, and make a matrix that will tell us which stocks are “extremely correlated” with each other.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="n">f</span><span class="p">):</span> <span class="c1"># define a function that &quot;rounds&quot; a number to 0 if it is lower than 0.92, and to 1 if it is higher (or equal).</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">truncate</span><span class="p">(</span><span class="n">f</span><span class="p">):</span> <span class="c1"># define a function that &quot;rounds&quot; a number to 0 if it is lower than 0.92, and to 1 if it is higher (or equal).</span>
     <span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.92</span><span class="p">):</span>
         <span class="k">return</span> <span class="mf">0.</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1367,7 +1368,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/47e1ba4f506dc0337be9cea137f1ace6ac8c907987aa89580ea704e476d62938.png" src="../_images/47e1ba4f506dc0337be9cea137f1ace6ac8c907987aa89580ea704e476d62938.png" />
+<img alt="../_images/04e47f316547ec327c9d8af8986554dc6b4d2636d855099455ac45a8896aa1f7.png" src="../_images/04e47f316547ec327c9d8af8986554dc6b4d2636d855099455ac45a8896aa1f7.png" />
 </div>
 </div>
 <p>It’s hard to get much information about this graph, just by looking at it. Let’s take a look at its underlying structure by examining its spectrum.</p>
@@ -1388,7 +1389,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51db35238c95faf4072e651176ae74f8966f9b54444e471fb5752a9b28ca47c4.png" src="../_images/51db35238c95faf4072e651176ae74f8966f9b54444e471fb5752a9b28ca47c4.png" />
+<img alt="../_images/1d3e0b47ec817bd23edf8cb6fa428f82705f6e24473edf5650eacf07fb4f5e91.png" src="../_images/1d3e0b47ec817bd23edf8cb6fa428f82705f6e24473edf5650eacf07fb4f5e91.png" />
 </div>
 </div>
 <p>Ok, so our spectral homophily identifies two distinct groups in the data. But what do they represent?</p>
@@ -1401,7 +1402,7 @@ The degree distribution is also a convenient way to start thinking about fitting
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fecf820d4701b55d868458e092e152106aba210d1a2b2c61a7c17409879095c7.png" src="../_images/fecf820d4701b55d868458e092e152106aba210d1a2b2c61a7c17409879095c7.png" />
+<img alt="../_images/ebfa9c3c00f593433acc2b06dbbd1949465a2a3d328b7ba0496b4ea18d0a78b3.png" src="../_images/ebfa9c3c00f593433acc2b06dbbd1949465a2a3d328b7ba0496b4ea18d0a78b3.png" />
 </div>
 </div>
 <p>Forming a network based on this simple method, and looking at its spectrum, was enough to cleanly identify both of the sectors in our dataset.</p>
@@ -1442,6 +1443,8 @@ The degree distribution is also a convenient way to start thinking about fitting
                     <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
 
                     <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                    <p>A theme by <a href="https://quantecon.org">QuantEcon</a></p>
 
                 </footer> <!-- .page__footer -->
 
@@ -1716,15 +1719,15 @@ The degree distribution is also a convenient way to start thinking about fitting
                     <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
                     <li data-tippy-content="Home"><a href="../index.html"><i data-feather="home"></i></a></li>
                     <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
-                    <!-- <li class="btn__search">
-                        <form action="../search.html" method="get">
-                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off">
-                            <i data-feather="search"></i>
-                        </form>
-                    </li> -->
                 </ul>
 
                 <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="../search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
                     <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
                     <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
                     <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
@@ -1732,7 +1735,11 @@ The degree distribution is also a convenient way to start thinking about fitting
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/applications/networks.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li data-tippy-content="Download PDF" onClick="window.print()"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/tree/main/lectures/applications/networks.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst/blob/main/lectures/applications/networks.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-datascience.myst" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1761,8 +1768,6 @@ The degree distribution is also a convenient way to start thinking about fitting
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/networks.ipynb">BinderHub</option>
-                
                     <option value="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/networks.ipynb">Colab</option>
                 
                 </select>
@@ -1774,7 +1779,7 @@ The degree distribution is also a convenient way to start thinking about fitting
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/QuantEcon/lecture-datascience.notebooks/main?urlpath=tree/applications/networks.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-datascience.notebooks/blob/main/applications/networks.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1831,7 +1836,7 @@ The degree distribution is also a convenient way to start thinking about fitting
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")
