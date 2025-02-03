@@ -18,7 +18,7 @@ This work was supported in part by the Center for Innovative Data in Economics R
 
 To get an idea of what one can do after taking this course, please take a look at [previous student projects](theme/projects.md).
 
-[Chase Coleman](http://www.chasegcoleman.com/), [Spencer Lyon](http://spencerlyon.com/), [Jesse Perla](http://jesseperla.com/), [More Contributors](../theme/contributors.md).
+[Chase Coleman](http://www.chasegcoleman.com/), [Spencer Lyon](http://spencerlyon.com/), [Jesse Perla](http://jesseperla.com/), [More Contributors](theme/contributors.md).
 
 ```{admonition} News
 [QuantEcon](https://quantecon.org) is moving to the [Jupyter Book](https://jupyterbook.org/intro.html)
