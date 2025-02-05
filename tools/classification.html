@@ -98,7 +98,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/scripts/quantecon-book-theme.js?digest=d9faaf6c4b57726f74ba012412af1f5681bdff87"></script>
+    <script src="../_static/scripts/quantecon-book-theme.js?digest=d6d86bce9979111653c4c495e33499e1796e172a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-S8CBQPC844"></script>
@@ -346,7 +346,7 @@ p(\text{recid}) = L(\beta_0 + \beta_1 \text{COMPAS} + \epsilon)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fad003f3c80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f520b73e720&gt;]
 </pre></div>
 </div>
 <img alt="../_images/51e4af1564afcd694ff12882b96fce605b323e4e3ca60e27f93f3c457432431f.png" src="../_images/51e4af1564afcd694ff12882b96fce605b323e4e3ca60e27f93f3c457432431f.png" />
@@ -380,7 +380,7 @@ output the probability of one of the two labels.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.3982 + 0.2674 decile_score)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fit model: p(recid) = L(-1.4442 + 0.2694 decile_score)
 </pre></div>
 </div>
 </div>
@@ -1016,6 +1016,10 @@ to use leading values of the variables to predict current or future recessions.<
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 2 leads
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/metrics/_classification.py:407: UserWarning: A single label was found in &#39;y_true&#39; and &#39;y_pred&#39;. For the confusion matrix to have the correct shape, use the &#39;labels&#39; parameter to pass all known labels.
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 3 leads
 </pre></div>
 </div>
@@ -1024,10 +1028,6 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 4 leads
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/lecture-datascience/lib/python3.12/site-packages/sklearn/metrics/_classification.py:407: UserWarning: A single label was found in &#39;y_true&#39; and &#39;y_pred&#39;. For the confusion matrix to have the correct shape, use the &#39;labels&#39; parameter to pass all known labels.
-  warnings.warn(
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>starting for 5 leads
@@ -1049,53 +1049,53 @@ to use leading values of the variables to predict current or future recessions.<
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The average confusion matrix for 1 lag(s) was:
- [[37.685  0.735]
- [ 1.375  3.205]]
+ [[37.725  0.69 ]
+ [ 1.42   3.165]]
 
 
 The average confusion matrix for 2 lag(s) was:
- [[37.625  0.715]
- [ 2.335  2.325]]
+ [[37.7    0.95 ]
+ [ 2.51   2.485]]
 
 
 The average confusion matrix for 3 lag(s) was:
- [[37.695  0.855]
- [ 2.795  2.3  ]]
+ [[37.795  0.81 ]
+ [ 2.775  2.265]]
 
 
 The average confusion matrix for 4 lag(s) was:
- [[37.995  0.62 ]
- [ 2.935  2.095]]
+ [[37.96  0.43]
+ [ 2.67  1.94]]
 
 
 The average confusion matrix for 5 lag(s) was:
- [[37.475  0.785]
- [ 3.33   1.41 ]]
+ [[37.54   0.695]
+ [ 3.355  1.41 ]]
 
 
 The average confusion matrix for 6 lag(s) was:
- [[36.715  1.245]
- [ 3.68   1.36 ]]
+ [[36.525  1.235]
+ [ 3.96   1.28 ]]
 
 
 The average confusion matrix for 7 lag(s) was:
- [[36.275  1.18 ]
- [ 3.785  1.76 ]]
+ [[36.24   1.435]
+ [ 3.69   1.635]]
 
 
 The average confusion matrix for 8 lag(s) was:
- [[35.86   1.35 ]
- [ 3.945  1.845]]
+ [[36.15   1.41 ]
+ [ 3.485  1.955]]
 
 
 The average confusion matrix for 9 lag(s) was:
- [[35.89  1.52]
- [ 4.19  1.4 ]]
+ [[35.545  1.515]
+ [ 4.435  1.505]]
 
 
 The average confusion matrix for 10 lag(s) was:
- [[34.56   1.68 ]
- [ 4.745  1.015]]
+ [[34.535  1.69 ]
+ [ 4.79   0.985]]
 </pre></div>
 </div>
 </div>
@@ -1729,7 +1729,7 @@ could be properly detected from noise (i.e. enemy aircraft vs. noise).</p>
                 function setLaunchServer() {
                   launchNotebookLink.removeAttribute("style")
                   if ( localStorage.launcherType == 'launcher-private' ) {
-                    let repoPrefix = "/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
                     launcherPrivateValue = launcherPrivate.value
                     if (!launcherPrivateValue) {
                         launchNotebookLink.removeAttribute("href")
