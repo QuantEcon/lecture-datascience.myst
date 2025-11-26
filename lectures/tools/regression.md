@@ -889,7 +889,7 @@ in the random forests section.
 
 ```{code-cell} python
 from sklearn import neural_network
-nn = neural_network.MLPRegressor((6,), activation="logistic",
+nn = neural_network.MLPRegressor(hidden_layer_sizes=(6,), activation="logistic",
                                  verbose=True, solver="lbfgs",
                                  alpha=0.0).fit(Xsim,ysim)
 fig=surface_scatter_plot(Xsim,ysim,lambda x: nn.predict([x])[0], show_f0=True)
@@ -944,7 +944,7 @@ for col in list(X):
 y = np.log(df["price"])
 
 # two hidden layers, with N1=30 and N2=20
-nn_model = neural_network.MLPRegressor((30, 20))
+nn_model = neural_network.MLPRegressor(hidden_layer_sizes=(30, 20))
 nn_model.fit(X, y)
 
 ax = var_scatter(df)
@@ -1007,7 +1007,7 @@ from sklearn import preprocessing, pipeline
 # we can use for prediction
 nn_scaled_model = pipeline.make_pipeline(
     preprocessing.StandardScaler(),  # this will do the input scaling
-    neural_network.MLPRegressor((30, 20))  # put your favorite model here
+    neural_network.MLPRegressor(hidden_layer_sizes=(30, 20))  # put your favorite model here
 )
 
 # We can now use `model` like we have used our other models all along

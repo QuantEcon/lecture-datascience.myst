@@ -415,7 +415,7 @@ from sklearn import preprocessing, pipeline, model_selection
 
 nnp = pipeline.Pipeline(steps=[
     ("scaling", preprocessing.StandardScaler()),
-    ("nn", neural_network.MLPRegressor((50,), activation="logistic",
+    ("nn", neural_network.MLPRegressor(hidden_layer_sizes=(50,), activation="logistic",
                                        verbose=False, solver="adam",
                                        max_iter=400, early_stopping=True,
                                        validation_fraction=0.15))
