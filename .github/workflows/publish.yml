@@ -65,6 +65,32 @@ jobs:
         with:
           name: execution-reports
           path: _build/html/reports
+      # Create HTML archive for release assets
+      - name: Create HTML archive
+        shell: bash -l {0}
+        run: |
+          tar -czf lecture-datascience-html-${{ github.ref_name }}.tar.gz -C _build/html .
+          sha256sum lecture-datascience-html-${{ github.ref_name }}.tar.gz > html-checksum.txt
+          
+          # Create metadata manifest
+          cat > html-manifest.json << EOF
+          {
+            "tag": "${{ github.ref_name }}",
+            "commit": "${{ github.sha }}",
+            "timestamp": "$(date -Iseconds)",
+            "size_mb": $(du -sm _build/html | cut -f1),
+            "file_count": $(find _build/html -type f | wc -l)
+          }
+          EOF
+      - name: Upload archives to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            lecture-datascience-html-${{ github.ref_name }}.tar.gz
+            html-checksum.txt
+            html-manifest.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy website to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
