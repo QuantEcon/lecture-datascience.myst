@@ -100,17 +100,10 @@ import warnings
 
 
 # Incidents
-url = "http://incidents.avalanche.ca/public/incidents/?format=json"
-req = urllib.request.Request(url)
-with urllib.request.urlopen(req) as response:
-    result = json.loads(response.read().decode('utf-8'))
-incident_list = result["results"]
-while (result["next"] != None):
-    req = urllib.request.Request(result["next"])
-    with urllib.request.urlopen(req) as response:
-        result = json.loads(response.read().decode('utf-8'))
-    incident_list = incident_list + result["results"]
-incidents_brief = pd.DataFrame.from_dict(incident_list,orient="columns")
+# Note: The Avalanche Canada incidents API is no longer available,
+# so we load from our cached data file directly
+incidentsfile = "https://datascience.quantecon.org/assets/data/avalanche_incidents.csv"
+incidents_brief = pd.read_csv(incidentsfile)
 pd.options.display.max_rows = 20
 pd.options.display.max_columns = 8
 incidents_brief
@@ -118,26 +111,11 @@ incidents_brief
 
 ```{code-cell} python
 # We can get more information about these incidents e.g. "https://www.avalanche.ca/incidents/37d909e4-c6de-43f1-8416-57a34cd48255"
-# this information is also available through the API
-def get_incident_details(id):
-    url = "http://incidents.avalanche.ca/public/incidents/{}?format=json".format(id)
-    req = urllib.request.Request(url)
-    with urllib.request.urlopen(req) as response:
-        result = json.loads(response.read().decode('utf-8'))
-    return(result)
+# Note: The detailed API is also no longer available, so we load from the cached CSV
+# which already contains the detailed incident information
 
-
-incidentsfile = "http://datascience.quantecon.org/assets/data/avalanche_incidents.csv"
-
-# To avoid loading the avalanche Canada servers, we save the incident details locally.
-# to update the data locally, change the incidentsfile to some other file name
-
-try:
-    incidents = pd.read_csv(incidentsfile)
-except Exception as e:
-    incident_detail_list = incidents_brief.id.apply(get_incident_details).to_list()
-    incidents = pd.DataFrame.from_dict(incident_detail_list, orient="columns")
-    incidents.to_csv(incidentsfile)
+incidentsfile = "https://datascience.quantecon.org/assets/data/avalanche_incidents.csv"
+incidents = pd.read_csv(incidentsfile)
 incidents.head()
 ```
 
@@ -774,7 +752,7 @@ from sklearn.manifold import TSNE
 nplot = 2000 # reduce the size of the data to speed computation and make the plot less cluttered
 lsa_topic_sample = lsa_topic_matrix[np.random.choice(lsa_topic_matrix.shape[0], nplot, replace=False)]
 tsne_lsa_model = TSNE(n_components=2, perplexity=50, learning_rate=500,
-                      n_iter=1000, verbose=10, random_state=0, angle=0.75)
+                      max_iter=1000, verbose=10, random_state=0, angle=0.75)
 tsne_lsa_vectors = tsne_lsa_model.fit_transform(lsa_topic_sample)
 ```
 
