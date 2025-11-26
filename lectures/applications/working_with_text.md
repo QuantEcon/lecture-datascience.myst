@@ -752,7 +752,7 @@ from sklearn.manifold import TSNE
 nplot = 2000 # reduce the size of the data to speed computation and make the plot less cluttered
 lsa_topic_sample = lsa_topic_matrix[np.random.choice(lsa_topic_matrix.shape[0], nplot, replace=False)]
 tsne_lsa_model = TSNE(n_components=2, perplexity=50, learning_rate=500,
-                      n_iter=1000, verbose=10, random_state=0, angle=0.75)
+                      max_iter=1000, verbose=10, random_state=0, angle=0.75)
 tsne_lsa_vectors = tsne_lsa_model.fit_transform(lsa_topic_sample)
 ```
 
