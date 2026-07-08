@@ -3,10 +3,25 @@ on:
   push:
     tags:
       - 'publish*'
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write   # write: upload release assets (html archive, checksum, manifest)
+  pages: write
+  id-token: write   # required for OIDC-based Pages deployment
+
+# Allow only one concurrent deployment; don't cancel an in-flight deploy
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   publish:
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs['page-url'] }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -65,12 +80,15 @@ jobs:
         with:
           name: execution-reports
           path: _build/html/reports
-      - name: Deploy website to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: quantecon/actions/publish-gh-pages@v0.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/html/
+          build-dir: _build/html
           cname: datascience.quantecon.org
+          create-release-assets: 'true'
+          asset-name: 'lecture-datascience-html'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload "_build" folder (cache)
         uses: actions/upload-artifact@v4
         with:
