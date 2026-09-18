@@ -39,7 +39,7 @@ their contributions.
   - Web Consultant
 
 ## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [John Stachurski](http://johnstachurski.net)
-  - ANU
+  - GRIPS
 
 ## <i class="fas fa-user-graduate" style="color:#1665ad"></i> [Natasha Watkins](https://github.com/natashawatkins)
   - UCLA
